@@ -8,72 +8,72 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "path:02_AGENTS",
+      "query": "path:02_AGENTS  ",
       "color": {
         "a": 1,
-        "rgb": 9109759
+        "rgb": 5639344
       }
     },
     {
       "query": "path:04_WORKFLOWS",
       "color": {
         "a": 1,
-        "rgb": 3394611
+        "rgb": 3635977
       }
     },
     {
-      "query": "path:05_MEMORY",
+      "query": "path:05_MEMORY ",
       "color": {
         "a": 1,
-        "rgb": 16632848
+        "rgb": 14543876
       }
     },
     {
       "query": "path:03_APIS",
       "color": {
         "a": 1,
-        "rgb": 3608575
+        "rgb": 270480
       }
     },
     {
       "query": "path:01_PROJECTS",
       "color": {
         "a": 1,
-        "rgb": 16426522
+        "rgb": 16731392
       }
     },
     {
       "query": "tag:#critical",
       "color": {
         "a": 1,
-        "rgb": 16711680
+        "rgb": 8131843
       }
     },
     {
       "query": "path:07_SYSTEM",
       "color": {
         "a": 1,
-        "rgb": 8947848
+        "rgb": 5065804
       }
     },
     {
       "query": "path:08_TRIGGERS",
       "color": {
         "a": 1,
-        "rgb": 16744272
+        "rgb": 15241817
       }
     }
   ],
-  "collapse-display": false,
-  "showArrow": true,
-  "textFadeMultiplier": -0.2,
-  "nodeSizeMultiplier": 2.16878886376484,
-  "lineSizeMultiplier": 1.03865884680611,
-  "collapse-forces": false,
-  "centerStrength": 0.110161107970605,
-  "repelStrength": 6.72555115884681,
-  "linkStrength": 0.869912379875636,
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.5999999999999959,
+  "scale": 0.6316047338086719,
   "close": false
 }
