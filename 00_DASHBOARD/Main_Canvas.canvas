@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"acea25f554bba87c","x":-560,"y":0,"width":400,"height":400,"type":"file","file":"01_PROJECTS/Read_Along_App.md"},
+		{"id":"0bb2d527e9d5d62b","type":"text","text":"            BRAIN OS\n","x":-76,"y":-200,"width":316,"height":87},
+		{"id":"12ebfd1cd8a109a6","x":320,"y":0,"width":400,"height":400,"type":"file","file":"01_PROJECTS/Resolve_MCP.md"},
+		{"id":"46e9be619c40110d","x":280,"y":-720,"width":400,"height":400,"type":"file","file":"01_PROJECTS/Custom_Agent.md"},
+		{"id":"4cc5ac50ad94ebe3","x":-560,"y":-720,"width":400,"height":400,"type":"file","file":"01_PROJECTS/BDF_Soccer_Bot.md"}
+	],
+	"edges":[
+		{"id":"6cbe4702fa8d33f3","fromNode":"0bb2d527e9d5d62b","fromSide":"left","toNode":"4cc5ac50ad94ebe3","toSide":"right"},
+		{"id":"321ccc486cf39a2b","fromNode":"0bb2d527e9d5d62b","fromSide":"left","toNode":"4cc5ac50ad94ebe3","toSide":"right"},
+		{"id":"dd30b80d59680555","fromNode":"0bb2d527e9d5d62b","fromSide":"left","toNode":"acea25f554bba87c","toSide":"right"},
+		{"id":"a35b7d5418112ec1","fromNode":"0bb2d527e9d5d62b","fromSide":"right","toNode":"46e9be619c40110d","toSide":"left"},
+		{"id":"7a54bdfebdaa2478","fromNode":"0bb2d527e9d5d62b","fromSide":"right","toNode":"12ebfd1cd8a109a6","toSide":"left"}
+	]
+}
