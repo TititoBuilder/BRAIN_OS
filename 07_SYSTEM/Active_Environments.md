@@ -1,5 +1,5 @@
 ---
-tags: [system, infra, live]
+tags: [infra, live]
 ---
 # Active environments
 

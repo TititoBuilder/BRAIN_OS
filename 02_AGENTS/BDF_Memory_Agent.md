@@ -37,6 +37,9 @@ C:\Users\titit\Projects\resolve-mcp-server\mcp_ingest.py
 - [[TagAndExport]] workflow — post_export_cleanup writes the log entry that this agent consumes
 - [[BDF_Analysis_Agent]] — writes to the same LanceDB that RagPipeline reads from
 - [[Resolve_MCP]] project + [[BDF_Soccer_Bot]] project
+- [[LanceDB_Vector_Store]]
+- [[Resolve_Export_Log]]
+- [[BDF_Video_Production_Flow]]
 
 ## Status
 Live

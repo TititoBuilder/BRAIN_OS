@@ -39,3 +39,4 @@ Live — 10/10 tools active
 - [[BDF_Video_Production_Flow]]
 - [[BDF_Memory_Agent]]
 - [[Resolve_Export_Log]]
+- [[Resolve_MCP]]

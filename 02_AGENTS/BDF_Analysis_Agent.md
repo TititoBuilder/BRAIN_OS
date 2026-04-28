@@ -34,6 +34,9 @@ C:\Dev\Projects\soccer-content-generator\src\rag_pipeline.py
 - [[BDF_Automation_Agent]] — SoccerBot passes VectorStore instance into RagPipeline at init
 - [[BDF_Memory_Agent]] — mcp_ingest.py writes clip records that populate LanceDB
 - [[BDF_Soccer_Bot]] project
+- [[LanceDB_Vector_Store]]
+- [[BDF_Content_Research_Flow]]
+- [[BDF_Knowledge_Book]]
 
 ## Status
 Live

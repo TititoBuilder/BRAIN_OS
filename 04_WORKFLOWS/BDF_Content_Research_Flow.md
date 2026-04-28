@@ -35,3 +35,10 @@ New post entry in `src/queue/content_queue.json` with status=`pending`, includin
 - RAG relevance threshold: cosine distance < 0.82; CrossEncoder reranker falls back silently if GPU unavailable
 - Claude cost: ~$0.006–$0.008 per post (tracked in cost_tracker.py)
 - Knowledge enricher TF-IDF threshold: 0.6801 cosine distance
+
+## Connected to
+- [[Football_API]]
+- [[NewsAPI]]
+- [[LanceDB_Vector_Store]]
+- [[Anthropic_Claude]]
+- [[Content_Queue]]

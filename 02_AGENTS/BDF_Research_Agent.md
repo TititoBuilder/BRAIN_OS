@@ -33,6 +33,10 @@ C:\Dev\Projects\soccer-content-generator\src\data\ingestion\schedule_manager.py
 - [[BDF_Creative_Agent]] — receives content_window + content_angles to select post type
 - [[BDF_Automation_Agent]] — bot_service.py queries active windows on heartbeat
 - [[BDF_Soccer_Bot]] project
+- [[BDF_Content_Research_Flow]]
+- [[Football_API]]
+- [[NewsAPI]]
+- [[LanceDB_Vector_Store]]
 
 ## Status
 Live

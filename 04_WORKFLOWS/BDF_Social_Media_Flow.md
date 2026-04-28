@@ -30,3 +30,8 @@ Published tweet on @BreakingDownFutbol Twitter account with card image attached.
 - **VPN**: Surfshark must be paused before every session — active VPN blocks Telegram API responses
 - **Approval required**: no post may reach Twitter without explicit phone tap; no auto-publish path exists
 - `bot_service.py` must be running for the background polling thread to be active
+
+## Connected to
+- [[Telegram_Bot]]
+- [[Twitter_API_v2]]
+- [[Content_Queue]]

@@ -41,6 +41,9 @@ C:\Dev\Projects\soccer-content-generator\src\card_composer.py (PIL compositing, 
 - [[BDF_Automation_Agent]] — bot_service.py triggers image lookup via ClipWatcher/content pipeline
 - [[BDF_Research_Agent]] — content_window determines which card template is selected
 - [[BDF_Soccer_Bot]] project
+- [[OpenAI_gpt-image-1]]
+- [[Pixabay_API]]
+- [[BDF_Social_Media_Flow]]
 
 ## Status
 Live — DALL-E 3 migration to gpt-image-1 pending (deadline May 12 2026)

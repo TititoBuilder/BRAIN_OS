@@ -44,6 +44,9 @@ C:\Dev\CristianConstruction\src\api\main.py
 - [[FinanceReporting]] workflow — FinanceAgent → Telegram Sunday report
 - [[SocialGeneration]] workflow — SocialAgent → Telegram for copy-paste publish
 - [[Custom_Agent]] project
+- [[CA_Business_OS_Flow]]
+- [[CA_Knowledge_Book]]
+- [[GoogleDrive_API]]
 
 ## Status
 Live

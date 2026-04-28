@@ -1,5 +1,5 @@
 ---
-tags: [system, tools, live]
+tags: [system, tools, infra, live]
 ---
 # Tools registry
 
