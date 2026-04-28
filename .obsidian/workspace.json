@@ -11,17 +11,10 @@
             "id": "061186392c970f62",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "00_DASHBOARD/Main_Canvas.canvas",
-                "viewState": {
-                  "x": 59,
-                  "y": 135.59173563214836,
-                  "zoom": -1.1791461697524792
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Main_Canvas"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -188,14 +181,25 @@
   },
   "active": "061186392c970f62",
   "lastOpenFiles": [
-    "02_AGENTS/DaVinci_Resolve_MCP.md",
+    "07_SYSTEM/State_System.md",
+    "05_MEMORY/Memory_Index.md",
+    "02_AGENTS/Data_Orchestrator.md",
+    "02_AGENTS/Video_Orchestrator.md",
+    "02_AGENTS/Content_Orchestrator.md",
+    "07_SYSTEM/Master_Control.md",
+    "08_TRIGGERS/Trigger_New_Idea.md",
+    "08_TRIGGERS/Trigger_Script_Ready.md",
+    "08_TRIGGERS/Trigger_Render_Complete.md",
+    "08_TRIGGERS/Trigger_Match_Scheduled.md",
+    "08_TRIGGERS",
     "00_DASHBOARD/Main_Canvas.canvas",
+    "00_DASHBOARD/Main_Canvas.canvas.md",
+    "02_AGENTS/DaVinci_Resolve_MCP.md",
     "07_SYSTEM/Tools_Registry.md",
     "07_SYSTEM/Active_Environments.md",
     "07_SYSTEM/MCP_Registry.md",
     "Untitled.base",
     "2026-04-27.md",
-    "00_DASHBOARD/Main_Canvas.canvas.md",
     "Untitled 5.canvas",
     "Untitled 4.canvas",
     "Google_Drive.md",
@@ -212,16 +216,7 @@
     "02_AGENTS/BDF_Automation_Agent.md",
     "01_PROJECTS/Resolve_MCP.md",
     "05_MEMORY/Content_Queue.md",
-    "05_MEMORY/BDF_Knowledge_Book.md",
-    "05_MEMORY/LanceDB_Vector_Store.md",
     "05_MEMORY/LanceDB_Vector_Store.md.tmp.33040.1777336809689",
-    "04_WORKFLOWS/RA_Transcription_Flow.md.tmp.33040.1777336709470",
-    "04_WORKFLOWS/CA_Business_OS_Flow.md",
-    "04_WORKFLOWS/BDF_Knowledge_Build_Flow.md",
-    "04_WORKFLOWS/BDF_Avatar_Pipeline.md",
-    "04_WORKFLOWS/BDF_Social_Media_Flow.md",
-    "04_WORKFLOWS/BDF_Video_Production_Flow.md",
-    "04_WORKFLOWS/BDF_Content_Research_Flow.md",
-    "03_APIS/KlingAI.md"
+    "04_WORKFLOWS/RA_Transcription_Flow.md.tmp.33040.1777336709470"
   ]
 }
