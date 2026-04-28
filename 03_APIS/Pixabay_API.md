@@ -32,3 +32,7 @@ Free stock photo source for BDF post backgrounds when AI generation and news ima
 ## Outputs
 - `largeImageURL` (1280px wide) — downloaded and passed to card_composer.py as background layer
 - Results cached locally for 24 hours to respect API terms
+
+## Connected to
+- [[BDF_Creative_Agent]]
+- [[BDF_Content_Research_Flow]]

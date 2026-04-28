@@ -55,3 +55,9 @@ Chapter content here — single block only.
 - `#chXX` tag must appear on **line 1 only**
 - **One tag per file** — second `#chXX` tag in same file breaks the parser
 - File = one chapter segment
+
+## Connected to
+- [[Anthropic_Claude]]
+- [[GoogleDrive_API]]
+- [[BDF_Knowledge_Book]]
+- [[CA_Knowledge_Book]]

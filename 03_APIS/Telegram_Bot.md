@@ -41,3 +41,8 @@ Hybrid deferred approval gate for BDF posts and direct messaging interface for C
 ## Outputs
 - BDF: callback_query triggers `twitter_publisher.publish()` on approval
 - CA: plaintext messages delivered to OWNER_TELEGRAM_ID
+
+## Connected to
+- [[BDF_Social_Media_Flow]]
+- [[BDF_Automation_Agent]]
+- [[Content_Queue]]

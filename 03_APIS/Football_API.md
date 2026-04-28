@@ -40,3 +40,7 @@ Fetches live match results, standings, squad data, and competition fixtures for 
 - Match objects: score, date, teams, competition name
 - Standings: position, points, GD per team
 - Consumed by schedule_manager.py to determine ContentWindow and topic priority
+
+## Connected to
+- [[BDF_Research_Agent]]
+- [[BDF_Content_Research_Flow]]

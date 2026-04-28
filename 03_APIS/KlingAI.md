@@ -35,3 +35,7 @@ Image-to-video generation for animated player highlight clips in the BDF avatar 
 - `task_id` returned on submit; poll until `status=succeed`
 - Video URL in response → downloaded to `output/videos/`
 - Per-player animation personality defined in `PLAYER_MOTION` dict (e.g. explosive dribble, clinical finish)
+
+## Connected to
+- [[BDF_Avatar_Pipeline]]
+- [[BDF_Creative_Agent]]

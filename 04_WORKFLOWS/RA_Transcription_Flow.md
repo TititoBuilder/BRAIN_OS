@@ -32,3 +32,7 @@ Manual — user submits audio file to backend endpoint. No automated trigger.
 - **Frontend gap**: Vite production build has never been run; `npm run build` not executed; output layer is incomplete — the synchronized highlighting UI does not exist yet
 - GitHub remote is local only — no public/cloud remote configured
 - Backend is complete and testable via direct HTTP calls (curl / Postman) independently of the frontend
+
+## Connected to
+- [[RA_Whisper_Agent]]
+- [[Read_Along_App]]

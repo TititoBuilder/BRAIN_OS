@@ -50,3 +50,9 @@ Manual — run `create_avatar_library.py` per player, per pose. No automatic tri
 | Salah | 0 | Pending |
 | Pedri | 0 | Pending |
 | Gavi | 0 | Pending |
+
+## Connected to
+- [[OpenAI_gpt-image-1]]
+- [[KlingAI]]
+- [[BDF_Creative_Agent]]
+- [[Twitter_API_v2]]
