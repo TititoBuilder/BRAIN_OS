@@ -1,5 +1,5 @@
 ---
-tags: [system, mcp, live]
+tags: [system, mcp, infra, live]
 ---
 # MCP Registry — all connected servers
 

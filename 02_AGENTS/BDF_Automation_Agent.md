@@ -41,6 +41,11 @@ C:\Dev\Projects\soccer-content-generator\bot_service.py
 - [[BDF_Analysis_Agent]] — SoccerBot wraps RagPipeline for retrieval
 - [[BDF_Creative_Agent]] — ClipWatcher triggers image + caption pipeline
 - [[BDF_Soccer_Bot]] project
+- [[BDF_Content_Research_Flow]]
+- [[BDF_Video_Production_Flow]]
+- [[BDF_Social_Media_Flow]]
+- [[Content_Queue]]
+- [[Telegram_Bot]]
 
 ## Status
 Live

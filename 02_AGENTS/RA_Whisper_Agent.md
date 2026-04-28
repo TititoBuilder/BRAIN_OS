@@ -35,6 +35,7 @@ C:\Users\titit\Projects\read-along-app\backend\backend.py
 - [[AudioMode]] workflow — audio upload → Whisper → words array → frontend AudioPlayer + TranscriptDisplay
 - [[TextTTSMode]] workflow — text upload → Kokoro (BDF pipeline) → Whisper → karaoke view + audio URL
 - [[Read_Along_App]] project
+- [[RA_Transcription_Flow]]
 
 ## Status
 Live — backend complete; Vite frontend source complete, production build not yet run
