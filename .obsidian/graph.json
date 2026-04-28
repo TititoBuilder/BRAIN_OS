@@ -55,6 +55,13 @@
         "a": 1,
         "rgb": 8947848
       }
+    },
+    {
+      "query": "path:08_TRIGGERS",
+      "color": {
+        "a": 1,
+        "rgb": 16744272
+      }
     }
   ],
   "collapse-display": false,
@@ -67,6 +74,6 @@
   "repelStrength": 6.72555115884681,
   "linkStrength": 0.869912379875636,
   "linkDistance": 250,
-  "scale": 0.8411897445582759,
+  "scale": 0.5999999999999959,
   "close": false
 }
