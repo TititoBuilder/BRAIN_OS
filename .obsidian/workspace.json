@@ -15,9 +15,9 @@
               "state": {
                 "file": "00_DASHBOARD/Main_Canvas.canvas",
                 "viewState": {
-                  "x": 200.55749409458258,
-                  "y": 36.599806433505705,
-                  "zoom": -1.0000000207320507
+                  "x": 161.15653455588614,
+                  "y": -79.81700899283726,
+                  "zoom": -0.6666666804880338
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -189,23 +189,35 @@
   },
   "active": "c6b9c7e806e22d17",
   "lastOpenFiles": [
+    "05_MEMORY/Resolve_Export_Log.md",
+    "05_MEMORY/Content_Queue.md",
+    "05_MEMORY/CA_Knowledge_Book.md",
+    "05_MEMORY/BDF_Knowledge_Book.md",
+    "05_MEMORY/LanceDB_Vector_Store.md",
+    "05_MEMORY/LanceDB_Vector_Store.md.tmp.33040.1777336809689",
+    "04_WORKFLOWS/RA_Transcription_Flow.md",
+    "04_WORKFLOWS/RA_Transcription_Flow.md.tmp.33040.1777336709470",
+    "04_WORKFLOWS/CA_Business_OS_Flow.md",
+    "04_WORKFLOWS/BDF_Knowledge_Build_Flow.md",
+    "04_WORKFLOWS/BDF_Avatar_Pipeline.md",
+    "04_WORKFLOWS/BDF_Social_Media_Flow.md",
+    "04_WORKFLOWS/BDF_Video_Production_Flow.md",
+    "04_WORKFLOWS/BDF_Content_Research_Flow.md",
+    "03_APIS/KlingAI.md",
+    "03_APIS/GoogleDrive_API.md",
+    "03_APIS/Pixabay_API.md",
+    "03_APIS/NewsAPI.md",
+    "03_APIS/Football_API.md",
+    "03_APIS/Telegram_Bot.md",
+    "03_APIS/Twitter_API_v2.md",
+    "03_APIS/OpenAI_gpt-image-1.md",
+    "03_APIS/Anthropic_Claude.md",
     "02_AGENTS/Resolve_Editing_Agent.md",
     "02_AGENTS/RA_Whisper_Agent.md",
     "02_AGENTS/CA_Kokoro_TTS.md",
     "02_AGENTS/CA_Orchestrator.md",
     "02_AGENTS/BDF_Memory_Agent.md",
-    "02_AGENTS/BDF_Automation_Agent.md",
-    "02_AGENTS/BDF_Creative_Agent.md",
-    "02_AGENTS/BDF_Analysis_Agent.md",
-    "02_AGENTS/BDF_Research_Agent.md",
     "00_DASHBOARD/Main_Canvas.canvas",
-    "01_PROJECTS/Read_Along_App.md",
-    "01_PROJECTS/Resolve_MCP.md",
-    "01_PROJECTS/Custom_Agent.md",
-    "01_PROJECTS/BDF_Soccer_Bot.md",
-    "00_DASHBOARD/Main_Canvas.canvas.md",
-    "README.md",
-    "Untitled.canvas",
-    "06_TEMPLATES/PROJECT_NODE 1.md"
+    "Untitled.canvas"
   ]
 }
