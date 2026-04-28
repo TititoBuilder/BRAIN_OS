@@ -50,7 +50,11 @@
 		{"id":"trig02","type":"file","file":"08_TRIGGERS/Trigger_Render_Complete.md","x":-390,"y":-1450,"width":460,"height":50,"color":"1"},
 		{"id":"trig03","type":"file","file":"08_TRIGGERS/Trigger_Script_Ready.md","x":310,"y":-1450,"width":460,"height":50,"color":"1"},
 		{"id":"trig04","type":"file","file":"08_TRIGGERS/Trigger_New_Idea.md","x":1000,"y":-1450,"width":460,"height":50,"color":"1"},
-		{"id":"mc01","type":"file","file":"07_SYSTEM/Master_Control.md","x":-40,"y":-1260,"width":460,"height":50,"color":"0"}
+		{"id":"mc01","type":"file","file":"07_SYSTEM/Master_Control.md","x":-40,"y":-1260,"width":460,"height":50,"color":"0"},
+		{"id":"orch01","type":"file","file":"02_AGENTS/Content_Orchestrator.md","x":-600,"y":-1050,"width":280,"height":50,"color":"6"},
+		{"id":"orch02","type":"file","file":"02_AGENTS/Video_Orchestrator.md","x":-200,"y":-1050,"width":280,"height":50,"color":"6"},
+		{"id":"orch03","type":"file","file":"02_AGENTS/Data_Orchestrator.md","x":200,"y":-1050,"width":280,"height":50,"color":"6"},
+		{"id":"orch04","type":"file","file":"02_AGENTS/CA_Orchestrator.md","x":600,"y":-1050,"width":280,"height":50,"color":"6"}
 	],
 	"edges":[
 		{"id":"6cbe4702fa8d33f3","fromNode":"0bb2d527e9d5d62b","fromSide":"left","toNode":"4cc5ac50ad94ebe3","toSide":"right"},
@@ -66,6 +70,14 @@
 		{"id":"edge_trig02_mc","fromNode":"trig02","fromSide":"bottom","toNode":"mc01","toSide":"top"},
 		{"id":"edge_trig03_mc","fromNode":"trig03","fromSide":"bottom","toNode":"mc01","toSide":"top"},
 		{"id":"edge_trig04_mc","fromNode":"trig04","fromSide":"bottom","toNode":"mc01","toSide":"top"},
-		{"id":"edge_mc_hub","fromNode":"mc01","fromSide":"bottom","toNode":"0bb2d527e9d5d62b","toSide":"top"}
+		{"id":"edge_mc_hub","fromNode":"mc01","fromSide":"bottom","toNode":"0bb2d527e9d5d62b","toSide":"top"},
+		{"id":"edge_mc_orch01","fromNode":"mc01","fromSide":"bottom","toNode":"orch01","toSide":"top"},
+		{"id":"edge_mc_orch02","fromNode":"mc01","fromSide":"bottom","toNode":"orch02","toSide":"top"},
+		{"id":"edge_mc_orch03","fromNode":"mc01","fromSide":"bottom","toNode":"orch03","toSide":"top"},
+		{"id":"edge_mc_orch04","fromNode":"mc01","fromSide":"bottom","toNode":"orch04","toSide":"top"},
+		{"id":"edge_orch01_agents","fromNode":"orch01","fromSide":"bottom","toNode":"1248e2828ea3c89d","toSide":"top"},
+		{"id":"edge_orch02_agents","fromNode":"orch02","fromSide":"bottom","toNode":"1248e2828ea3c89d","toSide":"top"},
+		{"id":"edge_orch03_agents","fromNode":"orch03","fromSide":"bottom","toNode":"1248e2828ea3c89d","toSide":"top"},
+		{"id":"edge_orch04_agents","fromNode":"orch04","fromSide":"bottom","toNode":"1248e2828ea3c89d","toSide":"top"}
 	]
 }
