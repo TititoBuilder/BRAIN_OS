@@ -6,8 +6,7 @@
 		{"id":"885114db1e71a37f","type":"group","x":-1080,"y":-1000,"width":500,"height":800,"color":"#043ce7","label":"INPUT LAYER"},
 		{"id":"fa4b1849310b6e3a","type":"group","x":-200,"y":320,"width":700,"height":480,"color":"3","label":"KNOWLEDGE GRAPH"},
 		{"id":"d5a6ad1ee926123f","type":"group","x":-200,"y":920,"width":700,"height":200,"label":"INFRASTRUCTURE"},
-
-		{"id":"0bb2d527e9d5d62b","type":"text","text":"            BRAIN OS\n","x":50,"y":0,"width":280,"height":80,"color":"1"},
+		{"id":"bec6e84ef9f89525","x":-1382,"y":-1270,"width":400,"height":400,"type":"group","label":"Untitled group"},
 
 		{"id":"ag01","type":"file","file":"02_AGENTS/BDF_Research_Agent.md","x":-330,"y":-990,"width":460,"height":50,"color":"3"},
 		{"id":"ag02","type":"file","file":"02_AGENTS/BDF_Analysis_Agent.md","x":-330,"y":-930,"width":460,"height":50,"color":"3"},
@@ -18,6 +17,7 @@
 		{"id":"ag07","type":"file","file":"02_AGENTS/CA_Kokoro_TTS.md","x":-330,"y":-630,"width":460,"height":50,"color":"3"},
 		{"id":"ag08","type":"file","file":"02_AGENTS/RA_Whisper_Agent.md","x":-330,"y":-570,"width":460,"height":50,"color":"3"},
 		{"id":"ag09","type":"file","file":"02_AGENTS/Resolve_Editing_Agent.md","x":-330,"y":-510,"width":460,"height":50,"color":"3"},
+		{"id":"ag10","type":"file","file":"02_AGENTS/DaVinci_Resolve_MCP.md","x":-580,"y":170,"width":340,"height":50,"color":"3"},
 
 		{"id":"wf01","type":"file","file":"04_WORKFLOWS/BDF_Content_Research_Flow.md","x":380,"y":-940,"width":460,"height":50,"color":"4"},
 		{"id":"wf02","type":"file","file":"04_WORKFLOWS/BDF_Video_Production_Flow.md","x":380,"y":-880,"width":460,"height":50,"color":"4"},
@@ -40,19 +40,29 @@
 		{"id":"4cc5ac50ad94ebe3","type":"file","file":"01_PROJECTS/BDF_Soccer_Bot.md","x":-1000,"y":-480,"width":400,"height":400,"color":"1"},
 		{"id":"46e9be619c40110d","type":"file","file":"01_PROJECTS/Custom_Agent.md","x":480,"y":-460,"width":400,"height":400,"color":"1"},
 		{"id":"12ebfd1cd8a109a6","type":"file","file":"01_PROJECTS/Resolve_MCP.md","x":720,"y":40,"width":400,"height":400,"color":"1"},
-		{"id":"acea25f554bba87c","type":"file","file":"01_PROJECTS/Read_Along_App.md","x":-960,"y":65,"width":400,"height":400,"color":"1"},
+		{"id":"acea25f554bba87c","type":"file","file":"01_PROJECTS/Read_Along_App.md","x":-1000,"y":210,"width":400,"height":400,"color":"1"},
 
 		{"id":"mem01","type":"file","file":"05_MEMORY/LanceDB_Vector_Store.md","x":-180,"y":360,"width":460,"height":50,"color":"2"},
 		{"id":"mem02","type":"file","file":"05_MEMORY/BDF_Knowledge_Book.md","x":-180,"y":465,"width":460,"height":50,"color":"2"},
 		{"id":"mem03","type":"file","file":"05_MEMORY/CA_Knowledge_Book.md","x":-180,"y":560,"width":460,"height":50,"color":"2"},
 		{"id":"mem04","type":"file","file":"05_MEMORY/Content_Queue.md","x":-180,"y":640,"width":460,"height":50,"color":"2"},
-		{"id":"mem05","type":"file","file":"05_MEMORY/Resolve_Export_Log.md","x":-180,"y":720,"width":460,"height":50,"color":"2"}
+		{"id":"mem05","type":"file","file":"05_MEMORY/Resolve_Export_Log.md","x":-180,"y":720,"width":460,"height":50,"color":"2"},
+
+		{"id":"0bb2d527e9d5d62b","type":"text","text":"            BRAIN OS\n","x":50,"y":0,"width":280,"height":80,"color":"1"},
+
+		{"id":"sys01","type":"file","file":"07_SYSTEM/MCP_Registry.md","x":-300,"y":560,"width":300,"height":50,"color":"0"},
+		{"id":"sys02","type":"file","file":"07_SYSTEM/Active_Environments.md","x":40,"y":560,"width":300,"height":50,"color":"0"},
+		{"id":"sys03","type":"file","file":"07_SYSTEM/Tools_Registry.md","x":360,"y":560,"width":300,"height":50,"color":"0"}
 	],
 	"edges":[
 		{"id":"6cbe4702fa8d33f3","fromNode":"0bb2d527e9d5d62b","fromSide":"left","toNode":"4cc5ac50ad94ebe3","toSide":"right"},
 		{"id":"321ccc486cf39a2b","fromNode":"0bb2d527e9d5d62b","fromSide":"left","toNode":"4cc5ac50ad94ebe3","toSide":"right"},
 		{"id":"dd30b80d59680555","fromNode":"0bb2d527e9d5d62b","fromSide":"left","toNode":"acea25f554bba87c","toSide":"right"},
 		{"id":"a35b7d5418112ec1","fromNode":"0bb2d527e9d5d62b","fromSide":"right","toNode":"46e9be619c40110d","toSide":"left"},
-		{"id":"7a54bdfebdaa2478","fromNode":"0bb2d527e9d5d62b","fromSide":"right","toNode":"12ebfd1cd8a109a6","toSide":"left"}
+		{"id":"7a54bdfebdaa2478","fromNode":"0bb2d527e9d5d62b","fromSide":"right","toNode":"12ebfd1cd8a109a6","toSide":"left"},
+		{"id":"edge_dv_exportlog","fromNode":"ag10","fromSide":"right","toNode":"mem05","toSide":"left"},
+		{"id":"edge_dv_wf","fromNode":"ag10","fromSide":"top","toNode":"wf02","toSide":"bottom"},
+		{"id":"edge_mcp_hub","fromNode":"sys01","fromSide":"top","toNode":"0bb2d527e9d5d62b","toSide":"bottom"},
+		{"id":"edge_tools_hub","fromNode":"sys03","fromSide":"top","toNode":"0bb2d527e9d5d62b","toSide":"bottom"}
 	]
 }
