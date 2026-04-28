@@ -1,3 +1,7 @@
+---
+tags: [agent, live]
+---
+
 # AGENT: BDF Creative Agent
 
 ## Project

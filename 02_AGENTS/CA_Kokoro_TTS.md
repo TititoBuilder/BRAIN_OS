@@ -1,3 +1,7 @@
+---
+tags: [agent, live]
+---
+
 # AGENT: CA Kokoro TTS
 
 ## Project

@@ -1,3 +1,7 @@
+---
+tags: [project, live]
+---
+
 # PROJECT: BDF Soccer Bot
 
 ## Status

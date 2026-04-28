@@ -1,3 +1,7 @@
+---
+tags: [agent, live]
+---
+
 # AGENT: BDF Memory Agent
 
 ## Project

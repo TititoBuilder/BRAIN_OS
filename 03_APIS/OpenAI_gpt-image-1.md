@@ -1,3 +1,7 @@
+---
+tags: [api, critical]
+---
+
 # API: OpenAI gpt-image-1
 
 ## Purpose

@@ -1,3 +1,7 @@
+---
+tags: [workflow, live]
+---
+
 # WORKFLOW: BDF Content Research Flow
 
 ## Project

@@ -1,3 +1,7 @@
+---
+tags: [project, live]
+---
+
 # PROJECT: Resolve MCP Server (BDF)
 
 ## Status

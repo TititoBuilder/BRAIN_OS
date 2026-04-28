@@ -1,3 +1,7 @@
+---
+tags: [workflow, live]
+---
+
 # WORKFLOW: BDF Avatar Pipeline
 
 ## Project

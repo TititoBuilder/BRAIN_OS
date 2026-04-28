@@ -1,3 +1,7 @@
+---
+tags: [agent, live]
+---
+
 # AGENT: Resolve Editing Agent
 
 ## Project

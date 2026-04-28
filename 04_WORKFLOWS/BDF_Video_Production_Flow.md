@@ -1,3 +1,7 @@
+---
+tags: [workflow, live]
+---
+
 # WORKFLOW: BDF Video Production Flow
 
 ## Project
