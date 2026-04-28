@@ -34,3 +34,8 @@ Syncs generated audio chapter files and session recordings to Google Drive after
 ## Outputs
 - Drive file IDs returned per upload; logged locally
 - Files accessible at `drive.google.com` under the authenticated account's root
+
+## Connected to
+- [[BDF_Knowledge_Build_Flow]]
+- [[CA_Business_OS_Flow]]
+- [[CA_Orchestrator]]

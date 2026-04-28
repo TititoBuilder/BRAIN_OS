@@ -41,3 +41,8 @@ Second section content — multiple sections per file are allowed.
 
 ## Status
 Active. Source files in `C:\Knowledge\BDF\BDF_Book\`. Audio chapters synced to Google Drive.
+
+## Connected to
+- [[BDF_Knowledge_Build_Flow]]
+- [[BDF_Analysis_Agent]]
+- [[Anthropic_Claude]]

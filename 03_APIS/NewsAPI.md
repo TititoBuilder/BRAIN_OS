@@ -31,3 +31,7 @@ Fetches recent soccer news articles and og:image previews for BDF content enrich
 - Article list: title, description, url, urlToImage, publishedAt
 - `news_image_agent.py` scrapes `og:image` from article URLs as the image tier 2 fallback
 - Article snippets fed into knowledge enrichment context for caption generation
+
+## Connected to
+- [[BDF_Research_Agent]]
+- [[BDF_Content_Research_Flow]]

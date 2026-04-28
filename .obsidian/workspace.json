@@ -4,20 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "216f01f63c180b6a",
+        "id": "b0e5dc7ef46c70a1",
         "type": "tabs",
         "children": [
           {
-            "id": "c6b9c7e806e22d17",
+            "id": "061186392c970f62",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
                 "file": "00_DASHBOARD/Main_Canvas.canvas",
                 "viewState": {
-                  "x": 161.15653455588614,
-                  "y": -79.81700899283726,
-                  "zoom": -0.6666666804880338
+                  "x": 59,
+                  "y": 135.59173563214836,
+                  "zoom": -1.1791461697524792
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -81,8 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 211.50543212890625,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "cec74b108c8a5953",
@@ -187,15 +186,35 @@
       "bases:Create new base": false
     }
   },
-  "active": "c6b9c7e806e22d17",
+  "active": "061186392c970f62",
   "lastOpenFiles": [
-    "05_MEMORY/Resolve_Export_Log.md",
-    "05_MEMORY/Content_Queue.md",
+    "02_AGENTS/DaVinci_Resolve_MCP.md",
+    "00_DASHBOARD/Main_Canvas.canvas",
+    "07_SYSTEM/Tools_Registry.md",
+    "07_SYSTEM/Active_Environments.md",
+    "07_SYSTEM/MCP_Registry.md",
+    "Untitled.base",
+    "2026-04-27.md",
+    "00_DASHBOARD/Main_Canvas.canvas.md",
+    "Untitled 5.canvas",
+    "Untitled 4.canvas",
+    "Google_Drive.md",
+    "04_WORKFLOWS/RA_Transcription_Flow.md",
+    "03_APIS/Football_API.md",
     "05_MEMORY/CA_Knowledge_Book.md",
+    "05_MEMORY/Resolve_Export_Log.md",
+    "01_PROJECTS/Read_Along_App.md",
+    "Untitled 3.canvas",
+    "Untitled 2.canvas",
+    "Untitled 1.canvas",
+    "02_AGENTS/BDF_Analysis_Agent.md",
+    "Untitled.canvas",
+    "02_AGENTS/BDF_Automation_Agent.md",
+    "01_PROJECTS/Resolve_MCP.md",
+    "05_MEMORY/Content_Queue.md",
     "05_MEMORY/BDF_Knowledge_Book.md",
     "05_MEMORY/LanceDB_Vector_Store.md",
     "05_MEMORY/LanceDB_Vector_Store.md.tmp.33040.1777336809689",
-    "04_WORKFLOWS/RA_Transcription_Flow.md",
     "04_WORKFLOWS/RA_Transcription_Flow.md.tmp.33040.1777336709470",
     "04_WORKFLOWS/CA_Business_OS_Flow.md",
     "04_WORKFLOWS/BDF_Knowledge_Build_Flow.md",
@@ -203,21 +222,6 @@
     "04_WORKFLOWS/BDF_Social_Media_Flow.md",
     "04_WORKFLOWS/BDF_Video_Production_Flow.md",
     "04_WORKFLOWS/BDF_Content_Research_Flow.md",
-    "03_APIS/KlingAI.md",
-    "03_APIS/GoogleDrive_API.md",
-    "03_APIS/Pixabay_API.md",
-    "03_APIS/NewsAPI.md",
-    "03_APIS/Football_API.md",
-    "03_APIS/Telegram_Bot.md",
-    "03_APIS/Twitter_API_v2.md",
-    "03_APIS/OpenAI_gpt-image-1.md",
-    "03_APIS/Anthropic_Claude.md",
-    "02_AGENTS/Resolve_Editing_Agent.md",
-    "02_AGENTS/RA_Whisper_Agent.md",
-    "02_AGENTS/CA_Kokoro_TTS.md",
-    "02_AGENTS/CA_Orchestrator.md",
-    "02_AGENTS/BDF_Memory_Agent.md",
-    "00_DASHBOARD/Main_Canvas.canvas",
-    "Untitled.canvas"
+    "03_APIS/KlingAI.md"
   ]
 }

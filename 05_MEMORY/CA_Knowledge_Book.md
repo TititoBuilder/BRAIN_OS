@@ -45,3 +45,8 @@ Chapter content here — single continuous block.
 
 ## Status
 Active. 10 chapters compiled. Audio synced to Google Drive `CA_Book_Audio/`.
+
+## Connected to
+- [[CA_Business_OS_Flow]]
+- [[CA_Orchestrator]]
+- [[BDF_Knowledge_Build_Flow]]

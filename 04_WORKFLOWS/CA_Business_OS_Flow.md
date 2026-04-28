@@ -44,3 +44,9 @@ Any of:
 - Dashboard polls `GET /health` every 30s — must show "LIVE — 9 AGENTS" for all agents loaded
 - FastAPI backend: `uvicorn src.api.main:app --reload` on port 8000; React+Vite dashboard on port 3000
 - 15% materials markup and 25% emergency surcharge are hardcoded in `pricing.py` — change there, not in agent prompts
+
+## Connected to
+- [[CA_Orchestrator]]
+- [[CA_Knowledge_Book]]
+- [[GoogleDrive_API]]
+- [[Telegram_Bot]]

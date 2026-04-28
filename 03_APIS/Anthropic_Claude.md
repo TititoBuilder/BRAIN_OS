@@ -39,3 +39,8 @@ LLM backbone for caption generation, content analysis, RAG query rewriting, and 
 - `resp.content[0].text` — caption text, JSON query variants, story segments
 - Token usage logged per call in cost_tracker.py
 - Streaming not used; all calls are synchronous `client.messages.create()`
+
+## Connected to
+- [[BDF_Content_Research_Flow]]
+- [[BDF_Knowledge_Build_Flow]]
+- [[BDF_Automation_Agent]]

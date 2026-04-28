@@ -36,3 +36,8 @@ Publishes approved BDF posts (text + media card) to the @BreakingDownFutbol Twit
 ## Outputs
 - Tweet ID returned on success; logged to content queue
 - `twitter_publisher.py` wraps `tweepy.Client.create_tweet()` + `tweepy.API.media_upload()`
+
+## Connected to
+- [[BDF_Social_Media_Flow]]
+- [[BDF_Avatar_Pipeline]]
+- [[BDF_Automation_Agent]]

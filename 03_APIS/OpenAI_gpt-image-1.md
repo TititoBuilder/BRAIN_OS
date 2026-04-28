@@ -34,3 +34,7 @@ AI image generation for branded BDF post visuals — replaces DALL-E 3 (deprecat
 - Image URL or base64 data returned in API response
 - Saved locally then passed to card_composer.py for PIL compositing
 - Player avatar PNGs written to `output/avatars/` by create_avatar_library.py
+
+## Connected to
+- [[BDF_Creative_Agent]]
+- [[BDF_Avatar_Pipeline]]

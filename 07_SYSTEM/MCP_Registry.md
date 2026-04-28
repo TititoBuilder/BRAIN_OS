@@ -45,3 +45,8 @@ tags: [system, mcp, infra, live]
 - Resolve MCP requires DaVinci Resolve to be open on Predator
 - GitHub MCP token stored as Windows User env var
 - Context7 activates automatically when Claude Code needs docs
+
+## Connected to
+- [[DaVinci_Resolve_MCP]]
+- [[Anthropic_Claude]]
+- [[Tools_Registry]]

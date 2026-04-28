@@ -52,3 +52,8 @@ tags: [system, tools, infra, live]
 - Default terminal on Predator
 - Key rule: never chain >> (use separate commands)
 - Key rule: Select-String needs Get-ChildItem pipe, not -Recurse direct
+
+## Connected to
+- [[MCP_Registry]]
+- [[Active_Environments]]
+- [[DaVinci_Resolve_MCP]]
