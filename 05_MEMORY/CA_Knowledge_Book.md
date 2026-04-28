@@ -1,3 +1,7 @@
+---
+tags: [memory, live]
+---
+
 # MEMORY: CA Knowledge Book
 
 ## Purpose

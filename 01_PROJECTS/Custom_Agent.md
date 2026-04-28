@@ -1,3 +1,7 @@
+---
+tags: [project, live]
+---
+
 # PROJECT: Custom Agent (CristianConstruction)
 
 ## Status

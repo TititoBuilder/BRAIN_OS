@@ -1,3 +1,7 @@
+---
+tags: [project, wip]
+---
+
 # PROJECT: Read-Along App
 
 ## Status

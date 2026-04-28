@@ -1,3 +1,7 @@
+---
+tags: [api, live]
+---
+
 # API: NewsAPI
 
 ## Purpose

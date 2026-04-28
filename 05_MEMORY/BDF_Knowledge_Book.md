@@ -1,3 +1,7 @@
+---
+tags: [memory, live]
+---
+
 # MEMORY: BDF Knowledge Book
 
 ## Purpose
