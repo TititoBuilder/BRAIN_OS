@@ -1,10 +1,16 @@
 {
 	"nodes":[
-		{"id":"acea25f554bba87c","x":-560,"y":0,"width":400,"height":400,"type":"file","file":"01_PROJECTS/Read_Along_App.md"},
+		{"id":"885114db1e71a37f","type":"group","x":-880,"y":-1080,"width":400,"height":400,"color":"#043ce7","label":"INPUT LAYER"},
+		{"id":"bd5d734121b12b3c","type":"group","x":80,"y":-1080,"width":400,"height":400,"color":"4","label":"WORKFLOWS"},
+		{"id":"fa4b1849310b6e3a","type":"group","x":-120,"y":-40,"width":400,"height":400,"color":"3","label":"KNOWLEDGE GRAPH"},
+		{"id":"cee11a6ebb0f0309","type":"group","x":560,"y":-1080,"width":400,"height":400,"color":"2","label":"OUTPUT / APIS"},
+		{"id":"d5a6ad1ee926123f","type":"group","x":-120,"y":440,"width":400,"height":400,"label":"INFRASTRUCTURE"},
+		{"id":"1248e2828ea3c89d","type":"group","x":-400,"y":-1080,"width":400,"height":400,"color":"6","label":"AI AGENTS"},
 		{"id":"0bb2d527e9d5d62b","type":"text","text":"            BRAIN OS\n","x":-76,"y":-200,"width":316,"height":87},
-		{"id":"12ebfd1cd8a109a6","x":320,"y":0,"width":400,"height":400,"type":"file","file":"01_PROJECTS/Resolve_MCP.md"},
-		{"id":"46e9be619c40110d","x":280,"y":-720,"width":400,"height":400,"type":"file","file":"01_PROJECTS/Custom_Agent.md"},
-		{"id":"4cc5ac50ad94ebe3","x":-560,"y":-720,"width":400,"height":400,"type":"file","file":"01_PROJECTS/BDF_Soccer_Bot.md"}
+		{"id":"4cc5ac50ad94ebe3","type":"file","file":"01_PROJECTS/BDF_Soccer_Bot.md","x":-760,"y":-600,"width":400,"height":400},
+		{"id":"46e9be619c40110d","type":"file","file":"01_PROJECTS/Custom_Agent.md","x":520,"y":-600,"width":400,"height":400},
+		{"id":"12ebfd1cd8a109a6","type":"file","file":"01_PROJECTS/Resolve_MCP.md","x":560,"y":-113,"width":400,"height":400},
+		{"id":"acea25f554bba87c","type":"file","file":"01_PROJECTS/Read_Along_App.md","x":-840,"y":-113,"width":400,"height":400}
 	],
 	"edges":[
 		{"id":"6cbe4702fa8d33f3","fromNode":"0bb2d527e9d5d62b","fromSide":"left","toNode":"4cc5ac50ad94ebe3","toSide":"right"},
