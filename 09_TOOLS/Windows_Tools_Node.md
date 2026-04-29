@@ -6,6 +6,7 @@ parent: "[[09_TOOLS_INDEX]]"
 children:
   - "[[PowerToys_Node]]"
   - "[[SyncThing_Node]]"
+  - "[[obs_control.ahk]]"
 ---
 
 # Windows Tools Node
@@ -53,7 +54,19 @@ Microsoft open-source utility suite. Installed at:
 ---
 
 ## AutoHotkey
-**Not installed** — not found on this system (2026-04-28).
+Version: **2.0.24**
+
+| Setting | Value |
+|---|---|
+| Script | `C:\Users\titit\obs_control.ahk` |
+| Hotkeys | F8 = Start/Stop Recording · F9 = Start/Stop Replay Buffer · F10 = Save Replay Buffer |
+| Auto-start | Shortcut in Windows Startup folder — runs on every boot |
+
+### Purpose
+Controls OBS Studio via hotkeys as a workaround for obsws-python's incompatibility with OBS v5 WebSocket. See [[OBS_Node]] → Known Issues.
+
+### Child scripts
+- [[obs_control.ahk]] — OBS hotkey controller (F8/F9/F10)
 
 ---
 
