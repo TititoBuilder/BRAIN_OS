@@ -4,12 +4,13 @@ status: active
 dependencies: [RTX 5070 Ti, NVENC]
 parent: "[[09_TOOLS_INDEX]]"
 children: []
+version: 32.1.2
 ---
 
 # OBS Node
 
 OBS Studio — screen capture and recording for the BDF content pipeline.
-Profile: `Untitled` (default). Settings read 2026-04-28.
+Profile: `Untitled` (default). Settings read 2026-04-28. Version: **32.1.2**.
 
 ---
 
@@ -47,8 +48,8 @@ Profile: `Untitled` (default). Settings read 2026-04-28.
 |---|---|
 | Encoder | NVENC H.264 (`obs_nvenc_h264_tex`) |
 | Rate Control | CBR |
-| Format | MP4 |
-| Output Path | `C:/Media/Recordings` |
+| Format | MKV |
+| Output Path | `C:\BDF_OBS_Clips\RawFootage` |
 | File Split | By size — 4096 MB per file |
 | Audio Encoder | ffmpeg_aac |
 | No spaces in filename | true |
@@ -57,10 +58,15 @@ Profile: `Untitled` (default). Settings read 2026-04-28.
 | Setting | Value |
 |---|---|
 | Enabled | Yes (Advanced Output) |
-| Buffer Duration | 15 seconds |
+| Buffer Duration | 60 seconds |
 | Buffer Size Limit | 512 MB |
-| Start Hotkey | `F7` |
-| Save Hotkey | `F8` |
+
+### Hotkeys
+| Hotkey | Action |
+|---|---|
+| `F8` | Start / Stop Recording |
+| `F9` | Start / Stop Replay Buffer |
+| `F10` | Save Replay Buffer |
 
 ### Stream (placeholder)
 | Setting | Value |
@@ -102,9 +108,23 @@ Example: `2026-04-28 14-32-00.mp4`
 
 ---
 
+## WebSocket
+| Setting | Value |
+|---|---|
+| Port | 4455 |
+| Authentication | Enabled |
+
+---
+
+## Known Issues
+- **obsws-python incompatible with OBS v5 WebSocket protocol** — the Python library targets the old v4 API and fails to authenticate against v5.
+  - **Workaround**: OBS is controlled via AutoHotkey (`obs_control.ahk`) using hotkeys instead of WebSocket commands. See [[Windows_Tools_Node]] → AutoHotkey.
+
+---
+
 ## Setup Notes
 - OBS used to capture live football streams (Paramount+, CBS) for BDF highlight pipeline
-- Recordings land in `C:/Media/Recordings/` — separate from Resolve render output (`C:\BDF\renders\`)
+- Recordings land in `C:\BDF_OBS_Clips\RawFootage\` — separate from Resolve render output (`C:\BDF\renders\`)
 - NVENC encoder leverages RTX 5070 Ti for zero-CPU-cost recording at 60fps
-- Replay buffer (F7/F8) used to grab spontaneous highlight moments without pre-recording
+- Replay buffer (F9/F10) used to grab spontaneous highlight moments without pre-recording
 - Profile named `Untitled` — no multi-profile setup yet
