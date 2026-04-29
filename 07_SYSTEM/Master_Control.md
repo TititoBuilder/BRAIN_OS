@@ -25,3 +25,4 @@ Does NOT reason or execute. Routes only.
 [[Data_Orchestrator]]
 [[CA_Orchestrator]]
 [[09_TOOLS_INDEX]]
+[[10_SKILLS_INDEX]]
