@@ -167,7 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 320.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,8 +180,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "659d89aba39316e6",
+  "active": "488e9daf53bde31e",
   "lastOpenFiles": [
+    "03_APIS/CLAUDE.md",
+    "SESSION_TEMPLATE.md",
     "10_SKILLS/OBS_Skill.md",
     "10_SKILLS/Obsidian_Skill.md",
     "10_SKILLS/FancyZones_Skill.md",
@@ -217,8 +219,6 @@
     "08_TRIGGERS/Trigger_Render_Complete.md",
     "08_TRIGGERS/Trigger_Match_Scheduled.md",
     "08_TRIGGERS",
-    "00_DASHBOARD/Main_Canvas.canvas.md",
-    "02_AGENTS/DaVinci_Resolve_MCP.md",
     "Untitled.base",
     "Untitled 5.canvas",
     "Untitled 4.canvas",
