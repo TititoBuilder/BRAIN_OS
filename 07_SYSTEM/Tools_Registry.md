@@ -53,6 +53,46 @@ tags: [system, tools, infra, live]
 - Key rule: never chain >> (use separate commands)
 - Key rule: Select-String needs Get-ChildItem pipe, not -Recurse direct
 
+## obs_relay.py
+- Type: Multi-machine OBS clip bridge
+- Location: `C:\Dev\Projects\soccer-content-generator\obs_relay.py`
+- Watches: `C:\Media\Recordings` (OBS replay buffer output)
+- Routes to: `C:\BDF_Share` (direct on Predator) · SyncThing folder on HP
+- Machine detection: hostname `CRISTIAN` = Predator (direct); any other = HP (SyncThing)
+- Usage: `python obs_relay.py --match UCL_Atletico_Arsenal`
+
+## clip_watcher.py
+- Type: Clip Factory pipeline engine
+- Location: `C:\Dev\Projects\soccer-content-generator\clip_watcher.py`
+- Watches: `C:\BDF_Share` (AUTO track) · `master_edit\ready\` (MASTER EDIT track)
+- Output: injects to `src/queue/content_queue.json` with `status=pending`
+- Telegram: optional (wrapped in try/except) — dashboard is primary approval UI
+- Usage: standalone `python clip_watcher.py` or imported by `bot_service.py`
+
+## trigger_watcher.py
+- Type: Match-day content trigger system
+- Location: `C:\Dev\Projects\soccer-content-generator\trigger_watcher.py`
+- Watches: `triggers\` folder (polls every 10s)
+- File format: `{content_type}_{topic}.txt` e.g. `hot_take_Atletico_Arsenal_goal.txt`
+- Output: SoccerBot-generated content injected to queue as `status=pending`
+- Usage: `python trigger_watcher.py` · `--once` flag for single pass
+
+## sync_brain.py
+- Type: Weekly system health snapshot
+- Location: `C:\Dev\Projects\soccer-content-generator\sync_brain.py`
+- Collects: queue counts, weekly cost, LanceDB doc count, git status, clip stats
+- Output: `data/brain_sync_{YYYY-MM-DD}.json` + git commit
+- Usage: `python sync_brain.py` · `--no-commit` to skip git
+
+## obs_mcp.py
+- Type: OBS WebSocket v5 controller (FastAPI + importable class)
+- Location: `C:\Dev\Projects\soccer-content-generator\obs_mcp.py`
+- Library: `simpleobsws` 1.4.x — replaces broken `obsws-python` (v4 only)
+- Port: 8001 · WebSocket: `ws://localhost:4455` · Password: `OBS_WS_PASSWORD` in `.env`
+- Endpoints: `/obs/status` · `/obs/save_replay` · `/obs/start_replay_buffer` · `/obs/stop_replay_buffer` · `/obs/start_recording` · `/obs/stop_recording` · `/obs/set_scene`
+- Import: `from obs_mcp import OBSController`
+- Usage: `python obs_mcp.py`
+
 ## Connected to
 - [[MCP_Registry]]
 - [[Active_Environments]]
