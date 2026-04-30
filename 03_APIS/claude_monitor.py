@@ -79,13 +79,8 @@ MONTHLY_BUDGET: float = float(os.getenv("MONTHLY_BUDGET_USD", "80.00"))
 LOG_DIR = Path(os.getenv("LOG_DIR", str(Path.home() / ".claude_monitor")))
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-# Email alert settings (all optional — alerting is skipped if blank)
-EMAIL_TO:      str = os.getenv("ALERT_EMAIL_TO", "")
-EMAIL_FROM:    str = os.getenv("ALERT_EMAIL_FROM", "")
-SMTP_HOST:     str = os.getenv("EMAIL_SMTP_HOST", "smtp.gmail.com")
-SMTP_PORT:     int = int(os.getenv("EMAIL_SMTP_PORT", "587"))
-SMTP_USER:     str = os.getenv("EMAIL_SMTP_USER", "")
-SMTP_PASSWORD: str = os.getenv("EMAIL_SMTP_PASSWORD", "")
+# Notification: uses existing Telegram bot from soccer-content-generator
+# TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID — same vars, no new bot needed
 
 logging.basicConfig(
     filename=str(LOG_DIR / "monitor.log"),
@@ -354,51 +349,40 @@ def save_snapshot(summary: dict, stats: dict[str, ModelStats]) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Optional: send an email alert via SMTP
+# Alerts via Telegram — same bot already used by clip_watcher.py
+# Uses TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID from .env (no new credentials)
 # ---------------------------------------------------------------------------
-def send_email_alert(subject: str, body: str) -> None:
+def send_alert(subject: str, body: str) -> None:
     """
-    Sends an alert email using SMTP (TLS on port 587).
-    Silently skips if EMAIL_TO / EMAIL_FROM are not configured.
+    Sends a Telegram message using the existing soccer bot credentials.
+    Silently skips if TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID are not set.
     """
-    if not EMAIL_TO or not EMAIL_FROM:
+    token   = os.getenv("TELEGRAM_BOT_TOKEN", "")
+    chat_id = os.getenv("TELEGRAM_CHAT_ID", "")
+    if not token or not chat_id:
+        log.warning("Telegram not configured — set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in .env")
         return
 
-    import smtplib
-    from email.mime.text import MIMEText
-    from email.mime.multipart import MIMEMultipart
+    import urllib.request
+    import urllib.error
 
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = subject
-    msg["From"]    = EMAIL_FROM
-    msg["To"]      = EMAIL_TO
+    url  = f"https://api.telegram.org/bot{token}/sendMessage"
+    text = f"*{subject}*\n\n{body}"
+    data = json.dumps({"chat_id": chat_id, "text": text, "parse_mode": "Markdown"}).encode()
 
-    # Plain-text body
-    msg.attach(MIMEText(body, "plain"))
-
-    # HTML body — renders nicely in Gmail / Outlook
-    html_body = f"""
-    <html><body style="font-family: monospace; background: #0d0d0d; color: #f0f0f0; padding: 24px;">
-      <h2 style="color: #ff6b6b;">⚠ Claude Cost Alert</h2>
-      <pre style="background:#1a1a1a; padding:16px; border-radius:8px; color:#a8ff78;">{body}</pre>
-      <p style="color:#888; font-size:12px;">
-        Sent by claude_monitor.py — 
-        <a href="https://console.anthropic.com" style="color:#a8ff78;">Open Console</a>
-      </p>
-    </body></html>
-    """
-    msg.attach(MIMEText(html_body, "html"))
-
+    req = urllib.request.Request(
+        url, data=data,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
     try:
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
-            server.ehlo()
-            server.starttls()
-            server.login(SMTP_USER or EMAIL_FROM, SMTP_PASSWORD)
-            server.sendmail(EMAIL_FROM, EMAIL_TO, msg.as_string())
-        log.info("Email alert sent to %s", EMAIL_TO)
-    except Exception as exc:  # noqa: BLE001
-        log.warning("Email alert failed: %s", exc)
-        print(f"[EMAIL ERROR] {exc}", file=sys.stderr)
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            if resp.status == 200:
+                print("[ALERT SENT] Telegram")
+                log.info("Telegram alert sent to chat_id: %s", chat_id)
+    except urllib.error.URLError as exc:
+        log.warning("Telegram alert failed: %s", exc)
+        print(f"[ALERT ERROR] {exc}", file=sys.stderr)
 
 
 # ---------------------------------------------------------------------------
@@ -456,8 +440,8 @@ def main() -> None:
         )
     if alerts:
         body = "\n\n".join(alerts) + f"\n\nFull monthly spend: ${summary['total_monthly']:.4f}"
-        subject = f"[Claude Monitor] Budget Alert — ${summary['total_today']:.2f} today"
-        send_email_alert(subject, body)
+        subject = f"Claude Budget Alert — ${summary['total_today']:.2f} today"
+        send_alert(subject, body)
 
 
 if __name__ == "__main__":
