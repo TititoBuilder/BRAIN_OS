@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b0e5dc7ef46c70a1",
+        "id": "3140a73a7467676b",
         "type": "tabs",
         "children": [
           {
-            "id": "061186392c970f62",
+            "id": "488e9daf53bde31e",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -74,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "cec74b108c8a5953",
@@ -161,12 +162,12 @@
               "title": "Outline of Main_Canvas"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,9 +180,33 @@
       "bases:Create new base": false
     }
   },
-  "active": "061186392c970f62",
+  "active": "659d89aba39316e6",
   "lastOpenFiles": [
+    "10_SKILLS/OBS_Skill.md",
+    "10_SKILLS/Obsidian_Skill.md",
+    "10_SKILLS/FancyZones_Skill.md",
+    "10_SKILLS/10_SKILLS_INDEX.md",
+    "10_SKILLS",
+    "09_TOOLS/Tools_Book_Node.md",
+    "09_TOOLS/09_TOOLS_INDEX.md",
+    "09_TOOLS/OBS_Node.md",
+    "09_TOOLS/Predator_Node.md",
+    "09_TOOLS/Windows_Tools_Node.md",
+    "09_TOOLS/VSCode_Node.md",
+    "09_TOOLS",
+    "00_DASHBOARD/Main_Canvas.canvas",
+    "05_MEMORY/Daily_Log_2026-04-28.md",
+    "Untitled 8.canvas",
+    "Untitled 7.canvas",
+    "05_MEMORY/LanceDB_Vector_Store.md",
+    "Untitled 1.base",
+    "Untitled 6.canvas",
     "07_SYSTEM/State_System.md",
+    "05_MEMORY/Daily_Log_Template.md",
+    "Untitled.canvas",
+    "Untitled 2.canvas",
+    "Untitled 3.canvas",
+    "01_PROJECTS/BDF_Soccer_Bot.md",
     "05_MEMORY/Memory_Index.md",
     "02_AGENTS/Data_Orchestrator.md",
     "02_AGENTS/Video_Orchestrator.md",
@@ -192,30 +217,12 @@
     "08_TRIGGERS/Trigger_Render_Complete.md",
     "08_TRIGGERS/Trigger_Match_Scheduled.md",
     "08_TRIGGERS",
-    "00_DASHBOARD/Main_Canvas.canvas",
     "00_DASHBOARD/Main_Canvas.canvas.md",
     "02_AGENTS/DaVinci_Resolve_MCP.md",
-    "07_SYSTEM/Tools_Registry.md",
-    "07_SYSTEM/Active_Environments.md",
-    "07_SYSTEM/MCP_Registry.md",
     "Untitled.base",
-    "2026-04-27.md",
     "Untitled 5.canvas",
     "Untitled 4.canvas",
-    "Google_Drive.md",
-    "04_WORKFLOWS/RA_Transcription_Flow.md",
-    "03_APIS/Football_API.md",
-    "05_MEMORY/CA_Knowledge_Book.md",
-    "05_MEMORY/Resolve_Export_Log.md",
-    "01_PROJECTS/Read_Along_App.md",
-    "Untitled 3.canvas",
-    "Untitled 2.canvas",
     "Untitled 1.canvas",
-    "02_AGENTS/BDF_Analysis_Agent.md",
-    "Untitled.canvas",
-    "02_AGENTS/BDF_Automation_Agent.md",
-    "01_PROJECTS/Resolve_MCP.md",
-    "05_MEMORY/Content_Queue.md",
     "05_MEMORY/LanceDB_Vector_Store.md.tmp.33040.1777336809689",
     "04_WORKFLOWS/RA_Transcription_Flow.md.tmp.33040.1777336709470"
   ]
