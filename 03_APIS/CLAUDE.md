@@ -1,3 +1,12 @@
+## Session close checklist
+
+- [ ] Merge any open worktrees to main
+- [ ] Run session_close.py from the touched project
+- [ ] Confirm Telegram confirmation received
+- [ ] Confirm BRAIN_OS commit appears in git log
+
+---
+
 # BRAIN_OS / 03_APIS — Claude Code Workspace
 
 ## Project Overview
@@ -38,6 +47,14 @@ monitor exists to catch.
 **Never use `Bash(*)` or `Read(*)` wildcards.** Scope every tool call to a
 specific file path. This directory is part of the BRAIN_OS Obsidian vault —
 wildcard writes can corrupt vault metadata.
+
+---
+
+## MCP integrations
+
+- **Context7**: use `resolve-library-id` then `query-docs` for any library before writing code that calls it — never rely on training data for anthropic, python-dotenv, or rich.
+- **Obsidian**: all decisions and builds get documented in `C:\BRAIN_OS` before the session closes (via `session_close.py` in soccer-content-generator).
+- **Telegram**: all alerts use `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` via `urllib.request` POST to `api.telegram.org`. No other notification service.
 
 ---
 
