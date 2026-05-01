@@ -168,3 +168,4 @@ tags: [system, tools, infra, live]
 - 2026-04-30 — Telegram fix test
 - 2026-04-30 — Session 2026-04-30 — Knowledge continuity architecture complete.
 - 2026-04-30 — Session 2026-04-30 — Full session close pipeline operational.
+- 2026-05-01 — UTF-8 encoding fix verified — em dashes now render correctly
