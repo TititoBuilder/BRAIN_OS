@@ -14,24 +14,9 @@ Setup
     DAILY_BUDGET_USD=5.00                  # alert when daily spend exceeds this
     MONTHLY_BUDGET_USD=80.00              # alert when monthly projection exceeds this
 
-    # Email alert settings (Gmail example — see EMAIL SETUP below)
-    ALERT_EMAIL_TO=you@gmail.com           # who receives the alert
-    ALERT_EMAIL_FROM=you@gmail.com         # sender (can be same address)
-    EMAIL_SMTP_HOST=smtp.gmail.com
-    EMAIL_SMTP_PORT=587
-    EMAIL_SMTP_USER=you@gmail.com
-    EMAIL_SMTP_PASSWORD=xxxx-xxxx-xxxx-xxxx  # Gmail App Password (NOT your login password)
-
-EMAIL SETUP (Gmail)
--------------------
-Gmail requires an App Password when 2FA is enabled (recommended):
-    1. Go to myaccount.google.com → Security → 2-Step Verification → App passwords
-    2. Generate a password for "Mail" + "Windows Computer"
-    3. Paste the 16-character code into EMAIL_SMTP_PASSWORD above
-
-For Outlook/Office 365, use:
-    EMAIL_SMTP_HOST=smtp.office365.com
-    EMAIL_SMTP_PORT=587
+    # Telegram alert settings
+    TELEGRAM_BOT_TOKEN=your-bot-token
+    TELEGRAM_CHAT_ID=your-chat-id
 
 Run once:
     python claude_monitor.py
@@ -422,7 +407,7 @@ def main() -> None:
         summary["projected_monthly"],
     )
 
-    # Fire email alert if any threshold is breached
+    # Send Telegram alert if any threshold is breached
     alerts = []
     if summary["daily_over_budget"]:
         alerts.append(
