@@ -5,12 +5,15 @@ dependencies: [RTX 5070 Ti, NVENC]
 parent: "[[09_TOOLS_INDEX]]"
 children: []
 version: 32.1.2
+confirmed: 2026-04-29
+machine: Predator (CRISTIAN)
 ---
 
 # OBS Node
 
 OBS Studio — screen capture and recording for the BDF content pipeline.
-Profile: `Untitled` (default). Settings read 2026-04-28. Version: **32.1.2**.
+Profile: `Untitled` (default). Settings confirmed 2026-04-29. Version: **32.1.2**.
+Machine: **Predator** (hostname: CRISTIAN). See [[obs_recording]] for canonical confirmed config.
 
 ---
 
@@ -47,18 +50,19 @@ Profile: `Untitled` (default). Settings read 2026-04-28. Version: **32.1.2**.
 | Setting | Value |
 |---|---|
 | Encoder | NVENC H.264 (`obs_nvenc_h264_tex`) |
-| Rate Control | CBR |
+| Rate Control | **CQP** |
+| CQ Level | **18** |
 | Format | MKV |
-| Output Path | `C:\BDF_OBS_Clips\RawFootage` |
-| File Split | By size — 4096 MB per file |
+| Output Path | `C:\Media\Recordings` |
 | Audio Encoder | ffmpeg_aac |
 | No spaces in filename | true |
+| Process Priority | **High** |
 
 ### Replay Buffer
 | Setting | Value |
 |---|---|
 | Enabled | Yes (Advanced Output) |
-| Buffer Duration | 60 seconds |
+| Buffer Duration | **20 seconds** |
 | Buffer Size Limit | 512 MB |
 
 ### Hotkeys
@@ -122,9 +126,30 @@ Example: `2026-04-28 14-32-00.mp4`
 
 ---
 
+## Browser Source
+
+| Setting | Value |
+|---|---|
+| Hardware Acceleration | **DISABLED** |
+
+> Must be disabled — GPU contention with NVENC causes dropped frames when on.
+
+---
+
+## WD Elements / LanceDB Path
+
+| Note | Value |
+|---|---|
+| WD Elements mount | Always `D:` on Predator |
+| Why not `F:` | Recovery partition blocks `F:` assignment |
+| LanceDB path | `D:/lance_db_soccer` |
+
+---
+
 ## Setup Notes
 - OBS used to capture live football streams (Paramount+, CBS) for BDF highlight pipeline
-- Recordings land in `C:\BDF_OBS_Clips\RawFootage\` — separate from Resolve render output (`C:\BDF\renders\`)
+- Recordings land in `C:\Media\Recordings` — separate from Resolve render output (`C:\BDF\renders\`)
 - NVENC encoder leverages RTX 5070 Ti for zero-CPU-cost recording at 60fps
 - Replay buffer (F9/F10) used to grab spontaneous highlight moments without pre-recording
 - Profile named `Untitled` — no multi-profile setup yet
+- CQP 18 chosen over CBR: file size scales with scene complexity, better quality on action shots

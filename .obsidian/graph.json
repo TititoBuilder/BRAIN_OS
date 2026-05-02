@@ -8,10 +8,24 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
+      "query": "path:01_PROJECTS",
+      "color": {
+        "a": 1,
+        "rgb": 16731392
+      }
+    },
+    {
       "query": "path:02_AGENTS  ",
       "color": {
         "a": 1,
         "rgb": 5639344
+      }
+    },
+    {
+      "query": "path:03_APIS",
+      "color": {
+        "a": 1,
+        "rgb": 270480
       }
     },
     {
@@ -26,20 +40,6 @@
       "color": {
         "a": 1,
         "rgb": 14543876
-      }
-    },
-    {
-      "query": "path:03_APIS",
-      "color": {
-        "a": 1,
-        "rgb": 270480
-      }
-    },
-    {
-      "query": "path:01_PROJECTS",
-      "color": {
-        "a": 1,
-        "rgb": 16731392
       }
     },
     {
@@ -64,16 +64,16 @@
       }
     }
   ],
-  "collapse-display": true,
-  "showArrow": false,
-  "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
-  "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.6316047338086719,
-  "close": false
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": -2,
+  "nodeSizeMultiplier": 1.34889061616733,
+  "lineSizeMultiplier": 0.994340022611645,
+  "collapse-forces": false,
+  "centerStrength": 0.404112492933861,
+  "repelStrength": 10.524307518372,
+  "linkStrength": 0.404112492933861,
+  "linkDistance": 220,
+  "scale": 0.32133641243511313,
+  "close": true
 }
