@@ -14,23 +14,22 @@ Defined in `$PROFILE` — two profile files, both must be maintained.
 
 ## Profile File Locations
 
+> ⚠️ **CRITICAL — Windows has 4 profile locations.**
+> VS Code terminal loads `CurrentUserCurrentHost` only.
+> Always use `code $PROFILE` to open the exact file the current terminal loads.
+> Run as TWO SEPARATE commands — never on the same line.
+
+```powershell
+code $PROFILE   # opens the correct profile for current terminal
+. $PROFILE      # reloads profile after editing
+```
+
 | Context | Profile Path |
 |---|---|
 | VS Code terminal | `C:\Users\titit\OneDrive\Documents\WindowsPowerShell\Microsoft.VSCode_profile.ps1` |
 | Regular PowerShell | `C:\Users\titit\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1` |
 
-**Reload after any edit:**
-
-```powershell
-. $PROFILE
-```
-
-**Verify aliases loaded:**
-
-```powershell
-Get-Command bdf-log, bdf-compile, bdf-book
-Get-Command ca-log, ca-compile, ca-book, ca-audio
-```
+Both files must be maintained — aliases added to one do not appear in the other.
 
 ---
 
@@ -74,6 +73,21 @@ Get-Command ca-log, ca-compile, ca-book, ca-audio
 1. `bdf-book` cost: $1–2.50 per normal run. Batching causes overlap = $7–8. Never batch.
 2. `ca-book` auto-syncs Drive — no extra steps needed after a successful run.
 3. For bulk CA re-sync after major expansions: run `ca_bulk_[upload.py](http://upload.py)` (lives in Downloads, uses BDF venv).
+
+---
+
+## Known Issues
+
+**Duplicate function definitions (fix pending):**
+- `ca-log`, `ca-compile`, and `ca-book` have duplicate definitions in the profile
+- Symptom: second definition silently overrides first — may cause unexpected behavior
+- Fix: open `code $PROFILE`, find and remove the duplicate blocks
+
+**ca-book points to wrong venv path (fix pending):**
+- Current profile activates incorrect venv for `ca-book`
+- ca-book must use the BDF venv at `C:\Dev\Projects\soccer-content-generator\venv\`
+- Verify by checking the `Set-Location` and `Activate.ps1` lines inside the `ca-book` function
+- Fix: correct the path to `C:\Dev\Projects\soccer-content-generator\venv\Scripts\Activate.ps1`
 
 ---
 
