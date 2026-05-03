@@ -78,8 +78,39 @@ API docs: `http://localhost:8000/docs`
 | 8 | `reputation_agent` | Review events | Review responses + promotional campaigns |
 | 9 | `referral_agent` | Referral events | Referral tracking, $25 credits, thank-you messages |
 | + | `sms_handler.py` | Incoming SMS | Routes SMS keywords to correct agent |
+| + | `telegram_handler.py` | Telegram webhook | Routes `/commands` to agent endpoints |
 
 **SMS Keywords:** `ESTIMATE` `TILE` `PAINT` `FLOOR` `BATH` `DEAL` `HELP` `STOP`
+
+---
+
+## Utils Layer
+
+```
+src/utils/
+  claude_client.py    ← Shared Anthropic client (claude-sonnet-4-6) — used by all agents
+  pricing.py          ← South Call rate sheet + service catalog
+  telegram.py         ← Shared send_telegram() helper — used by all agents
+```
+
+---
+
+## Code Conventions
+
+- Type hints on ALL function signatures
+- Google-style docstrings on all public functions
+- Pydantic v2 models for all schemas
+- `.env` for ALL secrets — never hardcode
+- `os.getenv()` called at runtime **inside functions**, NOT at module level
+- Log with `logging` module, not `print()`
+
+---
+
+## Running Tests
+
+```powershell
+pytest tests/ -v
+```
 
 ---
 
