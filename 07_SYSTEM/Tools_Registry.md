@@ -70,6 +70,13 @@ tags: [system, tools, infra, live]
 - Version: latest stable
 - Plugins: Canvas (core), Graph View (core)
 
+### Obsidian MCP
+- Status: ✅ Operational (fixed 2026-05-03)
+- Tools: 11 (create-note, read-note, edit-note, search-vault, etc.)
+- Config: `npx -y obsidian-mcp C:\BRAIN_OS`
+- **Fix applied:** Was registered as "obs-mcp" (wrong package) - corrected to "obsidian-mcp"
+- **Naming confusion:** "obs" = OBS Studio (streaming), "obsidian" = Obsidian (notes)
+
 ---
 
 ## DaVinci Resolve

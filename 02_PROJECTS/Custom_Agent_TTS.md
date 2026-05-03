@@ -123,6 +123,24 @@ Correct parameter name from `element` → `elements` to match keyword argument i
 
 ---
 
+## Cost (Corrected 2026-05-03)
+Kokoro TTS is 100% FREE - runs locally on RTX 5070 Ti via CUDA with zero API costs.
+
+**Cost Confusion Clarified:**
+The charges visible in cost logs ($0.37, $7.15, $8.56) were from Claude Opus
+compilation of book chapters, NOT from Kokoro audio generation. The confusion
+arose because both operations run in the same `bdf-book` command:
+- Step 1: Claude Opus compiles chapter (COSTS $0.15-0.30)
+- Step 2: Kokoro generates audio (FREE)
+- Step 3: Google Drive sync (FREE)
+
+Kokoro is invisible in cost logs because it costs nothing.
+
+**Previous note:** Previously documented as having costs, corrected May 3, 2026
+after full timeline analysis from March 25 creation to present.
+
+---
+
 ## Environment Variables
 
 ```
