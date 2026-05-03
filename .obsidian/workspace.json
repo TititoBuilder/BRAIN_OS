@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[\"status\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,7 +70,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -181,6 +182,8 @@
   },
   "active": "488e9daf53bde31e",
   "lastOpenFiles": [
+    "07_SYSTEM/Cristian_Principles.md",
+    "07_SYSTEM/Navigation_Shortcuts.md",
     "07_SYSTEM/Claude_Code_Cost_Control.md",
     "canvases/BDF_Canvas.md",
     "canvases/CA_Canvas.md",
@@ -217,8 +220,6 @@
     "05_MEMORY/Daily_Log_Template.md",
     "Untitled.canvas",
     "01_PROJECTS/BDF_Soccer_Bot.md",
-    "05_MEMORY/Memory_Index.md",
-    "02_AGENTS/Data_Orchestrator.md",
     "08_TRIGGERS",
     "Untitled.base",
     "Untitled 1.canvas",
