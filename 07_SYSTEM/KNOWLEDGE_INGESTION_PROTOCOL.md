@@ -1,7 +1,7 @@
 ---
 tags: [system, protocol, automation, knowledge-ingestion]
 created: 2026-05-03
-updated: 2026-05-03
+updated: 2026-05-04
 ---
 
 # Knowledge Ingestion Protocol — Automated Intelligence Layer
@@ -281,7 +281,9 @@ Claude fills this out during session compile, then executes automatically.
 
 ---
 
-## Example: This Session's Ingestion
+## Example: Real Ingestion Executions
+
+### Example 1 — Obsidian MCP Fix + Audio Systems (commit a19e1ca)
 
 **Session:** 2026-05-03 Obsidian MCP Fix + Audio Systems
 
@@ -297,9 +299,27 @@ Claude fills this out during session compile, then executes automatically.
 3. CREATE Edge_TTS_Learning_System.md from template
 4. CREATE Audio_Systems_Comparison.md from template
 5. UPDATE wiki-links in all affected nodes
-6. Commit: "ingest: obsidian-mcp-audio-systems → 2 updated, 2 created"
+6. Commit a19e1ca: "ingest: obsidian-mcp-audio-systems → 2 updated, 2 created"
 
 **User review:** `git diff HEAD~1` shows clean, logical changes
+
+### Example 2 — Knowledge Pipeline Meta-Session (this session's automation)
+
+**Session:** [[2026-05-03_Knowledge_Pipeline_Meta_Session]] — System Documenting Itself
+
+**Affected Nodes:**
+- `AI_Engineering.md` → Obsidian MCP status + Kokoro cost note (UPDATE + APPEND)
+- `Data_Science.md` → Knowledge Pipeline status → Operational (ENHANCE)
+- `KNOWLEDGE_INGESTION_PROTOCOL.md` → Real execution examples added (UPDATE)
+
+**Actions Executed:**
+1. UPDATE Obsidian entry in AI_Engineering.md MCP Ecosystem: "✅ Operational (fixed 2026-05-03), 11 tools"
+2. APPEND Kokoro cost clarification to AI_Engineering.md Custom_Agent section
+3. ENHANCE Data_Science.md Knowledge_Pipeline status: "Operational (first ingestion validated 2026-05-03, commit a19e1ca)"
+4. UPDATE this file with real session examples
+5. Commit: "ingest: knowledge-pipeline-meta-session → validated automation system"
+
+**Significance:** First time the automation system documented its own execution — full self-referential loop closed.
 
 ---
 

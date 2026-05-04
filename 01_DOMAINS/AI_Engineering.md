@@ -1,7 +1,7 @@
 ---
 tags: [domain, ai-engineering, infrastructure, automation, mcp]
 created: 2026-05-03
-updated: 2026-05-03
+updated: 2026-05-04
 domain: AI Engineering Layer
 ---
 
@@ -38,6 +38,8 @@ domain: AI Engineering Layer
 - `book_compiler.py` - Compiles sessions into book chapters using Claude Opus
 - Telegram interface for mobile access
 - Google Drive sync for audio files
+
+**Cost Clarification (2026-05-03):** Kokoro TTS is 100% FREE (local GPU inference, zero API costs). Prior confusion: charges were Claude Opus compilation ($0.15-0.30/chapter), not TTS. See [[Custom_Agent_TTS]] for full breakdown.
 
 **Pending:**
 - [ ] Separate CA venv from BDF venv (currently sharing)
@@ -87,7 +89,7 @@ domain: AI Engineering Layer
 - **Google Drive** - File search, read, create, permissions
 - **Gmail** - Email search, drafts, labels, threads
 - **Google Calendar** - Events, scheduling, time suggestions
-- **Obsidian** - Vault operations (11 tools: create, read, edit, search)
+- **Obsidian** - ✅ Operational (fixed 2026-05-03), 11 tools (create, read, edit, search)
 
 ### Custom MCPs (You Built These)
 - **davinci-resolve** - 52 tools for Resolve control
