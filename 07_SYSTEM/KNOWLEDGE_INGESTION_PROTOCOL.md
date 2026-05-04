@@ -159,6 +159,18 @@ ELSE:
 
 ---
 
+## File Naming Standard
+
+**Session compiles** (`10_CHATS/`): `YYYY-MM-DD_Short_Descriptive_Title.md`
+- `2026-05-03_Obsidian_MCP_Fix_Audio_Systems.md`
+- `2026-05-03_Knowledge_Pipeline_Meta_Session.md`
+- `2026-04-18_Edge_TTS_Learning_System_Creation.md`
+
+**Node files** (`02_PROJECTS/`, `07_SYSTEM/`): short, descriptive, CamelCase or underscore
+- `Custom_Agent_TTS.md`, `Audio_Systems_Comparison.md`, `Edge_TTS_Learning_System.md`
+
+---
+
 ## Node Structure Requirements
 
 Every project/system node MUST have:

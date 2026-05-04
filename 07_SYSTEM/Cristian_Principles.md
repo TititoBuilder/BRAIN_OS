@@ -1,6 +1,6 @@
 ---
 tags: [personal, learning, principles, mental-models]
-updated: 2026-05-02
+updated: 2026-05-04
 ---
 
 # Cristian's Principles
@@ -97,3 +97,46 @@ poor results. The right tool for the right job is what makes you effective.
 Building MCP fluency means recognizing the specific scenarios where each MCP
 provides unique value, not forcing their use in situations where simpler direct
 tools work better.
+
+---
+
+## Name Verification Pattern
+
+**Learned from:** Obsidian MCP hanging 7+ minutes due to wrong package name (2026-05-03)
+
+**The Core Principle:** Never assume abbreviations map to the right tool. Always verify the full package name before configuration.
+
+**The Incident:** "obs" was registered in MCP config assuming it meant Obsidian. "obs" is OBS Studio (streaming software). "obsidian" is Obsidian (note-taking). Two completely different tools with a 3-letter vs 8-letter difference. The MCP showed "Connected" but hung on every tool call.
+
+**Rule:** Before registering any tool, service, or package:
+1. Look up the full, exact package name (npm, pip, etc.)
+2. Verify what the abbreviation actually expands to
+3. Never assume — always confirm with the simplest test call
+
+**When this saves you time:**
+- MCP configuration (package names often differ from tool display names)
+- pip/npm installs (wrong package = wasted time or security risk)
+- Service endpoints (similar names, different services)
+
+---
+
+## Knowledge Management Principles
+
+**Learned from:** Building the BRAIN_OS knowledge ingestion pipeline (2026-05-03)
+
+Five principles proven through constructing a working automation system:
+
+**1. Chat data is the most valuable asset**
+Every session produces decisions, fixes, patterns, and breakthroughs. Unstructured, this data is lost within days. Structured via SESSION_COMPILE_TEMPLATE, it becomes portable, searchable, and book-ready.
+
+**2. Structure enables extraction**
+Templates make knowledge portable. The same information in an unstructured chat vs a session compile is the difference between lost context and a book chapter. The template is the extraction mechanism.
+
+**3. Links create intelligence**
+Wiki-links turn isolated notes into a knowledge graph. `[[Custom_Agent_TTS]]` → `[[Audio_Systems_Comparison]]` → `[[Data_Science]]` — each link multiplies the value of every node it touches.
+
+**4. Automation removes friction**
+Zero manual copy/paste means zero lost knowledge. Each manual step is a failure point. A pipeline that runs without asking for help is the only kind that actually runs consistently.
+
+**5. Visibility drives progress**
+Seeing what you've built (domain dashboards, graph view) motivates continued building. Invisible progress feels like no progress. The 01_DOMAINS/ dashboards exist for this reason.
