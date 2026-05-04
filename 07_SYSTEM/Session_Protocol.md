@@ -29,6 +29,10 @@ exact format so I can run session_close.py from the correct project:
   Rules that changed:
   First action next session:
 
+For BRAIN_OS knowledge capture, use SESSION_COMPILE_TEMPLATE_V2
+instead of the summary format above — it produces a structured
+compile with INGESTION MAP for automated node updates.
+
 ---
 
 ## KNOWLEDGE INGESTION PROTOCOL
