@@ -1,5 +1,11 @@
 ---
-tags: [domain, creative-systems, video, audio, content, workflows]
+tags:
+  - domain
+  - creative-systems
+  - video
+  - audio
+  - content
+  - workflows
 created: 2026-05-03
 updated: 2026-05-03
 domain: Creative Intelligence Layer
@@ -171,14 +177,9 @@ C:\Knowledge\ResolveMCP\ - Resolve guide audio
 
 **Automation Level:** Medium
 
-### Book Audio Production (CA Book)
-1. **User runs** `ca-audio ch01_title`
-2. **System reads** markdown chapter
-3. **Kokoro generates** audio (WAV)
-4. **System uploads** to Google Drive
-5. **Telegram alert** sent
-
-**Automation Level:** High
+### Book Systems
+- [[BDF_Book_System]] — 16-chapter technical knowledge book, auto-compiled via book_compiler.py, Kokoro TTS + Drive sync
+- [[CA_Book_System]] — 10-chapter CA5 knowledge book, auto-compiled, Drive sync
 
 ---
 

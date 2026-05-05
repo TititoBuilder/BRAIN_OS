@@ -36,7 +36,7 @@ C:\Dev\Projects\soccer-content-generator\src\rag_pipeline.py
 - [[BDF_Soccer_Bot]] project
 - [[LanceDB_Vector_Store]]
 - [[BDF_Content_Research_Flow]]
-- [[BDF_Knowledge_Book]]
+- [[BDF_Book_System]]
 
 ## Status
 Live
