@@ -36,6 +36,18 @@ New post entry in `src/queue/content_queue.json` with status=`pending`, includin
 - Claude cost: ~$0.006–$0.008 per post (tracked in cost_tracker.py)
 - Knowledge enricher TF-IDF threshold: 0.6801 cosine distance
 
+## Scripts Reference
+
+<!-- Source: 20260315_session_compile_story_kling (ingested 2026-05-05) -->
+
+| Script | Location | Purpose | Output |
+|---|---|---|---|
+| `story_generator.py` | project root | AI-written 3-scene soccer animation scripts (claude-sonnet-4-6, ~$0.015/story) | `output/stories/story_{players}_{timestamp}.txt` |
+
+**Editorial note:** Despite the script existing and producing usable output (6 scripts generated in the March 15 session), the working decision is that **Cristian writes stories manually** for stronger creative control. `story_generator.py` is kept available for batch ideation and as a fallback, not as the primary content path. See [[BDF_Agent_Pipeline]] for full script architecture (cast, scenarios, run modes).
+
+---
+
 ## Connected to
 - [[Football_API]]
 - [[NewsAPI]]

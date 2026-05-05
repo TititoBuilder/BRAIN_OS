@@ -117,6 +117,16 @@ Pattern note for Python class-vs-dict ambiguity: prefer `getattr(obj, "attr", de
 
 ---
 
+## Tooling — simple_dashboard.py
+
+<!-- Source: 20260315_session_compile_twitter (ingested 2026-05-05) -->
+
+`simple_dashboard.py` runs a Streamlit + Plotly monitoring view at `http://localhost:8501`. Built as a deliberately minimal alternative after a more featureful dashboard hit dependency conflicts (`tweepy streamlit plotly sentence-transformers` install, `--break-system-packages`). Surfaces cost tracking and system status. Known issue: a method-name mismatch between the dashboard call sites and the `CostTracker` class needs to be aligned (the dashboard calls a name `CostTracker` no longer exposes).
+
+Files added in the same session: `twitter_publisher.py`, `social_media_manager.py`, `simple_dashboard.py`, plus `enhanced_terminal_ui.py` updates with publishing menu options.
+
+---
+
 ## Connected to
 
 - [[BDF_Canvas]]

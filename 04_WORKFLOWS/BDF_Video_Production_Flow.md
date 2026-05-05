@@ -42,6 +42,21 @@ venv/Scripts/python mcp_ingest.py --dry-run  # most recent only
 - SyncThing must be running on both machines; Resolve window must not be minimized during export
 - Bridge runs inside Resolve Py3 console on TCP 127.0.0.1:9000
 
+## Kling AI Integration Notes
+
+<!-- Source: 20260315_session_compile_story_kling (ingested 2026-05-05) -->
+
+`kling_agent.py` connects to the Kling AI API for image-to-video animation of player avatars. Status as of 2026-03-15:
+
+- **Web interface:** working — first successful test was a Haaland head-turn clip via the Kling web UI (50 free flames are available on a fresh account).
+- **API:** blocked at HTTP 429 on the test account — no credits remaining. Production use requires a credit top-up before the API path is viable.
+- **Image upload constraint:** Kling enforces a specific aspect ratio on image-to-video uploads. A Pillow resize script is included in the Kling agent codebase to coerce input PNGs to the accepted aspect ratio before upload — without it, uploads are silently rejected.
+- **Avatar path discipline:** be aware of folder-name drift — Haaland avatars were saved under `haaland_concepts/` rather than the expected `haaland/`, and the agent looked in the wrong directory. Standardise the directory before running the agent.
+
+For Kling cost economics ($0.14 image-to-video, $0.28 text-to-video, 5-second clips, model `kling-v1`, HS256 JWT auth) see [[BDF_Avatar_Pipeline]].
+
+---
+
 ## Connected to
 - [[DaVinci_Resolve_MCP]]
 - [[Resolve_Export_Log]]

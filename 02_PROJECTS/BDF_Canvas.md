@@ -228,10 +228,12 @@ The current `mcp_ingest.py` is a stateless adapter. Target: stateful agent loop 
 
 ## Milestones
 
-<!-- Sources: 20260401_session_compile (ingested 2026-05-05) -->
+<!-- Sources: 20260315_session_compile_twitter, 20260315_session_compile_story_kling, 20260401_session_compile (ingested 2026-05-05) -->
 
 | Date | Milestone |
 |---|---|
+| 2026-03-15 | Twitter API v2 integration live on @tititoluli1987 — OAuth 1.0a write creds, first published tweet (Zidane content), `simple_dashboard.py` running at `localhost:8501`, vector store at 15+ docs, multi-agent system operational. |
+| 2026-03-15 | `players_data.py` confirmed at 52 players across 12 clubs (Man City, Real Madrid, Barcelona, Arsenal, Chelsea, Liverpool, Bayern, Leverkusen, Man Utd, Aston Villa, Galatasaray, PSG). |
 | 2026-04-01 | Pipeline confirmed live end-to-end: Telegram tap → background thread (within 5s) → Twitter publish. @tititoluli1987 went 6 → 10 posts in-session after the asyncio fix in `telegram_approver.py`. |
 
 ---

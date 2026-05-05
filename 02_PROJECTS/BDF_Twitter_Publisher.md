@@ -6,6 +6,8 @@ parent: "[[BDF_Soccer_Bot]]"
 
 # BDF Twitter Publisher
 
+**Status:** Operational (live on @tititoluli1987 since 2026-03-15). Tweet creation via OAuth 1.0a write credentials confirmed working with the Zidane content example in the March 15 integration session.
+
 This document covers how the BDF pipeline posts to Twitter/X, which credentials it requires, how the approval flow connects `telegram_approver.py` to `twitter_publisher.py`, and what rate-limit and formatting constraints are enforced.
 
 ---

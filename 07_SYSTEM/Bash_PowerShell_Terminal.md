@@ -551,6 +551,24 @@ cd /c/BRAIN_OS
 cd C:\BRAIN_OS
 ```
 
+### `Set-Content` corrupts Python files
+
+<!-- Source: 20260315_session_compile_story_kling (ingested 2026-05-05) -->
+
+PowerShell's `Set-Content` cmdlet has corrupted Python source files in practice (specifically: `story_generator.py` line 201 was mangled during a session that used `Set-Content` to write multi-line Python). The cmdlet does not preserve the line endings and encoding that the Python parser expects, and the corruption is silent — the file looks fine until the parser fails.
+
+**Rule:** Never use `Set-Content` for code files. Use VS Code (or any proper editor) for multi-line Python edits.
+
+```powershell
+# DON'T (corrupts code files)
+Set-Content script.py $multilineCode
+
+# DO
+code script.py    # open in VS Code, edit there
+```
+
+---
+
 ### Script execution blocked
 
 **Problem:**
