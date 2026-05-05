@@ -32,14 +32,14 @@ Session log → incoming\ → bdf-book run → Claude Opus compiles chapter
 | Component | Path |
 |---|---|
 | Compiler | `C:\Dev\Projects\soccer-content-generator\book_compiler.py` |
-| Chapters (canonical) | `C:\Knowledge\MCP\MCP_Book\chapters\` |
-| Incoming sessions | `C:\Knowledge\MCP\MCP_Book\incoming\` |
-| Under review | `C:\Knowledge\MCP\MCP_Book\_review\` |
-| Processed | `C:\Knowledge\MCP\MCP_Book\_processed\` |
-| Rejected | `C:\Knowledge\MCP\MCP_Book\_rejected\` |
-| Audio output | `C:\Knowledge\MCP\MCP_Book\audio\` |
-| Master book (derived) | `C:\Knowledge\MCP\MCP_Book\BDF_Master_Book.txt` |
-| Cost log | `C:\Knowledge\MCP\MCP_Book\cost_log` |
+| Chapters (canonical) | `C:\Knowledge\BDF\BDF_Book\chapters\` |
+| Incoming sessions | `C:\Knowledge\BDF\BDF_Book\incoming\` |
+| Under review | `C:\Knowledge\BDF\BDF_Book\_review\` |
+| Processed | `C:\Knowledge\BDF\BDF_Book\_processed\` |
+| Rejected | `C:\Knowledge\BDF\BDF_Book\_rejected\` |
+| Audio output | `C:\Knowledge\BDF\BDF_Book\audio\` |
+| Master book (derived) | `C:\Knowledge\BDF\BDF_Book\BDF_Master_Book.txt` |
+| Cost log | `C:\Knowledge\BDF\BDF_Book\cost_log` |
 
 ---
 
