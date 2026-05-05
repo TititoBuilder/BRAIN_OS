@@ -27,6 +27,25 @@ updated: 2026-05-03
 - **Nodes Updated:** Cristian_Principles.md, Tools_Registry.md, Session_Protocol.md, Compile_Session_Workflow.md
 - **Impact:** Fixed critical MCP integration, established naming verification pattern
 
+### 2026-05-05 — BDF Session Compilation Batch (5 sessions)
+- **Sessions ingested:** March 15 (story/kling) + March 15 (style transfer) + March 15 (twitter) + March 18 + April 1
+- **Files updated:**
+  - `04_WORKFLOWS/BDF_Avatar_Pipeline.md` — gpt-image-1 model, age scale (5 tiers), quality tiers, CA5+Inkscape pipeline, scripts reference, DALL-E limitations, cost reference
+  - `04_WORKFLOWS/BDF_Social_Media_Flow.md` — image pipeline 5-source strategy, experiment scripts
+  - `04_WORKFLOWS/BDF_Content_Research_Flow.md` — `story_generator.py` reference + manual-write editorial decision
+  - `04_WORKFLOWS/BDF_Video_Production_Flow.md` — Kling AI integration notes, aspect ratio fix
+  - `04_DATA/BDF_LanceDB.md` — vector store rebuild recovery procedure
+  - `02_PROJECTS/BDF_Canvas.md` — DALL-E 3 deprecation deadline (May 12, 2026), GPT-4o + CostTracker fixes, milestones (Twitter live 2026-03-15, players_data 52/12, Telegram pipeline live 2026-04-01)
+  - `02_PROJECTS/BDF_Agent_Pipeline.md` — Telegram 3-bug fix record, ONE THREAD = ONE EVENT LOOP rule, simple_dashboard.py tooling
+  - `02_PROJECTS/BDF_Twitter_Publisher.md` — operational status banner
+  - `07_SYSTEM/Bash_PowerShell_Terminal.md` — `Set-Content` Python corruption gotcha
+- **Patch applied:** `BDF_Avatar_Pipeline_PATCH.md` (all 8 sections appended)
+- **Auto-handle rate:** ~100% — no review-blocking conflicts encountered
+- **Flagged items:** none — `REVIEW_NEEDED.md` not created
+- **Superseded notes:** the March 15 story/kling compile flagged two own-decisions as later-superseded (DALL-E avatar sourcing → gpt-image-1; DALL-E for portraits → partially superseded). History preserved in 10_CHATS/ source files; current state is documented in BDF_Avatar_Pipeline.md
+- **Commits:** 5 ingest commits + 1 docs commit on branch `claude/bdf-session-ingestion-g8fFL`
+- **Impact:** BDF knowledge graph now reflects production state through April 1, 2026 — image generation migration plan, asyncio architectural rule, image pipeline waterfall, 52-player roster all in place
+
 ### 2026-04-18 — Audio Learning + Resolve Expansion + Read-Along Rebuild
 - **Ingested:** 2026-05-03 (commit c207c68)
 - **Content:** Edge TTS creation, Resolve MCP 11→52 tools, Read-Along venv rebuild, project cheatsheet system
