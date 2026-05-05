@@ -179,3 +179,4 @@ tags: [system, tools, infra, live]
 - 2026-05-01 — Session 2026-04-30 final close. Full system standardization
 - 2026-05-02 — Context7 MCP audit complete - verified fully operational with HTTP
 - 2026-05-03 — Obsidian MCP fixed (obs-mcp → obsidian-mcp), 11 tools operational; Kokoro + Edge TTS costs documented; knowledge pipeline initiated
+- 2026-05-04 — Built complete knowledge management pipeline for BRAIN_OS:

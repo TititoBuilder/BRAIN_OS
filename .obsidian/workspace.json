@@ -11,10 +11,14 @@
             "id": "488e9daf53bde31e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "02_AGENTS/BDF_Creative_Agent.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "BDF_Creative_Agent"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"status\"]",
+                "query": "video agent",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -153,17 +157,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_DASHBOARD/Main_Canvas.canvas",
+                "file": "02_AGENTS/BDF_Creative_Agent.md",
                 "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
+                "showSearch": true,
+                "searchQuery": "v"
               },
               "icon": "lucide-list",
-              "title": "Outline of Main_Canvas"
+              "title": "Outline of BDF_Creative_Agent"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -182,6 +186,12 @@
   },
   "active": "488e9daf53bde31e",
   "lastOpenFiles": [
+    "04_WORKFLOWS/BDF_Avatar_Pipeline.md",
+    "02_PROJECTS/Custom_Agent_TTS.md",
+    "02_PROJECTS/OBS_MCP_Server.md",
+    "02_PROJECTS/Resolve_MCP_Server.md",
+    "02_PROJECTS/BDF_Canvas.md",
+    "09_TOOLS/session_2026-05-02.md",
     "07_SYSTEM/Cristian_Principles.md",
     "07_SYSTEM/Navigation_Shortcuts.md",
     "07_SYSTEM/Claude_Code_Cost_Control.md",
@@ -211,15 +221,9 @@
     "09_TOOLS/OBS_Node.md",
     "09_TOOLS/Predator_Node.md",
     "09_TOOLS/Windows_Tools_Node.md",
-    "09_TOOLS/VSCode_Node.md",
     "09_TOOLS",
-    "05_MEMORY/Daily_Log_2026-04-28.md",
-    "05_MEMORY/LanceDB_Vector_Store.md",
     "Untitled 1.base",
-    "07_SYSTEM/State_System.md",
-    "05_MEMORY/Daily_Log_Template.md",
     "Untitled.canvas",
-    "01_PROJECTS/BDF_Soccer_Bot.md",
     "08_TRIGGERS",
     "Untitled.base",
     "Untitled 1.canvas",
