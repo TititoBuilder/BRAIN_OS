@@ -58,6 +58,23 @@ An alternative considered was ChromaDB, but LanceDB's native Lance file format o
 
 ---
 
+## Recovery Procedure — Vector Store Rebuild
+
+<!-- Source: 20260318_session_compile (ingested 2026-05-05) -->
+
+When the LanceDB store becomes corrupted (mismatched schema, partial writes from a crashed process, or HP/Dell sync drift), the recovery path is a clean rebuild from the source CSVs rather than an in-place repair.
+
+Procedure executed on the HP machine on 2026-03-18:
+1. Stop any process that holds the store open (`mcp_ingest.py`, `dashboard_api.py`, `bot_service.py`).
+2. Delete the `lance_db` directory at `LANCE_DB_PATH` (Predator: `D:\lance_db_soccer`; HP local: `C:\lance_db`).
+3. Force a clean rebuild via `lancedb_integrator.py` — re-ingests structured CSVs (`player_profiles.csv`, `clubs.csv`, `competitions.csv`, optional `personal_life.csv` and `tactical_data.csv`).
+4. Confirm row count after rebuild — March 18 rebuild: 60 entries from 12 CSV files.
+5. Run a smoke generation against GPT-4o to confirm the caption pipeline reads from the rebuilt table end-to-end.
+
+Cross-machine consideration: after a rebuild on one machine, the other machine should `git pull` any code changes and re-run its own rebuild from the canonical CSVs. The `lance_db` directory itself is not synced via git.
+
+---
+
 ## Connected to
 
 - [[BDF_Canvas]]

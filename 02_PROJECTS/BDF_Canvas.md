@@ -223,6 +223,28 @@ The current `mcp_ingest.py` is a stateless adapter. Target: stateful agent loop 
 
 ---
 
+## Known Fixes
+
+<!-- Source: 20260318_session_compile (ingested 2026-05-05) -->
+
+### GPT-4o quality/format 400 errors (2026-03-18)
+The `images.generate()` call returned HTTP 400 when `quality="standard"` and `output_format="b64_json"` were used. Correct values are `quality="medium"` and `output_format="png"`.
+
+```python
+# WRONG (HTTP 400)
+quality="standard", output_format="b64_json"
+
+# CORRECT
+quality="medium", output_format="png"
+```
+
+Confirmed working post-fix: `gpt4o_doue_1772141923.png` generated at $0.042 (Status 200).
+
+### CostTracker.track_generation missing args (2026-03-18)
+`CostTracker.track_generation()` signature added required `content_type` and `input_tokens` parameters. `soccer_bot.py` line 507 was patched to pass `content_type="generation"`. An error-detail logger was added in `media_agent.py` immediately before `raise_for_status()` so future API errors surface their response body.
+
+---
+
 ## Connected to
 
 - [[Resolve_MCP_Server]]
