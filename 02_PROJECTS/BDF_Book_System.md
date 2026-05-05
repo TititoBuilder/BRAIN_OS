@@ -23,7 +23,18 @@ Session log → incoming\ → bdf-book run → Claude Opus compiles chapter
 → run_tts() → Kokoro audio → sync_audio_to_drive() → Google Drive
 ```
 
-**Command:** `bdf-book run` (run from project root)
+**Command:**
+```powershell
+cd C:\Dev\Projects\soccer-content-generator
+.\venv\Scripts\Activate.ps1
+python book_compiler.py           # process incoming + stitch
+python book_compiler.py --status  # check current state
+```
+
+**Force restitch without incoming:**
+```powershell
+python -c "from book_compiler import stitch_master_book; stitch_master_book(); print('Done.')"
+```
 
 ---
 
@@ -49,12 +60,13 @@ Session log → incoming\ → bdf-book run → Claude Opus compiles chapter
 Chapter `.txt` files in `chapters\` are the source of truth. The master book is a **derived artifact** — deleted and regenerated on every run. Never edit the master book directly.
 
 ### stitch_master_book()
-Loops `ch01 → ch16`, reads each `.txt` file, concatenates with dividers, writes `BDF_Master_Book.txt`. Fires automatically at end of every `bdf-book run`.
+Loops `ch01 → ch27`, reads each `.txt` file, concatenates with dividers, writes `BDF_Master_Book.txt`. Fires automatically at end of every run.
 
 ### Chapter Format
-- Files: `ch01.txt` → `ch16.txt`
-- Count: 16 chapters
+- Files: `.txt`
+- Count: 27 files on disk (see inventory — duplicates exist)
 - Encoding: UTF-8
+- Size: 385,886 characters total
 
 ### Post-Processing
 1. `run_tts()` — Kokoro TTS generates audio from master book
@@ -64,22 +76,44 @@ Loops `ch01 → ch16`, reads each `.txt` file, concatenates with dividers, write
 
 ## Chapter Inventory
 
-| Chapter | Topic | Status |
+| File | Topic | Size |
 |---|---|---|
-| ch01-ch20 | Various BDF technical topics | Compiled |
-| ch21 | Resolve 20 Free Tier NoneType Inventory | Compiled 2026-04-26 |
-| ch21 | Bridge Reload Discipline | ⚠️ Duplicate number — needs fix |
-| ch21 | Windows Encoding Patterns | ⚠️ Duplicate number — needs fix |
-| ch21 | MCP Bridge Two-Process Architecture | ⚠️ Duplicate number — needs fix |
+| ch01_pipeline_architecture | Pipeline Architecture | 16 KB |
+| ch02_predator_setup | Predator Setup | 15 KB |
+| ch03_tts_audio | TTS Audio | 11 KB |
+| ch04_lancedb_rag | LanceDB RAG | 16 KB |
+| ch05_telegram_twitter | Telegram + Twitter | 16 KB |
+| ch06_obs_clips | OBS Clips | 16 KB |
+| ch07_dashboard_ui | Dashboard UI | 16 KB |
+| ch08_methodology | Methodology | 16 KB |
+| ch09_roadmap | Roadmap | 17 KB |
+| ch10_cartoon_animator | Cartoon Animator | 17 KB |
+| ch11_first_end_to_end_export | First End-to-End Export | 15 KB |
+| ch11_image_gallery | Image Gallery | 18 KB ⚠️ duplicate number |
+| ch12_nuclear_clear_tool | Nuclear Clear Tool | 9 KB |
+| ch12_terminology_glossary | Terminology Glossary | 18 KB ⚠️ duplicate number |
+| ch13_deploy_discipline | Deploy Discipline | 10 KB |
+| ch13_evolution_decisions | Evolution Decisions | 18 KB ⚠️ duplicate number |
+| ch14_async_export_pattern | Async Export Pattern | 9 KB |
+| ch14_ideas_discoveries | Ideas + Discoveries | 20 KB ⚠️ duplicate number |
+| ch15_clip_type_system | Clip Type System | 13 KB |
+| ch15_learning_discoveries | Learning + Discoveries | 17 KB ⚠️ duplicate number |
+| ch16_cost_tracking | Cost Tracking | 7 KB |
+| ch16_knowledge_enricher | Knowledge Enricher | 8 KB ⚠️ duplicate number |
+| ch17_clip_name_parser | Clip Name Parser | 10 KB |
+| ch18_competition_detection | Competition Detection | 13 KB |
+| ch19_export_pipeline | Export Pipeline | 15 KB |
+| ch20_format_b_path_resolution | Format B Path Resolution | 9 KB |
+| ch21_library_routing | Library Routing | 13 KB |
 
-**Known issue:** Multiple chapters labeled "Chapter 21" — numbering bug in generation. Run audit to identify true chapter count and fix numbering before next compile.
+**⚠️ Duplicate chapter numbers: ch11–ch16 each have 2 files (27 files, ~21 unique chapters). Renumbering needed before next compile.**
 
 ---
 
 ## Known Issues
 
-- Chapter 21 numbering collision — 4 chapters share the same number
-- ⚠️ DALL-E 3 deprecated May 12, 2026 — migrate image generation calls before deadline
+- ch11–ch16 duplicate numbering — 6 pairs need sequential renaming
+- GDrive credentials shared with CA book compiler (by design — both point to BDF project dir)
 
 ---
 
@@ -88,4 +122,5 @@ Loops `ch01 → ch16`, reads each `.txt` file, concatenates with dividers, write
 - [[BDF_Avatar_Pipeline]] — avatar generation system documented in this book
 - [[BDF_Agent_Pipeline]] — Telegram + async architecture
 - [[BDF_Canvas]] — project overview
+- [[CA_Book_System]] — sister book, identical architecture
 - [[Creative_Systems]] — parent domain
