@@ -76,6 +76,47 @@ Stories produced by `story_generator.py` are standalone scripts intended for man
 
 ---
 
+## Architectural Rule — Asyncio Across Threads
+
+<!-- Source: 20260401_session_compile (ingested 2026-05-05) -->
+
+**ONE THREAD = ONE EVENT LOOP = ONE BOT INSTANCE.** Never share asyncio objects (event loops, `telegram.Bot` instances, aiohttp connection pools) across threads. The instance is bound to the loop on the thread that created it; reusing it from another thread raises `RuntimeError: Event loop is closed` and silently exhausts the connection pool.
+
+Applied pattern in `src/telegram_approver.py`:
+
+```python
+def start_background_polling(self):
+    def thread_worker():
+        thread_bot = TelegramBot(token=self.token)  # fresh instance, this thread's loop
+        asyncio.run(self._async_sync_on_bot(thread_bot))
+    threading.Thread(target=thread_worker).start()
+```
+
+`_async_sync_on_bot(bot)` accepts the thread-local bot as an argument; the public `_async_sync` is a thin wrapper that calls it with `self.bot` from the main thread. This decouples the work from any single bot/loop pair.
+
+---
+
+## Bug Fix Record — Telegram Approver (2026-04-01)
+
+<!-- Source: 20260401_session_compile (ingested 2026-05-05) -->
+
+Symptom: APPROVE/REJECT taps in Telegram registered (button echo visible) but zero posts published to Twitter; queue grew indefinitely. Root cause was three compounding bugs in `src/telegram_approver.py`:
+
+1. **`.get()` on a class instance.** Approver received either a dict or a `Post` object depending on the call path. `post.get("platform")` raises `AttributeError` on the class instance branch, but the exception was swallowed by the surrounding handler so the failure was invisible.
+   - Fix: use `getattr(post, "platform", None)` — works for both dict and class-instance shapes (dict gets coerced via the dict-to-attrs adapter elsewhere in the call path).
+
+2. **Shared bot across threads.** `self.bot` was constructed on the main thread; the background polling daemon imported it and tried to reuse it on its own loop, producing `RuntimeError: Event loop is closed` on the first callback delivery. See architectural rule above.
+   - Fix: instantiate a fresh `TelegramBot` inside the thread worker.
+
+3. **Connection pool exhaustion.** A consequence of (2) — failed requests on the cross-thread bot never released their aiohttp connections, so the pool filled with dead sockets and every subsequent request timed out.
+   - Fix: resolved automatically once (2) was fixed; no separate change required.
+
+Files modified: `src/telegram_approver.py` — full rewrite of `start_background_polling`, `_async_sync`, `_async_sync_on_bot` (new), and the approve callback handler. Added `success / reject / edit` `logger.info` lines so terminal confirmation is visible per-decision.
+
+Pattern note for Python class-vs-dict ambiguity: prefer `getattr(obj, "attr", default)` over `obj.get("attr")` when the same handler must accept both shapes.
+
+---
+
 ## Connected to
 
 - [[BDF_Canvas]]

@@ -226,6 +226,16 @@ The current `mcp_ingest.py` is a stateless adapter. Target: stateful agent loop 
 
 ---
 
+## Milestones
+
+<!-- Sources: 20260401_session_compile (ingested 2026-05-05) -->
+
+| Date | Milestone |
+|---|---|
+| 2026-04-01 | Pipeline confirmed live end-to-end: Telegram tap → background thread (within 5s) → Twitter publish. @tititoluli1987 went 6 → 10 posts in-session after the asyncio fix in `telegram_approver.py`. |
+
+---
+
 ## Known Fixes
 
 <!-- Source: 20260318_session_compile (ingested 2026-05-05) -->
