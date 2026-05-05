@@ -6,6 +6,9 @@ updated: 2026-05-02
 parent: "[[Project_Directory]]"
 ---
 
+> ⚠️ **CRITICAL DEADLINE — DALL-E 3 deprecation: May 12, 2026.**
+> All `dall-e-3` model calls in this codebase must be migrated to `gpt-image-1` (via `images.edit()` for style transfer) before this date. Migration plan and checklist live in [[BDF_Avatar_Pipeline]]. Source: 20260315 style-transfer session compile.
+
 # BDF Soccer Content Generator — Master Pipeline Overview
 
 AI-powered pipeline that ingests football highlight clips from DaVinci Resolve, enriches them with semantic context from a LanceDB vector store, generates platform-specific captions via Claude, and routes finished posts through a Telegram approval flow to Twitter and other social platforms.
