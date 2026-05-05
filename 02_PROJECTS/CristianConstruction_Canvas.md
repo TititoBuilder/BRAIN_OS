@@ -14,7 +14,7 @@ domain: CristianConstruction
 - **Structure:** Sole proprietor
 - **Location:** Norwalk, CA
 - **Service radius:** Norwalk, Cerritos, Downey, Santa Fe Springs, Bellflower
-- **Code:** `C:\Dev\Projects\CristianConstruction\`
+- **Code:** No dedicated project folder yet — business only, no deployed tech stack
 
 ---
 
@@ -33,49 +33,38 @@ domain: CristianConstruction
 ## Marketing Channels
 | Channel | Status |
 |---|---|
-| Nextdoor | Profile exists — old brand name, needs update to Custom Agent |
-| Thumbtack | Identified, setup status unknown |
-| Angi | Identified, setup status unknown |
-| Facebook | Identified, setup status unknown |
-| Instagram | Identified, setup status unknown |
+| Nextdoor | Profile exists — still shows old brand (Loving Home Renovations), needs update |
+| Thumbtack | Identified — setup status unconfirmed |
+| Angi | Identified — setup status unconfirmed |
+| Facebook | Identified — setup status unconfirmed |
+| Instagram | Identified — setup status unconfirmed |
 
 ---
 
 ## Legal & Insurance
 | Item | Status |
 |---|---|
-| Business license | Flagged Week 1 — **unconfirmed, needs verification** |
-| Public liability insurance | $30–45/mo estimated, **not confirmed purchased** |
-| C-33 painting license | Steps researched, **not filed** |
+| Business license | Flagged Week 1 — **unconfirmed, verify** |
+| Public liability insurance | $30–45/mo estimated — **not confirmed purchased** |
+| C-33 painting license | Steps researched — **not filed** |
 
 ---
 
 ## Wooden House Numbers
-- Status: **Ideation only — nothing built, priced, or listed**
+- **Status:** Ideation only — nothing built, priced, or listed
 - Concepts: live edge slabs, carved/metal numbers
-- Channels explored: Etsy, Shopify, real estate agent partnerships
-- Next step: build first product + price it
-
----
-
-## Tech Stack (deployed)
-| Component | Location |
-|---|---|
-| 9-agent system | `C:\Dev\Projects\CristianConstruction\` |
-| React dashboard | deployed |
-| Vercel landing page | deployed |
-| venv | `C:\Dev\Projects\CristianConstruction\venv\` |
-| CLAUDE.md | `C:\Dev\Projects\CristianConstruction\CLAUDE.md` |
+- Channels: Etsy, Shopify, real estate agent partnerships
+- **Next step:** build first product + price it
 
 ---
 
 ## Open Tasks
-1. Confirm business license was filed
-2. Close out insurance — purchase or drop
-3. Update Nextdoor profile to Custom Agent brand
+1. Confirm business license filed
+2. Purchase insurance or drop decision
+3. Update Nextdoor to Custom Agent brand
 4. Verify Thumbtack/Angi/Facebook/Instagram active status
 5. Build + price first wooden house number product
-6. Separate venv from BDF (backlog)
+6. Create project folder if tech work begins
 
 ---
 
