@@ -110,6 +110,20 @@ Text-file uploads are converted to speech using Kokoro TTS from the BDF project 
 
 ---
 
+## Venv Rebuild — April 18, 2026
+
+**Problem:** All pip commands failed with "Unable to create process using..." after project folder was moved from `C:\Knowledge\` to `C:\Users\titit\Projects\`.
+
+**Root Cause:** Python venvs hardcode absolute paths in their `.exe` launchers at creation time. Moving the folder breaks every script in `venv\Scripts\`.
+
+**Fix:** Deleted old venv, created fresh with `python -m venv venv` at the new location.
+
+**Verification:** PyTorch 2.11.0+cu128 installed, `torch.cuda.is_available() = True`, RTX 5070 Ti detected.
+
+**Rule:** Create venvs at their final location. If a project moves, delete and recreate the venv — do not copy or move it.
+
+---
+
 ## Open Items
 
 - Word-level highlighting sync mechanism (word-level timestamps vs cursor) not yet implemented

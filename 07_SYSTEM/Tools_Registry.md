@@ -79,6 +79,21 @@ tags: [system, tools, infra, live]
 
 ---
 
+## Edge TTS
+- Type: Microsoft text-to-speech service
+- Engine: Microsoft Edge TTS (cloud, free)
+- Voice: en-US-GuyNeural (male, American English, natural-sounding)
+- Rate: -5% (slightly slower for learning comprehension)
+- Cost: $0 — 100% FREE Microsoft service
+- Format: MP3 output
+- Installation: `pip install edge-tts` (global)
+- Use case: one-off learning guides, documentation audio, tutorial narration
+- NOT for: repetitive batch generation (use Kokoro for that)
+- Added: 2026-04-18
+- See: [[Edge_TTS_Learning_System]]
+
+---
+
 ## DaVinci Resolve
 - Type: Professional video editor
 - Machine: HP (OBS recording) + Predator (editing via MCP)
