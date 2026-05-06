@@ -13,7 +13,7 @@ Prevents fragmentation — every memory artifact links here.
 - [[LanceDB_Vector_Store]] — F: drive, all-MiniLM-L6-v2 embeddings
 
 ### Knowledge books
-- [[BDF_Knowledge_Book]] — soccer RAG corpus, [CHxx_KEY] format
+- [[BDF_Book_System]] — 16-chapter technical knowledge book, auto-compiled via book_compiler.py
 - [[CA_Knowledge_Book]] — construction OS corpus, #chXX line 1 format
 
 ### Pipeline state

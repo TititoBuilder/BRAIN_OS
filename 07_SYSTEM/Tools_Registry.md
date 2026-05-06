@@ -70,6 +70,28 @@ tags: [system, tools, infra, live]
 - Version: latest stable
 - Plugins: Canvas (core), Graph View (core)
 
+### Obsidian MCP
+- Status: ✅ Operational (fixed 2026-05-03)
+- Tools: 11 (create-note, read-note, edit-note, search-vault, etc.)
+- Config: `npx -y obsidian-mcp C:\BRAIN_OS`
+- **Fix applied:** Was registered as "obs-mcp" (wrong package) - corrected to "obsidian-mcp"
+- **Naming confusion:** "obs" = OBS Studio (streaming), "obsidian" = Obsidian (notes)
+
+---
+
+## Edge TTS
+- Type: Microsoft text-to-speech service
+- Engine: Microsoft Edge TTS (cloud, free)
+- Voice: en-US-GuyNeural (male, American English, natural-sounding)
+- Rate: -5% (slightly slower for learning comprehension)
+- Cost: $0 — 100% FREE Microsoft service
+- Format: MP3 output
+- Installation: `pip install edge-tts` (global)
+- Use case: one-off learning guides, documentation audio, tutorial narration
+- NOT for: repetitive batch generation (use Kokoro for that)
+- Added: 2026-04-18
+- See: [[Edge_TTS_Learning_System]]
+
 ---
 
 ## DaVinci Resolve
@@ -184,3 +206,6 @@ tags: [system, tools, infra, live]
 - 2026-04-18 — Resolve MCP expanded 11→52 tools (3 phases). Read-Along venv rebuilt. Edge TTS audio learning system established. Rules 11-13 added.
 - 2026-05-01 — UTF-8 encoding fix verified — em dashes now render correctly
 - 2026-05-01 — Session 2026-04-30 final close. Full system standardization
+- 2026-05-02 — Context7 MCP audit complete - verified fully operational with HTTP
+- 2026-05-03 — Obsidian MCP fixed (obs-mcp → obsidian-mcp), 11 tools operational; Kokoro + Edge TTS costs documented; knowledge pipeline initiated
+- 2026-05-04 — Built complete knowledge management pipeline for BRAIN_OS:
