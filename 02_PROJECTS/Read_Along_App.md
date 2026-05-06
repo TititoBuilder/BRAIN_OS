@@ -73,9 +73,31 @@ Frontend: pending Vite scaffold.
 
 ---
 
+## Venv History
+
+| Date | Event |
+|---|---|
+| 2026-04-14 | Initial venv created at `backend/venv/` |
+| 2026-04-18 | Venv REBUILT — corrupted .exe launchers, shebang paths pointed to old location, all pip commands failing |
+
+**Rebuild state (2026-04-18):**
+- PyTorch 2.11.0+cu128 (from CUDA wheels)
+- CUDA verified: RTX 5070 Ti detected
+- FFmpeg: system-wide install confirmed
+- Whisper: installed
+- FastAPI: **still pending** (needs install before backend can serve)
+
+**Key lesson — venv path corruption:**
+Python venvs hardcode absolute paths into `.exe` launchers and `pyvenv.cfg`.
+Moving or renaming the project folder breaks those paths silently.
+Fix: always delete and recreate the venv at the new location. Never move a venv.
+
+---
+
 ## Open Items
 
 - Vite frontend scaffold is pending — project is in scaffolding phase
+- FastAPI install pending in rebuilt venv (as of 2026-04-18)
 - Supported upload formats not yet documented (confirm when frontend is built)
 - Highlighting sync mechanism (word-level timestamps vs cursor) not yet implemented
 
