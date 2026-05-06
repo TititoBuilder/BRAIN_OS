@@ -1,43 +1,27 @@
 ---
-tags: [project, whisper, transcription, fastapi, react, tts, scaffolding]
+tags: [project, whisper, transcription, fastapi, react, scaffolding]
 project: read-along-app
-status: active
-updated: 2026-05-02
+status: scaffolding
+updated: 2026-05-01
 parent: "[[Project_Directory]]"
 ---
 
-# Read-Along App — Karaoke-Style Transcription Tool
+# Read-Along App — Whisper Transcription Tool
 
-Karaoke-style read-along web app. Users upload audio or text files — the FastAPI backend transcribes audio with OpenAI Whisper (word-level timestamps), and the React frontend highlights each word in sync with playback. Text files are converted to speech via Kokoro TTS (delegated to the BDF soccer-content-generator project) before transcription.
+Standalone audio transcription tool. User uploads an audio file,
+gets back timestamped transcribed text synced with audio playback.
 
-Root: `C:\Users\titit\Projects\read-along-app\`
-GitHub: `TititoBuilder/read-along-app` (private)
-
----
-
-## Business Value
-
-General-purpose transcription and read-along tool. Primary use case: make any document or recording listenable and followable with synchronized word highlighting. Runs entirely locally using GPU-accelerated Whisper on the RTX 5070 Ti.
+> **CA Book connection: DENIED.**
+> This project has no dependency on CA Book WAV files or `ca_audio.py`.
+> It is a general-purpose transcription tool, not a CA Book listener.
 
 ---
 
-## Architecture
+## What It Does
 
-```
-Upload (audio or text file)
-  ↓
-backend.py (FastAPI)
-  ├─ Audio file → Whisper base model (local GPU)
-  │               → word-level timestamps JSON
-  └─ Text file  → Kokoro TTS via BDF project (subprocess)
-                  (C:\Dev\Projects\soccer-content-generator\tts_local.py)
-                  → generated_audio/ .wav
-                  → Whisper transcription → word-level timestamps JSON
-  ↓
-React 18 + TypeScript + Vite frontend
-  → displays text synced with audio playback
-  → highlights each word as it is spoken
-```
+Upload endpoint receives audio → Whisper transcribes on local GPU
+(RTX 5070 Ti) → returns timestamped text → frontend displays text
+synced with audio playback.
 
 ---
 
@@ -46,10 +30,21 @@ React 18 + TypeScript + Vite frontend
 | Layer | Technology |
 |---|---|
 | Backend | FastAPI (`backend/backend.py`) |
-| Speech-to-text | OpenAI Whisper base model — local, GPU-accelerated (RTX 5070 Ti, CUDA 12.8) |
-| TTS | Kokoro via `C:\Dev\Projects\soccer-content-generator\tts_local.py` (subprocess) |
-| Frontend | React 18 + TypeScript + Vite |
-| Backend venv | `backend/venv/` — PyTorch + Whisper + FastAPI (large) |
+| Speech-to-text | OpenAI Whisper (local, GPU-accelerated) |
+| Frontend | React/Vite (**not yet scaffolded** as of 2026-04-16) |
+| Venv | `backend/venv/` (PyTorch + Whisper + FastAPI — large) |
+
+---
+
+## Launch
+
+```powershell
+cd C:\Users\titit\Projects\read-along-app\backend
+& .\venv\Scripts\Activate.ps1
+uvicorn backend:app --reload
+```
+
+Frontend: pending Vite scaffold.
 
 ---
 
@@ -59,61 +54,8 @@ React 18 + TypeScript + Vite frontend
 |---|---|
 | Project root | `C:\Users\titit\Projects\read-along-app\` |
 | Backend | `backend/backend.py` |
-| Backend venv | `backend/venv/` |
-| Generated audio | `generated_audio/` (gitignored) |
-| Frontend | `frontend/` |
-| BDF project | `C:\Dev\Projects\soccer-content-generator\` |
-| BDF Python | `C:\Dev\Projects\soccer-content-generator\venv\Scripts\python.exe` |
+| Frontend | `frontend/` (empty) |
 | Workspace file | `read-along.code-workspace` |
-
----
-
-## Running
-
-```powershell
-# Backend
-cd C:\Users\titit\Projects\read-along-app\backend
-& .\venv\Scripts\Activate.ps1
-uvicorn backend:app --reload
-
-# Frontend (separate terminal)
-cd C:\Users\titit\Projects\read-along-app\frontend
-npm run dev
-```
-
----
-
-## Environment Variables
-
-```
-TELEGRAM_BOT_TOKEN
-TELEGRAM_CHAT_ID
-```
-
-Telegram alerts fire on startup and on Whisper model load crash.
-
----
-
-## Do Not Run Standalone
-
-- `backend/venv/Scripts/python.exe` — use the project venv only inside `backend/`
-- `C:\Dev\Projects\soccer-content-generator\tts_local.py` — called only by `backend.py` via subprocess
-- `C:\Dev\Projects\soccer-content-generator\converter.py` — same
-
----
-
-## TTS Delegation Note
-
-Text-file uploads are converted to speech using Kokoro TTS from the BDF project (`tts_local.py`). This project does **not** have its own TTS venv — it calls the BDF Python interpreter as a subprocess. The fragile coqui-tts patches live in the [[Custom_Agent_TTS]] venv, but for this app the BDF project's `tts_local.py` is the entry point.
-
-> **CA Book connection: DENIED.** This app has no dependency on CA Book WAV files or `ca_audio.py`. It is a general-purpose transcription tool.
-
----
-
-## Open Items
-
-- Word-level highlighting sync mechanism (word-level timestamps vs cursor) not yet implemented
-- Supported upload formats not yet confirmed (document when frontend is built)
 
 ---
 
@@ -121,19 +63,48 @@ Text-file uploads are converted to speech using Kokoro TTS from the BDF project 
 
 | Item | Status |
 |---|---|
-| `CLAUDE.md` | ✅ Created |
+| `CLAUDE.md` | ✅ Created (auto-generated from filesystem) |
 | `.claude/settings.json` | ✅ Scoped — 14 allow + 3 deny rules |
-| `.gitignore` | ✅ Protects 3 GB venv from git |
+| `.gitignore` | ✅ Protects 3GB venv from git |
 | Telegram alerts | ✅ Added to `backend.py` — fires on startup and Whisper model load crash |
-| Git | ✅ Local, branch `main` |
+| Git | ✅ Local, branch `main`, commit `3fb91ae` (initial, 2026-04-14) |
 | GitHub | ✅ `TititoBuilder/read-along-app` (private), pushed 2026-04-30 |
 | Model audit | ✅ Zero `claude-opus` references |
 
 ---
 
+## Venv History
+
+| Date | Event |
+|---|---|
+| 2026-04-14 | Initial venv created at `backend/venv/` |
+| 2026-04-18 | Venv REBUILT — corrupted .exe launchers, shebang paths pointed to old location, all pip commands failing |
+
+**Rebuild state (2026-04-18):**
+- PyTorch 2.11.0+cu128 (from CUDA wheels)
+- CUDA verified: RTX 5070 Ti detected
+- FFmpeg: system-wide install confirmed
+- Whisper: installed
+- FastAPI: **still pending** (needs install before backend can serve)
+
+**Key lesson — venv path corruption:**
+Python venvs hardcode absolute paths into `.exe` launchers and `pyvenv.cfg`.
+Moving or renaming the project folder breaks those paths silently.
+Fix: always delete and recreate the venv at the new location. Never move a venv.
+
+---
+
+## Open Items
+
+- Vite frontend scaffold is pending — project is in scaffolding phase
+- FastAPI install pending in rebuilt venv (as of 2026-04-18)
+- Supported upload formats not yet documented (confirm when frontend is built)
+- Highlighting sync mechanism (word-level timestamps vs cursor) not yet implemented
+
+---
+
 ## Connected to
 
-- [[BDF_Canvas]]
-- [[Custom_Agent_TTS]]
 - [[Project_Directory]]
 - [[Tools_Registry]]
+- [[Session_Protocol]]
