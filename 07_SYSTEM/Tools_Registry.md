@@ -156,6 +156,19 @@ tags: [system, tools, infra, live]
 
 ---
 
+## Edge TTS
+- Type: Local text-to-speech for audio learning guides
+- Install: `pip install edge-tts` (global, not project-specific)
+- Voice: `en-US-GuyNeural` — clear, natural, human-sounding
+- Rate: `-5%` (slightly slower for comprehension)
+- Output: MP3 files generated on Predator, saved to `C:\Knowledge\[TopicFolder]\`
+- Workflow: Claude generates narration script (.txt) + generator script (.py) → Cristian runs generator → MP3 output → Google Drive backup (drag-and-drop)
+- Trigger phrase: "Create a learning guide for [topic] using my audio learning system"
+- Decision log: gTTS tried (robotic), espeak tried (worse), Edge TTS chosen (2026-04-18)
+- Do NOT use: gTTS, espeak, ElevenLabs, or OpenAI TTS — Edge TTS is the standard
+
+---
+
 ## Connected to
 - [[MCP_Registry]]
 - [[Active_Environments]]
@@ -168,5 +181,6 @@ tags: [system, tools, infra, live]
 - 2026-04-30 — Telegram fix test
 - 2026-04-30 — Session 2026-04-30 — Knowledge continuity architecture complete.
 - 2026-04-30 — Session 2026-04-30 — Full session close pipeline operational.
+- 2026-04-18 — Resolve MCP expanded 11→52 tools (3 phases). Read-Along venv rebuilt. Edge TTS audio learning system established. Rules 11-13 added.
 - 2026-05-01 — UTF-8 encoding fix verified — em dashes now render correctly
 - 2026-05-01 — Session 2026-04-30 final close. Full system standardization
