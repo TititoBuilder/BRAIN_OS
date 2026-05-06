@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3140a73a7467676b",
+        "id": "c77e67945cc35fe6",
         "type": "tabs",
         "children": [
           {
-            "id": "488e9daf53bde31e",
+            "id": "74478514ff0624c1",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -49,8 +49,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"status\"]",
-                "matchingCase": false,
+                "query": "[\"projects\"]",
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -70,12 +70,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 228.50377655029297
+    "width": 200
   },
   "right": {
     "id": "cec74b108c8a5953",
@@ -91,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "00_DASHBOARD/Main_Canvas.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Main_Canvas"
+              "title": "Backlinks"
             }
           },
           {
@@ -110,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "00_DASHBOARD/Main_Canvas.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Main_Canvas"
+              "title": "Outgoing links"
             }
           },
           {
@@ -153,21 +150,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_DASHBOARD/Main_Canvas.canvas",
                 "followCursor": false,
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Main_Canvas"
+              "title": "Outline"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 320.5
+    "width": 314.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,17 +176,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "488e9daf53bde31e",
+  "active": "74478514ff0624c1",
   "lastOpenFiles": [
-    "07_SYSTEM/Cristian_Principles.md",
-    "07_SYSTEM/Navigation_Shortcuts.md",
-    "07_SYSTEM/Claude_Code_Cost_Control.md",
-    "canvases/BDF_Canvas.md",
-    "canvases/CA_Canvas.md",
-    "2026-04-27.md",
-    "Google_Drive.md",
-    "README.md",
-    "SESSION_TEMPLATE.md",
+    "09_TOOLS/09_TOOLS_INDEX.md",
+    "Untitled 2.base",
+    "2026-05-05.md",
+    "Untitled.md",
+    "Untitled 1.md",
+    "Untitled 1",
+    "Untitled",
+    "00_DASHBOARD/Main_Canvas.canvas",
+    "01_DOMAINS/Creative_Systems.md",
+    "01_DOMAINS/AI_Engineering.md",
+    "05_MEMORY/BDF_Knowledge_Book.md",
+    "02_PROJECTS/CristianConstruction.md",
+    "Untitled 10.canvas",
+    "02_PROJECTS/_archive/CristianConstruction_OLD.md",
+    "Untitled 9.canvas",
+    "02_PROJECTS/_archive/README.md",
+    "02_PROJECTS/_archive",
+    "00_NAV/SYSTEM_Rules.md",
+    "00_NAV/CA_Nav.md",
+    "00_NAV/ReadAlong_Nav.md",
+    "00_NAV/OBS_Nav.md",
+    "00_NAV/ResolveMCP_Nav.md",
+    "00_NAV/CC_Nav.md",
+    "00_NAV/BDF_Nav.md",
+    "00_NAV",
+    "2026-05-03.md",
+    "NodeWhat it shows02_PROJECTS/BDF_Canvas.md",
+    "NodeWhat it shows02_PROJECTS",
+    "04_WORKFLOWS/BDF_Avatar_Pipeline.md",
+    "02_PROJECTS/Custom_Agent_TTS.md",
+    "01_DOMAINS/Data_Science.md",
+    "02_PROJECTS/CA_Book_System.md",
+    "02_PROJECTS/BDF_Book_System.md",
+    "01_PROJECTS/BDF_Soccer_Bot.md",
+    "02_AGENTS/BDF_Memory_Agent.md",
     "Untitled 2.canvas",
     "Untitled 3.canvas",
     "Untitled 4.canvas",
@@ -198,32 +220,9 @@
     "Untitled 6.canvas",
     "Untitled 7.canvas",
     "Untitled 8.canvas",
-    "00_DASHBOARD/Main_Canvas.canvas",
-    "09_TOOLS/session_2026-04-30.md",
-    "03_APIS/CLAUDE.md",
-    "10_SKILLS/OBS_Skill.md",
-    "10_SKILLS/Obsidian_Skill.md",
-    "10_SKILLS/FancyZones_Skill.md",
-    "10_SKILLS/10_SKILLS_INDEX.md",
     "10_SKILLS",
-    "09_TOOLS/Tools_Book_Node.md",
-    "09_TOOLS/09_TOOLS_INDEX.md",
-    "09_TOOLS/OBS_Node.md",
-    "09_TOOLS/Predator_Node.md",
-    "09_TOOLS/Windows_Tools_Node.md",
-    "09_TOOLS/VSCode_Node.md",
     "09_TOOLS",
-    "05_MEMORY/Daily_Log_2026-04-28.md",
-    "05_MEMORY/LanceDB_Vector_Store.md",
     "Untitled 1.base",
-    "07_SYSTEM/State_System.md",
-    "05_MEMORY/Daily_Log_Template.md",
-    "Untitled.canvas",
-    "01_PROJECTS/BDF_Soccer_Bot.md",
-    "08_TRIGGERS",
-    "Untitled.base",
-    "Untitled 1.canvas",
-    "05_MEMORY/LanceDB_Vector_Store.md.tmp.33040.1777336809689",
-    "04_WORKFLOWS/RA_Transcription_Flow.md.tmp.33040.1777336709470"
+    "08_TRIGGERS"
   ]
 }
