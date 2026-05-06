@@ -59,5 +59,5 @@ Chapter content here — single block only.
 ## Connected to
 - [[Anthropic_Claude]]
 - [[GoogleDrive_API]]
-- [[BDF_Knowledge_Book]]
+- [[BDF_Book_System]]
 - [[CA_Knowledge_Book]]
