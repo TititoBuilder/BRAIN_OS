@@ -7,88 +7,29 @@
   "showOrphans": true,
   "collapse-color-groups": false,
   "colorGroups": [
-    {
-      "query": "path:02_AGENTS  ",
-      "color": {
-        "a": 1,
-        "rgb": 5639344
-      }
-    },
-    {
-      "query": "path:04_WORKFLOWS",
-      "color": {
-        "a": 1,
-        "rgb": 3635977
-      }
-    },
-    {
-      "query": "path:05_MEMORY ",
-      "color": {
-        "a": 1,
-        "rgb": 14543876
-      }
-    },
-    {
-      "query": "path:03_APIS",
-      "color": {
-        "a": 1,
-        "rgb": 270480
-      }
-    },
-    {
-      "query": "path:01_PROJECTS",
-      "color": {
-        "a": 1,
-        "rgb": 16731392
-      }
-    },
-    {
-      "query": "tag:#critical",
-      "color": {
-        "a": 1,
-        "rgb": 8131843
-      }
-    },
-    {
-      "query": "path:07_SYSTEM",
-      "color": {
-        "a": 1,
-        "rgb": 5065804
-      }
-    },
-    {
-      "query": "path:08_TRIGGERS",
-      "color": {
-        "a": 1,
-        "rgb": 15241817
-      }
-    }
+    {"query": "path:10_CHATS", "color": {"a": 1, "rgb": 26367}},
+    {"query": "path:01_PROJECTS OR path:02_PROJECTS", "color": {"a": 1, "rgb": 56576}},
+    {"query": "path:02_AGENTS", "color": {"a": 1, "rgb": 16716947}},
+    {"query": "path:03_APIS", "color": {"a": 1, "rgb": 65535}},
+    {"query": "path:04_WORKFLOWS", "color": {"a": 1, "rgb": 8388352}},
+    {"query": "path:05_MEMORY", "color": {"a": 1, "rgb": 16766720}},
+    {"query": "path:07_SYSTEM", "color": {"a": 1, "rgb": 12632256}},
+    {"query": "path:08_TRIGGERS", "color": {"a": 1, "rgb": 16747520}},
+    {"query": "path:09_TOOLS", "color": {"a": 1, "rgb": 16744272}},
+    {"query": "path:00_DASHBOARD", "color": {"a": 1, "rgb": 32896}},
+    {"query": "path:06_TEMPLATES", "color": {"a": 1, "rgb": 9662683}},
+    {"query": "path:10_SKILLS", "color": {"a": 1, "rgb": 16738484}}
   ],
-<<<<<<< HEAD
-  "collapse-display": true,
+  "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
-  "collapse-forces": true,
+  "collapse-forces": false,
   "centerStrength": 0.518713248970312,
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.6316047338086719,
+  "scale": 1,
   "close": false
-=======
-  "collapse-display": false,
-  "showArrow": true,
-  "textFadeMultiplier": -2,
-  "nodeSizeMultiplier": 1.34889061616733,
-  "lineSizeMultiplier": 0.994340022611645,
-  "collapse-forces": false,
-  "centerStrength": 0.404112492933861,
-  "repelStrength": 10.524307518372,
-  "linkStrength": 0.404112492933861,
-  "linkDistance": 220,
-  "scale": 0.5359797117541841,
-  "close": true
->>>>>>> 7969df326b92565b36b02bf7d08c2c4676a05fcf
 }
