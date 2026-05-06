@@ -40,7 +40,7 @@ Get-Command ca-log, ca-compile, ca-book, ca-audio
 |---|---|
 | `bdf-log "filename.txt"` | Moves file from Downloads to `BDF\Session_Resumes\processed\` |
 | `bdf-compile "filename.txt"` | Moves file from Downloads to `BDF_Book\incoming\` |
-| `bdf-book` | Activates BDF venv → runs `book_[compiler.py](http://compiler.py)` → compiles all files in `incoming\`, generates audio, syncs to Drive |
+| `bdf-book` | Activates BDF venv → runs `book_compiler.py` → compiles all files in `incoming\`, generates audio, syncs to Drive |
 
 ---
 
@@ -50,8 +50,8 @@ Get-Command ca-log, ca-compile, ca-book, ca-audio
 |---|---|
 | `ca-log "filename.txt"` | Moves file from Downloads to `CA\Session_Resumes\processed\` |
 | `ca-compile "filename.txt"` | Moves file from Downloads to `CA_Book\incoming\` |
-| `ca-book` | Activates BDF venv (shared) → runs CA `book_[compiler.py](http://compiler.py)` → auto-syncs chapter .wav + `CA_Master_Book.txt` to Google Drive `CA_Book_Audio/` |
-| `ca-audio chXX_name` | Activates TTS venv → runs `ca_[audio.py](http://audio.py)` for one chapter → outputs .wav to `C:\Knowledge\CA\CA_Book\audio\` |
+| `ca-book` | Activates BDF venv (shared) → runs CA `book_compiler.py` → auto-syncs chapter .wav + `CA_Master_Book.txt` to Google Drive `CA_Book_Audio/` |
+| `ca-audio chXX_name` | Activates TTS venv → runs `ca_audio.py` for one chapter → outputs .wav to `C:\Knowledge\CA\CA_Book\audio\` |
 
 > ⚠️ `ca-book` uses the **BDF venv**, not the TTS venv. The TTS venv
 > (`C:\Dev\Projects\custom-agent\venv\`) is only invoked by `ca-audio`.
@@ -73,7 +73,7 @@ Get-Command ca-log, ca-compile, ca-book, ca-audio
 
 1. `bdf-book` cost: $1–2.50 per normal run. Batching causes overlap = $7–8. Never batch.
 2. `ca-book` auto-syncs Drive — no extra steps needed after a successful run.
-3. For bulk CA re-sync after major expansions: run `ca_bulk_[upload.py](http://upload.py)` (lives in Downloads, uses BDF venv).
+3. For bulk CA re-sync after major expansions: run `ca_bulk_upload.py` (lives in Downloads, uses BDF venv).
 
 ---
 

@@ -22,6 +22,6 @@ LANCE_DB_PATH must be set before any lancedb.connect() call
 ## Connected to
 [[BDF_Knowledge_Build_Flow]]
 [[LanceDB_Vector_Store]]
-[[BDF_Knowledge_Book]]
+[[BDF_Book_System]]
 [[CA_Knowledge_Book]]
 [[GoogleDrive_API]]
