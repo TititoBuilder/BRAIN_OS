@@ -178,19 +178,6 @@ tags: [system, tools, infra, live]
 
 ---
 
-## Edge TTS
-- Type: Local text-to-speech for audio learning guides
-- Install: `pip install edge-tts` (global, not project-specific)
-- Voice: `en-US-GuyNeural` — clear, natural, human-sounding
-- Rate: `-5%` (slightly slower for comprehension)
-- Output: MP3 files generated on Predator, saved to `C:\Knowledge\[TopicFolder]\`
-- Workflow: Claude generates narration script (.txt) + generator script (.py) → Cristian runs generator → MP3 output → Google Drive backup (drag-and-drop)
-- Trigger phrase: "Create a learning guide for [topic] using my audio learning system"
-- Decision log: gTTS tried (robotic), espeak tried (worse), Edge TTS chosen (2026-04-18)
-- Do NOT use: gTTS, espeak, ElevenLabs, or OpenAI TTS — Edge TTS is the standard
-
----
-
 ## Connected to
 - [[MCP_Registry]]
 - [[Active_Environments]]
