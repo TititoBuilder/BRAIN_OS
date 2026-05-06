@@ -34,6 +34,24 @@ TititoBuilder/resolve-mcp-server
 - [[PatternDetector]] — recency-weighted export frequency by subject (decay over 30 days); saturation detection at count >= 5 per content type; reads exclusively through SubjectMemory
 - [[ClipNameParser]] — parses subject / content_type / description from filename stem patterns (e.g. `Mbappe_goal_UCL.mov`)
 
+## Architecture History
+
+### April 18, 2026 — UI Control Phase (11 → 52 tools)
+First approach: pyautogui keyboard simulation to drive Resolve UI directly.
+Expanded from 11 basic tools (play_pause, cut_at_playhead, ripple_delete) to 52 tools across
+editing, audio, export, and color page controls. Git initialized: commit `1dbece3`.
+
+This approach was superseded because pyautogui requires the Resolve window to be visible,
+is brittle across Resolve versions, and cannot read state from the application.
+
+### Current Architecture — TCP Bridge + BDF Intelligence (31 tools)
+Replaced pyautogui with `resolve_bridge.py` running inside Resolve's own Python console,
+connected via TCP 127.0.0.1:9000. This gives direct API access to timeline, media pool,
+render queue, and marker state. Tools focus on BDF workflow intelligence (export, captions,
+knowledge enrichment, LanceDB) rather than raw UI simulation.
+
+---
+
 ## Connected APIs
 - [[Anthropic_Claude]] — claude-haiku-4-5-20251001; called by both `generate_captions` (tool) and `mcp_ingest.py` for platform-specific captions; requires `ANTHROPIC_API_KEY` in env
 - [[DaVinci_Resolve_API]] — internal Resolve Python scripting API; only accessible inside the Resolve Py3 console; accessed via resolve_bridge.py over TCP 127.0.0.1:9000

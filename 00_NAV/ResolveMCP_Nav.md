@@ -40,6 +40,7 @@ Connection type: **Lazy** — shows Connected even when Resolve offline
 - NEVER run `server.py` + `server_api.py` simultaneously
 - NEVER call `nuclear_clear_all` without `save_markers` first
 - Bridge reload requires `encoding="utf-8"` — omitting it = silent fail
+- After updating `server_api.py`, must fully quit Claude Desktop and relaunch — changes do not hot-reload
 
 ## GitHub
 HEAD: `503645c` — docs: add .env.template
