@@ -1,6 +1,6 @@
 ---
 tags: [system, navigation, reference, shortcuts]
-updated: 2026-05-02
+updated: 2026-05-07
 ---
 
 # Navigation & Shortcuts Reference
@@ -231,6 +231,60 @@ dev
 
 **Git:** Separate deploy repo — https://github.com/TititoBuilder/cc-landing
 (NOT inside cristian-construction — Vercel pulls from this repo)
+
+---
+
+### Project 5 — Resolve MCP Server
+
+**What it is:** DaVinci Resolve automation bridge. Exposes 31 MCP tools for
+video editing, clip management, marker tagging, and render export — all driven
+from Claude via natural language.
+
+**Architecture:** `Claude → server_api.py (stdio) → TCP 127.0.0.1:9000 → resolve_bridge.py (inside Resolve)`
+
+**State:** Production (v10.8 server / v16.10 bridge). Requires Resolve open on Predator before any tool call.
+
+**Key paths:**
+- Code root: `C:\Users\titit\Projects\resolve-mcp-server\`
+- Venv: `C:\Users\titit\Projects\resolve-mcp-server\venv\`
+- MCP server: `server_api.py` (31 tools, stdio transport)
+- Resolve bridge: `resolve_bridge.py` (runs inside Resolve's Python 3 console)
+- Staging renders: `C:\BDF\renders\staging\`
+- Render log: `C:\BDF\renders\export_log.jsonl`
+- Clip library: `C:\BDF\library\`
+- GitHub: `TititoBuilder/resolve-mcp-server` (private)
+
+**Start sequence:**
+```powershell
+# T1 — MCP server (listens on TCP 127.0.0.1:9000)
+cd C:\Users\titit\Projects\resolve-mcp-server
+python server_api.py
+```
+
+```python
+# Inside DaVinci Resolve — Workspace → Scripts → Python 3 console:
+exec(open(r"C:\Users\titit\Projects\resolve-mcp-server\resolve_bridge.py", encoding="utf-8").read())
+# Expected: "Resolve API Bridge v16.10 - RUNNING"
+```
+
+**Flow aliases:** `mcp` (open VS Code) · `bridge` (standalone — not recommended, use exec() in Resolve)
+
+**Critical rules:**
+- DaVinci Resolve **must be open** before any MCP tool call.
+- `resolve_bridge.py` **must be exec'd inside Resolve's Python console** — never run standalone.
+- After any code change to `resolve_bridge.py`, reload via exec() in Resolve.
+- Do NOT run `server.py` and `server_api.py` simultaneously (port conflict on 9000).
+- Never run `nuclear_clear_all` without `save_markers` first.
+
+**Resolve Free Tier quirks:**
+- `IsRenderingInProgress()` returns None → always wrap in `bool()`
+- `SetFlagColor()` returns NoneType → use try/except
+- Timeline starts at 01:00:00:00 = frame 216000
+- One render job at a time — queue, render, poll, then enqueue next
+
+**Git:** `TititoBuilder/resolve-mcp-server` (private)
+
+**Workspace:** `C:\Users\titit\Projects\resolve-mcp-server\` (open via `mcp` alias)
 
 ---
 
