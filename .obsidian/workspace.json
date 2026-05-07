@@ -16,8 +16,19 @@
               "icon": "lucide-git-fork",
               "title": "Graph view"
             }
+          },
+          {
+            "id": "b52aef0a8d9057e2",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -159,11 +170,12 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 314.5
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -176,23 +188,27 @@
       "bases:Create new base": false
     }
   },
-  "active": "74478514ff0624c1",
+  "active": "b52aef0a8d9057e2",
   "lastOpenFiles": [
-    "09_TOOLS/09_TOOLS_INDEX.md",
+    "10_CHATS/2026-05-06_BRAIN_OS_Graph_Session.md",
+    "09_TOOLS/Tools_Book_Node.md",
+    "Untitled 10.canvas",
+    "Untitled 2.md",
+    "00_DASHBOARD/Main_Canvas.canvas",
+    "Untitled 9.canvas",
+    "SESSION_TEMPLATE.md",
     "Untitled 2.base",
+    "09_TOOLS/09_TOOLS_INDEX.md",
     "2026-05-05.md",
     "Untitled.md",
     "Untitled 1.md",
     "Untitled 1",
     "Untitled",
-    "00_DASHBOARD/Main_Canvas.canvas",
     "01_DOMAINS/Creative_Systems.md",
     "01_DOMAINS/AI_Engineering.md",
     "05_MEMORY/BDF_Knowledge_Book.md",
     "02_PROJECTS/CristianConstruction.md",
-    "Untitled 10.canvas",
     "02_PROJECTS/_archive/CristianConstruction_OLD.md",
-    "Untitled 9.canvas",
     "02_PROJECTS/_archive/README.md",
     "02_PROJECTS/_archive",
     "00_NAV/SYSTEM_Rules.md",
@@ -209,10 +225,6 @@
     "04_WORKFLOWS/BDF_Avatar_Pipeline.md",
     "02_PROJECTS/Custom_Agent_TTS.md",
     "01_DOMAINS/Data_Science.md",
-    "02_PROJECTS/CA_Book_System.md",
-    "02_PROJECTS/BDF_Book_System.md",
-    "01_PROJECTS/BDF_Soccer_Bot.md",
-    "02_AGENTS/BDF_Memory_Agent.md",
     "Untitled 2.canvas",
     "Untitled 3.canvas",
     "Untitled 4.canvas",
