@@ -79,6 +79,49 @@ Before creating any .md file in BRAIN_OS:
 
 ---
 
+## File Organization Rules
+
+### Naming Convention
+✅ **GOOD:** 2026-05-06_BRAIN_OS_Graph_Session.md
+❌ **BAD:** Untitled 2, temp file, test.md
+
+**Rules:**
+- Always use descriptive names
+- Include date for time-based files (YYYY-MM-DD_Title)
+- No 'Untitled' files (delete or rename immediately)
+- Use underscores, not spaces
+
+### Folder Structure
+All files must live in numbered folders:
+- 00_DASHBOARD - Canvas files only
+- 01_PROJECTS - Project documentation
+- 02_AGENTS - Agent files
+- 03_APIS - API connections
+- 04_WORKFLOWS - Process flows
+- 05_MEMORY - Knowledge storage
+- 06_TEMPLATES - Template files
+- 07_SYSTEM - System documentation
+- 08_TRIGGERS - Trigger definitions
+- 09_TOOLS - Tool documentation
+- 10_CHATS - Session compiles
+
+**Never store files in root directory**
+
+### Weekly Cleanup Checklist
+Every Friday:
+- [ ] Search for 'Untitled' files → delete or rename
+- [ ] Check root directory → move to proper folders
+- [ ] Review empty files → populate or delete
+- [ ] Verify all templates in 06_TEMPLATES
+
+### Quick Search for Problems
+In Obsidian:
+- Search: `Untitled` → Delete all results
+- Search: `/` (root files) → Move to proper folders
+- Graph view → Look for orphan nodes → Connect or delete
+
+---
+
 ## Maintenance Schedule
 
 **Weekly:** Check 07_SYSTEM files for accuracy
