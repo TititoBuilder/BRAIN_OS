@@ -85,7 +85,7 @@ URLs: API http://localhost:8000 | Dashboard http://localhost:5173
   - Processed: `BDF_Book\_processed\`
   - Full book: `BDF_Book\BDF_Master_Book.txt`
   - Cost log: `BDF_Book\cost_log.txt`
-- LanceDB vector store: `F:\lance_db_soccer\` (WD Elements, always plugged in)
+- LanceDB vector store: `C:/lance_db_soccer`
 - Generated card images: `src\images\cards\` (gitignored)
 - Session audio format: `SESSION_YYYYMMDD_HHMM_audio.mp3`
 - Cloud backup: Google Drive folder `BDF_Book_Audio\chapters\`
@@ -143,7 +143,7 @@ URLs: API http://localhost:8000 | Dashboard http://localhost:3000 | Docs http://
   - Audio: `CA_Book\audio\` (.wav files)
   - Incoming: `CA_Book\incoming\` (drop here, run `ca-book`)
   - Book compiler: `CA_Book\book_compiler.py` (lives here, not in code root)
-  - Venv (compiler): `C:\Knowledge\CA\CA_Book\venv\`
+  - Venv (compiler): `C:\Knowledge\CA\venv\`
   - Full book: `CA_Book\CA_Master_Book.txt`
 
 **Git:**
@@ -449,7 +449,7 @@ C:\Knowledge\
 
 
 C:\BRAIN_OS\                          (this vault — Obsidian)
-F:\lance_db_soccer\                   (LanceDB, WD Elements — always plugged in)
+C:\lance_db_soccer\                   (LanceDB)
 ```
 
 ---
@@ -491,7 +491,7 @@ AND custom-agent folders, each using its own venv via `.vscode\settings.json`.
 5. Mixed-project chats produce SEPARATE compile files per book. Never cross-contaminate.
 6. Plain ASCII in PowerShell scripts. No emoji, no Unicode in command-line code.
 7. Edit existing files via VS Code Explorer right-click — never PowerShell here-strings.
-8. WD Elements (F:\lance_db_soccer) stays plugged into Predator permanently.
+8. LanceDB is on `C:\lance_db_soccer` — no external drive required.
 9. C: drive has limited free space — large data goes to F:.
 10. Verify cost estimate before any token-consuming operation.
 

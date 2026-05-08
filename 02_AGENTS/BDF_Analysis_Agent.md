@@ -13,7 +13,7 @@ Multi-query RAG retrieval over the LanceDB soccer knowledge corpus — rewrites 
 ## Input
 - `topic` (str) — player name, team, match context
 - `content_type` (str) — "skill", "goal", "analysis", etc.
-- LanceDB vector store at `F:/lance_db_soccer` (env var `LANCE_DB_PATH`)
+- LanceDB vector store at `C:/lance_db_soccer` (env var `LANCE_DB_PATH`)
 
 ## Output
 - `list[dict]` — up to 8 ranked documents with relevance scores
@@ -23,7 +23,7 @@ Multi-query RAG retrieval over the LanceDB soccer knowledge corpus — rewrites 
 Called by SoccerBot and the content generation pipeline whenever factual context is needed for caption or post generation.
 
 ## Tools and APIs
-- [[LanceDB]] — local vector store at `F:/lance_db_soccer`; env var `LANCE_DB_PATH`; fallback `./lance_db`
+- [[LanceDB]] — local vector store at `C:/lance_db_soccer`; env var `LANCE_DB_PATH`
 - [[Anthropic_Claude]] — `claude-haiku-4-5-20251001` for query rewriting (3 semantic variants per call)
 - `cross-encoder/ms-marco-MiniLM-L-6-v2` — local CrossEncoder reranker (HuggingFace sentence-transformers, GPU, zero API cost)
 

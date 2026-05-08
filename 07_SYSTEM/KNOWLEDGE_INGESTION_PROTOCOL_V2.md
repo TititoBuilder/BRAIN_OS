@@ -1,8 +1,14 @@
 ---
-tags: [system, protocol, automation, knowledge-ingestion, intelligence, option-c]
+tags:
+  - system
+  - protocol
+  - automation
+  - knowledge-ingestion
+  - intelligence
+  - option-c
 created: 2026-05-03
 updated: 2026-05-03
-version: 2.0
+version: 2
 ---
 
 # Knowledge Ingestion Protocol V2 — Hybrid Intelligence with Review Points

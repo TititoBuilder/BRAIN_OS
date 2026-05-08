@@ -136,13 +136,11 @@ Example: `2026-04-28 14-32-00.mp4`
 
 ---
 
-## WD Elements / LanceDB Path
+## LanceDB Path
 
 | Note | Value |
 |---|---|
-| WD Elements mount | Always `D:` on Predator |
-| Why not `F:` | Recovery partition blocks `F:` assignment |
-| LanceDB path | `D:/lance_db_soccer` |
+| LanceDB path | `C:/lance_db_soccer` |
 
 ---
 

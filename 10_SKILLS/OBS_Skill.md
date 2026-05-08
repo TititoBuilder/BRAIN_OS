@@ -77,13 +77,11 @@ Replaced with `simpleobsws`. AHK hotkey workaround (`obs_control.ahk`) still boo
 
 ---
 
-## WD Elements / LanceDB
+## LanceDB
 
 | Note | Value |
 |---|---|
-| WD Elements mount | Always `D:` on Predator |
-| Why not `F:` | Recovery partition blocks `F:` assignment |
-| LanceDB path | `D:/lance_db_soccer` |
+| LanceDB path | `C:/lance_db_soccer` |
 
 ---
 

@@ -75,8 +75,8 @@ domain: AI Engineering Layer
 - Book compilation (BDF Book)
 
 **Pending:**
-- [ ] Migrate LanceDB from external WD Elements to C: drive
-- [ ] Complete data migration from external drive
+- [x] Migrate LanceDB from external WD Elements to C: drive
+- [x] Complete data migration from external drive
 
 ---
 
@@ -128,7 +128,7 @@ domain: AI Engineering Layer
 
 ### Critical (Do Soon)
 - [ ] Separate CA venv from BDF venv
-- [ ] Complete LanceDB migration to C: drive
+- [x] Complete LanceDB migration to C: drive
 - [ ] Test all 52 Resolve MCP tools
 
 ### Important (Next)

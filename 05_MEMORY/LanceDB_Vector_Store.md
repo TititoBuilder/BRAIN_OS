@@ -17,8 +17,6 @@ Vector store — persistent, file-based (LanceDB on-disk format)
 **Schema:** `id` (str), `content` (str), `vector` (float[]), `metadata` (JSON str)
 **Embedding model:** `all-MiniLM-L6-v2` (sentence-transformers, loaded once at VectorStore init)
 
-> **STALE PATH — DO NOT USE:** `F:/lance_db_soccer` — this was a WD external drive mount. Drive may be disconnected. Path is empty. Any code or note referencing F:/ is outdated.
-
 ## Files that read or write this store (from 2026-04-27 bug audit)
 | File | Role |
 |---|---|

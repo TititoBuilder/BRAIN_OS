@@ -18,8 +18,7 @@ Per-project canvas for the BreakingDown Futbol soccer content pipeline.
 - DaVinci Resolve → `master_edit\ready\` → clip_watcher → queue
 - Dashboard `localhost:5173` → Approve → Twitter
 - Image pipeline: DALL-E DEPRECATED → DaVinci exports + card_composer.py
-- LanceDB: `D:/lance_db_soccer` (WD Elements, always mounts as D: on Predator)
-- WD Elements always mounts as `D:` on Predator (not `F:` — recovery partition blocks `F:`)
+- LanceDB: `C:/lance_db_soccer`
 
 ---
 

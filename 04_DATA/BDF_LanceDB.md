@@ -12,7 +12,7 @@ This document describes what data lives in the BDF vector store, what tables exi
 
 ## Physical Location
 
-The live vector store is on the WD Elements external drive, which always mounts as `D:` on the Predator machine. The canonical path is `D:\lance_db_soccer`. Some older code and the `.env` template reference `C:\lance_db_soccer` or `C:/lance_db_soccer` — this is wrong and will silently fail to find any data on a fresh session if the drive is not mounted. The environment variable `LANCE_DB_PATH` must point to `D:\lance_db_soccer`. The health check in `dashboard_api.py` reads this env var at runtime.
+The canonical path is `C:\lance_db_soccer` (local C: drive, no external dependency). Migration from the WD Elements external drive was completed May 2026. The environment variable `LANCE_DB_PATH` must point to `C:\lance_db_soccer`. The health check in `dashboard_api.py` reads this env var at runtime.
 
 ---
 
