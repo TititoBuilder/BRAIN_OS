@@ -1,0 +1,19 @@
+{
+  "project": "soccer-content-generator",
+  "root": "C:/Dev/Projects/soccer-content-generator",
+  "graph_output": "C:/BRAIN_OS/02_PROJECTS/graphs/soccer-content-generator.json",
+  "header_only_threshold_kb": 50,
+  "skip_patterns": ["venv", "archive", "__pycache__", "node_modules", ".git", ".claude", "builder-dashboard"],
+  "external_packages": ["brain_audio", "anthropic", "lancedb", "kokoro", "fastapi", "uvicorn", "telegram", "tweepy", "PIL", "pandas", "sentence_transformers", "requests", "dotenv", "rich", "moviepy", "bs4", "httpx", "simpleobsws", "pydantic", "PyPDF2"],
+  "layers": {
+    "Intelligence":    ["src/soccer_bot.py", "src/agent/knowledge_enricher.py", "src/agent/memory.py", "src/rag_pipeline.py", "src/content_agent.py", "src/research_agent.py", "src/quality_agent.py"],
+    "Infrastructure":  ["dashboard_api.py", "src/database.py", "src/vector_store.py", "src/knowledge_manager.py", "lancedb_integrator.py", "rebuild_lancedb.py", "database_manager.py"],
+    "Output_Pipeline": ["tts_local.py", "converter.py", "export_pipeline.py", "src/publishers/publisher_router.py", "src/publishers/instagram_publisher.py", "src/publishers/tiktok_publisher.py", "src/publishers/youtube_publisher.py", "src/twitter_publisher.py", "book_compiler.py", "mcp_book_compiler.py"],
+    "UI_Entry":        ["src/enhanced_terminal_ui.py", "media_hub.py"],
+    "Orchestration":   ["pipeline.py", "bot_service.py", "trigger_watcher.py"],
+    "Clip_Pipeline":   ["clip_watcher.py", "clip_parser.py", "clip_config.py", "mcp_ingest.py"],
+    "Data_Fetch":      ["src/match_data_fetcher.py", "src/api_data_fetcher.py", "fixture_calendar.py", "src/football_api.py", "src/football_api_client.py", "src/news_api_client.py"],
+    "Media":           ["src/image_agent.py", "src/media_agent.py", "src/video_generator.py", "kling_agent.py", "generate_avatar.py", "src/card_composer.py"],
+    "Scripts":         ["scripts/"]
+  }
+}

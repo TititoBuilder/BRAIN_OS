@@ -1,0 +1,1795 @@
+{
+  "project": "soccer-content-generator",
+  "root": "C:/Dev/Projects/soccer-content-generator",
+  "updated_at": "2026-05-09T19:13:36.495085+00:00",
+  "node_count": 96,
+  "nodes": {
+    "avatar_character_profiles.py": {
+      "hash": "b2a4579e31ae",
+      "layer": "uncategorized",
+      "size_kb": 65.1,
+      "mode": "header_only",
+      "signatures": []
+    },
+    "book_compiler.py": {
+      "hash": "eef6fdd0a229",
+      "layer": "Output_Pipeline",
+      "size_kb": 29.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "pathlib",
+          "shutil",
+          "sys"
+        ],
+        "internal": [],
+        "external": [
+          "anthropic",
+          "dotenv"
+        ]
+      }
+    },
+    "bot_service.py": {
+      "hash": "894932a66c2e",
+      "layer": "Orchestration",
+      "size_kb": 11.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "logging",
+          "pathlib",
+          "signal",
+          "sys",
+          "threading",
+          "time"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "bulk_player_generator.py": {
+      "hash": "6221d10dbbab",
+      "layer": "uncategorized",
+      "size_kb": 11.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "csv",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "check_queue.py": {
+      "hash": "43c427561fe6",
+      "layer": "uncategorized",
+      "size_kb": 1.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "json",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "clip_config.py": {
+      "hash": "258a52cb79f6",
+      "layer": "Clip_Pipeline",
+      "size_kb": 4.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "pathlib"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "clip_parser.py": {
+      "hash": "adc007cc9516",
+      "layer": "Clip_Pipeline",
+      "size_kb": 11.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "dataclasses",
+          "datetime",
+          "logging",
+          "pathlib",
+          "re",
+          "typing"
+        ],
+        "internal": [
+          "clip_config"
+        ],
+        "external": []
+      }
+    },
+    "clip_watcher.py": {
+      "hash": "130062a192c2",
+      "layer": "Clip_Pipeline",
+      "size_kb": 30.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "logging",
+          "os",
+          "pathlib",
+          "shutil",
+          "sys",
+          "threading",
+          "time",
+          "typing"
+        ],
+        "internal": [
+          "clip_config",
+          "clip_parser",
+          "src.soccer_bot"
+        ],
+        "external": []
+      }
+    },
+    "conftest.py": {
+      "hash": "57ddfe509d9f",
+      "layer": "uncategorized",
+      "size_kb": 0.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "pathlib",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "content_queue.py": {
+      "hash": "de413d88d473",
+      "layer": "uncategorized",
+      "size_kb": 5.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "converter.py": {
+      "hash": "d94c188cda93",
+      "layer": "Output_Pipeline",
+      "size_kb": 20.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "csv",
+          "datetime",
+          "json",
+          "os",
+          "pathlib",
+          "sys",
+          "textwrap"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "create_avatar_library.py": {
+      "hash": "56b83e436a03",
+      "layer": "uncategorized",
+      "size_kb": 21.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "base64",
+          "json",
+          "os",
+          "pathlib",
+          "time"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "requests"
+        ]
+      }
+    },
+    "dashboard_api.py": {
+      "hash": "7714f5b3c1ea",
+      "layer": "Infrastructure",
+      "size_kb": 81.4,
+      "mode": "header_only",
+      "signatures": [
+        "class GenerateRequest(BaseModel)",
+        "def initialize_vector_store()",
+        "def get_db()",
+        "def load_content_queue()",
+        "def save_content_queue(queue)",
+        "async def startup_event()",
+        "async def health()",
+        "async def get_queue()",
+        "async def approve_queue_item(id)",
+        "async def reject_queue_item(id)",
+        "async def generate(req)",
+        "async def get_fixtures()",
+        "async def get_players()",
+        "async def get_stats()",
+        "async def generate(req)",
+        "class GenerateRequest(BaseModel)",
+        "def initialize_vector_store()",
+        "async def startup_event()",
+        "async def status()",
+        "async def generate(req)",
+        "def get_db()",
+        "def load_content_queue()",
+        "def save_content_queue(queue)",
+        "class GenerateRequest(BaseModel)",
+        "def health_check()",
+        "def get_fixtures(days, min_hype)",
+        "def get_queue(status, limit)",
+        "def approve_post(item_id)",
+        "def reject_post(item_id)",
+        "def get_stats()",
+        "def get_players()",
+        "def get_competitions()",
+        "def trigger_discovery()",
+        "async def generate_content(request)",
+        "def publish_post(item_id)",
+        "def _load_queue()",
+        "def _save_queue(queue)",
+        "def _find_post(queue, post_id)",
+        "def hub_status()",
+        "def get_assets()",
+        "def save_assets(payload)",
+        "def increment_asset_usage(asset_id)",
+        "def hub_queue()",
+        "def hub_approve(post_id)",
+        "def hub_reject(post_id)",
+        "class EditRequest(BaseModel)",
+        "def hub_edit(post_id, body)",
+        "class RateRequest(BaseModel)",
+        "def hub_rate(post_id, body)",
+        "def hub_send_telegram(post_id)",
+        "class HubGenerateRequest(BaseModel)",
+        "def hub_generate(body)",
+        "def hub_clip_status()",
+        "def hub_telegram_sync()"
+      ]
+    },
+    "database_manager.py": {
+      "hash": "2154949abccf",
+      "layer": "Infrastructure",
+      "size_kb": 9.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "logging",
+          "pathlib",
+          "sqlite3",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "pandas"
+        ]
+      }
+    },
+    "diagnose_api.py": {
+      "hash": "65128e50b3f0",
+      "layer": "uncategorized",
+      "size_kb": 4.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os"
+        ],
+        "internal": [],
+        "external": [
+          "requests"
+        ]
+      }
+    },
+    "export_pipeline.py": {
+      "hash": "b79b3b680dfa",
+      "layer": "Output_Pipeline",
+      "size_kb": 13.3,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "json",
+          "os",
+          "pathlib",
+          "re",
+          "shutil",
+          "socket",
+          "subprocess",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "fixture_calendar.py": {
+      "hash": "0b68c01921e2",
+      "layer": "Data_Fetch",
+      "size_kb": 36.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "sqlite3",
+          "sys",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "requests"
+        ]
+      }
+    },
+    "generate_avatar.py": {
+      "hash": "c57f1a296de8",
+      "layer": "Media",
+      "size_kb": 12.7,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "base64",
+          "difflib",
+          "os",
+          "pathlib",
+          "sys",
+          "time"
+        ],
+        "internal": [
+          "avatar_character_profiles"
+        ],
+        "external": [
+          "dotenv",
+          "requests"
+        ]
+      }
+    },
+    "ingest_ucl_knowledge.py": {
+      "hash": "330627ae57e0",
+      "layer": "uncategorized",
+      "size_kb": 4.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "sys"
+        ],
+        "internal": [
+          "knowledge_manager"
+        ],
+        "external": []
+      }
+    },
+    "kling_agent.py": {
+      "hash": "646fb373d0dc",
+      "layer": "Media",
+      "size_kb": 16.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "base64",
+          "datetime",
+          "hashlib",
+          "json",
+          "os",
+          "pathlib",
+          "sys",
+          "time"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "requests"
+        ]
+      }
+    },
+    "lancedb_integrator.py": {
+      "hash": "eea5f806f22a",
+      "layer": "Infrastructure",
+      "size_kb": 14.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "pathlib",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "lancedb",
+          "pandas",
+          "sentence_transformers"
+        ]
+      }
+    },
+    "mcp_book_compiler.py": {
+      "hash": "0c56d46977ad",
+      "layer": "Output_Pipeline",
+      "size_kb": 28.3,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "pathlib",
+          "shutil",
+          "sys"
+        ],
+        "internal": [],
+        "external": [
+          "anthropic",
+          "dotenv"
+        ]
+      }
+    },
+    "mcp_ingest.py": {
+      "hash": "ebbef2557283",
+      "layer": "Clip_Pipeline",
+      "size_kb": 34.7,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "__future__",
+          "datetime",
+          "json",
+          "os",
+          "pathlib",
+          "shutil",
+          "sys",
+          "typing",
+          "uuid"
+        ],
+        "internal": [
+          "src.agent.clip_name_parser"
+        ],
+        "external": [
+          "httpx"
+        ]
+      }
+    },
+    "media_hub.py": {
+      "hash": "1ebc9aae606a",
+      "layer": "UI_Entry",
+      "size_kb": 38.6,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "http.server",
+          "json",
+          "logging",
+          "os",
+          "pathlib",
+          "shutil",
+          "threading",
+          "time",
+          "webbrowser"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "obs_mcp.py": {
+      "hash": "0a7ef77532cc",
+      "layer": "uncategorized",
+      "size_kb": 7.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "asyncio",
+          "contextlib",
+          "logging",
+          "os"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "fastapi",
+          "fastapi.middleware.cors",
+          "pydantic",
+          "simpleobsws",
+          "uvicorn"
+        ]
+      }
+    },
+    "obs_relay.py": {
+      "hash": "aa7a40e801ba",
+      "layer": "uncategorized",
+      "size_kb": 11.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "logging",
+          "os",
+          "pathlib",
+          "shutil",
+          "socket",
+          "sys",
+          "time"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "pipeline.py": {
+      "hash": "ab21211a3695",
+      "layer": "Orchestration",
+      "size_kb": 7.7,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "pathlib",
+          "shutil",
+          "subprocess",
+          "sys",
+          "time"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "rebuild_lancedb.py": {
+      "hash": "e455eb8aefc5",
+      "layer": "Infrastructure",
+      "size_kb": 20.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "pathlib",
+          "shutil",
+          "sys"
+        ],
+        "internal": [
+          "vector_store"
+        ],
+        "external": [
+          "dotenv",
+          "lancedb",
+          "pandas"
+        ]
+      }
+    },
+    "scripts/cleanup_lancedb_duplicates.py": {
+      "hash": "bdd5e42bf0c9",
+      "layer": "Scripts",
+      "size_kb": 1.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "sys"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "lancedb"
+        ]
+      }
+    },
+    "scripts/database_exporter.py": {
+      "hash": "37fc6779694f",
+      "layer": "Scripts",
+      "size_kb": 10.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "os",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": [
+          "pandas"
+        ]
+      }
+    },
+    "scripts/graph_maintainer.py": {
+      "hash": "d9915bf88c9b",
+      "layer": "Scripts",
+      "size_kb": 6.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "__future__",
+          "ast",
+          "hashlib",
+          "json",
+          "pathlib",
+          "subprocess",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "scripts/ingest_international_break.py": {
+      "hash": "1fe0993d3ff7",
+      "layer": "Scripts",
+      "size_kb": 7.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "sys"
+        ],
+        "internal": [
+          "vector_store"
+        ],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "scripts/ingest_ucl_2026.py": {
+      "hash": "8cdca1a9764e",
+      "layer": "Scripts",
+      "size_kb": 6.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "pathlib",
+          "sys"
+        ],
+        "internal": [
+          "src.knowledge_manager"
+        ],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "scripts/ingest_ucl_r16_second_legs.py": {
+      "hash": "a21089a2a3e6",
+      "layer": "Scripts",
+      "size_kb": 5.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "sys"
+        ],
+        "internal": [
+          "vector_store"
+        ],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "scripts/ingest_worldcup_2026.py": {
+      "hash": "fa4189bbc5e7",
+      "layer": "Scripts",
+      "size_kb": 3.7,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "pathlib",
+          "sys"
+        ],
+        "internal": [
+          "knowledge_manager"
+        ],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "scripts/knowledge_watcher.py": {
+      "hash": "305543e8e768",
+      "layer": "Scripts",
+      "size_kb": 3.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "os",
+          "pathlib",
+          "shutil",
+          "sys",
+          "time"
+        ],
+        "internal": [
+          "vector_store"
+        ],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "session_close.py": {
+      "hash": "b72364dee26b",
+      "layer": "uncategorized",
+      "size_kb": 4.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "pathlib",
+          "subprocess",
+          "sys",
+          "tempfile"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "soccer_knowledge_ingester.py": {
+      "hash": "d41d8cd98f00",
+      "layer": "uncategorized",
+      "size_kb": 0.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/__init__.py": {
+      "hash": "d41d8cd98f00",
+      "layer": "uncategorized",
+      "size_kb": 0.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/agent/__init__.py": {
+      "hash": "bd77eb403a7d",
+      "layer": "uncategorized",
+      "size_kb": 0.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/agent/clip_name_parser.py": {
+      "hash": "574089dad038",
+      "layer": "uncategorized",
+      "size_kb": 14.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "logging",
+          "re"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/agent/knowledge_enricher.py": {
+      "hash": "3817ba6d6210",
+      "layer": "Intelligence",
+      "size_kb": 7.3,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "__future__",
+          "json",
+          "os",
+          "typing"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/agent/memory.py": {
+      "hash": "64c90fae9447",
+      "layer": "Intelligence",
+      "size_kb": 3.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "__future__",
+          "json",
+          "os",
+          "typing"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/agent/pattern_detector.py": {
+      "hash": "97d6f190f182",
+      "layer": "uncategorized",
+      "size_kb": 6.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "__future__",
+          "datetime",
+          "os",
+          "typing"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/agents/news_image_agent.py": {
+      "hash": "b13493c4d87e",
+      "layer": "uncategorized",
+      "size_kb": 13.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "hashlib",
+          "logging",
+          "os",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": [
+          "bs4",
+          "requests"
+        ]
+      }
+    },
+    "src/api_data_fetcher.py": {
+      "hash": "3f40478abf5b",
+      "layer": "Data_Fetch",
+      "size_kb": 9.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "os",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "requests"
+        ]
+      }
+    },
+    "src/base_client.py": {
+      "hash": "1713850c99c1",
+      "layer": "uncategorized",
+      "size_kb": 4.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "functools",
+          "time",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "requests"
+        ]
+      }
+    },
+    "src/card_composer.py": {
+      "hash": "f5bd21746639",
+      "layer": "Media",
+      "size_kb": 25.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "hashlib",
+          "os",
+          "pathlib",
+          "textwrap"
+        ],
+        "internal": [],
+        "external": [
+          "PIL"
+        ]
+      }
+    },
+    "src/competitions_api.py": {
+      "hash": "02c656518b1a",
+      "layer": "uncategorized",
+      "size_kb": 3.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "requests"
+        ]
+      }
+    },
+    "src/config.py": {
+      "hash": "0c65ee466d3c",
+      "layer": "uncategorized",
+      "size_kb": 2.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "src/content_agent.py": {
+      "hash": "c81edb015c40",
+      "layer": "Intelligence",
+      "size_kb": 11.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "typing"
+        ],
+        "internal": [
+          "database",
+          "knowledge_manager",
+          "soccer_bot"
+        ],
+        "external": []
+      }
+    },
+    "src/cost_tracker.py": {
+      "hash": "3662249167f4",
+      "layer": "uncategorized",
+      "size_kb": 5.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/data/__init__.py": {
+      "hash": "d41d8cd98f00",
+      "layer": "uncategorized",
+      "size_kb": 0.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/data/ingestion/__init__.py": {
+      "hash": "d41d8cd98f00",
+      "layer": "uncategorized",
+      "size_kb": 0.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/data/ingestion/schedule_manager.py": {
+      "hash": "67805d6f38ff",
+      "layer": "uncategorized",
+      "size_kb": 9.7,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "dataclasses",
+          "datetime",
+          "enum",
+          "json",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/data/ingestion/ucl_ingester.py": {
+      "hash": "f186489fc1bb",
+      "layer": "uncategorized",
+      "size_kb": 7.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "json",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/database.py": {
+      "hash": "47f7dd6e7950",
+      "layer": "Infrastructure",
+      "size_kb": 7.3,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "enum",
+          "sqlite3",
+          "typing"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/date_injector.py": {
+      "hash": "e6540ed043cc",
+      "layer": "uncategorized",
+      "size_kb": 1.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/enhanced_terminal_ui.py": {
+      "hash": "ae586e443f7a",
+      "layer": "UI_Entry",
+      "size_kb": 55.4,
+      "mode": "header_only",
+      "signatures": [
+        "class QueueStatus",
+        "def publish_post(post, twitter_publisher, youtube_publisher)",
+        "def get_platform_icon(post)",
+        "class ContentQueue",
+        "  def __init__(self, queue_path)",
+        "  def _load_queue(self)",
+        "  def _save_queue(self)",
+        "  def _save(self)",
+        "  def add(self, content, hashtags, content_type, topic, platform, media_path, video_path, title, cost)",
+        "  def get_by_id(self, post_id)",
+        "  def get_pending(self)",
+        "  def get_telegram_pending(self)",
+        "  def get_youtube_pending(self)",
+        "  def get_twitter_pending(self)",
+        "  def get_by_status(self, status)",
+        "  def approve(self, post_id)",
+        "  def edit_and_approve(self, post_id, new_content)",
+        "  def reject(self, post_id, reason)",
+        "  def mark_telegram_pending(self, post_id)",
+        "  def skip(self, post_id)",
+        "  def get_stats(self)",
+        "def clear_screen()",
+        "def print_header(title)",
+        "def print_divider()",
+        "def print_post_card(post, index, total)",
+        "def print_queue_summary(queue)",
+        "def run_review_queue(queue, twitter_publisher, youtube_publisher, filter_platform)",
+        "def sync_telegram_approvals(queue, twitter_publisher, youtube_publisher, approver)",
+        "def view_youtube_queue(queue, youtube_publisher)",
+        "def open_media_hub()",
+        "def print_content_type_menu()",
+        "def print_platform_menu()",
+        "def generate_single(queue, bot, media_agent)",
+        "def generate_batch(queue, bot, media_agent)",
+        "def view_avatar_library(media_agent)",
+        "def view_system_status(bot, media_agent, twitter_publisher, youtube_publisher)",
+        "def print_main_menu(queue)",
+        "def main()"
+      ]
+    },
+    "src/football_api.py": {
+      "hash": "eec043775d39",
+      "layer": "Data_Fetch",
+      "size_kb": 5.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "requests"
+        ]
+      }
+    },
+    "src/football_api_client.py": {
+      "hash": "515e5eb3cf1a",
+      "layer": "Data_Fetch",
+      "size_kb": 7.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "sys",
+          "typing"
+        ],
+        "internal": [
+          "base_client",
+          "config"
+        ],
+        "external": []
+      }
+    },
+    "src/formatters/__init__.py": {
+      "hash": "d41d8cd98f00",
+      "layer": "uncategorized",
+      "size_kb": 0.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/formatters/platform_formatter.py": {
+      "hash": "2b965598cb54",
+      "layer": "uncategorized",
+      "size_kb": 6.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/gallery_matcher.py": {
+      "hash": "5fd5818a3c6d",
+      "layer": "uncategorized",
+      "size_kb": 1.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "pathlib",
+          "re"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/image_agent.py": {
+      "hash": "5764e296ff8f",
+      "layer": "Media",
+      "size_kb": 36.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "dataclasses",
+          "datetime",
+          "hashlib",
+          "io",
+          "json",
+          "logging",
+          "os",
+          "pathlib",
+          "random",
+          "time",
+          "typing"
+        ],
+        "internal": [
+          "src.card_composer"
+        ],
+        "external": [
+          "PIL",
+          "dotenv",
+          "requests"
+        ]
+      }
+    },
+    "src/knowledge_manager.py": {
+      "hash": "03dad0a93b04",
+      "layer": "Infrastructure",
+      "size_kb": 8.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "typing"
+        ],
+        "internal": [
+          "vector_store"
+        ],
+        "external": [
+          "PyPDF2"
+        ]
+      }
+    },
+    "src/knowledge_ui_component.py": {
+      "hash": "7b922f097e5f",
+      "layer": "uncategorized",
+      "size_kb": 10.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/match_data_fetcher.py": {
+      "hash": "d813e0c6c410",
+      "layer": "Data_Fetch",
+      "size_kb": 28.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "os",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "requests"
+        ]
+      }
+    },
+    "src/media_agent.py": {
+      "hash": "2c7bd767d169",
+      "layer": "Media",
+      "size_kb": 43.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "base64",
+          "dataclasses",
+          "enum",
+          "hashlib",
+          "hmac",
+          "json",
+          "logging",
+          "os",
+          "pathlib",
+          "time",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "requests"
+        ]
+      }
+    },
+    "src/news_api_client.py": {
+      "hash": "826f3412fb18",
+      "layer": "Data_Fetch",
+      "size_kb": 6.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "os",
+          "sys",
+          "typing"
+        ],
+        "internal": [
+          "base_client"
+        ],
+        "external": []
+      }
+    },
+    "src/player_memory.py": {
+      "hash": "07ac0ba9bf47",
+      "layer": "uncategorized",
+      "size_kb": 2.7,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "json",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/publishers/__init__.py": {
+      "hash": "d41d8cd98f00",
+      "layer": "uncategorized",
+      "size_kb": 0.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/publishers/base_publisher.py": {
+      "hash": "c4a83b032ab8",
+      "layer": "uncategorized",
+      "size_kb": 6.6,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "abc",
+          "dataclasses",
+          "datetime",
+          "enum",
+          "json",
+          "pathlib",
+          "typing"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "src/publishers/instagram_publisher.py": {
+      "hash": "83ac75c1bebf",
+      "layer": "Output_Pipeline",
+      "size_kb": 5.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "os",
+          "pathlib"
+        ],
+        "internal": [
+          "src.formatters.platform_formatter",
+          "src.publishers.base_publisher"
+        ],
+        "external": [
+          "requests"
+        ]
+      }
+    },
+    "src/publishers/publisher_router.py": {
+      "hash": "40a73816184f",
+      "layer": "Output_Pipeline",
+      "size_kb": 10.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "dataclasses",
+          "datetime",
+          "os"
+        ],
+        "internal": [
+          "src.publishers.base_publisher"
+        ],
+        "external": []
+      }
+    },
+    "src/publishers/tiktok_publisher.py": {
+      "hash": "3836106a91d5",
+      "layer": "Output_Pipeline",
+      "size_kb": 7.6,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "pathlib"
+        ],
+        "internal": [
+          "src.formatters.platform_formatter",
+          "src.publishers.base_publisher"
+        ],
+        "external": [
+          "requests"
+        ]
+      }
+    },
+    "src/publishers/youtube_publisher.py": {
+      "hash": "c3aa6db42e0b",
+      "layer": "Output_Pipeline",
+      "size_kb": 8.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "pathlib",
+          "time"
+        ],
+        "internal": [
+          "src.formatters.platform_formatter",
+          "src.publishers.base_publisher"
+        ],
+        "external": []
+      }
+    },
+    "src/quality_agent.py": {
+      "hash": "6fac8fc3ee05",
+      "layer": "Intelligence",
+      "size_kb": 15.7,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "re",
+          "typing"
+        ],
+        "internal": [
+          "database",
+          "knowledge_manager"
+        ],
+        "external": []
+      }
+    },
+    "src/rag_pipeline.py": {
+      "hash": "80862ea53cbf",
+      "layer": "Intelligence",
+      "size_kb": 7.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "json",
+          "os",
+          "time",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "anthropic",
+          "dotenv"
+        ]
+      }
+    },
+    "src/research_agent.py": {
+      "hash": "67522182f41a",
+      "layer": "Intelligence",
+      "size_kb": 10.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "typing"
+        ],
+        "internal": [
+          "api_data_fetcher",
+          "database",
+          "knowledge_manager"
+        ],
+        "external": []
+      }
+    },
+    "src/soccer_bot.py": {
+      "hash": "a7a8b8dc1986",
+      "layer": "Intelligence",
+      "size_kb": 32.6,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "enum",
+          "json",
+          "os",
+          "re",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "anthropic",
+          "dotenv"
+        ]
+      }
+    },
+    "src/soccer_knowledge_ingester.py": {
+      "hash": "4a37a29355e2",
+      "layer": "uncategorized",
+      "size_kb": 41.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "pathlib",
+          "typing"
+        ],
+        "internal": [
+          "vector_store"
+        ],
+        "external": [
+          "pandas"
+        ]
+      }
+    },
+    "src/topic_router.py": {
+      "hash": "598da4327524",
+      "layer": "uncategorized",
+      "size_kb": 53.2,
+      "mode": "header_only",
+      "signatures": [
+        "class RoutedQuery",
+        "class TopicRouter",
+        "  def __init__(self)",
+        "  def _get_match_fetcher(self)",
+        "  def _get_competitions_api(self)",
+        "  def route(self, topic, context, content_type)",
+        "  def _handle_team(self, result, team_name, content_type)",
+        "  def _handle_player(self, result, player_name, content_type)",
+        "  def _handle_competition(self, result, comp_name)",
+        "  def _detect_players(self, text)",
+        "  def _detect_teams(self, text)",
+        "  def _detect_competitions(self, text)"
+      ]
+    },
+    "src/twitter_publisher.py": {
+      "hash": "91103ad7ff9c",
+      "layer": "Output_Pipeline",
+      "size_kb": 13.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "os",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "tweepy"
+        ]
+      }
+    },
+    "src/ucl_bridge.py": {
+      "hash": "285e78186725",
+      "layer": "uncategorized",
+      "size_kb": 4.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "json",
+          "os",
+          "pathlib",
+          "sys"
+        ],
+        "internal": [
+          "src.vector_store"
+        ],
+        "external": []
+      }
+    },
+    "src/vector_store.py": {
+      "hash": "9e89abb68ae8",
+      "layer": "Infrastructure",
+      "size_kb": 4.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "os",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "lancedb"
+        ]
+      }
+    },
+    "src/video_generator.py": {
+      "hash": "50f197597e06",
+      "layer": "Media",
+      "size_kb": 10.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "os",
+          "pathlib",
+          "textwrap"
+        ],
+        "internal": [],
+        "external": [
+          "PIL",
+          "moviepy"
+        ]
+      }
+    },
+    "src/youtube_api_client.py": {
+      "hash": "c13bce1f9460",
+      "layer": "uncategorized",
+      "size_kb": 8.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "sys",
+          "typing"
+        ],
+        "internal": [
+          "base_client",
+          "config"
+        ],
+        "external": []
+      }
+    },
+    "story_generator.py": {
+      "hash": "5bc7bcfdf755",
+      "layer": "uncategorized",
+      "size_kb": 12.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "json",
+          "os",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": [
+          "anthropic",
+          "dotenv"
+        ]
+      }
+    },
+    "sync_brain.py": {
+      "hash": "d3c784d9c655",
+      "layer": "uncategorized",
+      "size_kb": 19.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "json",
+          "logging",
+          "os",
+          "pathlib",
+          "subprocess",
+          "sys",
+          "urllib.error",
+          "urllib.parse",
+          "urllib.request"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "telegram_approver.py": {
+      "hash": "5fc66b4a0b4f",
+      "layer": "uncategorized",
+      "size_kb": 20.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "asyncio",
+          "datetime",
+          "logging",
+          "os",
+          "pathlib",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "telegram"
+        ]
+      }
+    },
+    "test_football_data_org.py": {
+      "hash": "d88d9d7e2103",
+      "layer": "uncategorized",
+      "size_kb": 4.3,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "requests"
+        ]
+      }
+    },
+    "test_football_data_org2.py": {
+      "hash": "3443e693c63d",
+      "layer": "uncategorized",
+      "size_kb": 3.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "os"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "requests"
+        ]
+      }
+    },
+    "test_ucl.py": {
+      "hash": "5191f7db9b06",
+      "layer": "uncategorized",
+      "size_kb": 0.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv",
+          "requests"
+        ]
+      }
+    },
+    "trigger_watcher.py": {
+      "hash": "12887ef1dc4c",
+      "layer": "Orchestration",
+      "size_kb": 14.6,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "logging",
+          "pathlib",
+          "shutil",
+          "sys",
+          "threading",
+          "time"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "tts_local.py": {
+      "hash": "1911598bd962",
+      "layer": "Output_Pipeline",
+      "size_kb": 16.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "os",
+          "pathlib",
+          "sys",
+          "textwrap",
+          "warnings"
+        ],
+        "internal": [],
+        "external": []
+      }
+    }
+  }
+}
