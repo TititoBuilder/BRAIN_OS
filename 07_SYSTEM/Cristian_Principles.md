@@ -140,3 +140,14 @@ Zero manual copy/paste means zero lost knowledge. Each manual step is a failure 
 
 **5. Visibility drives progress**
 Seeing what you've built (domain dashboards, graph view) motivates continued building. Invisible progress feels like no progress. The 01_DOMAINS/ dashboards exist for this reason.
+
+---
+
+## Graphify — Dependency Graph as Session Context
+- Proven: 2026-05-09
+- Run `graph_maintainer.py` at session start for soccer-content-generator
+- Paste .context.md as session header — replaces raw file-dumping
+- Files >= 50KB get header_only mode (signatures only, read on demand)
+- brain_audio always flagged as [shared-core] — never scan inside it
+- Config: C:\BRAIN_OS\02_PROJECTS\graphs\soccer-content-generator.graphify.json
+- Tool: C:\BRAIN_OS\09_TOOLS\graphify.py

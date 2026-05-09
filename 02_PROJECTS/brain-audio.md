@@ -92,6 +92,13 @@ immediately across all venvs without reinstalling.
 
 ---
 
+## Session Usage
+- `graph_maintainer.py` checks brain_audio is importable at session start
+- If missing from a venv: `pip install -e C:\Dev\shared\brain-audio`
+- Version check: `from brain_audio import __version__`
+
+---
+
 ## Connected to
 
 - [[Project_Directory]]
