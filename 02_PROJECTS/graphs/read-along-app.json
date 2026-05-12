@@ -1,0 +1,38 @@
+{
+  "project": "read-along-app",
+  "root": "C:/Users/titit/Projects/read-along-app",
+  "updated_at": "2026-05-12T14:35:55.417413+00:00",
+  "node_count": 1,
+  "nodes": {
+    "backend/backend.py": {
+      "hash": "1b1e2a7b636a",
+      "layer": "API",
+      "size_kb": 11.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "logging",
+          "os",
+          "pathlib",
+          "subprocess",
+          "sys",
+          "tempfile",
+          "time",
+          "typing",
+          "urllib.error",
+          "urllib.parse",
+          "urllib.request",
+          "uuid"
+        ],
+        "internal": [],
+        "external": [
+          "fastapi",
+          "fastapi.middleware.cors",
+          "fastapi.responses",
+          "fastapi.staticfiles",
+          "whisper"
+        ]
+      }
+    }
+  }
+}

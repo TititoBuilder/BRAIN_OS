@@ -1,0 +1,11 @@
+{
+  "project": "read-along-app",
+  "root": "C:/Users/titit/Projects/read-along-app",
+  "graph_output": "C:/BRAIN_OS/02_PROJECTS/graphs/read-along-app.json",
+  "header_only_threshold_kb": 50,
+  "skip_patterns": ["venv", "__pycache__", ".git", "node_modules"],
+  "external_packages": ["brain_audio", "fastapi", "whisper", "uvicorn"],
+  "layers": {
+    "API": ["backend/backend.py"]
+  }
+}
