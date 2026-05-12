@@ -1,5 +1,5 @@
 # soccer-content-generator — dependency context
-_updated: 2026-05-09T19:13:36.495085+00:00_
+_updated: 2026-05-12T04:27:44.495615+00:00_
 _nodes: 96_
 
 ## Clip_Pipeline
@@ -116,7 +116,7 @@ _nodes: 96_
 ## Scripts
 - **scripts/cleanup_lancedb_duplicates.py** (1.0 KB) — external: `dotenv`, `lancedb`
 - **scripts/database_exporter.py** (10.5 KB) — external: `pandas`
-- **scripts/graph_maintainer.py** (6.5 KB)
+- **scripts/graph_maintainer.py** (6.6 KB)
 - **scripts/ingest_international_break.py** (7.1 KB) — internal: `vector_store`; external: `dotenv`
 - **scripts/ingest_ucl_2026.py** (6.9 KB) — internal: `src.knowledge_manager`; external: `dotenv`
 - **scripts/ingest_ucl_r16_second_legs.py** (5.4 KB) — internal: `vector_store`; external: `dotenv`

@@ -1,7 +1,7 @@
 {
   "project": "soccer-content-generator",
   "root": "C:/Dev/Projects/soccer-content-generator",
-  "updated_at": "2026-05-09T19:13:36.495085+00:00",
+  "updated_at": "2026-05-12T04:27:44.495615+00:00",
   "node_count": 96,
   "nodes": {
     "avatar_character_profiles.py": {
@@ -619,13 +619,14 @@
       }
     },
     "scripts/graph_maintainer.py": {
-      "hash": "d9915bf88c9b",
+      "hash": "616610761099",
       "layer": "Scripts",
-      "size_kb": 6.5,
+      "size_kb": 6.6,
       "mode": "full",
       "imports": {
         "stdlib": [
           "__future__",
+          "argparse",
           "ast",
           "hashlib",
           "json",

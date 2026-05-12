@@ -1,0 +1,18 @@
+{
+  "project": "ca-book",
+  "root": "C:/Knowledge/CA",
+  "graph_output": "C:/BRAIN_OS/02_PROJECTS/graphs/ca-book.json",
+  "header_only_threshold_kb": 50,
+  "skip_patterns": ["venv", "__pycache__", ".git", ".claude", "audio", "_processed", "_rejected", "_review", "✅processed"],
+  "external_packages": ["anthropic", "dotenv", "google.oauth2", "googleapiclient", "google_auth_oauthlib", "requests"],
+  "layers": {
+    "Compiler":       ["CA_Book/book_compiler.py"],
+    "Foundation":     ["CA_Book/chapters/ch01_origin.md", "CA_Book/chapters/ch02_system.md"],
+    "Operations":     ["CA_Book/chapters/ch03_leads.md", "CA_Book/chapters/ch04_agents.md", "CA_Book/chapters/ch05_pricing.md"],
+    "Brand_Deploy":   ["CA_Book/chapters/ch06_brand.md", "CA_Book/chapters/ch07_deployment.md"],
+    "People_Finance": ["CA_Book/chapters/ch08_relationships.md", "CA_Book/chapters/ch09_finance.md"],
+    "Retrospective":  ["CA_Book/chapters/ch10_lessons.md"],
+    "Master_Book":    ["CA_Book/CA_Master_Book.txt"],
+    "Session_Queue":  ["CA_Book/incoming/", "Session_Resumes/"]
+  }
+}

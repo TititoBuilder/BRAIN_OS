@@ -1,0 +1,30 @@
+{
+  "project": "ca-book",
+  "root": "C:/Knowledge/CA",
+  "updated_at": "2026-05-12T04:28:11.711804+00:00",
+  "node_count": 1,
+  "nodes": {
+    "CA_Book/book_compiler.py": {
+      "hash": "bc3c44d9f2f0",
+      "layer": "Compiler",
+      "size_kb": 22.6,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "os",
+          "pathlib",
+          "re",
+          "shutil",
+          "sys",
+          "time"
+        ],
+        "internal": [],
+        "external": [
+          "anthropic",
+          "dotenv"
+        ]
+      }
+    }
+  }
+}

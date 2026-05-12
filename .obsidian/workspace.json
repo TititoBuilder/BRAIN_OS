@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07_SYSTEM/Project_Directory.md",
+                "file": "00_NAV/CA_Nav.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Project_Directory"
+              "title": "CA_Nav"
             }
           }
         ],
@@ -226,8 +226,11 @@
   },
   "active": "f9612a300b187e34",
   "lastOpenFiles": [
-    "07_SYSTEM/PowerShell_Aliases.md",
+    "02_PROJECTS/graphs/ca-book.context.md",
+    "02_PROJECTS/graphs/ca-book.json",
+    "02_PROJECTS/graphs/ca-book.graphify.json",
     "07_SYSTEM/Project_Directory.md",
+    "07_SYSTEM/PowerShell_Aliases.md",
     "Untitled 4.md",
     "Untitled 4",
     "Untitled 3.md",
@@ -256,21 +259,18 @@
     "00_SYSTEM or 00_NAV.md",
     "10_CHATS/2026-05-06_BRAIN_OS_Graph_Session.md",
     "07_SYSTEM/Obsidian_Update_Protocol.md",
-    "09_TOOLS/Tools_Book_Node.md",
     "Untitled 10.canvas",
     "Untitled 2.base",
     "Untitled 1",
     "Untitled",
     "02_PROJECTS/_archive",
     "00_NAV",
-    "NodeWhat it shows02_PROJECTS",
     "Untitled 2.canvas",
     "Untitled 3.canvas",
     "Untitled 4.canvas",
     "Untitled 5.canvas",
     "Untitled 6.canvas",
     "Untitled 7.canvas",
-    "Untitled 8.canvas",
-    "10_SKILLS"
+    "Untitled 8.canvas"
   ]
 }
