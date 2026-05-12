@@ -11,7 +11,7 @@ Long-form business knowledge base for CristianConstruction — defines pricing l
 Compiled knowledge book — markdown source → Claude Opus prose → Kokoro TTS audio
 
 ## Location
-**Source markdown:** `C:\Dev\CristianConstruction\` (chapter files colocated with agent source)
+**Source markdown:** `C:\Knowledge\CA\CA_Book\chapters\`
 **Audio sync:** Google Drive → `CA_Book_Audio/`
 **Compiler:** `book_compiler.py` (shared with BDF project; invoked from CA context)
 **Audio engine:** `ca_audio.py` (`C:\Dev\Projects\custom-agent\ca_audio.py`) — Kokoro `KPipeline(lang_code="a")`, voice `af_heart`, 24000 Hz WAV

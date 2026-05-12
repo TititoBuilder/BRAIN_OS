@@ -62,7 +62,7 @@ Same function as BDF. Loops `ch01 → ch10`, reads each `.md` file, concatenates
 | Chapter count | 27 files (dupes present) | 10 files (clean) |
 | Compiler location | `C:\Dev\Projects\soccer-content-generator\` | `C:\Knowledge\CA\CA_Book\` |
 | venv | BDF dev venv | `C:\Knowledge\CA\venv\` (independent) |
-| Post-processing | Kokoro TTS + Drive | Drive only (no TTS) |
+| Post-processing | Kokoro TTS + Drive | TTS automated via generate_chapter_audio() — calls ca_audio.py via subprocess after each chapter compile. Skip with --no-audio flag. |
 | Master book | `BDF_Master_Book.txt` | `CA_Master_Book.txt` |
 
 ---
