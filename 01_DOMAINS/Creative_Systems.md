@@ -179,7 +179,7 @@ C:\Knowledge\ResolveMCP\ - Resolve guide audio
 
 ### Book Systems
 - [[BDF_Book_System]] — 16-chapter technical knowledge book, auto-compiled via book_compiler.py, Kokoro TTS + Drive sync
-- [[CA_Book_System]] — 10-chapter CA5 knowledge book, auto-compiled, Drive sync
+- [[CA_Book_System]] — 11-chapter CA5 knowledge book, auto-compiled, Drive sync (ch11_architecture added 2026-05-12)
 
 ---
 

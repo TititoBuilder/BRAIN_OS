@@ -27,7 +27,7 @@ domain: AI Engineering Layer
 ## Active Projects
 
 ### [[Custom_Agent]] (CA)
-**Location:** `C:\Dev\CristianConstruction\`  
+**Location:** `C:\Dev\Projects\custom-agent\`  
 **What:** AI assistant with Telegram interface, book compilation, audio generation  
 **Status:** MVP complete, Kokoro TTS working  
 **Tech:** Python, Claude API, Kokoro (local TTS), Telegram Bot  
@@ -42,8 +42,6 @@ domain: AI Engineering Layer
 **Cost Clarification (2026-05-03):** Kokoro TTS is 100% FREE (local GPU inference, zero API costs). Prior confusion: charges were Claude Opus compilation ($0.15-0.30/chapter), not TTS. See [[Custom_Agent_TTS]] for full breakdown.
 
 **Pending:**
-- [ ] Separate CA venv from BDF venv (currently sharing)
-- [ ] Each project needs isolated venv before LanceDB migration
 
 ### [[Resolve_MCP]] Server
 **Location:** `C:\Users\titit\Projects\resolve-mcp-server\`  
@@ -127,7 +125,6 @@ domain: AI Engineering Layer
 ## Pending Tasks (AI Engineering)
 
 ### Critical (Do Soon)
-- [ ] Separate CA venv from BDF venv
 - [x] Complete LanceDB migration to C: drive
 - [ ] Test all 52 Resolve MCP tools
 

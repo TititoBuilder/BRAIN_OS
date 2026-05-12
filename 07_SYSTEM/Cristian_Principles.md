@@ -151,3 +151,22 @@ Seeing what you've built (domain dashboards, graph view) motivates continued bui
 - brain_audio always flagged as [shared-core] — never scan inside it
 - Config: C:\BRAIN_OS\02_PROJECTS\graphs\soccer-content-generator.graphify.json
 - Tool: C:\BRAIN_OS\09_TOOLS\graphify.py
+
+---
+
+## Venv Isolation Principle
+- Proven: 2026-05-04
+- Every project gets its own venv — no sharing, ever
+- Shared venvs cause: dependency collision, contamination on reinstall, Claude Code scope confusion, blocked independent cost auditing
+- Fix: Remove-Item venv -Recurse -Force, rebuild from requirements.txt or pip install from scratch
+- BDF venv had 39 leaked packages before isolation — discovered during audit
+
+---
+
+## MCP Trust Model
+- Proven: 2026-05-03
+- Connected status only confirms the process started — not that tools work
+- Obsidian MCP showed Connected for 7 minutes while hanging on every call
+- Eager servers (OBS): fail immediately when target app is offline — honest signal
+- Lazy servers (Resolve): show Connected even when DaVinci is closed — process starts, bridge waits
+- Always verify with an actual tool call before trusting Connected status
