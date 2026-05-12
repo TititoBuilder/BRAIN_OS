@@ -8,7 +8,7 @@ tags: [agent, live]
 BDF Soccer Bot
 
 ## Function
-Generates branded 1200x675 cards via PIL compositing (card_composer) over AI-generated images (image_agent, media_agent). Migration from DALL-E 3 to gpt-image-1 in progress.
+Generates branded 1200x675 cards via PIL compositing (card_composer) over AI-generated images (image_agent, media_agent).
 
 ## Input
 - `topic` (str) — player or match subject
@@ -25,8 +25,8 @@ Generates branded 1200x675 cards via PIL compositing (card_composer) over AI-gen
 Called by the content generation pipeline after post text is ready — image compositing is the final step before Telegram approval queue.
 
 ## Tools and APIs
-- [[OpenAI_DALL-E3]] — `dall-e-3` model; DEPRECATING May 12 2026 → migrating to `gpt-image-1`
-- [[OpenAI_gpt-image-1]] — `gpt-image-1` replacement; already wired in `media_agent.py` and `create_avatar_library.py`
+- [[OpenAI_DALL-E3]] — `dall-e-3` model; currently active
+- [[OpenAI_gpt-image-1]] — `gpt-image-1` — PLACEHOLDER, not yet implemented. Return to this when resuming BDF image work.
 - [[Unsplash_API]] — primary photo source (UNSPLASH_ACCESS_KEY)
 - [[Pixabay_API]] — fallback photo source (PIXABAY_API_KEY)
 - [[NewsImageAgent]] — real player photos scraped from BBC/ESPN feeds
@@ -34,7 +34,7 @@ Called by the content generation pipeline after post text is ready — image com
 
 ## Canonical file
 C:\Dev\Projects\soccer-content-generator\src\image_agent.py (tier 0 AI generation)
-C:\Dev\Projects\soccer-content-generator\src\media_agent.py (DALL-E 3 + gpt-image-1 both wired — DALL-E 3 deprecates May 12 2026)
+C:\Dev\Projects\soccer-content-generator\src\media_agent.py (DALL-E 3 active; gpt-image-1 wired but not yet implemented)
 C:\Dev\Projects\soccer-content-generator\src\card_composer.py (PIL compositing, 20 accent-colored templates)
 
 ## Connected to
@@ -46,7 +46,7 @@ C:\Dev\Projects\soccer-content-generator\src\card_composer.py (PIL compositing, 
 - [[BDF_Social_Media_Flow]]
 
 ## Status
-Live — DALL-E 3 migration to gpt-image-1 pending (deadline May 12 2026)
+Live — gpt-image-1 migration PLACEHOLDER, not yet implemented. Return to this when resuming BDF image work.
 
 ## Image tier fallback order
 | Tier | Source | Notes |
