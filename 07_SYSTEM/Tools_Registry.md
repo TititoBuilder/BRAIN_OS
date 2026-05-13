@@ -1,16 +1,16 @@
----
+﻿---
 tags: [system, tools, infra, live]
 ---
 # Tools registry
 
-> **Rule — before acquiring any new tool:**
+> **Rule â€” before acquiring any new tool:**
 > Check this file first. If a tool already exists that covers the need, use it.
 > Example: we wasted 30min on Gmail SMTP + ntfy when Telegram was already here.
 
 ---
 
 ## Notification standard
-- **Tool: Telegram** (existing bot — `clip_watcher.py`)
+- **Tool: Telegram** (existing bot â€” `clip_watcher.py`)
 - Token: `TELEGRAM_BOT_TOKEN` in `.env`
 - Chat ID: `TELEGRAM_CHAT_ID` in `.env`
 - Rule: ALL system alerts route through this bot. No new notification services.
@@ -22,12 +22,12 @@ tags: [system, tools, infra, live]
 - Type: Claude API cost monitor + budget alert
 - Location: `C:\BRAIN_OS\03_APIS\claude_monitor.py`
 - Config: `C:\BRAIN_OS\03_APIS\.env`
-- Input: CSV exported from console.anthropic.com → Cost → Export
+- Input: CSV exported from console.anthropic.com â†’ Cost â†’ Export
 - Output: terminal report grouped by model + Telegram alert on budget breach
 - Alerts: fires when daily > $5 or monthly projection > $20
 - Notification: Telegram (same bot as soccer pipeline)
 - Schedule: run on 1st of each month after exporting CSV
-- Calendar event: "Export Claude CSV + Run Cost Monitor" — recurring monthly
+- Calendar event: "Export Claude CSV + Run Cost Monitor" â€” recurring monthly
 - Usage:
   ```
   cd C:\BRAIN_OS\03_APIS
@@ -47,7 +47,7 @@ tags: [system, tools, infra, live]
 - Project configs: .claude/settings.json in each project root
 - GitHub: github.com/anthropics/claude-code
 - Cost rule: use Sonnet by default. Opus only for hard architecture decisions.
-- Permission rule: never use Bash(*) or Read(*) wildcards — scope to project dir only
+- Permission rule: never use Bash(*) or Read(*) wildcards â€” scope to project dir only
 - .claudeignore: always add to projects to prevent large files bloating context
 
 ---
@@ -71,7 +71,7 @@ tags: [system, tools, infra, live]
 - Plugins: Canvas (core), Graph View (core)
 
 ### Obsidian MCP
-- Status: ✅ Operational (fixed 2026-05-03)
+- Status: âœ… Operational (fixed 2026-05-03)
 - Tools: 11 (create-note, read-note, edit-note, search-vault, etc.)
 - Config: `npx -y obsidian-mcp C:\BRAIN_OS`
 - **Fix applied:** Was registered as "obs-mcp" (wrong package) - corrected to "obsidian-mcp"
@@ -84,7 +84,7 @@ tags: [system, tools, infra, live]
 - Engine: Microsoft Edge TTS (cloud, free)
 - Voice: en-US-GuyNeural (male, American English, natural-sounding)
 - Rate: -5% (slightly slower for learning comprehension)
-- Cost: $0 — 100% FREE Microsoft service
+- Cost: $0 â€” 100% FREE Microsoft service
 - Format: MP3 output
 - Installation: `pip install edge-tts` (global)
 - Use case: one-off learning guides, documentation audio, tutorial narration
@@ -123,7 +123,7 @@ tags: [system, tools, infra, live]
 - Default terminal on Predator
 - Key rule: never chain >> (use separate commands)
 - Key rule: Select-String needs Get-ChildItem pipe, not -Recurse direct
-- Key rule: grep does not exist — use Select-String
+- Key rule: grep does not exist â€” use Select-String
 - Key rule: URLs and code from chat must be typed manually, not copy-pasted (hyperlink corruption)
 
 ---
@@ -132,7 +132,7 @@ tags: [system, tools, infra, live]
 - Type: Multi-machine OBS clip bridge
 - Location: `C:\Dev\Projects\soccer-content-generator\obs_relay.py`
 - Watches: `C:\Media\Recordings` (OBS replay buffer output)
-- Routes to: `C:\BDF_Share` (direct on Predator) · SyncThing folder on HP
+- Routes to: `C:\BDF_Share` (direct on Predator) Â· SyncThing folder on HP
 - Machine detection: hostname `CRISTIAN` = Predator (direct); any other = HP (SyncThing)
 - Usage: `python obs_relay.py --match UCL_Atletico_Arsenal`
 
@@ -141,9 +141,9 @@ tags: [system, tools, infra, live]
 ## clip_watcher.py
 - Type: Clip Factory pipeline engine
 - Location: `C:\Dev\Projects\soccer-content-generator\clip_watcher.py`
-- Watches: `C:\BDF_Share` (AUTO track) · `master_edit\ready\` (MASTER EDIT track)
+- Watches: `C:\BDF_Share` (AUTO track) Â· `master_edit\ready\` (MASTER EDIT track)
 - Output: injects to `src/queue/content_queue.json` with `status=pending`
-- Telegram: optional (wrapped in try/except) — dashboard is primary approval UI
+- Telegram: optional (wrapped in try/except) â€” dashboard is primary approval UI
 - Usage: standalone `python clip_watcher.py` or imported by `bot_service.py`
 
 ---
@@ -154,7 +154,7 @@ tags: [system, tools, infra, live]
 - Watches: `triggers\` folder (polls every 10s)
 - File format: `{content_type}_{topic}.txt` e.g. `hot_take_Atletico_Arsenal_goal.txt`
 - Output: SoccerBot-generated content injected to queue as `status=pending`
-- Usage: `python trigger_watcher.py` · `--once` flag for single pass
+- Usage: `python trigger_watcher.py` Â· `--once` flag for single pass
 
 ---
 
@@ -163,16 +163,16 @@ tags: [system, tools, infra, live]
 - Location: `C:\Dev\Projects\soccer-content-generator\sync_brain.py`
 - Collects: queue counts, weekly cost, LanceDB doc count, git status, clip stats
 - Output: `data/brain_sync_{YYYY-MM-DD}.json` + git commit
-- Usage: `python sync_brain.py` · `--no-commit` to skip git
+- Usage: `python sync_brain.py` Â· `--no-commit` to skip git
 
 ---
 
 ## obs_mcp.py
 - Type: OBS WebSocket v5 controller (FastAPI + importable class)
 - Location: `C:\Dev\Projects\soccer-content-generator\obs_mcp.py`
-- Library: `simpleobsws` 1.4.x — replaces broken `obsws-python` (v4 only)
-- Port: 8001 · WebSocket: `ws://localhost:4455` · Password: `OBS_WS_PASSWORD` in `.env`
-- Endpoints: `/obs/status` · `/obs/save_replay` · `/obs/start_replay_buffer` · `/obs/stop_replay_buffer` · `/obs/start_recording` · `/obs/stop_recording` · `/obs/set_scene`
+- Library: `simpleobsws` 1.4.x â€” replaces broken `obsws-python` (v4 only)
+- Port: 8001 Â· WebSocket: `ws://localhost:4455` Â· Password: `OBS_WS_PASSWORD` in `.env`
+- Endpoints: `/obs/status` Â· `/obs/save_replay` Â· `/obs/start_replay_buffer` Â· `/obs/stop_replay_buffer` Â· `/obs/start_recording` Â· `/obs/stop_recording` Â· `/obs/set_scene`
 - Import: `from obs_mcp import OBSController`
 - Usage: `python obs_mcp.py`
 
@@ -184,17 +184,19 @@ tags: [system, tools, infra, live]
 - [[DaVinci_Resolve_MCP]]
 
 ## Session Log
-- 2026-04-30 — Session 2026-04-30 complete. Cost monitor live, Telegram wired, CLAUDE.md in
-- 2026-04-30 — Session 2026-04-30 complete. Cost monitor live, Telegram wired, CLAUDE.md in
-- 2026-04-30 — Session 2026-04-30 — Claude API cost forensics and knowledge
-- 2026-04-30 — Telegram fix test
-- 2026-04-30 — Session 2026-04-30 — Knowledge continuity architecture complete.
-- 2026-04-30 — Session 2026-04-30 — Full session close pipeline operational.
-- 2026-04-18 — Resolve MCP expanded 11→52 tools (3 phases). Read-Along venv rebuilt. Edge TTS audio learning system established. Rules 11-13 added.
-- 2026-05-01 — UTF-8 encoding fix verified — em dashes now render correctly
-- 2026-05-01 — Session 2026-04-30 final close. Full system standardization
-- 2026-05-02 — Context7 MCP audit complete - verified fully operational with HTTP
-- 2026-05-03 — Obsidian MCP fixed (obs-mcp → obsidian-mcp), 11 tools operational; Kokoro + Edge TTS costs documented; knowledge pipeline initiated
-- 2026-05-04 — Built complete knowledge management pipeline for BRAIN_OS:
-- 2026-05-06 — BRAIN_OS Graph Session â€” May 6, 2026
-- 2026-05-09 — BDF Session ? 2026-05-09
+- 2026-04-30 â€” Session 2026-04-30 complete. Cost monitor live, Telegram wired, CLAUDE.md in
+- 2026-04-30 â€” Session 2026-04-30 complete. Cost monitor live, Telegram wired, CLAUDE.md in
+- 2026-04-30 â€” Session 2026-04-30 â€” Claude API cost forensics and knowledge
+- 2026-04-30 â€” Telegram fix test
+- 2026-04-30 â€” Session 2026-04-30 â€” Knowledge continuity architecture complete.
+- 2026-04-30 â€” Session 2026-04-30 â€” Full session close pipeline operational.
+- 2026-04-18 â€” Resolve MCP expanded 11â†’52 tools (3 phases). Read-Along venv rebuilt. Edge TTS audio learning system established. Rules 11-13 added.
+- 2026-05-01 â€” UTF-8 encoding fix verified â€” em dashes now render correctly
+- 2026-05-01 â€” Session 2026-04-30 final close. Full system standardization
+- 2026-05-02 â€” Context7 MCP audit complete - verified fully operational with HTTP
+- 2026-05-03 â€” Obsidian MCP fixed (obs-mcp â†’ obsidian-mcp), 11 tools operational; Kokoro + Edge TTS costs documented; knowledge pipeline initiated
+- 2026-05-04 â€” Built complete knowledge management pipeline for BRAIN_OS:
+- 2026-05-06 â€” BRAIN_OS Graph Session Ã¢â‚¬â€ May 6, 2026
+- 2026-05-09 â€” BDF Session ? 2026-05-09
+- 2026-05-12 — BRAIN_OS Audio Library complete: 5 Claudeguide WAVs synthesized via Kokoro (~36 min), pushed to Drive Tools/Claudeguide/; session_close.py deployed to 09_TOOLS
+
