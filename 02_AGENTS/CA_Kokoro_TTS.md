@@ -1,4 +1,4 @@
----
+﻿---
 tags: [agent, live]
 ---
 
@@ -20,18 +20,18 @@ Offline text-to-speech synthesizer that reads CA Book chapter markdown files, st
 - Console: word count, estimated duration (~130 words/min), actual duration after synthesis
 
 ## Trigger
-Manual CLI: `python ca_audio.py ch01_origin [ch02_system ...]`; no background service, no scheduled task — runs on demand per chapter.
+Manual CLI: `python ca_audio.py ch01_origin [ch02_system ...]`; no background service, no scheduled task â€” runs on demand per chapter.
 
 ## Tools and APIs
-- [[Kokoro_TTS]] — local `KPipeline(lang_code="a")`, voice `af_heart`; yields audio chunks in segments; no API cost, fully offline
-- `numpy` — concatenates audio chunks into single array before write
-- `soundfile` — writes final WAV to disk
+- [[Kokoro_TTS]] â€” local `KPipeline(lang_code="a")`, voice `af_heart`; yields audio chunks in segments; no API cost, fully offline
+- `numpy` â€” concatenates audio chunks into single array before write
+- `soundfile` â€” writes final WAV to disk
 
 ## Canonical file
 C:\Dev\Projects\custom-agent\ca_audio.py
 
 ## Connected to
-- [[CABookAudio]] workflow — manual step in book production pipeline
+- [[CABookAudio]] workflow â€” manual step in book production pipeline
 - [[Custom_Agent]] project
 
 ## Status
@@ -39,3 +39,4 @@ Live
 
 ## Markdown stripping
 Removes: code fences, inline code, headers, bold/italic, horizontal rules, links (keeps label), image tags, HTML tags. Collapses 3+ blank lines into single paragraph break. This ensures Kokoro reads clean prose without speaking markdown syntax.
+

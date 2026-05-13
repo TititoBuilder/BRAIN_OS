@@ -1,4 +1,4 @@
----
+﻿---
 tags: [tools, index, system]
 status: active
 dependencies: []
@@ -11,7 +11,7 @@ children:
   - "[[Tools_Book_Node]]"
 ---
 
-# 09_TOOLS — Index
+# 09_TOOLS â€” Index
 
 Master index for all tool documentation nodes in BRAIN_OS.
 Last updated: 2026-04-28.
@@ -20,18 +20,22 @@ Last updated: 2026-04-28.
 
 ## Editor
 
-- [[VSCode_Node]] — VS Code extensions inventory (Python, Git, AI, UI, Shell, Automation, Markdown groups)
+- [[VSCode_Node]] â€” VS Code extensions inventory (Python, Git, AI, UI, Shell, Automation, Markdown groups)
 
 ## System & Hardware
 
-- [[Windows_Tools_Node]] — PowerToys modules, AutoHotkey, Flow Launcher, SyncThing
-  - [[obs_control.ahk]] — AutoHotkey script: F8/F9/F10 OBS recording control, auto-starts on boot
-- [[Predator_Node]] — Acer Predator desktop: RTX 5070 Ti, CUDA 12.8, 165Hz, Turbo mode, FancyZones layout
+- [[Windows_Tools_Node]] â€” PowerToys modules, AutoHotkey, Flow Launcher, SyncThing
+  - [[obs_control.ahk]] â€” AutoHotkey script: F8/F9/F10 OBS recording control, auto-starts on boot
+- [[Predator_Node]] â€” Acer Predator desktop: RTX 5070 Ti, CUDA 12.8, 165Hz, Turbo mode, FancyZones layout
 
 ## Content Production
 
-- [[OBS_Node]] — OBS Studio 32.1.2: 1080p/60fps NVENC H.264 MKV, 60s replay buffer, F8/F9/F10 hotkeys, WebSocket 4455
+- [[OBS_Node]] â€” OBS Studio 32.1.2: 1080p/60fps NVENC H.264 MKV, 60s replay buffer, F8/F9/F10 hotkeys, WebSocket 4455
 
 ## Master Reference
 
-- [[Tools_Book_Node]] — Master book entry: purpose, current stack, setup notes, version history
+- [[Tools_Book_Node]] â€” Master book entry: purpose, current stack, setup notes, version history
+## Session Management
+
+- [[session_close.py]] — Interactive session compiler: prompts for accomplished/pending/notes, writes dated archive to 08_SESSIONS/, fires Telegram summary (requires TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID in .env)
+
