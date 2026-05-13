@@ -54,7 +54,7 @@ def _git_accomplishments(hours: int = 8) -> list[str]:
         try:
             result = subprocess.run(
                 ["git", "-C", str(repo), "log", "--oneline", f"--since={hours} hours ago"],
-                capture_output=True, text=True, timeout=10,
+                capture_output=True, text=True, encoding="utf-8", timeout=10,
             )
             for line in result.stdout.strip().splitlines():
                 parts = line.split(" ", 1)
