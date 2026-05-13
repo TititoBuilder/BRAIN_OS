@@ -11,6 +11,7 @@ Usage:
 import os
 import sys
 import argparse
+import subprocess
 from datetime import datetime
 from pathlib import Path
 
@@ -20,6 +21,48 @@ BRAIN_OS_ROOT   = Path(r"C:\BRAIN_OS")
 SESSIONS_DIR    = BRAIN_OS_ROOT / "08_SESSIONS"
 TELEGRAM_TOKEN  = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT   = os.environ.get("TELEGRAM_CHAT_ID")
+
+# ── Git log helpers ───────────────────────────────────────────────────────────
+
+def _discover_repos(max_depth: int = 2) -> list[Path]:
+    """Find git repos up to max_depth levels under C:\\Dev and C:\\Knowledge."""
+    found: list[Path] = []
+
+    def _scan(path: Path, depth: int) -> None:
+        if (path / ".git").is_dir():
+            found.append(path)
+            return
+        if depth == 0:
+            return
+        try:
+            for child in path.iterdir():
+                if child.is_dir():
+                    _scan(child, depth - 1)
+        except PermissionError:
+            pass
+
+    for base in (Path(r"C:\Dev"), Path(r"C:\Knowledge")):
+        if base.exists():
+            _scan(base, max_depth)
+    return found
+
+
+def _git_accomplishments(hours: int = 8) -> list[str]:
+    """Return commit subject lines from all repos touched in the last N hours."""
+    items: list[str] = []
+    for repo in _discover_repos():
+        try:
+            result = subprocess.run(
+                ["git", "-C", str(repo), "log", "--oneline", f"--since={hours} hours ago"],
+                capture_output=True, text=True, timeout=10,
+            )
+            for line in result.stdout.strip().splitlines():
+                parts = line.split(" ", 1)
+                items.append(parts[1] if len(parts) == 2 else line)
+        except Exception:
+            pass
+    return items
+
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -52,7 +95,7 @@ def send_telegram(message: str) -> None:
 
 
 def build_archive(
-    project: str,
+    projects: list[str],
     accomplished: list[str],
     pending: list[str],
     notes: str,
@@ -64,7 +107,7 @@ def build_archive(
 
     lines = [
         f"# Session Archive — {date_str} {time_str}",
-        f"**Project:** {project}",
+        f"**Projects:** {', '.join(projects)}",
         "",
         "## Accomplished",
     ]
@@ -83,7 +126,7 @@ def build_archive(
 
 
 def build_telegram_message(
-    project: str,
+    projects: list[str],
     accomplished: list[str],
     pending: list[str],
     timestamp: datetime,
@@ -93,7 +136,7 @@ def build_telegram_message(
     pnd_text = "\n".join(f"  🔜 {i}" for i in pending)     or "  (none)"
     return (
         f"*BRAIN OS Session Closed*\n"
-        f"📁 Project: {project}\n"
+        f"📁 Projects: {', '.join(projects)}\n"
         f"🕒 {date_str}\n\n"
         f"*Done:*\n{acc_text}\n\n"
         f"*Next:*\n{pnd_text}"
@@ -104,7 +147,7 @@ def build_telegram_message(
 
 def main():
     parser = argparse.ArgumentParser(description="BRAIN OS session compiler")
-    parser.add_argument("--project", default="", help="Project name (e.g. BDF, CA, CristianConstruction)")
+    parser.add_argument("--project", default="", help="Projects touched, comma-separated (e.g. BDF,CA)")
     parser.add_argument("--silent",  action="store_true", help="Skip Telegram notification")
     args = parser.parse_args()
 
@@ -114,23 +157,38 @@ def main():
     print(f"║   {now.strftime('%Y-%m-%d  %H:%M')}               ║")
     print("╚══════════════════════════════════╝")
 
-    # Project
-    project = args.project.strip()
-    if not project:
-        project = input("\nProject name (e.g. BDF, CA, General): ").strip() or "General"
+    # Projects
+    raw_projects = args.project.strip()
+    if not raw_projects:
+        raw_projects = input("\nProjects touched (comma-separated, e.g. BDF, CA): ").strip()
+    projects = [p.strip() for p in raw_projects.split(",") if p.strip()] or ["General"]
 
-    # Content
-    accomplished = prompt_block("What was ACCOMPLISHED this session?", "tasks completed, files built, problems solved")
-    pending      = prompt_block("What is PENDING for next session?",   "tasks to continue, known issues, open questions")
+    # Accomplishments — pre-fill from git log
+    print("\nFetching recent git commits (last 8 hours)...")
+    accomplished = _git_accomplishments()
+    if accomplished:
+        print(f"\n  Pre-filled from git log ({len(accomplished)} commit(s)):")
+        for item in accomplished:
+            print(f"  • {item}")
+    else:
+        print("  (no commits found in the last 8 hours)")
+    print("\nAdd anything else? (blank to finish)")
+    while True:
+        line = input("  > ").strip()
+        if not line:
+            break
+        accomplished.append(line)
+
+    pending = prompt_block("What is PENDING for next session?", "tasks to continue, known issues, open questions")
 
     print("\nExtra notes? (single line, or press Enter to skip)")
     notes = input("  > ").strip()
 
     # Build archive
-    archive_md  = build_archive(project, accomplished, pending, notes, now)
-    date_slug   = now.strftime("%Y-%m-%d_%H%M")
-    project_slug = project.lower().replace(" ", "_")
-    filename    = f"{date_slug}_{project_slug}.md"
+    archive_md   = build_archive(projects, accomplished, pending, notes, now)
+    date_slug    = now.strftime("%Y-%m-%d_%H%M")
+    project_slug = "_".join(p.lower().replace(" ", "_") for p in projects)
+    filename     = f"{date_slug}_{project_slug}.md"
 
     SESSIONS_DIR.mkdir(parents=True, exist_ok=True)
     archive_path = SESSIONS_DIR / filename
@@ -145,7 +203,7 @@ def main():
 
     # Telegram
     if not args.silent and TELEGRAM_TOKEN and TELEGRAM_CHAT:
-        msg = build_telegram_message(project, accomplished, pending, now)
+        msg = build_telegram_message(projects, accomplished, pending, now)
         send_telegram(msg)
     elif not args.silent:
         print("[Telegram] Skipped — TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set")
