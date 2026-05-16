@@ -22,6 +22,13 @@ SESSIONS_DIR    = BRAIN_OS_ROOT / "08_SESSIONS"
 TELEGRAM_TOKEN  = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT   = os.environ.get("TELEGRAM_CHAT_ID")
 
+_PROJECT_KEYWORDS: dict[str, list[str]] = {
+    "BDF":      ["bdf", "soccer", "drive_sync", "graph_maintainer", "distill", "book_compiler"],
+    "CA":       ["ca", "construction", "ca-book"],
+    "BRAIN_OS": ["brain_os", "brainos", "obsidian", "session_close", "graphify"],
+    "Resolve":  ["resolve", "davinci"],
+}
+
 # ── Git log helpers ───────────────────────────────────────────────────────────
 
 def _discover_repos(max_depth: int = 2) -> list[Path]:
@@ -65,6 +72,17 @@ def _git_accomplishments(hours: int = 8) -> list[str]:
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
+
+def _detect_projects(commit_messages: list[str]) -> list[str]:
+    """Return project names whose keywords appear in commit_messages."""
+    combined = " ".join(commit_messages).lower()
+    detected = [
+        project
+        for project, keywords in _PROJECT_KEYWORDS.items()
+        if any(kw in combined for kw in keywords)
+    ]
+    return detected or ["General"]
+
 
 def _sanitize_filename_part(text: str) -> str:
     """Return a filesystem-safe version of text for use in a filename."""
@@ -155,8 +173,7 @@ def build_telegram_message(
 
 def main():
     parser = argparse.ArgumentParser(description="BRAIN OS session compiler")
-    parser.add_argument("--project", default="", help="Projects touched, comma-separated (e.g. BDF,CA)")
-    parser.add_argument("--silent",  action="store_true", help="Skip Telegram notification")
+    parser.add_argument("--silent", action="store_true", help="Skip Telegram notification")
     args = parser.parse_args()
 
     now = datetime.now()
@@ -165,15 +182,14 @@ def main():
     print(f"║   {now.strftime('%Y-%m-%d  %H:%M')}               ║")
     print("╚══════════════════════════════════╝")
 
-    # Projects
-    raw_projects = args.project.strip()
-    if not raw_projects:
-        raw_projects = input("\nProjects touched (comma-separated, e.g. BDF, CA): ").strip()
-    projects = [p.strip() for p in raw_projects.split(",") if p.strip()] or ["General"]
-
     # Accomplishments — pre-fill from git log
     print("\nFetching recent git commits (last 8 hours)...")
     accomplished = _git_accomplishments()
+
+    # Auto-detect projects from commit messages
+    projects = _detect_projects(accomplished)
+    print(f"Projects detected: {', '.join(projects)}")
+
     if accomplished:
         print(f"\n  Pre-filled from git log ({len(accomplished)} commit(s)):")
         for item in accomplished:
