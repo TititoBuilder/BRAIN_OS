@@ -66,6 +66,14 @@ def _git_accomplishments(hours: int = 8) -> list[str]:
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
+def _sanitize_filename_part(text: str) -> str:
+    """Return a filesystem-safe version of text for use in a filename."""
+    text = text.split("\n", 1)[0]          # first line only
+    for ch in r'\/:*?"<>|':
+        text = text.replace(ch, "")
+    return text.strip()
+
+
 def prompt_block(label: str, hint: str = "") -> list[str]:
     """Collect multi-line input until the user enters a blank line."""
     print(f"\n{label}")
@@ -187,7 +195,8 @@ def main():
     # Build archive
     archive_md   = build_archive(projects, accomplished, pending, notes, now)
     date_slug    = now.strftime("%Y-%m-%d_%H%M")
-    project_slug = "_".join(p.lower().replace(" ", "_") for p in projects)
+    _parts       = [_sanitize_filename_part(p).lower().replace(" ", "_") for p in projects]
+    project_slug = "_".join(p for p in _parts if p) or "general"
     filename     = f"{date_slug}_{project_slug}.md"
 
     SESSIONS_DIR.mkdir(parents=True, exist_ok=True)
