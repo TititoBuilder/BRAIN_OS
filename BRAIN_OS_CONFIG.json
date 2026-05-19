@@ -6,5 +6,12 @@
     "MANIFEST_PATHS": {
       "bdf": "C:/BRAIN_OS/02_PROJECTS/graphs/bdf_drive_manifest.json"
     }
+  },
+  "drive_folders": {
+    "bdf_chapters":     "1NDlwixauyThIxv2Jw9vnI6gO6Uf6GTza",
+    "bdf_sessions":     "1nzdK88TGcSX1RJCeUt79bPE6nEG_aBPV",
+    "tools":            "1B5qNUrL13eT_k-NxakkuiW1pEj5WnsKf",
+    "brainos_chapters": "1W0q5MZId_DCInwyejE7QjL4sQLeWNhow",
+    "brainos_sessions": "1XFYHlIbiKkwK93qbsY3XPTgvaNyuC1jq"
   }
 }

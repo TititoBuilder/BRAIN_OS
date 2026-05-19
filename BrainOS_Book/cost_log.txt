@@ -1,0 +1,6 @@
+20260515_2011 | resolve_mcp_guide.txt | input: 454 tok | output: 37 tok | cost: $0.0005
+20260515_2013 | resolve_mcp_guide.txt | input: 454 tok | output: 46 tok | cost: $0.0005
+20260515_2021 | resolve_mcp_guide.txt | input: 454 tok | output: 37 tok | cost: $0.0005
+20260516_1713 | programming_terminology_reference.md | input: 516 tok | output: 40 tok | cost: $0.0006
+20260516_1733 | programming_terminology_reference.md | input: 585 tok | output: 43 tok | cost: $0.0006
+20260516_1744 | session_20260514_1902.md | input: 463 tok | output: 42 tok | cost: $0.0005

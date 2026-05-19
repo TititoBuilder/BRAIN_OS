@@ -1,3 +1,5 @@
+> System context: See `C:\BRAIN_OS\SYSTEM_MASTER.md` for hardware, paths, venvs, and cross-project rules.
+
 # BRAIN_OS — Claude Code Workspace
 
 ## Project Overview
@@ -63,6 +65,18 @@ All alerts route through the existing Telegram bot:
 | `03_APIS/claude_monitor.py` in a loop/cron without reviewing output | Makes live Admin API calls that count toward rate limits |
 | Any script writing to `C:\BRAIN_OS\` outside a git worktree | BRAIN_OS is an Obsidian vault — always commit so Obsidian sync stays clean |
 | `session_close.py` standalone | Must be run from `C:\Dev\Projects\soccer-content-generator` root |
+
+## Hardware & Runtime Environment
+
+| Item | Detail |
+|---|---|
+| Machine | Acer Predator (Windows 11) |
+| GPU | NVIDIA GeForce RTX 5070 Ti Laptop GPU |
+| CUDA | sm_120 (Blackwell) — requires PyTorch nightly cu128 |
+| AI Venv | `C:\Knowledge\CA\venv` — canonical for all AI/TTS/PyTorch work |
+| PyTorch | nightly cu128 installed, CUDA verified True |
+| CPU fallback | Never install CPU-only torch — always use nightly cu128 |
+| System Python | `C:\Users\titit\AppData\Local\Programs\Python\Python312` — no AI packages, never use for inference |
 
 ## Active .env Vars
 

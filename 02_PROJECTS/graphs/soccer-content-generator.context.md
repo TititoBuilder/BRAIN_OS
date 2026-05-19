@@ -1,6 +1,6 @@
 # soccer-content-generator — dependency context
-_updated: 2026-05-12T04:27:44.495615+00:00_
-_nodes: 96_
+_updated: 2026-05-16T01:54:19.999928+00:00_
+_nodes: 99_
 
 ## Clip_Pipeline
 - **clip_config.py** (4.5 KB)
@@ -74,7 +74,7 @@ _nodes: 96_
   - `def hub_telegram_sync()`
 - **database_manager.py** (9.1 KB) — external: `pandas`
 - **lancedb_integrator.py** (14.9 KB) — external: `lancedb`, `pandas`, `sentence_transformers`
-- **rebuild_lancedb.py** (20.1 KB) — internal: `vector_store`; external: `dotenv`, `lancedb`, `pandas`
+- **rebuild_lancedb.py** (20.0 KB) — internal: `vector_store`; external: `dotenv`, `lancedb`, `pandas`
 - **src/database.py** (7.3 KB)
 - **src/knowledge_manager.py** (8.4 KB) — internal: `vector_store`; external: `PyPDF2`
 - **src/vector_store.py** (4.4 KB) — external: `lancedb`
@@ -84,7 +84,7 @@ _nodes: 96_
 - **src/agent/memory.py** (3.8 KB)
 - **src/content_agent.py** (11.2 KB) — internal: `database`, `knowledge_manager`, `soccer_bot`
 - **src/quality_agent.py** (15.7 KB) — internal: `database`, `knowledge_manager`
-- **src/rag_pipeline.py** (7.1 KB) — external: `anthropic`, `dotenv`
+- **src/rag_pipeline.py** (7.0 KB) — external: `anthropic`, `dotenv`
 - **src/research_agent.py** (10.4 KB) — internal: `api_data_fetcher`, `database`, `knowledge_manager`
 - **src/soccer_bot.py** (32.6 KB) — external: `anthropic`, `dotenv`
 
@@ -116,7 +116,10 @@ _nodes: 96_
 ## Scripts
 - **scripts/cleanup_lancedb_duplicates.py** (1.0 KB) — external: `dotenv`, `lancedb`
 - **scripts/database_exporter.py** (10.5 KB) — external: `pandas`
-- **scripts/graph_maintainer.py** (6.6 KB)
+- **scripts/distill_session.py** (10.7 KB) — external: `anthropic`, `dotenv`
+- **scripts/drive_cleanup.py** (6.2 KB) — internal: `drive_sync`
+- **scripts/drive_sync.py** (9.9 KB)
+- **scripts/graph_maintainer.py** (16.0 KB)
 - **scripts/ingest_international_break.py** (7.1 KB) — internal: `vector_store`; external: `dotenv`
 - **scripts/ingest_ucl_2026.py** (6.9 KB) — internal: `src.knowledge_manager`; external: `dotenv`
 - **scripts/ingest_ucl_r16_second_legs.py** (5.4 KB) — internal: `vector_store`; external: `dotenv`

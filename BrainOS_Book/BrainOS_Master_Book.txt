@@ -1,0 +1,857 @@
+================================================================================
+BRAINOS KNOWLEDGE BOOK -- MASTER COMPILATION
+Generated: May 16, 2026 at 17:44
+================================================================================
+
+
+================================================================================
+PROGRAMMING_TERMINOLOGY_REFERENCE
+================================================================================
+
+BRAINOS Programming Terminology Reference
+
+> Aggregated from 15 BDF session distillations (2026-03-31 through 2026-05-14).
+> Sections extracted: Key Commands, Patterns Discovered, Principles Earned.
+> Deduplicated; near-identical entries merged into their canonical form.
+
+CLI Tools & Aliases
+
+PowerShell Profile Functions
+Location: 
+Both  and  must be kept identical so aliases load in all terminal contexts.
+
+| Alias | Purpose |
+|---|---|
+|  | Move current session log to  |
+|  | Run bookcompiler.py against BDF incoming dir (one file at a time) |
+|  | Full BDF compile run with venv activation |
+|  | Same as bdf-log but for CristianConstruction project |
+|  | Compile run for CA book |
+|  | Full CA book compile with venv |
+|  | Generate TTS audio for CA book |
+|  | Compile run targeting BrainOS book |
+|  | File watcher for active development session |
+
+Verify all aliases are loaded:
+
+Find and open the active profile:
+
+Book Compiler CLI ()
+Plugin-architecture compiler — one file per run is non-negotiable (see Principles Earned).
+
+TTS Pipeline CLI
+
+SyncThing CLI
+
+OBS Relay CLI
+
+BDF Pipeline Startup
+
+> Never run  and  simultaneously — both load SoccerBot and will conflict.
+
+Pipeline Concepts
+
+Three-Outcome File Routing
+Every file entering the book compiler routes to exactly one outcome — no ambiguous states:
+
+| Outcome | Location | Trigger |
+|---|---|---|
+| Merged |  | Content integrates cleanly into a known chapter |
+| Quarantined |  | Unknown chapter tag or low confidence score |
+| Rejected |  | Fails BDF relevance filter (non-project content) |
+
+Confidence-Scored Auto-Routing
+1-10 scale applied before chapter detection:
+- 8-10: Auto-route to chapter
+- 7: Flag for operator review
+- 6 and below: Quarantine to 
+
+BDF Filename Convention (Caption Quality Driver)
+Structured filenames are directly required for high-confidence AI caption generation:
+
+Example: 
+
+Generic OBS filenames produce low-confidence fallback captions that lack match context. Filename structure is not aesthetic — it is a data contract.
+
+File Stability Validation (Video Files)
+OBS writes clips asynchronously. Naive timestamp checks transfer corrupted files. Required pattern:
+
+Skip all 0-byte files unconditionally.
+
+One-File-Per-Run Rule
+Never batch multiple compile files. Chapter overlap causes exponential cost compounding:
+- Each subsequent merge reads all previous merged content as input tokens
+- Evidence: normal single-file runs = $1.50-2.50; batched runs = $7-8
+- Run  → wait for completion → run again for the next file
+
+Dual Twitter API Architecture
+Twitter's free tier does not support media uploads through v2:
+- v2 (tweepy.Client) — post tweets
+- v1.1 (tweepy.API) — upload media (images, chunked video)
+
+Competition Detection Cascade
+Three-tier fallback for export tagging:
+1. Explicit CLI argument
+2. Keyword detection in clip filename
+3. Bridge query of active project/timeline name in DaVinci Resolve
+
+Single-Input Dual-Output (TTS/NotebookLM)
+Every source file produces two optimized formats:
+-  — plain text optimized for TTS narration
+-  — structured markdown with metadata headers for active synthesis
+
+Chunking as Universal Pattern
+Sentence-level chunking at ~400 characters with 0.3s silence padding between chunks. The same problem solved for Kokoro TTS context windows is identical to Claude API prompt chunking in the soccer bot. Recognize this pattern when facing it again.
+
+Hybrid Approval Model
+Automation handles all preparation (content generation, formatting, scheduling). Human judgment is preserved only at the consequence moment (external publish). Telegram serves as the mobile approval interface — no desktop dependency.
+
+Event-Driven vs Scheduled Processing
+The book compiler performs zero work when  is empty. This is intentional — event-driven design scales to zero cost when idle. Scheduled polling wastes resources on empty runs.
+
+Silent Failures as a Debugging Class
+The most expensive bugs produce no errors: path typos in watch directories, enum type mismatches, missing attribute declarations, 0-byte file transfers. These run silently and accomplish nothing. Path validation must fail loudly at startup.
+
+Cross-Project Handoff Message Pattern
+When work spans separate Claude projects, the handoff must be self-contained:
+
+Pre-Routing Beats Post-Detection
+Determine chapter routing during the compile session response (routing map step), not via auto-detection after file creation. The auto-detector is a safety net — the routing map is the primary mechanism.
+
+Cost Accumulation in Batch Processing
+When multiple files touch the same chapter, each successive merge reads all previous merges as input. Token costs compound exponentially. Always run one file per book-compile execution.
+
+Architecture Patterns
+
+Two-Machine Split Architecture
+- HP Laptop: OBS recording to , DaVinci Resolve editing, exports to 
+- Predator (canonical machine): AI processing, LanceDB at , publishing pipeline
+
+WD Elements external drive stays on Predator permanently — moving it between machines risks LanceDB corruption.
+
+SyncThing over OneDrive
+OneDrive introduced silent 0-byte failures and unpredictable multi-minute delays for large video files. SyncThing provides direct LAN sync completing 50MB transfers in under 10 seconds. Configured as "BDF-Clips" folder share with  as the local path on both machines.
+
+SyncThing paths:
+- HP: 
+- Predator: 
+
+Three-Layer Application Architecture
+- Layer 1: Python Backend — core processing engine (botservice.py or enhancedterminalui.py, not both)
+- Layer 2: FastAPI Server — HTTP bridge on localhost:8000
+- Layer 3: React Dashboard — visual surface on localhost:5173 via axios
+
+Plugin Architecture (Book Compiler)
+Per-file pipeline: 
+Pipeline halts when . Each plugin receives and returns a  dataclass. New capabilities are added as plugins without touching existing flow.
+
+Two-Process Socket Architecture (DaVinci Resolve)
+Resolve Free tier blocks external  access. Workaround: TCP socket on  bridges external MCP server to Resolve's embedded Python console. Each tool call opens a fresh connection — no persistent pool, no leaked resources.
+
+Bridge reload command (must include encoding parameter):
+
+Background Daemon Thread for Telegram Polling
+Telegram's callback expiry window is 60 seconds absolute. Background daemon thread polls every 5 seconds with its own isolated asyncio event loop. Daemon threads cannot share the main thread's event loop.
+
+Three-Phase Session Structure
+1. Initialization — context loading, objectives, success criteria
+2. Active Work — iterative implementation with inline documentation
+3. Compilation — summary, artifact inventory, decisions captured, handoff bridge for next session
+
+Session as Atomic Unit
+Every work session is self-contained, documented, and integrated. Sessions are defined by logical work units, not calendar time. Each produces tangible artifacts and a handoff bridge so any future AI session can continue without memory assumptions.
+
+Knowledge-Code Separation
+Absolute separation:
+- Code (executable systems): 
+- Knowledge (documents, references): 
+- Large data (LanceDB, media): , 
+
+Knowledge documents describe systems but never contain executable systems.
+
+Dual Learning Engine
+- Engine One (Kokoro TTS): Passive audio consumption during movement — listen while walking, commuting
+- Engine Two (NotebookLM): Active synthesis and reflection at a desk
+Most tools fail by trying to serve both modes with one interface.
+
+PowerShell Profile Synchronization
+Both  and  must be identical. VS Code terminals load the VSCode profile; standalone PowerShell loads the PowerShell profile. Divergence means aliases work in one context but silently fail in the other.
+
+Windows Encoding Boundary Pattern
+Every file operation must be explicit about encoding on Windows:
+
+Python's  defaults to the system encoding (cp1252 on Windows), which is a footgun in pipelines that generate output across different terminal types.
+
+Protocol vs Script Distinction
+- Protocol: Plain English document containing rules and intent — tells Claude Code what to do and why
+- Script: Executable code performing specific actions
+
+BRAINOS requires both. Scripts without protocols lack intent; protocols without scripts are just documentation.
+
+Exception Visibility Principle
+Every  block must do one of: re-raise, log, store in accessible state, or return error status. Bare  is forbidden — it creates debugging nightmares where failures occur silently.
+
+Thread-Safe Queue Pattern (asyncio-threading)
+One thread = one event loop = one Bot instance. Background threads draining shared queues must run in their own event loop, never the main thread's.
+
+Layer Hierarchy for DaVinci Resolve Compositing
+- V1: Background (match promotional / game screenshot)
+- V2-V3: Content elements and secondary graphics
+- V4+: Primary titles and overlay elements
+
+Higher tracks render in front. Document this explicitly to avoid layer conflicts in complex edits.
+
+Unknown Tag Resolution Workflow
+When the compiler encounters an unrecognized chapter tag:
+1. Content saved to  with tag name embedded in filename
+2. Terminal prints the exact Python dict entry needed for the  registry
+3. Operator adds chapter definition, reruns compiler
+
+Date Injection System
+ with  prepends temporal context to every Claude prompt. Without this, Claude generates content with no concept of current date — incorrect match timing, season references, countdown values.
+
+Key Commands (aggregated)
+
+Book Compiler
+
+BDF Full Pipeline Startup (Predator)
+
+SyncThing
+
+OBS + Capture Setup
+
+VPN Management (required before bot/sync sessions)
+
+Network Profile (required for SyncThing local discovery)
+
+Git Sync (after downloading files from Claude chat)
+
+Git Commit with Conventional Format
+
+FFmpeg Video Conversion
+
+Gallery Image Resize (PIL — 16:9 for Twitter)
+
+Vector Store Rebuild (LanceDB)
+
+Resolve Bridge Reload (must include encoding)
+
+Find Non-ASCII Characters in Pipeline Scripts
+
+Archive Before Patching
+
+API Connection Diagnostics
+
+PowerShell Profile Management
+
+VS Code Workspace Switching
+
+Create Dedicated Venv
+
+Recreate Missing Downloads Folder
+
+Tailwind CSS v4 Setup (no config files needed)
+
+Session Log Naming Convention
+
+Register Unknown Chapter Tag (book compiler)
+
+Obsidian Shortcuts
+| Shortcut | Action |
+|---|---|
+|  | Command Palette |
+|  | Quick open file |
+|  | Full text search |
+|  | Global graph view |
+|  | Local graph view |
+
+VS Code Shortcuts
+| Shortcut | Action |
+|---|---|
+|  | Command Palette |
+|  | Quick open file |
+|  | Search across project |
+|  `F12Ctrl+DF2incoming\C:\BDFShareC:\Dev\Projects\C:\Knowledge\asyncio.neweventloop()asyncio.seteventloop()hasattr()try/exceptopen()encoding="utf-8"-> not ->[OK] not ✓getattr()init()"matchrecap"ContentType.MATCHRECAPexceptexcept: passBDFMasterBook.txtC:\Users\titit\Downloads\feat:fix:docs:chore:refactor:20260404animatedbrandcompile.txtsessionclose.pyC:\lancedbsoccerlancedbbotservice.pyC:\Knowledge\BDF\BDFBook\distilled\`*
+
+================================================================================
+RESOLVE_MCP_GUIDE
+================================================================================
+
+Welcome to your DaVinci Resolve MCP Server deep dive. This audio guide covers everything you've built, how it works, the terminology behind it, and where it's going next. This isn't a generic tutorial. This is specific to your project, your machine, and your workflow. Let's get into it.
+
+Chapter one. What you built and why it matters.
+
+You built an MCP server that lets Claude control DaVinci Resolve 20 through natural language. Instead of memorizing dozens of keyboard shortcuts, you can now open Claude Desktop and say things like "save my project," "add a marker here," or "cut at the playhead," and Resolve executes the command in real time.
+
+Let's break down what that means. MCP stands for Model Context Protocol. It's an open standard created by Anthropic that lets AI models like Claude communicate with external tools and services. Think of MCP as a universal plug system. On one side, you have Claude, which understands natural language. On the other side, you have DaVinci Resolve, which understands keyboard shortcuts. The MCP server sits in the middle and translates between the two.
+
+This is significant because it turns Resolve from a manual tool into something you can operate conversationally. For your BreakingDown Futbol content workflow, this means you could eventually automate entire editing sequences. Imagine saying "mark all the goal moments in this timeline" or "cut everything between these two markers and export it." That's the direction this project is heading.
+
+Chapter two. The architecture explained.
+
+Your system has three components. Let's walk through each one in detail.
+
+Component one. Claude Desktop. This is the front end. It's the Claude application running on your Windows machine, not the web version at claude dot ai. Claude Desktop has a chat interface where you type natural language. When you type a command related to Resolve, Claude recognizes that a matching MCP tool exists and calls it. Claude Desktop communicates with your MCP server using a transport method called stdio, which stands for standard input output. This means Claude launches your server script as a subprocess and sends messages back and forth through the process's input and output streams. No network ports, no HTTP, just direct process communication.
+
+Component two. The MCP server. This is the bridge. It's a Python script called server dot py that lives at C colon backslash Users backslash titit backslash Projects backslash resolve-mcp-server. The server registers a set of tools, each with a name and a description. When Claude calls a tool, the server receives the request, identifies which tool was called, and executes the corresponding Python function. Each function uses pyautogui to send keyboard shortcuts to the Resolve window.
+
+Component three. DaVinci Resolve. This is the target application. Resolve receives keyboard input from pyautogui exactly as if a human pressed those keys. It doesn't know or care that the input is coming from a Python script. From Resolve's perspective, someone just pressed Control B to make a cut, or Space to toggle playback, or M to add a marker.
+
+Here's the critical insight. The MCP server controls Resolve's software controls only. It does not touch your video files. Your media stays wherever it lives, typically in C colon backslash Media. When the server sends Control S to save, it saves Resolve's project database, which contains your timeline, cuts, markers, and settings. The project database lives at C colon backslash Users backslash titit backslash AppData backslash Roaming backslash Blackmagic Design backslash DaVinci Resolve.
+
+Chapter three. Why pyautogui instead of the native API.
+
+This is an important story because it explains a real-world engineering decision you made.
+
+DaVinci Resolve has a built-in Python scripting API. In older versions like Resolve 18, you could write Python scripts that directly controlled Resolve through a library called fusionscript. You'd import the module, connect to a scripting endpoint, and have full programmatic access to timelines, clips, color grades, and rendering.
+
+Resolve 20 broke this. Specifically, version 20.3.2 removed the external scripting toggle from the user interface entirely. The old API used port 18818 for external connections. Resolve 20 changed to port 20321, but this new port is internal IPC only. IPC stands for Inter-Process Communication. It means the port is designed for Resolve's own internal components to talk to each other, not for external scripts to connect.
+
+You verified this yourself during the build session. The fusionscript DLL loads fine. You can import it without errors. But when you call scriptapp to establish a connection, it returns None. The protocol handshake fails silently. Port 20321 drops external connections immediately with zero bytes returned. The Advanced Settings panel in Resolve 20 is completely empty, with no option to re-enable external scripting.
+
+Your solution was elegant. Instead of fighting with a broken API, you bypassed it entirely. Pyautogui simulates keyboard input at the operating system level. It doesn't need Resolve's permission or cooperation. As long as the Resolve window is focused, pyautogui can send any keystroke. This approach is 100 percent reliable because it operates at a layer below Resolve's application logic.
+
+The tradeoff is that pyautogui can only send commands. It cannot read data back from Resolve. You can tell Resolve to play, cut, or save, but you can't ask Resolve what's currently on the timeline or where the playhead is. For reading timeline data, you'd need the native API, which currently only works in Resolve 18. One option on the horizon is installing Resolve 18.6.6 alongside Resolve 20 specifically for scripting access.
+
+Chapter four. Key terminology.
+
+Let's define every term you need to understand this project.
+
+Term one. MCP, Model Context Protocol. An open standard by Anthropic that defines how AI models communicate with external tools. MCP uses a client-server architecture. Claude is the client. Your server dot py is the server. The protocol defines how to register tools, how to call them, and how to return results.
+
+Term two. Stdio transport. The communication method your MCP server uses. Stdio stands for standard input output. Claude Desktop launches your Python script as a child process. It sends JSON messages to the script's standard input and reads responses from the script's standard output. This is simpler and more reliable than HTTP-based transports because there are no ports to configure, no firewall issues, and no network stack involved.
+
+Term three. Tool registration. When your MCP server starts, it tells Claude what tools are available. Each tool has a name like play underscore pause or cut underscore at underscore playhead, and a description that tells Claude when to use it. Claude reads these descriptions and decides which tool to call based on your natural language request. Good descriptions are critical. If the description says "toggle playback" and you say "play the video," Claude needs to understand those mean the same thing.
+
+Term four. Pyautogui. A Python library for programmatic control of the mouse and keyboard. It works at the operating system level, meaning it can send input to any application. In your project, you use pyautogui dot press for single keys like Space or M, and pyautogui dot hotkey for key combinations like Control B or Control S. Pyautogui doesn't know anything about Resolve. It just sends keystrokes to whatever window is currently focused.
+
+Term five. Pywinauto. A Python library for Windows GUI automation. In your project, you use it specifically for one purpose: finding and focusing the DaVinci Resolve window before sending keystrokes. The ResolveController class uses pywinauto's Desktop class to find any window whose title matches the pattern DaVinci Resolve followed by anything. It then calls set underscore focus to bring that window to the front. Without this step, pyautogui would send keystrokes to whatever window happens to be active, which could be your terminal, your browser, or anything else.
+
+Term six. ResolveController. A Python class you wrote that wraps all the Resolve automation logic. It has a focus method that brings Resolve to the front, and individual methods for each action like play underscore pause, cut underscore at underscore playhead, add underscore marker, save, and others. Each method calls focus first, then sends the appropriate keystroke. This class is the action layer that the MCP server calls into.
+
+Term seven. Claude Desktop config. A JSON file that tells Claude Desktop where your MCP servers live. The file is located at C colon backslash Users backslash titit backslash AppData backslash Roaming backslash Claude backslash claude underscore desktop underscore config dot json. Inside it, you define each MCP server with a name, the path to the Python executable in your venv, and the path to your server script. Claude Desktop reads this file on startup and launches each configured server.
+
+Term eight. IPC, Inter-Process Communication. A mechanism for processes running on the same machine to exchange data. Resolve 20 uses IPC on port 20321 for its internal components. The key distinction is that IPC is designed for trusted internal communication, not for external scripts to connect to. This is why your connection attempts to that port failed.
+
+Term nine. Fusionscript. The DLL, or dynamic link library, that provides Resolve's Python scripting interface. In Resolve 18, you could load fusionscript, call scriptapp, and get a connection object that gave you full control over Resolve. In Resolve 20, the DLL still exists and loads without errors, but the connection handshake fails because the underlying protocol changed.
+
+Term ten. Hammer icon. In Claude Desktop's chat interface, when an MCP server is successfully connected, a small hammer icon appears in the chat input area. This is your visual confirmation that Claude can see and call your MCP tools. If the hammer icon is missing, it means the MCP server failed to connect. The fix is usually to fully quit Claude Desktop and restart it, making sure Resolve is already open before Claude Desktop starts.
+
+Chapter five. Your current MCP tools.
+
+Here are all eleven tools currently registered in your server, what they do, and what keyboard shortcut each one sends.
+
+Play pause. Sends the Space key. Toggles between playing and pausing the timeline. This is the most basic and most used tool.
+
+Cut at playhead. Sends Control B. Creates a blade cut at the current playhead position, splitting the clip into two pieces. This is the fundamental editing action.
+
+Ripple delete. Sends the Backspace key. Deletes the currently selected clip and closes the gap in the timeline. Without ripple delete, you'd have an empty space where the clip was.
+
+Add marker. Sends the M key. Drops a marker at the current playhead position. Markers are reference points you can use to label important moments, like goals or key plays in your BDF content.
+
+Go to start. Sends the Home key. Jumps the playhead to the very beginning of the timeline.
+
+Save. Sends Control S. Saves the current project to Resolve's database.
+
+Undo. Sends Control Z. Reverses the last action. Essential for fixing mistakes.
+
+Zoom fit. Sends Shift Z. Zooms the timeline view so the entire timeline fits within the visible window. Useful for getting an overview of your edit.
+
+Go to edit page. Sends Shift 4. Switches to Resolve's Edit page where you do most of your cutting and arranging.
+
+Go to color page. Sends Shift 6. Switches to the Color page for color correction and grading.
+
+Go to deliver page. Sends Shift 8. Switches to the Deliver page where you set up and start exports.
+
+Chapter six. The startup sequence.
+
+The order in which you open things matters. Here's the correct sequence and why each step is in this position.
+
+Step one. Open DaVinci Resolve 20 first. It needs to be running before Claude Desktop starts because Claude Desktop launches the MCP server on startup, and the server needs a Resolve window to find.
+
+Step two. Load your project inside Resolve. For example, your BM VS RM project. The server uses pywinauto to find a window with "DaVinci Resolve" in the title. If Resolve is on the splash screen without a project loaded, the window title might not match.
+
+Step three. Open Claude Desktop. Not the web version at claude dot ai. The actual desktop application. When Claude Desktop starts, it reads your config file and launches the MCP server subprocess. This is when the connection is established.
+
+Step four. Verify the hammer icon. Look at the chat input area in Claude Desktop. If you see a small hammer icon, the MCP server connected successfully. If it's missing, fully quit Claude Desktop, make sure Resolve is still open, and restart Claude Desktop.
+
+Step five. Start giving commands in plain English. Say "save my project" or "cut here" or "add a marker." Claude will call the corresponding MCP tool, which sends the keystroke to Resolve.
+
+Important: use the chat tab in Claude Desktop, which is the speech bubble icon. Do not use the Code tab. The Code tab is for Claude Code, which is a different product. MCP tools are accessed through the chat interface.
+
+Chapter seven. The project file structure.
+
+Your project lives at C colon backslash Users backslash titit backslash Projects backslash resolve-mcp-server. Inside it you have three items.
+
+The venv folder. This is your isolated Python virtual environment. It contains Python 3.12.10 and the three packages you installed: mcp for the protocol SDK, pyautogui for keyboard automation, and pywinauto for window management. This venv is completely separate from your other project venvs.
+
+Server dot py. This is the main MCP server file. It imports the MCP SDK, defines the ResolveController class with all the automation methods, registers each tool with a name and description, and starts the server using stdio transport.
+
+Test underscore resolve dot py. This is the test script you used to verify that pyautogui could control Resolve before building the full MCP server. It focuses the Resolve window and sends test keystrokes. You can still use it to debug if something stops working.
+
+The Claude Desktop config file lives outside this project at C colon backslash Users backslash titit backslash AppData backslash Roaming backslash Claude backslash claude underscore desktop underscore config dot json. This file points Claude Desktop to your server dot py and the Python executable in your venv.
+
+Chapter eight. Registry fixes you applied.
+
+During the build session, you added two Windows registry entries under HKCU backslash Software backslash Blackmagic Design backslash DaVinci Resolve. These set the ScriptingModulePath and ScriptingAPIPath to point to Resolve's developer scripting folders.
+
+You also created a Fusion preferences file at the Resolve config path. These fixes resolved an internal ModuleNotFoundError for DaVinciResolveScript inside Resolve itself. However, they did not fix the external connection problem because that's an architectural limitation of Resolve 20, not a configuration issue.
+
+These registry entries are still in place and don't hurt anything. If you ever install Resolve 18 alongside Resolve 20, these paths would be relevant for the native scripting API.
+
+Chapter nine. Dependencies and installation.
+
+Your MCP server venv has three packages.
+
+MCP. This is Anthropic's official MCP protocol SDK. It provides the framework for building MCP servers in Python. It handles tool registration, message parsing, and the stdio transport layer. You install it with pip install mcp.
+
+Pyautogui. The keyboard and mouse automation library. It sends keystrokes and mouse events to the operating system. You install it with pip install pyautogui.
+
+Pywinauto. The Windows GUI automation library. It can find windows, read their properties, and interact with UI elements. In your project, you only use it for finding and focusing the Resolve window. You install it with pip install pywinauto.
+
+All three install in one command: pip install mcp pyautogui pywinauto. But remember your workflow rules. Activate the venv first, verify with where dot exe python, then install.
+
+Chapter ten. What's next for this project.
+
+There are five expansion directions documented from your build session.
+
+Direction one. Add more tools. The current eleven tools cover basic editing. You could add tools for setting marker colors, navigating between markers, adjusting clip volume, toggling clip enable and disable, inserting transitions, and more. Every keyboard shortcut in Resolve can become an MCP tool.
+
+Direction two. Build a BDF highlight reel automation script. This would combine multiple MCP tools into a workflow. For example, a script that jumps through markers, cuts around each one, and assembles a highlight reel. This would be built on top of the ResolveController class.
+
+Direction three. Add a jump to timecode tool. This would let you say "go to 2 minutes 30 seconds" and the server would type that timecode into Resolve's timecode entry field. More complex than a simple keystroke because it involves typing a sequence of characters.
+
+Direction four. Add playback speed control. This would let you say "play at half speed" or "play at 2x" for reviewing footage at different speeds.
+
+Direction five. Consider installing Resolve 18.6.6 alongside Resolve 20. The older version's native Python API actually works, which means you could read timeline data, not just send commands. This would enable much more sophisticated automation, like listing all clips on the timeline or finding specific frames.
+
+Chapter eleven. Lessons learned.
+
+These are the hard-won insights from building this project.
+
+Lesson one. When a software vendor breaks their API, find a workaround at a lower level. Resolve 20 broke its scripting API, but it can't break keyboard input. Pyautogui operates below the application layer, so it always works.
+
+Lesson two. Port 20321 in Resolve 20 is internal only. Don't waste time trying to connect to it from external scripts. The connection will always fail.
+
+Lesson three. Always verify your venv before installing packages. Run where dot exe python, not where python, in PowerShell. This rule saved you from installing MCP packages into the wrong environment.
+
+Lesson four. The MCP server controls software, not files. This distinction matters for understanding what save does (saves the project database) versus what it doesn't do (doesn't touch your video files).
+
+Lesson five. The startup order matters. Resolve first, then Claude Desktop. If Claude Desktop starts first, the MCP server launches but can't find a Resolve window.
+
+Lesson six. In Claude Desktop, use the chat tab with the speech bubble icon. The Code tab is for Claude Code, which is a completely different feature. MCP tools are only accessible through the chat interface.
+
+Lesson seven. The hammer icon in Claude Desktop's chat input is your connection indicator. No hammer means no MCP connection. The fix is always to restart Claude Desktop with Resolve already open.
+
+That wraps up your DaVinci Resolve MCP Server deep dive. You now understand the full architecture, every component, every tool, the terminology, the startup sequence, the file structure, and where this project is heading. This knowledge will make your next expansion session much faster because you won't need to re-orient yourself.
+
+Save this to your Knowledge folder and back it up to Google Drive. Then when you're ready to expand the server, you'll know exactly where to pick up.
+
+This has been your DaVinci Resolve MCP Server deep dive. Stay locked in.
+
+================================================================================
+SESSION_20260514_1902
+================================================================================
+
+SESSION COMPILE — May 14, 2026
+Tool Mastery: Obsidian Familiarization and VS Code Deep Dive
+=============================================================
+
+OVERVIEW
+
+This session covered two major tool domains: deep familiarization with the
+Obsidian BRAINOS vault, and hands-on VS Code skill building. Both tools
+were explored with live execution — every concept was immediately applied
+to real files and real problems in the active system.
+
+This session also completed a full C drive cleanup, reconciling all stale
+LanceDB path references across BRAINOS and Knowledge docs, and removing
+ghost files, empty folders, and duplicate directories.
+
+PART ONE — OBSIDIAN ECOSYSTEM
+==============================
+
+OBSIDIAN UI OVERVIEW
+
+Obsidian is organized into five main areas. The left ribbon contains
+icon shortcuts for files, search, bookmarks, history, graph, and plugins.
+The main editor area displays the active note. The right panel shows
+backlinks, outgoing links, tags, and properties. The status bar at the
+bottom shows word count, cursor position, and vault name.
+
+The most important shortcut in Obsidian is Control plus P, which opens
+the Command Palette. Every feature in Obsidian is accessible from here.
+Other essential shortcuts include Control plus O for quick open, Control
+plus Shift plus F for full-text search, Control plus G for global graph
+view, and Control plus Alt plus G for local graph of the current note.
+
+MARKDOWN
+
+Markdown is plain text with simple formatting symbols that render visually.
+A hash symbol before text creates a heading. Double asterisks around text
+make it bold. A dash before text creates a bullet point. Double square
+brackets around a note name create a wiki-link. An exclamation mark before
+double square brackets embeds the note inline. Markdown files are universal
+except for wiki-links, which are Obsidian-specific. The entire BRAINOS
+vault is markdown files, making it fully portable.
+
+YAML METADATA
+
+YAML is the structured data block at the top of every markdown file,
+enclosed between triple dashes. It contains properties like tags, creation
+date, and version number. Obsidian reads this block to power search,
+graph color groups, and filtering. The Properties panel in the right
+sidebar lets you edit YAML visually without touching the raw text.
+
+TAGS
+
+Tags are searchable labels that give notes multiple identities beyond
+their folder location. A note lives in exactly one folder, but can have
+unlimited tags. Typing a hash symbol followed by a word anywhere in a
+note automatically registers it as a tag with no setup required.
+
+Tags enable instant filtering in search using the syntax tag colon
+hash tagname. They enable graph filtering, where typing a tag query
+in the graph filters panel shows only matching nodes. They enable
+cross-folder discovery, finding related notes regardless of which folder
+they live in. Common tag patterns include hash active, hash archived,
+hash broken, hash todo, hash system, and hash protocol.
+
+The key distinction is that folders are physical locations and tags
+are logical identities. A session note lives in the 10 CHATS folder
+as its home, but can be tagged with hash bdf, hash lancedb, and hash
+bug dash fix, making it findable from three different angles.
+
+WIKI-LINKS AND BACKLINKS
+
+A wiki-link uses double square brackets around a note name to create
+a connection. Adding a pipe symbol and display text after the note name
+creates an aliased link. Adding a hash symbol and heading name links
+to a specific section. Backlinks are automatic. When Note A links to
+Note B, Note B knows about it and the connection appears in the right
+panel. This is how the graph builds itself without any manual work.
+
+GRAPH VIEW
+
+The global graph opens with Control plus G and shows all notes in the
+vault as nodes connected by links. The local graph opens with Control
+plus Alt plus G and shows only the current note and its direct neighbors.
+
+The graph controls panel has four sections. Filters hide and show notes
+by tag, folder, or path. Groups color-code nodes by query, which is how
+the twelve-color BRAINOS system works. Display adjusts node size, link
+thickness, and text fade threshold. Forces controls how nodes repel and
+attract each other.
+
+Node size reflects connection count. The largest nodes are the most
+connected and therefore the most important hubs in the knowledge system.
+Gray nodes are notes that do not belong to any defined color group,
+which indicates they live outside the expected folder structure.
+
+BRAINOS KNOWLEDGE FLOW
+
+The BRAINOS system has two scripts and one protocol. The flow begins
+when a session with Claude ends. The first human decision is to run
+session close dot py, which is located at C colon backslash BRAIN OS
+backslash 09 TOOLS. This script archives the session and saves a
+compiled markdown file into the 10 CHATS folder.
+
+The second human decision is to open Claude Code and instruct it to
+run the Knowledge Ingestion Protocol version two. Claude Code reads
+the protocol document, which lives in 07 SYSTEM, and uses it as
+a blueprint to decide what to extract from the session and where to
+put it. The protocol is Option C, which means hybrid automated with
+review points. Claude Code executes the work automatically but pauses
+at complex decisions for human review.
+
+The distinction between a script and a protocol is foundational.
+A protocol is a document containing rules and decisions, written in
+plain English, that tells Claude Code what to do and why. A script
+is executable code that performs specific actions. A script without
+a protocol is code with no intent behind it. A protocol without a
+script is just documented rules. BRAINOS has both.
+
+The failure point in this flow is human memory. The code works
+correctly. The risk is forgetting to trigger the two manual steps
+after a session ends.
+
+PART TWO — C DRIVE CLEANUP
+============================
+
+LANCEDB PATH RECONCILIATION
+
+A full audit of BRAINOS and Knowledge documents revealed stale
+LanceDB path references across eleven files. The canonical path is
+C colon slash lance underscore db underscore soccer, which has been
+the correct path since the migration completed in May 2026.
+
+Three categories of files required different treatment. Active
+reference documents in BRAINOS and Knowledge required updating.
+Historical archive files and session logs were intentionally left
+unchanged, as they accurately documented reality at the time they
+were written. Python package metadata files inside venv folders
+were never touched, as their internal path references are from the
+package build environment and have no effect on the running system.
+
+Eleven files were updated across BRAINOS system docs and Knowledge
+reference docs. All stale references to F colon and D colon drives
+were replaced with the canonical C colon path.
+
+GHOST FILE REMOVAL
+
+The BRAINOS root contained twenty-three ghost files and five empty
+directories. These included zero-byte daily note stubs, untitled
+canvas files, untitled markdown files, and empty base files created
+as Obsidian artifacts. A root-level Navigation Shortcuts file that
+was zero bytes and shadowed the real file in 07 SYSTEM was also removed.
+
+The 01 PROJECTS folder was archived to the underscore archive
+directory as 01 PROJECTS superseded, since 02 PROJECTS is the live
+and more complete version.
+
+All changes were committed to the BRAINOS repository with the
+message: docs reconcile LanceDB paths, remove ghost files, archive
+01 PROJECTS.
+
+ADDITIONAL CLEANUP
+
+Two loose files in C colon backslash Knowledge were moved to their
+correct location inside the ResolveMCP subfolder. The Session
+apostrophe S compile apostrophe S folder was renamed to Session
+Compiles to remove the apostrophes that caused PowerShell
+compatibility issues. Two empty placeholder folders in C colon
+backslash Dev, named Envs and Tools, were deleted.
+
+PART THREE — VS CODE DEEP DIVE
+================================
+
+VS CODE UI LAYOUT
+
+VS Code has five main interface zones. The activity bar on the far
+left is a vertical strip of icons for Explorer, Search, Source
+Control, Extensions, Debug, and installed extensions like GitLens
+and Project Manager. The side panel to the right of it shows the
+active panel content. The main editor area takes up most of the
+screen. The terminal panel sits at the bottom. The status bar at
+the very bottom shows the current branch, error count, language,
+and interpreter path.
+
+ESSENTIAL SHORTCUTS
+
+The Command Palette opens with Control plus Shift plus P and provides
+access to every VS Code feature. Quick open for files uses Control
+plus P with fuzzy matching. Full-text search across all project files
+uses Control plus Shift plus F. Source Control opens with the branch
+icon in the activity bar. Toggling the terminal uses Control plus
+backtick. Opening a new terminal uses Control plus Shift plus backtick.
+Splitting the editor uses Control plus backslash.
+
+For code navigation, F12 jumps to the definition of any function or
+variable. Alt plus left arrow navigates back after jumping. Control
+plus Shift plus O shows all functions and classes in the current file.
+Control plus G jumps to a specific line number. Control plus D selects
+the next occurrence of the current word.
+
+GIT AND GITLENS
+
+VS Code has three Git tools. The built-in Source Control panel shows
+changed files, handles staging and commit messages, and pushes to
+GitHub. GitLens adds inline blame on every line showing who wrote it,
+when, and why. GitLens Inspect provides deep investigation of individual
+commits showing exactly what changed.
+
+The key concept is that commits are local saves and push is the upload.
+Multiple commits can accumulate locally and be pushed to GitHub in a
+single sync operation. This is normal for solo development work.
+
+Commit messages follow conventional commit format. The type prefix is
+required and must be one of feat for new features, fix for bug fixes,
+docs for documentation changes, chore for maintenance, or refactor for
+restructuring. The description follows in lowercase with no period.
+
+Every line in the codebase has a GitLens annotation visible on hover.
+The annotation shows the commit hash, author, date, and the full
+commit message. This is decision archaeology for code, equivalent to
+tracing wiki-links backward in Obsidian.
+
+THE DEBUGGER
+
+The VS Code debugger allows running any Python script with breakpoints.
+Setting a breakpoint by clicking in the left margin of any line causes
+execution to pause at that point. When paused, the Variables panel on
+the left shows every variable in memory with its current value. This
+eliminates guessing about what a variable contains during execution.
+
+The debug toolbar has five controls. Continue runs until the next
+breakpoint. Step Over executes the current line and moves to the next.
+Step Into goes inside the function the current line calls. Step Out
+finishes the current function and returns to the caller. Stop ends
+the debugging session.
+
+When execution skips lines inside an if block, it means the condition
+evaluated to false. The debugger makes this visible in real time,
+which is the fastest way to diagnose bugs without adding print statements.
+
+MULTI-CURSOR EDITING
+
+Multi-cursor editing allows editing multiple locations simultaneously.
+Control plus D selects the next occurrence of the current word. Pressing
+it repeatedly adds each subsequent occurrence. Alt plus Click places
+an additional cursor at any position regardless of word matching.
+Control plus Shift plus L selects all occurrences in the file at once.
+Whatever is typed then replaces all selected occurrences simultaneously.
+
+The F2 key renames a symbol across all files in the project. Unlike
+find and replace, F2 understands code context and only renames actual
+references to the symbol, not unrelated string matches.
+
+TODO TREE EXTENSION
+
+The Todo Tree extension is installed and scans all project files for
+TODO, FIXME, BUG FIX, and similar comment markers. It displays them
+in a tree panel organized by file. Clicking any item jumps directly
+to that line. This creates a project backlog inside VS Code that
+requires no separate task management tool.
+
+PROJECT MANAGER EXTENSION
+
+The Project Manager extension provides a panel for saving and switching
+between projects. All four active projects were added: soccer content
+generator, CristianConstruction, read-along-app, and resolve-mcp-server.
+Clicking a project in the panel opens it instantly with the correct
+folder, venv activation, and terminal configuration.
+
+WORKSPACE FILES
+
+A workspace file with the extension code-workspace allows opening
+multiple project folders simultaneously in one VS Code window. The
+BDF workspace file was updated to include resolve-mcp-server as a
+second folder alongside soccer-content-generator. This enables
+cross-project searching and navigation since BDF calls the MCP server
+directly.
+
+VS CODE SETTINGS PER PROJECT
+
+Each project has a dot vscode folder containing a settings dot json
+file. This file configures VS Code behavior for that project only.
+The standard configuration across all four projects sets the Python
+interpreter to the project venv, enables automatic venv activation
+in new terminals, and configures a PowerShell startup script that
+activates the venv and prints a confirmation message.
+
+All four projects were audited. Three already had the full configuration.
+Resolve MCP server was missing all Python and terminal settings and was
+updated to include them.
+
+INSTALLED EXTENSIONS AUDIT
+
+A full audit of installed extensions was completed using the PowerShell
+command to list the dot vscode extensions directory. The installed set
+includes the following tools by category.
+
+For Git: GitLens for history and blame, Git Graph for visual commit
+timeline, and open in GitHub for linking to remote.
+
+For Python: the Microsoft Python extension, Pylance for IntelliSense
+and type checking, Black Formatter for automatic formatting on save,
+Ruff for linting, and debugpy for the debugger.
+
+For productivity: Error Lens for inline error display, Path
+Intellisense for file path autocomplete, Indent Rainbow for color-coded
+indentation levels, Better Comments for colored TODO and FIXME markers,
+Todo Tree for cross-project action item scanning, and Run on Save for
+triggered automation.
+
+For Markdown: Markdown Preview Enhanced, Markdown All in One, and the
+Obsidian markdown extension for VS Code.
+
+For UI: Material Icon Theme for file type icons, PowerShell language
+support, and Project Manager for fast project switching.
+
+No missing critical extensions were identified.
+
+LANCE DB FALLBACK PATH AUDIT
+
+Using Control plus Shift plus F to search for LANCE DB PATH across the
+entire project revealed that four Python files still had the old fallback
+path pointing inside the project folder rather than the canonical C
+colon slash lance underscore db underscore soccer location. The affected
+files were rebuild lancedb dot py, cleanup lancedb duplicates dot py,
+rag pipeline dot py, and vector store dot py. All four were updated and
+committed.
+
+NAVIGATION SHORTCUTS REFERENCE
+================================
+
+OBSIDIAN SHORTCUTS
+
+Control plus P — Command Palette, access every feature
+Control plus O — Quick open any file by name with fuzzy matching
+Control plus Shift plus F — Full text search across all vault notes
+Control plus G — Global graph view of entire vault
+Control plus Alt plus G — Local graph of current note only
+Control plus N — Create new note
+Control plus E — Toggle between edit and preview mode
+Control plus B — Toggle left sidebar
+Control plus Shift plus B — Toggle right sidebar
+Control plus backslash — Split editor pane vertically
+Alt plus left arrow — Navigate back
+Alt plus right arrow — Navigate forward
+Control plus click on any link — Open note in new split pane
+Control plus hover over any link — Preview note without opening it
+Escape — Return focus to editor
+
+VS CODE SHORTCUTS
+
+Control plus Shift plus P — Command Palette, access every feature
+Control plus P — Quick open any file with fuzzy matching
+Control plus Shift plus F — Search across all files in project
+Control plus backtick — Toggle integrated terminal
+Control plus Shift plus backtick — Open new terminal instance
+Control plus backslash — Split editor vertically
+Control plus Shift plus G — Open Source Control panel
+F12 — Go to definition of symbol under cursor
+Alt plus F12 — Peek definition inline without leaving file
+Shift plus F12 — Find all references to symbol
+Alt plus left arrow — Navigate back after jump
+Control plus Shift plus O — Show all functions and classes in file
+Control plus G — Jump to specific line number
+Control plus D — Select next occurrence of current word
+Control plus Shift plus L — Select all occurrences of current word
+Alt plus Click — Place additional cursor at click position
+Alt plus up or down arrow — Move current line up or down
+Shift plus Alt plus down arrow — Duplicate current line below
+Control plus slash — Comment or uncomment current line
+Shift plus Alt plus F — Format entire document
+F2 — Rename symbol across entire project
+Control plus Z — Undo, unlimited history per session
+
+DECISIONS MADE THIS SESSION
+=============================
+
+Teaching protocol updated: never ask Cristian to guess without first
+pointing to the exact source. Either decode directly or say which file
+to open and which section to look at.
+
+Teaching protocol updated: always audit what is already installed before
+suggesting new tools, extensions, or programs. Installing without auditing
+creates debugging problems.
+
+Memory updated: Cristian learns best through the loop of learn concept,
+spot real problem, fix it, commit, move on. This is applied to every
+session going forward.
+
+Workspace file updated: resolve-mcp-server added as second folder in
+bdf dot code dash workspace since the two projects are directly connected.
+
+All four project vscode settings files confirmed consistent and correct.
+
+SESSION STATS
+=============
+Date: May 14, 2026
+Tools covered: Obsidian, VS Code, GitLens, Git Graph, Project Manager,
+               Todo Tree, debugger, multi-cursor editing
+Commits made: 4 across soccer-content-generator and BRAIN-OS repos
+Files fixed: 11 BRAIN_OS docs, 4 Python fallback paths
+Ghost files removed: 28
+Projects configured: 4 VS Code workspace settings verified

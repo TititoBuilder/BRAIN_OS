@@ -23,16 +23,19 @@ TELEGRAM_TOKEN  = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT   = os.environ.get("TELEGRAM_CHAT_ID")
 
 _PROJECT_KEYWORDS: dict[str, list[str]] = {
-    "BDF":      ["bdf", "soccer", "drive_sync", "graph_maintainer", "distill", "book_compiler"],
+    "BDF":      ["bdf", "soccer", "drive_sync", "graph_maintainer", "distill", "book_compiler",
+                 "drive_cleanup", "bdf_drive", "parity"],
     "CA":       ["ca", "construction", "ca-book"],
-    "BRAIN_OS": ["brain_os", "brainos", "obsidian", "session_close", "graphify"],
+    "BRAIN_OS": ["brain_os", "brainos", "obsidian", "session_close", "graphify",
+                 "system_master", "brain_os_config", "vocabulary"],
+    "MCP":      ["mcp_book", "resolve_bridge", "server_api"],
     "Resolve":  ["resolve", "davinci"],
 }
 
 # ── Git log helpers ───────────────────────────────────────────────────────────
 
 def _discover_repos(max_depth: int = 2) -> list[Path]:
-    """Find git repos up to max_depth levels under C:\\Dev and C:\\Knowledge."""
+    """Find git repos up to max_depth levels under C:\\Dev, C:\\BRAIN_OS, and C:\\Knowledge."""
     found: list[Path] = []
 
     def _scan(path: Path, depth: int) -> None:
@@ -48,16 +51,18 @@ def _discover_repos(max_depth: int = 2) -> list[Path]:
         except PermissionError:
             pass
 
-    for base in (Path(r"C:\Dev"), Path(r"C:\Knowledge")):
+    for base in (Path(r"C:\Dev"), Path(r"C:\BRAIN_OS"), Path(r"C:\Knowledge")):
         if base.exists():
             _scan(base, max_depth)
     return found
 
 
-def _git_accomplishments(hours: int = 8) -> list[str]:
-    """Return commit subject lines from all repos touched in the last N hours."""
+def _git_accomplishments(hours: int = 72) -> list[str]:
+    """Return prefixed commit subjects from all repos touched in the last N hours, deduplicated."""
+    seen: set[str] = set()
     items: list[str] = []
     for repo in _discover_repos():
+        label = repo.name
         try:
             result = subprocess.run(
                 ["git", "-C", str(repo), "log", "--oneline", f"--since={hours} hours ago"],
@@ -65,7 +70,10 @@ def _git_accomplishments(hours: int = 8) -> list[str]:
             )
             for line in result.stdout.strip().splitlines():
                 parts = line.split(" ", 1)
-                items.append(parts[1] if len(parts) == 2 else line)
+                msg = parts[1] if len(parts) == 2 else line
+                if msg not in seen:
+                    seen.add(msg)
+                    items.append(f"[{label}] {msg}")
         except Exception:
             pass
     return items
@@ -183,7 +191,7 @@ def main():
     print("╚══════════════════════════════════╝")
 
     # Accomplishments — pre-fill from git log
-    print("\nFetching recent git commits (last 8 hours)...")
+    print("\nFetching recent git commits (last 72 hours)...")
     accomplished = _git_accomplishments()
 
     # Auto-detect projects from commit messages
@@ -195,7 +203,7 @@ def main():
         for item in accomplished:
             print(f"  • {item}")
     else:
-        print("  (no commits found in the last 8 hours)")
+        print("  (no commits found in the last 72 hours)")
     print("\nAdd anything else? (blank to finish)")
     while True:
         line = input("  > ").strip()

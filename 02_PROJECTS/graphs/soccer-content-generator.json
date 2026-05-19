@@ -1,8 +1,8 @@
 {
   "project": "soccer-content-generator",
   "root": "C:/Dev/Projects/soccer-content-generator",
-  "updated_at": "2026-05-12T04:27:44.495615+00:00",
-  "node_count": 96,
+  "updated_at": "2026-05-16T01:54:19.999928+00:00",
+  "node_count": 99,
   "nodes": {
     "avatar_character_profiles.py": {
       "hash": "b2a4579e31ae",
@@ -563,9 +563,9 @@
       }
     },
     "rebuild_lancedb.py": {
-      "hash": "e455eb8aefc5",
+      "hash": "77a357fcad85",
       "layer": "Infrastructure",
-      "size_kb": 20.1,
+      "size_kb": 20.0,
       "mode": "full",
       "imports": {
         "stdlib": [
@@ -585,7 +585,7 @@
       }
     },
     "scripts/cleanup_lancedb_duplicates.py": {
-      "hash": "bdd5e42bf0c9",
+      "hash": "a265b6c62207",
       "layer": "Scripts",
       "size_kb": 1.0,
       "mode": "full",
@@ -618,19 +618,78 @@
         ]
       }
     },
-    "scripts/graph_maintainer.py": {
-      "hash": "616610761099",
+    "scripts/distill_session.py": {
+      "hash": "8fc83d21f7da",
       "layer": "Scripts",
-      "size_kb": 6.6,
+      "size_kb": 10.7,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "os",
+          "pathlib",
+          "re",
+          "sys",
+          "time"
+        ],
+        "internal": [],
+        "external": [
+          "anthropic",
+          "dotenv"
+        ]
+      }
+    },
+    "scripts/drive_cleanup.py": {
+      "hash": "30101a66bdd6",
+      "layer": "Scripts",
+      "size_kb": 6.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "pathlib",
+          "sys"
+        ],
+        "internal": [
+          "drive_sync"
+        ],
+        "external": []
+      }
+    },
+    "scripts/drive_sync.py": {
+      "hash": "d450650ecbc3",
+      "layer": "Scripts",
+      "size_kb": 9.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "json",
+          "mimetypes",
+          "pathlib",
+          "re",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "scripts/graph_maintainer.py": {
+      "hash": "69c3a4a2e4c3",
+      "layer": "Scripts",
+      "size_kb": 16.0,
       "mode": "full",
       "imports": {
         "stdlib": [
           "__future__",
           "argparse",
           "ast",
+          "datetime",
           "hashlib",
           "json",
           "pathlib",
+          "re",
           "subprocess",
           "sys"
         ],
@@ -1451,9 +1510,9 @@
       }
     },
     "src/rag_pipeline.py": {
-      "hash": "80862ea53cbf",
+      "hash": "38b73a090f51",
       "layer": "Intelligence",
-      "size_kb": 7.1,
+      "size_kb": 7.0,
       "mode": "full",
       "imports": {
         "stdlib": [
@@ -1587,7 +1646,7 @@
       }
     },
     "src/vector_store.py": {
-      "hash": "9e89abb68ae8",
+      "hash": "7f9943ae4736",
       "layer": "Infrastructure",
       "size_kb": 4.4,
       "mode": "full",

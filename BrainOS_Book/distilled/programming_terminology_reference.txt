@@ -1,0 +1,264 @@
+BRAINOS Programming Terminology Reference
+
+> Aggregated from 15 BDF session distillations (2026-03-31 through 2026-05-14).
+> Sections extracted: Key Commands, Patterns Discovered, Principles Earned.
+> Deduplicated; near-identical entries merged into their canonical form.
+
+CLI Tools & Aliases
+
+PowerShell Profile Functions
+Location: 
+Both  and  must be kept identical so aliases load in all terminal contexts.
+
+| Alias | Purpose |
+|---|---|
+|  | Move current session log to  |
+|  | Run bookcompiler.py against BDF incoming dir (one file at a time) |
+|  | Full BDF compile run with venv activation |
+|  | Same as bdf-log but for CristianConstruction project |
+|  | Compile run for CA book |
+|  | Full CA book compile with venv |
+|  | Generate TTS audio for CA book |
+|  | Compile run targeting BrainOS book |
+|  | File watcher for active development session |
+
+Verify all aliases are loaded:
+
+Find and open the active profile:
+
+Book Compiler CLI ()
+Plugin-architecture compiler — one file per run is non-negotiable (see Principles Earned).
+
+TTS Pipeline CLI
+
+SyncThing CLI
+
+OBS Relay CLI
+
+BDF Pipeline Startup
+
+> Never run  and  simultaneously — both load SoccerBot and will conflict.
+
+Pipeline Concepts
+
+Three-Outcome File Routing
+Every file entering the book compiler routes to exactly one outcome — no ambiguous states:
+
+| Outcome | Location | Trigger |
+|---|---|---|
+| Merged |  | Content integrates cleanly into a known chapter |
+| Quarantined |  | Unknown chapter tag or low confidence score |
+| Rejected |  | Fails BDF relevance filter (non-project content) |
+
+Confidence-Scored Auto-Routing
+1-10 scale applied before chapter detection:
+- 8-10: Auto-route to chapter
+- 7: Flag for operator review
+- 6 and below: Quarantine to 
+
+BDF Filename Convention (Caption Quality Driver)
+Structured filenames are directly required for high-confidence AI caption generation:
+
+Example: 
+
+Generic OBS filenames produce low-confidence fallback captions that lack match context. Filename structure is not aesthetic — it is a data contract.
+
+File Stability Validation (Video Files)
+OBS writes clips asynchronously. Naive timestamp checks transfer corrupted files. Required pattern:
+
+Skip all 0-byte files unconditionally.
+
+One-File-Per-Run Rule
+Never batch multiple compile files. Chapter overlap causes exponential cost compounding:
+- Each subsequent merge reads all previous merged content as input tokens
+- Evidence: normal single-file runs = $1.50-2.50; batched runs = $7-8
+- Run  → wait for completion → run again for the next file
+
+Dual Twitter API Architecture
+Twitter's free tier does not support media uploads through v2:
+- v2 (tweepy.Client) — post tweets
+- v1.1 (tweepy.API) — upload media (images, chunked video)
+
+Competition Detection Cascade
+Three-tier fallback for export tagging:
+1. Explicit CLI argument
+2. Keyword detection in clip filename
+3. Bridge query of active project/timeline name in DaVinci Resolve
+
+Single-Input Dual-Output (TTS/NotebookLM)
+Every source file produces two optimized formats:
+-  — plain text optimized for TTS narration
+-  — structured markdown with metadata headers for active synthesis
+
+Chunking as Universal Pattern
+Sentence-level chunking at ~400 characters with 0.3s silence padding between chunks. The same problem solved for Kokoro TTS context windows is identical to Claude API prompt chunking in the soccer bot. Recognize this pattern when facing it again.
+
+Hybrid Approval Model
+Automation handles all preparation (content generation, formatting, scheduling). Human judgment is preserved only at the consequence moment (external publish). Telegram serves as the mobile approval interface — no desktop dependency.
+
+Event-Driven vs Scheduled Processing
+The book compiler performs zero work when  is empty. This is intentional — event-driven design scales to zero cost when idle. Scheduled polling wastes resources on empty runs.
+
+Silent Failures as a Debugging Class
+The most expensive bugs produce no errors: path typos in watch directories, enum type mismatches, missing attribute declarations, 0-byte file transfers. These run silently and accomplish nothing. Path validation must fail loudly at startup.
+
+Cross-Project Handoff Message Pattern
+When work spans separate Claude projects, the handoff must be self-contained:
+
+Pre-Routing Beats Post-Detection
+Determine chapter routing during the compile session response (routing map step), not via auto-detection after file creation. The auto-detector is a safety net — the routing map is the primary mechanism.
+
+Cost Accumulation in Batch Processing
+When multiple files touch the same chapter, each successive merge reads all previous merges as input. Token costs compound exponentially. Always run one file per book-compile execution.
+
+Architecture Patterns
+
+Two-Machine Split Architecture
+- HP Laptop: OBS recording to , DaVinci Resolve editing, exports to 
+- Predator (canonical machine): AI processing, LanceDB at , publishing pipeline
+
+WD Elements external drive stays on Predator permanently — moving it between machines risks LanceDB corruption.
+
+SyncThing over OneDrive
+OneDrive introduced silent 0-byte failures and unpredictable multi-minute delays for large video files. SyncThing provides direct LAN sync completing 50MB transfers in under 10 seconds. Configured as "BDF-Clips" folder share with  as the local path on both machines.
+
+SyncThing paths:
+- HP: 
+- Predator: 
+
+Three-Layer Application Architecture
+- Layer 1: Python Backend — core processing engine (botservice.py or enhancedterminalui.py, not both)
+- Layer 2: FastAPI Server — HTTP bridge on localhost:8000
+- Layer 3: React Dashboard — visual surface on localhost:5173 via axios
+
+Plugin Architecture (Book Compiler)
+Per-file pipeline: 
+Pipeline halts when . Each plugin receives and returns a  dataclass. New capabilities are added as plugins without touching existing flow.
+
+Two-Process Socket Architecture (DaVinci Resolve)
+Resolve Free tier blocks external  access. Workaround: TCP socket on  bridges external MCP server to Resolve's embedded Python console. Each tool call opens a fresh connection — no persistent pool, no leaked resources.
+
+Bridge reload command (must include encoding parameter):
+
+Background Daemon Thread for Telegram Polling
+Telegram's callback expiry window is 60 seconds absolute. Background daemon thread polls every 5 seconds with its own isolated asyncio event loop. Daemon threads cannot share the main thread's event loop.
+
+Three-Phase Session Structure
+1. Initialization — context loading, objectives, success criteria
+2. Active Work — iterative implementation with inline documentation
+3. Compilation — summary, artifact inventory, decisions captured, handoff bridge for next session
+
+Session as Atomic Unit
+Every work session is self-contained, documented, and integrated. Sessions are defined by logical work units, not calendar time. Each produces tangible artifacts and a handoff bridge so any future AI session can continue without memory assumptions.
+
+Knowledge-Code Separation
+Absolute separation:
+- Code (executable systems): 
+- Knowledge (documents, references): 
+- Large data (LanceDB, media): , 
+
+Knowledge documents describe systems but never contain executable systems.
+
+Dual Learning Engine
+- Engine One (Kokoro TTS): Passive audio consumption during movement — listen while walking, commuting
+- Engine Two (NotebookLM): Active synthesis and reflection at a desk
+Most tools fail by trying to serve both modes with one interface.
+
+PowerShell Profile Synchronization
+Both  and  must be identical. VS Code terminals load the VSCode profile; standalone PowerShell loads the PowerShell profile. Divergence means aliases work in one context but silently fail in the other.
+
+Windows Encoding Boundary Pattern
+Every file operation must be explicit about encoding on Windows:
+
+Python's  defaults to the system encoding (cp1252 on Windows), which is a footgun in pipelines that generate output across different terminal types.
+
+Protocol vs Script Distinction
+- Protocol: Plain English document containing rules and intent — tells Claude Code what to do and why
+- Script: Executable code performing specific actions
+
+BRAINOS requires both. Scripts without protocols lack intent; protocols without scripts are just documentation.
+
+Exception Visibility Principle
+Every  block must do one of: re-raise, log, store in accessible state, or return error status. Bare  is forbidden — it creates debugging nightmares where failures occur silently.
+
+Thread-Safe Queue Pattern (asyncio-threading)
+One thread = one event loop = one Bot instance. Background threads draining shared queues must run in their own event loop, never the main thread's.
+
+Layer Hierarchy for DaVinci Resolve Compositing
+- V1: Background (match promotional / game screenshot)
+- V2-V3: Content elements and secondary graphics
+- V4+: Primary titles and overlay elements
+
+Higher tracks render in front. Document this explicitly to avoid layer conflicts in complex edits.
+
+Unknown Tag Resolution Workflow
+When the compiler encounters an unrecognized chapter tag:
+1. Content saved to  with tag name embedded in filename
+2. Terminal prints the exact Python dict entry needed for the  registry
+3. Operator adds chapter definition, reruns compiler
+
+Date Injection System
+ with  prepends temporal context to every Claude prompt. Without this, Claude generates content with no concept of current date — incorrect match timing, season references, countdown values.
+
+Key Commands (aggregated)
+
+Book Compiler
+
+BDF Full Pipeline Startup (Predator)
+
+SyncThing
+
+OBS + Capture Setup
+
+VPN Management (required before bot/sync sessions)
+
+Network Profile (required for SyncThing local discovery)
+
+Git Sync (after downloading files from Claude chat)
+
+Git Commit with Conventional Format
+
+FFmpeg Video Conversion
+
+Gallery Image Resize (PIL — 16:9 for Twitter)
+
+Vector Store Rebuild (LanceDB)
+
+Resolve Bridge Reload (must include encoding)
+
+Find Non-ASCII Characters in Pipeline Scripts
+
+Archive Before Patching
+
+API Connection Diagnostics
+
+PowerShell Profile Management
+
+VS Code Workspace Switching
+
+Create Dedicated Venv
+
+Recreate Missing Downloads Folder
+
+Tailwind CSS v4 Setup (no config files needed)
+
+Session Log Naming Convention
+
+Register Unknown Chapter Tag (book compiler)
+
+Obsidian Shortcuts
+| Shortcut | Action |
+|---|---|
+|  | Command Palette |
+|  | Quick open file |
+|  | Full text search |
+|  | Global graph view |
+|  | Local graph view |
+
+VS Code Shortcuts
+| Shortcut | Action |
+|---|---|
+|  | Command Palette |
+|  | Quick open file |
+|  | Search across project |
+|  `F12Ctrl+DF2incoming\C:\BDFShareC:\Dev\Projects\C:\Knowledge\asyncio.neweventloop()asyncio.seteventloop()hasattr()try/exceptopen()encoding="utf-8"-> not ->[OK] not ✓getattr()init()"matchrecap"ContentType.MATCHRECAPexceptexcept: passBDFMasterBook.txtC:\Users\titit\Downloads\feat:fix:docs:chore:refactor:20260404animatedbrandcompile.txtsessionclose.pyC:\lancedbsoccerlancedbbotservice.pyC:\Knowledge\BDF\BDFBook\distilled\`*

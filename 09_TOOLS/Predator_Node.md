@@ -1,6 +1,12 @@
 ---
-tags: [tools, hardware, predator, gpu, display, system]
-status: active
+tags:
+  - tools
+  - hardware
+  - predator
+  - gpu
+  - display
+  - system
+book_status: active
 dependencies: []
 parent: "[[09_TOOLS_INDEX]]"
 children: []
