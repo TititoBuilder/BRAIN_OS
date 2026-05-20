@@ -12,7 +12,8 @@ $graph.colorGroups = @(
     @{ query = "path:07_SYSTEM";    color = @{ a = 1; rgb = 5065804  } },
     @{ query = "path:08_SESSIONS";  color = @{ a = 1; rgb = 15241817 } },
     @{ query = "path:01_DOMAINS";   color = @{ a = 1; rgb = 14543876 } },
-    @{ query = "path:03_APIS";      color = @{ a = 1; rgb = 270480   } }
+    @{ query = "path:03_APIS";      color = @{ a = 1; rgb = 270480   } },
+    @{ query = "path:08_TRIGGERS";  color = @{ a = 1; rgb = 16711680 } }
 )
 
 $json = $graph | ConvertTo-Json -Depth 10
