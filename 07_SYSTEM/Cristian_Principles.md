@@ -194,3 +194,10 @@ Add a fourth: **Safety Guard** — collision check before writing anything.
 writing a single line of code. A tool that can't answer all four clearly isn't
 ready to be built — you're still missing a requirement.
 Applied to: drive_sync.py --normalize flag design, 2026-05-20.
+
+## Filenames Are Machine Keys, Not Metadata Stores
+**Rule:** A filename's primary job is to guarantee structural uniqueness and machine
+predictability — not to store shifting metadata. Dynamic descriptions and
+human-readable context belong in the tracking manifest, not in the asset title.
+The timestamp is all the machine needs. The manifest is the index.
+**Proven:** BDF audio library --normalize flag design — drive_sync.py, 2026-05-20.
