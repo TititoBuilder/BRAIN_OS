@@ -3,7 +3,7 @@ tags: [book, project]
 book_project: bdf
 book_status: active
 created: 2026-05-05
-updated: 2026-05-05
+updated: 2026-05-20
 domain: Creative_Systems
 ---
 
@@ -23,18 +23,19 @@ Session log → incoming\ → bdf-book run → Claude Opus compiles chapter
 → run_tts() → Kokoro audio → sync_audio_to_drive() → Google Drive
 ```
 
-**Command:**
+**Command (updated 2026-05-20 — canonical moved to shared plugin):**
 ```powershell
-cd C:\Dev\Projects\soccer-content-generator
-.\venv\Scripts\Activate.ps1
-python book_compiler.py           # process incoming + stitch
-python book_compiler.py --status  # check current state
+# Preferred: use alias (runs via CA venv automatically)
+bdf-book
+
+# Direct:
+C:\Knowledge\CA\venv\Scripts\python.exe C:\Dev\shared\book-compiler\book_compiler.py --book bdf
 ```
 
-**Force restitch without incoming:**
-```powershell
-python -c "from book_compiler import stitch_master_book; stitch_master_book(); print('Done.')"
-```
+> ⚠️ `book_compiler.py` was deleted from `C:\Dev\Projects\soccer-content-generator\` on 2026-05-20.
+> Canonical: `C:\Dev\shared\book-compiler\book_compiler.py`
+> Venv: always use `C:\Knowledge\CA\venv` (never BDF dev venv for book compilation).
+> See [[Book_Compiler_Shared]] for full plugin architecture.
 
 ---
 
@@ -42,7 +43,7 @@ python -c "from book_compiler import stitch_master_book; stitch_master_book(); p
 
 | Component | Path |
 |---|---|
-| Compiler | `C:\Dev\Projects\soccer-content-generator\book_compiler.py` |
+| Compiler | `C:\Dev\shared\book-compiler\book_compiler.py` ← shared plugin (moved 2026-05-20) |
 | Chapters (canonical) | `C:\Knowledge\BDF\BDF_Book\chapters\` |
 | Incoming sessions | `C:\Knowledge\BDF\BDF_Book\incoming\` |
 | Under review | `C:\Knowledge\BDF\BDF_Book\_review\` |
@@ -109,6 +110,21 @@ Loops `ch01 → ch27`, reads each `.txt` file, concatenates with dividers, write
 **⚠️ Duplicate chapter numbers: ch11–ch16 each have 2 files (27 files, ~21 unique chapters). Renumbering needed before next compile.**
 
 ---
+
+## Drive Pipeline — Improvements (2026-05-20)
+
+The `sync_audio_to_drive()` / upload functions in soccer-content-generator were hardened:
+
+| Change | Detail |
+|---|---|
+| `build_manifest()` extended | Now scans BRAIN_OS_Handbook Drive folders in addition to existing folders |
+| Dedup uploads | Files already on Drive are updated in-place (no duplicate uploads) |
+| `drive_cleanup.py --delete-files` | New CLI flag to delete Drive files matching a list |
+| Runtime config | Drive folder IDs loaded from `BRAIN_OS_CONFIG.json` at startup (not hardcoded) |
+| Chunk size | Increased to **50 MB** for faster large-file transfers |
+
+### TTS / HuggingFace Auth
+`tts_local.py` now calls `huggingface_hub.login(token=HF_TOKEN)` at startup. `HF_TOKEN` must be set in `.env` and `load_dotenv()` is called at module import. Without this, model downloads fail silently.
 
 ## Known Issues
 

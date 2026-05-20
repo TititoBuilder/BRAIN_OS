@@ -23,6 +23,12 @@ This color scheme enables visual pattern recognition across the knowledge graph:
 | Triggers | `08_TRIGGERS/` | Coral | 16753920 | #FF9900 |
 | Tools | `09_TOOLS/` | Orange | 16098851 | #F5A623 |
 
+## Restore Script
+
+`C:\BRAIN_OS\scripts\restore_graph_colors.ps1` — re-applies all colorGroups to `C:\BRAIN_OS\.obsidian\graph.json` after an Obsidian reset.
+Write rule: always use `[System.IO.File]::WriteAllText($path, $content)` — never `Set-Content -Encoding UTF8` (writes BOM, Obsidian silently reverts).
+Added: 2026-05-20 (graph colors reset bug fixed, 08_TRIGGERS red group confirmed).
+
 ## Usage Patterns
 
 **Decision Archaeology**: Follow blue session nodes backward from purple agents → find "why we chose X"

@@ -1,6 +1,6 @@
 ---
 tags: [system, reference, live]
-updated: 2026-05-01
+updated: 2026-05-20
 ---
 
 # Project Directory
@@ -19,4 +19,15 @@ to open each one correctly.
 - Purpose: BDF soccer content pipeline — clips, queue, 
   dashboard, Twitter publishing
 - Session close lives here: `python session_close.py`
-- Open with:
+- Open with: `cd C:\Dev\Projects\soccer-content-generator && claude`
+
+---
+
+## book-compiler (shared)
+- Path: `C:\Dev\shared\book-compiler`
+- Purpose: Shared plugin-architecture book compiler for all BRAIN_OS books (BDF, CA, BRAIN_OS)
+- Entry: `python book_compiler.py --book [bdf|ca|brainos]`
+- Venv: always `C:\Knowledge\CA\venv`
+- Aliases: `bdf-book` · `ca-book` · `brainos-book`
+- See: [[Book_Compiler_Shared]]
+- Added: 2026-05-20

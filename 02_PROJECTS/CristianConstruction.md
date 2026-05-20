@@ -2,7 +2,7 @@
 tags: [project, fastapi, react, construction, business-os, ca-book]
 project: cristian-construction
 status: functional
-updated: 2026-05-01
+updated: 2026-05-20
 parent: "[[Project_Directory]]"
 ---
 
@@ -234,9 +234,14 @@ Each folder uses its own venv via .vscode\settings.json
 
 ---
 
+## Notes
+
+- `CLAUDE.md` updated 2026-05-20: SYSTEM_MASTER.md reference added to top (cross-project rule standard applied)
+
 ## Connected to
 
 - [[Custom_Agent]]
 - [[Project_Directory]]
 - [[Tools_Registry]]
 - [[Session_Protocol]]
+- [[SYSTEM_MASTER]]

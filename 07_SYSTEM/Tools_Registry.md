@@ -199,4 +199,5 @@ tags: [system, tools, infra, live]
 - 2026-05-06 â€” BRAIN_OS Graph Session Ã¢â‚¬â€ May 6, 2026
 - 2026-05-09 â€” BDF Session ? 2026-05-09
 - 2026-05-12 — BRAIN_OS Audio Library complete: 5 Claudeguide WAVs synthesized via Kokoro (~36 min), pushed to Drive Tools/Claudeguide/; session_close.py deployed to 09_TOOLS
+- 2026-05-20 — Drive pipeline hardened: build_manifest scans BRAIN_OS_Handbook folders, dedup uploads (update in-place), drive_cleanup --delete-files, folder IDs from BRAIN_OS_CONFIG.json, 50 MB chunksize; tts_local.py now authenticates HuggingFace Hub via HF_TOKEN at startup; graph colorGroups restore script live; Trigger_Architecture.md (13 triggers) confirmed; book_compiler.py canonical moved to C:\Dev\shared\book-compiler\ (shared plugin)
 
