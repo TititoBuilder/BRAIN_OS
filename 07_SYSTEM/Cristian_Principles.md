@@ -175,3 +175,10 @@ Seeing what you've built (domain dashboards, graph view) motivates continued bui
 **Rule:** Never use `Set-Content -Encoding UTF8` when writing config files consumed by external apps (Obsidian, Node, Python, etc.). PowerShell 5.1 writes UTF-8 WITH BOM — external parsers silently fail and reset to defaults.
 **Always use:** `[System.IO.File]::WriteAllText($path, $content)` — writes UTF-8 without BOM.
 **Proven:** Obsidian graph.json colorGroups reset bug — 2026-05-19.
+
+## Documentation Must Reflect Reality
+**Rule:** Reference docs must use the exact naming that exists in the actual codebase.
+A doc with camelCase names when the project uses snake_case is a corrupted map.
+Every AI session, audit, and context load that reads it starts with wrong assumptions.
+**Proven:** final_resume_From_Tools_To_Voice.txt had camelCase names vs actual
+snake_case files in soccer-content-generator — caught during BRAIN_OS duplicate audit 2026-05-19.
