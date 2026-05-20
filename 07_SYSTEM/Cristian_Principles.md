@@ -170,3 +170,8 @@ Seeing what you've built (domain dashboards, graph view) motivates continued bui
 - Eager servers (OBS): fail immediately when target app is offline — honest signal
 - Lazy servers (Resolve): show Connected even when DaVinci is closed — process starts, bridge waits
 - Always verify with an actual tool call before trusting Connected status
+
+## PowerShell File Encoding
+**Rule:** Never use `Set-Content -Encoding UTF8` when writing config files consumed by external apps (Obsidian, Node, Python, etc.). PowerShell 5.1 writes UTF-8 WITH BOM — external parsers silently fail and reset to defaults.
+**Always use:** `[System.IO.File]::WriteAllText($path, $content)` — writes UTF-8 without BOM.
+**Proven:** Obsidian graph.json colorGroups reset bug — 2026-05-19.
