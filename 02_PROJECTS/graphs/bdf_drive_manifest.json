@@ -1,6 +1,54 @@
 {
-  "last_synced": "2026-05-19T02:20:05.415746+00:00",
+  "last_synced": "2026-05-20T19:12:36.034759+00:00",
   "chapters": {
+    "ch15_clip_type_system": {
+      "drive_id": "1ZWqQrlvpAmArJtCdWd6n9q1FSwOuRijv",
+      "filename": "ch15_clip_type_system_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T19:12:35.500Z",
+      "size_bytes": 7495677
+    },
+    "ch14_async_export_pattern": {
+      "drive_id": "1o46RTFzoMx101v8ToHPCiIanhN8xndpG",
+      "filename": "ch14_async_export_pattern_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T19:12:16.536Z",
+      "size_bytes": 6635709
+    },
+    "ch12_nuclear_clear_tool": {
+      "drive_id": "1wCYO5kQN9EmbWCv2_Ts73cSC4zsm1bhr",
+      "filename": "ch12_nuclear_clear_tool_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T19:11:55.831Z",
+      "size_bytes": 5338413
+    },
+    "ch11_first_end_to_end_export": {
+      "drive_id": "1sOZPYqzRXSt8kGsSILC2yW9GnM6QsVGi",
+      "filename": "ch11_first_end_to_end_export_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T19:11:42.630Z",
+      "size_bytes": 9492117
+    },
+    "ch04_mcp_bridge_architecture": {
+      "drive_id": "1ieNYapGzLxIbXPs3j7ck2WBGv9Tw0lYX",
+      "filename": "ch04_mcp_bridge_architecture_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T19:11:19.125Z",
+      "size_bytes": 8419869
+    },
+    "ch03_windows_encoding_patterns": {
+      "drive_id": "1XC67y6iEg5jXLXASWJ1aO8AvLJaghI7X",
+      "filename": "ch03_windows_encoding_patterns_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T19:10:55.384Z",
+      "size_bytes": 7727205
+    },
+    "ch02_bridge_reload_discipline": {
+      "drive_id": "13_I3q1ZEneXsdvFfoNp5zDD08rY3oEO2",
+      "filename": "ch02_bridge_reload_discipline_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T19:10:35.688Z",
+      "size_bytes": 7060245
+    },
+    "ch01_resolve_free_tier_nils": {
+      "drive_id": "15NWUcrp582JzCOhiv2byGA8M3LPSdYe9",
+      "filename": "ch01_resolve_free_tier_nils_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T19:10:18.457Z",
+      "size_bytes": 6628701
+    },
     "ch20_format_b_path_resolution": {
       "drive_id": "1_g-pD85XVO5TGmnLYbhOp8XmC0EIrCRL",
       "filename": "ch20_format_b_path_resolution_af_heart_audio.mp3",
@@ -141,6 +189,174 @@
     }
   },
   "sessions": {
+    "20260331_1517": {
+      "drive_id": "1LW-B453gU_vZHYrmpg5KKQ9SbO_kRU7v",
+      "filename": "_session_20260331_1517_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:59:06.561Z",
+      "size_bytes": 15689181
+    },
+    "20260331_1534": {
+      "drive_id": "1xlo5_sgXnVTKQH6ZiJJPy0T2GE4xbIYy",
+      "filename": "_session_20260331_1534_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:59:05.365Z",
+      "size_bytes": 54058965
+    },
+    "20260331_2029": {
+      "drive_id": "19j_r6rAvU_w3zyYpaAvdL-En9t4vWa_Y",
+      "filename": "_session_20260331_2029_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:59:04.555Z",
+      "size_bytes": 20417517
+    },
+    "20260401_0732": {
+      "drive_id": "1cDms2cU--QlpmcUcVEveIWVCVZm2QgoY",
+      "filename": "_session_20260401_0732_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:59:03.759Z",
+      "size_bytes": 19602093
+    },
+    "20260401_1115": {
+      "drive_id": "1sCBpe0QC8WO9ZDoIfbql1Su2EkLu7jfx",
+      "filename": "_session_20260401_1115_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:59:02.849Z",
+      "size_bytes": 28199733
+    },
+    "20260401_1231": {
+      "drive_id": "1fc6Bnd6SXV2oKEmtLE1JDO_eYc_Yussb",
+      "filename": "_session_20260401_1231_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:59:01.817Z",
+      "size_bytes": 37488789
+    },
+    "20260401_1322": {
+      "drive_id": "1JS1hzFZ4J_nnMwEvf4XNc_3TvDRB1ODt",
+      "filename": "_session_20260401_1322_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:59:00.904Z",
+      "size_bytes": 37502253
+    },
+    "20260401_1430": {
+      "drive_id": "1cOzXjWDd3zUv-8X3XSdKy-6lnpKfOn8P",
+      "filename": "_session_20260401_1430_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:59.782Z",
+      "size_bytes": 37522485
+    },
+    "20260401_1440": {
+      "drive_id": "1OMeupWGMJQLHTG1m0WVTUC1RLER7QxGR",
+      "filename": "_session_20260401_1440_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:58.721Z",
+      "size_bytes": 36454293
+    },
+    "20260401_1459": {
+      "drive_id": "1tNoEVEKS9alpW1WlB3u3wTdP4vhWBMky",
+      "filename": "_session_20260401_1459_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:57.928Z",
+      "size_bytes": 47713773
+    },
+    "20260401_1513": {
+      "drive_id": "1-Gi22c24TNS-vEIcG7zrXCIllJ6jlQPs",
+      "filename": "_session_20260401_1513_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:56.967Z",
+      "size_bytes": 58201269
+    },
+    "20260401_1618": {
+      "drive_id": "1y8LYgA6IOrg6-ADNBS_zm0AL5_3hiKWX",
+      "filename": "_session_20260401_1618_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:56.255Z",
+      "size_bytes": 182104941
+    },
+    "20260401_2239": {
+      "drive_id": "1C7-VCGdKJOCRy1ivODwr2t_ftyItozfp",
+      "filename": "_session_20260401_2239_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:55.552Z",
+      "size_bytes": 221584053
+    },
+    "20260402_0554": {
+      "drive_id": "1AVgSbs3K8BFp5LdLP5BscXZF4Tkc1OKf",
+      "filename": "_session_20260402_0554_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:54.709Z",
+      "size_bytes": 100247493
+    },
+    "20260402_2003": {
+      "drive_id": "1DaJA9zAs9sBrJmQlcTGBVtIlWhUe3nSj",
+      "filename": "_session_20260402_2003_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:53.917Z",
+      "size_bytes": 31842285
+    },
+    "20260404_1046": {
+      "drive_id": "1q8AhF32d2CLCRdToorMHjb5S8VvWmSsS",
+      "filename": "_session_20260404_1046_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:53.108Z",
+      "size_bytes": 55822077
+    },
+    "20260404_1211": {
+      "drive_id": "17evVdl9Y-BlFIxPREDu4PBuDnDxrOmA8",
+      "filename": "_session_20260404_1211_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:52.319Z",
+      "size_bytes": 32101269
+    },
+    "20260404_1534": {
+      "drive_id": "1wdTWhh4zWhS1cIejtOT7gZgzDjnpDdZ5",
+      "filename": "_session_20260404_1534_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:51.517Z",
+      "size_bytes": 11159373
+    },
+    "20260407_0827": {
+      "drive_id": "1KGyGZYooXbaa4SZy3Bxg-yVDzIDvWKG3",
+      "filename": "_session_20260407_0827_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:50.728Z",
+      "size_bytes": 76279173
+    },
+    "20260415_1149": {
+      "drive_id": "1VZqSSSgVn7q_XN9vIIkoqR5h4FoiJvih",
+      "filename": "_session_20260415_1149_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:49.788Z",
+      "size_bytes": 38526813
+    },
+    "20260331_1354": {
+      "drive_id": "17KwriB-DM6l3qvUpF4iEpAzCnUtYoD0S",
+      "filename": "_session_20260331_1354_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:48.949Z",
+      "size_bytes": 12006069
+    },
+    "20260331_1435": {
+      "drive_id": "144plXye83w3PioJyN1EN_aRAVtwY2xhL",
+      "filename": "_session_20260331_1435_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:48.147Z",
+      "size_bytes": 23577501
+    },
+    "20260331_1445": {
+      "drive_id": "1pE37vPu-u0uFQ6x8mvh1ky_Tv_1voQQh",
+      "filename": "_session_20260331_1445_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:47.267Z",
+      "size_bytes": 25002237
+    },
+    "20260331_1457": {
+      "drive_id": "1FPCc07sxU1pN_PU3o5khXX4s9x_aEFRZ",
+      "filename": "_session_20260331_1457_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:46.390Z",
+      "size_bytes": 15345165
+    },
+    "20260331_1511": {
+      "drive_id": "1Vc13hzn4KwiSwOKJo1z_2FBugFcNcX5Z",
+      "filename": "_session_20260331_1511_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:45.590Z",
+      "size_bytes": 15348165
+    },
+    "20260414_1730": {
+      "drive_id": "19Kj2hbNaeJHiudfU8yTXol_8SnXt81pg",
+      "filename": "_session_20260414_1730_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:44.632Z",
+      "size_bytes": 10813581
+    },
+    "20260426_2019": {
+      "drive_id": "1lvzzIDWXRpBUxoqtibTrRNcaO0FiLiYb",
+      "filename": "_session_20260426_2019_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:43.650Z",
+      "size_bytes": 30143685
+    },
+    "20260426_2043": {
+      "drive_id": "17rgIRtFqYqV9IDsbOQbihFjKTPzRJswU",
+      "filename": "_session_20260426_2043_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-20T18:58:42.707Z",
+      "size_bytes": 80600925
+    },
     "20260517_0725": {
       "drive_id": "1DERz471W6PR2XhxTdGA9b9k-DR2BvH7R",
       "filename": "_session_20260517_0725_combined_af_heart_audio.mp3",
@@ -152,174 +368,6 @@
       "filename": "_session_20260514_1902_combined_af_heart_audio.mp3",
       "modified_time": "2026-05-17T19:56:07.067Z",
       "size_bytes": 11550981
-    },
-    "20260426_2043": {
-      "drive_id": "17rgIRtFqYqV9IDsbOQbihFjKTPzRJswU",
-      "filename": "BDF_SESSION_20260426_2043_first_resolve_export_marker_system.mp3",
-      "modified_time": "2026-05-16T01:26:30.737Z",
-      "size_bytes": 80600925
-    },
-    "20260426_2019": {
-      "drive_id": "1lvzzIDWXRpBUxoqtibTrRNcaO0FiLiYb",
-      "filename": "BDF_SESSION_20260426_2019_resolve_mcp_bridge_utf8_fixes.mp3",
-      "modified_time": "2026-05-16T01:26:30.263Z",
-      "size_bytes": 30143685
-    },
-    "20260414_1730": {
-      "drive_id": "19Kj2hbNaeJHiudfU8yTXol_8SnXt81pg",
-      "filename": "BDF_SESSION_20260414_1730_compile_rules_batching_cost.mp3",
-      "modified_time": "2026-05-16T01:26:29.804Z",
-      "size_bytes": 10813581
-    },
-    "20260331_1511": {
-      "drive_id": "1Vc13hzn4KwiSwOKJo1z_2FBugFcNcX5Z",
-      "filename": "BDF_SESSION_20260331_1511_predator_setup_methodology.mp3",
-      "modified_time": "2026-05-16T01:26:29.300Z",
-      "size_bytes": 15348165
-    },
-    "20260331_1457": {
-      "drive_id": "1FPCc07sxU1pN_PU3o5khXX4s9x_aEFRZ",
-      "filename": "BDF_SESSION_20260331_1457_predator_folder_architecture.mp3",
-      "modified_time": "2026-05-16T01:26:28.818Z",
-      "size_bytes": 15345165
-    },
-    "20260331_1445": {
-      "drive_id": "1pE37vPu-u0uFQ6x8mvh1ky_Tv_1voQQh",
-      "filename": "BDF_SESSION_20260331_1445_methodology_roadmap_gallery.mp3",
-      "modified_time": "2026-05-16T01:26:28.337Z",
-      "size_bytes": 25002237
-    },
-    "20260331_1435": {
-      "drive_id": "144plXye83w3PioJyN1EN_aRAVtwY2xhL",
-      "filename": "BDF_SESSION_20260331_1435_project_evolution_ideas_chapters.mp3",
-      "modified_time": "2026-05-16T01:26:27.880Z",
-      "size_bytes": 23577501
-    },
-    "20260331_1354": {
-      "drive_id": "17KwriB-DM6l3qvUpF4iEpAzCnUtYoD0S",
-      "filename": "BDF_SESSION_20260331_1354_bdf_glossary_python_ai_terms.mp3",
-      "modified_time": "2026-05-16T01:26:27.380Z",
-      "size_bytes": 12006069
-    },
-    "20260415_1149": {
-      "drive_id": "1VZqSSSgVn7q_XN9vIIkoqR5h4FoiJvih",
-      "filename": "BDF_SESSION_20260415_1149_four_projects_cost_log_workspace.mp3",
-      "modified_time": "2026-05-16T01:26:26.898Z",
-      "size_bytes": 38526813
-    },
-    "20260407_0827": {
-      "drive_id": "1KGyGZYooXbaa4SZy3Bxg-yVDzIDvWKG3",
-      "filename": "BDF_SESSION_20260407_0827_avatar_library_asset_scorer.mp3",
-      "modified_time": "2026-05-16T01:26:26.414Z",
-      "size_bytes": 76279173
-    },
-    "20260404_1534": {
-      "drive_id": "1wdTWhh4zWhS1cIejtOT7gZgzDjnpDdZ5",
-      "filename": "BDF_SESSION_20260404_1534_cgnat_diagnosis_mcafee_removal.mp3",
-      "modified_time": "2026-05-16T01:26:25.782Z",
-      "size_bytes": 11159373
-    },
-    "20260404_1211": {
-      "drive_id": "17evVdl9Y-BlFIxPREDu4PBuDnDxrOmA8",
-      "filename": "BDF_SESSION_20260404_1211_ca5_inkscape_image_pipeline.mp3",
-      "modified_time": "2026-05-16T01:26:25.297Z",
-      "size_bytes": 32101269
-    },
-    "20260404_1046": {
-      "drive_id": "1q8AhF32d2CLCRdToorMHjb5S8VvWmSsS",
-      "filename": "BDF_SESSION_20260404_1046_multiagent_worldcup_2026_data.mp3",
-      "modified_time": "2026-05-16T01:26:24.823Z",
-      "size_bytes": 55822077
-    },
-    "20260402_2003": {
-      "drive_id": "1DaJA9zAs9sBrJmQlcTGBVtIlWhUe3nSj",
-      "filename": "BDF_SESSION_20260402_2003_kokoro_tts_dual_engine_audio.mp3",
-      "modified_time": "2026-05-16T01:26:24.337Z",
-      "size_bytes": 31842285
-    },
-    "20260402_0554": {
-      "drive_id": "1AVgSbs3K8BFp5LdLP5BscXZF4Tkc1OKf",
-      "filename": "BDF_SESSION_20260402_0554_kling_animation_story_pipeline.mp3",
-      "modified_time": "2026-05-16T01:26:23.850Z",
-      "size_bytes": 100247493
-    },
-    "20260401_2239": {
-      "drive_id": "1C7-VCGdKJOCRy1ivODwr2t_ftyItozfp",
-      "filename": "BDF_SESSION_20260401_2239_multiagent_pipeline_full_launch.mp3",
-      "modified_time": "2026-05-16T01:26:23.380Z",
-      "size_bytes": 221584053
-    },
-    "20260401_1618": {
-      "drive_id": "1y8LYgA6IOrg6-ADNBS_zm0AL5_3hiKWX",
-      "filename": "BDF_SESSION_20260401_1618_pipeline_architecture_fixture_calendar.mp3",
-      "modified_time": "2026-05-16T01:26:22.897Z",
-      "size_bytes": 182104941
-    },
-    "20260401_1513": {
-      "drive_id": "1-Gi22c24TNS-vEIcG7zrXCIllJ6jlQPs",
-      "filename": "BDF_SESSION_20260401_1513_lancedb_fixes_gallery_matcher.mp3",
-      "modified_time": "2026-05-16T01:26:22.417Z",
-      "size_bytes": 58201269
-    },
-    "20260401_1459": {
-      "drive_id": "1tNoEVEKS9alpW1WlB3u3wTdP4vhWBMky",
-      "filename": "BDF_SESSION_20260401_1459_rag_pipeline_multiagent_design.mp3",
-      "modified_time": "2026-05-16T01:26:21.927Z",
-      "size_bytes": 47713773
-    },
-    "20260401_1440": {
-      "drive_id": "1OMeupWGMJQLHTG1m0WVTUC1RLER7QxGR",
-      "filename": "BDF_SESSION_20260401_1440_mediaagent_kling_api_jwt.mp3",
-      "modified_time": "2026-05-16T01:26:21.288Z",
-      "size_bytes": 36454293
-    },
-    "20260401_1430": {
-      "drive_id": "1cOzXjWDd3zUv-8X3XSdKy-6lnpKfOn8P",
-      "filename": "BDF_SESSION_20260401_1430_react_dashboard_telegram_fix.mp3",
-      "modified_time": "2026-05-16T01:26:20.818Z",
-      "size_bytes": 37522485
-    },
-    "20260401_1322": {
-      "drive_id": "1JS1hzFZ4J_nnMwEvf4XNc_3TvDRB1ODt",
-      "filename": "BDF_SESSION_20260401_1322_pipeline_git_syncthing.mp3",
-      "modified_time": "2026-05-16T01:26:20.338Z",
-      "size_bytes": 37502253
-    },
-    "20260401_1231": {
-      "drive_id": "1fc6Bnd6SXV2oKEmtLE1JDO_eYc_Yussb",
-      "filename": "BDF_SESSION_20260401_1231_full_bdf_pipeline_architecture.mp3",
-      "modified_time": "2026-05-16T01:26:19.858Z",
-      "size_bytes": 37488789
-    },
-    "20260401_1115": {
-      "drive_id": "1sCBpe0QC8WO9ZDoIfbql1Su2EkLu7jfx",
-      "filename": "BDF_SESSION_20260401_1115_davinci_resolve_obs_workflow.mp3",
-      "modified_time": "2026-05-16T01:26:19.376Z",
-      "size_bytes": 28199733
-    },
-    "20260401_0732": {
-      "drive_id": "1cDms2cU--QlpmcUcVEveIWVCVZm2QgoY",
-      "filename": "BDF_SESSION_20260401_0732_twitter_telegram_publish_workflow.mp3",
-      "modified_time": "2026-05-16T01:26:18.900Z",
-      "size_bytes": 19602093
-    },
-    "20260331_2029": {
-      "drive_id": "19j_r6rAvU_w3zyYpaAvdL-En9t4vWa_Y",
-      "filename": "BDF_SESSION_20260331_2029_obs_pipeline_syncthing_setup.mp3",
-      "modified_time": "2026-05-16T01:26:18.281Z",
-      "size_bytes": 20417517
-    },
-    "20260331_1534": {
-      "drive_id": "1xlo5_sgXnVTKQH6ZiJJPy0T2GE4xbIYy",
-      "filename": "BDF_SESSION_20260331_1534_google_drive_sync_dalle_deadline.mp3",
-      "modified_time": "2026-05-16T01:26:17.778Z",
-      "size_bytes": 54058965
-    },
-    "20260331_1517": {
-      "drive_id": "1LW-B453gU_vZHYrmpg5KKQ9SbO_kRU7v",
-      "filename": "BDF_SESSION_20260331_1517_predator_setup_milestone_variations.mp3",
-      "modified_time": "2026-05-16T01:26:17.136Z",
-      "size_bytes": 15689181
     },
     "BDF_Session_Summary_March18_2026": {
       "drive_id": "1O632_SdOh1SkdDU4GcRp32QMlYb5qFRw",
@@ -409,5 +457,5 @@
     }
   },
   "brainos_sessions": {},
-  "start_page_token": "14252"
+  "start_page_token": "14306"
 }
