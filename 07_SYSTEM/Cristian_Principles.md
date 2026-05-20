@@ -182,3 +182,15 @@ A doc with camelCase names when the project uses snake_case is a corrupted map.
 Every AI session, audit, and context load that reads it starts with wrong assumptions.
 **Proven:** final_resume_From_Tools_To_Voice.txt had camelCase names vs actual
 snake_case files in soccer-content-generator — caught during BRAIN_OS duplicate audit 2026-05-19.
+
+## The What / How / Where Framework
+**Rule:** Before building any data transformation tool, identify three things:
+- **What** — the target (which file, which record, which node needs changing)
+- **How** — the pattern rule (what transformation logic applies)
+- **Where** — the location identifier (Drive ID, path, key — whatever uniquely addresses it)
+Add a fourth: **Safety Guard** — collision check before writing anything.
+
+**Why this is powerful:** These four questions force you to separate concerns before
+writing a single line of code. A tool that can't answer all four clearly isn't
+ready to be built — you're still missing a requirement.
+Applied to: drive_sync.py --normalize flag design, 2026-05-20.
