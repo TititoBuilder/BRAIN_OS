@@ -1,6 +1,6 @@
 # soccer-content-generator — dependency context
-_updated: 2026-05-16T01:54:19.999928+00:00_
-_nodes: 99_
+_updated: 2026-05-19T02:18:02.475689+00:00_
+_nodes: 98_
 
 ## Clip_Pipeline
 - **clip_config.py** (4.5 KB)
@@ -102,8 +102,7 @@ _nodes: 99_
 - **trigger_watcher.py** (14.6 KB)
 
 ## Output_Pipeline
-- **book_compiler.py** (29.1 KB) — external: `anthropic`, `dotenv`
-- **converter.py** (20.2 KB)
+- **converter.py** (20.3 KB)
 - **export_pipeline.py** (13.3 KB)
 - **mcp_book_compiler.py** (28.3 KB) — external: `anthropic`, `dotenv`
 - **src/publishers/instagram_publisher.py** (5.9 KB) — internal: `src.formatters.platform_formatter`, `src.publishers.base_publisher`; external: `requests`
@@ -111,15 +110,15 @@ _nodes: 99_
 - **src/publishers/tiktok_publisher.py** (7.6 KB) — internal: `src.formatters.platform_formatter`, `src.publishers.base_publisher`; external: `requests`
 - **src/publishers/youtube_publisher.py** (8.5 KB) — internal: `src.formatters.platform_formatter`, `src.publishers.base_publisher`
 - **src/twitter_publisher.py** (13.8 KB) — external: `tweepy`
-- **tts_local.py** (16.2 KB)
+- **tts_local.py** (16.5 KB) — external: `dotenv`
 
 ## Scripts
 - **scripts/cleanup_lancedb_duplicates.py** (1.0 KB) — external: `dotenv`, `lancedb`
 - **scripts/database_exporter.py** (10.5 KB) — external: `pandas`
 - **scripts/distill_session.py** (10.7 KB) — external: `anthropic`, `dotenv`
-- **scripts/drive_cleanup.py** (6.2 KB) — internal: `drive_sync`
-- **scripts/drive_sync.py** (9.9 KB)
-- **scripts/graph_maintainer.py** (16.0 KB)
+- **scripts/drive_cleanup.py** (7.0 KB) — internal: `drive_sync`
+- **scripts/drive_sync.py** (12.8 KB)
+- **scripts/graph_maintainer.py** (17.1 KB)
 - **scripts/ingest_international_break.py** (7.1 KB) — internal: `vector_store`; external: `dotenv`
 - **scripts/ingest_ucl_2026.py** (6.9 KB) — internal: `src.knowledge_manager`; external: `dotenv`
 - **scripts/ingest_ucl_r16_second_legs.py** (5.4 KB) — internal: `vector_store`; external: `dotenv`
@@ -219,7 +218,7 @@ _nodes: 99_
 - **src/ucl_bridge.py** (4.8 KB) — internal: `src.vector_store`
 - **src/youtube_api_client.py** (8.1 KB) — internal: `base_client`, `config`
 - **story_generator.py** (12.2 KB) — external: `anthropic`, `dotenv`
-- **sync_brain.py** (19.0 KB)
+- **sync_brain.py** (19.4 KB)
 - **telegram_approver.py** (20.8 KB) — external: `dotenv`, `telegram`
 - **test_football_data_org.py** (4.3 KB) — external: `dotenv`, `requests`
 - **test_football_data_org2.py** (3.2 KB) — external: `dotenv`, `requests`

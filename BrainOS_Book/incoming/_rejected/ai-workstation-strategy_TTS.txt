@@ -1,0 +1,79 @@
+Section: Ai-Workstation-Strategy.
+
+CRISTIAN'S AI WORKSTATION STRATEGY
+Two-Machine Architecture for Development + AI Agents
+March 2026 | Prepared with Claude
+
+Section: THE CORE INSIGHT.
+
+You are building two fundamentally different workflows that need two different machines. Forcing both into one $3,000+ laptop creates a machine that is mediocre at both jobs.
+Workflow A: OpenClaw / Local LLMs / Always-On Agents = stationary, plugged in, 24/7 uptime, needs maximum VRAM, fast internet, thermal stability. This is a desktop workload.
+Workflow B: Development / Content Creation / On-the-Go = portable, battery-powered sessions, Python/FastAPI, React, DaVinci Resolve, OBS captures, VS Code. Needs a solid GPU but NOT 24GB VRAM.
+
+Section: MACHINE 1: PORTABLE DEV LAPTOP (BUY NOW).
+
+Budget: $1,300 - $2,300 | GPU: RTX 5070 Ti (12GB) or RTX 5080 (16GB)
+This machine handles everything you do on the move: BreakingDown Futbol Python/FastAPI backend, React dashboard, DaVinci Resolve video editing, OBS match captures with the Elgato HD60 X, AI image generation for Twitter/X posts, VS Code development, and testing smaller local models (7B-13B) before deploying them to your home server.
+
+Section: Top Picks - RTX 5070 Ti Tier (~$1,300-1,800).
+
+Section: Top Picks - RTX 5080 Tier (~$2,000-2,500).
+
+Section: Recommendation.
+
+Best value: MSI Vector 16 HX with RTX 5070 Ti at ~$1,299. This leaves ~$1,700+ in your budget for the home AI server. The 12GB VRAM handles DaVinci Resolve, OBS, image generation, and 7B model testing. Upgrade RAM to 32GB yourself (~$90).
+If you can stretch: HP Omen Max 16 with RTX 5080 at ~$2,050. The 16GB VRAM gives you more AI headroom for local testing, and the full 175W TGP means it trades blows with some RTX 5090 laptops in benchmarks. No OLED, but you said you don't care about the screen.
+
+Section: MACHINE 2: HOME AI SERVER (BUY IN 3-6 MONTHS).
+
+Budget: $1,500 - $3,000 | GPU: RTX 4090 (24GB) or RTX 5090 (32GB desktop)
+This machine runs 24/7 at home with a strong internet connection. It hosts OpenClaw agents, runs local LLMs (13B-70B), manages your RAG pipeline over BreakingDown Futbol data, and serves as the AI backbone you access remotely from your laptop via Telegram, web UI, or SSH.
+
+Section: Build Options.
+
+Section: Recommendation.
+
+Best starting point: Desktop with used RTX 4090 (24GB) for ~$2,000-2,500 total build. This gives you the same 24GB VRAM as an RTX 5090 laptop but in a desktop form factor with better cooling, no thermal throttling, and lower cost. It runs 70B quantized models at 52 tokens/second and handles OpenClaw with full local inference. The RTX 4090 hits 24/7 without the wear and heat issues a laptop would face.
+Bridge option: If you want to start learning RAG pipelines and agent orchestration before building a full desktop, a Mac Mini M4 Pro (24GB) at ~$1,600 runs OpenClaw in gateway mode (connecting to Claude/GPT APIs) perfectly and handles smaller local models. You can deploy OpenClaw on this immediately while saving for the RTX desktop.
+
+Section: WHAT THIS UNLOCKS FOR BREAKINGDOWN FUTBOL.
+
+With OpenClaw running on your home AI server, connected to your BreakingDown Futbol pipeline, here is what becomes possible:
+Autonomous content generation: OpenClaw monitors your fixture calendar, auto-generates hype scores, drafts story scripts, and pushes them to your Telegram approval queue while you are out doing Roadie deliveries.
+Zero API costs: A local 27B model like Qwen3.5 handles image prompt generation, tweet composition, and story drafts entirely on your hardware. No rate limits, no monthly bills, complete privacy.
+RAG over your project data: Your LanceDB vector store gets indexed continuously. Ask the agent about any player, fixture, or content piece and get instant answers grounded in YOUR data.
+Hybrid model routing: Simple tasks (file reads, scheduling, boilerplate) go to your local model. Complex reasoning (debugging, architecture decisions) routes to Claude via API. Your bill drops from $20-50/day to a few dollars.
+Proactive project management: OpenClaw checks Twitter/X engagement, adjusts posting schedules, follows up on tasks, and sends you status updates through the messaging channels you already use.
+Always-on Clip Factory: The home server processes OBS recordings through your story animation pipeline overnight. By morning, your content queue is full.
+
+Section: YOUR LEARNING ROADMAP (NEXT 6 MONTHS).
+
+You don't need the home server tomorrow. You need it when you've built the skills to use it. Here is the sequence:
+
+Section: TOTAL BUDGET BREAKDOWN.
+
+Two scenarios based on your comfort level:
+
+Section: Scenario A: Maximum Value (~$3,300-3,800 total).
+
+Section: Scenario B: Performance Priority (~$4,100-4,800 total).
+
+Section: Why This Beats One $3,000+ Laptop.
+
+Desktop RTX 5090 has 32GB VRAM vs. laptop's 24GB, runs cooler, doesn't throttle
+Desktop runs 24/7 without battery wear, fan noise, or thermal degradation
+Your laptop stays light, portable, and focused on what it's good at
+If one machine breaks, you still have the other
+You can upgrade each machine independently over time
+Combined cost is similar or less than one maxed RTX 5090 laptop
+
+Section: KEY LINKS.
+
+Portable Laptop Deals:
+MSI Vector 16 HX (Walmart): walmart.com - search 'MSI Vector 16 HX RTX 5070 Ti'
+HP Omen Max 16: hp.com/omen - use coupon codes for 15-20% off
+Best Buy RTX 5080 laptops: bestbuy.com/site/searchpage.jsp - filter by RTX 5080
+OpenClaw Resources:
+NVIDIA OpenClaw RTX Setup Guide: nvidia.com/en-us/geforce/news/open-claw-rtx-gpu-dgx-spark-guide/
+Best Local Models for OpenClaw: haimaker.ai/blog/best-local-models-for-openclaw/
+GPU Hardware Guide for AI: localaimaster.com/blog/ai-hardware-requirements-2025-complete-guide

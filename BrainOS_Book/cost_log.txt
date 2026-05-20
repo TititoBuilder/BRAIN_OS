@@ -4,3 +4,6 @@
 20260516_1713 | programming_terminology_reference.md | input: 516 tok | output: 40 tok | cost: $0.0006
 20260516_1733 | programming_terminology_reference.md | input: 585 tok | output: 43 tok | cost: $0.0006
 20260516_1744 | session_20260514_1902.md | input: 463 tok | output: 42 tok | cost: $0.0005
+20260518_1030 | session_20260415_1149.md | input: 479 tok | output: 40 tok | cost: $0.0005
+20260518_1244 | ai-workstation-strategy_TTS.txt | input: 591 tok | output: 60 tok | cost: $0.0007
+20260518_1245 | final_resume_From_Tools_To_Voice.txt | input: 439 tok | output: 45 tok | cost: $0.0005

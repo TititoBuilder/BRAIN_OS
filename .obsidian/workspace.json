@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b1f552202a6ccfb5",
+        "id": "7aaf2209856c2f93",
         "type": "tabs",
         "children": [
           {
-            "id": "ce440d8ec000bd9e",
+            "id": "dec4f790b908ea2e",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -177,8 +177,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "ce440d8ec000bd9e",
+  "active": "dec4f790b908ea2e",
   "lastOpenFiles": [
+    "09_TOOLS/restore_graph_colors.ps1",
+    "02_PROJECTS/BDF_Book_System.md",
     "02_PROJECTS/Custom_Agent.md",
     "02_PROJECTS/Custom_Agent_TTS_Audio.md",
     "canvases/BDF_Canvas.md",
@@ -210,9 +212,7 @@
     "Untitled 4",
     "Untitled 3.md",
     "Untitled 3",
-    "Untitled 2.md",
     "Untitled 2",
-    "00_NAV/BDF_Nav.md",
     "Untitled 9.canvas",
     "Untitled 10.canvas",
     "Untitled 2.base",

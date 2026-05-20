@@ -1,6 +1,48 @@
 {
-  "last_synced": "2026-05-16T03:52:48.495255+00:00",
+  "last_synced": "2026-05-19T02:20:05.415746+00:00",
   "chapters": {
+    "ch20_format_b_path_resolution": {
+      "drive_id": "1_g-pD85XVO5TGmnLYbhOp8XmC0EIrCRL",
+      "filename": "ch20_format_b_path_resolution_af_heart_audio.mp3",
+      "modified_time": "2026-05-18T03:31:25.854Z",
+      "size_bytes": 8654565
+    },
+    "ch19_export_pipeline": {
+      "drive_id": "1Y5rHhZm-eoNw5two35ob_Tu3QdCG5ps1",
+      "filename": "ch19_export_pipeline_af_heart_audio.mp3",
+      "modified_time": "2026-05-18T03:30:54.556Z",
+      "size_bytes": 10215021
+    },
+    "ch18_competition_detection": {
+      "drive_id": "1lxpKFCgeJC8aCi-rR2ZT3fXBAxlKa8GA",
+      "filename": "ch18_competition_detection_af_heart_audio.mp3",
+      "modified_time": "2026-05-18T03:30:22.753Z",
+      "size_bytes": 10070181
+    },
+    "ch17_clip_name_parser": {
+      "drive_id": "1hOk0ezJQYtARixsqlBtuk_iwX8fJWb_y",
+      "filename": "ch17_clip_name_parser_af_heart_audio.mp3",
+      "modified_time": "2026-05-18T03:29:48.112Z",
+      "size_bytes": 8077845
+    },
+    "ch08_methodology": {
+      "drive_id": "150TpeHCbFmoQBQuqMMFeurSv0Jm7iivC",
+      "filename": "ch08_methodology_af_heart_audio.mp3",
+      "modified_time": "2026-05-18T03:29:21.758Z",
+      "size_bytes": 11123973
+    },
+    "ch07_dashboard_ui": {
+      "drive_id": "1do-5WW_m-DAx0_ciSNew5svYeDhendFO",
+      "filename": "ch07_dashboard_ui_af_heart_audio.mp3",
+      "modified_time": "2026-05-18T03:28:49.873Z",
+      "size_bytes": 10538781
+    },
+    "ch01_pipeline_architecture": {
+      "drive_id": "1axgbAY4FeUCOo8sxHPV4tx0VGCIl_NRI",
+      "filename": "ch01_pipeline_architecture_af_heart_audio.mp3",
+      "modified_time": "2026-05-18T03:28:15.953Z",
+      "size_bytes": 11888445
+    },
     "ch16_knowledge_enricher": {
       "drive_id": "1VrI9AaR_c47dFkeqpElcVuAY3NEKpeW0",
       "filename": "ch16_knowledge_enricher_af_heart_audio.mp3",
@@ -18,30 +60,6 @@
       "filename": "ch21_library_routing_af_heart_audio.mp3",
       "modified_time": "2026-05-13T19:25:39.988Z",
       "size_bytes": 7791429
-    },
-    "ch20_format_b_path_resolution": {
-      "drive_id": "1M0-epVUCElNuO2q8fhwctQKl7JnHrqQ5",
-      "filename": "ch20_format_b_path_resolution_af_heart_audio.mp3",
-      "modified_time": "2026-05-13T19:22:19.065Z",
-      "size_bytes": 6697101
-    },
-    "ch19_export_pipeline": {
-      "drive_id": "1ZL-EusaOMkD-THwcXo_n10bWKvoyKIMP",
-      "filename": "ch19_export_pipeline_af_heart_audio.mp3",
-      "modified_time": "2026-05-13T19:17:00.869Z",
-      "size_bytes": 10005381
-    },
-    "ch18_competition_detection": {
-      "drive_id": "14lDPpDx9nTdIByhKrHcO73EniYariHpw",
-      "filename": "ch18_competition_detection_af_heart_audio.mp3",
-      "modified_time": "2026-05-13T19:05:44.855Z",
-      "size_bytes": 8170221
-    },
-    "ch17_clip_name_parser": {
-      "drive_id": "1GFh1M6ACx2-9fr3d3_h-Q3IuHXMoJIFi",
-      "filename": "ch17_clip_name_parser_af_heart_audio.mp3",
-      "modified_time": "2026-05-13T18:41:19.476Z",
-      "size_bytes": 5938941
     },
     "ch16_cost_tracking": {
       "drive_id": "1w7NmLE6eGgq-fVYQw8sXufkj8tO3hX0y",
@@ -91,18 +109,6 @@
       "modified_time": "2026-05-13T14:29:21.976Z",
       "size_bytes": 11920485
     },
-    "ch08_methodology": {
-      "drive_id": "1zBFYUSZypFAW80EFKn7JQKVVx7oUKpkH",
-      "filename": "ch08_methodology_af_heart_audio.mp3",
-      "modified_time": "2026-05-13T14:29:15.844Z",
-      "size_bytes": 10427301
-    },
-    "ch07_dashboard_ui": {
-      "drive_id": "1dSMepw3hpDYKJndUKU1cKy5X7PMuy5SO",
-      "filename": "ch07_dashboard_ui_af_heart_audio.mp3",
-      "modified_time": "2026-05-13T14:29:09.111Z",
-      "size_bytes": 9806997
-    },
     "ch06_obs_clips": {
       "drive_id": "19y68aysS8Edf9xtHUSdszyu9sYBpp2qR",
       "filename": "ch06_obs_clips_af_heart_audio.mp3",
@@ -132,15 +138,21 @@
       "filename": "ch02_predator_setup_af_heart_audio.mp3",
       "modified_time": "2026-05-13T14:28:37.647Z",
       "size_bytes": 11234157
-    },
-    "ch01_pipeline_architecture": {
-      "drive_id": "1VqZudFSOVdC0itIkMiFopyy88ds2SBnq",
-      "filename": "ch01_pipeline_architecture_af_heart_audio.mp3",
-      "modified_time": "2026-05-13T14:28:31.721Z",
-      "size_bytes": 11265813
     }
   },
   "sessions": {
+    "20260517_0725": {
+      "drive_id": "1DERz471W6PR2XhxTdGA9b9k-DR2BvH7R",
+      "filename": "_session_20260517_0725_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-17T20:19:06.000Z",
+      "size_bytes": 94892445
+    },
+    "20260514_1902": {
+      "drive_id": "1jfeisXJ0Z9yWzFnApWWC2xKWmNkAeTRK",
+      "filename": "_session_20260514_1902_combined_af_heart_audio.mp3",
+      "modified_time": "2026-05-17T19:56:07.067Z",
+      "size_bytes": 11550981
+    },
     "20260426_2043": {
       "drive_id": "17rgIRtFqYqV9IDsbOQbihFjKTPzRJswU",
       "filename": "BDF_SESSION_20260426_2043_first_resolve_export_marker_system.mp3",
@@ -321,5 +333,81 @@
       "modified_time": "2026-03-28T21:03:19.000Z",
       "size_bytes": 9235437
     }
-  }
+  },
+  "brainos_chapters": {
+    "programming_terminology_reference": {
+      "drive_id": "13CTY6mW-BXS-nhQJx87HddNO0pzYxsHC",
+      "filename": "programming_terminology_reference.wav",
+      "modified_time": "2026-05-17T21:51:50.435Z",
+      "size_bytes": 40119644
+    },
+    "claudeguide_skills_system": {
+      "drive_id": "1dX6oEA4F8qi2Kl6Z69-h4NDpgJSRF9Nh",
+      "filename": "claudeguide_skills_system.wav",
+      "modified_time": "2026-05-17T20:22:52.501Z",
+      "size_bytes": 22359644
+    },
+    "claudeguide_prompting_architecture": {
+      "drive_id": "12R2Lr0xTLrFXhvVe4Py0fn6SXWXOPytl",
+      "filename": "claudeguide_prompting_architecture.wav",
+      "modified_time": "2026-05-17T20:22:46.251Z",
+      "size_bytes": 26024444
+    },
+    "claudeguide_mcp_setup": {
+      "drive_id": "19JV8MtSTys-E8vUPT9hPLBHYsjw8cxwx",
+      "filename": "claudeguide_mcp_setup.wav",
+      "modified_time": "2026-05-17T20:22:39.527Z",
+      "size_bytes": 21609644
+    },
+    "claudeguide_claude_md_standards": {
+      "drive_id": "1oVo0jvRUeGFsJ8BBuzExd28dpu-cgIS2",
+      "filename": "claudeguide_claude_md_standards.wav",
+      "modified_time": "2026-05-17T20:22:32.450Z",
+      "size_bytes": 17804444
+    },
+    "session_20260514_1902_obsidian_vscode": {
+      "drive_id": "18a3c2TnSU9twdHKhXbgj1-8TKP1j4i1_",
+      "filename": "session_20260514_1902_obsidian_vscode.wav",
+      "modified_time": "2026-05-17T20:22:25.005Z",
+      "size_bytes": 63297644
+    },
+    "resolve_mcp_guide": {
+      "drive_id": "1AmenAuvjrwk_1gavyd05FwV9cVUa7oO1",
+      "filename": "resolve_mcp_guide.wav",
+      "modified_time": "2026-05-17T20:22:18.257Z",
+      "size_bytes": 63176444
+    },
+    "guide_venv": {
+      "drive_id": "1yZYAQuJM4--biE76271zQQD5-8KP9-Ex",
+      "filename": "guide_venv.wav",
+      "modified_time": "2026-05-17T20:22:11.540Z",
+      "size_bytes": 25660844
+    },
+    "guide_obsidian_claude": {
+      "drive_id": "1m7R2AMTev6hrCRq0dlVGfoXb_TJnR8Ql",
+      "filename": "guide_obsidian_claude.wav",
+      "modified_time": "2026-05-17T20:22:04.722Z",
+      "size_bytes": 18345644
+    },
+    "guide_mcp_ecosystem": {
+      "drive_id": "1lPc0LOkZZfUN_2CAtCz-uU-khB4zunmM",
+      "filename": "guide_mcp_ecosystem.wav",
+      "modified_time": "2026-05-17T20:21:58.964Z",
+      "size_bytes": 23106044
+    },
+    "guide_lancedb": {
+      "drive_id": "1ivJFo4lBTKfwAhsaQZcJohLelaSARfOe",
+      "filename": "guide_lancedb.wav",
+      "modified_time": "2026-05-17T20:21:49.763Z",
+      "size_bytes": 22198844
+    },
+    "guide_brain_os": {
+      "drive_id": "1i9TS3rx15rC5XUe3Eus9ctt1R_VU0MdR",
+      "filename": "guide_brain_os.wav",
+      "modified_time": "2026-05-17T20:21:44.075Z",
+      "size_bytes": 21050444
+    }
+  },
+  "brainos_sessions": {},
+  "start_page_token": "14252"
 }

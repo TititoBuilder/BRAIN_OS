@@ -1,8 +1,8 @@
 {
   "project": "soccer-content-generator",
   "root": "C:/Dev/Projects/soccer-content-generator",
-  "updated_at": "2026-05-16T01:54:19.999928+00:00",
-  "node_count": 99,
+  "updated_at": "2026-05-19T02:18:02.475689+00:00",
+  "node_count": 98,
   "nodes": {
     "avatar_character_profiles.py": {
       "hash": "b2a4579e31ae",
@@ -10,27 +10,6 @@
       "size_kb": 65.1,
       "mode": "header_only",
       "signatures": []
-    },
-    "book_compiler.py": {
-      "hash": "eef6fdd0a229",
-      "layer": "Output_Pipeline",
-      "size_kb": 29.1,
-      "mode": "full",
-      "imports": {
-        "stdlib": [
-          "datetime",
-          "json",
-          "os",
-          "pathlib",
-          "shutil",
-          "sys"
-        ],
-        "internal": [],
-        "external": [
-          "anthropic",
-          "dotenv"
-        ]
-      }
     },
     "bot_service.py": {
       "hash": "894932a66c2e",
@@ -171,9 +150,9 @@
       }
     },
     "converter.py": {
-      "hash": "d94c188cda93",
+      "hash": "641c129304be",
       "layer": "Output_Pipeline",
-      "size_kb": 20.2,
+      "size_kb": 20.3,
       "mode": "full",
       "imports": {
         "stdlib": [
@@ -640,9 +619,9 @@
       }
     },
     "scripts/drive_cleanup.py": {
-      "hash": "30101a66bdd6",
+      "hash": "a846a84d8487",
       "layer": "Scripts",
-      "size_kb": 6.2,
+      "size_kb": 7.0,
       "mode": "full",
       "imports": {
         "stdlib": [
@@ -657,9 +636,9 @@
       }
     },
     "scripts/drive_sync.py": {
-      "hash": "d450650ecbc3",
+      "hash": "bd97a3a5417c",
       "layer": "Scripts",
-      "size_kb": 9.9,
+      "size_kb": 12.8,
       "mode": "full",
       "imports": {
         "stdlib": [
@@ -676,9 +655,9 @@
       }
     },
     "scripts/graph_maintainer.py": {
-      "hash": "69c3a4a2e4c3",
+      "hash": "b44752007c45",
       "layer": "Scripts",
-      "size_kb": 16.0,
+      "size_kb": 17.1,
       "mode": "full",
       "imports": {
         "stdlib": [
@@ -1721,9 +1700,9 @@
       }
     },
     "sync_brain.py": {
-      "hash": "d3c784d9c655",
+      "hash": "a5dc11d592cc",
       "layer": "uncategorized",
-      "size_kb": 19.0,
+      "size_kb": 19.4,
       "mode": "full",
       "imports": {
         "stdlib": [
@@ -1834,9 +1813,9 @@
       }
     },
     "tts_local.py": {
-      "hash": "1911598bd962",
+      "hash": "9de144cab534",
       "layer": "Output_Pipeline",
-      "size_kb": 16.2,
+      "size_kb": 16.5,
       "mode": "full",
       "imports": {
         "stdlib": [
@@ -1848,7 +1827,9 @@
           "warnings"
         ],
         "internal": [],
-        "external": []
+        "external": [
+          "dotenv"
+        ]
       }
     }
   }

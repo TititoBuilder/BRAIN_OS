@@ -1,0 +1,121 @@
+Session Distillation — 2026-04-15 — session202604151149
+
+Decisions Made
+
+Machine Authority Standardization
+The Predator (Acer) was established as the ONLY active development machine. HP laptop relegated to OBS/streaming only, Dell permanently retired due to hardware failure. This eliminates confusion about canonical code location and sync issues between machines.
+
+McAfee Permanent Removal 
+McAfee antivirus was permanently removed from the Predator using the official MCPR tool after it caused WinError 10054 SSL connection resets to api.anthropic.com. Windows Defender automatically activated as replacement, providing security without interfering with API calls or VPN connections.
+
+Session Compilation Standard (April 4, 2026)
+Established the permanent "compile session" convention: When invoked, Claude produces three things in one response: 1) Routing map of topics and chapter assignments, 2) Session log file, 3) Tagged compile file with explicit [CHxxKEY] sections. This eliminates auto-detection misrouting errors.
+
+Cross-Project Compile Separation Rule
+Mixed-project sessions must produce SEPARATE files per target book to prevent contamination. BDF content goes to sessioncompilebdf.txt with [CHxxKEY] format, CA content goes to sessioncompileca.txt with #chXX format. Each file requires # TARGETBOOK: header comment.
+
+One-File-Per-Run Rule (Non-Negotiable)
+Processing multiple compile files simultaneously causes exponential token cost growth. Evidence: normal runs cost $1.50-2.50, batched runs cost $7-8. Rule is permanent: one bdf-compile, then one bdf-book, wait for completion before next file.
+
+Three-Workspace VS Code Architecture
+Established separate VS Code workspaces for each project: bdf.code-workspace, custom-agent.code-workspace, read-along.code-workspace. Each maintains its own venv context, terminals, and file history to prevent environment contamination.
+
+Patterns Discovered
+
+Event-Driven vs Scheduled Architecture Pattern
+The BDF Knowledge System only performs work when files land in incoming\ folder - zero resource consumption when idle. This scales efficiently compared to scheduled polling, especially for sporadic knowledge compilation events.
+
+Pre-Routing Beats Post-Detection
+Determining content routing during compile session response is more reliable than auto-detecting after file creation. The routing map step prevents misrouting issues that plagued early archive processing.
+
+PowerShell Profile Synchronization Pattern
+Both Microsoft.VSCodeprofile.ps1 and Microsoft.PowerShellprofile.ps1 must contain identical functions to ensure aliases work in all terminal contexts. VS Code terminals load the VSCode profile, standalone PowerShell loads the PowerShell profile.
+
+Cost Accumulation Pattern in Batch Processing
+When multiple files touch the same chapter, each successive merge reads the output of all previous merges as input. Third merge pays for first two merges plus new content - tokens compound exponentially.
+
+Signal Leak in VS Code Integrated Terminals
+Active Claude Code sessions leak KeyboardInterrupt signals to sibling terminal tabs within VS Code's integrated terminal multiplexer. Close Claude Code with /exit before running Python in adjacent terminals.
+
+Systems Built
+
+PowerShell Profile Infrastructure
+Created/updated both profile files with 8 clean functions:
+- 
+- 
+
+Functions include dev (file watcher), bdf-log, bdf-compile, bdf-book, ca-log, ca-compile, ca-book with absolute paths and proper venv activation.
+
+SessionResumes Folder Consolidation
+Merged three fragmented folders (proccesed, processed, ✅proccesed) into canonical  location. Recovered 22 files, resolved 2 filename collisions, reclaimed 3GB by removing duplicate DaVinci Resolve installer.
+
+Dedicated Custom Agent Virtual Environment  
+Created  using Python 3.12.10, replacing shared BDF venv usage. Cleaned requirements.txt by removing twilio, reportlab, pandas dependencies, saving ~65MB. Configured multi-root workspace with per-folder .vscode\settings.json files.
+
+VS Code Multi-Workspace Configuration
+Established three workspace files with standardized settings.json template:
+- python.defaultInterpreterPath pointing to workspace-specific venv
+- terminal.integrated auto-activation scripts
+- ${workspaceFolder} variable usage for portability
+
+Problems Solved
+
+WinError 10054 SSL Connection Reset Root Cause
+Problem: Intermittent API connection failures during bdf-book runs
+Root Cause: Surfshark VPN and McAfee intercepting SSL connections to api.anthropic.com
+Solution: Permanently removed McAfee via MCPR tool, established full VPN disconnect requirement before API operations
+
+Downloads Folder Missing
+Problem:  returned False on April 4, 2026
+Root Cause: OneDrive sync conflict or accidental deletion
+Solution:  and set Chrome download location explicitly
+
+Project Inventory Scrambling
+Problem: Confused documentation about four-project reality across disk locations
+Root Cause: Mixed memory from cross-project sessions and orphaned folder structures  
+Solution: Comprehensive audit identifying canonical paths, eliminated read-along-app orphan at C:\Knowledge\, established single source of truth per project
+
+Quarantine Files from Cross-Project Contamination
+Problem: [CH09TTS] tag appeared in BDF's review\ folder causing quarantine
+Root Cause: Mixed-project session compiled only to bdf-compile, TTS content doesn't belong in BDF
+Solution: Established separate compile files per target book with explicit TARGET_BOOK headers
+
+Key Commands
+
+McAfee Removal Sequence
+
+VS Code Workspace Switching
+
+Git Three-Step Rule for Downloaded Files
+
+PowerShell Profile Location Discovery
+
+Connection Diagnostics
+
+Downloads Folder Recreation
+
+Principles Earned
+
+One Input, One Run
+Processing one compile file per bdf-book execution prevents cost compounding. No exceptions - chapter overlap verification takes longer than sequential execution.
+
+Name Files Descriptively  
+Date-based filenames cause collisions during archive processing. Use descriptive names like  instead of generic date patterns.
+
+Verify Before Fixing
+Encoding bugs visible only in PowerShell display are not actual bugs. Signal interrupts during Claude Code are environment artifacts. Always verify problems exist in execution context that matters before attempting fixes.
+
+Event-Driven Over Scheduled
+Only perform work when something happens (file in incoming\). Scheduled execution wastes resources on empty runs. Event-driven scales to zero cost when idle.
+
+Separate Books Get Separate Files
+Cross-project sessions require separate compile outputs per target book. Contamination prevention at file creation beats detection at compile time.
+
+Pre-Route Content Explicitly
+Determine chapter routing during compile session response, not via post-creation auto-detection. Routing maps with human confirmation prevent misrouting errors.
+
+Storage vs Synthesis Distinction
+Session transcripts are ingredients, chapters are meals. Synthesis creates refined knowledge that becomes more valuable over time. Storage preserves raw material that becomes harder to search.
+
+Output Tokens Dominate API Cost
+At 5x input token price, output generation drives expenses. A verbose chapter costs significantly more than concise output from lengthy source material.
