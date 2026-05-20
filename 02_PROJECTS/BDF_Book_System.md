@@ -122,6 +122,8 @@ The `sync_audio_to_drive()` / upload functions in soccer-content-generator were 
 | `drive_cleanup.py --delete-files` | New CLI flag to delete Drive files matching a list |
 | Runtime config | Drive folder IDs loaded from `BRAIN_OS_CONFIG.json` at startup (not hardcoded) |
 | Chunk size | Increased to **50 MB** for faster large-file transfers |
+| `drive_sync.py --normalize` | Renames audio files to timestamp-only keys — strips metadata from filenames (see [[Cristian_Principles]] — Filenames Are Machine Keys) |
+| `_brainos_key()` rewrite | Now uses full filename stem for manifest tracking; previously truncated keys caused missed dedup matches |
 
 ### TTS / HuggingFace Auth
 `tts_local.py` now calls `huggingface_hub.login(token=HF_TOKEN)` at startup. `HF_TOKEN` must be set in `.env` and `load_dotenv()` is called at module import. Without this, model downloads fail silently.
@@ -130,6 +132,9 @@ The `sync_audio_to_drive()` / upload functions in soccer-content-generator were 
 
 - ch11–ch16 duplicate numbering — 6 pairs need sequential renaming
 - GDrive credentials shared with CA book compiler (by design — both point to BDF project dir)
+
+**Resolved (2026-05-20):**
+- NoneType crash in docx converter when `para.style is None` — guard added
 
 ---
 

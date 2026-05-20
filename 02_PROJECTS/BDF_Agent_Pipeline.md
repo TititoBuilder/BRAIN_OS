@@ -1,12 +1,15 @@
 ---
 tags: [bdf, pipeline, live]
-updated: 2026-05-01
+updated: 2026-05-20
 parent: "[[BDF_Soccer_Bot]]"
 ---
 
 # BDF Agent Pipeline — Book Compiler & Story Generator
 
-This document covers the three Claude-powered scripts that form the creative and knowledge-retention layer of the BDF pipeline: `book_compiler.py`, `mcp_book_compiler.py`, and `story_generator.py`. All three live in `C:\Dev\Projects\soccer-content-generator\` and share the project venv and `.env`.
+This document covers the three Claude-powered scripts that form the creative and knowledge-retention layer of the BDF pipeline: `book_compiler.py`, `mcp_book_compiler.py`, and `story_generator.py`.
+
+> ⚠️ `book_compiler.py` was moved to `C:\Dev\shared\book-compiler\` on 2026-05-20 as a shared plugin serving all BRAIN_OS books. See [[Book_Compiler_Shared]].
+> `mcp_book_compiler.py` and `story_generator.py` remain in `C:\Dev\Projects\soccer-content-generator\` and share the project venv and `.env`.
 
 ---
 
