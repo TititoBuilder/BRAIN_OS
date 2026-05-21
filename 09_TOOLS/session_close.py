@@ -243,6 +243,10 @@ def main():
 
     print("\nSession closed. Good work.\n")
 
+    subprocess.Popen(
+        [sys.executable, r"C:\BRAIN_OS\09_TOOLS\watchdog.py", "--check", "session"]
+    )
+
 
 if __name__ == "__main__":
     main()
