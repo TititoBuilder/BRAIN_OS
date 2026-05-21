@@ -20,6 +20,10 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Ensure emoji survive the Windows cp1252 console
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 # ── Paths ─────────────────────────────────────────────────────────────────────
 BDF_ROOT      = Path(r"C:\Dev\Projects\soccer-content-generator")
 BRAIN_OS_ROOT = Path(r"C:\BRAIN_OS")
