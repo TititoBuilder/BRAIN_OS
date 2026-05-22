@@ -3,11 +3,11 @@
 *(none)*
 
 ## Next Sessions (ordered)
-- [ ] Session 2: Apply Knowledge Graphs Over Lists to 02_AGENTS
+- [x] Session 2: Apply Knowledge Graphs Over Lists to 02_AGENTS
 - [ ] Session 3: Apply Knowledge Graphs Over Lists to 04_WORKFLOWS  
 - [ ] Session 4: Apply Knowledge Graphs Over Lists to 05_MEMORY + 03_APIS
 - [ ] Session 5: Update all project CLAUDE.md files with Triggers section
-- [ ] Update calendar events (DALL-E 3 deadline May 12 is stale — needs cleanup)
+- [x] Update calendar events (DALL-E 3 deadline May 12 is stale — needs cleanup)
 - [ ] CA Book Phase 3: Session_Resume pipeline (needs actual files first)
 
 ## Completed This Session (2026-05-20)

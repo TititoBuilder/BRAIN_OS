@@ -126,12 +126,20 @@ def _git_uncommitted(repo: Path) -> int:
 # ── Queue helpers ─────────────────────────────────────────────────────────────
 
 def _count_queue_md_unchecked() -> int:
+    """Count unchecked items only under the ## In Progress section."""
     if not QUEUE_MD.exists():
         return 0
-    return sum(
-        1 for line in QUEUE_MD.read_text(encoding="utf-8").splitlines()
-        if "- [ ]" in line
-    )
+    in_progress = False
+    count = 0
+    for line in QUEUE_MD.read_text(encoding="utf-8").splitlines():
+        if line.startswith("## In Progress"):
+            in_progress = True
+            continue
+        if in_progress and line.startswith("##"):
+            break
+        if in_progress and "- [ ]" in line:
+            count += 1
+    return count
 
 
 def _count_queue_json_pending() -> int:
