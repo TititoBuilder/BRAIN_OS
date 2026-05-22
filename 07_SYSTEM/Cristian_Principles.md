@@ -201,3 +201,10 @@ predictability — not to store shifting metadata. Dynamic descriptions and
 human-readable context belong in the tracking manifest, not in the asset title.
 The timestamp is all the machine needs. The manifest is the index.
 **Proven:** BDF audio library --normalize flag design — drive_sync.py, 2026-05-20.
+
+## Every Project Gets a Remote at Creation
+**Rule:** Every new project directory must have a GitHub remote configured
+at creation time — not discovered later during a cleanup audit.
+No local-only repos. Git without a remote is not a backup.
+**Proven:** book-compiler existed locally for weeks with no remote — caught
+during repo audit 2026-05-21.
