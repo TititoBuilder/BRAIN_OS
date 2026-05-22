@@ -14,3 +14,6 @@ repos touched:
 ## Rules that changed
 
 ## First action next session
+
+---
+**→** [[KNOWLEDGE_INGESTION_PROTOCOL_V2]] · [[Session_Protocol]]

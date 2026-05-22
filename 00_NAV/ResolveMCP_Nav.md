@@ -44,3 +44,6 @@ Connection type: **Lazy** — shows Connected even when Resolve offline
 
 ## GitHub
 HEAD: `503645c` — docs: add .env.template
+
+---
+**→** [[SYSTEM_MASTER]] · [[Resolve_MCP_Server]]

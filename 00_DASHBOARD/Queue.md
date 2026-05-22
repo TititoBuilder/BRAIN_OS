@@ -21,3 +21,6 @@
 - [x] Cristian_Principles.md: Knowledge Graphs Over Lists added
 - [x] Trigger_Architecture.md: 13-trigger master index built
 - [x] 08_TRIGGERS: all 13 trigger files created/rewritten with full bidirectional links
+
+---
+**→** [[SYSTEM_MASTER]] · [[Master_Control]]

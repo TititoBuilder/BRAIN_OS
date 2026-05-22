@@ -35,3 +35,6 @@ text file → tts_local.py (Kokoro via BDF venv subprocess) → WAV → same pip
 
 ## Status
 Backend functional · Frontend scaffolded · Word-sync highlighting pending
+
+---
+**→** [[SYSTEM_MASTER]] · [[Read_Along_App]]

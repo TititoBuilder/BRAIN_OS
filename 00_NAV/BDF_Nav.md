@@ -74,3 +74,6 @@ python -c "from book_compiler import stitch_master_book; stitch_master_book()"
 # Paste in Resolve Py3 console:
 exec(open(r"C:\Users\titit\Projects\resolve-mcp-server\resolve_bridge.py", encoding="utf-8").read())
 ```
+
+---
+**→** [[SYSTEM_MASTER]] · [[BDF_Agent_Pipeline]]

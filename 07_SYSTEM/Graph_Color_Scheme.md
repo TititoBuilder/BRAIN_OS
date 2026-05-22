@@ -38,3 +38,6 @@ Added: 2026-05-20 (graph colors reset bug fixed, 08_TRIGGERS red group confirmed
 **Knowledge Gaps**: Green projects with few blue session connections → needs documentation
 
 **System Evolution**: Graph density increase over time = knowledge accumulation working
+
+---
+**→** [[SYSTEM_MASTER]] · [[Master_Control]]

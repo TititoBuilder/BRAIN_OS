@@ -284,3 +284,11 @@ Higher tracks render in front. Explicit hierarchy prevents layer conflicts.
 2. Keyword detection in clip filename
 3. Bridge query of active project/timeline name in Resolve
 Ensures correct tagging even when not explicitly specified.
+
+---
+
+## Orphans
+
+Files with no logical home in the current vault structure. Linked here to keep them reachable in the graph.
+
+- [[project_regrouping_narration_script]] — early project state narration (pre-BRAIN_OS, historical reference only)

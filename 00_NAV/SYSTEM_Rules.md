@@ -92,3 +92,6 @@ where.exe python
 # Claude Code signal-leak (KeyboardInterrupt)
 # Use /exit in another terminal tab
 ```
+
+---
+**→** [[SYSTEM_MASTER]] · [[PowerShell_Aliases]]

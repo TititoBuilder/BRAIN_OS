@@ -31,3 +31,6 @@ Keep blast radius small — isolate changes, test before deploying.
 ## dead reference
 A path, ID, or pointer to something that no longer exists.
 Causes silent failures and phantom bugs.
+
+---
+**→** [[SYSTEM_MASTER]] · [[Master_Control]]

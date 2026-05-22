@@ -1,4 +1,4 @@
-> System context: See `C:\BRAIN_OS\SYSTEM_MASTER.md` for hardware, paths, venvs, and cross-project rules.
+> System context: See [[SYSTEM_MASTER]] for hardware, paths, venvs, and cross-project rules.
 
 # BRAIN_OS — Claude Code Workspace
 

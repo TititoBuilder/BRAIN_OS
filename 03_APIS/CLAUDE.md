@@ -147,3 +147,6 @@ Requires `ANTHROPIC_ADMIN_KEY` (Admin API key — different from the standard
 
 Output: terminal table grouped by model + Telegram alert if over budget.
 Schedule: run manually at start of month after reviewing the console CSV.
+
+---
+**→** [[SYSTEM_MASTER]] · [[Anthropic_Claude]]

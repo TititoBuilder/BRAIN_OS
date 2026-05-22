@@ -42,3 +42,6 @@ ca-book                # activates C:\Knowledge\CA\venv → runs CA book_compile
 - Voice: af_heart (American English, warm female)
 - Zero API cost — fully local
 - 3 manual patches required in coqui-tts for Blackwell GPU compatibility
+
+---
+**→** [[SYSTEM_MASTER]] · [[CristianConstruction]] · [[CA_Kokoro_TTS]]

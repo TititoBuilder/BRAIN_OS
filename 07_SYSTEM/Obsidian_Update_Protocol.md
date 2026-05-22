@@ -143,3 +143,6 @@ In Obsidian:
 - Full vault audit ($8-25)
 
 **Recommendation:** Update incrementally, not in bulk
+
+---
+**→** [[KNOWLEDGE_INGESTION_PROTOCOL_V2]] · [[Session_Protocol]]
