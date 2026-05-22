@@ -128,6 +128,27 @@ tags: [system, tools, infra, live]
 
 ---
 
+## watchdog.py
+- Type: Unified BRAIN OS system watchdog — health checks + Telegram alerts
+- Location: `C:\BRAIN_OS\09_TOOLS\watchdog.py`
+- Triggered by: `session_close.py` (auto-fires `--check session` after archive); Task Scheduler (morning mode at 7:15am)
+- Modes:
+  - `--check morning` — 7:15am daily: audio parity, vault orphans, Queue.md blocked items, BRAIN_OS git status
+  - `--check bdf` — on-demand: content_queue.json pending, bot_service.py running, audio ALTERNATES
+  - `--check session` — post-close: git status across all 4 repos + session archive confirmation
+- Telegram config: loads from `C:\Dev\Projects\soccer-content-generator\.env`
+- Queue counter: scopes to `## In Progress` section only (not full Queue.md)
+- Orphan counter: reads vault .md files directly; excludes `08_SESSIONS`, `10_CHATS`, `_archive`, `09_TOOLS`, graphs, _processed
+- Usage:
+  ```
+  python C:\BRAIN_OS\09_TOOLS\watchdog.py --check morning
+  python C:\BRAIN_OS\09_TOOLS\watchdog.py --check bdf
+  python C:\BRAIN_OS\09_TOOLS\watchdog.py --check session
+  ```
+- Added: 2026-05-21
+
+---
+
 ## obs_relay.py
 - Type: Multi-machine OBS clip bridge
 - Location: `C:\Dev\Projects\soccer-content-generator\obs_relay.py`
@@ -200,4 +221,5 @@ tags: [system, tools, infra, live]
 - 2026-05-09 â€” BDF Session ? 2026-05-09
 - 2026-05-12 — BRAIN_OS Audio Library complete: 5 Claudeguide WAVs synthesized via Kokoro (~36 min), pushed to Drive Tools/Claudeguide/; session_close.py deployed to 09_TOOLS
 - 2026-05-20 — Drive pipeline hardened: build_manifest scans BRAIN_OS_Handbook folders, dedup uploads (update in-place), drive_cleanup --delete-files, folder IDs from BRAIN_OS_CONFIG.json, 50 MB chunksize; tts_local.py now authenticates HuggingFace Hub via HF_TOKEN at startup; graph colorGroups restore script live; Trigger_Architecture.md (13 triggers) confirmed; book_compiler.py canonical moved to C:\Dev\shared\book-compiler\ (shared plugin)
+- 2026-05-21 — Unified watchdog.py live (morning/bdf/session modes + Task Scheduler); wired 20 vault orphans to zero; session_close.py now auto-triggers watchdog --check session after archive; every-project-gets-a-remote principle formalized
 
