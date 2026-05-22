@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import json
+import re
 import subprocess
 import sys
 import urllib.request
@@ -32,6 +33,20 @@ QUEUE_JSON    = BDF_ROOT / "src" / "queue" / "content_queue.json"
 QUEUE_MD      = BRAIN_OS_ROOT / "00_DASHBOARD" / "Queue.md"
 SESSIONS_DIR  = BRAIN_OS_ROOT / "08_SESSIONS"
 PATCH_PATH    = BRAIN_OS_ROOT / "09_TOOLS" / "graph_maintainer_patch.py"
+
+# ── Vault orphan exclusions ───────────────────────────────────────────────────
+# These top-level dir names are skipped regardless of depth
+_ORPHAN_EXCLUDE_NAMES: frozenset[str] = frozenset({
+    "08_SESSIONS", "10_CHATS", "_archive", ".obsidian", ".git",
+})
+# These subtree paths are also skipped (relative to BRAIN_OS_ROOT)
+_ORPHAN_EXCLUDE_SUBTREES: tuple[Path, ...] = (
+    BRAIN_OS_ROOT / "09_TOOLS",
+    BRAIN_OS_ROOT / "02_PROJECTS" / "graphs",
+    BRAIN_OS_ROOT / "BrainOS_Book" / "incoming" / "_processed",
+)
+
+_WIKI_LINK_RE = re.compile(r"\[\[([^\]|#\n]+)")
 
 PROJECTS: dict[str, Path] = {
     "BRAIN_OS":                 BRAIN_OS_ROOT,
@@ -162,6 +177,40 @@ def _session_archive_recent(window_seconds: int = 600) -> bool:
     )
 
 
+# ── Vault orphan counter ──────────────────────────────────────────────────────
+
+def _count_vault_orphans() -> int:
+    """Count .md files with zero outgoing AND zero incoming [[wiki-links]]."""
+    def _excluded(path: Path) -> bool:
+        parts = path.relative_to(BRAIN_OS_ROOT).parts
+        if any(p in _ORPHAN_EXCLUDE_NAMES for p in parts):
+            return True
+        return any(path.is_relative_to(sub) for sub in _ORPHAN_EXCLUDE_SUBTREES)
+
+    all_files = [f for f in BRAIN_OS_ROOT.rglob("*.md") if not _excluded(f)]
+
+    # stem → path (last-writer wins for duplicate stems, good enough for heuristic)
+    stem_map: dict[str, Path] = {f.stem: f for f in all_files}
+
+    outgoing: dict[Path, set[str]] = {}
+    incoming: set[Path] = set()
+
+    for md_file in all_files:
+        try:
+            text = md_file.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            outgoing[md_file] = set()
+            continue
+        links = _WIKI_LINK_RE.findall(text)
+        outgoing[md_file] = set(links)
+        for raw in links:
+            target_stem = Path(raw.strip()).stem
+            if target_stem in stem_map:
+                incoming.add(stem_map[target_stem])
+
+    return sum(1 for f in all_files if not outgoing.get(f) and f not in incoming)
+
+
 # ── MODE 1: Morning ───────────────────────────────────────────────────────────
 
 def check_morning() -> None:
@@ -180,22 +229,22 @@ def check_morning() -> None:
         missing = (
             len(parity["chapters"]["missing"]) + len(parity["sessions"]["missing"])
         )
-        orphaned = (
-            len(parity["chapters"]["orphaned"]) + len(parity["sessions"]["orphaned"])
-        )
         if alternates:
             issues.append(f"⚠️ Graph: {alternates} ALTERNATES detected")
         if missing:
             issues.append(f"⚠️ Graph: {missing} MISSING")
-        if orphaned:
-            issues.append(f"⚠️ Graph: {orphaned} ORPHANED")
 
-    # 2. Queue.md unchecked items
+    # 2. Vault orphan check (reads .md files directly, not the graphify JSON)
+    orphaned = _count_vault_orphans()
+    if orphaned:
+        issues.append(f"⚠️ Vault: {orphaned} orphaned .md files (no links in or out)")
+
+    # 3. Queue.md unchecked items
     unchecked = _count_queue_md_unchecked()
     if unchecked:
         issues.append(f"⚠️ Queue: {unchecked} blocked items")
 
-    # 3. BRAIN_OS git status
+    # 4. BRAIN_OS git status
     brain_dirty = _git_uncommitted(BRAIN_OS_ROOT)
     if brain_dirty:
         issues.append(f"⚠️ Git: {brain_dirty} uncommitted files in BRAIN_OS")
