@@ -1,5 +1,5 @@
 # soccer-content-generator — dependency context
-_updated: 2026-05-20T18:59:41.791084+00:00_
+_updated: 2026-05-22T02:11:25.078155+00:00_
 _nodes: 98_
 
 ## Clip_Pipeline
@@ -178,7 +178,7 @@ _nodes: 98_
 - **ingest_ucl_knowledge.py** (4.8 KB) — internal: `knowledge_manager`
 - **obs_mcp.py** (7.4 KB) — external: `dotenv`, `fastapi`, `fastapi.middleware.cors`, `pydantic`, `simpleobsws`, `uvicorn`
 - **obs_relay.py** (11.4 KB)
-- **session_close.py** (4.4 KB)
+- **session_close.py** (4.5 KB)
 - **soccer_knowledge_ingester.py** (0.0 KB)
 - **src/__init__.py** (0.0 KB)
 - **src/agent/__init__.py** (0.1 KB)
