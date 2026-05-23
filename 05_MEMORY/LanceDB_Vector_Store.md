@@ -27,9 +27,22 @@ Vector store — persistent, file-based (LanceDB on-disk format)
 | `rebuild_lancedb.py` | Drops and recreates table from source data |
 | `scripts/cleanup_lancedb_duplicates.py` | Deduplicates by `id` field using pandas |
 
-## Connected agents
-- [[BDF_Analysis_Agent]]
-- [[BDF_Memory_Agent]]
+## Connected to
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Written by
+- [[BDF_Memory_Agent]] — mcp_ingest.py writes to `mcp_clips` table after each export
+- `rebuild_lancedb.py` — drops and recreates `soccer_knowledge` table from source data
+
+### Read by
+- [[BDF_Analysis_Agent]] — rag_pipeline.py multi-query retrieval + CrossEncoder rerank
+- [[BDF_Automation_Agent]] — bot_service.py reads doc count at startup
+
+### Workflows
+- [[BDF_Content_Research_Flow]] — RAG retrieval in step 3 of content pipeline
+- [[BDF_Video_Production_Flow]] — mcp_ingest.py writes new clip documents after export
 
 ## Rules
 - **LANCE_DB_PATH env var is authoritative** — never hardcode a path in application code

@@ -40,6 +40,8 @@ C:\Users\titit\Projects\resolve-mcp-server\resolve_bridge.py (v16.10)
 - [[TagAndExport]] workflow — core editing loop: tag → batch_export → poll → cleanup
 - [[BDF_Memory_Agent]] — post_export_cleanup writes export_log entry that mcp_ingest.py consumes
 - [[Resolve_MCP]] project
+- [[Resolve_Export_Log]]
+- [[BDF_Video_Production_Flow]]
 
 ## Status
 Live

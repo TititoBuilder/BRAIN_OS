@@ -34,5 +34,10 @@
 - [ ] 
 - [ ] 
 
+## Connected to
+- [[Memory_Index]]
+- [[BDF_Operations_Status]]
+- [[Session_Protocol]]
+
 ---
 **→** [[Memory_Index]] · [[Session_Protocol]]

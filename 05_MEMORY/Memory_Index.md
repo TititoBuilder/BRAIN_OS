@@ -21,6 +21,14 @@ Prevents fragmentation — every memory artifact links here.
 - [[Resolve_Export_Log]] — C:\BDF\renders\export_log.jsonl, append-only
 
 ## Connected to
-[[Data_Orchestrator]]
-[[BDF_Analysis_Agent]]
-[[BDF_Memory_Agent]]
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Updated by
+- Session ingestion (`session_close.py`) — new memory nodes added manually per session
+
+### Read by
+- [[BDF_Analysis_Agent]]
+- [[BDF_Memory_Agent]]
+- [[Data_Orchestrator]]

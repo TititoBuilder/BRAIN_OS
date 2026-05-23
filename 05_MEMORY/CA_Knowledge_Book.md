@@ -47,6 +47,16 @@ Chapter content here — single continuous block.
 Active. 10 chapters compiled. Audio synced to Google Drive `CA_Book_Audio/`.
 
 ## Connected to
+
+### Project
+- [[CristianConstruction]]
+
+### Written by
+- [[BDF_Knowledge_Build_Flow]] via `book_compiler.py` — Claude Opus expands markdown source, Kokoro TTS generates audio
+
+### Read by
+- [[CA_Orchestrator]] — CA agents reference this knowledge base for business context and pricing logic
+
+### Workflows
 - [[CA_Business_OS_Flow]]
-- [[CA_Orchestrator]]
 - [[BDF_Knowledge_Build_Flow]]

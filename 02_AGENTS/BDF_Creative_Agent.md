@@ -44,6 +44,7 @@ C:\Dev\Projects\soccer-content-generator\src\card_composer.py (PIL compositing, 
 - [[OpenAI_gpt-image-1]]
 - [[Pixabay_API]]
 - [[BDF_Social_Media_Flow]]
+- [[Content_Queue]]
 
 ## Status
 Live — gpt-image-1 migration PLACEHOLDER, not yet implemented. Return to this when resuming BDF image work.

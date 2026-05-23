@@ -25,10 +25,22 @@ pending → telegram_pending → approved → [published]
 - `approved` — owner tapped Approve; `twitter_publisher.py` fires
 - `rejected` — owner tapped Reject; post archived, not published
 
-## Connected agents
-- [[BDF_Automation_Agent]]
-- [[BDF_Creative_Agent]]
-- [[BDF_Research_Agent]]
+## Connected to
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Written by
+- [[BDF_Automation_Agent]] — writes `pending` entries; updates status through full lifecycle
+- [[BDF_Creative_Agent]] — generated captions are packaged into queue entries
+
+### Read by
+- [[BDF_Automation_Agent]] — 60s heartbeat scans for `pending` posts, pushes to Telegram
+- `dashboard_api.py` — serves queue view at `http://localhost:5173`
+
+### Workflows
+- [[BDF_Content_Research_Flow]] — creates new entries with status=`pending`
+- [[BDF_Social_Media_Flow]] — reads queue and drives posts through Telegram approval
 
 ## Rules
 - **NEVER duplicate this file** — it is the single source of truth; copying or syncing it to another location creates split state where the service and dashboard see different queues

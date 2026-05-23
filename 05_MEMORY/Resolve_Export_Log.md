@@ -34,9 +34,20 @@ venv/Scripts/python mcp_ingest.py          # process all new entries
 venv/Scripts/python mcp_ingest.py --dry-run  # most recent entry only, no writes
 ```
 
-## Connected agents
-- [[Resolve_Editing_Agent]]
-- [[BDF_Memory_Agent]]
+## Connected to
+
+### Projects
+- [[BDF_Operations_Status]]
+- [[Resolve_MCP_Server]]
+
+### Written by
+- [[Resolve_Editing_Agent]] — `post_export_cleanup` appends one entry per export batch
+
+### Read by
+- [[BDF_Memory_Agent]] — mcp_ingest.py reads entries beyond the watermark in `mcp_ingest_state.json`
+
+### Workflow
+- [[BDF_Video_Production_Flow]]
 
 ## Rules
 - **Append-only** — never edit or delete lines; the watermark in `mcp_ingest_state.json` is the only mechanism for tracking what has been ingested; editing past entries will cause re-ingestion or skipping
