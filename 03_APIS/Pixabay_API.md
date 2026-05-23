@@ -21,8 +21,16 @@ Free stock photo source for BDF post backgrounds when AI generation and news ima
 ## Credentials
 `PIXABAY_API_KEY`
 
-## Connected agents
+## Connected to
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Agents
 - [[BDF_Creative_Agent]]
+
+### Workflows
+- [[BDF_Social_Media_Flow]]
 
 ## Inputs
 - Endpoint: `https://pixabay.com/api/`
@@ -33,6 +41,3 @@ Free stock photo source for BDF post backgrounds when AI generation and news ima
 - `largeImageURL` (1280px wide) — downloaded and passed to card_composer.py as background layer
 - Results cached locally for 24 hours to respect API terms
 
-## Connected to
-- [[BDF_Creative_Agent]]
-- [[BDF_Content_Research_Flow]]

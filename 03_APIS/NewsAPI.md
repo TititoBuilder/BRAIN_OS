@@ -18,9 +18,17 @@ Fetches recent soccer news articles and og:image previews for BDF content enrich
 ## Credentials
 `NEWS_API_KEY`
 
-## Connected agents
+## Connected to
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Agents
 - [[BDF_Research_Agent]]
 - [[BDF_Creative_Agent]]
+
+### Workflows
+- [[BDF_Content_Research_Flow]]
 
 ## Inputs
 - Endpoint: `https://newsapi.org/v2/everything`
@@ -32,6 +40,3 @@ Fetches recent soccer news articles and og:image previews for BDF content enrich
 - `news_image_agent.py` scrapes `og:image` from article URLs as the image tier 2 fallback
 - Article snippets fed into knowledge enrichment context for caption generation
 
-## Connected to
-- [[BDF_Research_Agent]]
-- [[BDF_Content_Research_Flow]]

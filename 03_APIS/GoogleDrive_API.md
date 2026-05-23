@@ -22,8 +22,19 @@ Syncs generated audio chapter files and session recordings to Google Drive after
   - `gdrive_token.json` — cached access + refresh token (auto-generated on first auth)
 - Same Google account shared between BDF and CA projects
 
-## Connected agents
+## Connected to
+
+### Projects
+- [[BDF_Operations_Status]]
+- [[CristianConstruction]]
+
+### Agents
 - [[BDF_Memory_Agent]]
+- [[CA_Orchestrator]]
+
+### Workflows
+- [[BDF_Knowledge_Build_Flow]]
+- [[CA_Business_OS_Flow]]
 
 ## Inputs
 - SCOPES: `["https://www.googleapis.com/auth/drive.file"]`
@@ -35,7 +46,3 @@ Syncs generated audio chapter files and session recordings to Google Drive after
 - Drive file IDs returned per upload; logged locally
 - Files accessible at `drive.google.com` under the authenticated account's root
 
-## Connected to
-- [[BDF_Knowledge_Build_Flow]]
-- [[CA_Business_OS_Flow]]
-- [[CA_Orchestrator]]

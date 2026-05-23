@@ -21,8 +21,16 @@ Fetches live match results, standings, squad data, and competition fixtures for 
 - `FOOTBALL_DATA_API_KEY` — sent as header `X-Auth-Token` (football-data.org)
 - `API_FOOTBALL_KEY` — TheSportsDB / api-football
 
-## Connected agents
+## Connected to
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Agents
 - [[BDF_Research_Agent]]
+
+### Workflows
+- [[BDF_Content_Research_Flow]]
 
 ## Inputs
 
@@ -41,6 +49,3 @@ Fetches live match results, standings, squad data, and competition fixtures for 
 - Standings: position, points, GD per team
 - Consumed by schedule_manager.py to determine ContentWindow and topic priority
 
-## Connected to
-- [[BDF_Research_Agent]]
-- [[BDF_Content_Research_Flow]]

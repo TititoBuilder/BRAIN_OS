@@ -21,9 +21,22 @@ Hybrid deferred approval gate for BDF posts and direct messaging interface for C
 - `TELEGRAM_CHAT_ID` (BDF — soccer-content-generator)
 - `OWNER_TELEGRAM_ID` (CA — CristianConstruction)
 
-## Connected agents
+## Connected to
+
+### Projects
+- [[BDF_Operations_Status]]
+- [[CristianConstruction]]
+
+### Agents
 - [[BDF_Automation_Agent]]
 - [[CA_Orchestrator]]
+
+### Workflows
+- [[BDF_Social_Media_Flow]]
+- [[CA_Business_OS_Flow]]
+
+### Memory
+- [[Content_Queue]]
 
 ## Inputs
 
@@ -42,7 +55,3 @@ Hybrid deferred approval gate for BDF posts and direct messaging interface for C
 - BDF: callback_query triggers `twitter_publisher.publish()` on approval
 - CA: plaintext messages delivered to OWNER_TELEGRAM_ID
 
-## Connected to
-- [[BDF_Social_Media_Flow]]
-- [[BDF_Automation_Agent]]
-- [[Content_Queue]]

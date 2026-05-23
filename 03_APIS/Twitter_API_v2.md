@@ -25,8 +25,17 @@ Publishes approved BDF posts (text + media card) to the @BreakingDownFutbol Twit
 - `TWITTER_ACCESS_TOKEN`
 - `TWITTER_ACCESS_TOKEN_SECRET`
 
-## Connected agents
+## Connected to
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Agents
 - [[BDF_Automation_Agent]]
+
+### Workflows
+- [[BDF_Social_Media_Flow]]
+- [[BDF_Avatar_Pipeline]]
 
 ## Inputs
 - Text string (≤200 chars, ≤3 hashtags) from `create_tweet_text()`
@@ -37,7 +46,3 @@ Publishes approved BDF posts (text + media card) to the @BreakingDownFutbol Twit
 - Tweet ID returned on success; logged to content queue
 - `twitter_publisher.py` wraps `tweepy.Client.create_tweet()` + `tweepy.API.media_upload()`
 
-## Connected to
-- [[BDF_Social_Media_Flow]]
-- [[BDF_Avatar_Pipeline]]
-- [[BDF_Automation_Agent]]

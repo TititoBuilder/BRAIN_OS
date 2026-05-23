@@ -18,13 +18,27 @@ LLM backbone for caption generation, content analysis, RAG query rewriting, and 
 ## Credentials
 `ANTHROPIC_API_KEY`
 
-## Connected agents
+## Connected to
+
+### Projects
+- [[BDF_Operations_Status]]
+- [[CristianConstruction]]
+- [[Read_Along_App]]
+- [[Resolve_MCP_Server]]
+
+### Agents
 - [[BDF_Memory_Agent]]
 - [[BDF_Research_Agent]]
 - [[BDF_Analysis_Agent]]
 - [[BDF_Creative_Agent]]
 - [[CA_Orchestrator]]
 - [[Resolve_Editing_Agent]]
+
+### Workflows
+- [[BDF_Content_Research_Flow]]
+- [[BDF_Video_Production_Flow]]
+- [[BDF_Knowledge_Build_Flow]]
+- [[CA_Business_OS_Flow]]
 
 ## Inputs
 - System prompt + user message dict (all projects use messages=[{"role":"user","content":...}])
@@ -40,7 +54,3 @@ LLM backbone for caption generation, content analysis, RAG query rewriting, and 
 - Token usage logged per call in cost_tracker.py
 - Streaming not used; all calls are synchronous `client.messages.create()`
 
-## Connected to
-- [[BDF_Content_Research_Flow]]
-- [[BDF_Knowledge_Build_Flow]]
-- [[BDF_Automation_Agent]]

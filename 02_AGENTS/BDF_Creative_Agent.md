@@ -43,6 +43,7 @@ C:\Dev\Projects\soccer-content-generator\src\card_composer.py (PIL compositing, 
 - [[BDF_Soccer_Bot]] project
 - [[OpenAI_gpt-image-1]]
 - [[Pixabay_API]]
+- [[Anthropic_Claude]]
 - [[BDF_Social_Media_Flow]]
 - [[Content_Queue]]
 

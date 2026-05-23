@@ -35,6 +35,7 @@ C:\Dev\Projects\soccer-content-generator\src\rag_pipeline.py
 - [[BDF_Memory_Agent]] — mcp_ingest.py writes clip records that populate LanceDB
 - [[BDF_Soccer_Bot]] project
 - [[LanceDB_Vector_Store]]
+- [[Anthropic_Claude]]
 - [[BDF_Content_Research_Flow]]
 - [[BDF_Book_System]]
 

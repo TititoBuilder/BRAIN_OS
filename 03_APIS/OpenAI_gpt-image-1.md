@@ -19,8 +19,17 @@ AI image generation for branded BDF post visuals — replaces DALL-E 3 (deprecat
 ## Credentials
 `OPENAI_API_KEY`
 
-## Connected agents
+## Connected to
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Agents
 - [[BDF_Creative_Agent]]
+
+### Workflows
+- [[BDF_Avatar_Pipeline]]
+- [[BDF_Social_Media_Flow]]
 
 ## Inputs
 - Endpoint: `https://api.openai.com/v1/images/generations`
@@ -35,6 +44,3 @@ AI image generation for branded BDF post visuals — replaces DALL-E 3 (deprecat
 - Saved locally then passed to card_composer.py for PIL compositing
 - Player avatar PNGs written to `output/avatars/` by create_avatar_library.py
 
-## Connected to
-- [[BDF_Creative_Agent]]
-- [[BDF_Avatar_Pipeline]]

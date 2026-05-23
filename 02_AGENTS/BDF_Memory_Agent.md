@@ -38,6 +38,7 @@ C:\Users\titit\Projects\resolve-mcp-server\mcp_ingest.py
 - [[BDF_Analysis_Agent]] — writes to the same LanceDB that RagPipeline reads from
 - [[Resolve_MCP]] project + [[BDF_Soccer_Bot]] project
 - [[LanceDB_Vector_Store]]
+- [[Anthropic_Claude]]
 - [[Resolve_Export_Log]]
 - [[BDF_Video_Production_Flow]]
 
