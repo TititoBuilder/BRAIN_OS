@@ -9,7 +9,9 @@
       "Bash(git -C C:/Dev/Projects/soccer-content-generator commit -m ' *)",
       "Bash(git -C \"C:/Dev/CristianConstruction\" add CLAUDE.md)",
       "Bash(git -C C:/Dev/CristianConstruction commit -m ' *)",
-      "mcp__filesystem__list_directory"
+      "mcp__filesystem__list_directory",
+      "mcp__filesystem__read_multiple_files",
+      "mcp__filesystem__read_text_file"
     ]
   }
 }
