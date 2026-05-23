@@ -1,3 +1,7 @@
+## Session Start (Run First)
+python C:\BRAIN_OS\09_TOOLS\session_start.py
+This loads project context, runs health check, and sends Telegram confirmation.
+
 > System context: See [[SYSTEM_MASTER]] for hardware, paths, venvs, and cross-project rules.
 
 # BRAIN_OS — Claude Code Workspace
