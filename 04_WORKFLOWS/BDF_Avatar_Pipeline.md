@@ -52,7 +52,14 @@ Manual — run `create_avatar_library.py` per player, per pose. No automatic tri
 | Gavi | 0 | Pending |
 
 ## Connected to
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Agents
+- [[BDF_Creative_Agent]]
+
+### APIs
 - [[OpenAI_gpt-image-1]]
 - [[KlingAI]]
-- [[BDF_Creative_Agent]]
 - [[Twitter_API_v2]]

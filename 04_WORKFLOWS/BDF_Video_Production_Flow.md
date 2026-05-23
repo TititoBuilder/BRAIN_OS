@@ -43,6 +43,18 @@ venv/Scripts/python mcp_ingest.py --dry-run  # most recent only
 - Bridge runs inside Resolve Py3 console on TCP 127.0.0.1:9000
 
 ## Connected to
+
+### Projects
+- [[BDF_Operations_Status]]
+- [[Resolve_MCP_Server]]
+
+### Trigger
+- [[Trigger_Render_Complete]]
+
+### Agents
+- [[Resolve_Editing_Agent]]
+- [[BDF_Memory_Agent]]
+
+### APIs / Memory
 - [[DaVinci_Resolve_MCP]]
 - [[Resolve_Export_Log]]
-- [[BDF_Memory_Agent]]

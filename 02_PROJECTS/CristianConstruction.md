@@ -240,6 +240,11 @@ Each folder uses its own venv via .vscode\settings.json
 
 ## Connected to
 
+### Workflows
+- [[CA_Business_OS_Flow]]
+- [[BDF_Knowledge_Build_Flow]]
+
+### Projects / Systems
 - [[Custom_Agent]]
 - [[Project_Directory]]
 - [[Tools_Registry]]

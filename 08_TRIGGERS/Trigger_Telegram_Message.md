@@ -10,6 +10,8 @@ File: `C:\Dev\Projects\soccer-content-generator\src\services\bot_service.py`
 ## Activates
 [[BDF_Automation_Agent]]
 [[Content_Orchestrator]]
+[[BDF_Social_Media_Flow]]
+[[CA_Business_OS_Flow]]
 ## Project
 [[soccer-content-generator]]
 ## CLAUDE.md

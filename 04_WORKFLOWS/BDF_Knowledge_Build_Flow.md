@@ -57,6 +57,20 @@ Chapter content here — single block only.
 - File = one chapter segment
 
 ## Connected to
+
+### Projects
+- [[BDF_Operations_Status]]
+- [[CristianConstruction]]
+
+### Trigger
+- [[Trigger_Book_Compile]]
+
+### Agents
+- [[BDF_Memory_Agent]]
+- [[CA_Orchestrator]]
+- [[CA_Kokoro_TTS]]
+
+### APIs / Memory
 - [[Anthropic_Claude]]
 - [[GoogleDrive_API]]
 - [[BDF_Book_System]]

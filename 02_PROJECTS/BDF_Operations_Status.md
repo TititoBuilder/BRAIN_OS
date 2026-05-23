@@ -225,6 +225,14 @@ The current `mcp_ingest.py` is a stateless adapter. Target: stateful agent loop 
 
 ## Connected to
 
+### Workflows
+- [[BDF_Content_Research_Flow]]
+- [[BDF_Video_Production_Flow]]
+- [[BDF_Social_Media_Flow]]
+- [[BDF_Avatar_Pipeline]]
+- [[BDF_Knowledge_Build_Flow]]
+
+### Projects / Systems
 - [[BDF_Pipeline_Architecture]]
 - [[Resolve_MCP_Server]]
 - [[OBS_MCP_Server]]

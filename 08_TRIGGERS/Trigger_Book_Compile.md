@@ -10,6 +10,7 @@ File: `C:\Dev\shared\book-compiler\book_compiler.py`
 ## Activates
 [[CA_Kokoro_TTS]]
 [[CA_Book_System]]
+[[BDF_Knowledge_Build_Flow]]
 ## Project
 [[CristianConstruction]]
 ## CLAUDE.md

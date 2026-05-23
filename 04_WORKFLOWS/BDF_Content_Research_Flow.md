@@ -37,6 +37,20 @@ New post entry in `src/queue/content_queue.json` with status=`pending`, includin
 - Knowledge enricher TF-IDF threshold: 0.6801 cosine distance
 
 ## Connected to
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Trigger
+- [[Trigger_Match_Scheduled]]
+
+### Agents
+- [[BDF_Research_Agent]]
+- [[BDF_Analysis_Agent]]
+- [[BDF_Creative_Agent]]
+- [[BDF_Automation_Agent]]
+
+### APIs / Memory
 - [[Football_API]]
 - [[NewsAPI]]
 - [[LanceDB_Vector_Store]]

@@ -32,6 +32,18 @@ Published tweet on @BreakingDownFutbol Twitter account with card image attached.
 - `bot_service.py` must be running for the background polling thread to be active
 
 ## Connected to
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Trigger
+- [[Trigger_BDF_Queue_Check]]
+
+### Agents
+- [[BDF_Automation_Agent]]
+- [[BDF_Creative_Agent]]
+
+### APIs / Memory
 - [[Telegram_Bot]]
 - [[Twitter_API_v2]]
 - [[Content_Queue]]

@@ -46,7 +46,17 @@ Any of:
 - 15% materials markup and 25% emergency surcharge are hardcoded in `pricing.py` — change there, not in agent prompts
 
 ## Connected to
+
+### Project
+- [[CristianConstruction]]
+
+### Trigger
+- [[Trigger_Telegram_Message]]
+
+### Agents
 - [[CA_Orchestrator]]
+
+### APIs / Memory
 - [[CA_Knowledge_Book]]
 - [[GoogleDrive_API]]
 - [[Telegram_Bot]]

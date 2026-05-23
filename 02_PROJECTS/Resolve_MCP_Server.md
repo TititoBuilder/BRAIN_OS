@@ -67,6 +67,11 @@ ANTHROPIC_API_KEY
 ```
 
 ## Connected Nodes
+
+### Workflows
+- [[BDF_Video_Production_Flow]]
+
+### Projects / Systems
 - [[BDF_Canvas]]
 - [[Creative_Systems]]
 - [[Navigation_Shortcuts]]
