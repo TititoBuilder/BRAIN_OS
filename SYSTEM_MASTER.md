@@ -273,6 +273,20 @@ Some hardware upgrades are qualitative (possible vs impossible), not quantitativ
 ### Event-driven over scheduled processing
 Book compiler does zero work when `incoming\` is empty. Scales to zero cost when idle. Scheduled polling wastes resources on empty runs.
 
+### Every project gets a remote at creation
+Create the GitHub remote immediately when a local repo is initialized — not later. Retroactive remote setup requires force-push choreography and risks losing history. Rule: `git remote add origin` is part of project creation, not a follow-up task.
+
+### Filenames are machine keys, not metadata stores
+Filenames must be stable, ASCII-safe identifiers used by automation to locate files. Metadata (title, description, voice, date, variant) belongs inside the file or in a manifest — never encoded in the filename, where it silently breaks automation whenever details change.
+
+### What/How/Where/Safety framework for data transformation tools
+Before writing any data transformation tool, answer four questions:
+- **What** gets transformed? (input format, data type)
+- **How** is it transformed? (algorithm, model, rules)
+- **Where** do inputs come from and outputs go? (paths, destinations)
+- **Safety**: what fails silently if you don't handle it? (encoding, permissions, empty input, existing files)
+Addressing all four before coding prevents the most common data pipeline bugs.
+
 ### DaVinci Resolve compositing layer hierarchy
 - V1: Background
 - V2–V3: Content elements and secondary graphics

@@ -149,6 +149,40 @@ tags: [system, tools, infra, live]
 
 ---
 
+## session_start.py
+- Type: Session orchestrator — autonomous context loader + Telegram notification
+- Location: `C:\BRAIN_OS\09_TOOLS\session_start.py`
+- Config: Loads from `C:\Dev\Projects\soccer-content-generator\.env`
+- Projects: `bdf` / `brainos` / `ca` / `construction` / `resolve` (auto-detects from cwd if flag omitted)
+- Actions: loads SYSTEM_MASTER.md + project context, runs watchdog `--check morning`, sends Telegram session-start notification
+- Usage:
+  ```
+  python C:\BRAIN_OS\09_TOOLS\session_start.py --project brainos
+  python C:\BRAIN_OS\09_TOOLS\session_start.py  # auto-detect from cwd
+  ```
+- Added: 2026-05-23
+
+---
+
+## anchor_generator.py
+- Type: AI Learning Anchor Generator — closing segment appended to every audio chapter
+- Location: `C:\BRAIN_OS\09_TOOLS\anchor_generator.py`
+- Voice: `am_michael` (deep male, Kokoro TTS) — contrast to `af_heart` main chapter voice
+- Input: TTS-converted chapter `.txt` file
+- Output: `{stem}_anchor` WAV via `brain-audio` package
+- Prompt pattern: opens "Let me bring this home for you..." → 3 concepts + real-world analogies + 1 closing line
+- Max words: 400 (300–400 target)
+- Config: `ANTHROPIC_API_KEY` from soccer-content-generator `.env`
+- Usage:
+  ```
+  python anchor_generator.py --source "converted/ch01_pipeline_architecture_TTS.txt"
+  python anchor_generator.py --source "converted/ch01_pipeline_architecture_TTS.txt" --preview
+  ```
+- Added: 2026-05-23
+- See: [[Creative_Systems]] Learning Anchor Pattern
+
+---
+
 ## obs_relay.py
 - Type: Multi-machine OBS clip bridge
 - Location: `C:\Dev\Projects\soccer-content-generator\obs_relay.py`
@@ -222,4 +256,5 @@ tags: [system, tools, infra, live]
 - 2026-05-12 — BRAIN_OS Audio Library complete: 5 Claudeguide WAVs synthesized via Kokoro (~36 min), pushed to Drive Tools/Claudeguide/; session_close.py deployed to 09_TOOLS
 - 2026-05-20 — Drive pipeline hardened: build_manifest scans BRAIN_OS_Handbook folders, dedup uploads (update in-place), drive_cleanup --delete-files, folder IDs from BRAIN_OS_CONFIG.json, 50 MB chunksize; tts_local.py now authenticates HuggingFace Hub via HF_TOKEN at startup; graph colorGroups restore script live; Trigger_Architecture.md (13 triggers) confirmed; book_compiler.py canonical moved to C:\Dev\shared\book-compiler\ (shared plugin)
 - 2026-05-21 — Unified watchdog.py live (morning/bdf/session modes + Task Scheduler); wired 20 vault orphans to zero; session_close.py now auto-triggers watchdog --check session after archive; every-project-gets-a-remote principle formalized
+- 2026-05-23 — session_start.py deployed (autonomous context loader + Telegram); anchor_generator.py operational (Learning Anchor pattern, am_michael voice); drive_sync.py --normalize flag added to soccer-content-generator; 3 principles formalized: remote-at-creation, filenames-as-keys, What/How/Where/Safety
 
