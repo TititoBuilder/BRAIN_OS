@@ -5,11 +5,11 @@ Loads project context, runs health check, sends Telegram notification.
 
 Usage:
     python C:/BRAIN_OS/09_TOOLS/session_start.py --project bdf
-    python C:\BRAIN_OS\09_TOOLS\session_start.py --project brainos
-    python C:\BRAIN_OS\09_TOOLS\session_start.py --project ca
-    python C:\BRAIN_OS\09_TOOLS\session_start.py --project construction
-    python C:\BRAIN_OS\09_TOOLS\session_start.py --project resolve
-    python C:\BRAIN_OS\09_TOOLS\session_start.py  # auto-detects from cwd
+    python C:/BRAIN_OS/09_TOOLS/session_start.py --project brainos
+    python C:/BRAIN_OS/09_TOOLS/session_start.py --project ca
+    python C:/BRAIN_OS/09_TOOLS/session_start.py --project construction
+    python C:/BRAIN_OS/09_TOOLS/session_start.py --project resolve
+    python C:/BRAIN_OS/09_TOOLS/session_start.py  # auto-detects from cwd
 """
 
 import argparse
