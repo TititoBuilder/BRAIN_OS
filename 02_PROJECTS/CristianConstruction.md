@@ -237,6 +237,7 @@ Each folder uses its own venv via .vscode\settings.json
 ## Notes
 
 - `CLAUDE.md` updated 2026-05-20: SYSTEM_MASTER.md reference added to top (cross-project rule standard applied)
+- `CLAUDE.md` updated 2026-05-24: `session_start.py` instruction added to project startup section (applied across all active project CLAUDE.md files)
 
 ## Connected to
 

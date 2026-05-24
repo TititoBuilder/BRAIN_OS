@@ -128,6 +128,25 @@ The `sync_audio_to_drive()` / upload functions in soccer-content-generator were 
 ### TTS / HuggingFace Auth
 `tts_local.py` now calls `huggingface_hub.login(token=HF_TOKEN)` at startup. `HF_TOKEN` must be set in `.env` and `load_dotenv()` is called at module import. Without this, model downloads fail silently.
 
+## Drive Phase Organization (2026-05-24)
+
+Chapter audio files on Drive are now organized into phase subfolders under `bdf_chapters/`:
+
+| Subfolder | Content |
+|---|---|
+| `Phase_01_Orientation/` | Early chapters — pipeline, predator setup, TTS, etc. |
+| `Phase_02_Architecture/` | Architecture chapters |
+| `Phase_03_*/` … | Remaining phases |
+
+**Impact on drive_sync.py:**
+- `_list_folder()` now recurses into subfolders (`mimeType == application/vnd.google-apps.folder` → recurse). Before this fix, the manifest scanner missed all files inside phase folders.
+- Two new manifest sections added: `bdf_anchors` (tracks `ch*_anchor.mp3`) and `bdf_combined` (tracks `ch*_combined.mp3`), independent from `chapters`.
+- Drive scan summary now reports `bdf_anchors` and `bdf_combined` counts separately.
+
+**chapter_combiner.py result:** 31 `ch*_combined.mp3` files generated in `converted/combined/` and uploaded to Drive.
+
+---
+
 ## Known Issues
 
 - ch11–ch16 duplicate numbering — 6 pairs need sequential renaming

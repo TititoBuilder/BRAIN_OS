@@ -152,7 +152,7 @@ tags: [system, tools, infra, live]
 ## session_start.py
 - Type: Session orchestrator — autonomous context loader + Telegram notification
 - Location: `C:\BRAIN_OS\09_TOOLS\session_start.py`
-- Config: Loads from `C:\Dev\Projects\soccer-content-generator\.env`
+- Config: Tries `C:\Dev\Projects\soccer-content-generator\.env` first, then `C:\BRAIN_OS\03_APIS\.env` — robust to cwd (fixed 2026-05-24)
 - Projects: `bdf` / `brainos` / `ca` / `construction` / `resolve` (auto-detects from cwd if flag omitted)
 - Actions: loads SYSTEM_MASTER.md + project context, runs watchdog `--check morning`, sends Telegram session-start notification
 - Usage:
@@ -180,6 +180,24 @@ tags: [system, tools, infra, live]
   ```
 - Added: 2026-05-23
 - See: [[Creative_Systems]] Learning Anchor Pattern
+
+---
+
+## chapter_combiner.py
+- Type: Chapter Audio Combiner — concatenates original chapter audio + learning anchor into one MP3
+- Location: `C:\BRAIN_OS\09_TOOLS\chapter_combiner.py`
+- Tool: ffmpeg (concat demuxer — requires ffmpeg on PATH)
+- Input: `converted\ch*_af_heart_audio.mp3` + `converted\ch*_anchor.mp3`
+- Output: `converted\combined\ch*_combined.mp3`
+- Coverage: 31 chapters (as of 2026-05-24)
+- Usage:
+  ```
+  python chapter_combiner.py --dry-run
+  python chapter_combiner.py --skip-existing
+  python chapter_combiner.py --chapter ch01_pipeline_architecture
+  ```
+- Added: 2026-05-24
+- See: [[anchor_generator.py]], [[BDF_Book_System]]
 
 ---
 
@@ -257,4 +275,5 @@ tags: [system, tools, infra, live]
 - 2026-05-20 — Drive pipeline hardened: build_manifest scans BRAIN_OS_Handbook folders, dedup uploads (update in-place), drive_cleanup --delete-files, folder IDs from BRAIN_OS_CONFIG.json, 50 MB chunksize; tts_local.py now authenticates HuggingFace Hub via HF_TOKEN at startup; graph colorGroups restore script live; Trigger_Architecture.md (13 triggers) confirmed; book_compiler.py canonical moved to C:\Dev\shared\book-compiler\ (shared plugin)
 - 2026-05-21 — Unified watchdog.py live (morning/bdf/session modes + Task Scheduler); wired 20 vault orphans to zero; session_close.py now auto-triggers watchdog --check session after archive; every-project-gets-a-remote principle formalized
 - 2026-05-23 — session_start.py deployed (autonomous context loader + Telegram); anchor_generator.py operational (Learning Anchor pattern, am_michael voice); drive_sync.py --normalize flag added to soccer-content-generator; 3 principles formalized: remote-at-creation, filenames-as-keys, What/How/Where/Safety
+- 2026-05-24 — chapter_combiner.py deployed (31 chapters × anchor → combined MP3 via ffmpeg); Drive phase organization complete (Phase_01–Phase_06 subfolders); drive_sync recursive scan + bdf_anchors/bdf_combined manifest sections; session_start.py dotenv fix (multi-path .env loading)
 

@@ -1,6 +1,6 @@
 # SYSTEM_MASTER.md
 > System-level infrastructure knowledge extracted from BDF_Book and BrainOS_Book distilled files.
-> Applies across ALL projects. Last updated: 2026-05-23.
+> Applies across ALL projects. Last updated: 2026-05-24.
 
 ---
 
