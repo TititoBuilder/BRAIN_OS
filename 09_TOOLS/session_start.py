@@ -88,8 +88,20 @@ def detect_project() -> str:
 
 
 # ── Telegram ───────────────────────────────────────────────────────────────────
+_ENV_CANDIDATES = [
+    Path(r"C:\Dev\Projects\soccer-content-generator\.env"),
+    Path(r"C:\BRAIN_OS\03_APIS\.env"),
+]
+
 def _load_telegram():
-    load_dotenv(ENV_FILE)
+    loaded = False
+    for candidate in _ENV_CANDIDATES:
+        if candidate.exists():
+            load_dotenv(candidate, override=False)
+            loaded = True
+            break
+    if not loaded:
+        print(f"[session_start] ERROR: no .env found; tried {[str(p) for p in _ENV_CANDIDATES]}")
     return os.getenv("TELEGRAM_BOT_TOKEN"), os.getenv("TELEGRAM_CHAT_ID")
 
 
