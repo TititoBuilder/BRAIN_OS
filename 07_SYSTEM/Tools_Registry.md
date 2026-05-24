@@ -167,7 +167,7 @@ tags: [system, tools, infra, live]
 ## anchor_generator.py
 - Type: AI Learning Anchor Generator — closing segment appended to every audio chapter
 - Location: `C:\BRAIN_OS\09_TOOLS\anchor_generator.py`
-- Voice: `am_michael` (deep male, Kokoro TTS) — contrast to `af_heart` main chapter voice
+- Voice: `am_adam` (deep male, Kokoro TTS) — contrast to `af_heart` main chapter voice
 - Input: TTS-converted chapter `.txt` file
 - Output: `{stem}_anchor` WAV via `brain-audio` package
 - Prompt pattern: opens "Let me bring this home for you..." → 3 concepts + real-world analogies + 1 closing line
