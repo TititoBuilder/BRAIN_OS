@@ -1,7 +1,7 @@
 # BRAIN_OS — Master Queue
 ## In Progress
-- [ ] anchor_generator.py batch mode — generate anchors for all 31 chapters
-- [ ] Learning path sequencing — generate audio for 30 HIGH priority vault nodes
+- [x] anchor_generator.py batch mode — generate anchors for all 31 chapters
+- [x] Learning path sequencing — generate audio for 30 HIGH priority vault nodes
 - [ ] Apply Knowledge Graphs Over Lists to 04_WORKFLOWS + 05_MEMORY + 03_APIS
 
 ## Next Sessions (ordered)
