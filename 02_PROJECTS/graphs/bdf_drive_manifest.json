@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-05-24T02:47:07.704692+00:00",
+  "last_synced": "2026-05-24T18:00:33.122021+00:00",
   "chapters": {
     "ch15_clip_type_system": {
       "drive_id": "1ZWqQrlvpAmArJtCdWd6n9q1FSwOuRijv",
@@ -49,6 +49,12 @@
       "modified_time": "2026-05-20T19:10:18.457Z",
       "size_bytes": 6628701
     },
+    "ch13_deploy_discipline": {
+      "drive_id": "1xIu6TWU4ZzHWL02N82yh_wrBJlqRTWEe",
+      "filename": "ch13_deploy_discipline_af_heart_audio.mp3",
+      "modified_time": "2026-05-13T19:42:26.965Z",
+      "size_bytes": 6910293
+    },
     "ch20_format_b_path_resolution": {
       "drive_id": "1_g-pD85XVO5TGmnLYbhOp8XmC0EIrCRL",
       "filename": "ch20_format_b_path_resolution_af_heart_audio.mp3",
@@ -96,12 +102,6 @@
       "filename": "ch16_knowledge_enricher_af_heart_audio.mp3",
       "modified_time": "2026-05-13T19:44:48.726Z",
       "size_bytes": 5531685
-    },
-    "ch13_deploy_discipline": {
-      "drive_id": "1xIu6TWU4ZzHWL02N82yh_wrBJlqRTWEe",
-      "filename": "ch13_deploy_discipline_af_heart_audio.mp3",
-      "modified_time": "2026-05-13T19:42:26.965Z",
-      "size_bytes": 6910293
     },
     "ch21_library_routing": {
       "drive_id": "1jAqLyPYaL5jzBGzJyolZFLih8WANfru2",
@@ -364,9 +364,9 @@
       "size_bytes": 94892445
     },
     "20260514_1902": {
-      "drive_id": "1jfeisXJ0Z9yWzFnApWWC2xKWmNkAeTRK",
+      "drive_id": "1zVwpjHWAJTUraukMpnBWWTJUoLw-A4PT",
       "filename": "_session_20260514_1902_combined_af_heart_audio.mp3",
-      "modified_time": "2026-05-17T19:56:07.067Z",
+      "modified_time": "2026-05-17T19:57:18.459Z",
       "size_bytes": 11550981
     },
     "BDF_Session_Summary_March18_2026": {
@@ -382,48 +382,454 @@
       "size_bytes": 9235437
     }
   },
+  "bdf_anchors": {
+    "ch21_library_routing_anchor": {
+      "drive_id": "1ro_TuJ1ohgVqlIJ6HLNPCf_CAIZn4iI5",
+      "filename": "ch21_library_routing_anchor.mp3",
+      "modified_time": "2026-05-24T02:47:08.579Z",
+      "size_bytes": 1036701
+    },
+    "ch20_format_b_path_resolution_anchor": {
+      "drive_id": "1H4JGQgtEDUMq92LZeww1MgfNPkkFaYpD",
+      "filename": "ch20_format_b_path_resolution_anchor.mp3",
+      "modified_time": "2026-05-24T02:47:04.393Z",
+      "size_bytes": 947181
+    },
+    "ch19_export_pipeline_anchor": {
+      "drive_id": "1OBLY1b7PWftDkGwQhCeahjoB988Sf_DN",
+      "filename": "ch19_export_pipeline_anchor.mp3",
+      "modified_time": "2026-05-24T02:47:00.374Z",
+      "size_bytes": 1116789
+    },
+    "ch18_competition_detection_anchor": {
+      "drive_id": "1NeRB8DJkGruzqkpV9DLbPJjSLyBCl5Ks",
+      "filename": "ch18_competition_detection_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:56.343Z",
+      "size_bytes": 971013
+    },
+    "ch17_clip_name_parser_anchor": {
+      "drive_id": "11ENkQngOKBSOaW2ohAqPsvXzdYTNVwHj",
+      "filename": "ch17_clip_name_parser_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:52.061Z",
+      "size_bytes": 956565
+    },
+    "ch16_knowledge_enricher_anchor": {
+      "drive_id": "19FQJHZCd6uStCS_xyMYMFuPekzWDG7Ho",
+      "filename": "ch16_knowledge_enricher_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:47.850Z",
+      "size_bytes": 1010661
+    },
+    "ch16_cost_tracking_anchor": {
+      "drive_id": "1WaWesmgTLjpAJQUGqXYkgO_alC0Poi6T",
+      "filename": "ch16_cost_tracking_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:43.879Z",
+      "size_bytes": 1050885
+    },
+    "ch15_learning_discoveries_anchor": {
+      "drive_id": "1bxhEYLZj4V8C6femQBT-aOt4IpVSoubl",
+      "filename": "ch15_learning_discoveries_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:39.417Z",
+      "size_bytes": 945501
+    },
+    "ch15_clip_type_system_anchor": {
+      "drive_id": "1a_rA3gY1GrnGcucenMyjydL_t2BDpm3z",
+      "filename": "ch15_clip_type_system_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:35.461Z",
+      "size_bytes": 971541
+    },
+    "ch14_ideas_discoveries_anchor": {
+      "drive_id": "1v0boY8C6GkkSGSst1jm0dN6HZ6JusDBT",
+      "filename": "ch14_ideas_discoveries_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:31.141Z",
+      "size_bytes": 1104885
+    },
+    "ch14_async_export_pattern_anchor": {
+      "drive_id": "1FJASSxBGZGJnhfWXCgJRWTU-3wC8aEll",
+      "filename": "ch14_async_export_pattern_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:25.712Z",
+      "size_bytes": 1030605
+    },
+    "ch13_evolution_decisions_anchor": {
+      "drive_id": "16p_hZD4B7xmqKJYR5lbQ_VZtzCbOvDSi",
+      "filename": "ch13_evolution_decisions_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:20.875Z",
+      "size_bytes": 868317
+    },
+    "ch13_deploy_discipline_anchor": {
+      "drive_id": "18bwxSbrLQsElUDALft4voItBMtq2bZUf",
+      "filename": "ch13_deploy_discipline_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:17.136Z",
+      "size_bytes": 992085
+    },
+    "ch12_terminology_glossary_anchor": {
+      "drive_id": "1OCdXo_agiaDr3BNe1bS1a8VW3jz5TZK-",
+      "filename": "ch12_terminology_glossary_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:12.125Z",
+      "size_bytes": 924309
+    },
+    "ch12_nuclear_clear_tool_anchor": {
+      "drive_id": "15nfM2goEuJrezoee1Q059v7CYg2pD5aK",
+      "filename": "ch12_nuclear_clear_tool_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:08.310Z",
+      "size_bytes": 1037925
+    },
+    "ch11_image_gallery_anchor": {
+      "drive_id": "1b4zKwYN8RoOJAylc1Cgh5f-gVq_EzT4h",
+      "filename": "ch11_image_gallery_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:04.294Z",
+      "size_bytes": 1072245
+    },
+    "ch11_first_end_to_end_export_anchor": {
+      "drive_id": "1vo7l9Z8JMw-2uSPKmosXqjp5-PM2aQa3",
+      "filename": "ch11_first_end_to_end_export_anchor.mp3",
+      "modified_time": "2026-05-24T02:46:00.268Z",
+      "size_bytes": 1204749
+    },
+    "ch10_cartoon_animator_anchor": {
+      "drive_id": "1gfZk20447g-B-JSBA4PhKTvtFqW4u8cz",
+      "filename": "ch10_cartoon_animator_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:56.086Z",
+      "size_bytes": 937053
+    },
+    "ch09_roadmap_anchor": {
+      "drive_id": "1n4V4CWPoQKDCNm3thkjFC2zl2XgbvNU7",
+      "filename": "ch09_roadmap_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:52.077Z",
+      "size_bytes": 983805
+    },
+    "ch08_methodology_anchor": {
+      "drive_id": "16HKxNFbhJucgkrmgGS05PJPwGioF48-G",
+      "filename": "ch08_methodology_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:47.899Z",
+      "size_bytes": 1044981
+    },
+    "ch07_dashboard_ui_anchor": {
+      "drive_id": "1L43hnUB1_BOSlrVJPG9MJc35A11o1Rhm",
+      "filename": "ch07_dashboard_ui_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:43.486Z",
+      "size_bytes": 892269
+    },
+    "ch06_obs_clips_anchor": {
+      "drive_id": "1KmcpIEN9VHjdvJiHWQyx_YFhU7fjgOAM",
+      "filename": "ch06_obs_clips_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:39.206Z",
+      "size_bytes": 1132965
+    },
+    "ch05_telegram_twitter_anchor": {
+      "drive_id": "1aNfXpe8bSLLzCMse3etfQc2xK_2YpnqH",
+      "filename": "ch05_telegram_twitter_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:35.184Z",
+      "size_bytes": 1052469
+    },
+    "ch04_mcp_bridge_architecture_anchor": {
+      "drive_id": "18HFDj1CCu7PWlYp7n_tC2Rf712-JgJEF",
+      "filename": "ch04_mcp_bridge_architecture_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:30.857Z",
+      "size_bytes": 1077069
+    },
+    "ch04_lancedb_rag_anchor": {
+      "drive_id": "12jrxHvwic_XgVMMlZfU0YE_dpQ4869KC",
+      "filename": "ch04_lancedb_rag_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:26.568Z",
+      "size_bytes": 1033461
+    },
+    "ch03_windows_encoding_patterns_anchor": {
+      "drive_id": "1uK_iEO6dbeTCPx7lZxokYx-K5mxwAgqV",
+      "filename": "ch03_windows_encoding_patterns_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:22.632Z",
+      "size_bytes": 1102965
+    },
+    "ch03_tts_audio_anchor": {
+      "drive_id": "1I09Fc8qDKOd5rR4zVdwuB9trD_Ze-SZE",
+      "filename": "ch03_tts_audio_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:18.564Z",
+      "size_bytes": 1092837
+    },
+    "ch02_predator_setup_anchor": {
+      "drive_id": "1I3QATFwF8VNkRMf23XG1eAg4CTjhKhPe",
+      "filename": "ch02_predator_setup_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:14.112Z",
+      "size_bytes": 891957
+    },
+    "ch02_bridge_reload_discipline_anchor": {
+      "drive_id": "1azcJENd16556dfE84WBfBy_wdfpvFMZW",
+      "filename": "ch02_bridge_reload_discipline_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:10.134Z",
+      "size_bytes": 1093869
+    },
+    "ch01_resolve_free_tier_nils_anchor": {
+      "drive_id": "1-YOyz0M4XA0F1U9Zvg3DDq9uk0O1629h",
+      "filename": "ch01_resolve_free_tier_nils_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:06.092Z",
+      "size_bytes": 1073085
+    },
+    "ch01_pipeline_architecture_anchor": {
+      "drive_id": "1SYFzr7E2kufCE4o_CAWEOgV8QsgwIK3_",
+      "filename": "ch01_pipeline_architecture_anchor.mp3",
+      "modified_time": "2026-05-24T02:45:01.838Z",
+      "size_bytes": 1192173
+    }
+  },
+  "bdf_combined": {
+    "ch21_library_routing_combined": {
+      "drive_id": "1UCs1Yp0OEB7N9emkdiFo4jn2hZqGKad-",
+      "filename": "ch21_library_routing_combined.mp3",
+      "modified_time": "2026-05-24T17:43:17.014Z",
+      "size_bytes": 8818293
+    },
+    "ch20_format_b_path_resolution_combined": {
+      "drive_id": "1C4NyeaZO8bwju9mthhNoK_GbgqDmbKj2",
+      "filename": "ch20_format_b_path_resolution_combined.mp3",
+      "modified_time": "2026-05-24T17:42:59.872Z",
+      "size_bytes": 9601557
+    },
+    "ch19_export_pipeline_combined": {
+      "drive_id": "1tH0ThyZWHAsDcEENolytlAqGqZavd2AQ",
+      "filename": "ch19_export_pipeline_combined.mp3",
+      "modified_time": "2026-05-24T17:42:41.253Z",
+      "size_bytes": 11331621
+    },
+    "ch18_competition_detection_combined": {
+      "drive_id": "1IudB4zWw9IxhLVRfSNX9O4miiM-5QO9y",
+      "filename": "ch18_competition_detection_combined.mp3",
+      "modified_time": "2026-05-24T17:42:17.255Z",
+      "size_bytes": 11041005
+    },
+    "ch17_clip_name_parser_combined": {
+      "drive_id": "1seuoos7j97_OPg6ece_Cj_GZyanKLind",
+      "filename": "ch17_clip_name_parser_combined.mp3",
+      "modified_time": "2026-05-24T17:41:54.833Z",
+      "size_bytes": 9034221
+    },
+    "ch16_knowledge_enricher_combined": {
+      "drive_id": "1UzMqsLcZhdkzLFb8hIcVjEtXn2d3R5h-",
+      "filename": "ch16_knowledge_enricher_combined.mp3",
+      "modified_time": "2026-05-24T17:41:35.517Z",
+      "size_bytes": 6538437
+    },
+    "ch16_cost_tracking_combined": {
+      "drive_id": "1jBbROPNpXUlLgOv8eRn9oelvlEq6WuWf",
+      "filename": "ch16_cost_tracking_combined.mp3",
+      "modified_time": "2026-05-24T17:41:21.107Z",
+      "size_bytes": 5968965
+    },
+    "ch15_learning_discoveries_combined": {
+      "drive_id": "1LXjxCzeRwdKxnPBaWIR5y8aUZVJwmoFm",
+      "filename": "ch15_learning_discoveries_combined.mp3",
+      "modified_time": "2026-05-24T17:41:08.822Z",
+      "size_bytes": 12680493
+    },
+    "ch15_clip_type_system_combined": {
+      "drive_id": "10uh1ckdVa6oWeBJTWSNs6JVjYUGRR1pr",
+      "filename": "ch15_clip_type_system_combined.mp3",
+      "modified_time": "2026-05-24T17:40:40.274Z",
+      "size_bytes": 8467029
+    },
+    "ch14_ideas_discoveries_combined": {
+      "drive_id": "1PPwAnyKxX6ytUjcx4884ETDgj9z0W_ZG",
+      "filename": "ch14_ideas_discoveries_combined.mp3",
+      "modified_time": "2026-05-24T17:40:18.935Z",
+      "size_bytes": 13898061
+    },
+    "ch14_async_export_pattern_combined": {
+      "drive_id": "1NayxaPJ0XYoqkcd4x-AoyH_djkhjd-7A",
+      "filename": "ch14_async_export_pattern_combined.mp3",
+      "modified_time": "2026-05-24T17:39:47.415Z",
+      "size_bytes": 7666125
+    },
+    "ch13_evolution_decisions_combined": {
+      "drive_id": "1YmNiNQob9RdJlFCjdK1xLotmb5ZSMINW",
+      "filename": "ch13_evolution_decisions_combined.mp3",
+      "modified_time": "2026-05-24T17:39:30.620Z",
+      "size_bytes": 12652773
+    },
+    "ch13_deploy_discipline_combined": {
+      "drive_id": "1u8o7nrwB7RRviCokfhUGr1AePS1s7GIk",
+      "filename": "ch13_deploy_discipline_combined.mp3",
+      "modified_time": "2026-05-24T17:39:02.136Z",
+      "size_bytes": 7902477
+    },
+    "ch12_terminology_glossary_combined": {
+      "drive_id": "1nu9cRt5Kap1oTwWya26Eyh9U2qnPjbSY",
+      "filename": "ch12_terminology_glossary_combined.mp3",
+      "modified_time": "2026-05-24T17:38:46.271Z",
+      "size_bytes": 12732621
+    },
+    "ch12_nuclear_clear_tool_combined": {
+      "drive_id": "1M6YPKdnONaxvCYEYR1HtYPnt25Im5Ffr",
+      "filename": "ch12_nuclear_clear_tool_combined.mp3",
+      "modified_time": "2026-05-24T17:38:21.441Z",
+      "size_bytes": 6376149
+    },
+    "ch11_image_gallery_combined": {
+      "drive_id": "198D30yP9gO8SUT4DElYDIhjMDiUxuv12",
+      "filename": "ch11_image_gallery_combined.mp3",
+      "modified_time": "2026-05-24T17:38:06.623Z",
+      "size_bytes": 13041717
+    },
+    "ch11_first_end_to_end_export_combined": {
+      "drive_id": "125K-ro26qszgtKRTiU1P0ifvRkuwCn6q",
+      "filename": "ch11_first_end_to_end_export_combined.mp3",
+      "modified_time": "2026-05-24T17:37:38.110Z",
+      "size_bytes": 10696677
+    },
+    "ch10_cartoon_animator_combined": {
+      "drive_id": "1alQbJC1A7aKviUV1WLpm554A6y5sgSrx",
+      "filename": "ch10_cartoon_animator_combined.mp3",
+      "modified_time": "2026-05-24T17:37:07.017Z",
+      "size_bytes": 10506093
+    },
+    "ch09_roadmap_combined": {
+      "drive_id": "1NEN54LZhmfFcEl8PNEe8RNBCERHrD_br",
+      "filename": "ch09_roadmap_combined.mp3",
+      "modified_time": "2026-05-24T17:36:41.800Z",
+      "size_bytes": 12904845
+    },
+    "ch08_methodology_combined": {
+      "drive_id": "1Ogu2Xq_yhpVNqMtFVko4amG3vucHkhcU",
+      "filename": "ch08_methodology_combined.mp3",
+      "modified_time": "2026-05-24T17:36:10.378Z",
+      "size_bytes": 12168765
+    },
+    "ch07_dashboard_ui_combined": {
+      "drive_id": "1sTxM-IZLNDfrhVZNYYIJcjfkV-caJpbA",
+      "filename": "ch07_dashboard_ui_combined.mp3",
+      "modified_time": "2026-05-24T17:35:36.925Z",
+      "size_bytes": 11430861
+    },
+    "ch06_obs_clips_combined": {
+      "drive_id": "1l89_WtO7BtrRPOuyebVCqP27F5uk-T2r",
+      "filename": "ch06_obs_clips_combined.mp3",
+      "modified_time": "2026-05-24T17:35:11.142Z",
+      "size_bytes": 10850349
+    },
+    "ch05_telegram_twitter_combined": {
+      "drive_id": "1B5uvFIG18_hh8_4M6t19EdhJGqF71Dnv",
+      "filename": "ch05_telegram_twitter_combined.mp3",
+      "modified_time": "2026-05-24T17:34:49.381Z",
+      "size_bytes": 12239301
+    },
+    "ch04_mcp_bridge_architecture_combined": {
+      "drive_id": "1EHSGdwa_3yiTWYsjiOPrO_dtStWp5Mn8",
+      "filename": "ch04_mcp_bridge_architecture_combined.mp3",
+      "modified_time": "2026-05-24T17:34:24.331Z",
+      "size_bytes": 9496749
+    },
+    "ch04_lancedb_rag_combined": {
+      "drive_id": "1LjF_EyuVNlelQT8f2vPYO4XJn3HDXVIo",
+      "filename": "ch04_lancedb_rag_combined.mp3",
+      "modified_time": "2026-05-24T17:34:03.172Z",
+      "size_bytes": 12138213
+    },
+    "ch03_windows_encoding_patterns_combined": {
+      "drive_id": "1KGzdx8CGEfkZcBBQiNWxaCjubnYxMrxl",
+      "filename": "ch03_windows_encoding_patterns_combined.mp3",
+      "modified_time": "2026-05-24T17:33:37.806Z",
+      "size_bytes": 8829981
+    },
+    "ch03_tts_audio_combined": {
+      "drive_id": "1--FlNt9ujctLVhOciMJG8pU12xXtgte1",
+      "filename": "ch03_tts_audio_combined.mp3",
+      "modified_time": "2026-05-24T17:33:17.957Z",
+      "size_bytes": 8185989
+    },
+    "ch02_predator_setup_combined": {
+      "drive_id": "1tXYM0tbY6TsAnwFbxbuiIU4nMmCtEQqw",
+      "filename": "ch02_predator_setup_combined.mp3",
+      "modified_time": "2026-05-24T17:32:54.045Z",
+      "size_bytes": 12131853
+    },
+    "ch02_bridge_reload_discipline_combined": {
+      "drive_id": "1U7HjyycLS3t8hsyipv5d9IILikQT2Nr6",
+      "filename": "ch02_bridge_reload_discipline_combined.mp3",
+      "modified_time": "2026-05-24T17:32:21.350Z",
+      "size_bytes": 8153925
+    },
+    "ch01_resolve_free_tier_nils_combined": {
+      "drive_id": "1PrZJ908TSTVYjHmx_Ro4bOBPWc5_3W7D",
+      "filename": "ch01_resolve_free_tier_nils_combined.mp3",
+      "modified_time": "2026-05-24T17:31:54.883Z",
+      "size_bytes": 7701597
+    },
+    "ch01_pipeline_architecture_combined": {
+      "drive_id": "13SomaROo-SbAW4v-BMUXtE58EvHDTCIG",
+      "filename": "ch01_pipeline_architecture_combined.mp3",
+      "modified_time": "2026-05-24T17:31:32.782Z",
+      "size_bytes": 13080429
+    }
+  },
   "brainos_chapters": {
+    "session_20260514_1902_obsidian_vscode": {
+      "drive_id": "18a3c2TnSU9twdHKhXbgj1-8TKP1j4i1_",
+      "filename": "session_20260514_1902_obsidian_vscode.wav",
+      "modified_time": "2026-05-17T20:22:25.005Z",
+      "size_bytes": 63297644
+    },
+    "programming_terminology_reference": {
+      "drive_id": "13CTY6mW-BXS-nhQJx87HddNO0pzYxsHC",
+      "filename": "programming_terminology_reference.wav",
+      "modified_time": "2026-05-17T21:51:50.435Z",
+      "size_bytes": 40119644
+    },
+    "claudeguide_skills_system": {
+      "drive_id": "1dX6oEA4F8qi2Kl6Z69-h4NDpgJSRF9Nh",
+      "filename": "claudeguide_skills_system.wav",
+      "modified_time": "2026-05-17T20:22:52.501Z",
+      "size_bytes": 22359644
+    },
+    "claudeguide_prompting_architecture": {
+      "drive_id": "12R2Lr0xTLrFXhvVe4Py0fn6SXWXOPytl",
+      "filename": "claudeguide_prompting_architecture.wav",
+      "modified_time": "2026-05-17T20:22:46.251Z",
+      "size_bytes": 26024444
+    },
+    "claudeguide_mcp_setup": {
+      "drive_id": "19JV8MtSTys-E8vUPT9hPLBHYsjw8cxwx",
+      "filename": "claudeguide_mcp_setup.wav",
+      "modified_time": "2026-05-17T20:22:39.527Z",
+      "size_bytes": 21609644
+    },
+    "claudeguide_claude_md_standards": {
+      "drive_id": "1oVo0jvRUeGFsJ8BBuzExd28dpu-cgIS2",
+      "filename": "claudeguide_claude_md_standards.wav",
+      "modified_time": "2026-05-17T20:22:32.450Z",
+      "size_bytes": 17804444
+    },
+    "resolve_mcp_guide": {
+      "drive_id": "1AmenAuvjrwk_1gavyd05FwV9cVUa7oO1",
+      "filename": "resolve_mcp_guide.wav",
+      "modified_time": "2026-05-17T20:22:18.257Z",
+      "size_bytes": 63176444
+    },
+    "guide_venv": {
+      "drive_id": "1yZYAQuJM4--biE76271zQQD5-8KP9-Ex",
+      "filename": "guide_venv.wav",
+      "modified_time": "2026-05-17T20:22:11.540Z",
+      "size_bytes": 25660844
+    },
+    "guide_obsidian_claude": {
+      "drive_id": "1m7R2AMTev6hrCRq0dlVGfoXb_TJnR8Ql",
+      "filename": "guide_obsidian_claude.wav",
+      "modified_time": "2026-05-17T20:22:04.722Z",
+      "size_bytes": 18345644
+    },
+    "guide_mcp_ecosystem": {
+      "drive_id": "1lPc0LOkZZfUN_2CAtCz-uU-khB4zunmM",
+      "filename": "guide_mcp_ecosystem.wav",
+      "modified_time": "2026-05-17T20:21:58.964Z",
+      "size_bytes": 23106044
+    },
+    "guide_lancedb": {
+      "drive_id": "1ivJFo4lBTKfwAhsaQZcJohLelaSARfOe",
+      "filename": "guide_lancedb.wav",
+      "modified_time": "2026-05-17T20:21:49.763Z",
+      "size_bytes": 22198844
+    },
     "video_orchestrator_audio": {
       "drive_id": "1ZeJL9fjL_NFPEBdMPYmswd8AR-q1dT3T",
       "filename": "video_orchestrator_audio.mp3",
       "modified_time": "2026-05-24T02:43:10.348Z",
       "size_bytes": 1475613
-    },
-    "trigger_session_close_audio": {
-      "drive_id": "1wW0zkvq2idJXJz1UydHtm2-Y2XpmUpZH",
-      "filename": "trigger_session_close_audio.mp3",
-      "modified_time": "2026-05-24T02:43:05.800Z",
-      "size_bytes": 1451277
-    },
-    "trigger_render_complete_audio": {
-      "drive_id": "1fOTSvw1pWQMu3Efef4H7jti2bMIpJrc5",
-      "filename": "trigger_render_complete_audio.mp3",
-      "modified_time": "2026-05-24T02:43:01.674Z",
-      "size_bytes": 1462749
-    },
-    "trigger_bdf_queue_check_audio": {
-      "drive_id": "1G-Z-n_tRRAwj58OUN5YFKXbEM76Zaqo5",
-      "filename": "trigger_bdf_queue_check_audio.mp3",
-      "modified_time": "2026-05-24T02:42:57.132Z",
-      "size_bytes": 1537605
-    },
-    "trigger_architecture_audio": {
-      "drive_id": "1kcteTFmaeukh9N13NmgeqYGeoKw2SFpm",
-      "filename": "trigger_architecture_audio.mp3",
-      "modified_time": "2026-05-24T02:42:52.749Z",
-      "size_bytes": 1740885
-    },
-    "tools_registry_audio": {
-      "drive_id": "1BHdZRy0F0peDQN5O9uRnz3qjeVMglg9f",
-      "filename": "tools_registry_audio.mp3",
-      "modified_time": "2026-05-24T02:42:48.562Z",
-      "size_bytes": 2187837
-    },
-    "session_protocol_audio": {
-      "drive_id": "1uhw6xxAaXFJL2EhDnaarTv0XK85rI3NA",
-      "filename": "session_protocol_audio.mp3",
-      "modified_time": "2026-05-24T02:42:43.765Z",
-      "size_bytes": 1879269
     },
     "resolve_mcp_server_audio": {
       "drive_id": "1ywkB66wK8VyR3b5PojwLB3KfUdhosNfQ",
@@ -443,42 +849,6 @@
       "modified_time": "2026-05-24T02:42:29.734Z",
       "size_bytes": 1861845
     },
-    "project_directory_audio": {
-      "drive_id": "1hczd0nUXKi_Q8Ey8GDVeB8OAvpkAI4If",
-      "filename": "project_directory_audio.mp3",
-      "modified_time": "2026-05-24T02:42:23.805Z",
-      "size_bytes": 1425693
-    },
-    "memory_index_audio": {
-      "drive_id": "1BES5Zl53-7ZegldDmcuZ38hnhuznWQIH",
-      "filename": "memory_index_audio.mp3",
-      "modified_time": "2026-05-24T02:42:19.305Z",
-      "size_bytes": 1397685
-    },
-    "mcp_registry_audio": {
-      "drive_id": "1Dldfng_vHe8f94XRnTsN5tweSIGWL_IH",
-      "filename": "mcp_registry_audio.mp3",
-      "modified_time": "2026-05-24T02:42:15.075Z",
-      "size_bytes": 1933677
-    },
-    "master_control_audio": {
-      "drive_id": "1Z3XE-KWqIfGhoMc4NAF52oMHwwrDlR0P",
-      "filename": "master_control_audio.mp3",
-      "modified_time": "2026-05-24T02:42:10.015Z",
-      "size_bytes": 1273173
-    },
-    "lancedb_vector_store_audio": {
-      "drive_id": "1y7_LJfuBQYCP_cX9tPsubo5WCJPZXoUA",
-      "filename": "lancedb_vector_store_audio.mp3",
-      "modified_time": "2026-05-24T02:42:05.904Z",
-      "size_bytes": 2134413
-    },
-    "knowledge_ingestion_protocol_v2_audio": {
-      "drive_id": "1oO6LS45-PwyFEE18DHGD_TKaBqwx7jSt",
-      "filename": "knowledge_ingestion_protocol_v2_audio.mp3",
-      "modified_time": "2026-05-24T02:42:01.165Z",
-      "size_bytes": 2247837
-    },
     "davinci_resolve_mcp_audio": {
       "drive_id": "1TMNOjifpJn_la1TFYc86kSNDKHMIXcHj",
       "filename": "davinci_resolve_mcp_audio.mp3",
@@ -490,24 +860,6 @@
       "filename": "data_orchestrator_audio.mp3",
       "modified_time": "2026-05-24T02:41:52.067Z",
       "size_bytes": 1658997
-    },
-    "cristian_principles_audio": {
-      "drive_id": "1Fgoakpq-UVuXvVq9WE30mObFpPB1v3tg",
-      "filename": "cristian_principles_audio.mp3",
-      "modified_time": "2026-05-24T02:41:47.571Z",
-      "size_bytes": 2825901
-    },
-    "cristianconstruction_audio": {
-      "drive_id": "1JexPnrg29mJde6t6wTBueA5wvUQKqMUv",
-      "filename": "cristianconstruction_audio.mp3",
-      "modified_time": "2026-05-24T02:41:42.007Z",
-      "size_bytes": 2217261
-    },
-    "creative_systems_audio": {
-      "drive_id": "1DzMnVGxil6U6sNR9j982C0rdAGeQ6Xjr",
-      "filename": "creative_systems_audio.mp3",
-      "modified_time": "2026-05-24T02:41:37.633Z",
-      "size_bytes": 2408637
     },
     "content_orchestrator_audio": {
       "drive_id": "140ZV7kO5NA6Zkmw-jBNcEeqlft28TBQ_",
@@ -545,11 +897,77 @@
       "modified_time": "2026-05-24T02:41:09.018Z",
       "size_bytes": 2553309
     },
-    "ai_engineering_audio": {
-      "drive_id": "12-HNHJ1A33p6KJFEPWnILCTfKGsBAioT",
-      "filename": "ai_engineering_audio.mp3",
-      "modified_time": "2026-05-24T02:41:03.487Z",
-      "size_bytes": 3039261
+    "trigger_session_close_audio": {
+      "drive_id": "1wW0zkvq2idJXJz1UydHtm2-Y2XpmUpZH",
+      "filename": "trigger_session_close_audio.mp3",
+      "modified_time": "2026-05-24T02:43:05.800Z",
+      "size_bytes": 1451277
+    },
+    "trigger_render_complete_audio": {
+      "drive_id": "1fOTSvw1pWQMu3Efef4H7jti2bMIpJrc5",
+      "filename": "trigger_render_complete_audio.mp3",
+      "modified_time": "2026-05-24T02:43:01.674Z",
+      "size_bytes": 1462749
+    },
+    "trigger_bdf_queue_check_audio": {
+      "drive_id": "1G-Z-n_tRRAwj58OUN5YFKXbEM76Zaqo5",
+      "filename": "trigger_bdf_queue_check_audio.mp3",
+      "modified_time": "2026-05-24T02:42:57.132Z",
+      "size_bytes": 1537605
+    },
+    "trigger_architecture_audio": {
+      "drive_id": "1kcteTFmaeukh9N13NmgeqYGeoKw2SFpm",
+      "filename": "trigger_architecture_audio.mp3",
+      "modified_time": "2026-05-24T02:42:52.749Z",
+      "size_bytes": 1740885
+    },
+    "tools_registry_audio": {
+      "drive_id": "1BHdZRy0F0peDQN5O9uRnz3qjeVMglg9f",
+      "filename": "tools_registry_audio.mp3",
+      "modified_time": "2026-05-24T02:42:48.562Z",
+      "size_bytes": 2187837
+    },
+    "session_protocol_audio": {
+      "drive_id": "1uhw6xxAaXFJL2EhDnaarTv0XK85rI3NA",
+      "filename": "session_protocol_audio.mp3",
+      "modified_time": "2026-05-24T02:42:43.765Z",
+      "size_bytes": 1879269
+    },
+    "memory_index_audio": {
+      "drive_id": "1BES5Zl53-7ZegldDmcuZ38hnhuznWQIH",
+      "filename": "memory_index_audio.mp3",
+      "modified_time": "2026-05-24T02:42:19.305Z",
+      "size_bytes": 1397685
+    },
+    "mcp_registry_audio": {
+      "drive_id": "1Dldfng_vHe8f94XRnTsN5tweSIGWL_IH",
+      "filename": "mcp_registry_audio.mp3",
+      "modified_time": "2026-05-24T02:42:15.075Z",
+      "size_bytes": 1933677
+    },
+    "master_control_audio": {
+      "drive_id": "1Z3XE-KWqIfGhoMc4NAF52oMHwwrDlR0P",
+      "filename": "master_control_audio.mp3",
+      "modified_time": "2026-05-24T02:42:10.015Z",
+      "size_bytes": 1273173
+    },
+    "lancedb_vector_store_audio": {
+      "drive_id": "1y7_LJfuBQYCP_cX9tPsubo5WCJPZXoUA",
+      "filename": "lancedb_vector_store_audio.mp3",
+      "modified_time": "2026-05-24T02:42:05.904Z",
+      "size_bytes": 2134413
+    },
+    "knowledge_ingestion_protocol_v2_audio": {
+      "drive_id": "1oO6LS45-PwyFEE18DHGD_TKaBqwx7jSt",
+      "filename": "knowledge_ingestion_protocol_v2_audio.mp3",
+      "modified_time": "2026-05-24T02:42:01.165Z",
+      "size_bytes": 2247837
+    },
+    "cristianconstruction_audio": {
+      "drive_id": "1JexPnrg29mJde6t6wTBueA5wvUQKqMUv",
+      "filename": "cristianconstruction_audio.mp3",
+      "modified_time": "2026-05-24T02:41:42.007Z",
+      "size_bytes": 2217261
     },
     "active_environments_audio": {
       "drive_id": "15I_eOolahvGrbroqBEUoy2TM0-HaQK7f",
@@ -557,71 +975,29 @@
       "modified_time": "2026-05-24T02:40:58.283Z",
       "size_bytes": 1612845
     },
-    "programming_terminology_reference": {
-      "drive_id": "13CTY6mW-BXS-nhQJx87HddNO0pzYxsHC",
-      "filename": "programming_terminology_reference.wav",
-      "modified_time": "2026-05-17T21:51:50.435Z",
-      "size_bytes": 40119644
+    "project_directory_audio": {
+      "drive_id": "1hczd0nUXKi_Q8Ey8GDVeB8OAvpkAI4If",
+      "filename": "project_directory_audio.mp3",
+      "modified_time": "2026-05-24T02:42:23.805Z",
+      "size_bytes": 1425693
     },
-    "claudeguide_skills_system": {
-      "drive_id": "1dX6oEA4F8qi2Kl6Z69-h4NDpgJSRF9Nh",
-      "filename": "claudeguide_skills_system.wav",
-      "modified_time": "2026-05-17T20:22:52.501Z",
-      "size_bytes": 22359644
+    "cristian_principles_audio": {
+      "drive_id": "1Fgoakpq-UVuXvVq9WE30mObFpPB1v3tg",
+      "filename": "cristian_principles_audio.mp3",
+      "modified_time": "2026-05-24T02:41:47.571Z",
+      "size_bytes": 2825901
     },
-    "claudeguide_prompting_architecture": {
-      "drive_id": "12R2Lr0xTLrFXhvVe4Py0fn6SXWXOPytl",
-      "filename": "claudeguide_prompting_architecture.wav",
-      "modified_time": "2026-05-17T20:22:46.251Z",
-      "size_bytes": 26024444
+    "creative_systems_audio": {
+      "drive_id": "1DzMnVGxil6U6sNR9j982C0rdAGeQ6Xjr",
+      "filename": "creative_systems_audio.mp3",
+      "modified_time": "2026-05-24T02:41:37.633Z",
+      "size_bytes": 2408637
     },
-    "claudeguide_mcp_setup": {
-      "drive_id": "19JV8MtSTys-E8vUPT9hPLBHYsjw8cxwx",
-      "filename": "claudeguide_mcp_setup.wav",
-      "modified_time": "2026-05-17T20:22:39.527Z",
-      "size_bytes": 21609644
-    },
-    "claudeguide_claude_md_standards": {
-      "drive_id": "1oVo0jvRUeGFsJ8BBuzExd28dpu-cgIS2",
-      "filename": "claudeguide_claude_md_standards.wav",
-      "modified_time": "2026-05-17T20:22:32.450Z",
-      "size_bytes": 17804444
-    },
-    "session_20260514_1902_obsidian_vscode": {
-      "drive_id": "18a3c2TnSU9twdHKhXbgj1-8TKP1j4i1_",
-      "filename": "session_20260514_1902_obsidian_vscode.wav",
-      "modified_time": "2026-05-17T20:22:25.005Z",
-      "size_bytes": 63297644
-    },
-    "resolve_mcp_guide": {
-      "drive_id": "1AmenAuvjrwk_1gavyd05FwV9cVUa7oO1",
-      "filename": "resolve_mcp_guide.wav",
-      "modified_time": "2026-05-17T20:22:18.257Z",
-      "size_bytes": 63176444
-    },
-    "guide_venv": {
-      "drive_id": "1yZYAQuJM4--biE76271zQQD5-8KP9-Ex",
-      "filename": "guide_venv.wav",
-      "modified_time": "2026-05-17T20:22:11.540Z",
-      "size_bytes": 25660844
-    },
-    "guide_obsidian_claude": {
-      "drive_id": "1m7R2AMTev6hrCRq0dlVGfoXb_TJnR8Ql",
-      "filename": "guide_obsidian_claude.wav",
-      "modified_time": "2026-05-17T20:22:04.722Z",
-      "size_bytes": 18345644
-    },
-    "guide_mcp_ecosystem": {
-      "drive_id": "1lPc0LOkZZfUN_2CAtCz-uU-khB4zunmM",
-      "filename": "guide_mcp_ecosystem.wav",
-      "modified_time": "2026-05-17T20:21:58.964Z",
-      "size_bytes": 23106044
-    },
-    "guide_lancedb": {
-      "drive_id": "1ivJFo4lBTKfwAhsaQZcJohLelaSARfOe",
-      "filename": "guide_lancedb.wav",
-      "modified_time": "2026-05-17T20:21:49.763Z",
-      "size_bytes": 22198844
+    "ai_engineering_audio": {
+      "drive_id": "12-HNHJ1A33p6KJFEPWnILCTfKGsBAioT",
+      "filename": "ai_engineering_audio.mp3",
+      "modified_time": "2026-05-24T02:41:03.487Z",
+      "size_bytes": 3039261
     },
     "guide_brain_os": {
       "drive_id": "1i9TS3rx15rC5XUe3Eus9ctt1R_VU0MdR",
@@ -631,5 +1007,5 @@
     }
   },
   "brainos_sessions": {},
-  "start_page_token": "14437"
+  "start_page_token": "14623"
 }
