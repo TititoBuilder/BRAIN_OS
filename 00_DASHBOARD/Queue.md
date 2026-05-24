@@ -2,7 +2,7 @@
 ## In Progress
 - [x] anchor_generator.py batch mode — generate anchors for all 31 chapters
 - [x] Learning path sequencing — generate audio for 30 HIGH priority vault nodes
-- [ ] Apply Knowledge Graphs Over Lists to 04_WORKFLOWS + 05_MEMORY + 03_APIS
+- [x] Apply Knowledge Graphs Over Lists to 04_WORKFLOWS + 05_MEMORY + 03_APIS
 
 ## Next Sessions (ordered)
 - [x] Session 2: Apply Knowledge Graphs Over Lists to 02_AGENTS
