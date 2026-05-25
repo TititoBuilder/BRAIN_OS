@@ -208,3 +208,22 @@ at creation time — not discovered later during a cleanup audit.
 No local-only repos. Git without a remote is not a backup.
 **Proven:** book-compiler existed locally for weeks with no remote — caught
 during repo audit 2026-05-21.
+
+## Principle: Relative beats Absolute in noisy environments
+*Earned: brain-audio fingerprint module, May 2026*
+
+A hardcoded threshold (`signal > 0.0005`) fails when the noise floor 
+fluctuates. A ratio (`signal / noise_floor > 3.0`) stays reliable 
+regardless of audio loudness, microphone quality, or background hiss.
+Whenever you find yourself hardcoding a numeric boundary against a 
+signal that varies — stop. Ask what the signal should be measured 
+*relative to* instead.
+
+## Principle: Your test signal must reflect production reality
+*Earned: brain-audio fingerprint module, May 2026*
+
+White noise stress-tested the wrong thing. Real TTS audio has near-zero 
+energy above 15kHz — making the fingerprint obvious. White noise has 
+energy everywhere — making it invisible. A passing test against the wrong 
+environment is worse than a failing test: it builds false confidence. 
+Always ask: "Does my test signal behave like production input?"

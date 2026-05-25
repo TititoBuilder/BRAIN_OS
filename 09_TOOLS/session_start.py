@@ -5,11 +5,11 @@ Loads project context, runs health check, sends Telegram notification.
 
 Usage:
     python C:/BRAIN_OS/09_TOOLS/session_start.py --project bdf
-    python C:/BRAIN_OS/09_TOOLS/session_start.py --project brainos
-    python C:/BRAIN_OS/09_TOOLS/session_start.py --project ca
-    python C:/BRAIN_OS/09_TOOLS/session_start.py --project construction
-    python C:/BRAIN_OS/09_TOOLS/session_start.py --project resolve
-    python C:/BRAIN_OS/09_TOOLS/session_start.py  # auto-detects from cwd
+    python C:/BRAIN_OS\09_TOOLS\session_start.py --project brainos
+    python C:\BRAIN_OS\09_TOOLS\session_start.py --project ca
+    python C:\BRAIN_OS\09_TOOLS\session_start.py --project construction
+    python C:\BRAIN_OS\09_TOOLS\session_start.py --project resolve
+    python C:\BRAIN_OS\09_TOOLS\session_start.py  # auto-detects from cwd
 """
 
 import argparse
@@ -88,20 +88,8 @@ def detect_project() -> str:
 
 
 # ── Telegram ───────────────────────────────────────────────────────────────────
-_ENV_CANDIDATES = [
-    Path(r"C:\Dev\Projects\soccer-content-generator\.env"),
-    Path(r"C:\BRAIN_OS\03_APIS\.env"),
-]
-
 def _load_telegram():
-    loaded = False
-    for candidate in _ENV_CANDIDATES:
-        if candidate.exists():
-            load_dotenv(candidate, override=False)
-            loaded = True
-            break
-    if not loaded:
-        print(f"[session_start] ERROR: no .env found; tried {[str(p) for p in _ENV_CANDIDATES]}")
+    
     return os.getenv("TELEGRAM_BOT_TOKEN"), os.getenv("TELEGRAM_CHAT_ID")
 
 
