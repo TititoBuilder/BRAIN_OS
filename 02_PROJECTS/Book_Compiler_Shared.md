@@ -3,7 +3,7 @@ tags: [project, book, shared, plugin]
 project: book-compiler
 status: active
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-05-25
 parent: "[[Project_Directory]]"
 ---
 
@@ -68,9 +68,26 @@ All book compilation now routes through this shared plugin.
 
 ---
 
+## Audio Fingerprinting Integration
+
+Added: 2026-05-25 (commits `48e9684`, brain-audio fingerprint module)
+
+book-compiler automatically embeds a steganographic fingerprint into every TTS output via the brain-audio package. No manual step required.
+
+**Auto-fingerprint (per chapter):**
+Every WAV produced by book-compiler is fingerprinted at write time using `brain_audio.fingerprint.embed()` — inaudible 18,500 Hz sine wave, amplitude 0.0008.
+
+**Post-stitch integrity verification:**
+After the master WAV is assembled from all chapters, book-compiler verifies the fingerprint survived the stitch using `brain_audio.fingerprint.detect()`. If the SNR ratio drops below 3.0 the compile aborts.
+
+See [[fingerprinting]] for full technical spec (architecture, constants, test results).
+
+---
+
 ## Connected to
 
 - [[BDF_Book_System]]
 - [[CA_Book_System]]
 - [[Project_Directory]]
 - [[Tools_Registry]]
+- [[fingerprinting]]
