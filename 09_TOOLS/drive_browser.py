@@ -342,6 +342,85 @@ def execute(service):
     print()
 
 
+# ─── Upload ───────────────────────────────────────────────────────────────
+
+def upload_file(service, local_path: Path, domain: str = None):
+    """Upload a file to Knowledge_OS/{domain}/sessions/ or Knowledge_OS/ if no domain."""
+    from googleapiclient.http import MediaFileUpload
+
+    if not local_path.exists():
+        print(f"ERROR: File not found: {local_path}")
+        return
+
+    file_size = local_path.stat().st_size
+
+    # ── Resolve destination folder ────────────────────────────────
+    ko = find_folder(service, "Knowledge_OS")
+    if not ko:
+        print("  [NEW] Knowledge_OS/")
+        ko_id = create_folder(service, "Knowledge_OS")
+    else:
+        ko_id = ko["id"]
+
+    if domain:
+        dest_label = f"Knowledge_OS/{domain}/sessions/"
+        d_folder = find_folder(service, domain, parent_id=ko_id)
+        if not d_folder:
+            print(f"  [NEW] Knowledge_OS/{domain}/")
+            d_id = create_folder(service, domain, parent_id=ko_id)
+        else:
+            d_id = d_folder["id"]
+
+        s_folder = find_folder(service, "sessions", parent_id=d_id)
+        if not s_folder:
+            print(f"  [NEW] Knowledge_OS/{domain}/sessions/")
+            folder_id = create_folder(service, "sessions", parent_id=d_id)
+        else:
+            folder_id = s_folder["id"]
+    else:
+        dest_label = "Knowledge_OS/"
+        folder_id = ko_id
+
+    # ── Upload ────────────────────────────────────────────────────
+    ext = local_path.suffix.lower()
+    mime_map = {".mp3": "audio/mpeg", ".wav": "audio/wav", ".m4a": "audio/mp4", ".ogg": "audio/ogg"}
+    mime_type = mime_map.get(ext, "application/octet-stream")
+
+    media = MediaFileUpload(
+        str(local_path),
+        mimetype=mime_type,
+        resumable=True,
+        chunksize=8 * 1024 * 1024,
+    )
+
+    request = service.files().create(
+        body={"name": local_path.name, "parents": [folder_id]},
+        media_body=media,
+        fields="id, name, webViewLink",
+    )
+
+    print(f"\n  File   : {local_path.name}")
+    print(f"  Size   : {file_size / (1024*1024):.1f} MB")
+    print(f"  Dest   : {dest_label}")
+    print()
+
+    response = None
+    while response is None:
+        status, response = request.next_chunk()
+        if status:
+            pct = int(status.progress() * 100)
+            filled = pct // 5
+            bar = "#" * filled + "." * (20 - filled)
+            print(f"  [{bar}] {pct:3d}%", end="\r", flush=True)
+
+    print(f"  [{'#'*20}] 100%  -- upload complete          ")
+    print()
+    print(f"  Drive ID  : {response['id']}")
+    print(f"  Drive link: {response.get('webViewLink', 'N/A')}")
+    print()
+    return response
+
+
 # ─── CLI ──────────────────────────────────────────────────────────────────
 
 def main():
@@ -351,6 +430,9 @@ def main():
     g.add_argument("--plan",          action="store_true", help="Show rename/move plan (no changes)")
     g.add_argument("--execute",       action="store_true", help="Execute full reorganization")
     g.add_argument("--setup-folders", action="store_true", help="Create Knowledge_OS folder structure only")
+    g.add_argument("--upload",        metavar="FILE",      help="Upload a local file to Drive")
+    p.add_argument("--domain",        metavar="DOMAIN",    default=None,
+                   help="Domain subfolder for --upload, e.g. AI_ML  ->  Knowledge_OS/AI_ML/sessions/")
     args = p.parse_args()
 
     service = get_drive_service()
@@ -363,6 +445,8 @@ def main():
         execute(service)
     elif args.setup_folders:
         setup_folders(service)
+    elif args.upload:
+        upload_file(service, Path(args.upload), args.domain)
 
 
 if __name__ == "__main__":
