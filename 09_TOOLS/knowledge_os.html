@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Knowledge OS</title>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const GS = () => (
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+        *{box-sizing:border-box;margin:0;padding:0}
+        :root{
+          --bg:#07091a;--s1:#0c1127;--s2:#101830;--s3:#162040;
+          --bd:#1e2d50;--bd2:#243660;
+          --cy:#00d4ff;--cyD:rgba(0,212,255,.12);
+          --og:#ff6b35;--gn:#00ff88;--am:#ffd600;--rd:#ff4060;--pu:#c084fc;
+          --t1:#c8d8f8;--t2:#5a7098;--t3:#2a3a5a;
+        }
+        html,body,#root{height:100%;background:var(--bg);color:var(--t1);font-family:'JetBrains Mono',monospace;font-size:13px}
+        ::-webkit-scrollbar{width:3px;height:3px}
+        ::-webkit-scrollbar-track{background:var(--bg)}
+        ::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:2px}
+        .ort{font-family:'Orbitron',monospace}
+        input,select,textarea{background:var(--s2);border:1px solid var(--bd);color:var(--t1);padding:5px 9px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12px;outline:none}
+        input:focus,select:focus,textarea:focus{border-color:var(--cy);box-shadow:0 0 0 2px var(--cyD)}
+        button{cursor:pointer;font-family:'JetBrains Mono',monospace;border:none;outline:none}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+        .fade{animation:fadeIn .18s ease}
+        @keyframes bar{from{width:0}to{width:var(--w)}}
+        .bar-anim{animation:bar .6s ease forwards}
+      `}</style>
+    );
+
+    const DOMAINS = ["AI/ML","Systems Design","Python","Data Engineering","APIs & Protocols","Cloud & DevOps","Audio & Media","Knowledge Systems","Security"];
+    const STATUS_LIST = ["Not Started","Learning","Practiced","Mastered"];
+    const PRIORITY_LIST = ["Low","Medium","High"];
+    const AUDIO_LIST = ["No Audio","Raw Audio Ready","Stitched"];
+
+    const DC = {"AI/ML":"#c084fc","Systems Design":"#00d4ff","Python":"#ffd600","Data Engineering":"#ff6b35","APIs & Protocols":"#00ff88","Cloud & DevOps":"#60a5fa","Audio & Media":"#f472b6","Knowledge Systems":"#34d399","Security":"#fb7185"};
+    const SC = {"Not Started":"#5a7098","Learning":"#ffd600","Practiced":"#00d4ff","Mastered":"#00ff88"};
+    const PC = {"Low":"#5a7098","Medium":"#ff6b35","High":"#ff4060"};
+    const AC = {"No Audio":"#5a7098","Raw Audio Ready":"#ffd600","Stitched":"#00ff88"};
+
+    const SEED = [
+      ["llm_fundamentals","AI/ML","Large Language Models","Learning",55,"High","","No Audio",0,"2026-05-20"],
+      ["rag_pipelines","AI/ML","RAG Pipelines","Practiced",72,"High","BDF anchor_generator.py","Raw Audio Ready",2100,"2026-05-15"],
+      ["vector_embeddings","AI/ML","Vector Embeddings","Practiced",68,"High","LanceDB at C:\\lance_db_soccer","No Audio",0,"2026-05-10"],
+      ["agent_orchestration","AI/ML","Agent Orchestration","Practiced",75,"High","ch07_deployment.md — federated systems","Raw Audio Ready",1920,"2026-05-22"],
+      ["prompt_engineering","AI/ML","Prompt Engineering","Mastered",88,"High","All 6 CLAUDE.md files + prompting_architecture audio","Stitched",1500,"2026-05-24"],
+      ["model_fine_tuning","AI/ML","Model Fine-Tuning","Not Started",0,"Medium","","No Audio",0,""],
+      ["function_calling","AI/ML","Function Calling / Tool Use","Practiced",70,"High","resolve-mcp-server 31 tools","No Audio",0,"2026-05-18"],
+      ["semantic_search","AI/ML","Semantic Search","Learning",45,"High","LanceDB BDF vector search","No Audio",0,"2026-05-12"],
+      ["model_context_protocol","AI/ML","Model Context Protocol (MCP)","Mastered",92,"High","6 MCP servers operational, resolve+obsidian+context7","Raw Audio Ready",1680,"2026-05-24"],
+      ["multimodal_ai","AI/ML","Multimodal AI","Learning",35,"Medium","","No Audio",0,"2026-04-10"],
+      ["ai_evaluation","AI/ML","AI Evaluation & Benchmarking","Not Started",0,"Medium","","No Audio",0,""],
+      ["chain_of_thought","AI/ML","Chain of Thought Reasoning","Learning",50,"Medium","","No Audio",0,"2026-05-05"],
+      ["ai_safety_basics","AI/ML","AI Safety Basics","Not Started",0,"Low","","No Audio",0,""],
+      ["diffusion_models","AI/ML","Diffusion Models","Learning",30,"Medium","DALL-E 3 → gpt-image-1 BDF migration","No Audio",0,"2026-04-20"],
+      ["retrieval_systems","AI/ML","Retrieval Systems Design","Practiced",65,"High","BDF LanceDB full pipeline","No Audio",0,"2026-05-10"],
+      ["monolith_vs_microservices","Systems Design","Monolith vs Microservices","Practiced",78,"High","ch07_deployment.md CA Book","Raw Audio Ready",2400,"2026-05-13"],
+      ["event_driven_architecture","Systems Design","Event-Driven Architecture","Learning",48,"High","watchdog.py 3-mode triggers","No Audio",0,"2026-05-20"],
+      ["api_gateway_design","Systems Design","API Gateway Design","Learning",42,"Medium","","No Audio",0,"2026-04-15"],
+      ["cap_theorem","Systems Design","CAP Theorem","Not Started",0,"Medium","","No Audio",0,""],
+      ["message_queues","Systems Design","Message Queues","Not Started",0,"Medium","","No Audio",0,""],
+      ["federated_systems","Systems Design","Federated Systems","Practiced",72,"High","brain-audio Shared Core pattern","Raw Audio Ready",1800,"2026-05-13"],
+      ["blast_radius_principle","Systems Design","Blast Radius Principle","Mastered",85,"High","Cristian_Principles.md — venv contamination incident","No Audio",0,"2026-05-13"],
+      ["low_coupling_high_cohesion","Systems Design","Low Coupling / High Cohesion","Practiced",75,"High","brain-audio package design across 3 venvs","No Audio",0,"2026-05-13"],
+      ["circuit_breaker_pattern","Systems Design","Circuit Breaker Pattern","Not Started",0,"Medium","","No Audio",0,""],
+      ["cqrs_pattern","Systems Design","CQRS Pattern","Not Started",0,"Low","","No Audio",0,""],
+      ["load_balancing","Systems Design","Load Balancing","Not Started",0,"Low","","No Audio",0,""],
+      ["database_sharding","Systems Design","Database Sharding","Not Started",0,"Low","","No Audio",0,""],
+      ["python_asyncio","Python","Async / Await (asyncio)","Learning",45,"High","watchdog.py partial async","No Audio",0,"2026-05-22"],
+      ["python_subprocess","Python","Subprocess Management","Practiced",80,"High","book_compiler.py → ca_audio.py via subprocess","No Audio",0,"2026-05-08"],
+      ["python_decorators","Python","Decorators","Learning",55,"Medium","","No Audio",0,"2026-04-20"],
+      ["python_context_managers","Python","Context Managers","Learning",50,"Medium","","No Audio",0,"2026-04-15"],
+      ["python_generators","Python","Generators / Iterators","Not Started",0,"Medium","","No Audio",0,""],
+      ["python_type_hints","Python","Type Hints & mypy","Learning",40,"Medium","","No Audio",0,"2026-04-10"],
+      ["python_package_arch","Python","Package Architecture","Mastered",82,"High","brain-audio editable install across 3 venvs","No Audio",0,"2026-05-08"],
+      ["python_pytest","Python","Testing with pytest","Not Started",0,"High","","No Audio",0,""],
+      ["python_venvs","Python","Virtual Environments","Mastered",90,"High","CA, BDF, read-along venv separation complete","No Audio",0,"2026-05-03"],
+      ["python_dataclasses","Python","Dataclasses & Pydantic","Not Started",0,"Medium","","No Audio",0,""],
+      ["etl_pipelines","Data Engineering","ETL Pipelines","Practiced",70,"High","BDF session_close.py → LanceDB ingest","Raw Audio Ready",1920,"2026-05-22"],
+      ["vector_databases","Data Engineering","Vector Databases","Practiced",72,"High","LanceDB migrated from WD Elements to C: drive","No Audio",0,"2026-05-10"],
+      ["lancedb","Data Engineering","LanceDB Specifics","Practiced",68,"High","soccer-content-generator full pipeline","No Audio",0,"2026-05-10"],
+      ["data_modeling","Data Engineering","Data Modeling","Learning",45,"Medium","","No Audio",0,"2026-04-20"],
+      ["stream_processing","Data Engineering","Stream Processing","Not Started",0,"Medium","","No Audio",0,""],
+      ["data_validation","Data Engineering","Data Validation","Learning",40,"Medium","","No Audio",0,"2026-04-10"],
+      ["llm_data_pipelines","Data Engineering","LLM Data Pipelines","Practiced",65,"High","BDF content generation end-to-end","No Audio",0,"2026-05-15"],
+      ["schema_evolution","Data Engineering","Schema Evolution","Not Started",0,"Low","","No Audio",0,""],
+      ["rest_api_design","APIs & Protocols","REST API Design","Practiced",72,"High","server_api.py in resolve-mcp-server","No Audio",0,"2026-05-05"],
+      ["mcp_protocol","APIs & Protocols","MCP Protocol (stdio/SSE)","Mastered",88,"High","resolve-mcp-server lazy TCP, 6 MCP servers","Raw Audio Ready",1680,"2026-05-24"],
+      ["webhook_design","APIs & Protocols","Webhook Design","Learning",50,"Medium","Telegram alerts in watchdog.py","No Audio",0,"2026-05-22"],
+      ["oauth2","APIs & Protocols","OAuth 2.0","Not Started",0,"Medium","","No Audio",0,""],
+      ["graphql","APIs & Protocols","GraphQL","Not Started",0,"Low","","No Audio",0,""],
+      ["websockets","APIs & Protocols","WebSockets","Not Started",0,"Medium","","No Audio",0,""],
+      ["api_rate_limiting","APIs & Protocols","API Rate Limiting","Learning",55,"High","cost_guard.py $0.75 limit","No Audio",0,"2026-05-20"],
+      ["openapi_spec","APIs & Protocols","OpenAPI / Swagger Spec","Not Started",0,"Medium","","No Audio",0,""],
+      ["docker_fundamentals","Cloud & DevOps","Docker Fundamentals","Not Started",0,"High","","No Audio",0,""],
+      ["cicd_pipelines","Cloud & DevOps","CI/CD Pipelines","Not Started",0,"High","","No Audio",0,""],
+      ["gcp_basics","Cloud & DevOps","Google Cloud Platform","Learning",35,"Medium","Drive API, drive_sync.py","No Audio",0,"2026-05-15"],
+      ["git_advanced","Cloud & DevOps","Git Advanced Workflows","Practiced",75,"High","7 repos on GitHub, commit rollback safety net","No Audio",0,"2026-05-24"],
+      ["secrets_management","Cloud & DevOps","Secrets Management","Practiced",70,"High",".env.template standard across all 6 projects","No Audio",0,"2026-05-03"],
+      ["env_management","Cloud & DevOps","Environment Management","Mastered",85,"High","Venv separation + $PROFILE PowerShell functions","No Audio",0,"2026-05-24"],
+      ["containerization","Cloud & DevOps","Containerization Concepts","Not Started",0,"High","","No Audio",0,""],
+      ["cloud_storage_apis","Cloud & DevOps","Cloud Storage APIs","Practiced",68,"Medium","drive_sync.py + BRAIN_OS_CONFIG.json folder IDs","No Audio",0,"2026-05-22"],
+      ["tts_systems","Audio & Media","TTS Systems Overview","Mastered",88,"High","Kokoro af_heart + Edge TTS en-US-GuyNeural operational","Stitched",1500,"2026-05-24"],
+      ["kokoro_tts","Audio & Media","Kokoro TTS","Mastered",90,"High","CA Book 13ch + BRAIN_OS 4ch / 67min total","Stitched",1200,"2026-05-24"],
+      ["edge_tts","Audio & Media","Edge TTS","Mastered",85,"High","brain-audio shared package, profile normalizer","No Audio",0,"2026-05-08"],
+      ["audio_pipeline_design","Audio & Media","Audio Pipeline Design","Practiced",72,"High","book_compiler.py → ca_audio.py → Drive","No Audio",0,"2026-05-08"],
+      ["audio_manipulation","Audio & Media","pydub / ffmpeg","Not Started",0,"High","Phase 2 audio_stitcher.py dependency","No Audio",0,""],
+      ["audio_formats","Audio & Media","Audio Format Standards","Learning",50,"Medium","WAV vs MP3 in brain-audio","No Audio",0,"2026-05-08"],
+      ["pkm_fundamentals","Knowledge Systems","Personal Knowledge Management","Practiced",75,"High","BRAIN_OS vault fully reconciled, 28 ghost files deleted","Raw Audio Ready",2100,"2026-05-24"],
+      ["graph_databases","Knowledge Systems","Graph Databases","Learning",55,"High","graphify.py — 96 nodes mapped","No Audio",0,"2026-05-22"],
+      ["obsidian_workflows","Knowledge Systems","Obsidian Workflows","Mastered",82,"High","BRAIN_OS 00–10 structure, session pipeline operational","No Audio",0,"2026-05-24"],
+      ["bidirectional_linking","Knowledge Systems","Bidirectional Linking","Practiced",70,"Medium","02_AGENTS + 08_TRIGGERS wired","No Audio",0,"2026-05-22"],
+      ["knowledge_graph_design","Knowledge Systems","Knowledge Graph Design","Practiced",72,"High","Federated Graph System, soccer-content-generator.graphify.json","No Audio",0,"2026-05-22"],
+      ["zettelkasten","Knowledge Systems","Zettelkasten Method","Learning",45,"Medium","","No Audio",0,"2026-04-15"],
+      ["api_key_management","Security","API Key Management","Mastered",85,"High","Security rule: first 15–20 chars only, .env.template standard","No Audio",0,"2026-05-19"],
+      ["auth_patterns","Security","Authentication Patterns","Learning",40,"Medium","","No Audio",0,"2026-04-10"],
+      ["env_security","Security","Environment Security","Practiced",75,"High",".env deleted from Drive root, .gitignore all 6 projects","No Audio",0,"2026-05-19"],
+      ["owasp_top10","Security","OWASP Top 10","Not Started",0,"Medium","","No Audio",0,""],
+      ["token_based_auth","Security","Token-Based Auth (JWT)","Not Started",0,"Medium","","No Audio",0,""],
+    ];
+
+    const DRIVE_INDEX = {"lancedb":"BRAIN_OS_Handbook/chapters/Phase_02_Architecture/lancedb_vector_store_audio.mp3","mcp_protocol":"BRAIN_OS_Handbook/chapters/Phase_02_Architecture/mcp_registry_audio.mp3","model_context_protocol":"BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/resolve_mcp_guide.wav","prompt_engineering":"BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/claudeguide_prompting_architecture.wav","python_venvs":"BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/guide_venv.wav","obsidian_workflows":"BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/guide_obsidian_claude.wav","function_calling":"BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/claudeguide_skills_system.wav","pkm_fundamentals":"BRAIN_OS_Handbook/chapters/Phase_01_Orientation/guide_brain_os.wav","llm_fundamentals":"BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/programming_terminology_reference.wav","env_management":"BRAIN_OS_Handbook/chapters/Phase_02_Architecture/active_environments_audio.mp3","etl_pipelines":"BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch01_pipeline_architecture_af_heart_audio.mp3","rag_pipelines":"BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch04_lancedb_rag_af_heart_audio.mp3","tts_systems":"BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch03_tts_audio_af_heart_audio.mp3","webhook_design":"BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch05_telegram_twitter_af_heart_audio.mp3","api_rate_limiting":"BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch16_cost_tracking_af_heart_audio.mp3","retrieval_systems":"BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch16_knowledge_enricher_af_heart_audio.mp3","python_asyncio":"BDF KNOWLEDGE BOOK/BDF/chapters/Phase_04_Agents_Workflows/ch14_async_export_pattern_af_heart_audio.mp3","event_driven_architecture":"BDF KNOWLEDGE BOOK/BDF/chapters/Phase_04_Agents_Workflows/ch02_bridge_reload_discipline_af_heart_audio.mp3","cicd_pipelines":"BDF KNOWLEDGE BOOK/BDF/chapters/Phase_04_Agents_Workflows/ch13_deploy_discipline_af_heart_audio.mp3","agent_orchestration":"CA_Book_Audio/chapters/ch04_agents.wav","monolith_vs_microservices":"CA_Book_Audio/chapters/ch07_deployment.wav","federated_systems":"CA_Book_Audio/chapters/ch11_architecture.wav","audio_pipeline_design":"CA_Book_Audio/chapters/ch01_origin.wav","llm_data_pipelines":"BRAIN_OS_Handbook/chapters/Phase_04_Agents_Workflows/bdf_knowledge_build_flow_audio.mp3","knowledge_graph_design":"BRAIN_OS_Handbook/chapters/Phase_04_Agents_Workflows/content_orchestrator_audio.mp3"};
+
+    const mkTopics = () => SEED.map((s,i) => ({
+      id: i+1, machine_key:s[0], domain:s[1], topic:s[2], status:s[3],
+      score:s[4], priority:s[5], evidence:s[6], audio_status:s[7],
+      audio_duration:s[8], last_touched:s[9], added:"2026-01-01"
+    }));
+
+    function Badge({label, color, size=10}) {
+      return <span style={{fontSize:size,padding:'2px 7px',borderRadius:3,background:`${color}1a`,color,fontWeight:600,whiteSpace:'nowrap',letterSpacing:.5}}>{label}</span>;
+    }
+
+    function Btn({onClick,children,accent,disabled,style={}}) {
+      const base = {
+        background: accent ? 'var(--cyD)' : 'var(--s2)',
+        border: `1px solid ${accent ? 'var(--cy)' : 'var(--bd)'}`,
+        color: accent ? 'var(--cy)' : 'var(--t2)',
+        padding:'6px 14px', borderRadius:3, fontSize:11,
+        opacity: disabled ? .4 : 1, cursor: disabled ? 'default' : 'pointer',
+        transition:'all .12s', ...style
+      };
+      return <button onClick={disabled ? undefined : onClick} style={base}>{children}</button>;
+    }
+
+    /* ─── DASHBOARD ─────────────────────────────────────────── */
+    function Dashboard({topics}) {
+      const domainStats = DOMAINS.map(d => {
+        const dt = topics.filter(t => t.domain === d);
+        const avg = dt.length ? Math.round(dt.reduce((a,t)=>a+t.score,0)/dt.length) : 0;
+        const mastered = dt.filter(t=>t.status==="Mastered").length;
+        return {domain:d, avg, mastered, total:dt.length, color:DC[d]};
+      });
+
+      const now = new Date();
+      const velData = DOMAINS.map(d => {
+        const dt = topics.filter(t=>t.domain===d && t.last_touched);
+        if (!dt.length) return {domain:d, heat:"cold", label:"never"};
+        const latest = [...dt].sort((a,b)=>b.last_touched.localeCompare(a.last_touched))[0];
+        const days = Math.floor((now - new Date(latest.last_touched))/86400000);
+        return {domain:d, heat: days<=7?"hot":days<=30?"warm":"cold", label:`${days}d ago`};
+      });
+      const heatColor = {hot:"var(--gn)",warm:"var(--am)",cold:"var(--rd)"};
+
+      const evidence = topics.filter(t=>t.evidence).sort((a,b)=>b.score-a.score).slice(0,10);
+      const focus = topics.filter(t=>t.priority==="High"&&(t.status==="Not Started"||(t.status==="Learning"&&!t.evidence))).slice(0,8);
+
+      const statCards = [
+        {l:"Total Topics",v:topics.length,c:"var(--cy)"},
+        {l:"Mastered",v:topics.filter(t=>t.status==="Mastered").length,c:"var(--gn)"},
+        {l:"High-Priority Gaps",v:topics.filter(t=>t.priority==="High"&&t.status==="Not Started").length,c:"var(--rd)"},
+        {l:"Need Audio",v:topics.filter(t=>t.audio_status==="No Audio").length,c:"var(--am)"},
+      ];
+
+      return (
+        <div className="fade">
+          {/* Stat Row */}
+          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:12,marginBottom:20}}>
+            {statCards.map(s=>(
+              <div key={s.l} style={{background:'var(--s1)',border:'1px solid var(--bd)',borderRadius:6,padding:'14px 18px'}}>
+                <div className="ort" style={{fontSize:20,fontWeight:900,color:s.c}}>{s.v}</div>
+                <div style={{fontSize:10,color:'var(--t2)',letterSpacing:2,marginTop:4}}>{s.l.toUpperCase()}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Domain Mastery */}
+          <div style={{background:'var(--s1)',border:'1px solid var(--bd)',borderRadius:6,padding:20,marginBottom:20}}>
+            <div className="ort" style={{fontSize:10,color:'var(--t2)',letterSpacing:3,marginBottom:16}}>DOMAIN MASTERY</div>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:10}}>
+              {domainStats.map(d=>(
+                <div key={d.domain} style={{background:'var(--s2)',border:'1px solid var(--bd)',borderRadius:4,padding:12}}>
+                  <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:8}}>
+                    <span style={{fontSize:11,color:d.color,fontWeight:600}}>{d.domain}</span>
+                    <span className="ort" style={{fontSize:15,fontWeight:700,color:d.color}}>{d.avg}</span>
+                  </div>
+                  <div style={{height:3,background:'var(--bd)',borderRadius:2,overflow:'hidden'}}>
+                    <div style={{"--w":`${d.avg}%`,width:`${d.avg}%`,height:'100%',background:d.color,borderRadius:2}} className="bar-anim"/>
+                  </div>
+                  <div style={{fontSize:10,color:'var(--t2)',marginTop:6}}>{d.mastered}/{d.total} mastered</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:20,marginBottom:20}}>
+            {/* Velocity */}
+            <div style={{background:'var(--s1)',border:'1px solid var(--bd)',borderRadius:6,padding:20}}>
+              <div className="ort" style={{fontSize:10,color:'var(--t2)',letterSpacing:3,marginBottom:14}}>VELOCITY TRACKER</div>
+              {velData.map(v=>(
+                <div key={v.domain} style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'7px 0',borderBottom:'1px solid var(--s3)'}}>
+                  <span style={{fontSize:11,color:DC[v.domain]}}>{v.domain}</span>
+                  <div style={{display:'flex',alignItems:'center',gap:8}}>
+                    <span style={{fontSize:10,color:'var(--t2)'}}>{v.label}</span>
+                    <span style={{fontSize:9,padding:'2px 8px',borderRadius:10,background:`${heatColor[v.heat]}20`,color:heatColor[v.heat],fontWeight:700,letterSpacing:1}}>{v.heat.toUpperCase()}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Focus Now */}
+            <div style={{background:'var(--s1)',border:'1px solid var(--bd)',borderRadius:6,padding:20}}>
+              <div className="ort" style={{fontSize:10,color:'var(--t2)',letterSpacing:3,marginBottom:14}}>FOCUS NOW — HIGH GAPS</div>
+              {focus.length===0
+                ? <div style={{color:'var(--gn)',fontSize:12,paddingTop:8}}>✓ No high-priority gaps</div>
+                : focus.map(t=>(
+                  <div key={t.id} style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'7px 0',borderBottom:'1px solid var(--s3)'}}>
+                    <div>
+                      <div style={{fontSize:12,color:'var(--t1)'}}>{t.topic}</div>
+                      <div style={{fontSize:10,color:DC[t.domain]}}>{t.domain}</div>
+                    </div>
+                    <Badge label={t.status} color={SC[t.status]} />
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          {/* Evidence Portfolio */}
+          <div style={{background:'var(--s1)',border:'1px solid var(--bd)',borderRadius:6,padding:20}}>
+            <div className="ort" style={{fontSize:10,color:'var(--t2)',letterSpacing:3,marginBottom:14}}>EVIDENCE PORTFOLIO — PROVEN IN PRODUCTION</div>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:8}}>
+              {evidence.map(t=>(
+                <div key={t.id} style={{background:'var(--s2)',border:'1px solid var(--bd)',borderRadius:4,padding:'10px 12px',display:'flex',gap:10}}>
+                  <div style={{flex:1,minWidth:0}}>
+                    <div style={{fontSize:11,color:'var(--t1)',fontWeight:600}}>{t.topic}</div>
+                    <div style={{fontSize:10,color:'var(--gn)',marginTop:3,opacity:.8,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>✓ {t.evidence}</div>
+                  </div>
+                  <div style={{display:'flex',flexDirection:'column',alignItems:'flex-end',gap:4,flexShrink:0}}>
+                    <span className="ort" style={{fontSize:15,fontWeight:700,color:SC[t.status]}}>{t.score}</span>
+                    <Badge label={t.domain} color={DC[t.domain]} size={9} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    /* ─── TOPIC ROW ─────────────────────────────────────────── */
+    function TopicRow({t, onEdit, onQueue, inQueue}) {
+      const sc = t.score>=80?'var(--gn)':t.score>=50?'var(--cy)':t.score>0?'var(--am)':'var(--t3)';
+      const [hov, setHov] = useState(false);
+      return (
+        <div
+          style={{display:'grid',gridTemplateColumns:'2fr 1.1fr 90px 80px 72px 100px 58px',gap:0,padding:'9px 16px',borderBottom:'1px solid var(--s3)',background:hov?'rgba(0,212,255,.025)':'transparent',transition:'background .1s'}}
+          onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
+          <div style={{paddingRight:12}}>
+            <div style={{fontSize:12,color:'var(--t1)',fontWeight:500}}>{t.topic}</div>
+            <div style={{fontSize:10,color:'var(--t2)',marginTop:2}}>{t.machine_key}</div>
+            {t.evidence && <div style={{fontSize:10,color:'var(--gn)',marginTop:2,opacity:.75,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>✓ {t.evidence}</div>}
+          </div>
+          <div style={{display:'flex',alignItems:'center'}}><span style={{fontSize:10,color:DC[t.domain],fontWeight:600}}>{t.domain}</span></div>
+          <div style={{display:'flex',alignItems:'center'}}><Badge label={t.status} color={SC[t.status]} /></div>
+          <div style={{display:'flex',alignItems:'center'}}><Badge label={t.priority} color={PC[t.priority]} /></div>
+          <div style={{display:'flex',alignItems:'center',gap:6}}>
+            <span className="ort" style={{fontSize:14,fontWeight:700,color:sc}}>{t.score}</span>
+            <div style={{width:20,height:3,background:'var(--bd)',borderRadius:2,overflow:'hidden'}}>
+              <div style={{width:`${t.score}%`,height:'100%',background:sc,borderRadius:2}}/>
+            </div>
+          </div>
+          <div style={{display:'flex',alignItems:'center'}}>
+            <span style={{fontSize:9,padding:'2px 7px',borderRadius:3,background:`${AC[t.audio_status]}1a`,color:AC[t.audio_status],fontWeight:600,letterSpacing:.4,whiteSpace:'nowrap'}}>
+              {t.audio_status==="No Audio"?"⊘":t.audio_status==="Raw Audio Ready"?"▶":"✓"}{t.audio_duration>0?` ${Math.floor(t.audio_duration/60)}m`:""}
+            </span>
+          </div>
+          <div style={{display:'flex',alignItems:'center',gap:4}}>
+            <button onClick={()=>onEdit(t)} title="Edit" style={{background:'var(--s2)',border:'1px solid var(--bd)',color:'var(--t2)',width:24,height:24,borderRadius:3,fontSize:13,lineHeight:1,display:'flex',alignItems:'center',justifyContent:'center'}}>✎</button>
+            <button onClick={()=>onQueue(t)} title={inQueue?"In queue":"Add to manifest"} style={{background:inQueue?'rgba(0,255,136,.1)':'var(--s2)',border:`1px solid ${inQueue?'var(--gn)':'var(--bd)'}`,color:inQueue?'var(--gn)':'var(--t2)',width:24,height:24,borderRadius:3,fontSize:13}}>{inQueue?"✓":"+"}</button>
+          </div>
+        </div>
+      );
+    }
+
+    /* ─── ENCYCLOPEDIA ──────────────────────────────────────── */
+    function Encyclopedia({topics, onEdit, onQueue, queueIds}) {
+      const [f, setF] = useState({domain:"",status:"",priority:"",audio:"",search:""});
+      const upd = (k,v) => setF(p=>({...p,[k]:v}));
+
+      const filtered = topics.filter(t=>{
+        if (f.domain && t.domain!==f.domain) return false;
+        if (f.status && t.status!==f.status) return false;
+        if (f.priority && t.priority!==f.priority) return false;
+        if (f.audio && t.audio_status!==f.audio) return false;
+        if (f.search) {
+          const q = f.search.toLowerCase();
+          if (!t.topic.toLowerCase().includes(q) && !t.machine_key.includes(q) && !t.evidence.toLowerCase().includes(q)) return false;
+        }
+        return true;
+      });
+
+      const sel = {background:'var(--s2)',border:'1px solid var(--bd)',color:'var(--t1)',padding:'5px 8px',borderRadius:3,fontFamily:"'JetBrains Mono',monospace",fontSize:11};
+
+      return (
+        <div className="fade">
+          <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:14,background:'var(--s1)',border:'1px solid var(--bd)',borderRadius:6,padding:12,flexWrap:'wrap'}}>
+            <input placeholder="Search topic, key, evidence..." value={f.search} onChange={e=>upd('search',e.target.value)} style={{...sel,minWidth:220,flex:'1 1 220px'}}/>
+            <select value={f.domain} onChange={e=>upd('domain',e.target.value)} style={sel}>
+              <option value="">All Domains</option>
+              {DOMAINS.map(o=><option key={o}>{o}</option>)}
+            </select>
+            <select value={f.status} onChange={e=>upd('status',e.target.value)} style={sel}>
+              <option value="">All Status</option>
+              {STATUS_LIST.map(o=><option key={o}>{o}</option>)}
+            </select>
+            <select value={f.priority} onChange={e=>upd('priority',e.target.value)} style={sel}>
+              <option value="">All Priority</option>
+              {PRIORITY_LIST.map(o=><option key={o}>{o}</option>)}
+            </select>
+            <select value={f.audio} onChange={e=>upd('audio',e.target.value)} style={sel}>
+              <option value="">All Audio</option>
+              {AUDIO_LIST.map(o=><option key={o}>{o}</option>)}
+            </select>
+            <button onClick={()=>setF({domain:"",status:"",priority:"",audio:"",search:""})} style={{...sel,color:'var(--t2)',cursor:'pointer'}}>Reset</button>
+            <span style={{fontSize:10,color:'var(--t2)',marginLeft:'auto'}}>{filtered.length}/{topics.length}</span>
+          </div>
+
+          <div style={{background:'var(--s1)',border:'1px solid var(--bd)',borderRadius:6,overflow:'hidden'}}>
+            <div style={{display:'grid',gridTemplateColumns:'2fr 1.1fr 90px 80px 72px 100px 58px',gap:0,padding:'7px 16px',background:'var(--s2)',borderBottom:'1px solid var(--bd)'}}>
+              {["Topic","Domain","Status","Priority","Score","Audio",""].map((h,i)=>(
+                <div key={i} className="ort" style={{fontSize:9,color:'var(--t2)',letterSpacing:2}}>{h}</div>
+              ))}
+            </div>
+            <div style={{maxHeight:'calc(100vh - 290px)',overflowY:'auto'}}>
+              {filtered.map(t=><TopicRow key={t.id} t={t} onEdit={onEdit} onQueue={onQueue} inQueue={queueIds.includes(t.id)}/>)}
+              {filtered.length===0 && <div style={{padding:40,textAlign:'center',color:'var(--t2)'}}>No topics match filters</div>}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    /* ─── MANIFEST ──────────────────────────────────────────── */
+    function Manifest({manifest, topics, onRemove, onMove, onExport, onQueue, onTransition}) {
+      const totalSec = manifest.reduce((a,t)=>a+(t.audio_duration||0),0);
+      const fmt = s => `${Math.floor(s/3600)}h ${String(Math.floor((s%3600)/60)).padStart(2,'0')}m`;
+      const available = topics.filter(t=>!manifest.find(m=>m.id===t.id)&&t.audio_status!=="No Audio");
+
+      return (
+        <div style={{display:'grid',gridTemplateColumns:'1fr 320px',gap:20}} className="fade">
+          <div style={{background:'var(--s1)',border:'1px solid var(--bd)',borderRadius:6,overflow:'hidden'}}>
+            <div style={{padding:'14px 20px',borderBottom:'1px solid var(--bd)',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+              <div>
+                <div className="ort" style={{fontSize:10,color:'var(--t2)',letterSpacing:3}}>MANIFEST QUEUE</div>
+                <div style={{fontSize:12,color:'var(--cy)',marginTop:4}}>{fmt(totalSec)} total · {manifest.length} tracks</div>
+              </div>
+              <Btn onClick={onExport} accent disabled={manifest.length===0}>⬇ Export audio_manifest.json</Btn>
+            </div>
+
+            {manifest.length===0
+              ? <div style={{padding:60,textAlign:'center',color:'var(--t2)',fontSize:12,lineHeight:2}}>
+                  Add topics from Encyclopedia<br/>
+                  <span style={{fontSize:10,opacity:.4}}>Click + on any row with audio</span>
+                </div>
+              : <>
+                  {manifest.map((t,i)=>(
+                    <div key={t.id} style={{padding:'12px 20px',borderBottom:'1px solid var(--s3)'}}>
+                      <div style={{display:'flex',alignItems:'center',gap:10}}>
+                        <span className="ort" style={{fontSize:11,color:'var(--t2)',minWidth:22}}>{String(i+1).padStart(2,'0')}</span>
+                        <div style={{flex:1,minWidth:0}}>
+                          <div style={{fontSize:12,color:'var(--t1)',fontWeight:600}}>{t.topic}</div>
+                          <div style={{fontSize:10,color:DC[t.domain],marginTop:2}}>
+                            {t.domain} · <span style={{color:AC[t.audio_status]}}>{t.audio_status}</span>
+                            {t.audio_duration>0 && <span style={{color:'var(--t2)'}}> · {Math.floor(t.audio_duration/60)}m</span>}
+                          </div>
+                        </div>
+                        <div style={{display:'flex',gap:3}}>
+                          <button onClick={()=>onMove(i,-1)} disabled={i===0} style={{background:'var(--s2)',border:'1px solid var(--bd)',color:i===0?'var(--t3)':'var(--t1)',width:22,height:22,borderRadius:3,fontSize:12}}>↑</button>
+                          <button onClick={()=>onMove(i,1)} disabled={i===manifest.length-1} style={{background:'var(--s2)',border:'1px solid var(--bd)',color:i===manifest.length-1?'var(--t3)':'var(--t1)',width:22,height:22,borderRadius:3,fontSize:12}}>↓</button>
+                          <button onClick={()=>onRemove(t.id)} style={{background:'rgba(255,64,96,.1)',border:'1px solid rgba(255,64,96,.3)',color:'var(--rd)',width:22,height:22,borderRadius:3,fontSize:13}}>×</button>
+                        </div>
+                      </div>
+                      <input
+                        value={t.transition} onChange={e=>onTransition(t.id,e.target.value)}
+                        placeholder="Transition narration for audio_stitcher.py..."
+                        style={{width:'100%',marginTop:8,fontSize:11,color:'var(--t2)'}}
+                      />
+                    </div>
+                  ))}
+                  <div style={{padding:'12px 20px',background:'var(--s2)',borderTop:'1px solid var(--bd)',display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12,textAlign:'center'}}>
+                    {[
+                      {l:"Tracks",v:manifest.length,c:"var(--cy)"},
+                      {l:"Total Time",v:fmt(totalSec),c:"var(--am)"},
+                      {l:"Missing Audio",v:manifest.filter(t=>t.audio_status==="No Audio").length,c:"var(--rd)"},
+                    ].map(s=>(
+                      <div key={s.l}>
+                        <div className="ort" style={{fontSize:16,fontWeight:700,color:s.c}}>{s.v}</div>
+                        <div style={{fontSize:9,color:'var(--t2)',marginTop:2,letterSpacing:1}}>{s.l.toUpperCase()}</div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+            }
+          </div>
+
+          <div style={{background:'var(--s1)',border:'1px solid var(--bd)',borderRadius:6,overflow:'hidden'}}>
+            <div style={{padding:'14px 16px',borderBottom:'1px solid var(--bd)'}}>
+              <div className="ort" style={{fontSize:10,color:'var(--t2)',letterSpacing:3}}>AUDIO-READY TOPICS</div>
+              <div style={{fontSize:10,color:'var(--t2)',marginTop:4}}>{available.length} available</div>
+            </div>
+            <div style={{maxHeight:580,overflowY:'auto'}}>
+              {available.map(t=>(
+                <div key={t.id} style={{padding:'9px 14px',borderBottom:'1px solid var(--s3)',display:'flex',alignItems:'center',gap:8}}>
+                  <div style={{flex:1,minWidth:0}}>
+                    <div style={{fontSize:11,color:'var(--t1)',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{t.topic}</div>
+                    <div style={{fontSize:10,marginTop:2,display:'flex',gap:6}}>
+                      <span style={{color:DC[t.domain]}}>{t.domain}</span>
+                      <span style={{color:AC[t.audio_status]}}>● {t.audio_status}</span>
+                      {t.audio_duration>0&&<span style={{color:'var(--t2)'}}>{Math.floor(t.audio_duration/60)}m</span>}
+                    </div>
+                  </div>
+                  <Btn onClick={()=>onQueue(t)} accent style={{padding:'3px 10px',fontSize:10}}>+</Btn>
+                </div>
+              ))}
+              {available.length===0&&<div style={{padding:30,textAlign:'center',color:'var(--t2)',fontSize:11}}>All audio topics queued</div>}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    /* ─── EDIT MODAL ────────────────────────────────────────── */
+    function EditModal({topic, onSave, onClose}) {
+      const [f, setF] = useState({...topic});
+      const upd = (k,v) => setF(p=>({...p,[k]:v}));
+      const inp = {width:'100%'};
+      return (
+        <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,.82)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:1000}} onClick={onClose}>
+          <div style={{background:'var(--s1)',border:'1px solid var(--bd)',borderRadius:8,padding:28,width:560,maxHeight:'88vh',overflowY:'auto'}} onClick={e=>e.stopPropagation()} className="fade">
+            <div className="ort" style={{fontSize:12,color:'var(--cy)',letterSpacing:2,marginBottom:20}}>EDIT TOPIC — {topic.machine_key}</div>
+            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14}}>
+              {[
+                {k:'topic',l:'Topic Name',t:'text',full:true},
+                {k:'machine_key',l:'machine_key',t:'text'},
+                {k:'domain',l:'Domain',t:'sel',opts:DOMAINS},
+                {k:'status',l:'Status',t:'sel',opts:STATUS_LIST},
+                {k:'priority',l:'Priority',t:'sel',opts:PRIORITY_LIST},
+                {k:'audio_status',l:'Audio Status',t:'sel',opts:AUDIO_LIST},
+              ].map(fi=>(
+                <div key={fi.k} style={fi.full?{gridColumn:'1/-1'}:{}}>
+                  <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2,marginBottom:5}}>{fi.l.toUpperCase()}</div>
+                  {fi.t==='sel'
+                    ? <select value={f[fi.k]} onChange={e=>upd(fi.k,e.target.value)} style={inp}>
+                        {fi.opts.map(o=><option key={o}>{o}</option>)}
+                      </select>
+                    : <input value={f[fi.k]} onChange={e=>upd(fi.k,e.target.value)} style={inp}/>
+                  }
+                </div>
+              ))}
+              <div>
+                <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2,marginBottom:5}}>SCORE — {f.score}</div>
+                <input type="range" min="0" max="100" value={f.score} onChange={e=>upd('score',+e.target.value)} style={{width:'100%',accentColor:'var(--cy)'}}/>
+              </div>
+              <div>
+                <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2,marginBottom:5}}>AUDIO DURATION (secs)</div>
+                <input type="number" value={f.audio_duration} onChange={e=>upd('audio_duration',+e.target.value)} style={inp}/>
+              </div>
+            </div>
+            <div style={{marginTop:14}}>
+              <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2,marginBottom:5}}>BUILD EVIDENCE</div>
+              <textarea value={f.evidence} onChange={e=>upd('evidence',e.target.value)} rows={2} style={{...inp,resize:'vertical'}}/>
+            </div>
+            <div style={{display:'flex',gap:10,justifyContent:'flex-end',marginTop:20}}>
+              <Btn onClick={onClose}>Cancel</Btn>
+              <Btn onClick={()=>onSave(f)} accent>Save Changes</Btn>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    /* ─── ADD MODAL ─────────────────────────────────────────── */
+    function AddModal({onSave, onClose}) {
+      const [f, setF] = useState({machine_key:'',domain:DOMAINS[0],topic:'',status:'Not Started',score:0,priority:'Medium',evidence:'',audio_status:'No Audio',audio_duration:0});
+      const upd = (k,v) => setF(p=>({...p,[k]:v}));
+      return (
+        <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,.82)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:1000}} onClick={onClose}>
+          <div style={{background:'var(--s1)',border:'1px solid var(--bd)',borderRadius:8,padding:28,width:500}} onClick={e=>e.stopPropagation()} className="fade">
+            <div className="ort" style={{fontSize:12,color:'var(--gn)',letterSpacing:2,marginBottom:20}}>+ NEW TOPIC</div>
+            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14}}>
+              {[
+                {k:'topic',l:'Topic Name',t:'text',full:true},
+                {k:'machine_key',l:'machine_key (snake_case)',t:'text',full:true},
+                {k:'domain',l:'Domain',t:'sel',opts:DOMAINS},
+                {k:'priority',l:'Priority',t:'sel',opts:PRIORITY_LIST},
+              ].map(fi=>(
+                <div key={fi.k} style={fi.full?{gridColumn:'1/-1'}:{}}>
+                  <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2,marginBottom:5}}>{fi.l.toUpperCase()}</div>
+                  {fi.t==='sel'
+                    ? <select value={f[fi.k]} onChange={e=>upd(fi.k,e.target.value)} style={{width:'100%'}}>
+                        {fi.opts.map(o=><option key={o}>{o}</option>)}
+                      </select>
+                    : <input value={f[fi.k]} onChange={e=>upd(fi.k,e.target.value)} style={{width:'100%'}}/>
+                  }
+                </div>
+              ))}
+            </div>
+            <div style={{marginTop:14}}>
+              <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2,marginBottom:5}}>INITIAL BUILD EVIDENCE (optional)</div>
+              <input value={f.evidence} onChange={e=>upd('evidence',e.target.value)} placeholder="e.g. Used in BDF pipeline, C:\Dev\..." style={{width:'100%'}}/>
+            </div>
+            <div style={{display:'flex',gap:10,justifyContent:'flex-end',marginTop:20}}>
+              <Btn onClick={onClose}>Cancel</Btn>
+              <Btn onClick={()=>{if(f.topic&&f.machine_key)onSave(f)}} accent style={{borderColor:'var(--gn)',color:'var(--gn)',background:'rgba(0,255,136,.08)'}}>Add Topic</Btn>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    /* ─── ROOT ──────────────────────────────────────────────── */
+    function App() {
+      const [topics, setTopics] = useState([]);
+      const [tab, setTab] = useState("dashboard");
+      const [manifest, setManifest] = useState([]);
+      const [editTopic, setEditTopic] = useState(null);
+      const [showAdd, setShowAdd] = useState(false);
+      const [ready, setReady] = useState(false);
+
+      useEffect(()=>{
+        const r = localStorage.getItem('kos_topics');
+        setTopics(r ? JSON.parse(r) : mkTopics());
+        const m = localStorage.getItem('kos_manifest');
+        setManifest(m ? JSON.parse(m) : []);
+        setReady(true);
+      },[]);
+
+      useEffect(()=>{ if(ready) localStorage.setItem('kos_topics', JSON.stringify(topics)); },[topics,ready]);
+      useEffect(()=>{ if(ready) localStorage.setItem('kos_manifest', JSON.stringify(manifest)); },[manifest,ready]);
+
+      const updateTopic = (id, upd) => setTopics(p=>p.map(t=>t.id===id?{...t,...upd,last_touched:new Date().toISOString().split('T')[0]}:t));
+      const addToQueue = t => { if(!manifest.find(m=>m.id===t.id)) setManifest(p=>[...p,{...t,transition:`Next: ${t.topic}.`}]); };
+      const removeFromQueue = id => setManifest(p=>p.filter(m=>m.id!==id));
+      const moveQueue = (i,d) => { const n=[...manifest]; const s=i+d; if(s<0||s>=n.length)return; [n[i],n[s]]=[n[s],n[i]]; setManifest(n); };
+      const updateTransition = (id,v) => setManifest(p=>p.map(m=>m.id===id?{...m,transition:v}:m));
+
+      const exportManifest = () => {
+        const total = manifest.reduce((a,t)=>a+(t.audio_duration||0),0);
+        const data = {
+          generated: new Date().toISOString(),
+          phase: "Custom Learning Phase",
+          total_duration_seconds: total,
+          total_duration_human: `${Math.floor(total/3600)}h ${Math.floor((total%3600)/60)}m`,
+          tracks: manifest.map(t=>({
+            machine_key:t.machine_key, topic:t.topic, domain:t.domain,
+            audio_status:t.audio_status, duration_seconds:t.audio_duration,
+            transition:t.transition,
+            file_hint:`Drive/${t.domain.replace(/\W+/g,'_')}/${t.machine_key}.wav`
+          }))
+        };
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
+        a.download = 'audio_manifest.json';
+        a.click();
+      };
+
+      if(!ready) return (
+        <div style={{display:'flex',alignItems:'center',justifyContent:'center',height:'100vh',color:'var(--t2)'}}>
+          <GS/><span className="ort" style={{letterSpacing:4,fontSize:11}}>INITIALIZING...</span>
+        </div>
+      );
+
+      const tabs = [["dashboard","▣  DASHBOARD"],["encyclopedia","⊞  ENCYCLOPEDIA"],["manifest","⏵  MANIFEST BUILDER"]];
+
+      return (
+        <div style={{minHeight:'100vh',background:'var(--bg)'}}>
+          <GS/>
+          <header style={{background:'var(--s1)',borderBottom:'1px solid var(--bd)',padding:'0 24px',position:'sticky',top:0,zIndex:100}}>
+            <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'14px 0 8px'}}>
+              <div>
+                <div className="ort" style={{fontSize:17,fontWeight:900,color:'var(--cy)',letterSpacing:4}}>KNOWLEDGE OS</div>
+                <div style={{fontSize:10,color:'var(--t2)',letterSpacing:2,marginTop:2}}>CRISTIAN · COMPUTING ENCYCLOPEDIA · {topics.length} TOPICS LOADED</div>
+              </div>
+              <div style={{display:'flex',gap:20,alignItems:'center'}}>
+                <div style={{textAlign:'right'}}>
+                  <div className="ort" style={{fontSize:18,fontWeight:700,color:'var(--gn)'}}>{topics.filter(t=>t.status==="Mastered").length}</div>
+                  <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2}}>MASTERED</div>
+                </div>
+                <div style={{textAlign:'right'}}>
+                  <div className="ort" style={{fontSize:18,fontWeight:700,color:'var(--rd)'}}>{topics.filter(t=>t.priority==="High"&&t.status==="Not Started").length}</div>
+                  <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2}}>HIGH GAPS</div>
+                </div>
+                <div style={{textAlign:'right'}}>
+                  <div className="ort" style={{fontSize:18,fontWeight:700,color:'var(--cy)'}}>{manifest.length}</div>
+                  <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2}}>QUEUED</div>
+                </div>
+                {tab==="encyclopedia" && <Btn onClick={()=>setShowAdd(true)} accent>+ New Topic</Btn>}
+              </div>
+            </div>
+            <div style={{display:'flex',gap:0}}>
+              {tabs.map(([id,label])=>(
+                <div key={id} onClick={()=>setTab(id)} style={{padding:'8px 22px',cursor:'pointer',fontSize:10,letterSpacing:2,borderBottom:`2px solid ${tab===id?'var(--cy)':'transparent'}`,color:tab===id?'var(--cy)':'var(--t2)',transition:'all .15s',fontFamily:"'Orbitron',monospace"}}>{label}</div>
+              ))}
+            </div>
+          </header>
+
+          <main style={{padding:20}}>
+            {tab==="dashboard" && <Dashboard topics={topics}/>}
+            {tab==="encyclopedia" && <Encyclopedia topics={topics} onEdit={setEditTopic} onQueue={addToQueue} queueIds={manifest.map(m=>m.id)}/>}
+            {tab==="manifest" && <Manifest manifest={manifest} topics={topics} onRemove={removeFromQueue} onMove={moveQueue} onExport={exportManifest} onQueue={addToQueue} onTransition={updateTransition}/>}
+          </main>
+
+          {editTopic && <EditModal topic={editTopic} onSave={u=>{updateTopic(editTopic.id,u);setEditTopic(null);}} onClose={()=>setEditTopic(null)}/>}
+          {showAdd && <AddModal onSave={t=>{setTopics(p=>[...p,{...t,id:Date.now(),added:new Date().toISOString().split('T')[0],last_touched:new Date().toISOString().split('T')[0]}]);setShowAdd(false);}} onClose={()=>setShowAdd(false)}/>}
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+  </script>
+</body>
+</html>
