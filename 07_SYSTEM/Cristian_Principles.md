@@ -227,3 +227,15 @@ energy above 15kHz — making the fingerprint obvious. White noise has
 energy everywhere — making it invisible. A passing test against the wrong 
 environment is worse than a failing test: it builds false confidence. 
 Always ask: "Does my test signal behave like production input?"
+
+---
+
+## Build the Loop, Not Just the Tool
+*Earned: 2026-05-25 — Knowledge OS Phase 1-3*
+
+A single tool solves one problem. A loop compounds.
+Knowledge OS works because three tools form a closed circuit:
+score in app → export JSON → obsidian_sync.py writes vault →
+audio_stitcher.py builds the session → listen → update score → repeat.
+Each tool is a pure function. Each output is the next tool's input.
+That's the pattern. Build loops, not islands.
