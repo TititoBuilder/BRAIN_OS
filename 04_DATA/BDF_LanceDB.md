@@ -1,7 +1,17 @@
 ---
-tags: [bdf, pipeline, live]
+tags:
+- bdf
+- pipeline
+- live
 updated: 2026-05-01
-parent: "[[BDF_Soccer_Bot]]"
+parent: '[[BDF_Soccer_Bot]]'
+knowledge_os_machine_key: lancedb
+knowledge_os_domain: Data Engineering
+knowledge_os_status: Practiced
+knowledge_os_score: 68
+knowledge_os_priority: High
+knowledge_os_evidence: soccer-content-generator full pipeline
+knowledge_os_last_touched: '2026-05-10'
 ---
 
 # BDF LanceDB Vector Store

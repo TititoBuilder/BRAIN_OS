@@ -1,0 +1,784 @@
+{
+  "topics": [
+    {
+      "machine_key": "llm_fundamentals",
+      "domain": "AI/ML",
+      "topic": "Large Language Models",
+      "status": "Learning",
+      "score": 55,
+      "priority": "High",
+      "evidence": "",
+      "last_touched": "2026-05-20"
+    },
+    {
+      "machine_key": "rag_pipelines",
+      "domain": "AI/ML",
+      "topic": "RAG Pipelines",
+      "status": "Practiced",
+      "score": 72,
+      "priority": "High",
+      "evidence": "BDF anchor_generator.py",
+      "last_touched": "2026-05-15"
+    },
+    {
+      "machine_key": "vector_embeddings",
+      "domain": "AI/ML",
+      "topic": "Vector Embeddings",
+      "status": "Practiced",
+      "score": 68,
+      "priority": "High",
+      "evidence": "LanceDB at C:\\\\lance_db_soccer",
+      "last_touched": "2026-05-10"
+    },
+    {
+      "machine_key": "agent_orchestration",
+      "domain": "AI/ML",
+      "topic": "Agent Orchestration",
+      "status": "Practiced",
+      "score": 75,
+      "priority": "High",
+      "evidence": "ch07_deployment.md — federated systems",
+      "last_touched": "2026-05-22"
+    },
+    {
+      "machine_key": "prompt_engineering",
+      "domain": "AI/ML",
+      "topic": "Prompt Engineering",
+      "status": "Mastered",
+      "score": 88,
+      "priority": "High",
+      "evidence": "All 6 CLAUDE.md files + prompting_architecture audio",
+      "last_touched": "2026-05-24"
+    },
+    {
+      "machine_key": "model_fine_tuning",
+      "domain": "AI/ML",
+      "topic": "Model Fine-Tuning",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "function_calling",
+      "domain": "AI/ML",
+      "topic": "Function Calling / Tool Use",
+      "status": "Practiced",
+      "score": 70,
+      "priority": "High",
+      "evidence": "resolve-mcp-server 31 tools",
+      "last_touched": "2026-05-18"
+    },
+    {
+      "machine_key": "semantic_search",
+      "domain": "AI/ML",
+      "topic": "Semantic Search",
+      "status": "Learning",
+      "score": 45,
+      "priority": "High",
+      "evidence": "LanceDB BDF vector search",
+      "last_touched": "2026-05-12"
+    },
+    {
+      "machine_key": "model_context_protocol",
+      "domain": "AI/ML",
+      "topic": "Model Context Protocol (MCP)",
+      "status": "Mastered",
+      "score": 92,
+      "priority": "High",
+      "evidence": "6 MCP servers operational, resolve+obsidian+context7",
+      "last_touched": "2026-05-24"
+    },
+    {
+      "machine_key": "multimodal_ai",
+      "domain": "AI/ML",
+      "topic": "Multimodal AI",
+      "status": "Learning",
+      "score": 35,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": "2026-04-10"
+    },
+    {
+      "machine_key": "ai_evaluation",
+      "domain": "AI/ML",
+      "topic": "AI Evaluation & Benchmarking",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "chain_of_thought",
+      "domain": "AI/ML",
+      "topic": "Chain of Thought Reasoning",
+      "status": "Learning",
+      "score": 50,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": "2026-05-05"
+    },
+    {
+      "machine_key": "ai_safety_basics",
+      "domain": "AI/ML",
+      "topic": "AI Safety Basics",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Low",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "diffusion_models",
+      "domain": "AI/ML",
+      "topic": "Diffusion Models",
+      "status": "Learning",
+      "score": 30,
+      "priority": "Medium",
+      "evidence": "DALL-E 3 → gpt-image-1 BDF migration",
+      "last_touched": "2026-04-20"
+    },
+    {
+      "machine_key": "retrieval_systems",
+      "domain": "AI/ML",
+      "topic": "Retrieval Systems Design",
+      "status": "Practiced",
+      "score": 65,
+      "priority": "High",
+      "evidence": "BDF LanceDB full pipeline",
+      "last_touched": "2026-05-10"
+    },
+    {
+      "machine_key": "monolith_vs_microservices",
+      "domain": "Systems Design",
+      "topic": "Monolith vs Microservices",
+      "status": "Practiced",
+      "score": 78,
+      "priority": "High",
+      "evidence": "ch07_deployment.md CA Book",
+      "last_touched": "2026-05-13"
+    },
+    {
+      "machine_key": "event_driven_architecture",
+      "domain": "Systems Design",
+      "topic": "Event-Driven Architecture",
+      "status": "Learning",
+      "score": 48,
+      "priority": "High",
+      "evidence": "watchdog.py 3-mode triggers",
+      "last_touched": "2026-05-20"
+    },
+    {
+      "machine_key": "api_gateway_design",
+      "domain": "Systems Design",
+      "topic": "API Gateway Design",
+      "status": "Learning",
+      "score": 42,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": "2026-04-15"
+    },
+    {
+      "machine_key": "cap_theorem",
+      "domain": "Systems Design",
+      "topic": "CAP Theorem",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "message_queues",
+      "domain": "Systems Design",
+      "topic": "Message Queues",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "federated_systems",
+      "domain": "Systems Design",
+      "topic": "Federated Systems",
+      "status": "Practiced",
+      "score": 72,
+      "priority": "High",
+      "evidence": "brain-audio Shared Core pattern",
+      "last_touched": "2026-05-13"
+    },
+    {
+      "machine_key": "blast_radius_principle",
+      "domain": "Systems Design",
+      "topic": "Blast Radius Principle",
+      "status": "Mastered",
+      "score": 85,
+      "priority": "High",
+      "evidence": "Cristian_Principles.md — venv contamination incident",
+      "last_touched": "2026-05-13"
+    },
+    {
+      "machine_key": "low_coupling_high_cohesion",
+      "domain": "Systems Design",
+      "topic": "Low Coupling / High Cohesion",
+      "status": "Practiced",
+      "score": 75,
+      "priority": "High",
+      "evidence": "brain-audio package design across 3 venvs",
+      "last_touched": "2026-05-13"
+    },
+    {
+      "machine_key": "circuit_breaker_pattern",
+      "domain": "Systems Design",
+      "topic": "Circuit Breaker Pattern",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "cqrs_pattern",
+      "domain": "Systems Design",
+      "topic": "CQRS Pattern",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Low",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "load_balancing",
+      "domain": "Systems Design",
+      "topic": "Load Balancing",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Low",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "database_sharding",
+      "domain": "Systems Design",
+      "topic": "Database Sharding",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Low",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "python_asyncio",
+      "domain": "Python",
+      "topic": "Async / Await (asyncio)",
+      "status": "Learning",
+      "score": 45,
+      "priority": "High",
+      "evidence": "watchdog.py partial async",
+      "last_touched": "2026-05-22"
+    },
+    {
+      "machine_key": "python_subprocess",
+      "domain": "Python",
+      "topic": "Subprocess Management",
+      "status": "Practiced",
+      "score": 80,
+      "priority": "High",
+      "evidence": "book_compiler.py → ca_audio.py via subprocess",
+      "last_touched": "2026-05-08"
+    },
+    {
+      "machine_key": "python_decorators",
+      "domain": "Python",
+      "topic": "Decorators",
+      "status": "Learning",
+      "score": 55,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": "2026-04-20"
+    },
+    {
+      "machine_key": "python_context_managers",
+      "domain": "Python",
+      "topic": "Context Managers",
+      "status": "Learning",
+      "score": 50,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": "2026-04-15"
+    },
+    {
+      "machine_key": "python_generators",
+      "domain": "Python",
+      "topic": "Generators / Iterators",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "python_type_hints",
+      "domain": "Python",
+      "topic": "Type Hints & mypy",
+      "status": "Learning",
+      "score": 40,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": "2026-04-10"
+    },
+    {
+      "machine_key": "python_package_arch",
+      "domain": "Python",
+      "topic": "Package Architecture",
+      "status": "Mastered",
+      "score": 82,
+      "priority": "High",
+      "evidence": "brain-audio editable install across 3 venvs",
+      "last_touched": "2026-05-08"
+    },
+    {
+      "machine_key": "python_pytest",
+      "domain": "Python",
+      "topic": "Testing with pytest",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "High",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "python_venvs",
+      "domain": "Python",
+      "topic": "Virtual Environments",
+      "status": "Mastered",
+      "score": 90,
+      "priority": "High",
+      "evidence": "CA, BDF, read-along venv separation complete",
+      "last_touched": "2026-05-03"
+    },
+    {
+      "machine_key": "python_dataclasses",
+      "domain": "Python",
+      "topic": "Dataclasses & Pydantic",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "etl_pipelines",
+      "domain": "Data Engineering",
+      "topic": "ETL Pipelines",
+      "status": "Practiced",
+      "score": 70,
+      "priority": "High",
+      "evidence": "BDF session_close.py → LanceDB ingest",
+      "last_touched": "2026-05-22"
+    },
+    {
+      "machine_key": "vector_databases",
+      "domain": "Data Engineering",
+      "topic": "Vector Databases",
+      "status": "Practiced",
+      "score": 72,
+      "priority": "High",
+      "evidence": "LanceDB migrated from WD Elements to C: drive",
+      "last_touched": "2026-05-10"
+    },
+    {
+      "machine_key": "lancedb",
+      "domain": "Data Engineering",
+      "topic": "LanceDB Specifics",
+      "status": "Practiced",
+      "score": 68,
+      "priority": "High",
+      "evidence": "soccer-content-generator full pipeline",
+      "last_touched": "2026-05-10"
+    },
+    {
+      "machine_key": "data_modeling",
+      "domain": "Data Engineering",
+      "topic": "Data Modeling",
+      "status": "Learning",
+      "score": 45,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": "2026-04-20"
+    },
+    {
+      "machine_key": "stream_processing",
+      "domain": "Data Engineering",
+      "topic": "Stream Processing",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "data_validation",
+      "domain": "Data Engineering",
+      "topic": "Data Validation",
+      "status": "Learning",
+      "score": 40,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": "2026-04-10"
+    },
+    {
+      "machine_key": "llm_data_pipelines",
+      "domain": "Data Engineering",
+      "topic": "LLM Data Pipelines",
+      "status": "Practiced",
+      "score": 65,
+      "priority": "High",
+      "evidence": "BDF content generation end-to-end",
+      "last_touched": "2026-05-15"
+    },
+    {
+      "machine_key": "schema_evolution",
+      "domain": "Data Engineering",
+      "topic": "Schema Evolution",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Low",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "rest_api_design",
+      "domain": "APIs & Protocols",
+      "topic": "REST API Design",
+      "status": "Practiced",
+      "score": 72,
+      "priority": "High",
+      "evidence": "server_api.py in resolve-mcp-server",
+      "last_touched": "2026-05-05"
+    },
+    {
+      "machine_key": "mcp_protocol",
+      "domain": "APIs & Protocols",
+      "topic": "MCP Protocol (stdio/SSE)",
+      "status": "Mastered",
+      "score": 88,
+      "priority": "High",
+      "evidence": "resolve-mcp-server lazy TCP, 6 MCP servers",
+      "last_touched": "2026-05-24"
+    },
+    {
+      "machine_key": "webhook_design",
+      "domain": "APIs & Protocols",
+      "topic": "Webhook Design",
+      "status": "Learning",
+      "score": 50,
+      "priority": "Medium",
+      "evidence": "Telegram alerts in watchdog.py",
+      "last_touched": "2026-05-22"
+    },
+    {
+      "machine_key": "oauth2",
+      "domain": "APIs & Protocols",
+      "topic": "OAuth 2.0",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "graphql",
+      "domain": "APIs & Protocols",
+      "topic": "GraphQL",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Low",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "websockets",
+      "domain": "APIs & Protocols",
+      "topic": "WebSockets",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "api_rate_limiting",
+      "domain": "APIs & Protocols",
+      "topic": "API Rate Limiting",
+      "status": "Learning",
+      "score": 55,
+      "priority": "High",
+      "evidence": "cost_guard.py $0.75 limit",
+      "last_touched": "2026-05-20"
+    },
+    {
+      "machine_key": "openapi_spec",
+      "domain": "APIs & Protocols",
+      "topic": "OpenAPI / Swagger Spec",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "docker_fundamentals",
+      "domain": "Cloud & DevOps",
+      "topic": "Docker Fundamentals",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "High",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "cicd_pipelines",
+      "domain": "Cloud & DevOps",
+      "topic": "CI/CD Pipelines",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "High",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "gcp_basics",
+      "domain": "Cloud & DevOps",
+      "topic": "Google Cloud Platform",
+      "status": "Learning",
+      "score": 35,
+      "priority": "Medium",
+      "evidence": "Drive API, drive_sync.py",
+      "last_touched": "2026-05-15"
+    },
+    {
+      "machine_key": "git_advanced",
+      "domain": "Cloud & DevOps",
+      "topic": "Git Advanced Workflows",
+      "status": "Practiced",
+      "score": 75,
+      "priority": "High",
+      "evidence": "7 repos on GitHub, commit rollback safety net",
+      "last_touched": "2026-05-24"
+    },
+    {
+      "machine_key": "secrets_management",
+      "domain": "Cloud & DevOps",
+      "topic": "Secrets Management",
+      "status": "Practiced",
+      "score": 70,
+      "priority": "High",
+      "evidence": ".env.template standard across all 6 projects",
+      "last_touched": "2026-05-03"
+    },
+    {
+      "machine_key": "env_management",
+      "domain": "Cloud & DevOps",
+      "topic": "Environment Management",
+      "status": "Mastered",
+      "score": 85,
+      "priority": "High",
+      "evidence": "Venv separation + $PROFILE PowerShell functions",
+      "last_touched": "2026-05-24"
+    },
+    {
+      "machine_key": "containerization",
+      "domain": "Cloud & DevOps",
+      "topic": "Containerization Concepts",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "High",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "cloud_storage_apis",
+      "domain": "Cloud & DevOps",
+      "topic": "Cloud Storage APIs",
+      "status": "Practiced",
+      "score": 68,
+      "priority": "Medium",
+      "evidence": "drive_sync.py + BRAIN_OS_CONFIG.json folder IDs",
+      "last_touched": "2026-05-22"
+    },
+    {
+      "machine_key": "tts_systems",
+      "domain": "Audio & Media",
+      "topic": "TTS Systems Overview",
+      "status": "Mastered",
+      "score": 88,
+      "priority": "High",
+      "evidence": "Kokoro af_heart + Edge TTS en-US-GuyNeural operational",
+      "last_touched": "2026-05-24"
+    },
+    {
+      "machine_key": "kokoro_tts",
+      "domain": "Audio & Media",
+      "topic": "Kokoro TTS",
+      "status": "Mastered",
+      "score": 90,
+      "priority": "High",
+      "evidence": "CA Book 13ch + BRAIN_OS 4ch / 67min total",
+      "last_touched": "2026-05-24"
+    },
+    {
+      "machine_key": "edge_tts",
+      "domain": "Audio & Media",
+      "topic": "Edge TTS",
+      "status": "Mastered",
+      "score": 85,
+      "priority": "High",
+      "evidence": "brain-audio shared package, profile normalizer",
+      "last_touched": "2026-05-08"
+    },
+    {
+      "machine_key": "audio_pipeline_design",
+      "domain": "Audio & Media",
+      "topic": "Audio Pipeline Design",
+      "status": "Practiced",
+      "score": 72,
+      "priority": "High",
+      "evidence": "book_compiler.py → ca_audio.py → Drive",
+      "last_touched": "2026-05-08"
+    },
+    {
+      "machine_key": "audio_manipulation",
+      "domain": "Audio & Media",
+      "topic": "pydub / ffmpeg",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "High",
+      "evidence": "Phase 2 audio_stitcher.py dependency",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "audio_formats",
+      "domain": "Audio & Media",
+      "topic": "Audio Format Standards",
+      "status": "Learning",
+      "score": 50,
+      "priority": "Medium",
+      "evidence": "WAV vs MP3 in brain-audio",
+      "last_touched": "2026-05-08"
+    },
+    {
+      "machine_key": "pkm_fundamentals",
+      "domain": "Knowledge Systems",
+      "topic": "Personal Knowledge Management",
+      "status": "Practiced",
+      "score": 75,
+      "priority": "High",
+      "evidence": "BRAIN_OS vault fully reconciled, 28 ghost files deleted",
+      "last_touched": "2026-05-24"
+    },
+    {
+      "machine_key": "graph_databases",
+      "domain": "Knowledge Systems",
+      "topic": "Graph Databases",
+      "status": "Learning",
+      "score": 55,
+      "priority": "High",
+      "evidence": "graphify.py — 96 nodes mapped",
+      "last_touched": "2026-05-22"
+    },
+    {
+      "machine_key": "obsidian_workflows",
+      "domain": "Knowledge Systems",
+      "topic": "Obsidian Workflows",
+      "status": "Mastered",
+      "score": 82,
+      "priority": "High",
+      "evidence": "BRAIN_OS 00–10 structure, session pipeline operational",
+      "last_touched": "2026-05-24"
+    },
+    {
+      "machine_key": "bidirectional_linking",
+      "domain": "Knowledge Systems",
+      "topic": "Bidirectional Linking",
+      "status": "Practiced",
+      "score": 70,
+      "priority": "Medium",
+      "evidence": "02_AGENTS + 08_TRIGGERS wired",
+      "last_touched": "2026-05-22"
+    },
+    {
+      "machine_key": "knowledge_graph_design",
+      "domain": "Knowledge Systems",
+      "topic": "Knowledge Graph Design",
+      "status": "Practiced",
+      "score": 72,
+      "priority": "High",
+      "evidence": "Federated Graph System, soccer-content-generator.graphify.json",
+      "last_touched": "2026-05-22"
+    },
+    {
+      "machine_key": "zettelkasten",
+      "domain": "Knowledge Systems",
+      "topic": "Zettelkasten Method",
+      "status": "Learning",
+      "score": 45,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": "2026-04-15"
+    },
+    {
+      "machine_key": "api_key_management",
+      "domain": "Security",
+      "topic": "API Key Management",
+      "status": "Mastered",
+      "score": 85,
+      "priority": "High",
+      "evidence": "Security rule: first 15–20 chars only, .env.template standard",
+      "last_touched": "2026-05-19"
+    },
+    {
+      "machine_key": "auth_patterns",
+      "domain": "Security",
+      "topic": "Authentication Patterns",
+      "status": "Learning",
+      "score": 40,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": "2026-04-10"
+    },
+    {
+      "machine_key": "env_security",
+      "domain": "Security",
+      "topic": "Environment Security",
+      "status": "Practiced",
+      "score": 75,
+      "priority": "High",
+      "evidence": ".env deleted from Drive root, .gitignore all 6 projects",
+      "last_touched": "2026-05-19"
+    },
+    {
+      "machine_key": "owasp_top10",
+      "domain": "Security",
+      "topic": "OWASP Top 10",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    },
+    {
+      "machine_key": "token_based_auth",
+      "domain": "Security",
+      "topic": "Token-Based Auth (JWT)",
+      "status": "Not Started",
+      "score": 0,
+      "priority": "Medium",
+      "evidence": "",
+      "last_touched": ""
+    }
+  ]
+}

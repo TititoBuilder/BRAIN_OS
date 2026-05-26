@@ -1,4 +1,10 @@
-# BRAIN_OS — Master Queue
+---
+knowledge_os_machine_key: message_queues
+knowledge_os_domain: Systems Design
+knowledge_os_status: Not Started
+knowledge_os_score: 0
+knowledge_os_priority: Medium
+---# BRAIN_OS — Master Queue
 ## In Progress
 - [ ] anchor_generator.py batch mode — generate anchors for all 31 chapters
 - [ ] Learning path sequencing — generate audio for 30 HIGH priority vault nodes

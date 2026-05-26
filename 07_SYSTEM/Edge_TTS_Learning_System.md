@@ -1,8 +1,22 @@
 ---
-tags: [audio, tts, learning, edge-tts, free, system]
+tags:
+- audio
+- tts
+- learning
+- edge-tts
+- free
+- system
 created: 2026-04-18
 updated: 2026-05-03
-parent: [[07_SYSTEM]]
+parent:
+- - 07_SYSTEM
+knowledge_os_machine_key: edge_tts
+knowledge_os_domain: Audio & Media
+knowledge_os_status: Mastered
+knowledge_os_score: 85
+knowledge_os_priority: High
+knowledge_os_evidence: brain-audio shared package, profile normalizer
+knowledge_os_last_touched: '2026-05-08'
 ---
 
 # Edge TTS Learning System

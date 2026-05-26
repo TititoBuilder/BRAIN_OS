@@ -1,0 +1,48 @@
+{
+  "phase": "BrainOS Book -- Session 01",
+  "total_duration_human": "~10 hr",
+  "tracks": [
+    {
+      "topic": "Final Resume: From Tools To Voice",
+      "machine_key": "final_resume_From_Tools_To_Voice",
+      "transition": "Next: master session.",
+      "audio_status": "Ready",
+      "file_hint": "BrainOS_Book/audio/final_resume_From_Tools_To_Voice.wav"
+    },
+    {
+      "topic": "Master",
+      "machine_key": "master",
+      "transition": "Next: programming terminology reference.",
+      "audio_status": "Ready",
+      "file_hint": "BrainOS_Book/audio/master.wav"
+    },
+    {
+      "topic": "Programming Terminology Reference",
+      "machine_key": "programming_terminology_reference",
+      "transition": "Next: Resolve MCP guide.",
+      "audio_status": "Ready",
+      "file_hint": "BrainOS_Book/audio/programming_terminology_reference.wav"
+    },
+    {
+      "topic": "Resolve MCP Guide",
+      "machine_key": "resolve_mcp_guide",
+      "transition": "Next: session April 2026.",
+      "audio_status": "Ready",
+      "file_hint": "BrainOS_Book/audio/resolve_mcp_guide.wav"
+    },
+    {
+      "topic": "Session 2026-04-15",
+      "machine_key": "session_20260415_1149",
+      "transition": "Next: session May 2026.",
+      "audio_status": "Ready",
+      "file_hint": "BrainOS_Book/audio/session_20260415_1149.wav"
+    },
+    {
+      "topic": "Session 2026-05-14",
+      "machine_key": "session_20260514_1902",
+      "transition": "",
+      "audio_status": "Ready",
+      "file_hint": "BrainOS_Book/audio/session_20260514_1902.wav"
+    }
+  ]
+}

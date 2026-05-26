@@ -1,4 +1,12 @@
-﻿---
+---
+knowledge_os_machine_key: kokoro_tts
+knowledge_os_domain: Audio & Media
+knowledge_os_status: Mastered
+knowledge_os_score: 90
+knowledge_os_priority: High
+knowledge_os_evidence: CA Book 13ch + BRAIN_OS 4ch / 67min total
+knowledge_os_last_touched: '2026-05-24'
+---﻿---
 tags: [agent, live]
 ---
 
