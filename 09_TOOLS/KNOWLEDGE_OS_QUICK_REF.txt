@@ -1,0 +1,57 @@
+KNOWLEDGE OS — QUICK REFERENCE
+===============================
+
+
+DAILY LOOP
+----------
+1. Open knowledge_os.html (Desktop shortcut)
+2. Update scores -> click pencil icon -> drag slider -> save
+3. Click "Obsidian Sync" button -> obsidian_sync.json downloads
+4. Run: C:\Knowledge\CA\venv\Scripts\python C:\BRAIN_OS\09_TOOLS\obsidian_sync.py --input "C:\Users\titit\Downloads\obsidian_sync.json" --vault "C:\BRAIN_OS"
+
+
+AUDIO SESSION
+-------------
+1. App -> Encyclopedia -> filter Raw Audio Ready -> click + on topics
+2. Manifest Builder -> reorder -> export audio_manifest.json
+3. Claude Code -> download + rename files to C:\BRAIN_OS\audio_staging\
+4. Run: C:\Knowledge\CA\venv\Scripts\python C:\BRAIN_OS\09_TOOLS\audio_stitcher.py --manifest "C:\Users\titit\Downloads\audio_manifest.json" --audio-dir "C:\BRAIN_OS\audio_staging" --output "C:\BRAIN_OS\audio_out\session.mp3"
+5. Run: C:\Knowledge\CA\venv\Scripts\python C:\BRAIN_OS\09_TOOLS\drive_browser.py --upload "C:\BRAIN_OS\audio_out\session.mp3"
+6. iPhone -> Google Drive app -> Knowledge_OS -> play
+
+
+DRIVE AUDIT
+-----------
+C:\Knowledge\CA\venv\Scripts\python C:\BRAIN_OS\09_TOOLS\drive_browser.py --audit
+
+
+UPLOAD WITH DOMAIN
+------------------
+C:\Knowledge\CA\venv\Scripts\python C:\BRAIN_OS\09_TOOLS\drive_browser.py --upload "C:\BRAIN_OS\audio_out\session.mp3" --domain AI_ML
+    -> uploads to Knowledge_OS/AI_ML/sessions/
+
+C:\Knowledge\CA\venv\Scripts\python C:\BRAIN_OS\09_TOOLS\drive_browser.py --upload "C:\BRAIN_OS\audio_out\session.mp3"
+    -> uploads to Knowledge_OS/ root
+
+
+DOMAINS
+-------
+AI_ML | Systems_Design | Python | Data_Engineering | APIs_Protocols
+Cloud_DevOps | Audio_Media | Knowledge_Systems | Security
+
+
+FILES
+-----
+App         : C:\BRAIN_OS\09_TOOLS\knowledge_os.html
+Stitcher    : C:\BRAIN_OS\09_TOOLS\audio_stitcher.py
+Obsidian    : C:\BRAIN_OS\09_TOOLS\obsidian_sync.py
+Drive tool  : C:\BRAIN_OS\09_TOOLS\drive_browser.py
+Drive index : C:\BRAIN_OS\09_TOOLS\drive_index.json
+Manual      : C:\BRAIN_OS\07_SYSTEM\KNOWLEDGE_OS_MANUAL.md
+Audio out   : C:\BRAIN_OS\audio_out\
+Staging     : C:\BRAIN_OS\audio_staging\
+
+
+VENV
+----
+C:\Knowledge\CA\venv\Scripts\python.exe
