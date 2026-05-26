@@ -154,7 +154,7 @@
     }
 
     /* ─── DASHBOARD ─────────────────────────────────────────── */
-    function Dashboard({topics}) {
+    function Dashboard({topics, onEdit}) {
       const domainStats = DOMAINS.map(d => {
         const dt = topics.filter(t => t.domain === d);
         const avg = dt.length ? Math.round(dt.reduce((a,t)=>a+t.score,0)/dt.length) : 0;
@@ -234,7 +234,9 @@
               {focus.length===0
                 ? <div style={{color:'var(--gn)',fontSize:12,paddingTop:8}}>✓ No high-priority gaps</div>
                 : focus.map(t=>(
-                  <div key={t.id} style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'7px 0',borderBottom:'1px solid var(--s3)'}}>
+                  <div key={t.id} onClick={()=>onEdit(t)} style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'7px 0',borderBottom:'1px solid var(--s3)',cursor:'pointer',transition:'background .1s',borderRadius:3,margin:'0 -6px',padding:'7px 6px'}}
+                    onMouseEnter={e=>e.currentTarget.style.background='rgba(0,212,255,.04)'}
+                    onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
                     <div>
                       <div style={{fontSize:12,color:'var(--t1)'}}>{t.topic}</div>
                       <div style={{fontSize:10,color:DC[t.domain]}}>{t.domain}</div>
@@ -626,7 +628,7 @@
           </header>
 
           <main style={{padding:20}}>
-            {tab==="dashboard" && <Dashboard topics={topics}/>}
+            {tab==="dashboard" && <Dashboard topics={topics} onEdit={setEditTopic}/>}
             {tab==="encyclopedia" && <Encyclopedia topics={topics} onEdit={setEditTopic} onQueue={addToQueue} queueIds={manifest.map(m=>m.id)}/>}
             {tab==="manifest" && <Manifest manifest={manifest} topics={topics} onRemove={removeFromQueue} onMove={moveQueue} onExport={exportManifest} onQueue={addToQueue} onTransition={updateTransition}/>}
           </main>
