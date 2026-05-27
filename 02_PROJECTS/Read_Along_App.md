@@ -1,114 +1,59 @@
----
-tags: [project, whisper, transcription, fastapi, react, scaffolding]
-project: read-along-app
-status: scaffolding
-updated: 2026-05-01
-parent: "[[Project_Directory]]"
----
+# Read-Along App — Knowledge OS Learning Interface
 
-# Read-Along App — Whisper Transcription Tool
-
-Standalone audio transcription tool. User uploads an audio file,
-gets back timestamped transcribed text synced with audio playback.
-
-> **CA Book connection: DENIED.**
-> This project has no dependency on CA Book WAV files or `ca_audio.py`.
-> It is a general-purpose transcription tool, not a CA Book listener.
-
----
-
-## What It Does
-
-Upload endpoint receives audio → Whisper transcribes on local GPU
-(RTX 5070 Ti) → returns timestamped text → frontend displays text
-synced with audio playback.
-
----
+## What It Is
+Full-stack learning app built on top of the read-along project.
+The unified interface for the entire Knowledge OS system.
 
 ## Stack
+- Frontend: React 19 + Vite (localhost:5173)
+- Backend: FastAPI + Uvicorn (localhost:8000)
+- AI: OpenAI Whisper base (local GPU — RTX 5070 Ti)
+- RAG: GitHub API vault search (TititoBuilder/BRAIN_OS)
+- Storage: Google Drive API + audio_staging/ hybrid cache
 
-| Layer | Technology |
-|---|---|
-| Backend | FastAPI (`backend/backend.py`) |
-| Speech-to-text | OpenAI Whisper (local, GPU-accelerated) |
-| Frontend | React/Vite (**not yet scaffolded** as of 2026-04-16) |
-| Venv | `backend/venv/` (PyTorch + Whisper + FastAPI — large) |
+## Four Tabs
+- LISTEN — topic dropdown → Drive download → karaoke playback
+- ASK — voice/text → GitHub RAG → Claude streaming answer
+- NOTES — Q&A log → brain_notes.md
+- KNOWLEDGE OS — embedded encyclopedia tracker (iframe)
 
----
+## Key Files
+- backend/backend.py — FastAPI endpoints
+- backend/transcribe_batch.py — batch Whisper transcription
+- backend/gen_tts_staging.py — markdown → TTS audio pipeline
+- frontend/src/App.tsx — 4-tab shell
+- frontend/src/tabs/ListenTab.tsx — karaoke player
+- frontend/src/tabs/AskTab.tsx — RAG question interface
+- frontend/src/tabs/NotesTab.tsx — Q&A log viewer
 
-## Launch
+## Architecture Pattern
+Federated Hybrid Model:
+- Local machine = heavy compute (Whisper, TTS, Drive sync)
+- Cloud server = lightweight coordinator (when deployed)
+- Pre-process locally → push JSON manifests → deployed app reads instantly
 
-```powershell
-cd C:\Users\titit\Projects\read-along-app\backend
-& .\venv\Scripts\Activate.ps1
-uvicorn backend:app --reload
-```
+## Milestones Built This Session
+1. GitHub RAG — vault search via GitHub API (cloud-ready)
+2. Drive API audio — no subprocess, direct API calls
+3. Karaoke highlighting — word-level timestamps via Whisper
+4. Unified 4-tab interface — both apps in one window
+5. gen_tts_staging.py — reusable markdown-to-audio pipeline
+   Fixed: cp1252 encoding, venv isolation, env config
 
-Frontend: pending Vite scaffold.
+## Launch Commands
+Terminal 1 (backend):
+  cd C:\Users\titit\Projects\read-along-app\backend
+  .\venv\Scripts\Activate.ps1
+  uvicorn backend:app --reload --port 8000
 
----
+Terminal 2 (frontend):
+  cd C:\Users\titit\Projects\read-along-app\frontend
+  npm run dev
 
-## Key Paths
+Then open: http://localhost:5173
 
-| Item | Path |
-|---|---|
-| Project root | `C:\Users\titit\Projects\read-along-app\` |
-| Backend | `backend/backend.py` |
-| Frontend | `frontend/` (empty) |
-| Workspace file | `read-along.code-workspace` |
-
----
-
-## Standardization Status (2026-04-30)
-
-| Item | Status |
-|---|---|
-| `CLAUDE.md` | ✅ Created (auto-generated from filesystem) |
-| `.claude/settings.json` | ✅ Scoped — 14 allow + 3 deny rules |
-| `.gitignore` | ✅ Protects 3GB venv from git |
-| Telegram alerts | ✅ Added to `backend.py` — fires on startup and Whisper model load crash |
-| Git | ✅ Local, branch `main`, commit `3fb91ae` (initial, 2026-04-14) |
-| GitHub | ✅ `TititoBuilder/read-along-app` (private), pushed 2026-04-30 |
-| Model audit | ✅ Zero `claude-opus` references |
-
----
-
-## Venv History
-
-| Date | Event |
-|---|---|
-| 2026-04-14 | Initial venv created at `backend/venv/` |
-| 2026-04-18 | Venv REBUILT — corrupted .exe launchers, shebang paths pointed to old location, all pip commands failing |
-
-**Rebuild state (2026-04-18):**
-- PyTorch 2.11.0+cu128 (from CUDA wheels)
-- CUDA verified: RTX 5070 Ti detected
-- FFmpeg: system-wide install confirmed
-- Whisper: installed
-- FastAPI: **still pending** (needs install before backend can serve)
-
-**Key lesson — venv path corruption:**
-Python venvs hardcode absolute paths into `.exe` launchers and `pyvenv.cfg`.
-Moving or renaming the project folder breaks those paths silently.
-Fix: always delete and recreate the venv at the new location. Never move a venv.
-
----
-
-## Open Items
-
-- Vite frontend scaffold is pending — project is in scaffolding phase
-- FastAPI install pending in rebuilt venv (as of 2026-04-18)
-- Supported upload formats not yet documented (confirm when frontend is built)
-- Highlighting sync mechanism (word-level timestamps vs cursor) not yet implemented
-
----
-
-## Connected to
-
-### Workflows
-- [[RA_Transcription_Flow]]
-
-### Projects / Systems
-- [[Project_Directory]]
-- [[Tools_Registry]]
-- [[Session_Protocol]]
+## Connected To
+- [[Knowledge_OS_Manual]]
+- [[Predator_Node]]
+- [[BDF_Book_System]]
+- [[CA_Book_System]]
