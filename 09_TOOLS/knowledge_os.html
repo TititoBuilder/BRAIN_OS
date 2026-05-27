@@ -274,6 +274,8 @@
     function TopicRow({t, onEdit, onQueue, inQueue}) {
       const sc = t.score>=80?'var(--gn)':t.score>=50?'var(--cy)':t.score>0?'var(--am)':'var(--t3)';
       const [hov, setHov] = useState(false);
+      const [hovEdit, setHovEdit] = useState(false);
+      const [hovQueue, setHovQueue] = useState(false);
       return (
         <div
           style={{display:'grid',gridTemplateColumns:'2fr 1.1fr 90px 80px 72px 100px 58px',gap:0,padding:'9px 16px',borderBottom:'1px solid var(--s3)',background:hov?'rgba(0,212,255,.025)':'transparent',transition:'background .1s'}}
@@ -298,8 +300,12 @@
             </span>
           </div>
           <div style={{display:'flex',alignItems:'center',gap:4}}>
-            <button onClick={()=>onEdit(t)} title="Edit" style={{background:'var(--s2)',border:'1px solid var(--bd)',color:'var(--t2)',width:24,height:24,borderRadius:3,fontSize:13,lineHeight:1,display:'flex',alignItems:'center',justifyContent:'center'}}>✎</button>
-            <button onClick={()=>onQueue(t)} title={inQueue?"In queue":"Add to manifest"} style={{background:inQueue?'rgba(0,255,136,.1)':'var(--s2)',border:`1px solid ${inQueue?'var(--gn)':'var(--bd)'}`,color:inQueue?'var(--gn)':'var(--t2)',width:24,height:24,borderRadius:3,fontSize:13}}>{inQueue?"✓":"+"}</button>
+            <button onClick={()=>onEdit(t)} title="Edit"
+              onMouseEnter={()=>setHovEdit(true)} onMouseLeave={()=>setHovEdit(false)}
+              style={{background:'var(--s2)',border:'1px solid var(--bd)',color:hovEdit?'#ffffff':'#aaaaaa',width:24,height:24,borderRadius:3,fontSize:13,lineHeight:1,display:'flex',alignItems:'center',justifyContent:'center',transition:'color .12s'}}>✎</button>
+            <button onClick={()=>onQueue(t)} title={inQueue?"In queue":"Add to manifest"}
+              onMouseEnter={()=>setHovQueue(true)} onMouseLeave={()=>setHovQueue(false)}
+              style={{background:inQueue?'rgba(0,255,136,.1)':'var(--s2)',border:`1px solid ${inQueue?'var(--gn)':'var(--bd)'}`,color:inQueue?'#00ff88':hovQueue?'#ffffff':'#aaaaaa',width:24,height:24,borderRadius:3,fontSize:13,transition:'color .12s'}}>{inQueue?"✓":"+"}</button>
           </div>
         </div>
       );
@@ -602,20 +608,20 @@
             <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'14px 0 8px'}}>
               <div>
                 <div className="ort" style={{fontSize:17,fontWeight:900,color:'var(--cy)',letterSpacing:4}}>KNOWLEDGE OS</div>
-                <div style={{fontSize:10,color:'var(--t2)',letterSpacing:2,marginTop:2}}>CRISTIAN · COMPUTING ENCYCLOPEDIA · {topics.length} TOPICS LOADED</div>
+                <div style={{fontSize:12,color:'#c8d8f8',letterSpacing:2,marginTop:2}}>CRISTIAN · COMPUTING ENCYCLOPEDIA · {topics.length} TOPICS LOADED</div>
               </div>
               <div style={{display:'flex',gap:20,alignItems:'center'}}>
                 <div style={{textAlign:'right'}}>
-                  <div className="ort" style={{fontSize:18,fontWeight:700,color:'var(--gn)'}}>{topics.filter(t=>t.status==="Mastered").length}</div>
-                  <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2}}>MASTERED</div>
+                  <div className="ort" style={{fontSize:22,fontWeight:700,color:'var(--gn)'}}>{topics.filter(t=>t.status==="Mastered").length}</div>
+                  <div style={{fontSize:10,color:'#c8d8f8',letterSpacing:2}}>MASTERED</div>
                 </div>
                 <div style={{textAlign:'right'}}>
-                  <div className="ort" style={{fontSize:18,fontWeight:700,color:'var(--rd)'}}>{topics.filter(t=>t.priority==="High"&&t.status==="Not Started").length}</div>
-                  <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2}}>HIGH GAPS</div>
+                  <div className="ort" style={{fontSize:22,fontWeight:700,color:'var(--rd)'}}>{topics.filter(t=>t.priority==="High"&&t.status==="Not Started").length}</div>
+                  <div style={{fontSize:10,color:'#c8d8f8',letterSpacing:2}}>HIGH GAPS</div>
                 </div>
                 <div style={{textAlign:'right'}}>
-                  <div className="ort" style={{fontSize:18,fontWeight:700,color:'var(--cy)'}}>{manifest.length}</div>
-                  <div style={{fontSize:9,color:'var(--t2)',letterSpacing:2}}>QUEUED</div>
+                  <div className="ort" style={{fontSize:22,fontWeight:700,color:'var(--cy)'}}>{manifest.length}</div>
+                  <div style={{fontSize:10,color:'#c8d8f8',letterSpacing:2}}>QUEUED</div>
                 </div>
                 {tab==="encyclopedia" && <Btn onClick={()=>setShowAdd(true)} accent>+ New Topic</Btn>}
               </div>
