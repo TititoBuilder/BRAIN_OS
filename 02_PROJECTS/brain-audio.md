@@ -113,3 +113,7 @@ immediately across all venvs without reinstalling.
 - Steganographic fingerprint module live (local-SNR FFT detection)
 - test_audio.wav artifact ignored in tracking
 - Integrated into book-compiler TTS pipeline (auto-fingerprint + post-stitch verification)
+
+
+<!-- auto-updated 2026-05-28 -->
+- **2026-05-28**: Steganographic fingerprint module added (local-SNR FFT detection); auto-fingerprint on every TTS output; integrity check after master WAV stitch; test_audio.wav excluded from tracking

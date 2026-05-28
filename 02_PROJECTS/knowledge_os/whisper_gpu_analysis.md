@@ -38,3 +38,10 @@ This is the Federated Hybrid Model applied to AI inference.
 - **Speed:** 42x realtime on GPU
 - **Fallback:** Triton fallback explained for environments without full Triton support
 - **Source:** BRAIN_OS docs session 2026-05-28
+
+
+<!-- auto-ingested 2026-05-28 -->
+## Whisper GPU Analysis — 2026-05-28
+- Achieved **42x realtime** transcription speed on GPU
+- Triton kernel fallback explained: when Triton-optimized kernels are unavailable (e.g., unsupported CUDA version), Whisper falls back to standard PyTorch CUDA ops — performance degrades but remains functional
+- Logged during Read-Along App architecture session

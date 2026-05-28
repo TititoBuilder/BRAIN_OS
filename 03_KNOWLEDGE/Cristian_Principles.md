@@ -11,3 +11,10 @@ Full content lives at [[Cristian_Principles]] (07_SYSTEM).
 - **Date:** 2026-05-28
 - **Context:** Knowledge OS Phase 1-3 — building a full encyclopedia + stitcher + obsidian sync loop, not just individual scripts
 - **Meaning:** Tools in isolation have limited value; the feedback loop and integration are what create compounding leverage.
+
+
+<!-- auto-ingested 2026-05-28 -->
+## Build the Loop, Not Just the Tool
+- Logged: 2026-05-28
+- A tool solves one problem once. A loop solves a class of problems continuously.
+- Applied in: Knowledge OS (encyclopedia → stitcher → obsidian sync → audio delivery → repeat)

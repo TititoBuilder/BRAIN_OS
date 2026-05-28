@@ -61,3 +61,11 @@ That gap is why RAG exists.
 - **Author framing:** Cristian's explanation — learned by building, not by reading
 - **Ingested:** 2026-05-28
 - **Status:** Knowledge ingested into BRAIN_OS vault
+
+
+<!-- auto-ingested 2026-05-28 -->
+## RAG Chapter — Cristian's Explanation (2026-05-28)
+- Core insight: RAG is best understood by building it, not reading about it
+- Retrieval augments generation by injecting relevant context chunks into the prompt at inference time
+- Learned through direct implementation in Knowledge OS pipeline
+- Source: session archive 2026-05-28

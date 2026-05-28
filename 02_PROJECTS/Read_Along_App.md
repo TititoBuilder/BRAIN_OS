@@ -62,3 +62,12 @@ Then open: http://localhost:5173
 - [[Predator_Node]]
 - [[BDF_Book_System]]
 - [[CA_Book_System]]
+
+
+<!-- auto-ingested 2026-05-28 -->
+## Full Architecture — 4-Tab Unified Interface (2026-05-28)
+- Documented full Read-Along App architecture this session
+- 4-tab unified interface design finalized
+- Whisper GPU transcription: 42x realtime, Triton fallback supported
+- See: `02_PROJECTS/graphs/read-along-app.context.md` for context graph
+- See: `02_AGENTS/RA_Whisper_Agent.md` and `04_WORKFLOWS/RA_Transcription_Flow.md` for agent/flow details

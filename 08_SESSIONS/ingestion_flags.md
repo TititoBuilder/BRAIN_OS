@@ -1,68 +1,52 @@
 # Ingestion Flags — 2026-05-28_0740_bdf_ca_brain_os.md
-Generated: 2026-05-28 09:59
-Items: 4
+Generated: 2026-05-28 10:07
+Items: 3
 
 ---
 
-## Flag 1 of 4 — MULTI_NODE [HIGH]
+## Flag 1 of 3 — MULTI_NODE [HIGH]
 
-**Description:** Knowledge OS Phase 1-3 introduces an encyclopedia + stitcher + Obsidian sync pipeline, a 28-folder Drive structure, and drive_index.json wired to 25 audio-linked topics. This affects at minimum: obsidian_workflows.md (new sync method), OBS_Nav.md (navigation may need new KnowledgeOS section), and all book-compiler nodes that now auto-fingerprint via brain-audio. Full blast radius unclear without source file diffs.
+**Description:** Knowledge OS Phase 1-3 feature (encyclopedia, stitcher, obsidian sync) touches multiple nodes simultaneously: Knowledge OS internal nodes, soccer-content-generator context graph (brain sync), Read-Along App context graph, Memory Index (new audio-linked topics), and Dashboard Queue. The drive_index.json wiring (25 topics audio-linked, 28 Drive folders) is a structural change affecting how the entire knowledge system delivers content.
 
-**Nodes:** 02_PROJECTS/knowledge_os/obsidian_workflows.md, 00_NAV/OBS_Nav.md, 02_PROJECTS/Book_Compiler_Shared.md, 02_PROJECTS/CA_Book_System.md, 02_PROJECTS/MCP_Book_System.md
+**Nodes:** 02_PROJECTS/knowledge_os/brain_notes.md, 02_PROJECTS/OBS_MCP_Server.md, 02_PROJECTS/graphs/soccer-content-generator.context.md, 02_PROJECTS/graphs/read-along-app.context.md, 05_MEMORY/Memory_Index.md, 00_DASHBOARD/Queue.md
 
-**Old:** Not available — source file diffs not provided in session archive
+**Old:** No prior Knowledge OS Phase 1-3 record in vault
 
-**New:** Knowledge OS Phase 1-3: encyclopedia generation, audio stitcher, Obsidian sync. Drive: 28 folders, domain isolation. drive_index.json: 25 topics audio-linked.
+**New:** Knowledge OS Phase 1-3 complete: encyclopedia builder (28 Drive folders, domain isolation), audio stitcher, obsidian sync. drive_index.json wired — 25 topics audio-linked. User manual documented.
 
-**Suggested resolution:** Review obsidian_workflows.md and OBS_Nav.md to add Knowledge OS sync section. Audit all book-compiler project nodes (Book_Compiler_Shared, CA_Book_System, MCP_Book_System) to confirm fingerprint integration is documented consistently. Assign human review before bulk update.
+**Suggested resolution:** Review Knowledge OS Phase 1-3 scope fully before propagating. Update Memory_Index.md to reflect 25 new audio-linked topics. Update Queue.md to clear or advance Knowledge OS tasks. Confirm drive_index.json schema is stable before marking nodes as dependent on it. Consider a dedicated Knowledge_OS_Phase1-3.md project node to anchor cross-links.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 2 of 4 — ARCHITECTURE [HIGH]
+## Flag 2 of 3 — ARCHITECTURE [HIGH]
 
-**Description:** Steganographic fingerprinting is now auto-applied to every TTS output and verified post-stitch. This is an architectural addition to the audio pipeline — all TTS outputs are now marked at generation time. This changes assumptions in any node that describes audio output format, storage, or integrity guarantees.
+**Description:** Auto-fingerprinting every TTS output via brain-audio is an architectural change to the book-compiler and TTS pipeline. Every audio file produced by CA_Kokoro_TTS will now be fingerprinted at generation time, and integrity is verified post-stitch. This changes the data contract for any downstream consumer of TTS audio (Read-Along App, CA Book System, etc.) and introduces a new mandatory processing step.
 
-**Nodes:** 02_PROJECTS/brain-audio.md, 02_PROJECTS/brain-audio/fingerprinting.md, 02_PROJECTS/Book_Compiler_Shared.md, 02_PROJECTS/CA_Book_System.md
+**Nodes:** 02_PROJECTS/brain-audio.md, 02_PROJECTS/brain-audio/fingerprinting.md, 02_PROJECTS/Book_Compiler_Shared.md, 02_AGENTS/CA_Kokoro_TTS.md
 
-**Old:** TTS outputs generated and stitched without embedded fingerprints
+**Old:** TTS outputs produced as plain WAV files; no fingerprinting step documented
 
-**New:** Every TTS output is auto-fingerprinted via brain-audio (local-SNR FFT steganography) at generation time; master WAV stitch verified for fingerprint integrity post-assembly.
+**New:** TTS outputs auto-fingerprinted via brain-audio steganographic module (local-SNR FFT) at generation time. Master WAV stitch followed by integrity verification. All downstream consumers receive fingerprinted audio.
 
-**Suggested resolution:** Update audio pipeline design docs (02_PROJECTS/knowledge_os/audio_pipeline_design.md, audio_formats.md) to note fingerprint embedding as a standard step. Confirm CA_Book_System and Book_Compiler_Shared explicitly document the fingerprint dependency on brain-audio module.
-
-**Decision:** [ ] Approve  [ ] Modify  [ ] Skip
-
----
-
-## Flag 3 of 4 — CROSS_DOMAIN [MEDIUM]
-
-**Description:** The steganographic fingerprint module (brain-audio domain) now intersects with Knowledge OS audio pipeline knowledge nodes. The local-SNR FFT technique is a cross-domain concept touching audio engineering, security/integrity, and the TTS pipeline. These knowledge nodes may need to reference the fingerprinting implementation.
-
-**Nodes:** 02_PROJECTS/knowledge_os/audio_pipeline_design.md, 02_PROJECTS/knowledge_os/audio_formats.md, 02_PROJECTS/knowledge_os/audio_manipulation.md, 02_PROJECTS/brain-audio/fingerprinting.md
-
-**Old:** Knowledge OS audio nodes describe pipeline and formats without integrity/fingerprinting layer
-
-**New:** Audio pipeline now includes steganographic fingerprinting step; knowledge nodes should cross-reference brain-audio/fingerprinting.md
-
-**Suggested resolution:** Add a backlink from audio_pipeline_design.md and audio_manipulation.md to fingerprinting.md. Consider adding a brief entry in audio_formats.md about fingerprint-bearing WAV files as a new format concern.
+**Suggested resolution:** Confirm the fingerprint module API is stable (embed/verify interface). Update Book_Compiler_Shared.md to document the new mandatory fingerprint step. Update CA_Kokoro_TTS.md to note all outputs are now fingerprinted. Assess whether Read_Along_App.md and CA_Book_System.md need to document fingerprint-awareness.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 4 of 4 — ARCHIVAL [LOW]
+## Flag 3 of 3 — CROSS_DOMAIN [MEDIUM]
 
-**Description:** Admin key file was removed from tracking this session. If CLAUDE.md or any API node previously referenced or relied on that key file path, those references are now stale and should be audited or archived.
+**Description:** soccer-content-generator session close + brain sync (2026-05-27) implies state was captured and synced for that project, but the session archive does not include the specific changes made. The context graph node may be stale or updated externally. BDF Operations Status and Agent Pipeline may need to reflect the session close state.
 
-**Nodes:** 03_APIS/CLAUDE.md
+**Nodes:** 02_PROJECTS/graphs/soccer-content-generator.context.md, 02_PROJECTS/BDF_Operations_Status.md, 02_PROJECTS/BDF_Agent_Pipeline.md
 
-**Old:** Admin key file tracked in repository
+**Old:** Unknown — prior state of soccer-content-generator context graph not provided
 
-**New:** Admin key file removed from tracking (2026-05-28); should be managed via secrets_management workflow only
+**New:** Session closed 2026-05-27; brain sync committed. Context graph updated.
 
-**Suggested resolution:** Review CLAUDE.md and any secrets_management / env_security knowledge nodes to confirm no stale references to the removed admin key file. If the file was a local secret, confirm .gitignore entry is present and document the removal in env_security.md.
+**Suggested resolution:** Pull the actual 2026-05-27 soccer-content-generator brain sync diff and ingest it separately. Verify BDF_Operations_Status.md reflects current pipeline state. If no substantive changes were made beyond the session close commit, this can be marked low-priority.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 

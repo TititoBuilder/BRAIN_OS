@@ -53,3 +53,12 @@ brain-audio pipeline — surviving re-saves and format conversion.
 - **Integration:** Auto-fingerprints every TTS output via brain-audio
 - **Verification:** Fingerprint integrity checked after master WAV stitch in book-compiler
 - **Artifact:** test_audio.wav excluded via .gitignore
+
+
+<!-- auto-ingested 2026-05-28 -->
+## Steganographic Fingerprint Module — 2026-05-28
+- Implemented steganographic fingerprint embedding using **local-SNR FFT detection**
+- Module integrated into brain-audio package
+- `test_audio.wav` artifact added to .gitignore
+- Auto-fingerprinting wired into every TTS output via book-compiler pipeline
+- Fingerprint integrity verified after master WAV stitch step
