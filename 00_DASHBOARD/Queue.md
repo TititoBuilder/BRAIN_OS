@@ -20,6 +20,15 @@ knowledge_os_priority: Medium
 - [ ] CA Book Phase 3: Session_Resume pipeline (needs actual files first)
 
 ## Completed
+<!-- updated 2026-05-28: Multiple deliverables completed this session; queue should reflect completions -->
+## Completed — 2026-05-28
+- Knowledge OS Phase 1-3 (encyclopedia, stitcher, obsidian sync) ✓
+- drive_index.json wired into Knowledge OS — 25 topics audio-linked ✓
+- Knowledge OS Drive structure — 28 folders, domain isolation ✓
+- Read-Along App full architecture documented ✓
+- Dashboard header visibility + button hover fixes ✓
+- Focus Now cards clickable (edit modal) ✓
+- BRAIN_OS admin key file removed from tracking ✓
 <!-- updated 2026-05-28: Dashboard queue should reflect session completions -->
 ## Completed — 2026-05-28
 - [x] brain-audio steganographic fingerprint module

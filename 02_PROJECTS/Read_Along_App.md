@@ -27,6 +27,11 @@ The unified interface for the entire Knowledge OS system.
 - frontend/src/tabs/NotesTab.tsx — Q&A log viewer
 
 ## Architecture
+<!-- updated 2026-05-28: Read-Along App full architecture documented this session; update project file to reflect current state -->
+## Architecture — Full (4-Tab Unified Interface)
+- Documented 2026-05-28
+- Full architecture covering 4-tab unified interface
+- Details captured in session docs; see also 02_PROJECTS/graphs/read-along-app.context.md
 <!-- updated 2026-05-28: Full Read-Along App architecture documented this session; project node needs update -->
 ## Full Architecture — 2026-05-28
 - **Interface:** 4-tab unified interface

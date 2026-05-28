@@ -1,52 +1,68 @@
 # Ingestion Flags — 2026-05-28_1417_bdf_ca_brain_os.md
-Generated: 2026-05-28 14:17
-Items: 3
+Generated: 2026-05-28 14:18
+Items: 4
 
 ---
 
-## Flag 1 of 3 — MULTI_NODE [HIGH]
+## Flag 1 of 4 — MULTI_NODE [HIGH]
 
-**Description:** Knowledge OS Phase 1-3 completion affects 12+ nodes simultaneously: encyclopedia generation, stitcher pipeline, Obsidian sync, drive_index.json with 25 audio-linked topics, 28-folder Drive structure with domain isolation, and drive_index.json wired into Knowledge OS. This is a major system completion touching agents, workflows, memory, and project files.
+**Description:** Knowledge OS Phase 1-3 build (encyclopedia, stitcher, obsidian sync) with drive_index.json wiring 25 topics audio-linked and 28-folder Drive structure affects at minimum 9 knowledge_os topic nodes, the workflow files, domain files, and memory index simultaneously. The full scope of which nodes were updated across the 3 prior ingestion cycles (9+9+12 nodes) is not specified in the session archive.
 
-**Nodes:** 02_PROJECTS/knowledge_os/agent_orchestration.md, 02_PROJECTS/knowledge_os/audio_pipeline_design.md, 02_PROJECTS/knowledge_os/tts_systems.md, 02_PROJECTS/knowledge_os/obsidian_workflows.md, 02_PROJECTS/knowledge_os/pkm_fundamentals.md, 02_PROJECTS/knowledge_os/brain_notes.md, 02_PROJECTS/OBS_MCP_Server.md, 02_PROJECTS/Read_Along_App.md, 02_PROJECTS/brain-audio.md, 04_WORKFLOWS/BDF_Knowledge_Build_Flow.md, 05_MEMORY/LanceDB_Vector_Store.md, 00_DASHBOARD/Queue.md
+**Nodes:** 02_PROJECTS/knowledge_os/agent_orchestration.md, 02_PROJECTS/knowledge_os/audio_pipeline_design.md, 02_PROJECTS/knowledge_os/llm_fundamentals.md, 02_PROJECTS/knowledge_os/rag_pipelines.md, 02_PROJECTS/knowledge_os/vector_databases.md, 05_MEMORY/LanceDB_Vector_Store.md, 04_WORKFLOWS/BDF_Knowledge_Build_Flow.md, 01_DOMAINS/AI_Engineering.md, 05_MEMORY/Memory_Index.md
 
-**Old:** Knowledge OS — in progress / partial
+**Old:** Unknown — prior ingestion cycles not detailed in this archive
 
-**New:** Knowledge OS Phase 1-3 complete: encyclopedia builder, WAV stitcher, Obsidian sync active; 28-folder Drive structure; 25 topics audio-linked via drive_index.json
+**New:** Knowledge OS Phase 1-3 complete: encyclopedia (topic files), stitcher (audio assembly), obsidian sync active. 25 topics audio-linked via drive_index.json. Drive structure: 28 folders with domain isolation.
 
-**Suggested resolution:** Conduct a dedicated Knowledge OS ingestion pass. Map each Phase (1=encyclopedia, 2=stitcher, 3=obsidian sync) to its affected nodes and update them in a coordinated batch. Update BDF_Knowledge_Build_Flow.md workflow, LanceDB_Vector_Store.md for audio linkages, and Queue.md to mark KnowledgeOS as shipped.
+**Suggested resolution:** Review all three prior ingestion cycle outputs to identify exact nodes touched. Confirm Knowledge OS Phase 1-3 architecture is reflected consistently across knowledge_os topic files, BDF_Knowledge_Build_Flow, AI_Engineering domain, and Memory_Index. Consider creating a dedicated 02_PROJECTS/knowledge_os/knowledge_os_overview.md to serve as the canonical reference.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 2 of 3 — MULTI_NODE [MEDIUM]
+## Flag 2 of 4 — ARCHITECTURE [HIGH]
 
-**Description:** Two separate BRAIN_OS ingestion runs occurred this session (9 nodes + 12 nodes = 21 total node touches from prior session). The results of those ingestions are not reflected in this archive and may have updated nodes that this ingestion also targets, creating potential double-write risk.
+**Description:** Read-Along App 'full architecture, 4-tab unified interface' documented this session. This is a significant architecture definition event that affects the nav file, agent definition, transcription workflow, and context graph simultaneously. Unclear if this replaces a prior partial architecture or is net-new.
 
-**Nodes:** 02_AGENTS/BDF_Memory_Agent.md, 05_MEMORY/Memory_Index.md, 05_MEMORY/Daily_Log_2026-04-28.md, 00_DASHBOARD/Queue.md
+**Nodes:** 02_PROJECTS/Read_Along_App.md, 02_PROJECTS/graphs/read-along-app.context.md, 00_NAV/ReadAlong_Nav.md, 02_AGENTS/RA_Whisper_Agent.md, 04_WORKFLOWS/RA_Transcription_Flow.md
 
-**Old:** Unknown — prior ingestion outputs not included in this archive
+**Old:** Unknown — prior Read-Along App architecture state not provided in session
 
-**New:** To be determined after reviewing 2026-05-28_0740 ingestion results
+**New:** Full architecture: 4-tab unified interface. Details documented 2026-05-28.
 
-**Suggested resolution:** Review the 0740 ingestion outputs before applying this session's updates. Confirm which nodes were already updated by the 9-node and 12-node runs to avoid overwriting or duplicating content.
+**Suggested resolution:** Confirm whether the 4-tab unified interface replaces any prior UI architecture in Read_Along_App.md. Update ReadAlong_Nav.md to reference the canonical architecture doc. Ensure RA_Whisper_Agent.md and RA_Transcription_Flow.md are consistent with the new interface structure.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 3 of 3 — ARCHIVAL [LOW]
+## Flag 3 of 4 — MULTI_NODE [MEDIUM]
 
-**Description:** Admin key file was removed from git tracking this session. This is a security-relevant action that should be logged in the archive README and potentially in a security audit note.
+**Description:** book-compiler fingerprint integrity verification and auto-fingerprint on every TTS output via brain-audio affects the book compiler project, the brain-audio module, shared book compiler, CA book system, and multiple audio knowledge_os nodes. The 2026-05-25 ingestion re-confirmed this session, suggesting these nodes may have been partially updated already.
 
-**Nodes:** 02_PROJECTS/_archive/README.md
+**Nodes:** 02_PROJECTS/brain-audio.md, 02_PROJECTS/brain-audio/fingerprinting.md, 02_PROJECTS/Book_Compiler_Shared.md, 02_PROJECTS/CA_Book_System.md, 02_PROJECTS/knowledge_os/audio_pipeline_design.md, 02_PROJECTS/knowledge_os/audio_formats.md, 02_PROJECTS/knowledge_os/audio_manipulation.md
 
-**Old:** No existing entry for key file removal
+**Old:** Partially ingested 2026-05-25 — exact prior state unknown
 
-**New:** 2026-05-28: admin key file removed from git tracking; .gitignore updated; audio_staging binaries also excluded
+**New:** Fingerprint integrity check after master WAV stitch; auto-fingerprint every TTS output via brain-audio module.
 
-**Suggested resolution:** Add a dated entry to 02_PROJECTS/_archive/README.md noting the admin key file removal from tracking on 2026-05-28. Confirm .gitignore was updated and no secrets were exposed in git history.
+**Suggested resolution:** Verify Book_Compiler_Shared.md and CA_Book_System.md already reflect the fingerprinting integration from the 2026-05-25 ingestion. If so, mark as confirmed-current. Update audio_pipeline_design.md to include fingerprint verification as a pipeline step.
+
+**Decision:** [ ] Approve  [ ] Modify  [ ] Skip
+
+---
+
+## Flag 4 of 4 — ARCHIVAL [MEDIUM]
+
+**Description:** BRAIN_OS admin key file removed from git tracking this session. This is a security-relevant change. The CLAUDE.md (API config) and SYSTEM_Rules.md (which may reference key management) should be audited to confirm no references to the removed admin key file remain, and that the removal is documented per security policy.
+
+**Nodes:** 03_APIS/CLAUDE.md, 00_NAV/SYSTEM_Rules.md
+
+**Old:** Admin key file previously tracked in git
+
+**New:** Admin key file removed from git tracking 2026-05-28. Should be in .gitignore.
+
+**Suggested resolution:** Audit CLAUDE.md and SYSTEM_Rules.md for references to the removed admin key file. Add a note to 02_PROJECTS/knowledge_os/secrets_management.md documenting that admin key was removed from tracking on 2026-05-28. Confirm .gitignore updated.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 

@@ -70,3 +70,10 @@ brain-audio pipeline — surviving re-saves and format conversion.
 - **feat:** Auto-fingerprint every TTS output via brain-audio module
 - Both features merged into book-compiler this session
 - Fingerprint check runs post-stitch to catch corruption before delivery
+
+
+<!-- auto-updated 2026-05-28 -->
+## Integration Status — Updated 2026-05-28
+- book-compiler now verifies fingerprint integrity after master WAV stitch
+- Auto-fingerprint applied to every TTS output via brain-audio module
+- Ingested from 2026-05-25 session; confirmed active as of 2026-05-28

@@ -244,3 +244,9 @@ That's the pattern. Build loops, not islands.
 ## Build the Loop, Not Just the Tool
 *Added: 2026-05-28*
 Focus on creating systems that feed themselves — pipelines that produce inputs for their next run. A tool solves one problem; a loop compounds value over time. When building, ask: does this create a feedback cycle or a dead end?
+
+
+<!-- auto-ingested 2026-05-28 -->
+## Build the Loop, Not Just the Tool
+- Added: 2026-05-28
+- Principle: When building systems, prioritize creating feedback loops and self-sustaining cycles over one-off tools. The loop compounds value; the tool only delivers it once.

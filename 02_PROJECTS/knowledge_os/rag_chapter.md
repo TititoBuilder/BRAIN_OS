@@ -77,3 +77,10 @@ That gap is why RAG exists.
 - Covers retrieval, chunking, embedding, vector lookup, and generation stages
 - Written from first-person builder perspective
 - Status: Documented 2026-05-28
+
+
+<!-- auto-updated 2026-05-28 -->
+## RAG Chapter — Updated 2026-05-28
+- Approach: learned by building
+- Cristian's explanation integrated
+- Covers practical RAG pipeline construction from first principles

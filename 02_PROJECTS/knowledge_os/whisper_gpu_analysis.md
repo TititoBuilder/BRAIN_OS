@@ -52,3 +52,10 @@ This is the Federated Hybrid Model applied to AI inference.
 - **Performance:** 42x realtime transcription speed on GPU
 - **Triton Fallback:** Triton kernel compilation may fail on some GPU configurations; fallback path explained and documented
 - **Status:** Documented 2026-05-28
+
+
+<!-- auto-updated 2026-05-28 -->
+## Key Findings — Updated 2026-05-28
+- 42x realtime processing speed confirmed
+- Triton fallback behavior explained and documented
+- Source: session analysis 2026-05-28
