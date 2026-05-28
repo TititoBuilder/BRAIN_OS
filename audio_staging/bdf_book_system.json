@@ -1,0 +1,3782 @@
+{
+  "machine_key": "bdf_book_system",
+  "language": "en",
+  "duration": 321.56,
+  "text": "Section BDF Book System. Tags, Book, Project, Book Project. BDF Book Status, Active Created. 2020-60505 updated. 2020-60520 domain, Creative Systems Section, BDF Book System. What this is? Automated Knowledge Compilation Pipeline for Breaking Down Football. Session logs are compiled into structured chapters by Claude Opus, stitched into a masterbook, converted to audio via Kakoro TTS, and synced to Google Drive. Why it exists? Preserve and distribute BDF technical and creative knowledge built across sessions. Section, Pipeline. Code block begins session log, incoming backslash right arrow BDF Book Run. Claude Opus compiles chapter right arrow chapter. TXT saved right arrow stitch masterbook. Right arrow BDF masterbook, TXT right arrow run TTS. Right arrow Kakoro audio right arrow synced to audio to drive. Right arrow Google Drive Code block ends command, updated 2020-60520, canonical moved to shared plugin. Code block begins section, preferred. Use alias runs via CA-VENV automatically. BDF Book Section, direct. C, backslash knowledge backslash CA backslash VENV backslash scripts backslash Python. EXCC, backslash dev backslash shared backslash book compiler backslash book compiler. Pipbook BDF code block ends, note warning book compiler. Pi was deleted from C, backslash dev backslash projects backslash soccer content generator backslash on 2020-60520. Note canonical, C, backslash dev backslash shared backslash book compiler backslash book compiler, PINOTE. VENV, always use C, backslash knowledge backslash CA backslash VENV, never BDF dev VENV for book compilation. Note C book compiler shared for full plugin architecture. Section, file locations, section architecture, section canonical source chapters. Chapter TXT files in chapters backslash are the source of truth. The masterbook is a derived artifact deleted and regenerated on every run. Never edit the masterbook directly. Section, stitch masterbook. Loop CH01 write arrow CH27 reads each TXT file concatenates with dividers writes BDF masterbook TXT. Fires automatically at end of every run. Section chapter format. Files TXT count. 27 files on disk C inventory duplicates exist. Encoding, UTF-8 size, 385,886 characters total section post processing. One, run TTS. Cacoro TTS generates audio from masterbook 2. Sync audio to drive uploads audio to Google Drive section, chapter inventory. Warning duplicate chapter numbers. CH11 CH16 each have two files 27 files till the 21 unique chapters. Renumbering needed before next compile. Section, drive pipeline improvements 2026 0520. The sync audio to drive slash upload functions in soccer content generator were hardened. Section TTS slash hugging face off. TTS local. Pinew calls hugging face hub log in token equals HF token at startup. HF token must be set in end and load do 10 is called at module import. Without this, model downloads fail silently. Section, drive phase organization 2026 0524. Chapter audio files on drive are now organized into phase subfolders under BDF chapters slash impact on drive sync. Pi, list folder now recurses into subfolders, MIME type equals equals application slash VND, Google apps, folder write arrow recurs. Before this fix, the manifest scanner missed all files inside phase folders. Two new manifest sections added. BDF anchors track CH anchor MP3 and BDF combined track CH combined MP3 independent from chapters. Drive scan summary now reports BDF anchors and BDF combined count separately. Chapter combiner pi result 31 CH asterisk combined MP3 files generated in converted combined and uploaded to drive section known issues. CH 11 CH 16 duplicate numbering six pairs needs sequential renaming G drive credentials shared with CA book compiler by design both point to BDF project dire resolved 2026-05-20. None type crash in Doc X converter when peristyle is none guard added section connected nodes. BDF avatar pipeline avatar generation system documented in this book BDF agent pipeline telegram plus a sync architecture BDF canvas project overview CA book system sister book identical architecture creative systems parent domain.",
+  "words": [
+    {
+      "word": "Section",
+      "start": 0.0,
+      "end": 0.62,
+      "probability": 0.662
+    },
+    {
+      "word": "BDF",
+      "start": 0.62,
+      "end": 1.34,
+      "probability": 0.898
+    },
+    {
+      "word": "Book",
+      "start": 1.34,
+      "end": 1.52,
+      "probability": 0.75
+    },
+    {
+      "word": "System.",
+      "start": 1.52,
+      "end": 1.9,
+      "probability": 0.957
+    },
+    {
+      "word": "Tags,",
+      "start": 2.4,
+      "end": 3.02,
+      "probability": 0.608
+    },
+    {
+      "word": "Book,",
+      "start": 3.16,
+      "end": 3.3,
+      "probability": 0.659
+    },
+    {
+      "word": "Project,",
+      "start": 3.62,
+      "end": 3.88,
+      "probability": 0.894
+    },
+    {
+      "word": "Book",
+      "start": 4.1,
+      "end": 4.2,
+      "probability": 0.977
+    },
+    {
+      "word": "Project.",
+      "start": 4.2,
+      "end": 4.6,
+      "probability": 0.683
+    },
+    {
+      "word": "BDF",
+      "start": 5.24,
+      "end": 5.68,
+      "probability": 0.978
+    },
+    {
+      "word": "Book",
+      "start": 5.68,
+      "end": 5.88,
+      "probability": 0.932
+    },
+    {
+      "word": "Status,",
+      "start": 5.88,
+      "end": 6.2,
+      "probability": 0.89
+    },
+    {
+      "word": "Active",
+      "start": 6.7,
+      "end": 6.98,
+      "probability": 0.869
+    },
+    {
+      "word": "Created.",
+      "start": 6.98,
+      "end": 7.64,
+      "probability": 0.913
+    },
+    {
+      "word": "2020",
+      "start": 8.04,
+      "end": 8.3,
+      "probability": 0.654
+    },
+    {
+      "word": "-60505",
+      "start": 8.3,
+      "end": 10.16,
+      "probability": 0.789
+    },
+    {
+      "word": "updated.",
+      "start": 10.16,
+      "end": 10.62,
+      "probability": 0.72
+    },
+    {
+      "word": "2020",
+      "start": 11.2,
+      "end": 11.48,
+      "probability": 0.89
+    },
+    {
+      "word": "-60520",
+      "start": 11.48,
+      "end": 13.08,
+      "probability": 0.805
+    },
+    {
+      "word": "domain,",
+      "start": 13.08,
+      "end": 13.44,
+      "probability": 0.705
+    },
+    {
+      "word": "Creative",
+      "start": 14.0,
+      "end": 14.28,
+      "probability": 0.926
+    },
+    {
+      "word": "Systems",
+      "start": 14.28,
+      "end": 14.66,
+      "probability": 0.757
+    },
+    {
+      "word": "Section,",
+      "start": 14.66,
+      "end": 15.1,
+      "probability": 0.805
+    },
+    {
+      "word": "BDF",
+      "start": 15.54,
+      "end": 16.0,
+      "probability": 0.996
+    },
+    {
+      "word": "Book",
+      "start": 16.0,
+      "end": 16.2,
+      "probability": 0.987
+    },
+    {
+      "word": "System.",
+      "start": 16.2,
+      "end": 16.56,
+      "probability": 0.988
+    },
+    {
+      "word": "What",
+      "start": 16.92,
+      "end": 17.36,
+      "probability": 0.982
+    },
+    {
+      "word": "this",
+      "start": 17.36,
+      "end": 17.56,
+      "probability": 0.959
+    },
+    {
+      "word": "is?",
+      "start": 17.56,
+      "end": 17.9,
+      "probability": 0.997
+    },
+    {
+      "word": "Automated",
+      "start": 18.32,
+      "end": 18.76,
+      "probability": 0.981
+    },
+    {
+      "word": "Knowledge",
+      "start": 18.76,
+      "end": 19.16,
+      "probability": 0.564
+    },
+    {
+      "word": "Compilation",
+      "start": 19.16,
+      "end": 19.92,
+      "probability": 0.83
+    },
+    {
+      "word": "Pipeline",
+      "start": 19.92,
+      "end": 20.48,
+      "probability": 0.962
+    },
+    {
+      "word": "for",
+      "start": 20.48,
+      "end": 20.7,
+      "probability": 0.988
+    },
+    {
+      "word": "Breaking",
+      "start": 20.7,
+      "end": 20.96,
+      "probability": 0.848
+    },
+    {
+      "word": "Down",
+      "start": 20.96,
+      "end": 21.26,
+      "probability": 0.936
+    },
+    {
+      "word": "Football.",
+      "start": 21.26,
+      "end": 21.62,
+      "probability": 0.688
+    },
+    {
+      "word": "Session",
+      "start": 22.5,
+      "end": 23.26,
+      "probability": 0.908
+    },
+    {
+      "word": "logs",
+      "start": 23.26,
+      "end": 23.52,
+      "probability": 0.823
+    },
+    {
+      "word": "are",
+      "start": 23.52,
+      "end": 23.78,
+      "probability": 0.999
+    },
+    {
+      "word": "compiled",
+      "start": 23.78,
+      "end": 24.16,
+      "probability": 0.997
+    },
+    {
+      "word": "into",
+      "start": 24.16,
+      "end": 24.42,
+      "probability": 0.996
+    },
+    {
+      "word": "structured",
+      "start": 24.42,
+      "end": 24.84,
+      "probability": 0.966
+    },
+    {
+      "word": "chapters",
+      "start": 24.84,
+      "end": 25.32,
+      "probability": 0.994
+    },
+    {
+      "word": "by",
+      "start": 25.32,
+      "end": 25.62,
+      "probability": 0.996
+    },
+    {
+      "word": "Claude",
+      "start": 25.62,
+      "end": 25.96,
+      "probability": 0.782
+    },
+    {
+      "word": "Opus,",
+      "start": 25.96,
+      "end": 26.36,
+      "probability": 0.884
+    },
+    {
+      "word": "stitched",
+      "start": 26.82,
+      "end": 27.0,
+      "probability": 0.989
+    },
+    {
+      "word": "into",
+      "start": 27.0,
+      "end": 27.24,
+      "probability": 0.986
+    },
+    {
+      "word": "a",
+      "start": 27.24,
+      "end": 27.38,
+      "probability": 0.996
+    },
+    {
+      "word": "masterbook,",
+      "start": 27.38,
+      "end": 28.1,
+      "probability": 0.795
+    },
+    {
+      "word": "converted",
+      "start": 28.1,
+      "end": 28.74,
+      "probability": 0.145
+    },
+    {
+      "word": "to",
+      "start": 28.74,
+      "end": 28.98,
+      "probability": 0.997
+    },
+    {
+      "word": "audio",
+      "start": 28.98,
+      "end": 29.3,
+      "probability": 0.662
+    },
+    {
+      "word": "via",
+      "start": 29.3,
+      "end": 29.62,
+      "probability": 0.995
+    },
+    {
+      "word": "Kakoro",
+      "start": 29.62,
+      "end": 30.1,
+      "probability": 0.576
+    },
+    {
+      "word": "TTS,",
+      "start": 30.1,
+      "end": 30.74,
+      "probability": 0.819
+    },
+    {
+      "word": "and",
+      "start": 31.32,
+      "end": 31.4,
+      "probability": 0.993
+    },
+    {
+      "word": "synced",
+      "start": 31.4,
+      "end": 31.8,
+      "probability": 0.941
+    },
+    {
+      "word": "to",
+      "start": 31.8,
+      "end": 31.96,
+      "probability": 0.997
+    },
+    {
+      "word": "Google",
+      "start": 31.96,
+      "end": 32.22,
+      "probability": 0.981
+    },
+    {
+      "word": "Drive.",
+      "start": 32.22,
+      "end": 32.66,
+      "probability": 0.981
+    },
+    {
+      "word": "Why",
+      "start": 33.2,
+      "end": 33.52,
+      "probability": 0.968
+    },
+    {
+      "word": "it",
+      "start": 33.52,
+      "end": 33.68,
+      "probability": 0.919
+    },
+    {
+      "word": "exists?",
+      "start": 33.68,
+      "end": 34.02,
+      "probability": 0.996
+    },
+    {
+      "word": "Preserve",
+      "start": 34.62,
+      "end": 34.98,
+      "probability": 0.979
+    },
+    {
+      "word": "and",
+      "start": 34.98,
+      "end": 35.24,
+      "probability": 0.993
+    },
+    {
+      "word": "distribute",
+      "start": 35.24,
+      "end": 35.74,
+      "probability": 0.988
+    },
+    {
+      "word": "BDF",
+      "start": 35.74,
+      "end": 36.34,
+      "probability": 0.897
+    },
+    {
+      "word": "technical",
+      "start": 36.34,
+      "end": 36.74,
+      "probability": 0.937
+    },
+    {
+      "word": "and",
+      "start": 36.74,
+      "end": 37.06,
+      "probability": 0.983
+    },
+    {
+      "word": "creative",
+      "start": 37.06,
+      "end": 37.4,
+      "probability": 0.983
+    },
+    {
+      "word": "knowledge",
+      "start": 37.4,
+      "end": 37.84,
+      "probability": 0.998
+    },
+    {
+      "word": "built",
+      "start": 37.84,
+      "end": 38.24,
+      "probability": 0.963
+    },
+    {
+      "word": "across",
+      "start": 38.24,
+      "end": 38.5,
+      "probability": 0.974
+    },
+    {
+      "word": "sessions.",
+      "start": 38.5,
+      "end": 39.0,
+      "probability": 0.965
+    },
+    {
+      "word": "Section,",
+      "start": 39.74,
+      "end": 40.1,
+      "probability": 0.818
+    },
+    {
+      "word": "Pipeline.",
+      "start": 40.56,
+      "end": 41.02,
+      "probability": 0.623
+    },
+    {
+      "word": "Code",
+      "start": 41.98,
+      "end": 42.42,
+      "probability": 0.97
+    },
+    {
+      "word": "block",
+      "start": 42.42,
+      "end": 42.68,
+      "probability": 0.322
+    },
+    {
+      "word": "begins",
+      "start": 42.68,
+      "end": 43.02,
+      "probability": 0.984
+    },
+    {
+      "word": "session",
+      "start": 43.02,
+      "end": 43.46,
+      "probability": 0.933
+    },
+    {
+      "word": "log,",
+      "start": 43.46,
+      "end": 43.78,
+      "probability": 0.98
+    },
+    {
+      "word": "incoming",
+      "start": 44.34,
+      "end": 44.56,
+      "probability": 0.942
+    },
+    {
+      "word": "backslash",
+      "start": 44.56,
+      "end": 45.36,
+      "probability": 0.781
+    },
+    {
+      "word": "right",
+      "start": 45.36,
+      "end": 45.54,
+      "probability": 0.297
+    },
+    {
+      "word": "arrow",
+      "start": 45.54,
+      "end": 45.86,
+      "probability": 0.939
+    },
+    {
+      "word": "BDF",
+      "start": 45.86,
+      "end": 46.48,
+      "probability": 0.973
+    },
+    {
+      "word": "Book",
+      "start": 46.48,
+      "end": 46.72,
+      "probability": 0.118
+    },
+    {
+      "word": "Run.",
+      "start": 46.72,
+      "end": 46.98,
+      "probability": 0.659
+    },
+    {
+      "word": "Claude",
+      "start": 47.72,
+      "end": 47.94,
+      "probability": 0.726
+    },
+    {
+      "word": "Opus",
+      "start": 47.94,
+      "end": 48.28,
+      "probability": 0.848
+    },
+    {
+      "word": "compiles",
+      "start": 48.28,
+      "end": 48.76,
+      "probability": 0.956
+    },
+    {
+      "word": "chapter",
+      "start": 48.76,
+      "end": 49.18,
+      "probability": 0.875
+    },
+    {
+      "word": "right",
+      "start": 49.18,
+      "end": 49.48,
+      "probability": 0.65
+    },
+    {
+      "word": "arrow",
+      "start": 49.48,
+      "end": 49.76,
+      "probability": 0.985
+    },
+    {
+      "word": "chapter.",
+      "start": 49.76,
+      "end": 50.14,
+      "probability": 0.97
+    },
+    {
+      "word": "TXT",
+      "start": 51.1,
+      "end": 51.58,
+      "probability": 0.898
+    },
+    {
+      "word": "saved",
+      "start": 51.58,
+      "end": 52.06,
+      "probability": 0.965
+    },
+    {
+      "word": "right",
+      "start": 52.06,
+      "end": 52.3,
+      "probability": 0.971
+    },
+    {
+      "word": "arrow",
+      "start": 52.3,
+      "end": 52.62,
+      "probability": 0.992
+    },
+    {
+      "word": "stitch",
+      "start": 52.62,
+      "end": 52.86,
+      "probability": 0.807
+    },
+    {
+      "word": "masterbook.",
+      "start": 52.86,
+      "end": 53.46,
+      "probability": 0.848
+    },
+    {
+      "word": "Right",
+      "start": 53.96,
+      "end": 54.26,
+      "probability": 0.927
+    },
+    {
+      "word": "arrow",
+      "start": 54.26,
+      "end": 54.56,
+      "probability": 0.985
+    },
+    {
+      "word": "BDF",
+      "start": 54.56,
+      "end": 55.14,
+      "probability": 0.993
+    },
+    {
+      "word": "masterbook,",
+      "start": 55.14,
+      "end": 55.74,
+      "probability": 0.964
+    },
+    {
+      "word": "TXT",
+      "start": 55.74,
+      "end": 56.54,
+      "probability": 0.431
+    },
+    {
+      "word": "right",
+      "start": 56.54,
+      "end": 56.8,
+      "probability": 0.079
+    },
+    {
+      "word": "arrow",
+      "start": 56.8,
+      "end": 57.06,
+      "probability": 0.79
+    },
+    {
+      "word": "run",
+      "start": 57.06,
+      "end": 57.34,
+      "probability": 0.815
+    },
+    {
+      "word": "TTS.",
+      "start": 57.34,
+      "end": 57.92,
+      "probability": 0.912
+    },
+    {
+      "word": "Right",
+      "start": 58.44,
+      "end": 58.72,
+      "probability": 0.756
+    },
+    {
+      "word": "arrow",
+      "start": 58.72,
+      "end": 59.02,
+      "probability": 0.885
+    },
+    {
+      "word": "Kakoro",
+      "start": 59.02,
+      "end": 59.46,
+      "probability": 0.498
+    },
+    {
+      "word": "audio",
+      "start": 59.46,
+      "end": 59.78,
+      "probability": 0.538
+    },
+    {
+      "word": "right",
+      "start": 59.78,
+      "end": 60.06,
+      "probability": 0.871
+    },
+    {
+      "word": "arrow",
+      "start": 60.06,
+      "end": 60.34,
+      "probability": 0.957
+    },
+    {
+      "word": "synced",
+      "start": 60.34,
+      "end": 60.68,
+      "probability": 0.079
+    },
+    {
+      "word": "to",
+      "start": 60.68,
+      "end": 60.88,
+      "probability": 0.137
+    },
+    {
+      "word": "audio",
+      "start": 60.88,
+      "end": 60.94,
+      "probability": 0.102
+    },
+    {
+      "word": "to",
+      "start": 60.94,
+      "end": 61.08,
+      "probability": 0.741
+    },
+    {
+      "word": "drive.",
+      "start": 61.08,
+      "end": 61.36,
+      "probability": 0.872
+    },
+    {
+      "word": "Right",
+      "start": 61.82,
+      "end": 62.1,
+      "probability": 0.833
+    },
+    {
+      "word": "arrow",
+      "start": 62.1,
+      "end": 62.44,
+      "probability": 0.978
+    },
+    {
+      "word": "Google",
+      "start": 62.44,
+      "end": 62.68,
+      "probability": 0.816
+    },
+    {
+      "word": "Drive",
+      "start": 62.68,
+      "end": 63.1,
+      "probability": 0.535
+    },
+    {
+      "word": "Code",
+      "start": 63.1,
+      "end": 63.4,
+      "probability": 0.264
+    },
+    {
+      "word": "block",
+      "start": 63.4,
+      "end": 63.62,
+      "probability": 0.274
+    },
+    {
+      "word": "ends",
+      "start": 63.62,
+      "end": 64.0,
+      "probability": 0.916
+    },
+    {
+      "word": "command,",
+      "start": 64.0,
+      "end": 64.36,
+      "probability": 0.962
+    },
+    {
+      "word": "updated",
+      "start": 64.8,
+      "end": 65.14,
+      "probability": 0.942
+    },
+    {
+      "word": "2020",
+      "start": 65.14,
+      "end": 65.56,
+      "probability": 0.086
+    },
+    {
+      "word": "-60520,",
+      "start": 65.56,
+      "end": 67.02,
+      "probability": 0.494
+    },
+    {
+      "word": "canonical",
+      "start": 67.48,
+      "end": 67.7,
+      "probability": 0.934
+    },
+    {
+      "word": "moved",
+      "start": 67.7,
+      "end": 68.26,
+      "probability": 0.603
+    },
+    {
+      "word": "to",
+      "start": 68.26,
+      "end": 68.44,
+      "probability": 0.983
+    },
+    {
+      "word": "shared",
+      "start": 68.44,
+      "end": 68.66,
+      "probability": 0.946
+    },
+    {
+      "word": "plugin.",
+      "start": 68.66,
+      "end": 69.06,
+      "probability": 0.847
+    },
+    {
+      "word": "Code",
+      "start": 69.7,
+      "end": 69.84,
+      "probability": 0.985
+    },
+    {
+      "word": "block",
+      "start": 69.84,
+      "end": 70.08,
+      "probability": 0.946
+    },
+    {
+      "word": "begins",
+      "start": 70.08,
+      "end": 70.44,
+      "probability": 0.97
+    },
+    {
+      "word": "section,",
+      "start": 70.44,
+      "end": 70.9,
+      "probability": 0.966
+    },
+    {
+      "word": "preferred.",
+      "start": 71.42,
+      "end": 71.72,
+      "probability": 0.969
+    },
+    {
+      "word": "Use",
+      "start": 72.42,
+      "end": 72.62,
+      "probability": 0.962
+    },
+    {
+      "word": "alias",
+      "start": 72.62,
+      "end": 73.14,
+      "probability": 0.781
+    },
+    {
+      "word": "runs",
+      "start": 73.14,
+      "end": 73.52,
+      "probability": 0.94
+    },
+    {
+      "word": "via",
+      "start": 73.52,
+      "end": 73.88,
+      "probability": 0.995
+    },
+    {
+      "word": "CA",
+      "start": 73.88,
+      "end": 74.26,
+      "probability": 0.641
+    },
+    {
+      "word": "-VENV",
+      "start": 74.26,
+      "end": 74.74,
+      "probability": 0.496
+    },
+    {
+      "word": "automatically.",
+      "start": 74.74,
+      "end": 75.44,
+      "probability": 0.979
+    },
+    {
+      "word": "BDF",
+      "start": 76.52,
+      "end": 77.24,
+      "probability": 0.831
+    },
+    {
+      "word": "Book",
+      "start": 77.24,
+      "end": 77.42,
+      "probability": 0.08
+    },
+    {
+      "word": "Section,",
+      "start": 77.42,
+      "end": 77.82,
+      "probability": 0.182
+    },
+    {
+      "word": "direct.",
+      "start": 78.26,
+      "end": 78.46,
+      "probability": 0.954
+    },
+    {
+      "word": "C,",
+      "start": 79.18,
+      "end": 79.42,
+      "probability": 0.718
+    },
+    {
+      "word": "backslash",
+      "start": 79.98,
+      "end": 80.38,
+      "probability": 0.794
+    },
+    {
+      "word": "knowledge",
+      "start": 80.38,
+      "end": 80.6,
+      "probability": 0.433
+    },
+    {
+      "word": "backslash",
+      "start": 80.6,
+      "end": 81.3,
+      "probability": 0.738
+    },
+    {
+      "word": "CA",
+      "start": 81.3,
+      "end": 81.56,
+      "probability": 0.938
+    },
+    {
+      "word": "backslash",
+      "start": 81.56,
+      "end": 82.2,
+      "probability": 0.854
+    },
+    {
+      "word": "VENV",
+      "start": 82.2,
+      "end": 82.5,
+      "probability": 0.857
+    },
+    {
+      "word": "backslash",
+      "start": 82.5,
+      "end": 83.04,
+      "probability": 0.961
+    },
+    {
+      "word": "scripts",
+      "start": 83.04,
+      "end": 83.26,
+      "probability": 0.857
+    },
+    {
+      "word": "backslash",
+      "start": 83.26,
+      "end": 83.96,
+      "probability": 0.983
+    },
+    {
+      "word": "Python.",
+      "start": 83.96,
+      "end": 84.28,
+      "probability": 0.536
+    },
+    {
+      "word": "EXCC,",
+      "start": 84.28,
+      "end": 85.38,
+      "probability": 0.233
+    },
+    {
+      "word": "backslash",
+      "start": 85.98,
+      "end": 86.38,
+      "probability": 0.665
+    },
+    {
+      "word": "dev",
+      "start": 86.38,
+      "end": 86.56,
+      "probability": 0.378
+    },
+    {
+      "word": "backslash",
+      "start": 86.56,
+      "end": 87.14,
+      "probability": 0.819
+    },
+    {
+      "word": "shared",
+      "start": 87.14,
+      "end": 87.42,
+      "probability": 0.804
+    },
+    {
+      "word": "backslash",
+      "start": 87.42,
+      "end": 88.02,
+      "probability": 0.922
+    },
+    {
+      "word": "book",
+      "start": 88.02,
+      "end": 88.18,
+      "probability": 0.962
+    },
+    {
+      "word": "compiler",
+      "start": 88.18,
+      "end": 88.48,
+      "probability": 0.945
+    },
+    {
+      "word": "backslash",
+      "start": 88.48,
+      "end": 89.12,
+      "probability": 0.964
+    },
+    {
+      "word": "book",
+      "start": 89.12,
+      "end": 89.32,
+      "probability": 0.992
+    },
+    {
+      "word": "compiler.",
+      "start": 89.32,
+      "end": 89.78,
+      "probability": 0.978
+    },
+    {
+      "word": "Pipbook",
+      "start": 90.3,
+      "end": 90.66,
+      "probability": 0.032
+    },
+    {
+      "word": "BDF",
+      "start": 90.66,
+      "end": 91.22,
+      "probability": 0.631
+    },
+    {
+      "word": "code",
+      "start": 91.22,
+      "end": 91.44,
+      "probability": 0.846
+    },
+    {
+      "word": "block",
+      "start": 91.44,
+      "end": 91.7,
+      "probability": 0.889
+    },
+    {
+      "word": "ends,",
+      "start": 91.7,
+      "end": 92.14,
+      "probability": 0.917
+    },
+    {
+      "word": "note",
+      "start": 92.4,
+      "end": 92.6,
+      "probability": 0.893
+    },
+    {
+      "word": "warning",
+      "start": 92.6,
+      "end": 93.44,
+      "probability": 0.348
+    },
+    {
+      "word": "book",
+      "start": 93.44,
+      "end": 93.72,
+      "probability": 0.973
+    },
+    {
+      "word": "compiler.",
+      "start": 93.72,
+      "end": 94.18,
+      "probability": 0.979
+    },
+    {
+      "word": "Pi",
+      "start": 94.72,
+      "end": 94.9,
+      "probability": 0.447
+    },
+    {
+      "word": "was",
+      "start": 94.9,
+      "end": 95.12,
+      "probability": 0.993
+    },
+    {
+      "word": "deleted",
+      "start": 95.12,
+      "end": 95.42,
+      "probability": 0.991
+    },
+    {
+      "word": "from",
+      "start": 95.42,
+      "end": 95.72,
+      "probability": 0.997
+    },
+    {
+      "word": "C,",
+      "start": 95.72,
+      "end": 95.98,
+      "probability": 0.684
+    },
+    {
+      "word": "backslash",
+      "start": 96.58,
+      "end": 96.96,
+      "probability": 0.983
+    },
+    {
+      "word": "dev",
+      "start": 96.96,
+      "end": 97.14,
+      "probability": 0.973
+    },
+    {
+      "word": "backslash",
+      "start": 97.14,
+      "end": 97.84,
+      "probability": 0.964
+    },
+    {
+      "word": "projects",
+      "start": 97.84,
+      "end": 98.18,
+      "probability": 0.904
+    },
+    {
+      "word": "backslash",
+      "start": 98.18,
+      "end": 98.94,
+      "probability": 0.968
+    },
+    {
+      "word": "soccer",
+      "start": 98.94,
+      "end": 99.26,
+      "probability": 0.887
+    },
+    {
+      "word": "content",
+      "start": 99.26,
+      "end": 99.64,
+      "probability": 0.956
+    },
+    {
+      "word": "generator",
+      "start": 99.64,
+      "end": 100.08,
+      "probability": 0.981
+    },
+    {
+      "word": "backslash",
+      "start": 100.08,
+      "end": 100.94,
+      "probability": 0.988
+    },
+    {
+      "word": "on",
+      "start": 100.94,
+      "end": 101.1,
+      "probability": 0.976
+    },
+    {
+      "word": "2020",
+      "start": 101.1,
+      "end": 101.42,
+      "probability": 0.498
+    },
+    {
+      "word": "-60520.",
+      "start": 101.42,
+      "end": 102.86,
+      "probability": 0.493
+    },
+    {
+      "word": "Note",
+      "start": 103.42,
+      "end": 103.94,
+      "probability": 0.857
+    },
+    {
+      "word": "canonical,",
+      "start": 103.94,
+      "end": 104.52,
+      "probability": 0.956
+    },
+    {
+      "word": "C,",
+      "start": 105.18,
+      "end": 105.26,
+      "probability": 0.633
+    },
+    {
+      "word": "backslash",
+      "start": 105.8,
+      "end": 106.16,
+      "probability": 0.993
+    },
+    {
+      "word": "dev",
+      "start": 106.16,
+      "end": 106.38,
+      "probability": 0.972
+    },
+    {
+      "word": "backslash",
+      "start": 106.38,
+      "end": 106.94,
+      "probability": 0.986
+    },
+    {
+      "word": "shared",
+      "start": 106.94,
+      "end": 107.24,
+      "probability": 0.979
+    },
+    {
+      "word": "backslash",
+      "start": 107.24,
+      "end": 107.8,
+      "probability": 0.989
+    },
+    {
+      "word": "book",
+      "start": 107.8,
+      "end": 108.02,
+      "probability": 0.992
+    },
+    {
+      "word": "compiler",
+      "start": 108.02,
+      "end": 108.36,
+      "probability": 0.972
+    },
+    {
+      "word": "backslash",
+      "start": 108.36,
+      "end": 109.02,
+      "probability": 0.986
+    },
+    {
+      "word": "book",
+      "start": 109.02,
+      "end": 109.24,
+      "probability": 0.993
+    },
+    {
+      "word": "compiler,",
+      "start": 109.24,
+      "end": 109.68,
+      "probability": 0.987
+    },
+    {
+      "word": "PINOTE.",
+      "start": 110.46,
+      "end": 111.2,
+      "probability": 0.428
+    },
+    {
+      "word": "VENV,",
+      "start": 111.2,
+      "end": 111.62,
+      "probability": 0.481
+    },
+    {
+      "word": "always",
+      "start": 111.84,
+      "end": 112.24,
+      "probability": 0.384
+    },
+    {
+      "word": "use",
+      "start": 112.24,
+      "end": 112.52,
+      "probability": 0.844
+    },
+    {
+      "word": "C,",
+      "start": 112.52,
+      "end": 112.8,
+      "probability": 0.798
+    },
+    {
+      "word": "backslash",
+      "start": 113.38,
+      "end": 113.78,
+      "probability": 0.709
+    },
+    {
+      "word": "knowledge",
+      "start": 113.78,
+      "end": 114.12,
+      "probability": 0.339
+    },
+    {
+      "word": "backslash",
+      "start": 114.12,
+      "end": 114.78,
+      "probability": 0.756
+    },
+    {
+      "word": "CA",
+      "start": 114.78,
+      "end": 115.02,
+      "probability": 0.804
+    },
+    {
+      "word": "backslash",
+      "start": 115.02,
+      "end": 115.68,
+      "probability": 0.904
+    },
+    {
+      "word": "VENV,",
+      "start": 115.68,
+      "end": 116.1,
+      "probability": 0.768
+    },
+    {
+      "word": "never",
+      "start": 116.46,
+      "end": 116.62,
+      "probability": 0.772
+    },
+    {
+      "word": "BDF",
+      "start": 116.62,
+      "end": 117.3,
+      "probability": 0.708
+    },
+    {
+      "word": "dev",
+      "start": 117.3,
+      "end": 117.52,
+      "probability": 0.493
+    },
+    {
+      "word": "VENV",
+      "start": 117.52,
+      "end": 118.02,
+      "probability": 0.464
+    },
+    {
+      "word": "for",
+      "start": 118.02,
+      "end": 118.12,
+      "probability": 0.943
+    },
+    {
+      "word": "book",
+      "start": 118.12,
+      "end": 118.28,
+      "probability": 0.94
+    },
+    {
+      "word": "compilation.",
+      "start": 118.28,
+      "end": 118.86,
+      "probability": 0.959
+    },
+    {
+      "word": "Note",
+      "start": 120.16,
+      "end": 120.42,
+      "probability": 0.37
+    },
+    {
+      "word": "C",
+      "start": 120.42,
+      "end": 120.8,
+      "probability": 0.305
+    },
+    {
+      "word": "book",
+      "start": 120.8,
+      "end": 121.02,
+      "probability": 0.269
+    },
+    {
+      "word": "compiler",
+      "start": 121.02,
+      "end": 121.42,
+      "probability": 0.841
+    },
+    {
+      "word": "shared",
+      "start": 121.42,
+      "end": 121.84,
+      "probability": 0.95
+    },
+    {
+      "word": "for",
+      "start": 121.84,
+      "end": 122.08,
+      "probability": 0.989
+    },
+    {
+      "word": "full",
+      "start": 122.08,
+      "end": 122.36,
+      "probability": 0.993
+    },
+    {
+      "word": "plugin",
+      "start": 122.36,
+      "end": 122.7,
+      "probability": 0.563
+    },
+    {
+      "word": "architecture.",
+      "start": 122.7,
+      "end": 123.3,
+      "probability": 0.994
+    },
+    {
+      "word": "Section,",
+      "start": 123.98,
+      "end": 124.26,
+      "probability": 0.783
+    },
+    {
+      "word": "file",
+      "start": 124.58,
+      "end": 124.82,
+      "probability": 0.938
+    },
+    {
+      "word": "locations,",
+      "start": 124.82,
+      "end": 125.32,
+      "probability": 0.97
+    },
+    {
+      "word": "section",
+      "start": 125.84,
+      "end": 126.4,
+      "probability": 0.855
+    },
+    {
+      "word": "architecture,",
+      "start": 126.4,
+      "end": 127.18,
+      "probability": 0.607
+    },
+    {
+      "word": "section",
+      "start": 127.72,
+      "end": 128.08,
+      "probability": 0.994
+    },
+    {
+      "word": "canonical",
+      "start": 128.08,
+      "end": 128.62,
+      "probability": 0.891
+    },
+    {
+      "word": "source",
+      "start": 128.62,
+      "end": 129.14,
+      "probability": 0.972
+    },
+    {
+      "word": "chapters.",
+      "start": 129.14,
+      "end": 129.68,
+      "probability": 0.959
+    },
+    {
+      "word": "Chapter",
+      "start": 130.28,
+      "end": 130.62,
+      "probability": 0.852
+    },
+    {
+      "word": "TXT",
+      "start": 130.62,
+      "end": 131.32,
+      "probability": 0.703
+    },
+    {
+      "word": "files",
+      "start": 131.32,
+      "end": 131.7,
+      "probability": 0.974
+    },
+    {
+      "word": "in",
+      "start": 131.7,
+      "end": 131.96,
+      "probability": 0.609
+    },
+    {
+      "word": "chapters",
+      "start": 131.96,
+      "end": 132.32,
+      "probability": 0.815
+    },
+    {
+      "word": "backslash",
+      "start": 132.32,
+      "end": 133.12,
+      "probability": 0.933
+    },
+    {
+      "word": "are",
+      "start": 133.12,
+      "end": 133.22,
+      "probability": 0.991
+    },
+    {
+      "word": "the",
+      "start": 133.22,
+      "end": 133.34,
+      "probability": 0.995
+    },
+    {
+      "word": "source",
+      "start": 133.34,
+      "end": 133.58,
+      "probability": 0.995
+    },
+    {
+      "word": "of",
+      "start": 133.58,
+      "end": 133.78,
+      "probability": 0.999
+    },
+    {
+      "word": "truth.",
+      "start": 133.78,
+      "end": 134.1,
+      "probability": 0.996
+    },
+    {
+      "word": "The",
+      "start": 134.58,
+      "end": 134.72,
+      "probability": 0.993
+    },
+    {
+      "word": "masterbook",
+      "start": 134.72,
+      "end": 135.28,
+      "probability": 0.588
+    },
+    {
+      "word": "is",
+      "start": 135.28,
+      "end": 135.5,
+      "probability": 0.996
+    },
+    {
+      "word": "a",
+      "start": 135.5,
+      "end": 135.58,
+      "probability": 0.993
+    },
+    {
+      "word": "derived",
+      "start": 135.58,
+      "end": 135.9,
+      "probability": 0.903
+    },
+    {
+      "word": "artifact",
+      "start": 135.9,
+      "end": 136.5,
+      "probability": 0.974
+    },
+    {
+      "word": "deleted",
+      "start": 136.5,
+      "end": 137.1,
+      "probability": 0.245
+    },
+    {
+      "word": "and",
+      "start": 137.1,
+      "end": 137.46,
+      "probability": 0.996
+    },
+    {
+      "word": "regenerated",
+      "start": 137.46,
+      "end": 138.12,
+      "probability": 0.987
+    },
+    {
+      "word": "on",
+      "start": 138.12,
+      "end": 138.3,
+      "probability": 0.996
+    },
+    {
+      "word": "every",
+      "start": 138.3,
+      "end": 138.64,
+      "probability": 0.994
+    },
+    {
+      "word": "run.",
+      "start": 138.64,
+      "end": 138.98,
+      "probability": 0.995
+    },
+    {
+      "word": "Never",
+      "start": 138.98,
+      "end": 139.64,
+      "probability": 0.053
+    },
+    {
+      "word": "edit",
+      "start": 139.64,
+      "end": 139.94,
+      "probability": 0.951
+    },
+    {
+      "word": "the",
+      "start": 139.94,
+      "end": 140.1,
+      "probability": 0.99
+    },
+    {
+      "word": "masterbook",
+      "start": 140.1,
+      "end": 140.6,
+      "probability": 0.779
+    },
+    {
+      "word": "directly.",
+      "start": 140.6,
+      "end": 141.14,
+      "probability": 0.998
+    },
+    {
+      "word": "Section,",
+      "start": 141.76,
+      "end": 142.08,
+      "probability": 0.789
+    },
+    {
+      "word": "stitch",
+      "start": 142.4,
+      "end": 142.52,
+      "probability": 0.127
+    },
+    {
+      "word": "masterbook.",
+      "start": 142.52,
+      "end": 143.3,
+      "probability": 0.849
+    },
+    {
+      "word": "Loop",
+      "start": 143.54,
+      "end": 144.46,
+      "probability": 0.192
+    },
+    {
+      "word": "CH01",
+      "start": 144.46,
+      "end": 145.42,
+      "probability": 0.568
+    },
+    {
+      "word": "write",
+      "start": 145.42,
+      "end": 145.88,
+      "probability": 0.393
+    },
+    {
+      "word": "arrow",
+      "start": 145.88,
+      "end": 146.12,
+      "probability": 0.71
+    },
+    {
+      "word": "CH27",
+      "start": 146.12,
+      "end": 147.12,
+      "probability": 0.957
+    },
+    {
+      "word": "reads",
+      "start": 147.12,
+      "end": 147.6,
+      "probability": 0.884
+    },
+    {
+      "word": "each",
+      "start": 147.6,
+      "end": 148.06,
+      "probability": 0.949
+    },
+    {
+      "word": "TXT",
+      "start": 148.06,
+      "end": 148.54,
+      "probability": 0.86
+    },
+    {
+      "word": "file",
+      "start": 148.54,
+      "end": 149.02,
+      "probability": 0.993
+    },
+    {
+      "word": "concatenates",
+      "start": 149.02,
+      "end": 149.78,
+      "probability": 0.875
+    },
+    {
+      "word": "with",
+      "start": 149.78,
+      "end": 149.92,
+      "probability": 0.987
+    },
+    {
+      "word": "dividers",
+      "start": 149.92,
+      "end": 150.42,
+      "probability": 0.879
+    },
+    {
+      "word": "writes",
+      "start": 150.42,
+      "end": 150.62,
+      "probability": 0.8
+    },
+    {
+      "word": "BDF",
+      "start": 150.62,
+      "end": 151.24,
+      "probability": 0.862
+    },
+    {
+      "word": "masterbook",
+      "start": 151.24,
+      "end": 151.92,
+      "probability": 0.94
+    },
+    {
+      "word": "TXT.",
+      "start": 151.92,
+      "end": 152.7,
+      "probability": 0.82
+    },
+    {
+      "word": "Fires",
+      "start": 153.4,
+      "end": 153.6,
+      "probability": 0.966
+    },
+    {
+      "word": "automatically",
+      "start": 153.6,
+      "end": 154.24,
+      "probability": 0.996
+    },
+    {
+      "word": "at",
+      "start": 154.24,
+      "end": 154.52,
+      "probability": 0.994
+    },
+    {
+      "word": "end",
+      "start": 154.52,
+      "end": 154.68,
+      "probability": 0.763
+    },
+    {
+      "word": "of",
+      "start": 154.68,
+      "end": 154.82,
+      "probability": 0.926
+    },
+    {
+      "word": "every",
+      "start": 154.82,
+      "end": 155.06,
+      "probability": 0.994
+    },
+    {
+      "word": "run.",
+      "start": 155.06,
+      "end": 155.36,
+      "probability": 0.998
+    },
+    {
+      "word": "Section",
+      "start": 155.98,
+      "end": 156.3,
+      "probability": 0.956
+    },
+    {
+      "word": "chapter",
+      "start": 156.3,
+      "end": 156.74,
+      "probability": 0.348
+    },
+    {
+      "word": "format.",
+      "start": 156.74,
+      "end": 157.16,
+      "probability": 0.883
+    },
+    {
+      "word": "Files",
+      "start": 157.76,
+      "end": 158.1,
+      "probability": 0.966
+    },
+    {
+      "word": "TXT",
+      "start": 158.1,
+      "end": 158.9,
+      "probability": 0.696
+    },
+    {
+      "word": "count.",
+      "start": 158.9,
+      "end": 159.3,
+      "probability": 0.925
+    },
+    {
+      "word": "27",
+      "start": 159.76,
+      "end": 160.1,
+      "probability": 0.847
+    },
+    {
+      "word": "files",
+      "start": 160.1,
+      "end": 160.6,
+      "probability": 0.895
+    },
+    {
+      "word": "on",
+      "start": 160.6,
+      "end": 160.82,
+      "probability": 0.994
+    },
+    {
+      "word": "disk",
+      "start": 160.82,
+      "end": 161.06,
+      "probability": 0.564
+    },
+    {
+      "word": "C",
+      "start": 161.06,
+      "end": 161.38,
+      "probability": 0.606
+    },
+    {
+      "word": "inventory",
+      "start": 161.38,
+      "end": 161.74,
+      "probability": 0.93
+    },
+    {
+      "word": "duplicates",
+      "start": 161.74,
+      "end": 162.42,
+      "probability": 0.976
+    },
+    {
+      "word": "exist.",
+      "start": 162.42,
+      "end": 162.8,
+      "probability": 0.964
+    },
+    {
+      "word": "Encoding,",
+      "start": 162.8,
+      "end": 163.72,
+      "probability": 0.389
+    },
+    {
+      "word": "UTF",
+      "start": 163.98,
+      "end": 164.54,
+      "probability": 0.785
+    },
+    {
+      "word": "-8",
+      "start": 164.54,
+      "end": 164.82,
+      "probability": 0.877
+    },
+    {
+      "word": "size,",
+      "start": 164.82,
+      "end": 165.2,
+      "probability": 0.63
+    },
+    {
+      "word": "385",
+      "start": 165.7,
+      "end": 166.78,
+      "probability": 0.858
+    },
+    {
+      "word": ",886",
+      "start": 166.78,
+      "end": 168.16,
+      "probability": 0.813
+    },
+    {
+      "word": "characters",
+      "start": 168.16,
+      "end": 168.64,
+      "probability": 0.93
+    },
+    {
+      "word": "total",
+      "start": 168.64,
+      "end": 169.06,
+      "probability": 0.944
+    },
+    {
+      "word": "section",
+      "start": 169.06,
+      "end": 169.56,
+      "probability": 0.983
+    },
+    {
+      "word": "post",
+      "start": 169.56,
+      "end": 170.06,
+      "probability": 0.181
+    },
+    {
+      "word": "processing.",
+      "start": 170.06,
+      "end": 170.64,
+      "probability": 0.173
+    },
+    {
+      "word": "One,",
+      "start": 171.2,
+      "end": 171.6,
+      "probability": 0.341
+    },
+    {
+      "word": "run",
+      "start": 172.54,
+      "end": 172.76,
+      "probability": 0.431
+    },
+    {
+      "word": "TTS.",
+      "start": 172.76,
+      "end": 173.5,
+      "probability": 0.892
+    },
+    {
+      "word": "Cacoro",
+      "start": 174.08,
+      "end": 174.4,
+      "probability": 0.5
+    },
+    {
+      "word": "TTS",
+      "start": 174.4,
+      "end": 175.04,
+      "probability": 0.931
+    },
+    {
+      "word": "generates",
+      "start": 175.04,
+      "end": 175.68,
+      "probability": 0.98
+    },
+    {
+      "word": "audio",
+      "start": 175.68,
+      "end": 176.12,
+      "probability": 0.993
+    },
+    {
+      "word": "from",
+      "start": 176.12,
+      "end": 176.42,
+      "probability": 0.987
+    },
+    {
+      "word": "masterbook",
+      "start": 176.42,
+      "end": 176.94,
+      "probability": 0.474
+    },
+    {
+      "word": "2.",
+      "start": 176.94,
+      "end": 177.28,
+      "probability": 0.531
+    },
+    {
+      "word": "Sync",
+      "start": 178.31,
+      "end": 178.74,
+      "probability": 0.729
+    },
+    {
+      "word": "audio",
+      "start": 178.74,
+      "end": 178.98,
+      "probability": 0.459
+    },
+    {
+      "word": "to",
+      "start": 178.98,
+      "end": 179.16,
+      "probability": 0.927
+    },
+    {
+      "word": "drive",
+      "start": 179.16,
+      "end": 179.4,
+      "probability": 0.904
+    },
+    {
+      "word": "uploads",
+      "start": 179.4,
+      "end": 180.16,
+      "probability": 0.08
+    },
+    {
+      "word": "audio",
+      "start": 180.16,
+      "end": 180.62,
+      "probability": 0.996
+    },
+    {
+      "word": "to",
+      "start": 180.62,
+      "end": 180.92,
+      "probability": 0.994
+    },
+    {
+      "word": "Google",
+      "start": 180.92,
+      "end": 181.14,
+      "probability": 0.926
+    },
+    {
+      "word": "Drive",
+      "start": 181.14,
+      "end": 181.46,
+      "probability": 0.859
+    },
+    {
+      "word": "section,",
+      "start": 181.46,
+      "end": 181.9,
+      "probability": 0.9
+    },
+    {
+      "word": "chapter",
+      "start": 182.24,
+      "end": 182.5,
+      "probability": 0.86
+    },
+    {
+      "word": "inventory.",
+      "start": 182.5,
+      "end": 182.98,
+      "probability": 0.968
+    },
+    {
+      "word": "Warning",
+      "start": 183.68,
+      "end": 183.9,
+      "probability": 0.956
+    },
+    {
+      "word": "duplicate",
+      "start": 183.9,
+      "end": 184.32,
+      "probability": 0.934
+    },
+    {
+      "word": "chapter",
+      "start": 184.32,
+      "end": 184.7,
+      "probability": 0.98
+    },
+    {
+      "word": "numbers.",
+      "start": 184.7,
+      "end": 185.06,
+      "probability": 0.996
+    },
+    {
+      "word": "CH11",
+      "start": 185.6,
+      "end": 186.22,
+      "probability": 0.585
+    },
+    {
+      "word": "CH16",
+      "start": 186.22,
+      "end": 187.14,
+      "probability": 0.612
+    },
+    {
+      "word": "each",
+      "start": 187.14,
+      "end": 187.44,
+      "probability": 0.973
+    },
+    {
+      "word": "have",
+      "start": 187.44,
+      "end": 187.64,
+      "probability": 0.977
+    },
+    {
+      "word": "two",
+      "start": 187.64,
+      "end": 187.88,
+      "probability": 0.819
+    },
+    {
+      "word": "files",
+      "start": 187.88,
+      "end": 188.26,
+      "probability": 0.992
+    },
+    {
+      "word": "27",
+      "start": 188.26,
+      "end": 188.8,
+      "probability": 0.26
+    },
+    {
+      "word": "files",
+      "start": 188.8,
+      "end": 189.44,
+      "probability": 0.992
+    },
+    {
+      "word": "till",
+      "start": 189.44,
+      "end": 189.66,
+      "probability": 0.717
+    },
+    {
+      "word": "the",
+      "start": 189.66,
+      "end": 189.8,
+      "probability": 0.468
+    },
+    {
+      "word": "21",
+      "start": 189.8,
+      "end": 190.16,
+      "probability": 0.982
+    },
+    {
+      "word": "unique",
+      "start": 190.16,
+      "end": 190.56,
+      "probability": 0.994
+    },
+    {
+      "word": "chapters.",
+      "start": 190.56,
+      "end": 191.08,
+      "probability": 0.998
+    },
+    {
+      "word": "Renumbering",
+      "start": 191.08,
+      "end": 192.1,
+      "probability": 0.466
+    },
+    {
+      "word": "needed",
+      "start": 192.1,
+      "end": 192.3,
+      "probability": 0.769
+    },
+    {
+      "word": "before",
+      "start": 192.3,
+      "end": 192.6,
+      "probability": 0.974
+    },
+    {
+      "word": "next",
+      "start": 192.6,
+      "end": 192.88,
+      "probability": 0.592
+    },
+    {
+      "word": "compile.",
+      "start": 192.88,
+      "end": 193.32,
+      "probability": 0.953
+    },
+    {
+      "word": "Section,",
+      "start": 193.88,
+      "end": 194.16,
+      "probability": 0.903
+    },
+    {
+      "word": "drive",
+      "start": 194.46,
+      "end": 194.68,
+      "probability": 0.279
+    },
+    {
+      "word": "pipeline",
+      "start": 194.68,
+      "end": 195.14,
+      "probability": 0.954
+    },
+    {
+      "word": "improvements",
+      "start": 195.14,
+      "end": 195.94,
+      "probability": 0.918
+    },
+    {
+      "word": "2026",
+      "start": 195.94,
+      "end": 196.84,
+      "probability": 0.577
+    },
+    {
+      "word": "0520.",
+      "start": 196.84,
+      "end": 197.8,
+      "probability": 0.498
+    },
+    {
+      "word": "The",
+      "start": 198.38,
+      "end": 198.44,
+      "probability": 0.965
+    },
+    {
+      "word": "sync",
+      "start": 198.44,
+      "end": 198.66,
+      "probability": 0.571
+    },
+    {
+      "word": "audio",
+      "start": 198.66,
+      "end": 198.94,
+      "probability": 0.791
+    },
+    {
+      "word": "to",
+      "start": 198.94,
+      "end": 199.14,
+      "probability": 0.956
+    },
+    {
+      "word": "drive",
+      "start": 199.14,
+      "end": 199.42,
+      "probability": 0.883
+    },
+    {
+      "word": "slash",
+      "start": 199.42,
+      "end": 200.02,
+      "probability": 0.141
+    },
+    {
+      "word": "upload",
+      "start": 200.02,
+      "end": 200.46,
+      "probability": 0.92
+    },
+    {
+      "word": "functions",
+      "start": 200.46,
+      "end": 200.98,
+      "probability": 0.956
+    },
+    {
+      "word": "in",
+      "start": 200.98,
+      "end": 201.32,
+      "probability": 0.953
+    },
+    {
+      "word": "soccer",
+      "start": 201.32,
+      "end": 201.56,
+      "probability": 0.842
+    },
+    {
+      "word": "content",
+      "start": 201.56,
+      "end": 201.94,
+      "probability": 0.979
+    },
+    {
+      "word": "generator",
+      "start": 201.94,
+      "end": 202.48,
+      "probability": 0.99
+    },
+    {
+      "word": "were",
+      "start": 202.48,
+      "end": 202.74,
+      "probability": 0.979
+    },
+    {
+      "word": "hardened.",
+      "start": 202.74,
+      "end": 203.08,
+      "probability": 0.953
+    },
+    {
+      "word": "Section",
+      "start": 203.7,
+      "end": 203.98,
+      "probability": 0.974
+    },
+    {
+      "word": "TTS",
+      "start": 203.98,
+      "end": 204.84,
+      "probability": 0.592
+    },
+    {
+      "word": "slash",
+      "start": 204.84,
+      "end": 205.3,
+      "probability": 0.153
+    },
+    {
+      "word": "hugging",
+      "start": 205.3,
+      "end": 205.66,
+      "probability": 0.901
+    },
+    {
+      "word": "face",
+      "start": 205.66,
+      "end": 205.9,
+      "probability": 0.89
+    },
+    {
+      "word": "off.",
+      "start": 205.9,
+      "end": 206.28,
+      "probability": 0.337
+    },
+    {
+      "word": "TTS",
+      "start": 207.26,
+      "end": 207.94,
+      "probability": 0.966
+    },
+    {
+      "word": "local.",
+      "start": 207.94,
+      "end": 208.36,
+      "probability": 0.881
+    },
+    {
+      "word": "Pinew",
+      "start": 208.8,
+      "end": 209.14,
+      "probability": 0.425
+    },
+    {
+      "word": "calls",
+      "start": 209.14,
+      "end": 209.38,
+      "probability": 0.962
+    },
+    {
+      "word": "hugging",
+      "start": 209.38,
+      "end": 209.72,
+      "probability": 0.573
+    },
+    {
+      "word": "face",
+      "start": 209.72,
+      "end": 210.02,
+      "probability": 0.956
+    },
+    {
+      "word": "hub",
+      "start": 210.02,
+      "end": 210.34,
+      "probability": 0.967
+    },
+    {
+      "word": "log",
+      "start": 210.34,
+      "end": 210.8,
+      "probability": 0.088
+    },
+    {
+      "word": "in",
+      "start": 210.8,
+      "end": 211.0,
+      "probability": 0.542
+    },
+    {
+      "word": "token",
+      "start": 211.0,
+      "end": 211.34,
+      "probability": 0.986
+    },
+    {
+      "word": "equals",
+      "start": 211.34,
+      "end": 211.82,
+      "probability": 0.925
+    },
+    {
+      "word": "HF",
+      "start": 211.82,
+      "end": 212.28,
+      "probability": 0.763
+    },
+    {
+      "word": "token",
+      "start": 212.28,
+      "end": 212.64,
+      "probability": 0.971
+    },
+    {
+      "word": "at",
+      "start": 212.64,
+      "end": 212.88,
+      "probability": 0.975
+    },
+    {
+      "word": "startup.",
+      "start": 212.88,
+      "end": 213.24,
+      "probability": 0.716
+    },
+    {
+      "word": "HF",
+      "start": 213.9,
+      "end": 214.28,
+      "probability": 0.972
+    },
+    {
+      "word": "token",
+      "start": 214.28,
+      "end": 214.56,
+      "probability": 0.955
+    },
+    {
+      "word": "must",
+      "start": 214.56,
+      "end": 214.82,
+      "probability": 0.996
+    },
+    {
+      "word": "be",
+      "start": 214.82,
+      "end": 215.02,
+      "probability": 0.997
+    },
+    {
+      "word": "set",
+      "start": 215.02,
+      "end": 215.26,
+      "probability": 0.92
+    },
+    {
+      "word": "in",
+      "start": 215.26,
+      "end": 215.44,
+      "probability": 0.948
+    },
+    {
+      "word": "end",
+      "start": 215.44,
+      "end": 215.66,
+      "probability": 0.142
+    },
+    {
+      "word": "and",
+      "start": 215.66,
+      "end": 215.92,
+      "probability": 0.862
+    },
+    {
+      "word": "load",
+      "start": 215.92,
+      "end": 216.16,
+      "probability": 0.923
+    },
+    {
+      "word": "do",
+      "start": 216.16,
+      "end": 216.4,
+      "probability": 0.27
+    },
+    {
+      "word": "10",
+      "start": 216.4,
+      "end": 216.68,
+      "probability": 0.28
+    },
+    {
+      "word": "is",
+      "start": 216.68,
+      "end": 217.28,
+      "probability": 0.669
+    },
+    {
+      "word": "called",
+      "start": 217.28,
+      "end": 217.6,
+      "probability": 0.995
+    },
+    {
+      "word": "at",
+      "start": 217.6,
+      "end": 217.82,
+      "probability": 0.961
+    },
+    {
+      "word": "module",
+      "start": 217.82,
+      "end": 218.08,
+      "probability": 0.963
+    },
+    {
+      "word": "import.",
+      "start": 218.08,
+      "end": 218.54,
+      "probability": 0.982
+    },
+    {
+      "word": "Without",
+      "start": 218.9,
+      "end": 219.28,
+      "probability": 0.172
+    },
+    {
+      "word": "this,",
+      "start": 219.28,
+      "end": 219.62,
+      "probability": 0.98
+    },
+    {
+      "word": "model",
+      "start": 219.82,
+      "end": 220.06,
+      "probability": 0.826
+    },
+    {
+      "word": "downloads",
+      "start": 220.06,
+      "end": 220.56,
+      "probability": 0.945
+    },
+    {
+      "word": "fail",
+      "start": 220.56,
+      "end": 220.84,
+      "probability": 0.98
+    },
+    {
+      "word": "silently.",
+      "start": 220.84,
+      "end": 221.44,
+      "probability": 0.992
+    },
+    {
+      "word": "Section,",
+      "start": 222.2,
+      "end": 222.54,
+      "probability": 0.805
+    },
+    {
+      "word": "drive",
+      "start": 223.0,
+      "end": 223.18,
+      "probability": 0.183
+    },
+    {
+      "word": "phase",
+      "start": 223.18,
+      "end": 223.48,
+      "probability": 0.831
+    },
+    {
+      "word": "organization",
+      "start": 223.48,
+      "end": 224.28,
+      "probability": 0.974
+    },
+    {
+      "word": "2026",
+      "start": 224.28,
+      "end": 225.58,
+      "probability": 0.483
+    },
+    {
+      "word": "0524.",
+      "start": 225.58,
+      "end": 226.84,
+      "probability": 0.583
+    },
+    {
+      "word": "Chapter",
+      "start": 227.74,
+      "end": 228.32,
+      "probability": 0.915
+    },
+    {
+      "word": "audio",
+      "start": 228.32,
+      "end": 228.68,
+      "probability": 0.96
+    },
+    {
+      "word": "files",
+      "start": 228.68,
+      "end": 229.0,
+      "probability": 0.998
+    },
+    {
+      "word": "on",
+      "start": 229.0,
+      "end": 229.26,
+      "probability": 0.995
+    },
+    {
+      "word": "drive",
+      "start": 229.26,
+      "end": 229.52,
+      "probability": 0.314
+    },
+    {
+      "word": "are",
+      "start": 229.52,
+      "end": 229.82,
+      "probability": 0.993
+    },
+    {
+      "word": "now",
+      "start": 229.82,
+      "end": 229.98,
+      "probability": 0.998
+    },
+    {
+      "word": "organized",
+      "start": 229.98,
+      "end": 230.56,
+      "probability": 0.987
+    },
+    {
+      "word": "into",
+      "start": 230.56,
+      "end": 230.9,
+      "probability": 0.989
+    },
+    {
+      "word": "phase",
+      "start": 230.9,
+      "end": 231.16,
+      "probability": 0.861
+    },
+    {
+      "word": "subfolders",
+      "start": 231.16,
+      "end": 231.92,
+      "probability": 0.949
+    },
+    {
+      "word": "under",
+      "start": 231.92,
+      "end": 232.16,
+      "probability": 0.989
+    },
+    {
+      "word": "BDF",
+      "start": 232.16,
+      "end": 232.66,
+      "probability": 0.824
+    },
+    {
+      "word": "chapters",
+      "start": 232.66,
+      "end": 233.04,
+      "probability": 0.424
+    },
+    {
+      "word": "slash",
+      "start": 233.04,
+      "end": 233.42,
+      "probability": 0.318
+    },
+    {
+      "word": "impact",
+      "start": 233.42,
+      "end": 234.44,
+      "probability": 0.052
+    },
+    {
+      "word": "on",
+      "start": 234.44,
+      "end": 234.76,
+      "probability": 0.991
+    },
+    {
+      "word": "drive",
+      "start": 234.76,
+      "end": 235.02,
+      "probability": 0.931
+    },
+    {
+      "word": "sync.",
+      "start": 235.02,
+      "end": 235.46,
+      "probability": 0.853
+    },
+    {
+      "word": "Pi,",
+      "start": 235.94,
+      "end": 236.1,
+      "probability": 0.23
+    },
+    {
+      "word": "list",
+      "start": 236.54,
+      "end": 236.9,
+      "probability": 0.873
+    },
+    {
+      "word": "folder",
+      "start": 236.9,
+      "end": 237.28,
+      "probability": 0.976
+    },
+    {
+      "word": "now",
+      "start": 237.28,
+      "end": 237.92,
+      "probability": 0.28
+    },
+    {
+      "word": "recurses",
+      "start": 237.92,
+      "end": 238.54,
+      "probability": 0.835
+    },
+    {
+      "word": "into",
+      "start": 238.54,
+      "end": 238.68,
+      "probability": 0.992
+    },
+    {
+      "word": "subfolders,",
+      "start": 238.68,
+      "end": 239.44,
+      "probability": 0.984
+    },
+    {
+      "word": "MIME",
+      "start": 239.84,
+      "end": 239.98,
+      "probability": 0.786
+    },
+    {
+      "word": "type",
+      "start": 239.98,
+      "end": 240.16,
+      "probability": 0.699
+    },
+    {
+      "word": "equals",
+      "start": 240.16,
+      "end": 240.54,
+      "probability": 0.651
+    },
+    {
+      "word": "equals",
+      "start": 240.54,
+      "end": 240.88,
+      "probability": 0.879
+    },
+    {
+      "word": "application",
+      "start": 240.88,
+      "end": 241.42,
+      "probability": 0.723
+    },
+    {
+      "word": "slash",
+      "start": 241.42,
+      "end": 241.96,
+      "probability": 0.669
+    },
+    {
+      "word": "VND,",
+      "start": 241.96,
+      "end": 242.54,
+      "probability": 0.779
+    },
+    {
+      "word": "Google",
+      "start": 243.1,
+      "end": 243.2,
+      "probability": 0.864
+    },
+    {
+      "word": "apps,",
+      "start": 243.2,
+      "end": 243.66,
+      "probability": 0.505
+    },
+    {
+      "word": "folder",
+      "start": 244.0,
+      "end": 244.22,
+      "probability": 0.988
+    },
+    {
+      "word": "write",
+      "start": 244.22,
+      "end": 244.5,
+      "probability": 0.583
+    },
+    {
+      "word": "arrow",
+      "start": 244.5,
+      "end": 244.82,
+      "probability": 0.705
+    },
+    {
+      "word": "recurs.",
+      "start": 244.82,
+      "end": 245.16,
+      "probability": 0.715
+    },
+    {
+      "word": "Before",
+      "start": 245.76,
+      "end": 246.2,
+      "probability": 0.374
+    },
+    {
+      "word": "this",
+      "start": 246.2,
+      "end": 246.5,
+      "probability": 0.996
+    },
+    {
+      "word": "fix,",
+      "start": 246.5,
+      "end": 246.84,
+      "probability": 0.954
+    },
+    {
+      "word": "the",
+      "start": 247.16,
+      "end": 247.24,
+      "probability": 0.992
+    },
+    {
+      "word": "manifest",
+      "start": 247.24,
+      "end": 247.68,
+      "probability": 0.1
+    },
+    {
+      "word": "scanner",
+      "start": 247.68,
+      "end": 248.18,
+      "probability": 0.992
+    },
+    {
+      "word": "missed",
+      "start": 248.18,
+      "end": 248.5,
+      "probability": 0.978
+    },
+    {
+      "word": "all",
+      "start": 248.5,
+      "end": 248.84,
+      "probability": 0.997
+    },
+    {
+      "word": "files",
+      "start": 248.84,
+      "end": 249.2,
+      "probability": 0.99
+    },
+    {
+      "word": "inside",
+      "start": 249.2,
+      "end": 249.72,
+      "probability": 0.997
+    },
+    {
+      "word": "phase",
+      "start": 249.72,
+      "end": 250.22,
+      "probability": 0.528
+    },
+    {
+      "word": "folders.",
+      "start": 250.22,
+      "end": 250.56,
+      "probability": 0.986
+    },
+    {
+      "word": "Two",
+      "start": 251.3,
+      "end": 252.06,
+      "probability": 0.612
+    },
+    {
+      "word": "new",
+      "start": 252.06,
+      "end": 252.28,
+      "probability": 0.973
+    },
+    {
+      "word": "manifest",
+      "start": 252.28,
+      "end": 252.7,
+      "probability": 0.905
+    },
+    {
+      "word": "sections",
+      "start": 252.7,
+      "end": 253.18,
+      "probability": 0.988
+    },
+    {
+      "word": "added.",
+      "start": 253.18,
+      "end": 253.6,
+      "probability": 0.996
+    },
+    {
+      "word": "BDF",
+      "start": 254.14,
+      "end": 254.6,
+      "probability": 0.814
+    },
+    {
+      "word": "anchors",
+      "start": 254.6,
+      "end": 255.04,
+      "probability": 0.85
+    },
+    {
+      "word": "track",
+      "start": 255.04,
+      "end": 255.32,
+      "probability": 0.47
+    },
+    {
+      "word": "CH",
+      "start": 255.32,
+      "end": 255.72,
+      "probability": 0.865
+    },
+    {
+      "word": "anchor",
+      "start": 255.72,
+      "end": 256.12,
+      "probability": 0.919
+    },
+    {
+      "word": "MP3",
+      "start": 256.12,
+      "end": 257.2,
+      "probability": 0.49
+    },
+    {
+      "word": "and",
+      "start": 257.2,
+      "end": 257.52,
+      "probability": 0.973
+    },
+    {
+      "word": "BDF",
+      "start": 257.52,
+      "end": 258.04,
+      "probability": 0.989
+    },
+    {
+      "word": "combined",
+      "start": 258.04,
+      "end": 258.36,
+      "probability": 0.969
+    },
+    {
+      "word": "track",
+      "start": 258.36,
+      "end": 258.8,
+      "probability": 0.889
+    },
+    {
+      "word": "CH",
+      "start": 258.8,
+      "end": 259.24,
+      "probability": 0.992
+    },
+    {
+      "word": "combined",
+      "start": 259.24,
+      "end": 259.76,
+      "probability": 0.98
+    },
+    {
+      "word": "MP3",
+      "start": 259.76,
+      "end": 260.92,
+      "probability": 0.873
+    },
+    {
+      "word": "independent",
+      "start": 260.92,
+      "end": 261.68,
+      "probability": 0.817
+    },
+    {
+      "word": "from",
+      "start": 261.68,
+      "end": 261.96,
+      "probability": 0.993
+    },
+    {
+      "word": "chapters.",
+      "start": 261.96,
+      "end": 262.44,
+      "probability": 0.964
+    },
+    {
+      "word": "Drive",
+      "start": 262.94,
+      "end": 263.4,
+      "probability": 0.855
+    },
+    {
+      "word": "scan",
+      "start": 263.4,
+      "end": 263.7,
+      "probability": 0.487
+    },
+    {
+      "word": "summary",
+      "start": 263.7,
+      "end": 264.12,
+      "probability": 0.991
+    },
+    {
+      "word": "now",
+      "start": 264.12,
+      "end": 264.36,
+      "probability": 0.992
+    },
+    {
+      "word": "reports",
+      "start": 264.36,
+      "end": 264.76,
+      "probability": 0.992
+    },
+    {
+      "word": "BDF",
+      "start": 264.76,
+      "end": 265.36,
+      "probability": 0.996
+    },
+    {
+      "word": "anchors",
+      "start": 265.36,
+      "end": 265.76,
+      "probability": 0.999
+    },
+    {
+      "word": "and",
+      "start": 265.76,
+      "end": 265.92,
+      "probability": 0.992
+    },
+    {
+      "word": "BDF",
+      "start": 265.92,
+      "end": 266.44,
+      "probability": 0.997
+    },
+    {
+      "word": "combined",
+      "start": 266.44,
+      "end": 266.76,
+      "probability": 0.989
+    },
+    {
+      "word": "count",
+      "start": 266.76,
+      "end": 267.16,
+      "probability": 0.955
+    },
+    {
+      "word": "separately.",
+      "start": 267.16,
+      "end": 267.74,
+      "probability": 0.996
+    },
+    {
+      "word": "Chapter",
+      "start": 268.36,
+      "end": 268.6,
+      "probability": 0.838
+    },
+    {
+      "word": "combiner",
+      "start": 268.6,
+      "end": 269.04,
+      "probability": 0.708
+    },
+    {
+      "word": "pi",
+      "start": 269.04,
+      "end": 269.34,
+      "probability": 0.119
+    },
+    {
+      "word": "result",
+      "start": 269.34,
+      "end": 269.72,
+      "probability": 0.726
+    },
+    {
+      "word": "31",
+      "start": 269.72,
+      "end": 270.52,
+      "probability": 0.807
+    },
+    {
+      "word": "CH",
+      "start": 270.52,
+      "end": 271.2,
+      "probability": 0.564
+    },
+    {
+      "word": "asterisk",
+      "start": 271.2,
+      "end": 271.8,
+      "probability": 0.881
+    },
+    {
+      "word": "combined",
+      "start": 271.8,
+      "end": 272.2,
+      "probability": 0.992
+    },
+    {
+      "word": "MP3",
+      "start": 272.2,
+      "end": 273.3,
+      "probability": 0.832
+    },
+    {
+      "word": "files",
+      "start": 273.3,
+      "end": 273.74,
+      "probability": 0.975
+    },
+    {
+      "word": "generated",
+      "start": 273.74,
+      "end": 274.32,
+      "probability": 0.997
+    },
+    {
+      "word": "in",
+      "start": 274.32,
+      "end": 274.54,
+      "probability": 0.995
+    },
+    {
+      "word": "converted",
+      "start": 274.54,
+      "end": 275.02,
+      "probability": 0.973
+    },
+    {
+      "word": "combined",
+      "start": 275.02,
+      "end": 275.42,
+      "probability": 0.078
+    },
+    {
+      "word": "and",
+      "start": 275.42,
+      "end": 275.8,
+      "probability": 0.974
+    },
+    {
+      "word": "uploaded",
+      "start": 275.8,
+      "end": 276.16,
+      "probability": 0.99
+    },
+    {
+      "word": "to",
+      "start": 276.16,
+      "end": 276.4,
+      "probability": 0.979
+    },
+    {
+      "word": "drive",
+      "start": 276.4,
+      "end": 276.7,
+      "probability": 0.286
+    },
+    {
+      "word": "section",
+      "start": 276.7,
+      "end": 277.76,
+      "probability": 0.02
+    },
+    {
+      "word": "known",
+      "start": 277.76,
+      "end": 278.28,
+      "probability": 0.847
+    },
+    {
+      "word": "issues.",
+      "start": 278.28,
+      "end": 278.92,
+      "probability": 0.98
+    },
+    {
+      "word": "CH",
+      "start": 279.42,
+      "end": 280.26,
+      "probability": 0.425
+    },
+    {
+      "word": "11",
+      "start": 280.26,
+      "end": 280.82,
+      "probability": 0.365
+    },
+    {
+      "word": "CH",
+      "start": 280.82,
+      "end": 281.44,
+      "probability": 0.573
+    },
+    {
+      "word": "16",
+      "start": 281.44,
+      "end": 282.02,
+      "probability": 0.791
+    },
+    {
+      "word": "duplicate",
+      "start": 282.02,
+      "end": 282.42,
+      "probability": 0.892
+    },
+    {
+      "word": "numbering",
+      "start": 282.42,
+      "end": 283.08,
+      "probability": 0.988
+    },
+    {
+      "word": "six",
+      "start": 283.08,
+      "end": 283.64,
+      "probability": 0.618
+    },
+    {
+      "word": "pairs",
+      "start": 283.64,
+      "end": 284.0,
+      "probability": 0.944
+    },
+    {
+      "word": "needs",
+      "start": 284.0,
+      "end": 284.28,
+      "probability": 0.561
+    },
+    {
+      "word": "sequential",
+      "start": 284.28,
+      "end": 284.74,
+      "probability": 0.985
+    },
+    {
+      "word": "renaming",
+      "start": 284.74,
+      "end": 285.18,
+      "probability": 0.981
+    },
+    {
+      "word": "G",
+      "start": 285.18,
+      "end": 285.78,
+      "probability": 0.739
+    },
+    {
+      "word": "drive",
+      "start": 285.78,
+      "end": 286.02,
+      "probability": 0.625
+    },
+    {
+      "word": "credentials",
+      "start": 286.02,
+      "end": 286.5,
+      "probability": 0.993
+    },
+    {
+      "word": "shared",
+      "start": 286.5,
+      "end": 286.98,
+      "probability": 0.982
+    },
+    {
+      "word": "with",
+      "start": 286.98,
+      "end": 287.24,
+      "probability": 0.998
+    },
+    {
+      "word": "CA",
+      "start": 287.24,
+      "end": 287.5,
+      "probability": 0.625
+    },
+    {
+      "word": "book",
+      "start": 287.5,
+      "end": 287.78,
+      "probability": 0.762
+    },
+    {
+      "word": "compiler",
+      "start": 287.78,
+      "end": 288.24,
+      "probability": 0.962
+    },
+    {
+      "word": "by",
+      "start": 288.24,
+      "end": 288.84,
+      "probability": 0.926
+    },
+    {
+      "word": "design",
+      "start": 288.84,
+      "end": 289.22,
+      "probability": 0.98
+    },
+    {
+      "word": "both",
+      "start": 289.22,
+      "end": 289.96,
+      "probability": 0.913
+    },
+    {
+      "word": "point",
+      "start": 289.96,
+      "end": 290.3,
+      "probability": 0.946
+    },
+    {
+      "word": "to",
+      "start": 290.3,
+      "end": 290.46,
+      "probability": 0.952
+    },
+    {
+      "word": "BDF",
+      "start": 290.46,
+      "end": 290.9,
+      "probability": 0.766
+    },
+    {
+      "word": "project",
+      "start": 290.9,
+      "end": 291.24,
+      "probability": 0.912
+    },
+    {
+      "word": "dire",
+      "start": 291.24,
+      "end": 291.64,
+      "probability": 0.65
+    },
+    {
+      "word": "resolved",
+      "start": 291.64,
+      "end": 292.38,
+      "probability": 0.93
+    },
+    {
+      "word": "2026",
+      "start": 292.38,
+      "end": 293.8,
+      "probability": 0.785
+    },
+    {
+      "word": "-05",
+      "start": 293.8,
+      "end": 294.76,
+      "probability": 0.772
+    },
+    {
+      "word": "-20.",
+      "start": 294.76,
+      "end": 295.72,
+      "probability": 0.95
+    },
+    {
+      "word": "None",
+      "start": 296.28,
+      "end": 296.6,
+      "probability": 0.677
+    },
+    {
+      "word": "type",
+      "start": 296.6,
+      "end": 296.94,
+      "probability": 0.83
+    },
+    {
+      "word": "crash",
+      "start": 296.94,
+      "end": 297.24,
+      "probability": 0.96
+    },
+    {
+      "word": "in",
+      "start": 297.24,
+      "end": 297.56,
+      "probability": 0.571
+    },
+    {
+      "word": "Doc",
+      "start": 297.56,
+      "end": 297.74,
+      "probability": 0.401
+    },
+    {
+      "word": "X",
+      "start": 297.74,
+      "end": 298.02,
+      "probability": 0.328
+    },
+    {
+      "word": "converter",
+      "start": 298.02,
+      "end": 298.44,
+      "probability": 0.902
+    },
+    {
+      "word": "when",
+      "start": 298.44,
+      "end": 298.72,
+      "probability": 0.96
+    },
+    {
+      "word": "peristyle",
+      "start": 298.72,
+      "end": 299.34,
+      "probability": 0.596
+    },
+    {
+      "word": "is",
+      "start": 299.34,
+      "end": 299.5,
+      "probability": 0.988
+    },
+    {
+      "word": "none",
+      "start": 299.5,
+      "end": 299.76,
+      "probability": 0.88
+    },
+    {
+      "word": "guard",
+      "start": 299.76,
+      "end": 300.18,
+      "probability": 0.866
+    },
+    {
+      "word": "added",
+      "start": 300.18,
+      "end": 300.6,
+      "probability": 0.885
+    },
+    {
+      "word": "section",
+      "start": 300.6,
+      "end": 301.06,
+      "probability": 0.974
+    },
+    {
+      "word": "connected",
+      "start": 301.06,
+      "end": 301.84,
+      "probability": 0.831
+    },
+    {
+      "word": "nodes.",
+      "start": 301.84,
+      "end": 302.5,
+      "probability": 0.973
+    },
+    {
+      "word": "BDF",
+      "start": 303.46,
+      "end": 304.2,
+      "probability": 0.819
+    },
+    {
+      "word": "avatar",
+      "start": 304.2,
+      "end": 304.48,
+      "probability": 0.079
+    },
+    {
+      "word": "pipeline",
+      "start": 304.48,
+      "end": 305.14,
+      "probability": 0.937
+    },
+    {
+      "word": "avatar",
+      "start": 305.14,
+      "end": 305.88,
+      "probability": 0.081
+    },
+    {
+      "word": "generation",
+      "start": 305.88,
+      "end": 306.38,
+      "probability": 0.94
+    },
+    {
+      "word": "system",
+      "start": 306.38,
+      "end": 307.06,
+      "probability": 0.991
+    },
+    {
+      "word": "documented",
+      "start": 307.06,
+      "end": 307.58,
+      "probability": 0.975
+    },
+    {
+      "word": "in",
+      "start": 307.58,
+      "end": 307.9,
+      "probability": 0.998
+    },
+    {
+      "word": "this",
+      "start": 307.9,
+      "end": 308.08,
+      "probability": 0.996
+    },
+    {
+      "word": "book",
+      "start": 308.08,
+      "end": 308.4,
+      "probability": 0.996
+    },
+    {
+      "word": "BDF",
+      "start": 308.4,
+      "end": 309.26,
+      "probability": 0.931
+    },
+    {
+      "word": "agent",
+      "start": 309.26,
+      "end": 309.64,
+      "probability": 0.957
+    },
+    {
+      "word": "pipeline",
+      "start": 309.64,
+      "end": 310.14,
+      "probability": 0.983
+    },
+    {
+      "word": "telegram",
+      "start": 310.74,
+      "end": 311.34,
+      "probability": 0.551
+    },
+    {
+      "word": "plus",
+      "start": 311.34,
+      "end": 311.64,
+      "probability": 0.849
+    },
+    {
+      "word": "a",
+      "start": 311.64,
+      "end": 311.8,
+      "probability": 0.926
+    },
+    {
+      "word": "sync",
+      "start": 311.8,
+      "end": 312.02,
+      "probability": 0.65
+    },
+    {
+      "word": "architecture",
+      "start": 312.02,
+      "end": 312.66,
+      "probability": 0.988
+    },
+    {
+      "word": "BDF",
+      "start": 312.66,
+      "end": 313.42,
+      "probability": 0.955
+    },
+    {
+      "word": "canvas",
+      "start": 313.42,
+      "end": 313.82,
+      "probability": 0.691
+    },
+    {
+      "word": "project",
+      "start": 313.82,
+      "end": 314.84,
+      "probability": 0.847
+    },
+    {
+      "word": "overview",
+      "start": 314.84,
+      "end": 315.44,
+      "probability": 0.98
+    },
+    {
+      "word": "CA",
+      "start": 315.44,
+      "end": 315.9,
+      "probability": 0.755
+    },
+    {
+      "word": "book",
+      "start": 315.9,
+      "end": 316.16,
+      "probability": 0.762
+    },
+    {
+      "word": "system",
+      "start": 316.16,
+      "end": 316.64,
+      "probability": 0.985
+    },
+    {
+      "word": "sister",
+      "start": 316.64,
+      "end": 317.38,
+      "probability": 0.708
+    },
+    {
+      "word": "book",
+      "start": 317.38,
+      "end": 317.74,
+      "probability": 0.97
+    },
+    {
+      "word": "identical",
+      "start": 317.74,
+      "end": 318.32,
+      "probability": 0.967
+    },
+    {
+      "word": "architecture",
+      "start": 318.32,
+      "end": 319.04,
+      "probability": 0.988
+    },
+    {
+      "word": "creative",
+      "start": 319.04,
+      "end": 319.68,
+      "probability": 0.946
+    },
+    {
+      "word": "systems",
+      "start": 319.68,
+      "end": 320.38,
+      "probability": 0.997
+    },
+    {
+      "word": "parent",
+      "start": 320.38,
+      "end": 321.18,
+      "probability": 0.943
+    },
+    {
+      "word": "domain.",
+      "start": 321.18,
+      "end": 321.56,
+      "probability": 0.99
+    }
+  ]
+}
