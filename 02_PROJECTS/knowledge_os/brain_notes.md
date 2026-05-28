@@ -89,3 +89,30 @@ Based on your vault, the **Tools Registry** currently contains **3 tools**:
 **Follow-up to explore:** How is the Telegram bot configured and shared across multiple tools/pipelines?
 
 ---
+
+## 2026-05-28 17:38 | read-along
+
+**Q:** What is circumflex?
+
+**A:** Based on general knowledge (no specific vault context provided):
+
+**Circumflex (^)** refers to several things:
+
+1. **Diacritical mark** – A symbol (ˆ) placed over vowels in languages like French, Portuguese, or Romanian (e.g., â, ê, î) to indicate pronunciation changes or historical letter omission.
+
+2. **In programming/math** – The caret symbol `^` used for:
+   - Exponentiation (e.g., 2^3 = 8)
+   - Bitwise XOR in many languages
+   - Regex patterns (start of string)
+
+3. **In anatomy** – "Circumflex" refers to arteries that **curve around** a structure (from Latin *circumflexus* = bent around), like the **circumflex coronary artery**.
+
+4. **In music notation** – Marks a specific accent or ornament.
+
+The core meaning across all uses relates to something **curving or wrapping around**.
+
+---
+
+**Follow-up topic to explore:** How is the circumflex used in Romanian language specifically, and how does it differ from other diacritics?
+
+---
