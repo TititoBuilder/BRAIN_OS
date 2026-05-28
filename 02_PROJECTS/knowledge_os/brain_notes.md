@@ -55,3 +55,37 @@ Your vault notes you completed **read-along venv separation** as evidence of mas
 - Knowledge OS user manual documented
 - Dashboard: header visibility fixed, button hover states fixed, Focus Now cards clickable (edit modal)
 - Admin key file removed from tracking
+
+## 2026-05-28 17:24 | read-along
+
+**Q:** What is a tool in tool registry ? 
+
+**A:** ## Tools in Cristian's Registry
+
+Based on your vault, the **Tools Registry** currently contains **3 tools**:
+
+---
+
+### 1. 📱 **Telegram Bot**
+- Notification standard for ALL system alerts
+- Used by: `clip_watcher.py` and other pipelines
+
+### 2. 📊 **claude_monitor.py**
+- Monitors Claude API costs
+- Sends Telegram alerts when daily > $5 or monthly projection > $20
+
+### 3. 🤖 **Claude Code**
+- CLI AI coding agent (installed via npm)
+- Launched with `claude` or `cc` alias
+
+---
+
+### Core Rule:
+> Before acquiring **any new tool**, check this file first. If an existing tool covers the need, use it.
+> *(Example: 30min was wasted on Gmail SMTP + ntfy when Telegram already existed)*
+
+---
+
+**Follow-up to explore:** How is the Telegram bot configured and shared across multiple tools/pipelines?
+
+---
