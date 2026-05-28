@@ -1,0 +1,88 @@
+KNOWLEDGE OS — LAUNCH COMMANDS
+================================
+Last updated: 2026-05-27
+
+OPEN PROJECT IN VS CODE
+-----------------------
+code C:\Users\titit\Projects\read-along-app
+
+
+TERMINAL 1 — BACKEND (run first)
+---------------------------------
+cd C:\Users\titit\Projects\read-along-app\backend
+.\venv\Scripts\Activate.ps1
+uvicorn backend:app --reload --port 8000
+
+
+TERMINAL 2 — FRONTEND
+-----------------------
+cd C:\Users\titit\Projects\read-along-app\frontend
+npm run dev
+
+
+OPEN APP IN BROWSER (local)
+----------------------------
+start chrome http://localhost:5173
+
+
+OPEN APP ON IPHONE (deployed)
+------------------------------
+https://read-along-app-psi.vercel.app
+
+
+RAILWAY BACKEND URL
+--------------------
+https://read-along-app-production.up.railway.app
+
+
+DEPLOY FRONTEND (when code changes)
+-------------------------------------
+cd C:\Users\titit\Projects\read-along-app\frontend
+vercel --prod
+
+
+COPY DRIVE CREDENTIALS TO CLIPBOARD (for Railway env vars)
+------------------------------------------------------------
+# Step 1 - Copy credentials (paste as GOOGLE_CREDENTIALS_JSON)
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("C:\Dev\Projects\soccer-content-generator\gdrive_credentials.json")) | clip
+
+# Step 2 - Copy token (paste as GOOGLE_TOKEN_JSON)
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("C:\Dev\Projects\soccer-content-generator\gdrive_token.json")) | clip
+
+
+TRANSCRIBE NEW AUDIO FILES (local only)
+-----------------------------------------
+cd C:\Users\titit\Projects\read-along-app\backend
+venv\Scripts\python transcribe_batch.py
+
+
+KNOWLEDGE OS APP (encyclopedia tracker)
+-----------------------------------------
+start chrome C:\BRAIN_OS\09_TOOLS\knowledge_os.html
+
+
+BRAIN NOTES SYNC (Telegram → Claude → vault)
+----------------------------------------------
+C:\Knowledge\CA\venv\Scripts\python C:\BRAIN_OS\09_TOOLS\brain_notes_sync.py
+
+
+OBSIDIAN SYNC
+--------------
+C:\Knowledge\CA\venv\Scripts\python C:\BRAIN_OS\09_TOOLS\obsidian_sync.py --input "C:\Users\titit\Downloads\obsidian_sync.json" --vault "C:\BRAIN_OS"
+
+
+AUDIO STITCHER
+---------------
+C:\Knowledge\CA\venv\Scripts\python C:\BRAIN_OS\09_TOOLS\audio_stitcher.py --manifest "C:\Users\titit\Downloads\audio_manifest.json" --audio-dir "C:\BRAIN_OS\audio_staging" --output "C:\BRAIN_OS\audio_out\session.mp3"
+
+
+SESSION CLOSE
+--------------
+cd C:\Dev\Projects\soccer-content-generator
+C:\Knowledge\CA\venv\Scripts\python C:\BRAIN_OS\09_TOOLS\session_close.py
+
+
+GIT PUSH ALL PROJECTS
+----------------------
+cd C:\BRAIN_OS && git add . && git commit -m "chore: session update" && git push
+cd C:\Users\titit\Projects\read-along-app && git add . && git commit -m "chore: session update" && git push
