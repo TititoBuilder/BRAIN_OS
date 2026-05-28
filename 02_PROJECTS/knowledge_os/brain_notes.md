@@ -37,3 +37,4 @@ Your vault notes you completed **read-along venv separation** as evidence of mas
 **Follow-up topic to explore:** `pyenv` vs `venv` vs `conda` — when to use which tool for environment management?
 
 ---
+<!-- synced -->
