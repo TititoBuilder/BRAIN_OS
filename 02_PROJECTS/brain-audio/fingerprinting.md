@@ -62,3 +62,11 @@ brain-audio pipeline — surviving re-saves and format conversion.
 - `test_audio.wav` artifact added to .gitignore
 - Auto-fingerprinting wired into every TTS output via book-compiler pipeline
 - Fingerprint integrity verified after master WAV stitch step
+
+
+<!-- auto-updated 2026-05-28 -->
+## Fingerprinting Integration — 2026-05-28
+- **feat:** Verify fingerprint integrity after master WAV stitch
+- **feat:** Auto-fingerprint every TTS output via brain-audio module
+- Both features merged into book-compiler this session
+- Fingerprint check runs post-stitch to catch corruption before delivery

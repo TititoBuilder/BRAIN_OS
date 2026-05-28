@@ -239,3 +239,8 @@ score in app → export JSON → obsidian_sync.py writes vault →
 audio_stitcher.py builds the session → listen → update score → repeat.
 Each tool is a pure function. Each output is the next tool's input.
 That's the pattern. Build loops, not islands.
+
+<!-- auto-ingested 2026-05-28 -->
+## Build the Loop, Not Just the Tool
+*Added: 2026-05-28*
+Focus on creating systems that feed themselves — pipelines that produce inputs for their next run. A tool solves one problem; a loop compounds value over time. When building, ask: does this create a feedback cycle or a dead end?

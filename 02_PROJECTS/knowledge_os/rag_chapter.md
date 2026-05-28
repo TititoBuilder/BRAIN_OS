@@ -69,3 +69,11 @@ That gap is why RAG exists.
 - Retrieval augments generation by injecting relevant context chunks into the prompt at inference time
 - Learned through direct implementation in Knowledge OS pipeline
 - Source: session archive 2026-05-28
+
+
+<!-- auto-updated 2026-05-28 -->
+## RAG Chapter — Learned by Building
+- Cristian's explanation approach: learn RAG by building a working pipeline
+- Covers retrieval, chunking, embedding, vector lookup, and generation stages
+- Written from first-person builder perspective
+- Status: Documented 2026-05-28

@@ -32,3 +32,7 @@ Prevents fragmentation — every memory artifact links here.
 - [[BDF_Analysis_Agent]]
 - [[BDF_Memory_Agent]]
 - [[Data_Orchestrator]]
+
+
+<!-- auto-ingested 2026-05-28 -->
+- **2026-05-28 14:17** — Knowledge OS Phase 1-3, fingerprinting, Read-Along arch, Whisper GPU, RAG chapter, dashboard fixes, new principle
