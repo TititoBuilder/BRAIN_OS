@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-25",
+  "generated": "2026-05-28",
   "index": {
     "lancedb": "BRAIN_OS_Handbook/chapters/Phase_02_Architecture/lancedb_vector_store_audio.mp3",
     "mcp_protocol": "BRAIN_OS_Handbook/chapters/Phase_02_Architecture/mcp_registry_audio.mp3",
@@ -25,6 +25,14 @@
     "federated_systems": "CA_Book_Audio/chapters/ch11_architecture.wav",
     "audio_pipeline_design": "CA_Book_Audio/chapters/ch01_origin.wav",
     "llm_data_pipelines": "BRAIN_OS_Handbook/chapters/Phase_04_Agents_Workflows/bdf_knowledge_build_flow_audio.mp3",
-    "knowledge_graph_design": "BRAIN_OS_Handbook/chapters/Phase_04_Agents_Workflows/content_orchestrator_audio.mp3"
+    "knowledge_graph_design": "BRAIN_OS_Handbook/chapters/Phase_04_Agents_Workflows/content_orchestrator_audio.mp3",
+    "cristian_principles": "BRAIN_OS_Vault/cristian_principles.mp3",
+    "session_protocol": "BRAIN_OS_Vault/session_protocol.mp3",
+    "tools_registry": "BRAIN_OS_Vault/tools_registry.mp3",
+    "read_along_app_arch": "BRAIN_OS_Vault/read_along_app_arch.mp3",
+    "bdf_agent_pipeline": "BRAIN_OS_Vault/bdf_agent_pipeline.mp3",
+    "ca_book_system": "BRAIN_OS_Vault/ca_book_system.mp3",
+    "bdf_book_system": "BRAIN_OS_Vault/bdf_book_system.mp3",
+    "cristian_construction": "BRAIN_OS_Vault/cristian_construction.mp3"
   }
 }
