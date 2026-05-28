@@ -54,3 +54,10 @@ Before: Claude had world knowledge — generic
 After: Claude had world knowledge + my vault — specific
 
 That gap is why RAG exists.
+
+
+<!-- auto-updated 2026-05-28 -->
+## RAG Chapter — Learned by Building
+- **Author framing:** Cristian's explanation — learned by building, not by reading
+- **Ingested:** 2026-05-28
+- **Status:** Knowledge ingested into BRAIN_OS vault

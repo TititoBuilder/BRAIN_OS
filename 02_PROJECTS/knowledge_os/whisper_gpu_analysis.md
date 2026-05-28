@@ -31,3 +31,10 @@ Processing cost: $0. Latency: 0ms.
 Local machine = heavy compute compiler
 Cloud server = lightweight coordinator
 This is the Federated Hybrid Model applied to AI inference.
+
+
+<!-- auto-updated 2026-05-28 -->
+## Whisper GPU Analysis — 2026-05-28
+- **Speed:** 42x realtime on GPU
+- **Fallback:** Triton fallback explained for environments without full Triton support
+- **Source:** BRAIN_OS docs session 2026-05-28

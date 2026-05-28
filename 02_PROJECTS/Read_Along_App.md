@@ -26,7 +26,12 @@ The unified interface for the entire Knowledge OS system.
 - frontend/src/tabs/AskTab.tsx — RAG question interface
 - frontend/src/tabs/NotesTab.tsx — Q&A log viewer
 
-## Architecture Pattern
+## Architecture
+<!-- updated 2026-05-28: Full Read-Along App architecture documented this session; project node needs update -->
+## Full Architecture — 2026-05-28
+- **Interface:** 4-tab unified interface
+- **Tabs:** (populate from source docs)
+- **Status:** Full architecture documented this session Pattern
 Federated Hybrid Model:
 - Local machine = heavy compute (Whisper, TTS, Drive sync)
 - Cloud server = lightweight coordinator (when deployed)

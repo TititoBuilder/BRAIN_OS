@@ -38,3 +38,10 @@ Your vault notes you completed **read-along venv separation** as evidence of mas
 
 ---
 <!-- synced -->
+
+
+<!-- auto-updated 2026-05-28 -->
+## Principle — 2026-05-28
+**Build the loop, not just the tool.**
+- Recorded during BRAIN_OS session 2026-05-28
+- Context: Knowledge OS Phase 1-3 completion

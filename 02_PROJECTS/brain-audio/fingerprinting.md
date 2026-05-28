@@ -45,3 +45,11 @@ brain-audio pipeline — surviving re-saves and format conversion.
 ---
 
 ## Test Results
+
+<!-- auto-updated 2026-05-28 -->
+## Steganographic Fingerprint Module
+- **Method:** Local-SNR FFT detection
+- **Status:** Implemented 2026-05-28
+- **Integration:** Auto-fingerprints every TTS output via brain-audio
+- **Verification:** Fingerprint integrity checked after master WAV stitch in book-compiler
+- **Artifact:** test_audio.wav excluded via .gitignore

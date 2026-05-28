@@ -106,3 +106,10 @@ immediately across all venvs without reinstalling.
 - [[CA-book]]
 - [[read-along-app]]
 - [[Tools_Registry]]
+
+
+<!-- auto-updated 2026-05-28 -->
+**Last Updated:** 2026-05-28
+- Steganographic fingerprint module live (local-SNR FFT detection)
+- test_audio.wav artifact ignored in tracking
+- Integrated into book-compiler TTS pipeline (auto-fingerprint + post-stitch verification)
