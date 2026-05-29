@@ -250,3 +250,6 @@ Focus on creating systems that feed themselves — pipelines that produce inputs
 ## Build the Loop, Not Just the Tool
 - Added: 2026-05-28
 - Principle: When building systems, prioritize creating feedback loops and self-sustaining cycles over one-off tools. The loop compounds value; the tool only delivers it once.
+
+## Never Start Blind
+Always feed CLAUDE.md and .context.md to any AI before starting work. No exceptions across all projects.
