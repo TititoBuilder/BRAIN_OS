@@ -84,3 +84,11 @@ That gap is why RAG exists.
 - Approach: learned by building
 - Cristian's explanation integrated
 - Covers practical RAG pipeline construction from first principles
+
+
+<!-- auto-updated 2026-05-28 -->
+## RAG Chapter
+- **Approach:** Learned by building — Cristian's first-person explanation style
+- **Method:** Practical construction-first pedagogy, not theory-first
+- **Source:** Documented during BRAIN_OS session 2026-05-28
+- **Status:** Docs complete

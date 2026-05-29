@@ -56,3 +56,22 @@ knowledge_os_priority: Medium
 
 ---
 **→** [[SYSTEM_MASTER]] · [[Master_Control]]
+
+
+<!-- auto-ingested 2026-05-28 -->
+## Completed — 2026-05-28
+- [x] Read-Along App full architecture docs (4-tab interface)
+- [x] Whisper GPU analysis (42x realtime, Triton fallback)
+- [x] RAG chapter (Cristian's build-first explanation)
+- [x] Knowledge OS Drive structure (28 folders, domain isolation)
+- [x] drive_index.json wired — 25 topics audio-linked
+- [x] Knowledge OS user manual
+- [x] Dashboard UI fixes (header visibility, button hover states)
+- [x] Focus Now cards clickable (edit modal)
+- [x] 22 vault audio nodes added to dropdown
+- [x] read_along_app_session audio node added
+- [x] Excluded audio_staging binaries from git
+- [x] Removed admin key file from tracking
+- [x] BRAIN_OS principle: never start without feeding context
+- [x] drive_index fix: file IDs for BRAIN_OS_Vault entries
+- [x] soccer-content-generator: session close + brain sync 2026-05-27

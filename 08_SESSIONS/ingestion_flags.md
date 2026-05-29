@@ -1,68 +1,52 @@
-# Ingestion Flags — 2026-05-28_1417_bdf_ca_brain_os.md
-Generated: 2026-05-28 14:18
-Items: 4
+# Ingestion Flags — 2026-05-28_2041_bdf_ca_brain_os.md
+Generated: 2026-05-28 20:42
+Items: 3
 
 ---
 
-## Flag 1 of 4 — MULTI_NODE [HIGH]
+## Flag 1 of 3 — ARCHITECTURE [HIGH]
 
-**Description:** Knowledge OS Phase 1-3 build (encyclopedia, stitcher, obsidian sync) with drive_index.json wiring 25 topics audio-linked and 28-folder Drive structure affects at minimum 9 knowledge_os topic nodes, the workflow files, domain files, and memory index simultaneously. The full scope of which nodes were updated across the 3 prior ingestion cycles (9+9+12 nodes) is not specified in the session archive.
+**Description:** Knowledge OS Drive structure established with 28 folders and domain isolation. drive_index.json wired to 25 audio-linked topics. This is a significant architecture change affecting how the entire Knowledge OS stores, retrieves, and links audio content to knowledge nodes. The fix to drive_index (using file IDs for BRAIN_OS_Vault entries) may change how all vault references resolve.
 
-**Nodes:** 02_PROJECTS/knowledge_os/agent_orchestration.md, 02_PROJECTS/knowledge_os/audio_pipeline_design.md, 02_PROJECTS/knowledge_os/llm_fundamentals.md, 02_PROJECTS/knowledge_os/rag_pipelines.md, 02_PROJECTS/knowledge_os/vector_databases.md, 05_MEMORY/LanceDB_Vector_Store.md, 04_WORKFLOWS/BDF_Knowledge_Build_Flow.md, 01_DOMAINS/AI_Engineering.md, 05_MEMORY/Memory_Index.md
+**Nodes:** 02_PROJECTS/knowledge_os/api_gateway_design.md, 02_PROJECTS/knowledge_os/cloud_storage_apis.md, 02_PROJECTS/knowledge_os/audio_pipeline_design.md, 02_PROJECTS/knowledge_os/knowledge_graph_design.md, 00_NAV/SYSTEM_Rules.md
 
-**Old:** Unknown — prior ingestion cycles not detailed in this archive
+**Old:** drive_index uses path-based references for BRAIN_OS_Vault entries
 
-**New:** Knowledge OS Phase 1-3 complete: encyclopedia (topic files), stitcher (audio assembly), obsidian sync active. 25 topics audio-linked via drive_index.json. Drive structure: 28 folders with domain isolation.
+**New:** drive_index uses file IDs for BRAIN_OS_Vault entries; 28-folder Knowledge OS Drive structure with domain isolation; 25 topics audio-linked via drive_index.json
 
-**Suggested resolution:** Review all three prior ingestion cycle outputs to identify exact nodes touched. Confirm Knowledge OS Phase 1-3 architecture is reflected consistently across knowledge_os topic files, BDF_Knowledge_Build_Flow, AI_Engineering domain, and Memory_Index. Consider creating a dedicated 02_PROJECTS/knowledge_os/knowledge_os_overview.md to serve as the canonical reference.
+**Suggested resolution:** Human review needed: (1) Confirm 28-folder Drive structure is canonical and document folder names/domains in knowledge_graph_design.md or a new drive_structure.md node. (2) Verify drive_index.json file-ID fix does not break existing audio links. (3) Update SYSTEM_Rules.md if the file-ID convention is now a hard rule for all vault entries.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 2 of 4 — ARCHITECTURE [HIGH]
+## Flag 2 of 3 — MULTI_NODE [HIGH]
 
-**Description:** Read-Along App 'full architecture, 4-tab unified interface' documented this session. This is a significant architecture definition event that affects the nav file, agent definition, transcription workflow, and context graph simultaneously. Unclear if this replaces a prior partial architecture or is net-new.
+**Description:** 22 vault audio nodes added to dropdown + read_along_app_session audio node added + audio_staging binaries excluded from git. This touches audio pipeline, TTS, brain-audio, and staging infrastructure across 6+ nodes simultaneously. The git exclusion of audio_staging binaries is an infrastructure decision that affects all projects using that path.
 
-**Nodes:** 02_PROJECTS/Read_Along_App.md, 02_PROJECTS/graphs/read-along-app.context.md, 00_NAV/ReadAlong_Nav.md, 02_AGENTS/RA_Whisper_Agent.md, 04_WORKFLOWS/RA_Transcription_Flow.md
+**Nodes:** 02_PROJECTS/knowledge_os/audio_pipeline_design.md, 02_PROJECTS/knowledge_os/audio_formats.md, 02_PROJECTS/knowledge_os/audio_manipulation.md, 02_PROJECTS/Custom_Agent_TTS_Audio.md, 02_PROJECTS/brain-audio.md, 02_AGENTS/CA_Kokoro_TTS.md
 
-**Old:** Unknown — prior Read-Along App architecture state not provided in session
+**Old:** audio_staging binaries tracked in git; vault audio dropdown had fewer nodes
 
-**New:** Full architecture: 4-tab unified interface. Details documented 2026-05-28.
+**New:** audio_staging binaries excluded from git; 22 vault audio nodes + read_along_app_session added to dropdown
 
-**Suggested resolution:** Confirm whether the 4-tab unified interface replaces any prior UI architecture in Read_Along_App.md. Update ReadAlong_Nav.md to reference the canonical architecture doc. Ensure RA_Whisper_Agent.md and RA_Transcription_Flow.md are consistent with the new interface structure.
-
-**Decision:** [ ] Approve  [ ] Modify  [ ] Skip
-
----
-
-## Flag 3 of 4 — MULTI_NODE [MEDIUM]
-
-**Description:** book-compiler fingerprint integrity verification and auto-fingerprint on every TTS output via brain-audio affects the book compiler project, the brain-audio module, shared book compiler, CA book system, and multiple audio knowledge_os nodes. The 2026-05-25 ingestion re-confirmed this session, suggesting these nodes may have been partially updated already.
-
-**Nodes:** 02_PROJECTS/brain-audio.md, 02_PROJECTS/brain-audio/fingerprinting.md, 02_PROJECTS/Book_Compiler_Shared.md, 02_PROJECTS/CA_Book_System.md, 02_PROJECTS/knowledge_os/audio_pipeline_design.md, 02_PROJECTS/knowledge_os/audio_formats.md, 02_PROJECTS/knowledge_os/audio_manipulation.md
-
-**Old:** Partially ingested 2026-05-25 — exact prior state unknown
-
-**New:** Fingerprint integrity check after master WAV stitch; auto-fingerprint every TTS output via brain-audio module.
-
-**Suggested resolution:** Verify Book_Compiler_Shared.md and CA_Book_System.md already reflect the fingerprinting integration from the 2026-05-25 ingestion. If so, mark as confirmed-current. Update audio_pipeline_design.md to include fingerprint verification as a pipeline step.
+**Suggested resolution:** Review and update audio_pipeline_design.md with the new vault audio node inventory (22 nodes listed). Confirm audio_staging exclusion is documented in brain-audio.md or a .gitignore note. Verify CA_Kokoro_TTS and Custom_Agent_TTS_Audio are consistent with the new audio node structure.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 4 of 4 — ARCHIVAL [MEDIUM]
+## Flag 3 of 3 — CROSS_DOMAIN [MEDIUM]
 
-**Description:** BRAIN_OS admin key file removed from git tracking this session. This is a security-relevant change. The CLAUDE.md (API config) and SYSTEM_Rules.md (which may reference key management) should be audited to confirm no references to the removed admin key file remain, and that the removal is documented per security policy.
+**Description:** soccer-content-generator (separate project domain) had a session close and brain sync on 2026-05-27 included in this BRAIN_OS session archive. Cross-domain sync means soccer project state is embedded in BRAIN_OS memory index. Need to ensure soccer project context graph is updated independently and not conflated with BRAIN_OS ingestion.
 
-**Nodes:** 03_APIS/CLAUDE.md, 00_NAV/SYSTEM_Rules.md
+**Nodes:** 02_PROJECTS/graphs/soccer-content-generator.context.md, 02_PROJECTS/knowledge_os/brain_notes.md, 05_MEMORY/Memory_Index.md
 
-**Old:** Admin key file previously tracked in git
+**Old:** soccer-content-generator context graph last updated prior to 2026-05-27
 
-**New:** Admin key file removed from git tracking 2026-05-28. Should be in .gitignore.
+**New:** soccer-content-generator session close 2026-05-27 + brain sync 2026-05-27 completed
 
-**Suggested resolution:** Audit CLAUDE.md and SYSTEM_Rules.md for references to the removed admin key file. Add a note to 02_PROJECTS/knowledge_os/secrets_management.md documenting that admin key was removed from tracking on 2026-05-28. Confirm .gitignore updated.
+**Suggested resolution:** Update 02_PROJECTS/graphs/soccer-content-generator.context.md with 2026-05-27 session close note. Verify soccer-content-generator has its own session log and that BRAIN_OS memory index only holds a cross-reference pointer, not the full soccer state.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 

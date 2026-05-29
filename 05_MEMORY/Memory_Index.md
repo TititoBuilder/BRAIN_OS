@@ -36,3 +36,14 @@ Prevents fragmentation — every memory artifact links here.
 
 <!-- auto-ingested 2026-05-28 -->
 - **2026-05-28 14:17** — Knowledge OS Phase 1-3, fingerprinting, Read-Along arch, Whisper GPU, RAG chapter, dashboard fixes, new principle
+
+
+<!-- auto-ingested 2026-05-28 -->
+## Ingestion Runs — 2026-05-28
+| Timestamp | Session Tag | Nodes Auto-Handled |
+|-----------|-------------|--------------------|
+| 0740 | 2026-05-28_0740_bdf_ca_brain_os | 9 nodes |
+| 0740 | 2026-05-28_0740_bdf_ca_brain_os | 12 nodes |
+| 1417 | 2026-05-28_1417_bdf_ca_brain_os | 10 nodes |
+| 1417 | 2026-05-28_1417_bdf_ca_brain_os | 9 nodes |
+| 2041 | 2026-05-28_2041_bdf_ca_brain_os | current session |

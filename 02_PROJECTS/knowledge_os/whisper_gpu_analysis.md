@@ -59,3 +59,11 @@ This is the Federated Hybrid Model applied to AI inference.
 - 42x realtime processing speed confirmed
 - Triton fallback behavior explained and documented
 - Source: session analysis 2026-05-28
+
+
+<!-- auto-updated 2026-05-28 -->
+## Whisper GPU Analysis
+- **Performance:** 42x realtime transcription speed on GPU
+- **Triton fallback:** Explained — Triton kernel compilation fallback behavior documented
+- **Source:** Documented during BRAIN_OS session 2026-05-28
+- **Status:** Docs complete

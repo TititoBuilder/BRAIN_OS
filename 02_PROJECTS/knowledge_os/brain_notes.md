@@ -116,3 +116,10 @@ The core meaning across all uses relates to something **curving or wrapping arou
 **Follow-up topic to explore:** How is the circumflex used in Romanian language specifically, and how does it differ from other diacritics?
 
 ---
+
+
+<!-- auto-ingested 2026-05-28 -->
+## Principle — 2026-05-28
+**Never start a session without feeding context.**
+- Established as BRAIN_OS operating principle
+- Applies to all projects: BDF, CA, BRAIN_OS
