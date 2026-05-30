@@ -47,3 +47,7 @@ Prevents fragmentation — every memory artifact links here.
 | 1417 | 2026-05-28_1417_bdf_ca_brain_os | 10 nodes |
 | 1417 | 2026-05-28_1417_bdf_ca_brain_os | 9 nodes |
 | 2041 | 2026-05-28_2041_bdf_ca_brain_os | current session |
+
+
+<!-- auto-ingested 2026-05-29 -->
+| 2026-05-29 | BDF, CA, BRAIN_OS | Multiple ingestion runs; Read-Along App architecture; Whisper GPU analysis; RAG chapter; vault audio nodes; drive_index fix; soccer sync |

@@ -25,3 +25,10 @@ _nodes: 1_
 - **Tabs:** (1) Upload/Transcribe, (2) Read-Along Player, (3) Export, (4) Settings
 - **Stack:** RA_Whisper_Agent for transcription, Kokoro TTS optional, OBS MCP for recording integration
 - **Status:** Architecture fully documented this session
+
+
+<!-- auto-ingested 2026-05-29 -->
+## 2026-05-29
+- Full 4-tab unified interface architecture locked in
+- Audio session node added to vault dropdown
+- Whisper GPU (42x realtime) confirmed as transcription backend

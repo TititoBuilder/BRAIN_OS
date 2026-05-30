@@ -253,3 +253,7 @@ Focus on creating systems that feed themselves — pipelines that produce inputs
 
 ## Never Start Blind
 Always feed CLAUDE.md and .context.md to any AI before starting work. No exceptions across all projects.
+
+
+<!-- auto-ingested 2026-05-29 -->
+- **Never start a session without feeding context** — Always load relevant vault files, prior session logs, and project state before beginning work. Context starvation leads to repeated mistakes and lost continuity. (Added 2026-05-29)

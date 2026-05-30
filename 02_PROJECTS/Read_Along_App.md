@@ -83,3 +83,14 @@ Then open: http://localhost:5173
 - Whisper GPU transcription: 42x realtime, Triton fallback supported
 - See: `02_PROJECTS/graphs/read-along-app.context.md` for context graph
 - See: `02_AGENTS/RA_Whisper_Agent.md` and `04_WORKFLOWS/RA_Transcription_Flow.md` for agent/flow details
+
+
+<!-- auto-ingested 2026-05-29 -->
+## Full Architecture — 2026-05-29
+- 4-tab unified interface documented
+  - Tab 1: Upload & Transcribe (Whisper GPU pipeline)
+  - Tab 2: Read-Along Sync (audio + text alignment)
+  - Tab 3: Export (formats + packaging)
+  - Tab 4: Settings (model selection, GPU config)
+- Read-along session audio added to vault audio nodes dropdown
+- Architecture documented in session 2026-05-29

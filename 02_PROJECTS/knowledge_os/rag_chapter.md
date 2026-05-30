@@ -92,3 +92,10 @@ That gap is why RAG exists.
 - **Method:** Practical construction-first pedagogy, not theory-first
 - **Source:** Documented during BRAIN_OS session 2026-05-28
 - **Status:** Docs complete
+
+
+<!-- auto-ingested 2026-05-29 -->
+## Session Update — 2026-05-29
+- RAG chapter framing: 'learned by building'
+- Cristian's explanation style: ground concepts in the actual pipeline decisions made during BRAIN_OS and BDF projects
+- Emphasize retrieval as the connective tissue between raw data and LLM reasoning

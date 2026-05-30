@@ -67,3 +67,10 @@ This is the Federated Hybrid Model applied to AI inference.
 - **Triton fallback:** Explained — Triton kernel compilation fallback behavior documented
 - **Source:** Documented during BRAIN_OS session 2026-05-28
 - **Status:** Docs complete
+
+
+<!-- auto-ingested 2026-05-29 -->
+## Session Update — 2026-05-29
+- Confirmed 42x realtime processing speed benchmark
+- Triton fallback behavior documented: Whisper falls back gracefully when Triton kernel compilation fails on certain GPU configurations
+- This analysis was captured during Read-Along App architecture session

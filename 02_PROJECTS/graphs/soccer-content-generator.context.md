@@ -243,3 +243,10 @@ _nodes: 98_
 - Completed: session close chore
 - Brain sync completed 2026-05-27
 - No blocking issues recorded
+
+
+<!-- auto-ingested 2026-05-29 -->
+## 2026-05-27 (logged 2026-05-29)
+- Session close completed
+- Brain sync performed
+- Chore: gitignore audio_staging JSON + tools added
