@@ -275,6 +275,17 @@ def git_commit(changed_files: list[str], session_name: str):
     for f in changed_files:
         subprocess.run(["git", "-C", str(BRAIN_OS), "add", f], check=True)
     subprocess.run(["git", "-C", str(BRAIN_OS), "add", str(FLAGS_FILE)], check=False)
+
+    # Pull remote changes before committing to avoid push rejection
+    pull = subprocess.run(
+        ["git", "-C", str(BRAIN_OS), "pull", "--rebase", "origin", "main"],
+        capture_output=True,
+        text=True,
+    )
+    if pull.returncode != 0:
+        print(f"WARNING: git pull --rebase failed:\n{pull.stderr}")
+        print("Proceeding anyway — resolve conflicts manually if push fails.")
+
     msg = f"ingest: auto-handle {len(changed_files)} nodes — {Path(session_name).stem}"
     subprocess.run(["git", "-C", str(BRAIN_OS), "commit", "-m", msg], check=True)
     subprocess.run(["git", "-C", str(BRAIN_OS), "push"], check=True)
