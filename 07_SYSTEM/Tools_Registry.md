@@ -276,4 +276,4 @@ tags: [system, tools, infra, live]
 - 2026-05-21 — Unified watchdog.py live (morning/bdf/session modes + Task Scheduler); wired 20 vault orphans to zero; session_close.py now auto-triggers watchdog --check session after archive; every-project-gets-a-remote principle formalized
 - 2026-05-23 — session_start.py deployed (autonomous context loader + Telegram); anchor_generator.py operational (Learning Anchor pattern, am_michael voice); drive_sync.py --normalize flag added to soccer-content-generator; 3 principles formalized: remote-at-creation, filenames-as-keys, What/How/Where/Safety
 - 2026-05-24 — chapter_combiner.py deployed (31 chapters × anchor → combined MP3 via ffmpeg); Drive phase organization complete (Phase_01–Phase_06 subfolders); drive_sync recursive scan + bdf_anchors/bdf_combined manifest sections; session_start.py dotenv fix (multi-path .env loading)
-
+- 2026-05-30 — Session Archive — 2026-05-30 — Karaoke + Knowledge OS +
