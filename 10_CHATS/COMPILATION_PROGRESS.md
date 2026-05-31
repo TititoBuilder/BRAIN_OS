@@ -14,6 +14,13 @@ updated: 2026-05-03
 
 ## Completed ✅
 
+### 2026-05-30 — Karaoke + Knowledge OS + Voice Consistency
+- **Ingested:** 2026-05-30 (commit 9d4cdb1)
+- **Projects:** read-along-app, BRAIN_OS
+- **Content:** Karaoke completeness (56 topics), Knowledge OS native vault browser, ask-about-document, paragraph voice reading, voice consistency (JennyNeural), compile_session rebase fix, Telegram 400 fix
+- **Commits:** 2231124, 4f05d21, 6f6fc07, 0dd9552 (read-along-app) + 8598689 (BRAIN_OS)
+- **Impact:** Full karaoke coverage; Knowledge OS tab is now a native interactive vault browser; all speak buttons unified to JennyNeural
+
 ### 2026-05-03 — Knowledge Pipeline Meta-Session
 - **Ingested:** 2026-05-03 (commit c43174a)
 - **Content:** Knowledge ingestion system creation, Option C design, 3-domain architecture
@@ -162,13 +169,13 @@ C:\BRAIN_OS\09_TOOLS\
 
 ## Compilation Statistics
 
-**Sessions Compiled:** 3  
+**Sessions Compiled:** 4  
 **Auto-handle Rate:** 85% average  
 **Flag Rate:** 15% average (trending down)  
 **Nodes Created:** 6  
 **Nodes Updated:** 10+  
 **Knowledge Pieces Ingested:** 50+  
-**Git Commits:** 3 (c43174a, d5aa541, c207c68)
+**Git Commits:** 4 (c43174a, d5aa541, c207c68, 9d4cdb1)
 
 ---
 
