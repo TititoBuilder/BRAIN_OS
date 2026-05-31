@@ -257,3 +257,34 @@ Always feed CLAUDE.md and .context.md to any AI before starting work. No excepti
 
 <!-- auto-ingested 2026-05-29 -->
 - **Never start a session without feeding context** — Always load relevant vault files, prior session logs, and project state before beginning work. Context starvation leads to repeated mistakes and lost continuity. (Added 2026-05-29)
+
+---
+
+## Never Debug Assumptions. Debug Reality.
+
+**Learned from:** Diagnosing karaoke failure in read-along-app — May 30 2026
+
+**The Core Principle:** Before writing any fix, verify each layer of reality.
+The bug lives at the layer where reality diverges from your assumption.
+
+**Three layers to check in order:**
+
+1. **Code layer** — what does the source actually say?
+   → `git show`, `Get-Content`, `git diff`
+
+2. **Runtime layer** — what does the live system actually return?
+   → Hit the endpoint directly, check Railway logs, open DevTools Network tab
+
+3. **Data layer** — what actually exists on disk or in the repo?
+   → `Get-ChildItem`, count files, compare lists
+
+**Today's proof:**
+- Symptom: "karaoke is broken"
+- Wrong instinct: rewrite ListenTab.tsx
+- Reality check: `/transcript/lancedb` → `{"detail":"No transcript for 'lancedb'"}`
+- Root cause: 25 JSON files never existed — missing pipeline step
+- Real fix: download + transcribe + commit (no code changes needed)
+
+**What this prevents:**
+Rewriting working code to fix missing data.
+Patching symptoms while the root cause stays alive.
