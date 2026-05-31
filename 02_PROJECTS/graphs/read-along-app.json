@@ -1,22 +1,28 @@
 {
   "project": "read-along-app",
   "root": "C:/Users/titit/Projects/read-along-app",
-  "updated_at": "2026-05-12T14:35:55.417413+00:00",
-  "node_count": 1,
+  "updated_at": "2026-05-31T13:01:48.580387+00:00",
+  "node_count": 7,
   "nodes": {
     "backend/backend.py": {
-      "hash": "1b1e2a7b636a",
+      "hash": "2067ae25c6d4",
       "layer": "API",
-      "size_kb": 11.9,
+      "size_kb": 38.0,
       "mode": "full",
       "imports": {
         "stdlib": [
+          "base64",
+          "datetime",
+          "io",
+          "json",
           "logging",
           "os",
           "pathlib",
+          "re",
           "subprocess",
           "sys",
           "tempfile",
+          "threading",
           "time",
           "typing",
           "urllib.error",
@@ -26,12 +32,123 @@
         ],
         "internal": [],
         "external": [
+          "anthropic",
+          "dotenv",
+          "edge_tts",
           "fastapi",
           "fastapi.middleware.cors",
           "fastapi.responses",
           "fastapi.staticfiles",
+          "pydantic",
           "whisper"
         ]
+      }
+    },
+    "backend/download_legacy.py": {
+      "hash": "c5c46c00ef8c",
+      "layer": "uncategorized",
+      "size_kb": 6.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "base64",
+          "json",
+          "os",
+          "pathlib",
+          "sys"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "backend/gen_tts_staging.py": {
+      "hash": "cb06ca3940a4",
+      "layer": "uncategorized",
+      "size_kb": 3.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "os",
+          "pathlib",
+          "shutil",
+          "subprocess",
+          "sys",
+          "tempfile"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "backend/get_ids.py": {
+      "hash": "0e48c2340039",
+      "layer": "uncategorized",
+      "size_kb": 0.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "pathlib"
+        ],
+        "internal": [],
+        "external": [
+          "google.auth.transport.requests",
+          "google.oauth2.credentials",
+          "googleapiclient.discovery"
+        ]
+      }
+    },
+    "backend/populate_staging.py": {
+      "hash": "4f26d8c4cfa5",
+      "layer": "uncategorized",
+      "size_kb": 15.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "json",
+          "os",
+          "pathlib",
+          "subprocess",
+          "sys",
+          "time"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "backend/transcribe_batch.py": {
+      "hash": "5918cf5c2298",
+      "layer": "uncategorized",
+      "size_kb": 2.7,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "json",
+          "pathlib",
+          "sys",
+          "time",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "whisper"
+        ]
+      }
+    },
+    "backend/update_index.py": {
+      "hash": "98bf158a3cce",
+      "layer": "uncategorized",
+      "size_kb": 2.7,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "json",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": []
       }
     }
   }

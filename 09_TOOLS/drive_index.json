@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-28",
+  "generated": "2026-05-31",
   "index": {
     "lancedb": "BRAIN_OS_Handbook/chapters/Phase_02_Architecture/lancedb_vector_store_audio.mp3",
     "mcp_protocol": "BRAIN_OS_Handbook/chapters/Phase_02_Architecture/mcp_registry_audio.mp3",
@@ -56,6 +56,7 @@
     "lancedb_vector_store": "id:1jQWTW6xoxqa-Z0U-X6HAawgaJr7s7qBz",
     "trigger_session_close": "id:1vcmCcZdLmKs4OCzIIfTA3_veyZhH9Xil",
     "trigger_render_complete": "id:1Ds7Rd1x09RPuqzQ2ooe-HKDgBplYKJYp",
-    "trigger_bdf_queue_check": "id:1Ub0QdXaFFQh4i-tsG2Pfw-PrNwqz4Ynn"
+    "trigger_bdf_queue_check": "id:1Ub0QdXaFFQh4i-tsG2Pfw-PrNwqz4Ynn",
+    "read_along_app_build_session": "id:1Zc4DNHSSyXhZlpgFlQenKOlgedny-3b8"
   }
 }
