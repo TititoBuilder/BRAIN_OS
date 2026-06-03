@@ -108,19 +108,9 @@ immediately across all venvs without reinstalling.
 - [[Tools_Registry]]
 
 
-<!-- auto-updated 2026-05-28 -->
-**Last Updated:** 2026-05-28
+## Changelog — 2026-05-28
 - Steganographic fingerprint module live (local-SNR FFT detection)
-- test_audio.wav artifact ignored in tracking
-- Integrated into book-compiler TTS pipeline (auto-fingerprint + post-stitch verification)
-
-
-<!-- auto-updated 2026-05-28 -->
-- **2026-05-28**: Steganographic fingerprint module added (local-SNR FFT detection); auto-fingerprint on every TTS output; integrity check after master WAV stitch; test_audio.wav excluded from tracking
-
-
-<!-- auto-updated 2026-05-28 -->
-## Status — Updated 2026-05-28
-- audio_staging binaries excluded from git (chore completed 2026-05-28)
-- Vault audio nodes added to BRAIN_OS
-- Fingerprinting: auto-applied to all TTS outputs
+- Auto-fingerprint applied to every TTS output; integrity check after master WAV stitch
+- Integrated into book-compiler TTS pipeline
+- audio_staging binaries excluded from git; vault audio nodes added to BRAIN_OS
+- test_audio.wav excluded from tracking

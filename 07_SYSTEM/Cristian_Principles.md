@@ -240,23 +240,8 @@ audio_stitcher.py builds the session → listen → update score → repeat.
 Each tool is a pure function. Each output is the next tool's input.
 That's the pattern. Build loops, not islands.
 
-<!-- auto-ingested 2026-05-28 -->
-## Build the Loop, Not Just the Tool
-*Added: 2026-05-28*
-Focus on creating systems that feed themselves — pipelines that produce inputs for their next run. A tool solves one problem; a loop compounds value over time. When building, ask: does this create a feedback cycle or a dead end?
-
-
-<!-- auto-ingested 2026-05-28 -->
-## Build the Loop, Not Just the Tool
-- Added: 2026-05-28
-- Principle: When building systems, prioritize creating feedback loops and self-sustaining cycles over one-off tools. The loop compounds value; the tool only delivers it once.
-
 ## Never Start Blind
 Always feed CLAUDE.md and .context.md to any AI before starting work. No exceptions across all projects.
-
-
-<!-- auto-ingested 2026-05-29 -->
-- **Never start a session without feeding context** — Always load relevant vault files, prior session logs, and project state before beginning work. Context starvation leads to repeated mistakes and lost continuity. (Added 2026-05-29)
 
 ---
 

@@ -278,3 +278,51 @@ Cristian_Principles is canonical/highest-stakes - hand-verify.
 Affected (worst first): QA_Notes_2026-05-28, whisper_gpu_analysis, rag_chapter,
 Daily_Log_2026-04-28, soccer-content-generator.context, fingerprinting,
 Cristian_Principles, brain_notes, brain-audio, Read_Along_App.
+---
+
+## UPDATE — duplicate-block cleanup progress (2026-06-03)
+
+DONE (mechanical/exact dedup): Cristian_Principles (kept Build-the-Loop +
+Never-Start-Blind, dropped reworded dupes), whisper_gpu_analysis (stripped to
+authored top), rag_chapter (stripped to top), brain-audio (consolidated 3
+changelog blocks to 1, preserved fingerprint info).
+
+REMAINING needs EDITORIAL judgment, not block-dedup (queue, do deliberately):
+- brain_notes.md: mixes redundant principles (already canonical in
+  Cristian_Principles), real session notes (Phase 1-3), and JUNK ASK-tab Q&A
+  logs (test queries, gibberish). Decide signal vs noise per section.
+- Read_Along_App.md: 2 "Full Architecture" blocks - check if restatement.
+- Log files (QA_Notes_2026-05-28, Daily_Log_2026-04-28,
+  soccer-content-generator.context): dated accumulation logs - dupes need care.
+- Also: locate + check fingerprinting.md (not at expected path).
+
+Root cause FIXED (compile_session.py idempotency) so no new dupes accumulating.
+ASK-tab auto-ingesting Q&A into brain_notes may be a separate ingestion-routing
+bug worth investigating.
+---
+
+## QUEUE — GitHub deep-dive (LEARNING goal, 2026-06-03)
+
+Not a quick remote-fix — Cristian wants a full structured understanding of how
+git/GitHub works across ALL his programs: how each repo connects, how saving/
+versioning/syncing works end to end, the role GitHub plays in the architecture.
+Teach it as a learning module (Socratic, hands-on), own session. He knows it's
+connected for saving; wants to deeply understand the mechanics. Confirmed all 3
+active repos committed clean this session (BRAIN_OS 0c6704b, soccer 476af7e,
+read-along 68f5944) so nothing at risk while this waits.
+---
+
+## QUEUE — lancedb consolidation (migration, mapped 2026-06-03)
+
+Both keys wired into LIVE app, same content. NOT a simple trash. Migration:
+- lancedb (key) refs: knowledge_os.html L91+L132, obsidian_sync.json L394,
+  drive_index.json L4
+- lancedb_vector_store (key) refs: drive_index.json L56, populate_staging.py L82,
+  update_index.py L11, drive_learning_path_organizer.py L49
+- NOTE: "lancedb" also appears as the PYTHON PACKAGE in soccer-content-generator
+  .json/.graphify.json external_packages — DO NOT touch those (unrelated to topic).
+To consolidate: pick canonical key (recommend lancedb_vector_store — more
+descriptive per Naming Contract), update all lancedb-key refs to it, retire
+lancedb transcript. Touches deployed app — deliberate session, dry-run each edit.
+LOW URGENCY: both keys work, users get correct content; duplicate is cosmetic,
+not a correctness bug. llm_data_pipelines dup already RESOLVED (authored+regen).

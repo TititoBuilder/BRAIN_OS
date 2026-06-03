@@ -1,4 +1,4 @@
-# RAG — Retrieval-Augmented Generation
+# RAG â€” Retrieval-Augmented Generation
 ## How I learned it by building it
 
 ### What I built
@@ -14,7 +14,7 @@ The Problem: Your data isn't frozen. Your vault, your codebases, and your active
 If Claude relied solely on training to know your vault, it would only know the version of your files that existed months ago. The moment you write a new line of code or edit a principle file, the model becomes obsolete.
 
 2. The Dilution Problem (You are a Drop in the Ocean)
-During pre-training, a model ingests trillions of tokens from the public internet—Wikipedia, books, open-source code, and articles.
+During pre-training, a model ingests trillions of tokens from the public internetâ€”Wikipedia, books, open-source code, and articles.
 
 The Problem: If a company tried to inject your private vault into that massive sea of data, your specific information would be statistically "diluted."
 
@@ -30,18 +30,18 @@ Instead of trying to force the model to memorize everything permanently, RAG fli
 
 RAG exists as a pattern for three fundamental reasons:
 
-Separation of Concerns (Compute vs. Memory): RAG separates reasoning capability from knowledge storage. It allows Claude to focus on what it does best—processing language, logic, and syntax—while leaving the task of holding the raw data to a dynamic external storage system (like your local files, an Obsidian vault, or a Vector Database like LanceDB).
+Separation of Concerns (Compute vs. Memory): RAG separates reasoning capability from knowledge storage. It allows Claude to focus on what it does bestâ€”processing language, logic, and syntaxâ€”while leaving the task of holding the raw data to a dynamic external storage system (like your local files, an Obsidian vault, or a Vector Database like LanceDB).
 
-Zero-Cost Instant Updates: Because the model reads the data dynamically at runtime, updating the system’s knowledge base costs virtually nothing. You don't need to kick off a millions-of-dollars training run; you just change a text file in your vault. The next time the system reads it, it instantly has the new truth.
+Zero-Cost Instant Updates: Because the model reads the data dynamically at runtime, updating the systemâ€™s knowledge base costs virtually nothing. You don't need to kick off a millions-of-dollars training run; you just change a text file in your vault. The next time the system reads it, it instantly has the new truth.
 
 Deterministic Fact Checking: When an AI hallucinates, it's usually pulling from a messy web of compressed training probabilities. RAG forces the model to anchor its answers to the exact text provided in its prompt context window. It grounds the model in real-time "evidence," transforming the AI from a confident guesser into a precise execution engine.
 
 In short, training builds the AI's intellect and skills, but RAG gives it its working memory and eyes.]
 
 ### The system I built
-- search_vault() — keyword scorer with filename + heading bonuses
-- Stop-word filter — removes noise words so only meaningful terms score
-- Context injection — top 3 vault files prepended to Claude's system prompt
+- search_vault() â€” keyword scorer with filename + heading bonuses
+- Stop-word filter â€” removes noise words so only meaningful terms score
+- Context injection â€” top 3 vault files prepended to Claude's system prompt
 - Result: Claude answers with MY data, not generic internet knowledge
 
 ### Proof it works
@@ -50,52 +50,7 @@ Before RAG: Claude answered about military drones
 After RAG: Claude answered with exact Acer Predator specs, CUDA version, FancyZones layout
 
 ### The lightbulb moment
-Before: Claude had world knowledge — generic
-After: Claude had world knowledge + my vault — specific
+Before: Claude had world knowledge â€” generic
+After: Claude had world knowledge + my vault â€” specific
 
 That gap is why RAG exists.
-
-
-<!-- auto-updated 2026-05-28 -->
-## RAG Chapter — Learned by Building
-- **Author framing:** Cristian's explanation — learned by building, not by reading
-- **Ingested:** 2026-05-28
-- **Status:** Knowledge ingested into BRAIN_OS vault
-
-
-<!-- auto-ingested 2026-05-28 -->
-## RAG Chapter — Cristian's Explanation (2026-05-28)
-- Core insight: RAG is best understood by building it, not reading about it
-- Retrieval augments generation by injecting relevant context chunks into the prompt at inference time
-- Learned through direct implementation in Knowledge OS pipeline
-- Source: session archive 2026-05-28
-
-
-<!-- auto-updated 2026-05-28 -->
-## RAG Chapter — Learned by Building
-- Cristian's explanation approach: learn RAG by building a working pipeline
-- Covers retrieval, chunking, embedding, vector lookup, and generation stages
-- Written from first-person builder perspective
-- Status: Documented 2026-05-28
-
-
-<!-- auto-updated 2026-05-28 -->
-## RAG Chapter — Updated 2026-05-28
-- Approach: learned by building
-- Cristian's explanation integrated
-- Covers practical RAG pipeline construction from first principles
-
-
-<!-- auto-updated 2026-05-28 -->
-## RAG Chapter
-- **Approach:** Learned by building — Cristian's first-person explanation style
-- **Method:** Practical construction-first pedagogy, not theory-first
-- **Source:** Documented during BRAIN_OS session 2026-05-28
-- **Status:** Docs complete
-
-
-<!-- auto-ingested 2026-05-29 -->
-## Session Update — 2026-05-29
-- RAG chapter framing: 'learned by building'
-- Cristian's explanation style: ground concepts in the actual pipeline decisions made during BRAIN_OS and BDF projects
-- Emphasize retrieval as the connective tissue between raw data and LLM reasoning
