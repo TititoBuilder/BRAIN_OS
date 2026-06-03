@@ -9,6 +9,17 @@ tags:
 created: 2026-05-03
 updated: 2026-05-03
 domain: Creative Intelligence Layer
+topics:
+  - audio_pipeline_design
+  - bdf_book_system
+  - bdf_video_production_flow
+  - ca_book_system
+  - content_orchestrator
+  - davinci_resolve_mcp
+  - resolve_mcp_server
+  - video_orchestrator
+  - audio_formats
+  - audio_manipulation
 ---
 
 # Creative Systems — Content & Workflow Brain
@@ -28,6 +39,17 @@ domain: Creative Intelligence Layer
 - **Creative Pipelines** - Automated media processing
 - **Visual Storytelling** - Soccer highlights, B-roll, editing techniques
 
+topics:
+  - audio_pipeline_design
+  - bdf_book_system
+  - bdf_video_production_flow
+  - ca_book_system
+  - content_orchestrator
+  - davinci_resolve_mcp
+  - resolve_mcp_server
+  - video_orchestrator
+  - audio_formats
+  - audio_manipulation
 ---
 
 ## Active Projects
@@ -155,6 +177,17 @@ C:\Knowledge\Claudeguide\ - Learning guide MP3s
 C:\Knowledge\ResolveMCP\ - Resolve guide audio
 ```
 
+topics:
+  - audio_pipeline_design
+  - bdf_book_system
+  - bdf_video_production_flow
+  - ca_book_system
+  - content_orchestrator
+  - davinci_resolve_mcp
+  - resolve_mcp_server
+  - video_orchestrator
+  - audio_formats
+  - audio_manipulation
 ---
 
 ## Creative Workflows
@@ -200,6 +233,17 @@ C:\Knowledge\ResolveMCP\ - Resolve guide audio
 - [ ] Build automated B-roll workflow
 - [ ] Research: music pipeline automation
 
+topics:
+  - audio_pipeline_design
+  - bdf_book_system
+  - bdf_video_production_flow
+  - ca_book_system
+  - content_orchestrator
+  - davinci_resolve_mcp
+  - resolve_mcp_server
+  - video_orchestrator
+  - audio_formats
+  - audio_manipulation
 ---
 
 ## Knowledge Base (Compiled Sessions)
@@ -225,6 +269,17 @@ C:\Knowledge\ResolveMCP\ - Resolve guide audio
 - Video editing workflows
 - Creative systems for content creators
 
+topics:
+  - audio_pipeline_design
+  - bdf_book_system
+  - bdf_video_production_flow
+  - ca_book_system
+  - content_orchestrator
+  - davinci_resolve_mcp
+  - resolve_mcp_server
+  - video_orchestrator
+  - audio_formats
+  - audio_manipulation
 ---
 
 ## Learning Journey
@@ -250,6 +305,17 @@ C:\Knowledge\ResolveMCP\ - Resolve guide audio
 - [[AI_Engineering]] - Automation tools, MCP servers
 - [[Data_Science]] - Asset organization, workflow optimization
 
+topics:
+  - audio_pipeline_design
+  - bdf_book_system
+  - bdf_video_production_flow
+  - ca_book_system
+  - content_orchestrator
+  - davinci_resolve_mcp
+  - resolve_mcp_server
+  - video_orchestrator
+  - audio_formats
+  - audio_manipulation
 ---
 
 ## Learning Anchor Pattern

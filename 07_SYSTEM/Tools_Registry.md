@@ -277,3 +277,31 @@ tags: [system, tools, infra, live]
 - 2026-05-23 — session_start.py deployed (autonomous context loader + Telegram); anchor_generator.py operational (Learning Anchor pattern, am_michael voice); drive_sync.py --normalize flag added to soccer-content-generator; 3 principles formalized: remote-at-creation, filenames-as-keys, What/How/Where/Safety
 - 2026-05-24 — chapter_combiner.py deployed (31 chapters × anchor → combined MP3 via ffmpeg); Drive phase organization complete (Phase_01–Phase_06 subfolders); drive_sync recursive scan + bdf_anchors/bdf_combined manifest sections; session_start.py dotenv fix (multi-path .env loading)
 - 2026-05-30 — Session Archive — 2026-05-30 — Karaoke + Knowledge OS +
+
+---
+
+# Registered Tools
+
+## audit_files
+- **path:** `C:\BRAIN_OS\09_TOOLS\audit_files.py`
+- **purpose:** Read-only audit. Scans all project roots, classifies every
+  file as machine-key (code depends on it) or human-readable, flags
+  contract violations, lists orphans. Never modifies anything.
+- **enforces:** [[Naming_Contract]]
+- **run:** `python audit_files.py --json C:\Users\titit\audit_report.json`
+
+## cleanup_proposer
+- **path:** `C:\Users\titit\cleanup_proposer.py`
+- **purpose:** Reads audit_report.json, proposes safe RENAME/TRASH actions
+  for contract violations. Refuses machine-key and code-referenced files.
+  Dry-run by default; --apply asks y/N per file. Trash is recoverable.
+- **enforces:** [[Naming_Contract]]
+- **run:** `python cleanup_proposer.py --report C:\Users\titit\audit_report.json --project <name>`
+## rename_linked
+- **path:** `C:\Users\titit\rename_linked.py`
+- **purpose:** Link-aware vault rename. Renames a .md file AND rewrites every
+  [[wiki-link]] to it (handles |alias and #heading). Dry-run default; --apply
+  after plan. Fills the gap cleanup_proposer leaves (it tracks code refs, not
+  wiki-links).
+- **enforces:** [[Naming_Contract]]
+- **run:** `python rename_linked.py --vault C:\BRAIN_OS --old <stem> --new <stem> --apply`

@@ -45,5 +45,5 @@ Published tweet on @BreakingDownFutbol Twitter account with card image attached.
 
 ### APIs / Memory
 - [[Telegram_Bot]]
-- [[Twitter_API_v2]]
+- [[twitter-api]]
 - [[Content_Queue]]

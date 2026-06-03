@@ -3,6 +3,17 @@ tags: [domain, data-science, monitoring, analytics, optimization, knowledge-grap
 created: 2026-05-03
 updated: 2026-05-04
 domain: Data Science Layer
+topics:
+  - data_orchestrator
+  - etl_pipelines
+  - lancedb_vector_store
+  - vector_databases
+  - graph_databases
+  - data_modeling
+  - data_validation
+  - stream_processing
+  - database_sharding
+  - semantic_search
 ---
 
 # Data Science — Organization & Intelligence Brain
@@ -22,6 +33,17 @@ domain: Data Science Layer
 - **Metadata & Taxonomy** - Categorizing and classifying data
 - **Operational Intelligence** - Real-time visibility into systems
 
+topics:
+  - data_orchestrator
+  - etl_pipelines
+  - lancedb_vector_store
+  - vector_databases
+  - graph_databases
+  - data_modeling
+  - data_validation
+  - stream_processing
+  - database_sharding
+  - semantic_search
 ---
 
 ## Active Projects
@@ -112,6 +134,17 @@ Books/Guides (final synthesis)
 - **Sessions** - What you learned
 - **Domains** - How you think about it all
 
+topics:
+  - data_orchestrator
+  - etl_pipelines
+  - lancedb_vector_store
+  - vector_databases
+  - graph_databases
+  - data_modeling
+  - data_validation
+  - stream_processing
+  - database_sharding
+  - semantic_search
 ---
 
 ## Monitoring & Tracking Ideas
@@ -163,6 +196,17 @@ Books/Guides (final synthesis)
 **Principle (March 25, 2026):**
 > "Open-source locally-running tools are always preferred over cloud subscription services when quality is comparable."
 
+topics:
+  - data_orchestrator
+  - etl_pipelines
+  - lancedb_vector_store
+  - vector_databases
+  - graph_databases
+  - data_modeling
+  - data_validation
+  - stream_processing
+  - database_sharding
+  - semantic_search
 ---
 
 ## Pending Tasks (Data Science)
@@ -190,6 +234,17 @@ Books/Guides (final synthesis)
 - [[2026-04-18_Project_Standardization]] - Project organization patterns
 - More sessions to compile from 09_TOOLS/ and past chats
 
+topics:
+  - data_orchestrator
+  - etl_pipelines
+  - lancedb_vector_store
+  - vector_databases
+  - graph_databases
+  - data_modeling
+  - data_validation
+  - stream_processing
+  - database_sharding
+  - semantic_search
 ---
 
 ## Book Content Candidates
@@ -223,6 +278,17 @@ Books/Guides (final synthesis)
 - Information architecture, operational intelligence
 - Monitoring systems, analytics
 
+topics:
+  - data_orchestrator
+  - etl_pipelines
+  - lancedb_vector_store
+  - vector_databases
+  - graph_databases
+  - data_modeling
+  - data_validation
+  - stream_processing
+  - database_sharding
+  - semantic_search
 ---
 
 ## Connected Domains

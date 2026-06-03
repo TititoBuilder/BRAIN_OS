@@ -46,7 +46,7 @@ C:\Dev\Projects\soccer-content-generator\bot_service.py
 - [[BDF_Social_Media_Flow]]
 - [[Content_Queue]]
 - [[Telegram_Bot]]
-- [[Twitter_API_v2]]
+- [[twitter-api]]
 
 ## Status
 Live

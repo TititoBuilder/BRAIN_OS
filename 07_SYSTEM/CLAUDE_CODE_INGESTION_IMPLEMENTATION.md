@@ -529,5 +529,5 @@ except IntegrityCheckFailed as e:
 
 ## Connected Files
 - [[KNOWLEDGE_INGESTION_PROTOCOL_V2]] (protocol rules)
-- [[SESSION_COMPILE_TEMPLATE_V2]] (source format)
+- [[session-compile-template]] (source format)
 - Past_Chat_Compilation_Protocol.md (workflow)

@@ -11,10 +11,14 @@
             "id": "dec4f790b908ea2e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "SYSTEM_MASTER.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SYSTEM_MASTER"
             }
           }
         ]
@@ -179,6 +183,17 @@
   },
   "active": "dec4f790b908ea2e",
   "lastOpenFiles": [
+    "CLAUDE.md",
+    "07_SYSTEM/Naming_Contract.md",
+    "09_TOOLS/audit_files.py.tmp.11788.97e3bd9aaae9",
+    "09_TOOLS/audit_files (1).py",
+    "09_TOOLS/Unconfirmed 100937.crdownload",
+    "09_TOOLS/Unconfirmed 112731.crdownload",
+    "09_TOOLS/audit_report.json",
+    "09_TOOLS/audit_files.py",
+    "README.md",
+    "Untitled.canvas",
+    "SYSTEM_MASTER.md",
     "01_DOMAINS/Creative_Systems.md",
     "09_TOOLS/anchor_generator.py",
     "01_DOMAINS/Creative_Systems.md.tmp.76552.934f3d1b9037",
@@ -197,7 +212,6 @@
     "08_TRIGGERS/Trigger_BrainOS_Daily_Review.md",
     "08_TRIGGERS/Trigger_Clip_Detected.md",
     "08_TRIGGERS/Trigger_Daily_Log_Update.md",
-    "09_TOOLS/restore_graph_colors.ps1",
     "02_PROJECTS/BDF_Book_System.md",
     "02_PROJECTS/Custom_Agent.md",
     "02_PROJECTS/Custom_Agent_TTS_Audio.md",
@@ -207,14 +221,6 @@
     "00_DASHBOARD/Main_Canvas.canvas",
     "10_CHATS/COMPILATION_PROGRESS.md",
     "07_SYSTEM/Tools_Registry.md",
-    "00_NAV/CA_Nav.md",
-    "09_TOOLS/Tools_Book_Node.md",
-    "09_TOOLS/09_TOOLS_INDEX.md",
-    "08_SESSIONS",
-    "09_TOOLS/session_close.py",
-    "02_PROJECTS/graphs/ca-book.json",
-    "02_PROJECTS/graphs/ca-book.graphify.json",
-    "Untitled 4",
     "Untitled 9.canvas",
     "Untitled 10.canvas",
     "Untitled 2.canvas",
@@ -222,7 +228,6 @@
     "Untitled 4.canvas",
     "Untitled 5.canvas",
     "Untitled 6.canvas",
-    "Untitled 7.canvas",
-    "Untitled 8.canvas"
+    "Untitled 7.canvas"
   ]
 }

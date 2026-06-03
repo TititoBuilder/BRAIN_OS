@@ -62,4 +62,4 @@ Manual — run `create_avatar_library.py` per player, per pose. No automatic tri
 ### APIs
 - [[OpenAI_gpt-image-1]]
 - [[KlingAI]]
-- [[Twitter_API_v2]]
+- [[twitter-api]]

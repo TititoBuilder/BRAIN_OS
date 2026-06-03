@@ -6,18 +6,18 @@
 
 ## Hardware & Runtime
 
-| Item | Detail |
-|---|---|
-| Machine | Acer Predator Helios — canonical/sole active dev machine as of April 2026 |
-| GPU | NVIDIA GeForce RTX 5070 Ti Laptop GPU |
-| CUDA | sm_120 (Blackwell) — requires PyTorch nightly cu128 |
-| AI Venv | `C:\Knowledge\CA\venv` — canonical for all AI/TTS/PyTorch work |
-| PyTorch | nightly cu128 installed, CUDA verified True |
-| CPU fallback | Never install CPU-only torch — always use nightly cu128 |
-| Python Version | 3.12.10 |
-| System Python | `C:\Users\titit\AppData\Local\Programs\Python\Python312` — no AI packages, never use for inference |
-| Secondary Machine | HP Laptop — OBS recording and streaming only (not for development) |
-| Retired Machine | Dell workstation — permanently retired due to hardware failure (April 2026) |
+| Item              | Detail                                                                                             |
+| ----------------- | -------------------------------------------------------------------------------------------------- |
+| Machine           | Acer Predator Helios — canonical/sole active dev machine as of April 2026                          |
+| GPU               | NVIDIA GeForce RTX 5070 Ti Laptop GPU                                                              |
+| CUDA              | sm_120 (Blackwell) — requires PyTorch nightly cu128                                                |
+| AI Venv           | `C:\Knowledge\CA\venv` — canonical for all AI/TTS/PyTorch work                                     |
+| PyTorch           | nightly cu128 installed, CUDA verified True                                                        |
+| CPU fallback      | Never install CPU-only torch — always use nightly cu128                                            |
+| Python Version    | 3.12.10                                                                                            |
+| System Python     | `C:\Users\titit\AppData\Local\Programs\Python\Python312` — no AI packages, never use for inference |
+| Secondary Machine | HP Laptop — OBS recording and streaming only (not for development)                                 |
+| Retired Machine   | Dell workstation — permanently retired due to hardware failure (April 2026)                        |
 
 ---
 

@@ -3,6 +3,28 @@ tags: [domain, ai-engineering, infrastructure, automation, mcp]
 created: 2026-05-03
 updated: 2026-05-04
 domain: AI Engineering Layer
+topics:
+  - agent_orchestration
+  - bdf_agent_pipeline
+  - bdf_memory_agent
+  - function_calling
+  - llm_data_pipelines
+  - llm_fundamentals
+  - mcp_protocol
+  - model_context_protocol
+  - prompt_engineering
+  - rag_pipelines
+  - resolve_editing_agent
+  - retrieval_systems
+  - tts_systems
+  - chain_of_thought
+  - multimodal_ai
+  - model_fine_tuning
+  - vector_embeddings
+  - semantic_search
+  - ai_safety_basics
+  - ai_evaluation
+  - diffusion_models
 ---
 
 # AI Engineering — Infrastructure & Automation Brain
@@ -22,6 +44,28 @@ domain: AI Engineering Layer
 - **Local + Cloud** - Running AI locally (Kokoro) + cloud services (Claude API)
 - **Tool Chaining** - One tool's output feeds another automatically
 
+topics:
+  - agent_orchestration
+  - bdf_agent_pipeline
+  - bdf_memory_agent
+  - function_calling
+  - llm_data_pipelines
+  - llm_fundamentals
+  - mcp_protocol
+  - model_context_protocol
+  - prompt_engineering
+  - rag_pipelines
+  - resolve_editing_agent
+  - retrieval_systems
+  - tts_systems
+  - chain_of_thought
+  - multimodal_ai
+  - model_fine_tuning
+  - vector_embeddings
+  - semantic_search
+  - ai_safety_basics
+  - ai_evaluation
+  - diffusion_models
 ---
 
 ## Active Projects
@@ -96,6 +140,28 @@ domain: AI Engineering Layer
 ### Broken/Investigating
 - **OBS Studio** - Streaming control (was confused with Obsidian)
 
+topics:
+  - agent_orchestration
+  - bdf_agent_pipeline
+  - bdf_memory_agent
+  - function_calling
+  - llm_data_pipelines
+  - llm_fundamentals
+  - mcp_protocol
+  - model_context_protocol
+  - prompt_engineering
+  - rag_pipelines
+  - resolve_editing_agent
+  - retrieval_systems
+  - tts_systems
+  - chain_of_thought
+  - multimodal_ai
+  - model_fine_tuning
+  - vector_embeddings
+  - semantic_search
+  - ai_safety_basics
+  - ai_evaluation
+  - diffusion_models
 ---
 
 ## Tools & Integrations
@@ -138,6 +204,28 @@ domain: AI Engineering Layer
 - [ ] Explore specialized agent orchestration
 - [ ] Research: one mega-agent vs specialized agents
 
+topics:
+  - agent_orchestration
+  - bdf_agent_pipeline
+  - bdf_memory_agent
+  - function_calling
+  - llm_data_pipelines
+  - llm_fundamentals
+  - mcp_protocol
+  - model_context_protocol
+  - prompt_engineering
+  - rag_pipelines
+  - resolve_editing_agent
+  - retrieval_systems
+  - tts_systems
+  - chain_of_thought
+  - multimodal_ai
+  - model_fine_tuning
+  - vector_embeddings
+  - semantic_search
+  - ai_safety_basics
+  - ai_evaluation
+  - diffusion_models
 ---
 
 ## Knowledge Base (Compiled Sessions)
@@ -162,6 +250,28 @@ domain: AI Engineering Layer
 - AI-powered content generation
 - Automated video production workflows
 
+topics:
+  - agent_orchestration
+  - bdf_agent_pipeline
+  - bdf_memory_agent
+  - function_calling
+  - llm_data_pipelines
+  - llm_fundamentals
+  - mcp_protocol
+  - model_context_protocol
+  - prompt_engineering
+  - rag_pipelines
+  - resolve_editing_agent
+  - retrieval_systems
+  - tts_systems
+  - chain_of_thought
+  - multimodal_ai
+  - model_fine_tuning
+  - vector_embeddings
+  - semantic_search
+  - ai_safety_basics
+  - ai_evaluation
+  - diffusion_models
 ---
 
 ## Learning Journey
@@ -186,6 +296,28 @@ domain: AI Engineering Layer
 - [[Data_Science]] - Monitoring, analytics, knowledge organization
 - [[Creative_Systems]] - Video editing, OBS, content workflows
 
+topics:
+  - agent_orchestration
+  - bdf_agent_pipeline
+  - bdf_memory_agent
+  - function_calling
+  - llm_data_pipelines
+  - llm_fundamentals
+  - mcp_protocol
+  - model_context_protocol
+  - prompt_engineering
+  - rag_pipelines
+  - resolve_editing_agent
+  - retrieval_systems
+  - tts_systems
+  - chain_of_thought
+  - multimodal_ai
+  - model_fine_tuning
+  - vector_embeddings
+  - semantic_search
+  - ai_safety_basics
+  - ai_evaluation
+  - diffusion_models
 ---
 
 ## Tools That Connect Here

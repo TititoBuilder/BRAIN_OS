@@ -189,8 +189,13 @@ def apply_auto_handle(items: list[dict], dry_run: bool) -> list[str]:
         file_text = vault_path.read_text(encoding="utf-8")
 
         if action == "APPEND":
+            if content.strip() and content.strip() in file_text:
+                print(f"           ↩ already present — skipped")
+                continue
             ts    = datetime.now().strftime("%Y-%m-%d")
             entry = f"\n\n<!-- auto-ingested {ts} -->\n{content}\n"
+            preview = content.strip()[:80].replace("\n", " ")
+            print(f"           + {preview}{'...' if len(content.strip()) > 80 else ''}")
             vault_path.write_text(file_text + entry, encoding="utf-8")
             changed.append(target)
 
@@ -203,8 +208,13 @@ def apply_auto_handle(items: list[dict], dry_run: bool) -> list[str]:
                 vault_path.write_text(new_text, encoding="utf-8")
             else:
                 # Append as fallback
+                if content.strip() and content.strip() in file_text:
+                    print(f"           ↩ already present — skipped")
+                    continue
                 ts    = datetime.now().strftime("%Y-%m-%d")
                 entry = f"\n\n<!-- auto-updated {ts} -->\n{content}\n"
+                preview = content.strip()[:80].replace("\n", " ")
+                print(f"           + {preview}{'...' if len(content.strip()) > 80 else ''}")
                 vault_path.write_text(file_text + entry, encoding="utf-8")
             changed.append(target)
 

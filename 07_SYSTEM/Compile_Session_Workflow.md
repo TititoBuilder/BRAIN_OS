@@ -83,7 +83,7 @@ Script lives at `C:\Users\titit\Downloads\ca_bulk_[upload.py](http://upload.py)`
 This file covers **book content compilation** (BDF/CA books → Google Drive).
 
 For **BRAIN_OS knowledge capture** (documenting sessions as structured notes, updating domain dashboards, building the knowledge graph), use the parallel workflow:
-- [[SESSION_COMPILE_TEMPLATE_V2]] — structured session extraction template
+- [[session-compile-template]] — structured session extraction template
 - [[Knowledge_Ingestion_Protocol]] — automated routing and merge rules
 - [[KNOWLEDGE_INGESTION_PROTOCOL_V2]] — Option C hybrid with review points
 
