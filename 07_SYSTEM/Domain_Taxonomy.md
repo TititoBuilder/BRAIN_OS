@@ -326,3 +326,13 @@ descriptive per Naming Contract), update all lancedb-key refs to it, retire
 lancedb transcript. Touches deployed app — deliberate session, dry-run each edit.
 LOW URGENCY: both keys work, users get correct content; duplicate is cosmetic,
 not a correctness bug. llm_data_pipelines dup already RESOLVED (authored+regen).
+---
+
+## DEPLOY FLAG — drive_index.json prod override (2026-06-03)
+
+backend.py reads drive_index.json from GitHub raw, BUT prod can override with
+the DRIVE_INDEX_JSON env var (base64, Railway). After the lancedb consolidation,
+if that env var is set in Railway it still holds the OLD index with bare
+"lancedb" key. On next deploy: either clear DRIVE_INDEX_JSON so it reads the
+updated GitHub file, or regenerate the base64 from the new drive_index.json.
+lancedb consolidation otherwise COMPLETE: 0 duplicate sets, all committed.
