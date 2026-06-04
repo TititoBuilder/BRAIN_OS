@@ -1,0 +1,32 @@
+{
+  "phase": "Web and APIs",
+  "path_id": "web_and_apis",
+  "domain": "software_architecture",
+  "description": "Modern web API styles and the theory underneath distributed systems.",
+  "tracks": [
+    {
+      "machine_key": "graphql",
+      "topic": "Graph Q L",
+      "transition": "Next. Websockets.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "websockets",
+      "topic": "Websockets",
+      "transition": "Next. Open A P I Spec.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "openapi_spec",
+      "topic": "Open A P I Spec",
+      "transition": "Next. CAP Theorem.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "cap_theorem",
+      "topic": "CAP Theorem",
+      "transition": "",
+      "audio_status": "Has Audio"
+    }
+  ]
+}

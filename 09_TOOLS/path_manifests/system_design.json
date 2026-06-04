@@ -1,0 +1,62 @@
+{
+  "phase": "System Design",
+  "path_id": "system_design",
+  "domain": "software_architecture",
+  "description": "Designing services and systems, from monoliths to distributed patterns.",
+  "tracks": [
+    {
+      "machine_key": "monolith_vs_microservices",
+      "topic": "Monolith Vs Microservices",
+      "transition": "Next. REST API Design.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "rest_api_design",
+      "topic": "REST API Design",
+      "transition": "Next. API Gateway Design.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "api_gateway_design",
+      "topic": "API Gateway Design",
+      "transition": "Next. Load Balancing.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "load_balancing",
+      "topic": "Load Balancing",
+      "transition": "Next. API Rate Limiting.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "api_rate_limiting",
+      "topic": "API Rate Limiting",
+      "transition": "Next. Event Driven Architecture.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "event_driven_architecture",
+      "topic": "Event Driven Architecture",
+      "transition": "Next. Webhook Design.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "webhook_design",
+      "topic": "Webhook Design",
+      "transition": "Next. Circuit Breaker Pattern.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "circuit_breaker_pattern",
+      "topic": "Circuit Breaker Pattern",
+      "transition": "Next. CQRS Pattern.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "cqrs_pattern",
+      "topic": "CQRS Pattern",
+      "transition": "",
+      "audio_status": "Has Audio"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "phase": "DevOps and Deployment",
+  "path_id": "devops_deployment",
+  "domain": "systems_operations",
+  "description": "Containers, pipelines, cloud, and version control for shipping software.",
+  "tracks": [
+    {
+      "machine_key": "docker_fundamentals",
+      "topic": "Docker Fundamentals",
+      "transition": "Next. Containerization.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "containerization",
+      "topic": "Containerization",
+      "transition": "Next. C I C D Pipelines.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "cicd_pipelines",
+      "topic": "C I C D Pipelines",
+      "transition": "Next. Cloud Storage Apis.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "cloud_storage_apis",
+      "topic": "Cloud Storage Apis",
+      "transition": "Next. GCP Basics.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "gcp_basics",
+      "topic": "GCP Basics",
+      "transition": "Next. Git Advanced.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "git_advanced",
+      "topic": "Git Advanced",
+      "transition": "",
+      "audio_status": "Has Audio"
+    }
+  ]
+}

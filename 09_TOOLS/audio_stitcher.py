@@ -69,7 +69,26 @@ async def _tts_to_file(text: str, path: str, voice: str) -> bool:
         return False
 
 
+# Kokoro voices are generated via gen_tts_staging.py (same pipeline as topics)
+GEN_TTS = Path(r"C:\Users\titit\Projects\read-along-app\backend\gen_tts_staging.py")
+GEN_TTS_PYTHON = Path(r"C:\Dev\Projects\soccer-content-generator\venv\Scripts\python.exe")
+
+def _kokoro_to_file(text: str, path: str) -> bool:
+    """Generate af_heart (Kokoro) audio via gen_tts_staging.py."""
+    import subprocess, tempfile, os
+    tmp_md = Path(tempfile.gettempdir()) / f"_trans_{os.getpid()}_{abs(hash(text))%99999}.md"
+    tmp_md.write_text(text + "\n", encoding="utf-8")
+    try:
+        r = subprocess.run([str(GEN_TTS_PYTHON), str(GEN_TTS), str(tmp_md), str(path)],
+                           capture_output=True, text=True, encoding="utf-8", errors="replace")
+        return r.returncode == 0 and Path(path).exists()
+    finally:
+        tmp_md.unlink(missing_ok=True)
+
 def generate_tts(text: str, path: str, voice: str) -> bool:
+    # Kokoro voice names start with af_ / am_; route those to the topic pipeline
+    if voice.startswith("af_") or voice.startswith("am_"):
+        return _kokoro_to_file(text, path)
     return asyncio.run(_tts_to_file(text, path, voice))
 
 

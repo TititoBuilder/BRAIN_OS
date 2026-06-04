@@ -1,0 +1,56 @@
+{
+  "phase": "Your System",
+  "path_id": "your_system",
+  "domain": "creative_systems",
+  "description": "The stack behind BRAIN_OS: audio pipelines, MCP, Obsidian, environments.",
+  "tracks": [
+    {
+      "machine_key": "tts_systems",
+      "topic": "T T S Systems",
+      "transition": "Next. Audio Pipeline Design.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "audio_pipeline_design",
+      "topic": "Audio Pipeline Design",
+      "transition": "Next. Audio Formats.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "audio_formats",
+      "topic": "Audio Formats",
+      "transition": "Next. Audio Manipulation.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "audio_manipulation",
+      "topic": "Audio Manipulation",
+      "transition": "Next. MCP Protocol.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "mcp_protocol",
+      "topic": "MCP Protocol",
+      "transition": "Next. Obsidian Workflows.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "obsidian_workflows",
+      "topic": "Obsidian Workflows",
+      "transition": "Next. Env Management.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "env_management",
+      "topic": "Env Management",
+      "transition": "Next. Venvs.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "python_venvs",
+      "topic": "Venvs",
+      "transition": "",
+      "audio_status": "Has Audio"
+    }
+  ]
+}

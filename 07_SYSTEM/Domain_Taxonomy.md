@@ -336,3 +336,16 @@ if that env var is set in Railway it still holds the OLD index with bare
 "lancedb" key. On next deploy: either clear DRIVE_INDEX_JSON so it reads the
 updated GitHub file, or regenerate the base64 from the new drive_index.json.
 lancedb consolidation otherwise COMPLETE: 0 duplicate sets, all committed.
+---
+
+## HABIT — harvest ASK log into topics (2026-06-03)
+
+ASK-tab Q&A now logs to 06_NOTES/ask_log.md (rerouted from brain_notes.md,
+all 3 paths: local default + GitHub write/read). The log is a LEARNING SIGNAL:
+the real questions you ask reveal knowledge gaps. Periodically review ask_log.md
+and harvest good questions into proper Knowledge OS topics (author -> generate
+audio -> learn). Discard junk/test/error entries. Closes the loop:
+ask reveals gap -> harvest -> author -> audio -> learn.
+DEPLOY NOTE: Railway NOTES_FILE env unset, so reroute takes effect on next
+push of backend.py. Editorial log cleanup COMPLETE (QA_Notes, brain_notes
+stripped; Daily_Log left - mostly legit session records).

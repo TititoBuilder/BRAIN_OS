@@ -1,0 +1,62 @@
+{
+  "phase": "Python Mastery",
+  "path_id": "python_mastery",
+  "domain": "software_architecture",
+  "description": "Core Python language features and tooling, from type hints to packaging.",
+  "tracks": [
+    {
+      "machine_key": "python_type_hints",
+      "topic": "Type Hints",
+      "transition": "Next. Dataclasses.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "python_dataclasses",
+      "topic": "Dataclasses",
+      "transition": "Next. Decorators.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "python_decorators",
+      "topic": "Decorators",
+      "transition": "Next. Generators.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "python_generators",
+      "topic": "Generators",
+      "transition": "Next. Context Managers.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "python_context_managers",
+      "topic": "Context Managers",
+      "transition": "Next. Asyncio.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "python_asyncio",
+      "topic": "Asyncio",
+      "transition": "Next. Subprocess.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "python_subprocess",
+      "topic": "Subprocess",
+      "transition": "Next. Pytest.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "python_pytest",
+      "topic": "Pytest",
+      "transition": "Next. Package Arch.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "python_package_arch",
+      "topic": "Package Arch",
+      "transition": "",
+      "audio_status": "Has Audio"
+    }
+  ]
+}

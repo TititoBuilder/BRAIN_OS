@@ -1,0 +1,98 @@
+{
+  "phase": "AI and RAG",
+  "path_id": "ai_and_rag",
+  "domain": "ai_engineering",
+  "description": "Language models, embeddings, retrieval, and building RAG systems and agents.",
+  "tracks": [
+    {
+      "machine_key": "llm_fundamentals",
+      "topic": "LLM Fundamentals",
+      "transition": "Next. Prompt Engineering.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "prompt_engineering",
+      "topic": "Prompt Engineering",
+      "transition": "Next. Chain Of Thought.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "chain_of_thought",
+      "topic": "Chain Of Thought",
+      "transition": "Next. Vector Embeddings.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "vector_embeddings",
+      "topic": "Vector Embeddings",
+      "transition": "Next. Vector Databases.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "vector_databases",
+      "topic": "Vector Databases",
+      "transition": "Next. Semantic Search.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "semantic_search",
+      "topic": "Semantic Search",
+      "transition": "Next. Retrieval Systems.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "retrieval_systems",
+      "topic": "Retrieval Systems",
+      "transition": "Next. RAG Pipelines.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "rag_pipelines",
+      "topic": "RAG Pipelines",
+      "transition": "Next. Function Calling.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "function_calling",
+      "topic": "Function Calling",
+      "transition": "Next. Agent Orchestration.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "agent_orchestration",
+      "topic": "Agent Orchestration",
+      "transition": "Next. Model Fine Tuning.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "model_fine_tuning",
+      "topic": "Model Fine Tuning",
+      "transition": "Next. Multimodal Ai.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "multimodal_ai",
+      "topic": "Multimodal Ai",
+      "transition": "Next. Diffusion Models.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "diffusion_models",
+      "topic": "Diffusion Models",
+      "transition": "Next. AI Evaluation.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "ai_evaluation",
+      "topic": "AI Evaluation",
+      "transition": "Next. AI Safety Basics.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "ai_safety_basics",
+      "topic": "AI Safety Basics",
+      "transition": "",
+      "audio_status": "Has Audio"
+    }
+  ]
+}

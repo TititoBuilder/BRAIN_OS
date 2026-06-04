@@ -1,0 +1,50 @@
+{
+  "phase": "Knowledge and Thinking",
+  "path_id": "knowledge_and_thinking",
+  "domain": "creative_systems",
+  "description": "Personal knowledge management and the architecture principles behind it.",
+  "tracks": [
+    {
+      "machine_key": "pkm_fundamentals",
+      "topic": "P K M Fundamentals",
+      "transition": "Next. Zettelkasten.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "zettelkasten",
+      "topic": "Zettelkasten",
+      "transition": "Next. Bidirectional Linking.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "bidirectional_linking",
+      "topic": "Bidirectional Linking",
+      "transition": "Next. Knowledge Graph Design.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "knowledge_graph_design",
+      "topic": "Knowledge Graph Design",
+      "transition": "Next. Blast Radius Principle.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "blast_radius_principle",
+      "topic": "Blast Radius Principle",
+      "transition": "Next. Low Coupling High Cohesion.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "low_coupling_high_cohesion",
+      "topic": "Low Coupling High Cohesion",
+      "transition": "Next. Federated Systems.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "federated_systems",
+      "topic": "Federated Systems",
+      "transition": "",
+      "audio_status": "Has Audio"
+    }
+  ]
+}

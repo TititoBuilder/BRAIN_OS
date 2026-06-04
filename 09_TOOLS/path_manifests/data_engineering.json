@@ -1,0 +1,50 @@
+{
+  "phase": "Data Engineering",
+  "path_id": "data_engineering",
+  "domain": "data_science",
+  "description": "Modeling, moving, and validating data through pipelines and stores.",
+  "tracks": [
+    {
+      "machine_key": "data_modeling",
+      "topic": "Data Modeling",
+      "transition": "Next. Schema Evolution.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "schema_evolution",
+      "topic": "Schema Evolution",
+      "transition": "Next. ETL Pipelines.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "etl_pipelines",
+      "topic": "ETL Pipelines",
+      "transition": "Next. Stream Processing.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "stream_processing",
+      "topic": "Stream Processing",
+      "transition": "Next. Data Validation.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "data_validation",
+      "topic": "Data Validation",
+      "transition": "Next. Database Sharding.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "database_sharding",
+      "topic": "Database Sharding",
+      "transition": "Next. Graph Databases.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "graph_databases",
+      "topic": "Graph Databases",
+      "transition": "",
+      "audio_status": "Has Audio"
+    }
+  ]
+}

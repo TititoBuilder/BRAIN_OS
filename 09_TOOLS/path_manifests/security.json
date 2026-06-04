@@ -1,0 +1,50 @@
+{
+  "phase": "Security",
+  "path_id": "security",
+  "domain": "systems_operations",
+  "description": "Authentication, secrets, and defending applications.",
+  "tracks": [
+    {
+      "machine_key": "auth_patterns",
+      "topic": "Auth Patterns",
+      "transition": "Next. Token Based Auth.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "token_based_auth",
+      "topic": "Token Based Auth",
+      "transition": "Next. OAuth 2.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "oauth2",
+      "topic": "OAuth 2",
+      "transition": "Next. Api Key Management.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "api_key_management",
+      "topic": "Api Key Management",
+      "transition": "Next. Secrets Management.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "secrets_management",
+      "topic": "Secrets Management",
+      "transition": "Next. Env Security.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "env_security",
+      "topic": "Env Security",
+      "transition": "Next. OWASP Top 10.",
+      "audio_status": "Has Audio"
+    },
+    {
+      "machine_key": "owasp_top10",
+      "topic": "OWASP Top 10",
+      "transition": "",
+      "audio_status": "Has Audio"
+    }
+  ]
+}
