@@ -1,7 +1,6 @@
 {
   "generated": "2026-05-31",
   "index": {
-    "lancedb": "BRAIN_OS_Handbook/chapters/Phase_02_Architecture/lancedb_vector_store_audio.mp3",
     "mcp_protocol": "BRAIN_OS_Handbook/chapters/Phase_02_Architecture/mcp_registry_audio.mp3",
     "model_context_protocol": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/resolve_mcp_guide.wav",
     "prompt_engineering": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/claudeguide_prompting_architecture.wav",

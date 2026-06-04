@@ -391,7 +391,7 @@
       "last_touched": "2026-05-10"
     },
     {
-      "machine_key": "lancedb",
+      "machine_key": "lancedb_vector_store",
       "domain": "Data Engineering",
       "topic": "LanceDB Specifics",
       "status": "Practiced",
