@@ -56,6 +56,15 @@
     "trigger_session_close": "id:1vcmCcZdLmKs4OCzIIfTA3_veyZhH9Xil",
     "trigger_render_complete": "id:1Ds7Rd1x09RPuqzQ2ooe-HKDgBplYKJYp",
     "trigger_bdf_queue_check": "id:1Ub0QdXaFFQh4i-tsG2Pfw-PrNwqz4Ynn",
-    "read_along_app_build_session": "id:1Zc4DNHSSyXhZlpgFlQenKOlgedny-3b8"
+    "read_along_app_build_session": "id:1Zc4DNHSSyXhZlpgFlQenKOlgedny-3b8",
+    "ai_and_rag": "id:1Cwg_0wI_rIASvfQOiUsRbuwQtdBfF7B6",
+    "data_engineering": "id:1nToKncqo9PWrI14QT8kVEPkXXDufOFPA",
+    "devops_deployment": "id:12P81GIvcBqmyMVlbkhynuTAePECv_a5I",
+    "knowledge_and_thinking": "id:199B0cKGdrVi6FSNzL7IgC5w2_Rm0tnUK",
+    "python_mastery": "id:1m6U-xyaEBaebi3SPybqtxSJNFjb9Mq8_",
+    "security": "id:1TSo1T9vJJEk_GqIeVZFTsR2GoSOJ7mBz",
+    "system_design": "id:1ODPuQYo9okOVI6IDKPEC3JDypZTBZW9E",
+    "web_and_apis": "id:1tO0em6j-QMbzBU8Jaxr_wRbkvn_vqUDw",
+    "your_system": "id:1CRq-mreNIHGdiSOEQESMaiumccpjGo-9"
   }
 }
