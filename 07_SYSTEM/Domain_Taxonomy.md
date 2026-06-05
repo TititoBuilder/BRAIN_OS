@@ -349,3 +349,79 @@ ask reveals gap -> harvest -> author -> audio -> learn.
 DEPLOY NOTE: Railway NOTES_FILE env unset, so reroute takes effect on next
 push of backend.py. Editorial log cleanup COMPLETE (QA_Notes, brain_notes
 stripped; Daily_Log left - mostly legit session records).
+---
+
+## CONFIRMED DUPLICATE — mcp_protocol vs model_context_protocol (2026-06-03)
+
+VERIFIED by comparing transcripts: both open identically ("MCP stands for
+Model Context Protocol. It is a standard that lets Claude Code connect to
+external systems..."). Same content, two keys. NOT distinct topics despite
+different category labels (mcp_protocol = "APIs & Protocols";
+model_context_protocol = "AI/ML"). Real duplicate to consolidate.
+
+DO THIS WHEN PLUGGED IN (needs GPU for re-transcribe):
+
+CANONICAL DECISION NEEDED FIRST: pick one key. Recommend keeping
+"model_context_protocol" (more descriptive, full name) OR "mcp_protocol"
+(shorter). Either works; decide then migrate.
+
+BLAST RADIUS (all references to the RETIRED key must repoint to canonical):
+- knowledge_os.html: two SEED rows (L60 model_context_protocol "AI/ML",
+  L98 mcp_protocol "APIs & Protocols") -> merge to ONE row under canonical key
+- knowledge_os.html L132 DRIVE_INDEX: both keys -> one
+- drive_index.json L4 (mcp_protocol) + L5 (model_context_protocol) -> one
+- obsidian_sync.json L464 (mcp_protocol) + L84 (model_context_protocol)
+- drive_browser.py SOURCE MAP (L79-88): THREE source docs map across the two
+  keys -> repoint all to canonical:
+    L79 claude_code_workflow -> model_context_protocol
+    L81 mcp_setup            -> mcp_protocol
+    L88 resolve_mcp_guide    -> model_context_protocol
+- learning_paths.json: your_system path includes "mcp_protocol" (L13 area)
+  -> update to canonical key
+- transcripts/: keep canonical .json, remove the other
+- audio_staging/: both .mp3+.json exist; keep canonical
+
+THEN (GPU): rebuild your_system manifest -> re-stitch your_system.mp3 ->
+re-transcribe the path. (Other 8 paths unaffected.)
+
+VERIFY after: transcript_integrity.py shows the mcp dupe GONE.
+Use Claude Code with "tell me if canonical key already exists" collision
+guards, same as the lancedb consolidation.
+---
+
+## GLOSSARY ADD (2026-06-03)
+Add to the TTS plain-English synonym glossary (Cristian_Principles area):
+- "tooling archaeology" = digging through your own old scripts/configs to
+  figure out how past-you built something, because it wasn't documented.
+  The cure is the Verified Reality principle + Tools_Registry-first.
+---
+
+## VENV MAP — which python for which task (2026-06-03)
+Avoids the "it skips depending where we launch" confusion.
+- GPU/Whisper transcription AND Google Drive API:
+  C:\Dev\Projects\soccer-content-generator\venv\Scripts\python.exe (BDF venv)
+  (has openai-whisper, CUDA=True, googleapiclient; .env + gdrive_token here)
+- pydub / audio stitching:
+  C:\Knowledge\CA\venv\Scripts\python.exe (CA venv) (has pydub, also googleapiclient)
+- stdlib-only small tools: any python on PATH
+Both BDF and CA venvs report torch.cuda.is_available()=True. The recurring
+Triton "missing CUDA toolkit" warning is a harmless sub-component fallback,
+NOT CUDA being unavailable - transcription runs on GPU either way.
+---
+
+## GAP — ~22 newest topics not on Drive / not indexed (2026-06-03)
+drive_index.json has 56 topic entries + 9 paths = 65. But we authored 78
+topics this session. The ~22 newest (e.g. vector_databases, python_decorators,
+oauth2, and the rest of the Python/architecture/AI/security/dataeng/PKM
+clusters added this session) have LOCAL audio + transcripts but were never
+uploaded to Drive or added to drive_index. So they don't play in the deployed
+app yet (only the 56 older ones + the 9 paths do).
+TO FIX (when convenient, same method as paths):
+1. Identify which of the 78 local topic mp3s are missing from drive_index.
+2. Upload each via drive_browser.py --upload, capture Drive IDs.
+3. Add id: entries to drive_index.json VIA PYTHON (json lib), never
+   PowerShell ConvertTo-Json/Set-Content (mangles + adds BOM).
+4. Commit + redeploy.
+LESSON: PowerShell ConvertTo-Json -Depth + Set-Content corrupted/BOM'd the
+file; reverted via git, redid in Python cleanly. Reinforces the
+[System.IO.File]::WriteAllText / use-python-for-json rule.
