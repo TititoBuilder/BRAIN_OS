@@ -25,12 +25,12 @@
     {
       "machine_key": "audio_manipulation",
       "topic": "Audio Manipulation",
-      "transition": "Next. MCP Protocol.",
+      "transition": "Next. Model Context Protocol.",
       "audio_status": "Has Audio"
     },
     {
-      "machine_key": "mcp_protocol",
-      "topic": "MCP Protocol",
+      "machine_key": "model_context_protocol",
+      "topic": "Model Context Protocol",
       "transition": "Next. Obsidian Workflows.",
       "audio_status": "Has Audio"
     },

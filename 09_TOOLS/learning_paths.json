@@ -4,14 +4,149 @@
   "description": "Learning paths: ordered topic sequences stitched into courses. Topics remain individually playable; paths are additive.",
   "transition_voice": "af_heart",
   "paths": [
-    {"id": "python_mastery", "title": "Python Mastery", "domain": "software_architecture", "description": "Core Python language features and tooling, from type hints to packaging.", "topics": ["python_type_hints","python_dataclasses","python_decorators","python_generators","python_context_managers","python_asyncio","python_subprocess","python_pytest","python_package_arch"]},
-    {"id": "system_design", "title": "System Design", "domain": "software_architecture", "description": "Designing services and systems, from monoliths to distributed patterns.", "topics": ["monolith_vs_microservices","rest_api_design","api_gateway_design","load_balancing","api_rate_limiting","event_driven_architecture","webhook_design","circuit_breaker_pattern","cqrs_pattern"]},
-    {"id": "ai_and_rag", "title": "AI and RAG", "domain": "ai_engineering", "description": "Language models, embeddings, retrieval, and building RAG systems and agents.", "topics": ["llm_fundamentals","prompt_engineering","chain_of_thought","vector_embeddings","vector_databases","semantic_search","retrieval_systems","rag_pipelines","function_calling","agent_orchestration","model_fine_tuning","multimodal_ai","diffusion_models","ai_evaluation","ai_safety_basics"]},
-    {"id": "data_engineering", "title": "Data Engineering", "domain": "data_science", "description": "Modeling, moving, and validating data through pipelines and stores.", "topics": ["data_modeling","schema_evolution","etl_pipelines","stream_processing","data_validation","database_sharding","graph_databases"]},
-    {"id": "devops_deployment", "title": "DevOps and Deployment", "domain": "systems_operations", "description": "Containers, pipelines, cloud, and version control for shipping software.", "topics": ["docker_fundamentals","containerization","cicd_pipelines","cloud_storage_apis","gcp_basics","git_advanced"]},
-    {"id": "security", "title": "Security", "domain": "systems_operations", "description": "Authentication, secrets, and defending applications.", "topics": ["auth_patterns","token_based_auth","oauth2","api_key_management","secrets_management","env_security","owasp_top10"]},
-    {"id": "your_system", "title": "Your System", "domain": "creative_systems", "description": "The stack behind BRAIN_OS: audio pipelines, MCP, Obsidian, environments.", "topics": ["tts_systems","audio_pipeline_design","audio_formats","audio_manipulation","mcp_protocol","obsidian_workflows","env_management","python_venvs"]},
-    {"id": "knowledge_and_thinking", "title": "Knowledge and Thinking", "domain": "creative_systems", "description": "Personal knowledge management and the architecture principles behind it.", "topics": ["pkm_fundamentals","zettelkasten","bidirectional_linking","knowledge_graph_design","blast_radius_principle","low_coupling_high_cohesion","federated_systems"]},
-    {"id": "web_and_apis", "title": "Web and APIs", "domain": "software_architecture", "description": "Modern web API styles and the theory underneath distributed systems.", "topics": ["graphql","websockets","openapi_spec","cap_theorem"]}
+    {
+      "id": "python_mastery",
+      "title": "Python Mastery",
+      "domain": "software_architecture",
+      "description": "Core Python language features and tooling, from type hints to packaging.",
+      "topics": [
+        "python_type_hints",
+        "python_dataclasses",
+        "python_decorators",
+        "python_generators",
+        "python_context_managers",
+        "python_asyncio",
+        "python_subprocess",
+        "python_pytest",
+        "python_package_arch"
+      ]
+    },
+    {
+      "id": "system_design",
+      "title": "System Design",
+      "domain": "software_architecture",
+      "description": "Designing services and systems, from monoliths to distributed patterns.",
+      "topics": [
+        "monolith_vs_microservices",
+        "rest_api_design",
+        "api_gateway_design",
+        "load_balancing",
+        "api_rate_limiting",
+        "event_driven_architecture",
+        "webhook_design",
+        "circuit_breaker_pattern",
+        "cqrs_pattern"
+      ]
+    },
+    {
+      "id": "ai_and_rag",
+      "title": "AI and RAG",
+      "domain": "ai_engineering",
+      "description": "Language models, embeddings, retrieval, and building RAG systems and agents.",
+      "topics": [
+        "llm_fundamentals",
+        "prompt_engineering",
+        "chain_of_thought",
+        "vector_embeddings",
+        "vector_databases",
+        "semantic_search",
+        "retrieval_systems",
+        "rag_pipelines",
+        "function_calling",
+        "agent_orchestration",
+        "model_fine_tuning",
+        "multimodal_ai",
+        "diffusion_models",
+        "ai_evaluation",
+        "ai_safety_basics"
+      ]
+    },
+    {
+      "id": "data_engineering",
+      "title": "Data Engineering",
+      "domain": "data_science",
+      "description": "Modeling, moving, and validating data through pipelines and stores.",
+      "topics": [
+        "data_modeling",
+        "schema_evolution",
+        "etl_pipelines",
+        "stream_processing",
+        "data_validation",
+        "database_sharding",
+        "graph_databases"
+      ]
+    },
+    {
+      "id": "devops_deployment",
+      "title": "DevOps and Deployment",
+      "domain": "systems_operations",
+      "description": "Containers, pipelines, cloud, and version control for shipping software.",
+      "topics": [
+        "docker_fundamentals",
+        "containerization",
+        "cicd_pipelines",
+        "cloud_storage_apis",
+        "gcp_basics",
+        "git_advanced"
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "domain": "systems_operations",
+      "description": "Authentication, secrets, and defending applications.",
+      "topics": [
+        "auth_patterns",
+        "token_based_auth",
+        "oauth2",
+        "api_key_management",
+        "secrets_management",
+        "env_security",
+        "owasp_top10"
+      ]
+    },
+    {
+      "id": "your_system",
+      "title": "Your System",
+      "domain": "creative_systems",
+      "description": "The stack behind BRAIN_OS: audio pipelines, MCP, Obsidian, environments.",
+      "topics": [
+        "tts_systems",
+        "audio_pipeline_design",
+        "audio_formats",
+        "audio_manipulation",
+        "model_context_protocol",
+        "obsidian_workflows",
+        "env_management",
+        "python_venvs"
+      ]
+    },
+    {
+      "id": "knowledge_and_thinking",
+      "title": "Knowledge and Thinking",
+      "domain": "creative_systems",
+      "description": "Personal knowledge management and the architecture principles behind it.",
+      "topics": [
+        "pkm_fundamentals",
+        "zettelkasten",
+        "bidirectional_linking",
+        "knowledge_graph_design",
+        "blast_radius_principle",
+        "low_coupling_high_cohesion",
+        "federated_systems"
+      ]
+    },
+    {
+      "id": "web_and_apis",
+      "title": "Web and APIs",
+      "domain": "software_architecture",
+      "description": "Modern web API styles and the theory underneath distributed systems.",
+      "topics": [
+        "graphql",
+        "websockets",
+        "openapi_spec",
+        "cap_theorem"
+      ]
+    }
   ]
 }

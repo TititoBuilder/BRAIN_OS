@@ -78,7 +78,7 @@ FILE_MAP = {
     # Tools/Claudeguide
     "claude_code_workflow":      "model_context_protocol",
     "claude_md_standards":       "prompt_engineering",
-    "mcp_setup":                 "mcp_protocol",
+    "mcp_setup":                 "model_context_protocol",
     "prompting_architecture":    "prompt_engineering",
     "skills_system":             "function_calling",
     # BrainOS audio files found locally

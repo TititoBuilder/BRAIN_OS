@@ -461,16 +461,6 @@
       "last_touched": "2026-05-05"
     },
     {
-      "machine_key": "mcp_protocol",
-      "domain": "APIs & Protocols",
-      "topic": "MCP Protocol (stdio/SSE)",
-      "status": "Mastered",
-      "score": 88,
-      "priority": "High",
-      "evidence": "resolve-mcp-server lazy TCP, 6 MCP servers",
-      "last_touched": "2026-05-24"
-    },
-    {
       "machine_key": "webhook_design",
       "domain": "APIs & Protocols",
       "topic": "Webhook Design",

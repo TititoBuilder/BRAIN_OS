@@ -34,10 +34,6 @@ DOWNLOADS = [
         "federated_systems.wav",
     ),
     (
-        "BRAIN_OS_Handbook/chapters/Phase_02_Architecture/mcp_registry_audio.mp3",
-        "mcp_protocol.mp3",
-    ),
-    (
         "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/resolve_mcp_guide.wav",
         "model_context_protocol.wav",
     ),
