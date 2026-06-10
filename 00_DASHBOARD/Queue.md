@@ -1,11 +1,11 @@
----
-knowledge_os_machine_key: message_queues
-knowledge_os_domain: Systems Design
-knowledge_os_status: Not Started
-knowledge_os_score: 0
-knowledge_os_priority: Medium
----# BRAIN_OS — Master Queue
+# BRAIN_OS — Master Queue
 ## In Progress
+- [ ] Sessions/Project-Resumes tab build (DESIGNED ? see 07_SYSTEM/Sessions_*.md; first step: check vault [[backlinks]] for cross-context relations)
+- [ ] Author + voice 3 topics: edge_tts, kokoro_tts, message_queues (write lesson content, then converter.py -> tts_local.py)
+- [ ] read-along-app CLAUDE.md drift: remove stale DRIVE_INDEX_JSON ref + fix pipeline section (transcribe_batch/populate_staging refs don't match reality)
+- [ ] session_close.py: make git add surgical (explicit files, not broad add) ? see Cristian_Principles
+- [ ] Audit git history for audio that slipped past the 376-null .gitignore period (low priority)
+- [ ] Queue.md hygiene: collapse duplicate 'Completed ? 2026-05-28' sections (low priority)
 - [ ] anchor_generator.py batch mode — generate anchors for all 31 chapters
 - [ ] Learning path sequencing — generate audio for 30 HIGH priority vault nodes
 - [ ] Apply Knowledge Graphs Over Lists to 04_WORKFLOWS + 05_MEMORY + 03_APIS
