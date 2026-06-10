@@ -5,11 +5,11 @@ Loads project context, runs health check, sends Telegram notification.
 
 Usage:
     python C:/BRAIN_OS/09_TOOLS/session_start.py --project bdf
-    python C:/BRAIN_OS\09_TOOLS\session_start.py --project brainos
-    python C:\BRAIN_OS\09_TOOLS\session_start.py --project ca
-    python C:\BRAIN_OS\09_TOOLS\session_start.py --project construction
-    python C:\BRAIN_OS\09_TOOLS\session_start.py --project resolve
-    python C:\BRAIN_OS\09_TOOLS\session_start.py  # auto-detects from cwd
+    python C:/BRAIN_OS/09_TOOLS/session_start.py --project brainos
+    python C:/BRAIN_OS/09_TOOLS/session_start.py --project ca
+    python C:/BRAIN_OS/09_TOOLS/session_start.py --project construction
+    python C:/BRAIN_OS/09_TOOLS/session_start.py --project resolve
+    python C:/BRAIN_OS/09_TOOLS/session_start.py  # auto-detects from cwd
 """
 
 import argparse
@@ -22,6 +22,12 @@ import subprocess
 from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
+
+# Force UTF-8 stdout ? content (CLAUDE.md, archives) contains Unicode that crashes cp1252.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 BRAIN_OS_ROOT  = Path(r"C:\BRAIN_OS")
@@ -117,16 +123,47 @@ def send_telegram(msg: str):
 
 # ── Context loader ─────────────────────────────────────────────────────────────
 def load_context(project: dict) -> str:
-    """Read CLAUDE.md and context.md and return combined context string."""
+    """Read CLAUDE.md, latest session archive, and Queue.md ? the full startup bundle."""
     parts = []
 
+    # 1. The contract (full, no truncation)
     for label, path in [("CLAUDE.md", project["claude_md"]),
                         ("Context", project["context_md"])]:
         if path and Path(path).exists():
             content = Path(path).read_text(encoding="utf-8", errors="ignore")
-            parts.append(f"=== {label}: {Path(path).name} ===\n{content[:3000]}")
+            parts.append(f"=== {label}: {Path(path).name} ===\n{content}")
         else:
             parts.append(f"=== {label}: NOT FOUND ({path}) ===")
+
+    # 2. The timeline ? newest real session archive (08_SESSIONS + 09_TOOLS), by mtime
+    candidates = []
+    for d in [BRAIN_OS_ROOT / "08_SESSIONS", BRAIN_OS_ROOT / "09_TOOLS"]:
+        if d.exists():
+            for f in d.glob("*.md"):
+                n = f.name.lower()
+                # real session archives only: dated bdf_ca_brain_os or session_ prefix
+                if "_bdf_ca_brain_os" in n or n.startswith("session_"):
+                    candidates.append(f)
+    if candidates:
+        latest = max(candidates, key=lambda f: f.stat().st_mtime)
+        content = latest.read_text(encoding="utf-8", errors="ignore")
+        parts.append(f"=== LATEST SESSION: {latest.name} ===\n{content}")
+    else:
+        parts.append("=== LATEST SESSION: none found ===")
+
+    # 3. The queue ? In Progress section content (not just a count)
+    queue_path = BRAIN_OS_ROOT / "00_DASHBOARD" / "Queue.md"
+    if queue_path.exists():
+        qc = queue_path.read_text(encoding="utf-8", errors="ignore")
+        lines, grab = [], False
+        for line in qc.splitlines():
+            if line.startswith("## In Progress"):
+                grab = True; lines.append(line); continue
+            if grab and line.startswith("## ") and "In Progress" not in line:
+                break
+            if grab:
+                lines.append(line)
+        parts.append("=== QUEUE (In Progress) ===\n" + "\n".join(lines))
 
     return "\n\n".join(parts)
 
