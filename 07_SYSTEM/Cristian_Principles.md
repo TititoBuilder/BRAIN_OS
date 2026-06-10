@@ -273,3 +273,56 @@ The bug lives at the layer where reality diverges from your assumption.
 **What this prevents:**
 Rewriting working code to fix missing data.
 Patching symptoms while the root cause stays alive.
+
+
+---
+
+## Text Config Files Are Edited Via Python -- Never PowerShell
+
+**Learned from:** Repairing a corrupted `.gitignore` in BRAIN_OS -- June 9 2026
+
+**The Core Principle:** `.gitignore`, JSON, and any structured text config must
+be edited with Python (open/read/write UTF-8, LF), never PowerShell `Set-Content`,
+`Add-Content`, or `>` redirection. PowerShell injects BOMs, null bytes, and mixed
+line endings that silently corrupt the file.
+
+**Today's proof:**
+- `.gitignore` had 376 null bytes committed in history (from a prior PowerShell
+  write). Git saw it as "binary," refused text diffs.
+- First fix attempt (`Add-Content -Encoding ASCII`) made it WORSE -- more nulls.
+- `git checkout` restored the already-corrupt committed version (nulls intact).
+- Real fix: Python -- strip null bytes, normalize to LF, rewrite clean UTF-8.
+  376 nulls to 0, every real rule preserved.
+
+**The generalization:** SAME failure class as "JSON edits via Python only."
+Treat `.gitignore` and all text config the same way. PowerShell text-writing is
+the hazard, regardless of file type.
+
+**What this prevents:**
+A corrupt `.gitignore` can break pattern matching -- so `audio_staging/*.mp3` and
+`.env` rules may silently fail, letting binaries or secrets become committable.
+Guard: consider a pre-commit check that rejects null bytes in tracked text.
+
+---
+
+## Audit What Your Automation Commits -- Broad git add Is A Liability
+
+**Learned from:** `session_close.py` sweeping temp scripts into git -- June 9 2026
+
+**The Core Principle:** Any tool that auto-commits must stage files EXPLICITLY by
+name, never `git add -A` / `git add .`. And you must READ the tool's commit output
+every time -- automation that stages broadly commits whatever scratch is lying around.
+
+**Today's proof:**
+- `session_close.py` did a broad `git add` and committed 7 investigation temp
+  scripts + a `.pyc` cache into history.
+- Caught ONLY because the commit output was read line-by-line.
+- Fixed with `git rm` + `__pycache__/`, `*.pyc` added to `.gitignore`.
+
+**The generalization:** The "name files explicitly, never -A" rule applies to
+TOOLS, not just manual commits. A tool that violates it creates the exact debt
+the rule exists to prevent -- caught only by verifying output.
+
+**What this prevents:**
+Scratch scripts, caches, and half-finished files leaking into permanent history.
+Follow-up task: make session_close.py stage explicitly, and audit before trusting it.
