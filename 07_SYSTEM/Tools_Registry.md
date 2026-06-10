@@ -305,3 +305,4 @@ tags: [system, tools, infra, live]
   wiki-links).
 - **enforces:** [[Naming_Contract]]
 - **run:** `python rename_linked.py --vault C:\BRAIN_OS --old <stem> --new <stem> --apply`
+- 2026-06-09 — Session: BRAIN_OS + Read-Along App — major consolidation + system-truth

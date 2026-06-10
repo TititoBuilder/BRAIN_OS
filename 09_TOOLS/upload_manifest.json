@@ -1,0 +1,247 @@
+{
+  "ai_evaluation": {
+    "id": "1Ela6csC0FTfXJy-TaECcviBLQHaAEegt",
+    "domain": "AI/ML",
+    "folder": "AI_ML"
+  },
+  "ai_safety_basics": {
+    "id": "1Zfkb5uM5E-7ApbFjIBaJ5mTuGrX_eBdu",
+    "domain": "AI/ML",
+    "folder": "AI_ML"
+  },
+  "api_gateway_design": {
+    "id": "1OStKEEHthx8-guy_UJPxhHY4OIF1-DHx",
+    "domain": "Systems Design",
+    "folder": "Systems_Design"
+  },
+  "api_key_management": {
+    "id": "1JBF2Wnre72n50ehJD0iadFe2ULPAzdLr",
+    "domain": "Security",
+    "folder": "Security"
+  },
+  "audio_formats": {
+    "id": "1q5KKHfzDm6Zoaxxz1mkp04gCvhXzywfA",
+    "domain": "Audio & Media",
+    "folder": "Audio_Media"
+  },
+  "audio_manipulation": {
+    "id": "1nOhamVzKRONLbHpiyFR_sXCLJhbyR9Sa",
+    "domain": "Audio & Media",
+    "folder": "Audio_Media"
+  },
+  "auth_patterns": {
+    "id": "1fhL8o5L8p8BJY8uhnBpfiYBRfEWeSf9J",
+    "domain": "Security",
+    "folder": "Security"
+  },
+  "bidirectional_linking": {
+    "id": "1mdQ_i64oJzYURMWJKVmN8DiCC3q0Ij_u",
+    "domain": "Knowledge Systems",
+    "folder": "Knowledge_Systems"
+  },
+  "blast_radius_principle": {
+    "id": "1K6CD_TgvkjVg7pQfBrTMhVvPxjoP_awA",
+    "domain": "Systems Design",
+    "folder": "Systems_Design"
+  },
+  "cap_theorem": {
+    "id": "1H8Zbn_zcOnnkvEsn0fHZoJEnBUdW04jZ",
+    "domain": "Systems Design",
+    "folder": "Systems_Design"
+  },
+  "chain_of_thought": {
+    "id": "1RBCoQiMAcWPDG0tptA4_LDyfx28ACtIj",
+    "domain": "AI/ML",
+    "folder": "AI_ML"
+  },
+  "circuit_breaker_pattern": {
+    "id": "1-NgMMT1bKbfZ8G-PD_V-XMRr5HeqGnd0",
+    "domain": "Systems Design",
+    "folder": "Systems_Design"
+  },
+  "cloud_storage_apis": {
+    "id": "14vslFtq9B0Uh38uEFB4I8Tms_-54vBih",
+    "domain": "Cloud & DevOps",
+    "folder": "Cloud_DevOps"
+  },
+  "containerization": {
+    "id": "1ZOFDpfDwdHGt6OTb0TcllBRu9hLREruF",
+    "domain": "Cloud & DevOps",
+    "folder": "Cloud_DevOps"
+  },
+  "cqrs_pattern": {
+    "id": "14t5bJIA86aIcdtEs7E6P7n7S6zusWWbT",
+    "domain": "Systems Design",
+    "folder": "Systems_Design"
+  },
+  "data_modeling": {
+    "id": "16uDB-x07lekgSdL42xNRATtUaHOzIOGF",
+    "domain": "Data Engineering",
+    "folder": "Data_Engineering"
+  },
+  "data_validation": {
+    "id": "1R41KV_YATv5s2byjvHnngJlp8-kpzsiS",
+    "domain": "Data Engineering",
+    "folder": "Data_Engineering"
+  },
+  "database_sharding": {
+    "id": "1xa1z1SaCEMLSnLBXfFYEt0q6Lt-tdD_k",
+    "domain": "Systems Design",
+    "folder": "Systems_Design"
+  },
+  "diffusion_models": {
+    "id": "1Gm7YukIvNL8SGMTp_v9VzBBjbwy4XBJz",
+    "domain": "AI/ML",
+    "folder": "AI_ML"
+  },
+  "docker_fundamentals": {
+    "id": "1b40MKBs-HoeFmAc853bRTfukLXOCBjOx",
+    "domain": "Cloud & DevOps",
+    "folder": "Cloud_DevOps"
+  },
+  "env_security": {
+    "id": "162U-3UIsNW2PpIQk8JyeFYttE_GkEEwX",
+    "domain": "Security",
+    "folder": "Security"
+  },
+  "gcp_basics": {
+    "id": "1PWqIgg2j-nSOW7766RRRbDu2EdjlfnHk",
+    "domain": "Cloud & DevOps",
+    "folder": "Cloud_DevOps"
+  },
+  "git_advanced": {
+    "id": "1Lr-BC_4019tGENjKMxr7e8nsHEPhnJsu",
+    "domain": "Cloud & DevOps",
+    "folder": "Cloud_DevOps"
+  },
+  "graph_databases": {
+    "id": "1Yfr_0Yt4UGw-VOY8oz55k9SdgB7ybXl_",
+    "domain": "Knowledge Systems",
+    "folder": "Knowledge_Systems"
+  },
+  "graphql": {
+    "id": "12tsYDUsRdko7l4wYRYzM_0gUk5wr8UJX",
+    "domain": "APIs & Protocols",
+    "folder": "APIs_Protocols"
+  },
+  "load_balancing": {
+    "id": "1gZvSTBF4pcNepXvTCypIRPJLPqNckdGM",
+    "domain": "Systems Design",
+    "folder": "Systems_Design"
+  },
+  "low_coupling_high_cohesion": {
+    "id": "13nVLY_Qp_R8Ks4ELbTvin2ca6qr3Tw7b",
+    "domain": "Systems Design",
+    "folder": "Systems_Design"
+  },
+  "model_fine_tuning": {
+    "id": "1BY7wqWNJkxopJepQ4tHCNYKdC0cd67bO",
+    "domain": "AI/ML",
+    "folder": "AI_ML"
+  },
+  "multimodal_ai": {
+    "id": "1ALK63WvpbvLYCssPZoKuul5fnAak9hNX",
+    "domain": "AI/ML",
+    "folder": "AI_ML"
+  },
+  "oauth2": {
+    "id": "1AxUxBX17Rl5ATWztAN3AZdMfuEx0_dnT",
+    "domain": "APIs & Protocols",
+    "folder": "APIs_Protocols"
+  },
+  "openapi_spec": {
+    "id": "1p_VDa-Z2QZNMEY7BjfdhLk60UFQWoS1t",
+    "domain": "APIs & Protocols",
+    "folder": "APIs_Protocols"
+  },
+  "owasp_top10": {
+    "id": "1CGOG5AIjABc9vXz7Jd44gJ66bzF_w3d1",
+    "domain": "Security",
+    "folder": "Security"
+  },
+  "python_context_managers": {
+    "id": "1VclYVY4MYyqI6NyNf0Acs3coYBmsVJko",
+    "domain": "Python",
+    "folder": "Python"
+  },
+  "python_dataclasses": {
+    "id": "12mgMOASEuLbB2OnXX98XZlrv0jObOpPx",
+    "domain": "Python",
+    "folder": "Python"
+  },
+  "python_generators": {
+    "id": "1HEGfzAeSyd9kV_3pFlkehtXWy-DntnFA",
+    "domain": "Python",
+    "folder": "Python"
+  },
+  "python_package_arch": {
+    "id": "1JVXDzakA4-zW25y3v_EiRn-7qg8uPyXo",
+    "domain": "Python",
+    "folder": "Python"
+  },
+  "python_pytest": {
+    "id": "1_hToO_eRRr_y20fXWYBRbIpqgpKL19IW",
+    "domain": "Python",
+    "folder": "Python"
+  },
+  "python_subprocess": {
+    "id": "1JbIS8-G8e6uwbJXfS_rybrhBcqSa6Peg",
+    "domain": "Python",
+    "folder": "Python"
+  },
+  "python_type_hints": {
+    "id": "1Wb4wQ8pHC0TOvT3Mj2Nj4D532TnScilp",
+    "domain": "Python",
+    "folder": "Python"
+  },
+  "rest_api_design": {
+    "id": "1DxVoTOesaJTMdgBHWcjqLns9qpZX1BgW",
+    "domain": "APIs & Protocols",
+    "folder": "APIs_Protocols"
+  },
+  "schema_evolution": {
+    "id": "1YS7d24KC-FwM6GnDSeRwEwxj8yLBYPxx",
+    "domain": "Data Engineering",
+    "folder": "Data_Engineering"
+  },
+  "secrets_management": {
+    "id": "1h6FBukXZtGV-DLisipGiVeHz7_fDhD29",
+    "domain": "Cloud & DevOps",
+    "folder": "Cloud_DevOps"
+  },
+  "semantic_search": {
+    "id": "1FaE4L7-YEEyMoFYE5SLgtgDSQDVDYBc3",
+    "domain": "AI/ML",
+    "folder": "AI_ML"
+  },
+  "stream_processing": {
+    "id": "1MN6z73hPQN1D6BW7I1LS9mhnhGmSKEjX",
+    "domain": "Data Engineering",
+    "folder": "Data_Engineering"
+  },
+  "token_based_auth": {
+    "id": "1px5BDApZ4GYjfZ5EGen1lBLM7bRwRlnF",
+    "domain": "Security",
+    "folder": "Security"
+  },
+  "vector_databases": {
+    "id": "1rcQ0fjzF_Rw4Koc8jCzO4l5QC_2HO0XK",
+    "domain": "Data Engineering",
+    "folder": "Data_Engineering"
+  },
+  "vector_embeddings": {
+    "id": "16S89hV0003GzillBO15YSfNg6zhOCvZy",
+    "domain": "AI/ML",
+    "folder": "AI_ML"
+  },
+  "websockets": {
+    "id": "16w7syycMbEG0z2XJEWbMDXTd1ApCEm-Y",
+    "domain": "APIs & Protocols",
+    "folder": "APIs_Protocols"
+  },
+  "zettelkasten": {
+    "id": "1s5CBCsirkBLVB9Qwm9HOZvaQYjPMy9J2",
+    "domain": "Knowledge Systems",
+    "folder": "Knowledge_Systems"
+  }
+}
