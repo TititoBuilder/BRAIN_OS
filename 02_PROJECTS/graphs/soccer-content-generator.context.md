@@ -1,5 +1,5 @@
 # soccer-content-generator — dependency context
-_updated: 2026-05-24T17:59:42.743421+00:00_
+_updated: 2026-06-11T00:40:37.211960+00:00_
 _nodes: 98_
 
 ## Clip_Pipeline
@@ -102,7 +102,7 @@ _nodes: 98_
 - **trigger_watcher.py** (14.6 KB)
 
 ## Output_Pipeline
-- **converter.py** (20.3 KB)
+- **converter.py** (20.6 KB)
 - **export_pipeline.py** (13.3 KB)
 - **mcp_book_compiler.py** (28.3 KB) — external: `anthropic`, `dotenv`
 - **src/publishers/instagram_publisher.py** (5.9 KB) — internal: `src.formatters.platform_formatter`, `src.publishers.base_publisher`; external: `requests`
@@ -223,30 +223,3 @@ _nodes: 98_
 - **test_football_data_org.py** (4.3 KB) — external: `dotenv`, `requests`
 - **test_football_data_org2.py** (3.2 KB) — external: `dotenv`, `requests`
 - **test_ucl.py** (0.5 KB) — external: `dotenv`, `requests`
-
-
-<!-- auto-ingested 2026-05-28 -->
-## 2026-05-27 Session Close
-- chore: session close 2026-05-27
-- brain sync 2026-05-27
-
-
-<!-- auto-updated 2026-05-28 -->
-## 2026-05-27 Session Close
-- chore: session close 2026-05-27
-- brain sync 2026-05-27
-- Status: synced to BRAIN_OS
-
-
-<!-- auto-updated 2026-05-28 -->
-## Session Close — 2026-05-27
-- Completed: session close chore
-- Brain sync completed 2026-05-27
-- No blocking issues recorded
-
-
-<!-- auto-ingested 2026-05-29 -->
-## 2026-05-27 (logged 2026-05-29)
-- Session close completed
-- Brain sync performed
-- Chore: gitignore audio_staging JSON + tools added
