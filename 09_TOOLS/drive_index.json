@@ -6,15 +6,12 @@
     "python_venvs": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/guide_venv.wav",
     "obsidian_workflows": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/guide_obsidian_claude.wav",
     "function_calling": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/claudeguide_skills_system.wav",
-    "pkm_fundamentals": "BRAIN_OS_Handbook/chapters/Phase_01_Orientation/guide_brain_os.wav",
     "llm_fundamentals": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/programming_terminology_reference.wav",
     "env_management": "BRAIN_OS_Handbook/chapters/Phase_02_Architecture/active_environments_audio.mp3",
     "etl_pipelines": "BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch01_pipeline_architecture_af_heart_audio.mp3",
-    "rag_pipelines": "BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch04_lancedb_rag_af_heart_audio.mp3",
     "tts_systems": "BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch03_tts_audio_af_heart_audio.mp3",
     "webhook_design": "BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch05_telegram_twitter_af_heart_audio.mp3",
     "api_rate_limiting": "BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch16_cost_tracking_af_heart_audio.mp3",
-    "retrieval_systems": "BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch16_knowledge_enricher_af_heart_audio.mp3",
     "python_asyncio": "BDF KNOWLEDGE BOOK/BDF/chapters/Phase_04_Agents_Workflows/ch14_async_export_pattern_af_heart_audio.mp3",
     "event_driven_architecture": "BDF KNOWLEDGE BOOK/BDF/chapters/Phase_04_Agents_Workflows/ch02_bridge_reload_discipline_af_heart_audio.mp3",
     "cicd_pipelines": "BDF KNOWLEDGE BOOK/BDF/chapters/Phase_04_Agents_Workflows/ch13_deploy_discipline_af_heart_audio.mp3",
@@ -117,6 +114,9 @@
     "zettelkasten": "id:1s5CBCsirkBLVB9Qwm9HOZvaQYjPMy9J2",
     "edge_tts": "id:14D8Jl7uMyc1Z9MqhlVmuPFQBnFSZCr2y",
     "kokoro_tts": "id:1qgyGHZKM0d9npstpWw3A0eeVPSVT0LxN",
-    "message_queues": "id:13HK_C4YxoXCThpKkrX5d8LP50ks6uiMO"
+    "message_queues": "id:13HK_C4YxoXCThpKkrX5d8LP50ks6uiMO",
+    "pkm_fundamentals": "id:1sVYNE3_oKMiSveilIaiqOvtgHqW1psyv",
+    "rag_pipelines": "id:1X5NT6uXUOdOIv2VJfuu-pxlLsDHsikaw",
+    "retrieval_systems": "id:1dB8TXALnjR3TFCoHez2n-K0vWoVwKMUw"
   }
 }
