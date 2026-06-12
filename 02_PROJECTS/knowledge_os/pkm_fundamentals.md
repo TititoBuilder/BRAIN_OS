@@ -1,4 +1,5 @@
 ---
+knowledge_os_status: Practiced
 knowledge_os_machine_key: pkm_fundamentals
 knowledge_os_domain: Systems Operations
 ---
