@@ -93,5 +93,18 @@ where.exe python
 # Use /exit in another terminal tab
 ```
 
+## Knowledge Registration Map
+_Where a new thing must register so it does not get stranded (the gap that bit us 2026-06-11)._
+
+**New knowledge_os lesson -> 3 steps or it stays invisible:**
+1. Write lesson -> `02_PROJECTS/knowledge_os/{key}.md`
+2. Register for audio -> add `("02_PROJECTS/knowledge_os/{key}.md", "{key}")` to NODES in `read-along-app/backend/populate_staging.py`
+3. Run `populate_staging.py --skip-tts` (if audio exists) -> auto: transcribe, upload Drive, write `id:` entry to `09_TOOLS/drive_index.json`. Confirm Drive ID with `get_ids.py`.
+
+**Source-of-truth files:** index `09_TOOLS/drive_index.json` (app reads from GitHub raw, id: format) - queue `00_DASHBOARD/Queue.md` - principles `07_SYSTEM/Cristian_Principles.md` - tools `07_SYSTEM/Tools_Registry.md`
+
+**Known drift:** NODES registers only a fraction of knowledge_os lessons (manual add). Drive has unmapped audio - see `05_MEMORY/Drive_Audio_Audit_2026-06-11.md`.
+
 ---
+
 **→** [[SYSTEM_MASTER]] · [[PowerShell_Aliases]]
