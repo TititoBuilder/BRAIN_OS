@@ -1,7 +1,12 @@
 # BRAIN_OS — Master Queue
 ## In Progress
+- [ ] Study items -> git study queue (priority)
+- [ ] Convert remaining path-format index entries to id: format (low priority - backend handles both)
+- [ ] session_close.py doc/code drift: docstring claims --project flag the parser lacks - reconcile
+- [ ] Telegram env vars not loaded in plain PowerShell -> close-script notification silently skips; load .env
+- [ ] FEATURE: separate Books/Sessions access path for long-form audio (distinct from topic dropdown)
 - [ ] Sessions/Project-Resumes tab build (DESIGNED ? see 07_SYSTEM/Sessions_*.md; first step: check vault [[backlinks]] for cross-context relations)
-- [ ] Author + voice 3 topics: edge_tts, kokoro_tts, message_queues (write lesson content, then converter.py -> tts_local.py)
+- [x] Author + voice 3 topics: edge_tts, kokoro_tts, message_queues (DONE 2026-06-11 - live in LISTEN tab)
 - [ ] read-along-app CLAUDE.md drift: remove stale DRIVE_INDEX_JSON ref + fix pipeline section (transcribe_batch/populate_staging refs don't match reality)
 - [ ] session_close.py: make git add surgical (explicit files, not broad add) ? see Cristian_Principles
 - [ ] Audit git history for audio that slipped past the 376-null .gitignore period (low priority)
