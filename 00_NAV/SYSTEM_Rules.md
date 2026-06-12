@@ -96,14 +96,17 @@ where.exe python
 ## Knowledge Registration Map
 _Where a new thing must register so it does not get stranded (the gap that bit us 2026-06-11)._
 
-**New knowledge_os lesson -> 3 steps or it stays invisible:**
-1. Write lesson -> `02_PROJECTS/knowledge_os/{key}.md`
-2. Register for audio -> add `("02_PROJECTS/knowledge_os/{key}.md", "{key}")` to NODES in `read-along-app/backend/populate_staging.py`
-3. Run `populate_staging.py --skip-tts` (if audio exists) -> auto: transcribe, upload Drive, write `id:` entry to `09_TOOLS/drive_index.json`. Confirm Drive ID with `get_ids.py`.
+**New knowledge_os lesson -> auto-registers by status (no manual list):**
+1. Write lesson -> `02_PROJECTS/knowledge_os/{key}.md` with `knowledge_os_status: Learning` (or Practiced/Mastered). Status at Learning-or-above = auto-included in NODES. Below Learning (Not Started / no status) = excluded.
+2. Run `populate_staging.py --skip-tts` (audio exists) or full run (needs TTS) -> auto: transcribe, upload Drive, write `id:` to `09_TOOLS/drive_index.json`. Confirm Drive ID with `get_ids.py`.
+
+NODES is DERIVED, not hand-maintained: `derive_knowledge_os_nodes()` scans the folder + filters by status. A lesson registers the moment its status reaches Learning. No NODES edit, ever.
 
 **Source-of-truth files:** index `09_TOOLS/drive_index.json` (app reads from GitHub raw, id: format) - queue `00_DASHBOARD/Queue.md` - principles `07_SYSTEM/Cristian_Principles.md` - tools `07_SYSTEM/Tools_Registry.md`
 
-**Known drift:** NODES registers only a fraction of knowledge_os lessons (manual add). Drive has unmapped audio - see `05_MEMORY/Drive_Audio_Audit_2026-06-11.md`.
+**App is decoupled from vault:** deleting or editing a lesson .md does NOT affect the live app. The app serves audio from Drive via the index; vault .md is the authoring source. Changes reach the app only when you re-run `populate_staging.py`.
+
+**Known drift:** NODES drift FIXED 2026-06-11 (now auto-derives). Remaining: Drive has ~187 unmapped audio files - see `05_MEMORY/Drive_Audio_Audit_2026-06-11.md`.
 
 ---
 
