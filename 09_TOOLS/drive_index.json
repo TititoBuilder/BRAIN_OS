@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-31",
+  "generated": "2026-06-11",
   "index": {
     "model_context_protocol": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/resolve_mcp_guide.wav",
     "prompt_engineering": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/claudeguide_prompting_architecture.wav",
@@ -114,6 +114,9 @@
     "vector_databases": "id:1rcQ0fjzF_Rw4Koc8jCzO4l5QC_2HO0XK",
     "vector_embeddings": "id:16S89hV0003GzillBO15YSfNg6zhOCvZy",
     "websockets": "id:16w7syycMbEG0z2XJEWbMDXTd1ApCEm-Y",
-    "zettelkasten": "id:1s5CBCsirkBLVB9Qwm9HOZvaQYjPMy9J2"
+    "zettelkasten": "id:1s5CBCsirkBLVB9Qwm9HOZvaQYjPMy9J2",
+    "edge_tts": "id:14D8Jl7uMyc1Z9MqhlVmuPFQBnFSZCr2y",
+    "kokoro_tts": "id:1qgyGHZKM0d9npstpWw3A0eeVPSVT0LxN",
+    "message_queues": "id:13HK_C4YxoXCThpKkrX5d8LP50ks6uiMO"
   }
 }
