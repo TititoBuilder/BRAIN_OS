@@ -117,6 +117,9 @@
     "message_queues": "id:13HK_C4YxoXCThpKkrX5d8LP50ks6uiMO",
     "pkm_fundamentals": "id:1sVYNE3_oKMiSveilIaiqOvtgHqW1psyv",
     "rag_pipelines": "id:1X5NT6uXUOdOIv2VJfuu-pxlLsDHsikaw",
-    "retrieval_systems": "id:1dB8TXALnjR3TFCoHez2n-K0vWoVwKMUw"
+    "retrieval_systems": "id:1dB8TXALnjR3TFCoHez2n-K0vWoVwKMUw",
+    "claude_platform_guide": "id:1qM3TiZHdHiFgxrZO2BvUQZuAO0L_VwQR",
+    "claude_code_guide": "id:17Au9zaWUqa_81QDplIXXEq8ec-9-5VSk",
+    "claude_code_workflow": "id:1esP_25omKDfWiFJx5wHBSzXvE7_mFIeq"
   }
 }
