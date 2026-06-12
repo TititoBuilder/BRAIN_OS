@@ -326,3 +326,76 @@ the rule exists to prevent -- caught only by verifying output.
 **What this prevents:**
 Scratch scripts, caches, and half-finished files leaking into permanent history.
 Follow-up task: make session_close.py stage explicitly, and audit before trusting it.
+
+---
+
+## Center of Gravity -- Anchor Abstract Categories to One Real System
+
+**Learned from:** Writing the systems_operations domain file -- June 10 2026
+
+**The Core Principle:** To document an abstract category, do NOT write a
+definition. Anchor it to ONE concrete, real system you actually run, describe
+that system in detail, and let the principles emerge from it. The category
+becomes understandable through the real example, not through abstraction.
+
+**Today's proof:**
+- systems_operations (an abstract "runtime/operations" category) was an empty
+  18-word shell -- because nobody had anchored it to anything concrete.
+- Offered two candidate anchors (Read-Along deploy, session lifecycle). Rejected
+  both and named the true center myself: the GRAPH operation (graphify /
+  graph_maintainer) -- the thing that actually carries context to everything.
+- Once anchored to the graph, the whole file flowed; Read-Along and the session
+  lifecycle became examples that ORBIT the center instead of competing for it.
+
+**The physics:** center of gravity is the single point where all weight
+concentrates -- balance there and the whole thing is stable. A document anchored
+to one real system is stable the same way; everything else orbits it.
+
+**What this prevents:**
+Vague definitional mush that teaches nothing and links to nothing. Empty
+"shell" docs that never get written because no concrete anchor was chosen.
+
+---
+
+## Declared Start and Finish -- Every Task Gets an Endpoint Before It Begins
+
+**Learned from:** Naming the open-ended-drift problem mid-session -- June 10 2026
+
+**The Core Principle:** Declare a task's finish line BEFORE starting it.
+Discoveries made during the work go to the QUEUE -- they are NOT absorbed into
+the current task. The current task can only complete if its scope is fixed at
+the start. The timeline is the whole queue; I decide the cadence, the assistant
+shows options and the start/finish for each unit.
+
+**Today's proof:**
+- The session felt like "falling behind" despite huge progress -- because tasks
+  had no declared endpoint. Every fix spawned sub-tasks; "done" kept receding.
+- Fix: declare each unit as "write systems_operations.md -> verified, committed,
+  pushed -> CLOSED." Discoveries (gitignore graphs, session_close fix) went to
+  the queue, not into the file. The task then actually finished.
+
+**What this prevents:**
+Open-ended drift where work grows without ever closing. Scope creep that
+swallows a task. The false feeling of falling behind while actually progressing.
+
+---
+
+## Verify Before Write -- Confirm Real, Then Write Once Clean
+
+**Learned from:** The download-loop chaos vs the clean systems_operations write -- June 10 2026
+
+**The Core Principle:** Confirm every factual claim against the filesystem with
+read-only commands BEFORE writing the file. Write once, clean, with zero
+placeholder markers. This is the opposite of write-a-draft-then-chase-corrections.
+
+**Today's proof:**
+- A parallel chat wrote a domain file from memory with VERIFY placeholder markers,
+  claimed it was "final," then a download loop wrote the WRONG (pre-correction)
+  version to disk -- 3 markers survived. Claimed-done vs actually-done diverged.
+- The fix here: verify every claim first (Read_Along_Deploy.md exists? tools
+  exist? are the 6 topic keys real in obsidian_sync?). All True -> wrote once ->
+  0 VERIFY markers, no BOM, clean on first landing.
+
+**What this prevents:**
+Files that claim to be done but are not. Placeholder markers leaking into the
+vault. The confusion of correcting after writing instead of confirming before.
