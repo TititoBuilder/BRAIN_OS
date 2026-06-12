@@ -213,3 +213,29 @@
 
 
 `
+
+---
+
+## RECONCILIATION CONCLUSION (2026-06-11)
+
+The 187 unmapped count was investigated and is NOT a backlog of gaps.
+All 187 fall into known categories and are CORRECTLY unmapped:
+
+- BDF book chapters: 97 (belong to the BDF Knowledge Book, not topic-lessons)
+- BRAIN_OS_Handbook chapters: 39
+- BDF sessions/archives: 33 (session recordings, not topic-lessons)
+- CA book chapters: 14
+- Tools/guides: 4 (the only possible app candidates - to review)
+- Other/uncategorized: 0 (no orphan/mystery files)
+
+Decision: Book chapters and session archives are a DIFFERENT content type
+from knowledge_os topic-lessons. The LISTEN-tab dropdown is for discrete
+lessons; mapping book-length/sequential audio into it would collapse two
+intentional separations. They stay unmapped by design - correct, not drift.
+
+Open follow-ups (queued, not gaps):
+1. Review the 4 Tools/guides - some may belong in the app.
+2. FEATURE idea (not a fix): a separate Books/Sessions access path, distinct
+   from the topic dropdown, if long-form audio should be reachable.
+
+Do not re-investigate the 187 as a backlog. They are categorized and intentional.
