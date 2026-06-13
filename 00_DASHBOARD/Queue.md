@@ -1,6 +1,6 @@
 # BRAIN_OS — Master Queue
 ## In Progress
-- [ ] Study items -> git study queue (priority)
+- [ ] STUDY CLUSTER (priority): understand my own toolchain instead of running it blind. (a) read each .py in 09_TOOLS + read-along backend - know what each does and why, not just how to run it; (b) comprehend git software (the stated priority); (c) start point = 09_TOOLS_INDEX.md. Rationale: every surprise this session came from running tools I had not read (NODES hardcoded, populate_staging node-selection, session_close docstring drift).
 - [ ] Convert remaining path-format index entries to id: format (low priority - backend handles both)
 - [ ] session_close.py doc/code drift: docstring claims --project flag the parser lacks - reconcile
 - [ ] Telegram env vars not loaded in plain PowerShell -> close-script notification silently skips; load .env
