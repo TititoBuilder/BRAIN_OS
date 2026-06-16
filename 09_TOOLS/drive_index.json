@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-11",
+  "generated": "2026-06-16",
   "index": {
     "model_context_protocol": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/resolve_mcp_guide.wav",
     "prompt_engineering": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/claudeguide_prompting_architecture.wav",
@@ -120,6 +120,15 @@
     "retrieval_systems": "id:1dB8TXALnjR3TFCoHez2n-K0vWoVwKMUw",
     "claude_platform_guide": "id:1qM3TiZHdHiFgxrZO2BvUQZuAO0L_VwQR",
     "claude_code_guide": "id:17Au9zaWUqa_81QDplIXXEq8ec-9-5VSk",
-    "claude_code_workflow": "id:1esP_25omKDfWiFJx5wHBSzXvE7_mFIeq"
+    "claude_code_workflow": "id:1esP_25omKDfWiFJx5wHBSzXvE7_mFIeq",
+    "lesson_01_verify_against_reality": "id:1d2yVM4FMStlU-GN_fjYIJwtYV0oNWmnN",
+    "lesson_02_four_layer_architecture": "id:1RBca8XtG163A9BshozaWMUMPNO3Hgbe0",
+    "lesson_03_the_id_crisis": "id:10ZJO6HWlrPqnUOz0sLD8AfNBHl5NHdOu",
+    "lesson_04_single_source_of_truth": "id:1XN--sk_2V59Q1UIsysz-5Ty2xsx4kNxJ",
+    "lesson_05_derive_dont_duplicate": "id:1XqZ9UqqijtSRqcgHJMqrfTkWMCWY-2AD",
+    "lesson_06_filenames_are_keys": "id:1-oPOOTwPx9L_PPL43wpsXGAPuotk08Ir",
+    "lesson_07_discipline_at_boundaries": "id:1MSzBbMOY1B0sOJi54ZiY7wbwZKtVik2p",
+    "lesson_08_session_loop_change_token": "id:1odjl2P0YhoIGESYODSEwcVgpYNKJSsfA",
+    "lesson_09_for_now_is_forbidden": "id:10GTW7GbuGAEleODecTC0FC9hoPoqBdGp"
   }
 }

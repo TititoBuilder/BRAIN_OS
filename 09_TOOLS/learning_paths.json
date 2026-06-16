@@ -147,6 +147,23 @@
         "openapi_spec",
         "cap_theorem"
       ]
+    },
+    {
+      "id": "gold_capstone",
+      "title": "Gold Capstone: How I Built My System",
+      "domain": "creative_systems",
+      "description": "The lessons from building BRAIN_OS, taught as one reinforced arc: verify against reality, the four-layer architecture, the id: crisis, single source of truth, derive don't duplicate, filenames as keys, discipline at the boundaries, the session loop, and why for-now is forbidden.",
+      "topics": [
+        "lesson_01_verify_against_reality",
+        "lesson_02_four_layer_architecture",
+        "lesson_03_the_id_crisis",
+        "lesson_04_single_source_of_truth",
+        "lesson_05_derive_dont_duplicate",
+        "lesson_06_filenames_are_keys",
+        "lesson_07_discipline_at_boundaries",
+        "lesson_08_session_loop_change_token",
+        "lesson_09_for_now_is_forbidden"
+      ]
     }
   ]
 }
