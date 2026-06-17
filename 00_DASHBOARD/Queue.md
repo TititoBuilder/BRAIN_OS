@@ -11,7 +11,7 @@
 - [ ] Sessions/Project-Resumes tab build (DESIGNED ? see 07_SYSTEM/Sessions_*.md; first step: check vault [[backlinks]] for cross-context relations)
 - [x] Author + voice 3 topics: edge_tts, kokoro_tts, message_queues (DONE 2026-06-11 - live in LISTEN tab)
 - [x] read-along-app CLAUDE.md RESOLVED 2026-06-15: doc was mostly already accurate (pipeline section + Drive index format matched code we read this session). Real fix = updated DRIVE_INDEX_JSON section to DEPRECATED/unset + removed base64 re-paste instructions, made necessary by deleting the Railway DRIVE_INDEX_JSON var (GitHub now single source of truth). Verified: DEPRECATED present, re-encode removed. Committed via Claude Code (+2-6).
-- [ ] session_close.py: make git add surgical (explicit files, not broad add) ? see Cristian_Principles
+
 - [ ] Audit git history for audio that slipped past the 376-null .gitignore period (low priority)
 - [ ] anchor_generator.py batch mode — generate anchors for all 31 chapters
 - [ ] Learning path sequencing — generate audio for 30 HIGH priority vault nodes
