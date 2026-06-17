@@ -57,3 +57,25 @@ Resolution: pick one side, delete markers, git add, git commit, git push.
   git pull
   git push
   git check-ignore -v <file>
+
+## Topic 4: .gitignore
+Tells Git which files to never track.
+Only works on UNTRACKED files ? already committed files need git rm --cached.
+
+Pattern rules:
+  *.mp3                    any .mp3 anywhere in repo
+  audio_staging/*.mp3      .mp3 directly inside audio_staging only
+  audio_staging/**/*.mp3   .mp3 inside audio_staging at any depth
+  !important.mp3           un-ignore this specific file
+  Untitled*.canvas         wildcard prefix match
+
+Three rules that bite people:
+1. gitignore only works on untracked files
+2. First match wins ? order matters
+3. Negation ! must come AFTER the ignore rule, not before
+
+gitignore does NOT support regex ? glob patterns only.
+
+Commands:
+  git check-ignore -v <file>   verify why a file is ignored
+  git rm --cached <file>       untrack a committed file without deleting it
