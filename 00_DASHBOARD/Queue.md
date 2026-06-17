@@ -1,6 +1,7 @@
 # BRAIN_OS — Master Queue
+
 ## In Progress
-- [ ] GOLD CAPSTONE LESSON (priority next session): author the ENTIRE project's lessons as ONE linear, expanded, reinforced learning sequence - then voice it. Pull from project chat history across sessions (May-June). Cover: the deploy crisis (3 root causes - Vercel root dir, Railway token, stale DRIVE_INDEX_JSON), token fragility (local+Railway split), verify-before-write, declared-start-finish, derive-don't-duplicate, four pillars of separation, BOM/encoding (Python-only writes), stale-download trap, the app's 4-layer architecture (md->audio->index->app), for-now-is-forbidden. Make it timeline/linear so lessons reinforce each other. Then full pipeline: author .md -> vault_audio_generator -> stage -> populate_staging -> id: index -> commit. This is gold content for Cristian - do it justice with fresh energy, not a tail-end rush.
+
 - [ ] DEV MODE workflow (part of study cluster): learn npm run dev - a long-running terminal process that live-reloads the browser on every file save (Hot Module Reload), so app changes show in <1s instead of the slow build+deploy loop. Distinction to internalize: VS Code = the EDITOR (where you type code); npm run dev = a PROCESS that watches files + reloads; they run together (dev server can run in VS Code's built-in terminal). Use dev mode for iterating; use npm run build + npx vercel --prod ONLY to publish. Also learn: npx vercel (no --prod) = preview deploy.
 - [ ] TOKEN FRAGILITY (hit 3x on 2026-06-11): two Drive tokens - local gdrive_token.json + Railway GOOGLE_TOKEN_JSON - expire ~weekly, refreshed SEPARATELY. Refreshing local does NOT update Railway. Every expiry = re-auth local + manual base64 re-paste to Railway env var. FIX candidate: one script that refreshes local token AND pushes fresh base64 to Railway (Railway CLI/API). Symptom: audio 500s with invalid_grant. Stopgap: refresh local -> copy base64 ([Convert]::ToBase64String) -> paste to Railway GOOGLE_TOKEN_JSON -> wait for redeploy.
 - [ ] STUDY CLUSTER (priority): understand my own toolchain instead of running it blind. (a) read each .py in 09_TOOLS + read-along backend - know what each does and why, not just how to run it; (b) comprehend git software (the stated priority); (c) start point = 09_TOOLS_INDEX.md. Rationale: every surprise this session came from running tools I had not read (NODES hardcoded, populate_staging node-selection, session_close docstring drift).
@@ -12,7 +13,6 @@
 - [x] read-along-app CLAUDE.md RESOLVED 2026-06-15: doc was mostly already accurate (pipeline section + Drive index format matched code we read this session). Real fix = updated DRIVE_INDEX_JSON section to DEPRECATED/unset + removed base64 re-paste instructions, made necessary by deleting the Railway DRIVE_INDEX_JSON var (GitHub now single source of truth). Verified: DEPRECATED present, re-encode removed. Committed via Claude Code (+2-6).
 - [ ] session_close.py: make git add surgical (explicit files, not broad add) ? see Cristian_Principles
 - [ ] Audit git history for audio that slipped past the 376-null .gitignore period (low priority)
-- [ ] Queue.md hygiene: collapse duplicate 'Completed ? 2026-05-28' sections (low priority)
 - [ ] anchor_generator.py batch mode — generate anchors for all 31 chapters
 - [ ] Learning path sequencing — generate audio for 30 HIGH priority vault nodes
 - [ ] Apply Knowledge Graphs Over Lists to 04_WORKFLOWS + 05_MEMORY + 03_APIS
@@ -42,49 +42,14 @@
 - [ ] USEFUL FOR BORROWED-AUDIO BACKFILL: the manifest (bdf_drive_manifest.json) already stores drive_id for every audio file across all 7 categories. To convert the 20 path-format index entries to id:, look up each key in the manifest and read its drive_id - cleaner/safer than re-searching Drive by filename. Also: drive_sync.py --normalize --dry-run can reveal which files have non-canonical names (overlaps the borrowed-audio worklist).
 
 ## Next Sessions (ordered)
-- [x] Session 2: Apply Knowledge Graphs Over Lists to 02_AGENTS
-- [ ] Session 3: Apply Knowledge Graphs Over Lists to 04_WORKFLOWS  
+
+- [ ] Session 3: Apply Knowledge Graphs Over Lists to 04_WORKFLOWS
 - [ ] Session 4: Apply Knowledge Graphs Over Lists to 05_MEMORY + 03_APIS
 - [ ] Session 5: Update all project CLAUDE.md files with Triggers section
-- [x] Update calendar events (DALL-E 3 deadline May 12 is stale — needs cleanup)
 - [ ] CA Book Phase 3: Session_Resume pipeline (needs actual files first)
 
-## Completed
-<!-- updated 2026-05-28: Multiple deliverables completed this session; queue should reflect completions -->
-## Completed — 2026-05-28
-- Knowledge OS Phase 1-3 (encyclopedia, stitcher, obsidian sync) ✓
-- drive_index.json wired into Knowledge OS — 25 topics audio-linked ✓
-- Knowledge OS Drive structure — 28 folders, domain isolation ✓
-- Read-Along App full architecture documented ✓
-- Dashboard header visibility + button hover fixes ✓
-- Focus Now cards clickable (edit modal) ✓
-- BRAIN_OS admin key file removed from tracking ✓
-<!-- updated 2026-05-28: Dashboard queue should reflect session completions -->
-## Completed — 2026-05-28
-- [x] brain-audio steganographic fingerprint module
-- [x] book-compiler fingerprint integration (auto + post-stitch verify)
-- [x] Knowledge OS Phase 1-3 (encyclopedia, stitcher, obsidian sync)
-- [x] Knowledge OS Drive structure (28 folders)
-- [x] drive_index.json wired (25 topics audio-linked)
-- [x] Read-Along App full architecture docs
-- [x] Whisper GPU analysis doc
-- [x] RAG chapter ingested
-- [x] Focus Now cards clickable
-- [x] Dashboard header/button fixes
-- [x] Admin key removed from tracking
-- [x] 3 Q&A notes ingested This Session (2026-05-20)
-- [x] Obsidian graph colors fixed (UTF-8 BOM root cause)
-- [x] restore_graph_colors.ps1 built + committed
-- [x] BRAIN_OS duplicate file audit + cleanup
-- [x] .env secrets purged from 117 commits
-- [x] GitHub PAT rotated
-- [x] Cristian_Principles.md: PowerShell Encoding rule added
-- [x] Cristian_Principles.md: Documentation Must Reflect Reality added
-- [x] Cristian_Principles.md: Knowledge Graphs Over Lists added
-- [x] Trigger_Architecture.md: 13-trigger master index built
-- [x] 08_TRIGGERS: all 13 trigger files created/rewritten with full bidirectional links
-
 ---
+
 **→** [[SYSTEM_MASTER]] · [[Master_Control]]
 
 
