@@ -113,7 +113,7 @@ def md_to_script(md_content: str, filename: str, api_key: str) -> str:
         md_content = md_content[:8000] + "\n\n[...content truncated...]"
 
     payload = {
-        "model": "claude-sonnet-4-20250514",
+        "model": "claude-sonnet-4-6",
         "max_tokens": 1000,
         "system": NARRATION_PROMPT,
         "messages": [{
