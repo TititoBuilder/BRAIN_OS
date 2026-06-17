@@ -1,4 +1,4 @@
-﻿SESSION START - BRAIN_OS / Read-Along App (continuing)
+SESSION START - BRAIN_OS / Read-Along App (continuing)
 
 Continuation. Load context first:
   cd C:\BRAIN_OS
