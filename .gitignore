@@ -53,3 +53,7 @@ audio_staging/_trash/
 # Python cache (never commit)
 __pycache__/
 *.pyc
+
+# Obsidian session files (auto-rewritten, not knowledge)
+.obsidian/graph.json
+.obsidian/workspace.json
