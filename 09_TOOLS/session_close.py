@@ -13,11 +13,16 @@ import argparse
 import subprocess
 from datetime import datetime
 from pathlib import Path
+from dotenv import load_dotenv
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
 BRAIN_OS_ROOT   = Path(r"C:\BRAIN_OS")
 SESSIONS_DIR    = BRAIN_OS_ROOT / "08_SESSIONS"
+ENV_FILE        = Path(r"C:\Dev\Projects\soccer-content-generator\.env")
+
+load_dotenv(ENV_FILE)
+
 TELEGRAM_TOKEN  = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT   = os.environ.get("TELEGRAM_CHAT_ID")
 

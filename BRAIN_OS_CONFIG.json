@@ -1,6 +1,10 @@
 {
   "version": "1.0",
   "description": "BRAIN_OS System Registry — global constants for all projects",
+  "drive": {
+    "credentials_path": "C:/Dev/Projects/soccer-content-generator/gdrive_credentials.json",
+    "token_path": "C:/Dev/Projects/soccer-content-generator/gdrive_token.json"
+  },
   "sync": {
     "SESSION_ANCHOR_TTL_HOURS": 4,
     "MANIFEST_PATHS": {

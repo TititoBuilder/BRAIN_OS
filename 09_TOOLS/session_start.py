@@ -95,7 +95,7 @@ def detect_project() -> str:
 
 # ── Telegram ───────────────────────────────────────────────────────────────────
 def _load_telegram():
-    
+    load_dotenv(ENV_FILE)
     return os.getenv("TELEGRAM_BOT_TOKEN"), os.getenv("TELEGRAM_CHAT_ID")
 
 

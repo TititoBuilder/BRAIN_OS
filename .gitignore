@@ -27,6 +27,7 @@ ENV/
 
 # Project-specific
 Untitled.canvas
+09_TOOLS/borrowed_audio_worklist.txt
 
 # Claude Code   keep settings, ignore personal session data
 .claude/

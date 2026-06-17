@@ -101,7 +101,7 @@ def main() -> None:
     ]
 
     OUTPUT_FILE.write_text("\n".join(lines), encoding="utf-8", newline="\n")
-    print(f"\nWorklist written → {OUTPUT_FILE}")
+    print(f"\nWorklist written -> {OUTPUT_FILE}")
     print(f"  Matched in manifest : {matched}")
     print(f"  Unmatched           : {unmatched}")
     print()

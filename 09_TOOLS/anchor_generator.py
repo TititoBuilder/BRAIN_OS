@@ -11,7 +11,6 @@ import argparse
 import os
 import sys
 import json
-from unittest import result
 import urllib.request
 import urllib.error
 from pathlib import Path
@@ -51,7 +50,7 @@ def generate_anchor_script(source_text: str, api_key: str) -> str:
         source_text = source_text[:8000] + "\n\n[...content truncated for anchor generation...]"
     
     payload = {
-        "model": "claude-sonnet-4-20250514",
+        "model": "claude-sonnet-4-6",
         "max_tokens": 1000,
         "system": ANCHOR_SYSTEM_PROMPT,
         "messages": [
@@ -121,14 +120,54 @@ def synthesize_anchor(script: str, output_path: Path) -> bool:
 
 
 # ── Main ────────────────────────────────────────────────────────────────────────
+def _process_one(source_path: Path, output_path: Path, api_key: str, preview: bool) -> bool:
+    """Process a single source file into an anchor. Returns True on success."""
+    print(f"[anchor] Source: {source_path.name}")
+    source_text = source_path.read_text(encoding="utf-8", errors="ignore")
+    print(f"[anchor] Source words: {len(source_text.split()):,}")
+
+    print("[anchor] Generating anchor script via Claude API...")
+    script = generate_anchor_script(source_text, api_key)
+    print(f"[anchor] Anchor script: {len(script.split())} words")
+
+    if preview:
+        print("\n" + "-" * 60)
+        print("LEARNING ANCHOR PREVIEW")
+        print("-" * 60)
+        print(script)
+        print("-" * 60)
+        print("\n[anchor] Preview mode — TTS not run.")
+        return True
+
+    print(f"[anchor] Synthesizing with voice: {TTS_VOICE}")
+    print(f"[anchor] Output: {output_path}")
+    success = synthesize_anchor(script, output_path)
+    if success:
+        size_mb = output_path.stat().st_size / (1024 * 1024)
+        print(f"[anchor] Done. {output_path.name} ({size_mb:.1f} MB)")
+    else:
+        print("[anchor] TTS failed — check fallback .txt file above.")
+    return success
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Generate a Learning Anchor closing segment for an audio chapter."
     )
     parser.add_argument(
         "--source",
-        required=True,
-        help="Path to the source .txt chapter file"
+        default=None,
+        help="Path to the source .txt chapter file (required unless --batch)"
+    )
+    parser.add_argument(
+        "--batch",
+        action="store_true",
+        help="Process all ch*_TTS.txt files in converted/"
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Re-generate even if anchor .mp3 already exists (batch mode only)"
     )
     parser.add_argument(
         "--preview",
@@ -142,11 +181,13 @@ def main():
     )
     args = parser.parse_args()
 
+    if not args.batch and not args.source:
+        parser.error("--source is required unless --batch is specified")
+
     # ── Load env ────────────────────────────────────────────────────────────────
     load_dotenv(ENV_FILE)
     api_key = os.getenv("ANTHROPIC_API_KEY")
     if not api_key:
-        # Try BRAIN_OS .env as fallback
         load_dotenv(BRAIN_OS_ROOT / "03_APIS" / ".env")
         api_key = os.getenv("ANTHROPIC_API_KEY")
     if not api_key:
@@ -154,53 +195,59 @@ def main():
         print(f"  Add it to: {ENV_FILE}")
         sys.exit(1)
 
-    # ── Load source file ────────────────────────────────────────────────────────
+    # ── Batch mode ──────────────────────────────────────────────────────────────
+    if args.batch:
+        converted_dir = PROJECT_ROOT / "converted"
+        source_files  = sorted(converted_dir.glob("ch*_TTS.txt"))
+        if not source_files:
+            print(f"[anchor] No ch*_TTS.txt files found in {converted_dir}")
+            sys.exit(1)
+
+        total   = len(source_files)
+        done    = 0
+        skipped = 0
+        failed  = 0
+
+        print(f"[anchor] Batch mode — {total} chapter(s) found")
+        print(f"[anchor] Output dir: {converted_dir}\n")
+
+        for i, source_path in enumerate(source_files, 1):
+            stem        = source_path.stem.replace("_TTS", "")
+            output_path = source_path.parent / f"{stem}{OUTPUT_SUFFIX}.mp3"
+
+            if not args.force and output_path.exists():
+                print(f"  {i:02d}/{total} SKIP  {source_path.name} (anchor exists)")
+                skipped += 1
+                continue
+
+            print(f"  {i:02d}/{total} {source_path.name}")
+            ok = _process_one(source_path, output_path, api_key, args.preview)
+            if ok:
+                done += 1
+            else:
+                failed += 1
+            print()
+
+        print("=" * 55)
+        print(f"  BATCH COMPLETE  done={done}  skipped={skipped}  failed={failed}")
+        print("=" * 55)
+        return
+
+    # ── Single file mode ────────────────────────────────────────────────────────
     source_path = Path(args.source)
     if not source_path.exists():
-        # Try relative to project root
         source_path = PROJECT_ROOT / args.source
     if not source_path.exists():
         print(f"[anchor] ERROR: Source file not found: {args.source}")
         sys.exit(1)
 
-    print(f"[anchor] Source: {source_path.name}")
-    source_text = source_path.read_text(encoding="utf-8", errors="ignore")
-    word_count  = len(source_text.split())
-    print(f"[anchor] Source words: {word_count:,}")
-
-    # ── Generate anchor script ──────────────────────────────────────────────────
-    print("[anchor] Generating anchor script via Claude API...")
-    script = generate_anchor_script(source_text, api_key)
-    anchor_words = len(script.split())
-    print(f"[anchor] Anchor script: {anchor_words} words")
-
-    if args.preview:
-        print("\n" + "─" * 60)
-        print("LEARNING ANCHOR PREVIEW")
-        print("─" * 60)
-        print(script)
-        print("─" * 60)
-        print("\n[anchor] Preview mode — TTS not run.")
-        return
-
-    # ── Determine output path ───────────────────────────────────────────────────
     if args.output:
         output_path = Path(args.output)
     else:
-        stem = source_path.stem.replace("_TTS", "")
+        stem        = source_path.stem.replace("_TTS", "")
         output_path = source_path.parent / f"{stem}{OUTPUT_SUFFIX}.mp3"
 
-    # ── Run TTS ─────────────────────────────────────────────────────────────────
-    print(f"[anchor] Synthesizing with voice: {TTS_VOICE}")
-    print(f"[anchor] Output: {output_path}")
-
-    success = synthesize_anchor(script, output_path)
-
-    if success:
-        size_mb = output_path.stat().st_size / (1024 * 1024)
-        print(f"[anchor] Done. {output_path.name} ({size_mb:.1f} MB)")
-    else:
-        print("[anchor] TTS failed — check fallback .txt file above.")
+    _process_one(source_path, output_path, api_key, args.preview)
 
 
 if __name__ == "__main__":
