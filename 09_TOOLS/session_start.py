@@ -152,18 +152,7 @@ def load_context(project: dict) -> str:
         parts.append("=== LATEST SESSION: none found ===")
 
     # 3. The queue ? In Progress section content (not just a count)
-    queue_path = BRAIN_OS_ROOT / "00_DASHBOARD" / "Queue.md"
-    if queue_path.exists():
-        qc = queue_path.read_text(encoding="utf-8", errors="ignore")
-        lines, grab = [], False
-        for line in qc.splitlines():
-            if line.startswith("## In Progress"):
-                grab = True; lines.append(line); continue
-            if grab and line.startswith("## ") and "In Progress" not in line:
-                break
-            if grab:
-                lines.append(line)
-        parts.append("=== QUEUE (In Progress) ===\n" + "\n".join(lines))
+    parts.append("=== QUEUE (In Progress) ===\n" + "\n".join(_parse_queue_section()))
 
     return "\n\n".join(parts)
 
@@ -227,23 +216,28 @@ def check_git_status(root: Path) -> int:
 
 
 # ── Queue check ───────────────────────────────────────────────────────────────
-def check_queue() -> int:
-    """Count unchecked items in Queue.md ## In Progress section."""
+def _parse_queue_section() -> list[str]:
+    """Return lines of the '## In Progress' section from Queue.md (header line included)."""
     queue_path = BRAIN_OS_ROOT / "00_DASHBOARD" / "Queue.md"
     if not queue_path.exists():
-        return 0
+        return []
     content = queue_path.read_text(encoding="utf-8", errors="ignore")
-    in_progress = False
-    count = 0
+    lines, grab = [], False
     for line in content.splitlines():
         if line.startswith("## In Progress"):
-            in_progress = True
+            grab = True
+            lines.append(line)
             continue
-        if in_progress and line.startswith("## "):
+        if grab and line.startswith("## "):
             break
-        if in_progress and "- [ ]" in line:
-            count += 1
-    return count
+        if grab:
+            lines.append(line)
+    return lines
+
+
+def check_queue() -> int:
+    """Count unchecked items in Queue.md ## In Progress section."""
+    return sum(1 for line in _parse_queue_section() if "- [ ]" in line)
 
 
 # ── Context printer ───────────────────────────────────────────────────────────
@@ -268,7 +262,9 @@ def print_context_header(project_key: str, project: dict, metrics: dict,
         print(f"\n  [health] {metrics['error']}")
 
     # Git
-    if git_dirty > 0:
+    if git_dirty == -1:
+        print(f"\n  GIT: check failed")
+    elif git_dirty > 0:
         print(f"\n  GIT: {git_dirty} uncommitted file(s) in {project_key}")
     else:
         print(f"\n  GIT: clean")

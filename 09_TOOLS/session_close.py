@@ -224,7 +224,7 @@ def main():
 
     SESSIONS_DIR.mkdir(parents=True, exist_ok=True)
     archive_path = SESSIONS_DIR / filename
-    archive_path.write_text(archive_md, encoding="utf-8")
+    archive_path.write_text(archive_md, encoding="utf-8", newline="\n")
 
     print(f"\n✅ Archive saved: {archive_path}")
 

@@ -5,7 +5,7 @@ Converts HIGH priority BRAIN_OS vault .md files into spoken audio.
 Pipeline per file:
   1. Read .md file from vault
   2. Call Claude API to convert to natural spoken narration script
-  3. Run Kokoro TTS (am_heart voice) to generate .mp3
+  3. Run Kokoro TTS (af_heart voice) to generate .mp3
   4. Save to converted/ folder for Drive upload
 
 Usage:
@@ -72,7 +72,7 @@ HIGH_PRIORITY_NODES = [
     "05_MEMORY/Memory_Index.md",
     "05_MEMORY/LanceDB_Vector_Store.md",
     # 08_TRIGGERS
-    "08_TRIGGERS/Trigger_Architecture.md" if False else "07_SYSTEM/Trigger_Architecture.md",
+    "07_SYSTEM/Trigger_Architecture.md",
     "08_TRIGGERS/Trigger_Session_Close.md",
     "08_TRIGGERS/Trigger_Render_Complete.md",
     "08_TRIGGERS/Trigger_BDF_Queue_Check.md",
