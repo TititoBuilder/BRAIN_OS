@@ -4,7 +4,6 @@ Captures session work, writes a dated archive, and optionally notifies via Teleg
 
 Usage:
     python session_close.py
-    python session_close.py --project BDF
     python session_close.py --silent   (skip Telegram even if configured)
 """
 
