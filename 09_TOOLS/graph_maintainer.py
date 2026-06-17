@@ -2,9 +2,11 @@
 graph_maintainer.py — Lightweight BDF graph maintenance runner.
 
 Tasks (in order):
-  1. Hash Check    — compare live .py files against stored hashes, report changes
-  2. Dependency    — ast-parse changed/new files, report import delta
-  3. Brain-Audio   — verify brain_audio importable, then call graphify.py
+  0. Manifest Pre-Flight — check Drive manifest TTL; auto-sync if stale or token changed
+  1. Hash Check          — compare live .py files against stored hashes, report changes
+  2. Audio Parity        — cross-reference local _TTS.txt source files against Drive manifest
+  3. Dependency          — ast-parse changed/new files, report import delta
+  4. Brain-Audio         — verify brain_audio importable, then call graphify.py
 
 Usage:
   python scripts/graph_maintainer.py
@@ -112,7 +114,7 @@ def task_hash_check(
 
 
 # ---------------------------------------------------------------------------
-# Task 2 — Dependency Mapping
+# Task 3 — Dependency Mapping
 # ---------------------------------------------------------------------------
 
 def task_dependency_mapping(
@@ -127,7 +129,7 @@ def task_dependency_mapping(
 
     print()
     print("=" * 60)
-    print("Task 2 — Dependency Mapping (changed / new files)")
+    print("Task 3 — Dependency Mapping (changed / new files)")
     print("=" * 60)
 
     for label, rel in affected:
@@ -147,13 +149,13 @@ def task_dependency_mapping(
 
 
 # ---------------------------------------------------------------------------
-# Task 3 — Brain-Audio Sync + graphify update
+# Task 4 — Brain-Audio Sync + graphify update
 # ---------------------------------------------------------------------------
 
 def task_brain_audio_sync() -> None:
     print()
     print("=" * 60)
-    print("Task 3 — Brain-Audio Sync")
+    print("Task 4 — Brain-Audio Sync")
     print("=" * 60)
 
     try:
@@ -337,8 +339,12 @@ def audio_parity_check() -> dict:
     last_synced    = manifest.get("last_synced", "unknown")
 
     results: dict = {
-        "chapters":   {"healthy": [], "stale": [], "missing": [], "alternates": [], "orphaned": []},
-        "sessions":   {"healthy": [], "stale": [], "missing": [], "orphaned": []},
+        "chapters":         {"healthy": [], "stale": [], "missing": [], "alternates": [], "orphaned": []},
+        "sessions":         {"healthy": [], "stale": [], "missing": [], "orphaned": []},
+        "bdf_anchors":      {"catalogued": []},
+        "bdf_combined":     {"catalogued": []},
+        "brainos_chapters": {"catalogued": []},
+        "brainos_sessions": {"catalogued": []},
         "last_synced": last_synced,
     }
 
@@ -397,6 +403,22 @@ def audio_parity_check() -> dict:
         if key not in local_sessions and key not in KNOWN_ORPHANS["sessions"]:
             results["sessions"]["orphaned"].append(key)
 
+    # ── BDF Anchors ───────────────────────────────────────────────────────────
+    for key in manifest.get("bdf_anchors", {}):
+        results["bdf_anchors"]["catalogued"].append(key)
+
+    # ── BDF Combined ──────────────────────────────────────────────────────────
+    for key in manifest.get("bdf_combined", {}):
+        results["bdf_combined"]["catalogued"].append(key)
+
+    # ── BRAIN_OS Chapters ─────────────────────────────────────────────────────
+    for key in manifest.get("brainos_chapters", {}):
+        results["brainos_chapters"]["catalogued"].append(key)
+
+    # ── BRAIN_OS Sessions ─────────────────────────────────────────────────────
+    for key in manifest.get("brainos_sessions", {}):
+        results["brainos_sessions"]["catalogued"].append(key)
+
     return results
 
 
@@ -409,8 +431,10 @@ def _print_parity_report(results: dict, stale_flag: bool = False) -> None:
         print(f"  [!] {results['error']}")
         return
 
-    for category in ("chapters", "sessions"):
-        r = results[category]
+    for category in ("chapters", "sessions", "bdf_anchors", "bdf_combined", "brainos_chapters", "brainos_sessions"):
+        r = results.get(category)
+        if r is None:
+            continue
 
         total = sum(len(v) for v in r.values())
         if total == 0:
@@ -418,6 +442,13 @@ def _print_parity_report(results: dict, stale_flag: bool = False) -> None:
 
         label = category.upper()
         print(f"  {label}")
+
+        if "catalogued" in r:
+            # Drive-only category: no local source to compare against
+            print(f"  {'CATALOGUED:':10} {len(r['catalogued']):>3}")
+            print()
+            continue
+
         print(f"  {'HEALTHY:':10} {len(r['healthy']):>3}")
 
         if r["stale"]:
@@ -488,10 +519,10 @@ def main() -> None:
     if not changed and not new_files and not deleted:
         return
 
-    # Task 2
+    # Task 3
     task_dependency_mapping(root, changed, new_files, existing_nodes)
 
-    # Task 3
+    # Task 4
     task_brain_audio_sync()
 
 

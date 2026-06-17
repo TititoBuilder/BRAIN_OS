@@ -37,8 +37,8 @@ PYTHON_EXE    = Path(r"C:\Knowledge\CA\venv\Scripts\python.exe")
 TTS_VOICE     = "af_heart"
 DELAY_SECONDS = 3
 
-# ── HIGH priority vault nodes ──────────────────────────────────────────────────
-HIGH_PRIORITY_NODES = [
+# ── Vault nodes ────────────────────────────────────────────────────────────────
+_MANUAL_NODES = [
     # 07_SYSTEM
     "07_SYSTEM/Cristian_Principles.md",
     "07_SYSTEM/Trigger_Architecture.md",
@@ -72,14 +72,28 @@ HIGH_PRIORITY_NODES = [
     "05_MEMORY/Memory_Index.md",
     "05_MEMORY/LanceDB_Vector_Store.md",
     # 08_TRIGGERS
-    "07_SYSTEM/Trigger_Architecture.md",
     "08_TRIGGERS/Trigger_Session_Close.md",
     "08_TRIGGERS/Trigger_Render_Complete.md",
     "08_TRIGGERS/Trigger_BDF_Queue_Check.md",
 ]
 
-# Deduplicate
-HIGH_PRIORITY_NODES = list(dict.fromkeys(HIGH_PRIORITY_NODES))
+
+def _derive_knowledge_os_nodes() -> list:
+    """Auto-derive knowledge_os lessons by status. Includes Learning, Practiced, Mastered."""
+    import re as _re
+    INCLUDE = {"Learning", "Practiced", "Mastered"}
+    ko = BRAIN_OS_ROOT / "02_PROJECTS" / "knowledge_os"
+    out = []
+    for md in sorted(ko.glob("*.md")):
+        s = md.read_text(encoding="utf-8", errors="ignore")
+        sm = _re.search(r"^knowledge_os_status:\s*(.+)$", s, _re.MULTILINE)
+        status = sm.group(1).strip() if sm else None
+        if status in INCLUDE:
+            out.append(f"02_PROJECTS/knowledge_os/{md.stem}.md")
+    return out
+
+
+HIGH_PRIORITY_NODES = list(dict.fromkeys(_MANUAL_NODES + _derive_knowledge_os_nodes()))
 
 NARRATION_PROMPT = """You are converting a technical knowledge document into a natural spoken audio script.
 The listener is Cristian, a developer learning about his own systems while driving or at the gym.
