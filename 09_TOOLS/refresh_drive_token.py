@@ -33,7 +33,7 @@ BRAIN_OS_ROOT = Path(r"C:\BRAIN_OS")
 ENV_FILE      = Path(r"C:\Dev\Projects\soccer-content-generator\.env")
 CONFIG_FILE   = BRAIN_OS_ROOT / "BRAIN_OS_CONFIG.json"
 
-DRIVE_SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
+DRIVE_SCOPES = ["https://www.googleapis.com/auth/drive"]
 
 RAILWAY_GQL   = "https://backboard.railway.app/graphql/v2"
 VARIABLE_NAME = "GOOGLE_TOKEN_JSON"
