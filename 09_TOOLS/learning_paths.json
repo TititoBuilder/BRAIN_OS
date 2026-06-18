@@ -19,7 +19,8 @@
         "python_subprocess",
         "python_pytest",
         "python_package_arch"
-      ]
+      ],
+      "tier": "learning"
     },
     {
       "id": "system_design",
@@ -35,8 +36,10 @@
         "event_driven_architecture",
         "webhook_design",
         "circuit_breaker_pattern",
-        "cqrs_pattern"
-      ]
+        "cqrs_pattern",
+        "message_queues"
+      ],
+      "tier": "learning"
     },
     {
       "id": "ai_and_rag",
@@ -61,7 +64,8 @@
         "ai_safety_basics",
         "lancedb_vector_store",
         "llm_data_pipelines"
-      ]
+      ],
+      "tier": "learning"
     },
     {
       "id": "data_engineering",
@@ -76,7 +80,8 @@
         "data_validation",
         "database_sharding",
         "graph_databases"
-      ]
+      ],
+      "tier": "learning"
     },
     {
       "id": "devops_deployment",
@@ -91,7 +96,8 @@
         "gcp_basics",
         "git",
         "git_advanced"
-      ]
+      ],
+      "tier": "learning"
     },
     {
       "id": "security",
@@ -106,7 +112,8 @@
         "secrets_management",
         "env_security",
         "owasp_top10"
-      ]
+      ],
+      "tier": "learning"
     },
     {
       "id": "your_system",
@@ -125,7 +132,8 @@
         "edge_tts",
         "kokoro_tts",
         "active_environments"
-      ]
+      ],
+      "tier": "learning"
     },
     {
       "id": "knowledge_and_thinking",
@@ -140,7 +148,8 @@
         "blast_radius_principle",
         "low_coupling_high_cohesion",
         "federated_systems"
-      ]
+      ],
+      "tier": "learning"
     },
     {
       "id": "web_and_apis",
@@ -152,7 +161,8 @@
         "websockets",
         "openapi_spec",
         "cap_theorem"
-      ]
+      ],
+      "tier": "learning"
     },
     {
       "id": "gold_capstone",
@@ -170,7 +180,8 @@
         "lesson_08_session_loop_change_token",
         "lesson_09_for_now_is_forbidden",
         "gold_capstone_v2"
-      ]
+      ],
+      "tier": "learning"
     },
     {
       "id": "claude_tooling",
@@ -181,6 +192,62 @@
         "claude_platform_guide",
         "claude_code_guide",
         "claude_code_workflow"
+      ],
+      "tier": "learning"
+    },
+    {
+      "id": "bdf_project",
+      "title": "BDF Project",
+      "domain": "creative_systems",
+      "description": "Soccer content pipeline — agents, book system, knowledge build flow.",
+      "tier": "project",
+      "topics": [
+        "bdf_agent_pipeline",
+        "bdf_book_system",
+        "bdf_knowledge_build_flow",
+        "bdf_video_production_flow",
+        "bdf_memory_agent"
+      ]
+    },
+    {
+      "id": "read_along_project",
+      "title": "Read-Along Project",
+      "domain": "creative_systems",
+      "description": "The study app — architecture, build sessions, deployment.",
+      "tier": "project",
+      "topics": [
+        "read_along_app_arch",
+        "read_along_app_session",
+        "read_along_app_build_session"
+      ]
+    },
+    {
+      "id": "brain_os_system",
+      "title": "BRAIN_OS System",
+      "domain": "creative_systems",
+      "description": "Core operating rules — principles, session protocol, tools, triggers.",
+      "tier": "system",
+      "topics": [
+        "cristian_principles",
+        "session_protocol",
+        "tools_registry",
+        "master_control",
+        "mcp_registry",
+        "project_directory",
+        "trigger_architecture",
+        "trigger_session_close",
+        "trigger_bdf_queue_check",
+        "trigger_render_complete"
+      ]
+    },
+    {
+      "id": "message_queues_path",
+      "title": "Message Queues",
+      "domain": "software_architecture",
+      "description": "Async messaging patterns and queue architectures.",
+      "tier": "learning",
+      "topics": [
+        "message_queues"
       ]
     }
   ]
