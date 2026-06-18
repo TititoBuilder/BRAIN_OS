@@ -1,0 +1,62 @@
+{
+  "generated": "2026-06-17",
+  "books": {
+    "ca_book": {
+      "title": "CA Book",
+      "description": "Custom Agent system — architecture, pipelines, deployment",
+      "chapters": [
+        {
+          "key": "ch01_pipeline_architecture",
+          "title": "Chapter 1 — Pipeline Architecture"
+        },
+        {
+          "key": "ch02_bridge_reload_discipline",
+          "title": "Chapter 2 — Bridge Reload Discipline"
+        },
+        {
+          "key": "ch03_tts_audio",
+          "title": "Chapter 3 — TTS Audio"
+        },
+        {
+          "key": "ch04_agents",
+          "title": "Chapter 4 — Agents"
+        },
+        {
+          "key": "ch05_telegram_twitter",
+          "title": "Chapter 5 — Telegram and Twitter"
+        },
+        {
+          "key": "ch07_deployment",
+          "title": "Chapter 7 — Deployment"
+        },
+        {
+          "key": "ch11_architecture",
+          "title": "Chapter 11 — Architecture"
+        },
+        {
+          "key": "ch13_deploy_discipline",
+          "title": "Chapter 13 — Deploy Discipline"
+        },
+        {
+          "key": "ch14_async_export_pattern",
+          "title": "Chapter 14 — Async Export Pattern"
+        },
+        {
+          "key": "ch16_cost_tracking",
+          "title": "Chapter 16 — Cost Tracking"
+        }
+      ]
+    },
+    "bdf_book": {
+      "title": "BDF Book",
+      "description": "BDF soccer content pipeline — knowledge build flow",
+      "chapters": [
+        {
+          "key": "bdf_knowledge_build_flow",
+          "title": "BDF Knowledge Build Flow"
+        }
+      ]
+    }
+  },
+  "sessions": []
+}
