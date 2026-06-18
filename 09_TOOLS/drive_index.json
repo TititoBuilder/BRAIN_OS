@@ -126,6 +126,9 @@
     "env_management": "id:1Vo6cqmzjQbxAyK76kDtKVYGnMPj3hzFS",
     "webhook_design": "id:1_yRjJcZjAsINZ6uvRJSO1oSuoVWCUjI1",
     "etl_pipelines": "id:18FaK5-nlSu7_SN7d1u0FyO762lA65MXQ",
-    "event_driven_architecture": "id:1OSbCaNnKjapRAGW5Emd4AtXXHYa1ezdx"
+    "event_driven_architecture": "id:1OSbCaNnKjapRAGW5Emd4AtXXHYa1ezdx",
+    "llm_fundamentals": "id:1hvIzKm5dAKp4ds3RzjoP-ijVI7SK_rU_",
+    "python_asyncio": "id:19Zf31auerj1c9ryAVwokAZcnjJfZ6tDF",
+    "tts_systems": "id:1qViRwjKgTC7KTOnPTCwvnBE2VA6vhreO"
   }
 }
