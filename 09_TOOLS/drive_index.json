@@ -127,6 +127,9 @@
     "lesson_07_discipline_at_boundaries": "id:1MSzBbMOY1B0sOJi54ZiY7wbwZKtVik2p",
     "lesson_08_session_loop_change_token": "id:1odjl2P0YhoIGESYODSEwcVgpYNKJSsfA",
     "lesson_09_for_now_is_forbidden": "id:10GTW7GbuGAEleODecTC0FC9hoPoqBdGp",
-    "git": "id:12qqiV_qa3r6ouXUconQEVFriZmn7IrGG"
+    "git": "id:12qqiV_qa3r6ouXUconQEVFriZmn7IrGG",
+    "api_rate_limiting": "id:1LRaUfKUPrnW0PU3XsRfE8VI-Q9vcMUiO",
+    "env_management": "id:1Vo6cqmzjQbxAyK76kDtKVYGnMPj3hzFS",
+    "webhook_design": "id:1_yRjJcZjAsINZ6uvRJSO1oSuoVWCUjI1"
   }
 }
