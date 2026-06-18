@@ -129,6 +129,7 @@
     "federated_systems": "id:1aS1lvqJ1YyPoy0CVZJ0W2uJQDbLECf4d",
     "knowledge_graph_design": "id:1uAIQqaJGet_ny07pfCXK8UsN-LJL9nt9",
     "llm_data_pipelines": "id:1dT1uXAiSSnsDXZr4QVysWudVJ9D6g683",
-    "monolith_vs_microservices": "id:1QqVr7-rqXp2jaT2b6w0cR7wVbKWbY-k3"
+    "monolith_vs_microservices": "id:1QqVr7-rqXp2jaT2b6w0cR7wVbKWbY-k3",
+    "cicd_pipelines": "id:1TJ4Ua-xb5uKuNUDtwPGCYetyyIPBIPRc"
   }
 }
