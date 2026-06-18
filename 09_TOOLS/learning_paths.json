@@ -58,7 +58,9 @@
         "multimodal_ai",
         "diffusion_models",
         "ai_evaluation",
-        "ai_safety_basics"
+        "ai_safety_basics",
+        "lancedb_vector_store",
+        "llm_data_pipelines"
       ]
     },
     {
@@ -87,6 +89,7 @@
         "cicd_pipelines",
         "cloud_storage_apis",
         "gcp_basics",
+        "git",
         "git_advanced"
       ]
     },
@@ -118,7 +121,10 @@
         "model_context_protocol",
         "obsidian_workflows",
         "env_management",
-        "python_venvs"
+        "python_venvs",
+        "edge_tts",
+        "kokoro_tts",
+        "active_environments"
       ]
     },
     {
@@ -164,6 +170,17 @@
         "lesson_08_session_loop_change_token",
         "lesson_09_for_now_is_forbidden",
         "gold_capstone_v2"
+      ]
+    },
+    {
+      "id": "claude_tooling",
+      "title": "Claude Tooling",
+      "domain": "creative_systems",
+      "description": "How to use Claude Code, Claude platform, and AI-assisted workflows effectively.",
+      "topics": [
+        "claude_platform_guide",
+        "claude_code_guide",
+        "claude_code_workflow"
       ]
     }
   ]
