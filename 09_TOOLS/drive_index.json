@@ -1,14 +1,11 @@
 {
   "generated": "2026-06-17",
   "index": {
-    "model_context_protocol": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/resolve_mcp_guide.wav",
-    "prompt_engineering": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/claudeguide_prompting_architecture.wav",
-    "python_venvs": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/guide_venv.wav",
-    "obsidian_workflows": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/guide_obsidian_claude.wav",
-    "function_calling": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/claudeguide_skills_system.wav",
-    "llm_fundamentals": "BRAIN_OS_Handbook/chapters/Phase_05_Programming_Fundamentals/programming_terminology_reference.wav",
-    "tts_systems": "BDF KNOWLEDGE BOOK/BDF/chapters/Phase_03_BDF_Pipeline/ch03_tts_audio_af_heart_audio.mp3",
-    "python_asyncio": "BDF KNOWLEDGE BOOK/BDF/chapters/Phase_04_Agents_Workflows/ch14_async_export_pattern_af_heart_audio.mp3",
+    "model_context_protocol": "id:1AmenAuvjrwk_1gavyd05FwV9cVUa7oO1",
+    "prompt_engineering": "id:12R2Lr0xTLrFXhvVe4Py0fn6SXWXOPytl",
+    "python_venvs": "id:1yZYAQuJM4--biE76271zQQD5-8KP9-Ex",
+    "obsidian_workflows": "id:1m7R2AMTev6hrCRq0dlVGfoXb_TJnR8Ql",
+    "function_calling": "id:1dX6oEA4F8qi2Kl6Z69-h4NDpgJSRF9Nh",
     "agent_orchestration": "CA_Book_Audio/chapters/ch04_agents.wav",
     "monolith_vs_microservices": "CA_Book_Audio/chapters/ch07_deployment.wav",
     "federated_systems": "CA_Book_Audio/chapters/ch11_architecture.wav",
@@ -127,6 +124,8 @@
     "git": "id:12qqiV_qa3r6ouXUconQEVFriZmn7IrGG",
     "api_rate_limiting": "id:1LRaUfKUPrnW0PU3XsRfE8VI-Q9vcMUiO",
     "env_management": "id:1Vo6cqmzjQbxAyK76kDtKVYGnMPj3hzFS",
-    "webhook_design": "id:1_yRjJcZjAsINZ6uvRJSO1oSuoVWCUjI1"
+    "webhook_design": "id:1_yRjJcZjAsINZ6uvRJSO1oSuoVWCUjI1",
+    "etl_pipelines": "id:18FaK5-nlSu7_SN7d1u0FyO762lA65MXQ",
+    "event_driven_architecture": "id:1OSbCaNnKjapRAGW5Emd4AtXXHYa1ezdx"
   }
 }
