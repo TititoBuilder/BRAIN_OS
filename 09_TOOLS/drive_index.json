@@ -134,6 +134,7 @@
     "gold_capstone_v2": "id:1aBN1zjnuR5nnGEmzUdHU5tBM18BStQLE",
     "dev_workflow": "id:1NF5pMSmrzTAbhKefzldqtPyREsHlgbPZ",
     "environment_variables": "id:1D4y5vI6Cd1rusX0zJcUgI57AHzBEO3ok",
-    "powershell_profile": "id:1GRRkZ8IH3KVaN6v_xcE1NGWR8stbOY7i"
+    "powershell_profile": "id:1GRRkZ8IH3KVaN6v_xcE1NGWR8stbOY7i",
+    "toolchain_architecture": "id:1Jct8Ec50UMlGwHpZVKc2K2NsizcWkZNU"
   }
 }
