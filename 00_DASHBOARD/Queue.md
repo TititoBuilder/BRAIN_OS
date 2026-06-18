@@ -19,7 +19,7 @@
 - [x] Audit git history for audio that slipped past the 376-null .gitignore period (low priority) RESOLVED 2026-06-17 — 9 files found, none currently tracked, clean
 - [x] anchor_generator.py batch mode — generate anchors for all 31 chapters RESOLVED 2026-06-17
 - [ ] Learning path sequencing — generate audio for 30 HIGH priority vault nodes
-- [ ] Apply Knowledge Graphs Over Lists to 04_WORKFLOWS + 05_MEMORY + 03_APIS
+- [x] Apply Knowledge Graphs Over Lists to 04_WORKFLOWS + 05_MEMORY + 03_APIS RESOLVED 2026-06-17 — all three folders complete
 - [x] Add session-start command to all project CLAUDE.md files RESOLVED 2026-06-17
 - [ ] FEATURE: Visual auto-generated study map ("the Wall") - NEW project off BRAIN_OS, syncs with Read-Along. Squares = systems/tasks, grow unlimited; each fills by TEMPERATURE COLOR as learned (status-driven: reads knowledge_os_status from vault, derive-don't-duplicate, never a 2nd registry). Every system task gets a color. Lines = topic relationships (Obsidian [[backlinks]]). Sequence/timeline left-to-right; interconnection vertical (Lego/brick-wall metaphor, live-filling). Shares Read-Along's 4-layer source (md->audio->index->app): same data, EYE-view (diagram/map) vs EAR-view (audio). Tap a square -> play that phase in Read-Along. PARKED design forks (Cristian to internalize first): (A) literal wall / (B) graph-with-wall-skin / (C) both-as-toggle - leaning C, build A first. Granularity of one square = topic vs path vs domain - undecided. Stack TBD after design lands.
 - [x] session_start.py DRY: queue-parse state machine duplicated - load_context() and check_queue() both walk Queue.md for "## In Progress" / break-on-next-"## ". Same logic, two copies. Extract to one helper during trim pass (Documentation Must Reflect Reality + DRY). RESOLVED 2026-06-17
@@ -49,7 +49,7 @@
 ## Next Sessions (ordered)
 
 - [x] Session 3: Apply Knowledge Graphs Over Lists to 04_WORKFLOWS RESOLVED 2026-06-17 — 7 files updated
-- [ ] Session 4: Apply Knowledge Graphs Over Lists to 05_MEMORY + 03_APIS
+- [x] Session 4: Apply Knowledge Graphs Over Lists to 05_MEMORY + 03_APIS RESOLVED 2026-06-17
 - [ ] Session 5: Update all project CLAUDE.md files with Triggers section
 - [ ] CA Book Phase 3: Session_Resume pipeline (needs actual files first)
 
