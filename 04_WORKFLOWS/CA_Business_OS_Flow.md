@@ -8,20 +8,20 @@ tags: [workflow, live]
 CA (CristianConstruction)
 
 ## Flow
-Inquiry (SMS / web form / Thumbtack) → Lead Agent → Quote Agent → Schedule Agent → Finance Agent → Review Agent → Reputation Agent
+Inquiry (SMS / web form / Thumbtack) → [[CA_Lead_Agent]] → [[CA_Quote_Agent]] → [[CA_Schedule_Agent]] → [[CA_Finance_Agent]] → [[CA_Review_Agent]] → [[CA_Reputation_Agent]]
 
 ## Steps
-1. **Inbound trigger** — SMS arrives via Google Voice/Twilio webhook (`POST /sms/incoming`); SMS Handler routes by keyword (`ESTIMATE` → Lead Agent; `TILE/PAINT/BATH` → Lead Agent pre-filled; `DEAL` → Reputation Agent)
-2. [[CA_Orchestrator]] / **Lead Agent** (`POST /leads/incoming`) — classifies job tier (1/2/3) via `pricing.py`, generates auto-reply via Claude, saves lead to `data/clients.csv`, fires Telegram alert to owner via Review Agent
-3. **Owner (dashboard gate)** — reviews lead at `localhost:3000`, clicks "Generate Quote"; triggers Quote Agent
-4. **Quote Agent** (`POST /quotes/estimate`) — Claude analyzes job, computes labor range + materials list with 15% markup + 25% emergency surcharge if flagged; returns flat-rate SMS text; Tier 3 jobs → Proposal Agent instead
-5. **Proposal Agent** (`POST /proposals/generate`) *(Tier 3 only)* — Claude writes full professional proposal (scope, materials, payment schedule, warranty); sends to owner via Telegram
-6. **Schedule Agent** (`POST /schedule/book`) — books job, checks conflicts (Tier 1=3h, Tier 2=8h, Tier 3=16h blocks), saves to `data/schedule.csv`, sends Telegram confirmation; sends reminders 24h before
-7. **Finance Agent** (`POST /finance/log-job`) — owner logs completion; records to `data/jobs.csv` (IRS format); computes mileage deduction ($0.70/mi), weekly P&L, monthly tax estimate; sends Sunday Telegram report
-8. **Review Agent** (`POST /reviews/job-complete`) — sends client review request 24h after completion via Telegram (Claude-generated personalized message)
-9. **Social Agent** (`POST /social/send-to-me`) — generates Nextdoor, Facebook, Instagram posts from before/after job description; delivers copy-paste text to owner via Telegram
-10. **Reputation Agent** (`POST /reputation/alert`) — monitors incoming Google/Yelp/Thumbtack reviews; Claude drafts personalized response; logs to `data/reviews.csv`; tracks star rating trends
-11. **Referral Agent** (`POST /referrals/register`) — registers referrer; on booking confirmation issues $25 credit automatically; maintains leaderboard in `data/referrals.csv`
+1. **Inbound trigger** — SMS arrives via Google Voice/Twilio webhook (`POST /sms/incoming`); SMS Handler routes by keyword (`ESTIMATE` → [[CA_Lead_Agent]]; `TILE/PAINT/BATH` → [[CA_Lead_Agent]] pre-filled; `DEAL` → [[CA_Reputation_Agent]])
+2. [[CA_Orchestrator]] / [[CA_Lead_Agent]] (`POST /leads/incoming`) — classifies job tier (1/2/3) via `pricing.py`, generates auto-reply via Claude, saves lead to `data/clients.csv`, fires Telegram alert to owner via Review Agent
+3. **Owner (dashboard gate)** — reviews lead at `localhost:3000`, clicks "Generate Quote"; triggers [[CA_Quote_Agent]]
+4. [[CA_Quote_Agent]] (`POST /quotes/estimate`) — Claude analyzes job, computes labor range + materials list with 15% markup + 25% emergency surcharge if flagged; returns flat-rate SMS text; Tier 3 jobs → [[CA_Proposal_Agent]] instead
+5. [[CA_Proposal_Agent]] (`POST /proposals/generate`) *(Tier 3 only)* — Claude writes full professional proposal (scope, materials, payment schedule, warranty); sends to owner via Telegram
+6. [[CA_Schedule_Agent]] (`POST /schedule/book`) — books job, checks conflicts (Tier 1=3h, Tier 2=8h, Tier 3=16h blocks), saves to `data/schedule.csv`, sends Telegram confirmation; sends reminders 24h before
+7. [[CA_Finance_Agent]] (`POST /finance/log-job`) — owner logs completion; records to `data/jobs.csv` (IRS format); computes mileage deduction ($0.70/mi), weekly P&L, monthly tax estimate; sends Sunday Telegram report
+8. [[CA_Review_Agent]] (`POST /reviews/job-complete`) — sends client review request 24h after completion via Telegram (Claude-generated personalized message)
+9. [[CA_Social_Agent]] (`POST /social/send-to-me`) — generates Nextdoor, Facebook, Instagram posts from before/after job description; delivers copy-paste text to owner via Telegram
+10. [[CA_Reputation_Agent]] (`POST /reputation/alert`) — monitors incoming Google/Yelp/Thumbtack reviews; Claude drafts personalized response; logs to `data/reviews.csv`; tracks star rating trends
+11. [[CA_Referral_Agent]] (`POST /referrals/register`) — registers referrer; on booking confirmation issues $25 credit automatically; maintains leaderboard in `data/referrals.csv`
 
 ## Trigger
 Any of:
@@ -55,6 +55,15 @@ Any of:
 
 ### Agents
 - [[CA_Orchestrator]]
+- [[CA_Lead_Agent]]
+- [[CA_Quote_Agent]]
+- [[CA_Proposal_Agent]]
+- [[CA_Schedule_Agent]]
+- [[CA_Finance_Agent]]
+- [[CA_Review_Agent]]
+- [[CA_Social_Agent]]
+- [[CA_Reputation_Agent]]
+- [[CA_Referral_Agent]]
 
 ### APIs / Memory
 - [[CA_Knowledge_Book]]
