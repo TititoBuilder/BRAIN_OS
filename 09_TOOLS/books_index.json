@@ -6,43 +6,43 @@
       "description": "Custom Agent system — architecture, pipelines, deployment",
       "chapters": [
         {
-          "key": "ch01_pipeline_architecture",
+          "key": "etl_pipelines",
           "title": "Chapter 1 — Pipeline Architecture"
         },
         {
-          "key": "ch02_bridge_reload_discipline",
+          "key": "event_driven_architecture",
           "title": "Chapter 2 — Bridge Reload Discipline"
         },
         {
-          "key": "ch03_tts_audio",
+          "key": "tts_systems",
           "title": "Chapter 3 — TTS Audio"
         },
         {
-          "key": "ch04_agents",
+          "key": "agent_orchestration",
           "title": "Chapter 4 — Agents"
         },
         {
-          "key": "ch05_telegram_twitter",
+          "key": "webhook_design",
           "title": "Chapter 5 — Telegram and Twitter"
         },
         {
-          "key": "ch07_deployment",
+          "key": "monolith_vs_microservices",
           "title": "Chapter 7 — Deployment"
         },
         {
-          "key": "ch11_architecture",
+          "key": "federated_systems",
           "title": "Chapter 11 — Architecture"
         },
         {
-          "key": "ch13_deploy_discipline",
+          "key": "cicd_pipelines",
           "title": "Chapter 13 — Deploy Discipline"
         },
         {
-          "key": "ch14_async_export_pattern",
+          "key": "python_asyncio",
           "title": "Chapter 14 — Async Export Pattern"
         },
         {
-          "key": "ch16_cost_tracking",
+          "key": "api_rate_limiting",
           "title": "Chapter 16 — Cost Tracking"
         }
       ]
