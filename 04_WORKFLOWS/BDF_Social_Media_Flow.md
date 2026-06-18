@@ -43,6 +43,9 @@ Published tweet on @BreakingDownFutbol Twitter account with card image attached.
 - [[BDF_Automation_Agent]]
 - [[BDF_Creative_Agent]]
 
+### Workflows
+- [[BDF_Content_Research_Flow]]
+
 ### APIs / Memory
 - [[Telegram_Bot]]
 - [[twitter-api]]

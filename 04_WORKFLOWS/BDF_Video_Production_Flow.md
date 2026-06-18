@@ -55,6 +55,9 @@ venv/Scripts/python mcp_ingest.py --dry-run  # most recent only
 - [[Resolve_Editing_Agent]]
 - [[BDF_Memory_Agent]]
 
+### Workflows
+- [[BDF_Content_Research_Flow]]
+
 ### APIs / Memory
 - [[DaVinci_Resolve_MCP]]
 - [[Resolve_Export_Log]]

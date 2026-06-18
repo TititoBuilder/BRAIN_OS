@@ -50,6 +50,9 @@ New post entry in `src/queue/content_queue.json` with status=`pending`, includin
 - [[BDF_Creative_Agent]]
 - [[BDF_Automation_Agent]]
 
+### Workflows
+- [[BDF_Social_Media_Flow]]
+
 ### APIs / Memory
 - [[Football_API]]
 - [[NewsAPI]]

@@ -34,5 +34,15 @@ Manual — user submits audio file to backend endpoint. No automated trigger.
 - Backend is complete and testable via direct HTTP calls (curl / Postman) independently of the frontend
 
 ## Connected to
-- [[RA_Whisper_Agent]]
+
+### Project
 - [[Read_Along_App]]
+
+### Agents
+- [[RA_Whisper_Agent]]
+
+### Workflows
+- [[BDF_Knowledge_Build_Flow]]
+
+### APIs / Tools
+- [[CA_Kokoro_TTS]]

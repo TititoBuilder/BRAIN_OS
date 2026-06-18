@@ -8,7 +8,7 @@ tags: [workflow, live]
 BDF
 
 ## Flow
-GPT-4o → Inkscape → Cartoon Animator 5 → Kling AI → Twitter
+GPT-4o → Inkscape → Cartoon Animator 5 → [[KlingAI]] → [[twitter-api]]
 
 ## Steps
 1. [[BDF_Creative_Agent]] — GPT-4o generates reference image descriptions and style prompts for player avatar (consistent art style: semi-realistic cartoon, team kit, club colors)
@@ -19,7 +19,7 @@ GPT-4o → Inkscape → Cartoon Animator 5 → Kling AI → Twitter
    - Dribbling
    - Shooting / striking
    - Reaction
-4. [[BDF_Creative_Agent]] — `create_avatar_library.py` sends PNG pose to Kling AI `POST /v1/videos/image2video`; motion prompt pulled from `PLAYER_MOTION` dict (per-player animation personality); polls `GET /v1/videos/image2video/{task_id}` until complete
+4. [[BDF_Creative_Agent]] — `create_avatar_library.py` sends PNG pose to [[KlingAI]] `POST /v1/videos/image2video`; motion prompt pulled from `PLAYER_MOTION` dict (per-player animation personality); polls `GET /v1/videos/image2video/{task_id}` until complete
 5. Output video downloaded to `output/videos/`; used in Twitter posts and Telegram previews
 
 ## Trigger
@@ -58,6 +58,9 @@ Manual — run `create_avatar_library.py` per player, per pose. No automatic tri
 
 ### Agents
 - [[BDF_Creative_Agent]]
+
+### Workflows
+- [[BDF_Social_Media_Flow]]
 
 ### APIs
 - [[OpenAI_gpt-image-1]]

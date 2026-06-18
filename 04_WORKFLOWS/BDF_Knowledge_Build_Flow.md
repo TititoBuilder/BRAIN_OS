@@ -8,12 +8,12 @@ tags: [workflow, live]
 BDF, CA
 
 ## Flow
-markdown → book_compiler.py → Claude Opus → Kokoro TTS → Google Drive
+markdown → book_compiler.py → [[Anthropic_Claude]] → Kokoro TTS → Google Drive
 
 ## Steps
 1. **Source markdown file** — author writes chapter content in BDF or CA format (see format rules below)
 2. [[BDF_Memory_Agent]] / [[CA_Orchestrator]] — `book_compiler.py` reads the single markdown file, parses chapter blocks, sends each section to Claude Opus for prose expansion / narration scripting
-3. **Claude Opus** — generates long-form narrative text from structured chapter blocks; returned as expanded prose per section
+3. [[Anthropic_Claude]] — generates long-form narrative text from structured chapter blocks; returned as expanded prose per section
 4. [[CA_Kokoro_TTS]] — `tts_local.py` (or `ca_audio.py`) synthesizes expanded text to WAV audio via Kokoro `KPipeline(lang_code="a")`, voice `af_heart`, 24000 Hz; markdown stripped before TTS input
 5. **Google Drive** — `book_compiler.py` uploads generated WAV/MP3 to Drive under `chapters/` or `sessions/` folder via OAuth2 (`gdrive_credentials.json` + `gdrive_token.json`)
 
@@ -69,6 +69,9 @@ Chapter content here — single block only.
 - [[BDF_Memory_Agent]]
 - [[CA_Orchestrator]]
 - [[CA_Kokoro_TTS]]
+
+### Workflows
+- [[RA_Transcription_Flow]]
 
 ### APIs / Memory
 - [[Anthropic_Claude]]
