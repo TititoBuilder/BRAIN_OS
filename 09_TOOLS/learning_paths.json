@@ -95,6 +95,7 @@
         "cloud_storage_apis",
         "gcp_basics",
         "git",
+        "dev_workflow",
         "git_advanced"
       ],
       "tier": "learning"
@@ -131,7 +132,9 @@
         "python_venvs",
         "edge_tts",
         "kokoro_tts",
-        "active_environments"
+        "active_environments",
+        "powershell_profile",
+        "environment_variables"
       ],
       "tier": "learning"
     },
