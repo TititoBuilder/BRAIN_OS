@@ -58,5 +58,8 @@
       ]
     }
   },
-  "sessions": []
+  "sessions": [
+    {"key": "read_along_app_session", "title": "Read-Along App — Session Recording"},
+    {"key": "read_along_app_build_session", "title": "Read-Along App — Build Session"}
+  ]
 }
