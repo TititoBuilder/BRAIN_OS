@@ -134,6 +134,7 @@
         "kokoro_tts",
         "active_environments",
         "powershell_profile",
+        "toolchain_architecture",
         "environment_variables"
       ],
       "tier": "learning"
