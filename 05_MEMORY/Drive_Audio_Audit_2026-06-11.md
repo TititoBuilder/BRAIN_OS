@@ -221,21 +221,33 @@
 The 187 unmapped count was investigated and is NOT a backlog of gaps.
 All 187 fall into known categories and are CORRECTLY unmapped:
 
-- BDF book chapters: 97 (belong to the BDF Knowledge Book, not topic-lessons)
-- BRAIN_OS_Handbook chapters: 39
+- [[BDF_Book_System]] chapters: 97 (belong to the BDF Knowledge Book, not topic-lessons)
+- [[Memory_Index]] / BRAIN_OS_Handbook chapters: 39
 - BDF sessions/archives: 33 (session recordings, not topic-lessons)
-- CA book chapters: 14
-- Tools/guides: 4 (the only possible app candidates - to review)
+- [[CA_Knowledge_Book]] chapters: 14
+- Tools/guides: 4 (the only possible app candidates — to review)
 - Other/uncategorized: 0 (no orphan/mystery files)
 
 Decision: Book chapters and session archives are a DIFFERENT content type
 from knowledge_os topic-lessons. The LISTEN-tab dropdown is for discrete
 lessons; mapping book-length/sequential audio into it would collapse two
-intentional separations. They stay unmapped by design - correct, not drift.
+intentional separations. They stay unmapped by design — correct, not drift.
 
-Open follow-ups (queued, not gaps):
-1. Review the 4 Tools/guides - some may belong in the app.
-2. FEATURE idea (not a fix): a separate Books/Sessions access path, distinct
-   from the topic dropdown, if long-form audio should be reachable.
+Open follow-ups (resolved 2026-06-17):
+1. Tools/guides reviewed — claude_code_guide and claude_ai_platform wired to drive_index.
+2. ~~FEATURE idea: a separate Books/Sessions access path, distinct from the topic dropdown.~~ → **BUILT** — [[Read_Along_App]] BooksTab serves [[CA_Knowledge_Book]], [[BDF_Book_System]], and session recordings via books_index.json.
 
 Do not re-investigate the 187 as a backlog. They are categorized and intentional.
+
+## Connected to
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Artifacts catalogued
+- [[BDF_Book_System]]
+- [[CA_Knowledge_Book]]
+- [[Read_Along_App]]
+
+### Index
+- [[Memory_Index]]

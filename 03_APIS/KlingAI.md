@@ -7,9 +7,6 @@ tags: [api, live]
 ## Purpose
 Image-to-video generation for animated player highlight clips in the BDF avatar library.
 
-## Used by projects
-- BDF
-
 ## Limits and rules
 - Rate limits: not documented; task-based async (poll until done)
 - Cost: $0.14/clip (image-to-video, 5 sec); $0.28/clip (text-to-video) — tracked in cost_tracker.py
@@ -18,9 +15,6 @@ Image-to-video generation for animated player highlight clips in the BDF avatar 
 ## Credentials
 - `KLING_ACCESS_KEY`
 - `KLING_SECRET_KEY`
-
-## Connected agents
-- [[BDF_Creative_Agent]]
 
 ## Inputs
 - Base URL: `https://api.klingai.com`
@@ -37,5 +31,12 @@ Image-to-video generation for animated player highlight clips in the BDF avatar 
 - Per-player animation personality defined in `PLAYER_MOTION` dict (e.g. explosive dribble, clinical finish)
 
 ## Connected to
-- [[BDF_Avatar_Pipeline]]
+
+### Project
+- [[BDF_Operations_Status]]
+
+### Agents
 - [[BDF_Creative_Agent]]
+
+### Workflows
+- [[BDF_Avatar_Pipeline]]
