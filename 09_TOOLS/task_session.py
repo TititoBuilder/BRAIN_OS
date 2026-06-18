@@ -60,14 +60,14 @@ def build_git_context():
     # look in knowledge_os for git* files
     for f in sorted((BRAIN_OS / "02_PROJECTS" / "knowledge_os").glob("git*.md")):
         parts.append(f"\n[{f.name}]")
-        parts.append(f.read_text(encoding="utf-8")[:3000])
+        parts.append("\n".join(f.read_text(encoding="utf-8").splitlines()[:5]))
         found = True
     # also check 05_LEARNING/git/ if it exists
     learn_git = BRAIN_OS / "05_LEARNING" / "git"
     if learn_git.exists():
         for f in sorted(learn_git.glob("*.md")):
             parts.append(f"\n[{f.name}]")
-            parts.append(f.read_text(encoding="utf-8")[:3000])
+            parts.append("\n".join(f.read_text(encoding="utf-8").splitlines()[:5]))
             found = True
     if not found:
         parts.append("(no git notes found)")
