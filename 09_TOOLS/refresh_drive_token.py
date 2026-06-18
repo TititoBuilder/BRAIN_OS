@@ -151,7 +151,7 @@ mutation variableUpsert(
     payload = json.dumps({"query": mutation, "variables": variables}).encode("utf-8")
 
     if dry_run:
-        print(f"[refresh] DRY RUN — would push {VARIABLE_NAME} ({len(value_b64)} chars) to Railway")
+        print(f"[refresh] DRY RUN -> would push {VARIABLE_NAME} ({len(value_b64)} chars) to Railway")
         print(f"  Service:     {svc_id}")
         print(f"  Environment: {env_id}")
         print(f"  Project:     {proj_id}")
