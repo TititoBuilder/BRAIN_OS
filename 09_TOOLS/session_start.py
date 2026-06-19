@@ -130,8 +130,8 @@ def load_context(project: dict) -> str:
     for label, path in [("CLAUDE.md", project["claude_md"]),
                         ("Context", project["context_md"])]:
         if path and Path(path).exists():
-            content = Path(path).read_text(encoding="utf-8", errors="ignore")
-            parts.append(f"=== {label}: {Path(path).name} ===\n{content}")
+            lines = Path(path).read_text(encoding="utf-8", errors="ignore").count("\n") + 1
+            parts.append(f"=== {label}: {Path(path).name} ({lines} lines) -> {path} [read on demand] ===")
         else:
             parts.append(f"=== {label}: NOT FOUND ({path}) ===")
 
@@ -146,8 +146,8 @@ def load_context(project: dict) -> str:
                     candidates.append(f)
     if candidates:
         latest = max(candidates, key=lambda f: f.stat().st_mtime)
-        content = latest.read_text(encoding="utf-8", errors="ignore")
-        parts.append(f"=== LATEST SESSION: {latest.name} ===\n{content}")
+        lines = latest.read_text(encoding="utf-8", errors="ignore").count("\n") + 1
+        parts.append(f"=== LATEST SESSION: {latest.name} ({lines} lines) -> {latest} [read on demand] ===")
     else:
         parts.append("=== LATEST SESSION: none found ===")
 
