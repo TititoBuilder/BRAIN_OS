@@ -233,6 +233,31 @@ def main():
 
     print(f"\n✅ Archive saved: {archive_path}")
 
+    # Refresh vault navigation index and commit it (scoped to Navigation.md only)
+    print("\nRefreshing Navigation.md...")
+    try:
+        subprocess.run(
+            [sys.executable, str(BRAIN_OS_ROOT / "09_TOOLS" / "vault_index.py")],
+            check=True, timeout=60,
+        )
+        nav_path = "00_DASHBOARD/Navigation.md"
+        subprocess.run(["git", "-C", str(BRAIN_OS_ROOT), "add", nav_path], check=True, timeout=10)
+        status = subprocess.run(
+            ["git", "-C", str(BRAIN_OS_ROOT), "diff", "--cached", "--quiet", "--", nav_path],
+        )
+        if status.returncode == 1:
+            subprocess.run(
+                ["git", "-C", str(BRAIN_OS_ROOT), "commit", "-m", "Auto-update Navigation.md (session close)", "--", nav_path],
+                check=True, timeout=10,
+            )
+            print("  Navigation.md updated and committed.")
+        else:
+            print("  Navigation.md unchanged — nothing to commit.")
+    except subprocess.CalledProcessError as e:
+        print(f"  [warn] Navigation refresh/commit failed: {e}")
+    except subprocess.TimeoutExpired:
+        print("  [warn] Navigation refresh timed out.")
+
     # Print summary to terminal
     print("\n" + "─" * 44)
     print(archive_md)
