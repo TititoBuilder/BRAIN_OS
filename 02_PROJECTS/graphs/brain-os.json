@@ -1,0 +1,559 @@
+{
+  "project": "brain-os",
+  "root": "C:/BRAIN_OS",
+  "updated_at": "2026-06-20T00:36:27.955603+00:00",
+  "node_count": 30,
+  "nodes": {
+    "03_APIS/claude_monitor.py": {
+      "hash": "41ad053022b0",
+      "layer": "uncategorized",
+      "size_kb": 16.6,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "__future__",
+          "datetime",
+          "json",
+          "logging",
+          "os",
+          "pathlib",
+          "sys",
+          "typing"
+        ],
+        "internal": [],
+        "external": [
+          "anthropic",
+          "dotenv"
+        ]
+      }
+    },
+    "09_TOOLS/anchor_batch.py": {
+      "hash": "8ad6944a5fc7",
+      "layer": "Audio_Pipeline",
+      "size_kb": 4.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "pathlib",
+          "subprocess",
+          "sys",
+          "time"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/anchor_generator.py": {
+      "hash": "0b8ab1a52de6",
+      "layer": "Audio_Pipeline",
+      "size_kb": 10.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "json",
+          "os",
+          "pathlib",
+          "sys",
+          "urllib.error",
+          "urllib.request"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "09_TOOLS/audio_stitcher.py": {
+      "hash": "1fb24f1152ce",
+      "layer": "Audio_Pipeline",
+      "size_kb": 12.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "asyncio",
+          "json",
+          "pathlib",
+          "sys",
+          "tempfile"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/audit_files.py": {
+      "hash": "17b556251a5e",
+      "layer": "Vault_Maintenance",
+      "size_kb": 13.3,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "__future__",
+          "argparse",
+          "collections",
+          "dataclasses",
+          "json",
+          "pathlib",
+          "re",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/borrowed_audio_worklist.py": {
+      "hash": "c1abbe2cd3cf",
+      "layer": "Audio_Pipeline",
+      "size_kb": 3.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "json",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/brain_notes_sync.py": {
+      "hash": "6da003f8d0e8",
+      "layer": "Vault_Maintenance",
+      "size_kb": 6.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "pathlib",
+          "re",
+          "subprocess",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/chapter_combiner.py": {
+      "hash": "f713d7fcf131",
+      "layer": "Audio_Pipeline",
+      "size_kb": 3.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "pathlib",
+          "subprocess",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/compile_session.py": {
+      "hash": "bbc8871f51cb",
+      "layer": "Session_Management",
+      "size_kb": 16.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "json",
+          "os",
+          "pathlib",
+          "subprocess",
+          "sys",
+          "urllib.error",
+          "urllib.request"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "09_TOOLS/cost_guard.py": {
+      "hash": "16cf248363c3",
+      "layer": "Cost_Control",
+      "size_kb": 7.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "json",
+          "os",
+          "pathlib",
+          "sys",
+          "urllib.request"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "09_TOOLS/download_brainos_chapters.py": {
+      "hash": "9555f1de2e2d",
+      "layer": "Drive_Sync",
+      "size_kb": 2.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "json",
+          "os",
+          "pathlib",
+          "sys"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "09_TOOLS/drive_browser.py": {
+      "hash": "0c4372d66472",
+      "layer": "Drive_Sync",
+      "size_kb": 16.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "json",
+          "pathlib",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/drive_cleanup_phases.py": {
+      "hash": "b3683846302c",
+      "layer": "Drive_Sync",
+      "size_kb": 3.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "pathlib",
+          "sys"
+        ],
+        "internal": [],
+        "external": [
+          "google.oauth2.credentials",
+          "googleapiclient.discovery"
+        ]
+      }
+    },
+    "09_TOOLS/drive_download.py": {
+      "hash": "423b4060f14e",
+      "layer": "Drive_Sync",
+      "size_kb": 5.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "pathlib",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/drive_learning_path_organizer.py": {
+      "hash": "50d242a67f46",
+      "layer": "Drive_Sync",
+      "size_kb": 9.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "json",
+          "pathlib",
+          "sys"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "09_TOOLS/drive_setup_folders.py": {
+      "hash": "363e6386888c",
+      "layer": "Drive_Sync",
+      "size_kb": 5.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "pathlib",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/generate_profile.py": {
+      "hash": "ab832a1b484d",
+      "layer": "Vault_Maintenance",
+      "size_kb": 10.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "pathlib",
+          "re",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/get_drive_ids.py": {
+      "hash": "e2739330411b",
+      "layer": "Drive_Sync",
+      "size_kb": 0.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "pathlib"
+        ],
+        "internal": [],
+        "external": [
+          "google.oauth2.credentials",
+          "googleapiclient.discovery"
+        ]
+      }
+    },
+    "09_TOOLS/graph_maintainer.py": {
+      "hash": "53e3b94854e4",
+      "layer": "Graph_System",
+      "size_kb": 19.0,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "__future__",
+          "argparse",
+          "ast",
+          "datetime",
+          "hashlib",
+          "json",
+          "pathlib",
+          "re",
+          "subprocess",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/graph_maintainer_patch.py": {
+      "hash": "76e3e760085f",
+      "layer": "Graph_System",
+      "size_kb": 7.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "datetime",
+          "json",
+          "pathlib",
+          "re"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/graphify.py": {
+      "hash": "f1ea1b0d98ee",
+      "layer": "Graph_System",
+      "size_kb": 11.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "__future__",
+          "argparse",
+          "ast",
+          "datetime",
+          "hashlib",
+          "json",
+          "pathlib",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/learning_path_builder.py": {
+      "hash": "4cbc011903ca",
+      "layer": "Vault_Maintenance",
+      "size_kb": 13.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "json",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/obsidian_sync.py": {
+      "hash": "fad93fb9cf2c",
+      "layer": "Vault_Maintenance",
+      "size_kb": 9.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "json",
+          "pathlib",
+          "re",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/refresh_drive_token.py": {
+      "hash": "be7f019fb94a",
+      "layer": "Drive_Sync",
+      "size_kb": 7.9,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "base64",
+          "json",
+          "os",
+          "pathlib",
+          "sys",
+          "urllib.error",
+          "urllib.request"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "09_TOOLS/session_close.py": {
+      "hash": "da59dc2c218a",
+      "layer": "Session_Management",
+      "size_kb": 9.4,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "os",
+          "pathlib",
+          "subprocess",
+          "sys"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "09_TOOLS/session_start.py": {
+      "hash": "c0798b8cde88",
+      "layer": "Session_Management",
+      "size_kb": 14.1,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "datetime",
+          "json",
+          "os",
+          "pathlib",
+          "subprocess",
+          "sys",
+          "urllib.error",
+          "urllib.request"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "09_TOOLS/task_session.py": {
+      "hash": "dfa4c2d89100",
+      "layer": "Session_Management",
+      "size_kb": 4.8,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "json",
+          "pathlib",
+          "subprocess",
+          "sys"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "09_TOOLS/vault_audio_generator.py": {
+      "hash": "73e650492b86",
+      "layer": "Audio_Pipeline",
+      "size_kb": 9.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "json",
+          "os",
+          "pathlib",
+          "subprocess",
+          "sys",
+          "time",
+          "urllib.error",
+          "urllib.request"
+        ],
+        "internal": [],
+        "external": [
+          "dotenv"
+        ]
+      }
+    },
+    "09_TOOLS/watchdog.py": {
+      "hash": "9da2d0f6b75c",
+      "layer": "Graph_System",
+      "size_kb": 13.5,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "__future__",
+          "argparse",
+          "datetime",
+          "importlib.util",
+          "json",
+          "pathlib",
+          "re",
+          "subprocess",
+          "sys",
+          "urllib.request"
+        ],
+        "internal": [],
+        "external": []
+      }
+    },
+    "scripts/drive_sync.py": {
+      "hash": "d7be55c0afd2",
+      "layer": "uncategorized",
+      "size_kb": 1.2,
+      "mode": "full",
+      "imports": {
+        "stdlib": [
+          "argparse",
+          "json",
+          "pathlib"
+        ],
+        "internal": [],
+        "external": []
+      }
+    }
+  }
+}

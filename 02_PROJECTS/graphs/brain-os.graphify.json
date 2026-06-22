@@ -1,0 +1,16 @@
+{
+  "project": "brain-os",
+  "root": "C:/BRAIN_OS",
+  "graph_output": "C:/BRAIN_OS/02_PROJECTS/graphs/brain-os.json",
+  "header_only_threshold_kb": 50,
+  "skip_patterns": ["venv", "archive", "__pycache__", "node_modules", ".git", ".obsidian", "audio_staging"],
+  "external_packages": ["anthropic", "requests", "dotenv", "google-api-python-client"],
+  "layers": {
+    "Session_Management": ["09_TOOLS/session_start.py", "09_TOOLS/session_close.py", "09_TOOLS/compile_session.py", "09_TOOLS/task_session.py"],
+    "Graph_System":        ["09_TOOLS/graph_maintainer.py", "09_TOOLS/graph_maintainer_patch.py", "09_TOOLS/graphify.py", "09_TOOLS/watchdog.py"],
+    "Audio_Pipeline":      ["09_TOOLS/vault_audio_generator.py", "09_TOOLS/anchor_generator.py", "09_TOOLS/anchor_batch.py", "09_TOOLS/audio_stitcher.py", "09_TOOLS/chapter_combiner.py", "09_TOOLS/borrowed_audio_worklist.py"],
+    "Drive_Sync":          ["09_TOOLS/refresh_drive_token.py", "09_TOOLS/drive_browser.py", "09_TOOLS/drive_download.py", "09_TOOLS/drive_cleanup_phases.py", "09_TOOLS/drive_setup_folders.py", "09_TOOLS/drive_learning_path_organizer.py", "09_TOOLS/get_drive_ids.py", "09_TOOLS/download_brainos_chapters.py"],
+    "Vault_Maintenance":   ["09_TOOLS/obsidian_sync.py", "09_TOOLS/brain_notes_sync.py", "09_TOOLS/audit_files.py", "09_TOOLS/learning_path_builder.py", "09_TOOLS/generate_profile.py"],
+    "Cost_Control":        ["09_TOOLS/cost_guard.py"]
+  }
+}
