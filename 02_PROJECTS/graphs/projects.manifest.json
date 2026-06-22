@@ -29,6 +29,11 @@
       "venv": "C:/Dev/CristianConstruction/venv"
     },
     {
+      "name": "CA_Book",
+      "root": "C:/Knowledge/CA/CA_Book",
+      "venv": "C:/Knowledge/CA/venv"
+    },
+    {
       "name": "Resolve MCP Server",
       "root": "C:/Users/titit/Projects/resolve-mcp-server",
       "venv": "C:/Users/titit/Projects/resolve-mcp-server/venv"

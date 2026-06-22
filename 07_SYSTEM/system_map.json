@@ -1,8 +1,8 @@
 {
   "project": "BRAIN_OS-system-map",
   "root": "(cross-project)",
-  "updated_at": "2026-06-22T18:33:11.608152+00:00",
-  "node_count": 6,
+  "updated_at": "2026-06-22T19:00:13.577920+00:00",
+  "node_count": 7,
   "nodes": {
     "BRAIN_OS": {
       "root": "C:/BRAIN_OS",
@@ -44,6 +44,16 @@
         "vercel"
       ],
       "uses_drive": false
+    },
+    "CA_Book": {
+      "root": "C:/Knowledge/CA/CA_Book",
+      "exists": true,
+      "venv": "C:/Knowledge/CA/venv",
+      "shared_packages": [
+        "brain_audio"
+      ],
+      "deploys": [],
+      "uses_drive": true
     },
     "Resolve MCP Server": {
       "root": "C:/Users/titit/Projects/resolve-mcp-server",
