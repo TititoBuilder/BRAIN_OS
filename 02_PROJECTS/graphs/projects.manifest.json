@@ -1,0 +1,42 @@
+{
+  "project": "BRAIN_OS-system-map",
+  "output": "C:/BRAIN_OS/07_SYSTEM/system_map.json",
+  "shared_packages": ["brain_audio"],
+  "detect": {
+    "railway": ["railway.json", "railway.toml", "Procfile"],
+    "vercel": ["vercel.json", ".vercel"],
+    "drive": ["drive_index.json", "token_sync.py", "gdrive_token.json", "gdrive_credentials.json"]
+  },
+  "projects": [
+    {
+      "name": "BRAIN_OS",
+      "root": "C:/BRAIN_OS",
+      "venv": null
+    },
+    {
+      "name": "BDF",
+      "root": "C:/Dev/Projects/soccer-content-generator",
+      "venv": "C:/Dev/Projects/soccer-content-generator/venv"
+    },
+    {
+      "name": "Read-Along App",
+      "root": "C:/Users/titit/Projects/read-along-app",
+      "venv": "C:/Users/titit/Projects/read-along-app/backend/venv"
+    },
+    {
+      "name": "CristianConstruction",
+      "root": "C:/Dev/CristianConstruction",
+      "venv": "C:/Dev/CristianConstruction/venv"
+    },
+    {
+      "name": "Resolve MCP Server",
+      "root": "C:/Users/titit/Projects/resolve-mcp-server",
+      "venv": "C:/Users/titit/Projects/resolve-mcp-server/venv"
+    },
+    {
+      "name": "brain-audio",
+      "root": "C:/Dev/shared/brain-audio",
+      "venv": null
+    }
+  ]
+}

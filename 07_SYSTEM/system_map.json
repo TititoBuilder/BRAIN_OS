@@ -1,0 +1,65 @@
+{
+  "project": "BRAIN_OS-system-map",
+  "root": "(cross-project)",
+  "updated_at": "2026-06-22T18:33:11.608152+00:00",
+  "node_count": 6,
+  "nodes": {
+    "BRAIN_OS": {
+      "root": "C:/BRAIN_OS",
+      "exists": true,
+      "venv": null,
+      "shared_packages": [],
+      "deploys": [],
+      "uses_drive": true
+    },
+    "BDF": {
+      "root": "C:/Dev/Projects/soccer-content-generator",
+      "exists": true,
+      "venv": "C:/Dev/Projects/soccer-content-generator/venv",
+      "shared_packages": [
+        "brain_audio"
+      ],
+      "deploys": [],
+      "uses_drive": true
+    },
+    "Read-Along App": {
+      "root": "C:/Users/titit/Projects/read-along-app",
+      "exists": true,
+      "venv": "C:/Users/titit/Projects/read-along-app/backend/venv",
+      "shared_packages": [
+        "brain_audio"
+      ],
+      "deploys": [
+        "railway",
+        "vercel"
+      ],
+      "uses_drive": false
+    },
+    "CristianConstruction": {
+      "root": "C:/Dev/CristianConstruction",
+      "exists": true,
+      "venv": "C:/Dev/CristianConstruction/venv",
+      "shared_packages": [],
+      "deploys": [
+        "vercel"
+      ],
+      "uses_drive": false
+    },
+    "Resolve MCP Server": {
+      "root": "C:/Users/titit/Projects/resolve-mcp-server",
+      "exists": true,
+      "venv": "C:/Users/titit/Projects/resolve-mcp-server/venv",
+      "shared_packages": [],
+      "deploys": [],
+      "uses_drive": false
+    },
+    "brain-audio": {
+      "root": "C:/Dev/shared/brain-audio",
+      "exists": true,
+      "venv": null,
+      "shared_packages": [],
+      "deploys": [],
+      "uses_drive": false
+    }
+  }
+}
