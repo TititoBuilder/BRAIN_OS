@@ -1,6 +1,6 @@
 # soccer-content-generator — dependency context
-_updated: 2026-06-18T02:16:54.651478+00:00_
-_nodes: 98_
+_updated: 2026-06-19T21:33:21.010207+00:00_
+_nodes: 99_
 
 ## Clip_Pipeline
 - **clip_config.py** (4.5 KB)
@@ -110,7 +110,7 @@ _nodes: 98_
 - **src/publishers/tiktok_publisher.py** (7.6 KB) — internal: `src.formatters.platform_formatter`, `src.publishers.base_publisher`; external: `requests`
 - **src/publishers/youtube_publisher.py** (8.5 KB) — internal: `src.formatters.platform_formatter`, `src.publishers.base_publisher`
 - **src/twitter_publisher.py** (13.8 KB) — external: `tweepy`
-- **tts_local.py** (16.5 KB) — external: `dotenv`
+- **tts_local.py** (16.7 KB) — external: `dotenv`
 
 ## Scripts
 - **scripts/cleanup_lancedb_duplicates.py** (1.0 KB) — external: `dotenv`, `lancedb`
@@ -223,3 +223,4 @@ _nodes: 98_
 - **test_football_data_org.py** (4.3 KB) — external: `dotenv`, `requests`
 - **test_football_data_org2.py** (3.2 KB) — external: `dotenv`, `requests`
 - **test_ucl.py** (0.5 KB) — external: `dotenv`, `requests`
+- **token_sync.py** (8.7 KB)

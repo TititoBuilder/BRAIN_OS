@@ -306,3 +306,21 @@ tags: [system, tools, infra, live]
 - **enforces:** [[Naming_Contract]]
 - **run:** `python rename_linked.py --vault C:\BRAIN_OS --old <stem> --new <stem> --apply`
 - 2026-06-09 — Session: BRAIN_OS + Read-Along App — major consolidation + system-truth
+
+## graphifyy (CLI: graphify) — Codebase Knowledge Graph
+**Added:** 2026-06-19
+**What it is:** Third-party OSS tool (safishamsi/graphify, MIT, PyPI package graphifyy). Claude Code skill — /graphify . builds an interactive knowledge graph of a project: AST-level code structure (local, free, tree-sitter) + semantic layer from docs/README/CLAUDE.md (via Claude Code subagent, rides existing subscription,  marginal cost — confirmed via GRAPH_REPORT.md token cost: 0 input/0 output on first run).
+**Output:** graphify-out/graph.html (interactive visual), GRAPH_REPORT.md (audit doc), graph.json (raw data).
+
+**NAME COLLISION — read before typing graphify:**
+- graphify.py (no space, always with .py, always explicit path) = homemade script in 09_TOOLS, called by graph_maintainer.py. Builds the BRAIN_OS audio/dependency graph. Unrelated tool, unrelated output.
+- graphifyy / bare graphify CLI command = this tool. Installed via uv tool install graphifyy (PyPI name is double-y; CLI command is single-y graphify).
+- When in doubt, always write graphify.py for the homemade one in any doc or commit message — never leave it bare.
+
+**Install:** uv tool install graphifyy (isolated via uv, does not touch any venv). PATH note: uv tool update-shell silently failed to write either PowerShell profile on this machine — fixed manually via Add-Content to both Microsoft.PowerShell_profile.ps1 and Microsoft.VSCode_profile.ps1 (line ~146 / ~102). If reinstalling/upgrading, verify PATH actually updated — don't trust uv's success message alone.
+
+**Status:** PILOT COMPLETE 2026-06-19 — tested on read-along-app only. Verdict: KEEP. Verified accurate against known codebase (backend.py degree-32 hub correct, TextDisplay.tsx degree-2 leaf correct, dual compilerOptions nodes correctly resolved to tsconfig.app.json vs tsconfig.node.json, not a ghost-duplicate bug). 95% EXTRACTED / 5% INFERRED / 0% AMBIGUOUS, avg inferred confidence 0.91.
+
+**Cost warning:** Report itself flags large corpora (167 files / ~839k words on read-along-app alone) as expensive for semantic extraction — watch this on soccer-content-generator before running, may want a subfolder-scoped first pass.
+
+**NOT yet done:** not synced to soccer-content-generator, CristianConstruction, or BRAIN_OS itself. Relationship to "the Wall" (parked feature): different lens — Wall = learning-progress/temporal view; this = code-structure/static view. Complementary, not overlapping. Does NOT replace graphify.py (different graphs, different purposes — homemade tracks audio/dependency health, this tracks code architecture).

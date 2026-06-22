@@ -47,7 +47,7 @@ PROJECTS = {
         "name": "BRAIN OS",
         "root": BRAIN_OS_ROOT,
         "claude_md": BRAIN_OS_ROOT / "CLAUDE.md",
-        "context_md": BRAIN_OS_ROOT / "SYSTEM_MASTER.md",
+        "context_md": BRAIN_OS_ROOT / "02_PROJECTS" / "graphs" / "brain-os.context.md",
         "venv": Path(r"C:\Dev\Projects\soccer-content-generator\venv\Scripts\python.exe"),
         "emoji": "🧠",
     },
