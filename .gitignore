@@ -63,3 +63,5 @@ Untitled*.base
 *.base
 2026-*.md
 2027-*.md
+
+.claude/settings.local.json
