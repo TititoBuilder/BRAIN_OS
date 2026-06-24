@@ -14,6 +14,7 @@ import json
 import urllib.request
 import urllib.error
 from pathlib import Path
+from project_paths import project_script, project_venv_python
 from dotenv import load_dotenv
 
 # ── Config ─────────────────────────────────────────────────────────────────────
@@ -89,8 +90,8 @@ def generate_anchor_script(source_text: str, api_key: str) -> str:
 def synthesize_anchor(script: str, output_path: Path) -> bool:
     """Run TTS on the anchor script using tts_local.py with am_michael voice."""
     
-    TTS_SCRIPT = Path(r"C:\Dev\Projects\soccer-content-generator\tts_local.py")
-    TTS_VENV   = Path(r"C:\Knowledge\CA\venv\Scripts\python.exe")
+    TTS_SCRIPT = project_script("BDF", "tts_local.py")
+    TTS_VENV   = project_venv_python("CA_Book")
     
     # Write script to temp file
     temp_txt = output_path.with_suffix(".txt")

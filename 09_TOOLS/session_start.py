@@ -20,6 +20,7 @@ import urllib.request
 import urllib.error
 import subprocess
 from pathlib import Path
+from project_paths import project_script, project_venv_python
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -160,8 +161,8 @@ def load_context(project: dict) -> str:
 # ── Health check ───────────────────────────────────────────────────────────────
 def run_health_check() -> dict:
     """Run graph_maintainer.py and return key metrics."""
-    graph_script = Path(r"C:\Dev\Projects\soccer-content-generator\scripts\graph_maintainer.py")
-    venv_py      = Path(r"C:\Dev\Projects\soccer-content-generator\venv\Scripts\python.exe")
+    graph_script = project_script("BDF", "scripts", "graph_maintainer.py")
+    venv_py      = project_venv_python("BDF")
 
     if not graph_script.exists():
         return {"error": "graph_maintainer.py not found"}
