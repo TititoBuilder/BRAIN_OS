@@ -65,3 +65,7 @@ Untitled*.base
 2027-*.md
 
 .claude/settings.local.json
+
+# Generated graph artifacts (regenerable via 09_TOOLS/brain_graph.py — never commit)
+02_PROJECTS/graphs/brain_os_*.html
+02_PROJECTS/graphs/brain_os_*.json
