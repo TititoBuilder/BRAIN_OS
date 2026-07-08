@@ -5,6 +5,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 <!-- AUTO-GENERATED:START -->
 
 ## 00_DASHBOARD
+- [[DASHBOARD_BUILD_SPEC]]
 - [[Next_Session_Prompt]]
 - [[Queue]]
 - [[Queue_Archive]]
@@ -233,6 +234,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[KNOWLEDGE_INGESTION_PROTOCOL]]
 - [[KNOWLEDGE_INGESTION_PROTOCOL_V2]]
 - [[KNOWLEDGE_OS_MANUAL]]
+- [[Learning_Profile]]
 - [[Master_Control]]
 - [[MCP_Consolidation_Plan]]
 - [[MCP_Registry]]
@@ -247,7 +249,9 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[Sessions_pipeline_TRACED]]
 - [[Sessions_Tab_Design_Notes]]
 - [[State_System]]
+- [[system_map.context]]
 - [[Taxonomy_Decision]]
+- [[PROJECT_CARD_TEMPLATE]]
 - [[Tools_Registry]]
 - [[Trigger_Architecture]]
 - [[VS_Code]]
@@ -293,6 +297,8 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[2026-06-17_1908_bdf_ca_brain_os_resolve]]
 - [[2026-06-17_2009_bdf_ca_brain_os_resolve]]
 - [[2026-06-17_2222_bdf_ca_brain_os_resolve]]
+- [[2026-07-08_0944_bdf_ca_brain_os]]
+- [[session_20260617_2222]]
 - [[ingestion_flags]]
 
 ## 08_TEMPLATES
@@ -365,6 +371,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 
 ## _root
 - [[CLAUDE]]
+- [[PROJECT_CARD]]
 - [[README]]
 - [[SYSTEM_MASTER]]
 
