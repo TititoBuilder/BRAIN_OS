@@ -58,6 +58,20 @@
 
 ---
 
+## Session 2026-06-24 (BRAIN_OS deep-dive + learning pipeline build)
+- [x] token_sync.py ghost claim RESOLVED 2026-06-24 — file is real, lives in BDF root, works fine; prior audit was scoped to 09_TOOLS only
+- [x] BDF sync_brain.py / distill_session.py "dead files" claim RESOLVED 2026-06-24 — both are live tools (system health monitor / book pipeline), not superseded, leave as-is
+- [x] Cross-project hardcoded paths RESOLVED 2026-06-24 — session_start.py + anchor_generator.py now resolve via new project_paths.py helper + projects.manifest.json
+- [x] Stale CLAUDE.md/PROJECT_CARD.md session-close instructions RESOLVED 2026-06-24 — both now point at canonical C:\BRAIN_OS\09_TOOLS\session_close.py
+- [ ] compile_session.py has zero inbound callers (orphaned from session_close) — decide: wire in or confirm intentionally manual
+- [ ] graph_maintainer_patch.py is load-bearing (watchdog.py imports from it) but named like a temp patch — needs careful rename, has blast radius
+- [ ] BRAIN_OS root folder-prefix collisions (00,02,03,04,05,06,08,10 each map to 2+ folders) — structural reorg decision needed
+- [ ] Drive OAuth token expired again mid-session (2026-06-24), blocked session_compiler.py upload — same root cause as existing TOKEN FRAGILITY item, now also blocks the learning-pipeline, raise priority
+- [ ] session_compiler.py crashes with FileExistsError on re-run of same session (no cleanup before rename in synthesize()) — add target-file check/unlink before rename, low effort
+- [ ] Evening "did you close today?" reminder — new watchdog.py mode + Task Scheduler entry, Telegram nudge if no session archived that day
+---
+
+
 **→** [[SYSTEM_MASTER]] · [[Master_Control]]
 
 
