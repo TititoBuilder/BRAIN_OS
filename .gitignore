@@ -50,6 +50,7 @@ audio_staging/**/*.mp3
 audio_staging/**/*.wav
 audio_staging/**/*.json
 audio_staging/_trash/
+audio_staging/_paths/
 
 # Python cache (never commit)
 __pycache__/
