@@ -141,3 +141,10 @@ Likely belongs in 07_SYSTEM\ alongside Cristian_Principles.md. Flagged, not move
 ## [SMALL] cc-landing deploy target unrecorded
 Last deploy 2026-04-10 (209d251). vercel.json deliberately removed (078294a).
 Deploy target unknown — verify before next ship.
+
+## [RESOLVED 2026-07-08] audio_staging gitignore
+Not a broken gitignore. Patterns covered mp3/wav/json but not .txt, so one
+staged narration file (session_20260617_2222_TTS.txt) left the directory
+untracked. Confirmed artifact, not record — timestamp key 2222 matches
+08_SESSIONS/2026-06-17_2222_bdf_ca_brain_os_resolve.md. Fixed by adding
+audio_staging/*.txt and audio_staging/**/*.txt.
