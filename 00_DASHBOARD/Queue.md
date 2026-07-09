@@ -98,3 +98,46 @@
 ## TELEGRAM CLUSTER (parked - review as ONE dedicated pass, not piecemeal)
 Telegram touches env-loading across multiple scripts + the local/Railway token split. Fix all together so one script isn't patched while related items rot. Known correct pattern (verified 2026-06-15): call load_dotenv() before reading TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID (session_close.py lacks it -> silent skip in plain PowerShell; vault_audio_generator.py + backend.py do it right).
 - [x] Telegram env vars not loaded in plain PowerShell -> close-script notification silently skips; load .env RESOLVED 2026-06-17
+
+## [DONE 2026-07-08] 4-Bucket Routing Layer — Phase 1 complete
+Commit a931fcf. 00_INDEX/{Content,Business,Operations,Personal}.md written.
+Verified inventory: 10 repos across 4 roots (C:\BRAIN_OS, C:\Knowledge,
+C:\Dev, C:\Users\titit\Projects). Prior assumption of a single authoritative
+project directory was FALSE.
+
+Remaining phases (from 2026-06-20 concept):
+- P2: Create 4 Claude.ai Projects, each with charter instructions.
+- P3: Add routing line to session SOP (bucket -> Project -> index -> project CLAUDE.md).
+- P4: Maintenance rule — new repo added to exactly one bucket index in same commit.
+
+## [BUG] audio_staging/ is not gitignored
+Operating contract states audio_staging is gitignored. `git status` shows it
+untracked at C:\BRAIN_OS. Either the .gitignore entry is missing or malformed.
+A gitignore believed to be protecting you is not. Investigate before next commit.
+
+## [TASK] Rename CA_Book -> cc-audiobook
+CA prefix collides with CC (CristianConstruction). Card flags this itself.
+ATOMIC — one commit touching all four:
+  1. Directory: C:\Knowledge\CA\CA_Book -> cc-audiobook
+  2. 00_NAV\CA_Nav.md -> CCAudiobook_Nav.md
+  3. graphify config paths
+  4. 00_INDEX\Content.md entry
+DO NOT relocate out of C:\Knowledge — venv at C:\Knowledge\CA\venv is the
+canonical AI/TTS venv (PyTorch nightly cu128, RTX 5070 Ti sm_120).
+
+## [TASK] Four missing nav files
+00_INDEX references these as TODO, not wikilinks (dead links would lie):
+BRAINOS_Nav.md, Knowledge_Nav.md, BrainAudio_Nav.md, BookCompiler_Nav.md
+Also: CCLanding_Nav.md (cc-landing has none).
+
+## [FRAGILITY] Consolidate Google Drive credentials
+gdrive_credentials.json / gdrive_token.json shared by 4-6 scripts, with copies
+in C:\Knowledge\CA\CA_Book\. Same finding as the graphify session. Blast radius
+is real. Flagged in 00_INDEX\Operations.md.
+
+## [SMALL] 00_NAV\SYSTEM_Rules.md (4594b) is not a nav file
+Likely belongs in 07_SYSTEM\ alongside Cristian_Principles.md. Flagged, not moved.
+
+## [SMALL] cc-landing deploy target unrecorded
+Last deploy 2026-04-10 (209d251). vercel.json deliberately removed (078294a).
+Deploy target unknown — verify before next ship.
