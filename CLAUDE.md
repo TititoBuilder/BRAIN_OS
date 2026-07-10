@@ -128,15 +128,14 @@ then `query-docs`. Never rely on training data for `anthropic`, `python-dotenv`,
 `rich`, or any other dependency.
 
 **Obsidian**: all decisions and session outputs must be documented in `C:\BRAIN_OS`
-before the session closes (via `session_close.py` in soccer-content-generator).
+before the session closes (via `C:\BRAIN_OS\09_TOOLS\session_close.py`).
 
 ## Session Close Checklist
 
 - [ ] Merge any open worktrees to main
 - [ ] Run session_close.py from this terminal:
       Win+X -> Terminal ->
-      cd C:\Dev\Projects\soccer-content-generator
-      python session_close.py
+      python C:\BRAIN_OS\09_TOOLS\session_close.py
 - [ ] Confirm Telegram confirmation received
 - [ ] Confirm BRAIN_OS commit appears in git log
 
@@ -146,7 +145,7 @@ before the session closes (via `session_close.py` in soccer-content-generator).
 |---|---|
 | `03_APIS/claude_monitor.py` in a loop/cron without reviewing output | Makes live Admin API calls that count toward rate limits |
 | Any script writing to `C:\BRAIN_OS\` outside a git worktree | BRAIN_OS is an Obsidian vault — always commit so Obsidian sync stays clean |
-| `session_close.py` standalone | Must be run from `C:\Dev\Projects\soccer-content-generator` root |
+| `C:\BRAIN_OS\09_TOOLS\session_close.py` | Full path — runs from any directory; no `cd` required |
 
 ## Hardware & Runtime Environment
 
