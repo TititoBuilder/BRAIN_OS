@@ -137,6 +137,7 @@ def call_claude(session_content: str) -> dict:
         method="POST",
     )
 
+    # Exit code contract: 0 = success, 1 = real error, 2 = network unavailable.
     try:
         with urllib.request.urlopen(req, timeout=120) as resp:
             data = json.loads(resp.read())
@@ -149,6 +150,9 @@ def call_claude(session_content: str) -> dict:
             return json.loads(raw.strip())
     except urllib.error.HTTPError as e:
         sys.exit(f"ERROR: Claude API {e.code}: {e.read().decode()[:300]}")
+    except urllib.error.URLError as e:
+        print(f"ERROR: network unavailable — {e}", file=sys.stderr)
+        sys.exit(2)
     except json.JSONDecodeError as e:
         sys.exit(f"ERROR: Claude returned invalid JSON: {e}")
 

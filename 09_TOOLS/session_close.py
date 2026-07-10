@@ -263,6 +263,23 @@ def main():
     print(archive_md)
     print("─" * 44)
 
+    # Option C knowledge ingestion — non-fatal; warnings only.
+    print("\nRunning Option C knowledge ingestion...")
+    try:
+        result = subprocess.run(
+            [sys.executable, str(BRAIN_OS_ROOT / "09_TOOLS" / "compile_session.py")],
+            check=False, timeout=180,
+        )
+        code = result.returncode
+        if code == 0:
+            print("[Option C] Ingestion complete.")
+        elif code == 2:
+            print("[Option C] Skipped — network unavailable.")
+        else:
+            print(f"[Option C] Warning: exited {code}. Session close continues.")
+    except subprocess.TimeoutExpired:
+        print("[Option C] Warning: ingestion timed out. Session close continues.")
+
     # Telegram
     if not args.silent and TELEGRAM_TOKEN and TELEGRAM_CHAT:
         msg = build_telegram_message(projects, accomplished, pending, now)
