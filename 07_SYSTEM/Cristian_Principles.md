@@ -399,3 +399,22 @@ placeholder markers. This is the opposite of write-a-draft-then-chase-correction
 **What this prevents:**
 Files that claim to be done but are not. Placeholder markers leaking into the
 vault. The confusion of correcting after writing instead of confirming before.
+
+
+## Tools Are Programs, Not Libraries
+
+Every file in `09_TOOLS` is a standalone program invoked via `subprocess`,
+never `import`. BRAIN_OS is 100% subprocess-wired.
+
+Three consequences:
+
+- **Isolation** — separate memory and namespace. No leaked constants, no collisions.
+- **Narrow interface** — args in, stdout + exit code out. Nothing else crosses.
+- **Independent failure** — `check=False` means a crashed tool warns, never aborts the caller.
+
+**Corollary:** a tool called by another tool must never `sys.exit()` on failure
+without a meaningful exit code. The number is the only diagnosis the caller gets.
+
+**Exit code contract:** `0` success, `1` real error, `2` unavailable/skipped.
+
+**Criterion for belonging in `09_TOOLS`:** does it operate on the vault?
