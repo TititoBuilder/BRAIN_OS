@@ -6,7 +6,7 @@ C:\Dev\Projects\soccer-content-generator
 C:\Dev\shared\book-compiler
 C:\Dev\shared\brain-audio
 C:\Knowledge
-C:\Users\titit\OneDrive\Desktop\gig_tracker_v3\gig_tracker
+C:\Dev\Projects\gig_tracker\gig_tracker
 C:\Users\titit\Projects\obs-mcp-server
 C:\Users\titit\Projects\read-along-app
 C:\Users\titit\Projects\resolve-mcp-server

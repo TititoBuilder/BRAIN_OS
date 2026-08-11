@@ -70,6 +70,7 @@ Untitled*.base
 # Generated graph artifacts (regenerable via 09_TOOLS/brain_graph.py — never commit)
 02_PROJECTS/graphs/brain_os_*.html
 02_PROJECTS/graphs/brain_os_*.json
+02_PROJECTS/gig_tracker/
 
 # Session narration staged for Kokoro TTS — derived from 08_SESSIONS/*.md (never commit)
 audio_staging/*.txt
