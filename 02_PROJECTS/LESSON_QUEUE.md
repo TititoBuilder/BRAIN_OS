@@ -8,6 +8,7 @@ Updated: 2026-08-10
 
     Lesson 01 — Repo Reconciliation          COMPLETE
     Lesson 02 — .env + pathlib pattern       IN PROGRESS
+    
 
 ---
 
@@ -36,7 +37,7 @@ Opens when:
 ---
 
 ## Direction 2 — Fix Hardcoded Path Problem Across All Repos
-Status: IN PROGRESS — 50% done
+Status: COMPLETE — 2026-08-10
 
 Pattern learned: .env + pathlib
   - BASE_DIR = Path(os.getenv("BASE_DIR", r"fallback\path"))
@@ -47,6 +48,7 @@ Pattern learned: .env + pathlib
 
 Done:
   [x] custom-agent — ca_audio.py refactored, .env.example added
+  [x] soccer-content-generator — PathConfig class added to config.py, 4 paths wired, .env.example added
 
 Remaining — run audit on each, apply same pattern:
   [ ] soccer-content-generator
