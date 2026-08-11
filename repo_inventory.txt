@@ -1,0 +1,12 @@
+C:\BRAIN_OS
+C:\Dev\cc-landing
+C:\Dev\CristianConstruction
+C:\Dev\Projects\custom-agent
+C:\Dev\Projects\soccer-content-generator
+C:\Dev\shared\book-compiler
+C:\Dev\shared\brain-audio
+C:\Knowledge
+C:\Users\titit\OneDrive\Desktop\gig_tracker_v3\gig_tracker
+C:\Users\titit\Projects\obs-mcp-server
+C:\Users\titit\Projects\read-along-app
+C:\Users\titit\Projects\resolve-mcp-server

@@ -1,4 +1,4 @@
-﻿# WORKFLOW: [Name]
+# WORKFLOW: [Name]
 
 ## Project
 BDF / Custom Agent / Read-Along / Resolve MCP
