@@ -1,6 +1,6 @@
 # Lesson Queue — Active Directions
 Location: C:\BRAIN_OS\02_PROJECTS\LESSON_QUEUE.md
-Updated: 2026-08-10
+Updated: 2026-08-12
 
 ---
 
@@ -10,12 +10,13 @@ Updated: 2026-08-10
     Lesson 02 — .env + pathlib pattern       COMPLETE ✓ 2026-08-10
     Direction 3 — gig_tracker split          COMPLETE ✓ 2026-08-10
     Direction 4 — Downloads folder triage    COMPLETE ✓ 2026-08-10
-    Direction 1 — resolve-mcp-server arch.   QUEUED — next session opener
+    Direction 1 — resolve-mcp-server archaeology    COMPLETE ✓ 2026-08-12
+    Direction 5 — resolve-mcp-server paths              QUEUED
 
 ---
 
 ## Direction 1 — Go Deeper into resolve-mcp-server
-Status: QUEUED — opens next session
+Status: COMPLETE ✓ 2026-08-12
 
 What it is:
   Phase 2 archaeology on the most complex repo in the stack.
@@ -86,6 +87,27 @@ What was done:
 
 ---
 
+## Direction 5 — Fix Hardcoded Paths in resolve-mcp-server
+Status: QUEUED
+
+What it is:
+  46 hardcoded paths across 9 files. Two roots: C:\BDF\ and C:\Users\titit\
+  resolve_bridge.py runs inside Resolve's Python console — cannot import
+  from config.py. Needs a different path strategy than Directions 2-3.
+
+What you will do:
+  - Apply PathConfig to server_api.py, mcp_ingest.py, memory.py,
+    cleanup_config.py, cleanup_plan.py, promote_server.py, seed_knowledge.py
+  - Solve resolve_bridge.py separately — .env read directly at runtime
+    without imports, using pathlib.Path and os.environ
+
+What you will learn:
+  - How to handle path configuration when you can't use standard imports
+  - os.environ vs os.getenv vs load_dotenv — three ways to read env vars
+  - Why runtime context determines your architecture choices
+
+---
+
 ## Backlog — Future Directions
 
   B1 — Write .env.example for every repo that has a .env
@@ -104,3 +126,6 @@ What was done:
   2026-08-10  Lesson 02 — .env + pathlib pattern, applied to custom-agent
   2026-08-10  Directions 2-4 — paths refactored, gig_tracker reconciled,
               82 Downloads files triaged and filed
+  2026-08-10  Direction 1 — server.py read complete, full architecture mapped, Option B (live test) queued for next session
+  2026-08-12  Direction 1 — resolve_bridge.py fully mapped, 23 CONCEPT flags,
+              STUDY_SYSTEM.md created, FLAGS.txt sorted and deduplicated (41 entries)
