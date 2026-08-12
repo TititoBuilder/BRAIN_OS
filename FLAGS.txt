@@ -1,11 +1,20 @@
-2026-08-10 | BRAIN_OS | RISK | ahead 7, never pushed | thought it was synced | it has 7 local commits GitHub doesn't have | why did I not push these?
+2026-08-10 | BRAIN_OS | RISK | ahead 7, never pushed | thought it was synced | it has 7 local commits GitHub doesn't have | why did I not push these? | FIXED
 2026-08-10 | soccer-content-generator | RISK | ahead 2, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
 2026-08-10 | book-compiler | RISK | ahead 2, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
 2026-08-10 | brain-audio | RISK | ahead 2, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
 2026-08-10 | obs-mcp-server | RISK | ahead 1, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
-2026-08-10 | BRAIN_OS | DESIGN | gig_tracker exists here AND on OneDrive | thought one repo = one location | two copies, unclear which is authoritative | reconcile
+2026-08-10 | BRAIN_OS | DESIGN | gig_tracker exists here AND on OneDrive | thought one repo = one location | two copies, unclear which is authoritative | reconcile which is the real repo
 2026-08-10 | resolve-mcp-server | DESIGN | backup file with timestamp in filename | old habit | git history makes this unnecessary | delete and rely on git log
+2026-08-10 | custom-agent | DESIGN | venv path hardcoded as absolute C:\Knowledge\CA\venv\ | works on this machine | breaks on any other machine or if folder moves | study: .env files for paths
+2026-08-10 | custom-agent | DESIGN | hardcoded absolute paths in ca_audio.py | works locally | breaks on any other machine or if Knowledge moves | study: pathlib + .env for configurable base paths | fixed 2026-08-10 — .env + pathlib pattern applied | FIXED
 2026-08-10 | POWERSHELL | CMD | typed filepath as command | thought PS would open it | PS tried to execute it | use: code <path> to open files in VS Code
 2026-08-10 | POWERSHELL | CMD | wrong repo paths | used Projects\ for shared\ repos | cd failed, ran against wrong dir | always verify pwd before git commands
-2026-08-10 | POWERSHELL | CMD | typed flag entries into terminal | muscle memory | terminal runs commands, VS Code edits files | context switch discipline2026-08-10 | BRAIN_OS | CONCEPT | git log reads newest-first | read bottom to top for chronological order | HEAD is always the most recent commit2026-08-10 | BRAIN_OS | CONCEPT | LF vs CRLF line endings | thought all text files were the same | Windows uses CRLF, Unix uses LF, git converts between them | study core.autocrlf settings2026-08-10 | custom-agent | DESIGN | venv path hardcoded as absolute C:\Knowledge\CA\venv\ | works on this machine | breaks on any other machine or if folder moves | study: .env files for paths, or relative venv convention
-2026-08-10 | custom-agent | DESIGN | hardcoded absolute paths in ca_audio.py | works locally | breaks on any other machine or if Knowledge moves | study: pathlib + .env for configurable base paths
+2026-08-10 | POWERSHELL | CMD | typed flag entries into terminal | muscle memory | terminal runs commands, VS Code edits files | context switch discipline
+2026-08-10 | BRAIN_OS | CONCEPT | git log reads newest-first | read bottom to top for chronological order | HEAD is always the most recent commit | study: git log options
+2026-08-10 | BRAIN_OS | CONCEPT | LF vs CRLF line endings | thought all text files were the same | Windows uses CRLF, Unix uses LF, git converts between them | study: core.autocrlf settings
+2026-08-10 | resolve-mcp-server | DESIGN | 20+ backup files in archive/ used as manual version control | didn't trust git to preserve history | git log --follow -p -- resolve_bridge.py does this automatically | study: git tags for releases, git log --follow for file history
+2026-08-10 | resolve-mcp-server | DESIGN | 45 backup files used as manual version control | didn't trust git | git history preserved all versions | study: git log --follow, git show <sha>:path | FIXED
+2026-08-10 | BRAIN_OS | CMD | code --diff to compare two files | did not know this command existed | opens native VS Code diff view | use whenever two files need comparison before merging
+2026-08-10 | DOWNLOADS | DESIGN | 82 .md files accumulated in Downloads | no filing habit | files belong in vault or project folders | file immediately on download, not later
+2026-08-10 | BRAIN_OS | CONCEPT | reading a diff — red minus is left file only, green plus is right file only | could not read the diff | now can identify what is unique to each file
+
