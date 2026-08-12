@@ -3,18 +3,39 @@
 2026-08-10 | book-compiler | RISK | ahead 2, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
 2026-08-10 | brain-audio | RISK | ahead 2, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
 2026-08-10 | obs-mcp-server | RISK | ahead 1, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
-2026-08-10 | BRAIN_OS | DESIGN | gig_tracker exists here AND on OneDrive | thought one repo = one location | two copies, unclear which is authoritative | reconcile which is the real repo
-2026-08-10 | resolve-mcp-server | DESIGN | backup file with timestamp in filename | old habit | git history makes this unnecessary | delete and rely on git log
+2026-08-10 | resolve-mcp-server | RISK | ran python outside venv | mcp module not found | always check for (venv) prefix in prompt before running project scripts
+2026-08-10 | BRAIN_OS | DESIGN | gig_tracker exists here AND on OneDrive | thought one repo = one location | two copies, unclear which is authoritative | reconcile which is the real repo | FIXED 2026-08-12
 2026-08-10 | custom-agent | DESIGN | venv path hardcoded as absolute C:\Knowledge\CA\venv\ | works on this machine | breaks on any other machine or if folder moves | study: .env files for paths
 2026-08-10 | custom-agent | DESIGN | hardcoded absolute paths in ca_audio.py | works locally | breaks on any other machine or if Knowledge moves | study: pathlib + .env for configurable base paths | fixed 2026-08-10 — .env + pathlib pattern applied | FIXED
+2026-08-10 | resolve-mcp-server | DESIGN | 45 backup files used as manual version control | didn't trust git | git history preserved all versions | study: git log --follow, git show <sha>:path | FIXED
+2026-08-10 | DOWNLOADS | DESIGN | 82 .md files accumulated in Downloads | no filing habit | files belong in vault or project folders | file immediately on download, not later | FIXED 2026-08-12
+2026-08-12 | resolve-mcp-server | DESIGN | 46 hardcoded paths across 9 files | two roots: C:\BDF\ and C:\Users\titit\ | same problem as soccer-content-generator but resolve_bridge.py can't use standard imports | needs separate path strategy for bridge layer
 2026-08-10 | POWERSHELL | CMD | typed filepath as command | thought PS would open it | PS tried to execute it | use: code <path> to open files in VS Code
 2026-08-10 | POWERSHELL | CMD | wrong repo paths | used Projects\ for shared\ repos | cd failed, ran against wrong dir | always verify pwd before git commands
 2026-08-10 | POWERSHELL | CMD | typed flag entries into terminal | muscle memory | terminal runs commands, VS Code edits files | context switch discipline
+2026-08-10 | BRAIN_OS | CMD | code --diff to compare two files | did not know this command existed | opens native VS Code diff view | use whenever two files need comparison before merging
+2026-08-10 | GIT | CMD | git log opened less pager | thought output would print directly | use --no-pager flag or press q to exit | study: less pager navigation
 2026-08-10 | BRAIN_OS | CONCEPT | git log reads newest-first | read bottom to top for chronological order | HEAD is always the most recent commit | study: git log options
 2026-08-10 | BRAIN_OS | CONCEPT | LF vs CRLF line endings | thought all text files were the same | Windows uses CRLF, Unix uses LF, git converts between them | study: core.autocrlf settings
-2026-08-10 | resolve-mcp-server | DESIGN | 20+ backup files in archive/ used as manual version control | didn't trust git to preserve history | git log --follow -p -- resolve_bridge.py does this automatically | study: git tags for releases, git log --follow for file history
-2026-08-10 | resolve-mcp-server | DESIGN | 45 backup files used as manual version control | didn't trust git | git history preserved all versions | study: git log --follow, git show <sha>:path | FIXED
-2026-08-10 | BRAIN_OS | CMD | code --diff to compare two files | did not know this command existed | opens native VS Code diff view | use whenever two files need comparison before merging
-2026-08-10 | DOWNLOADS | DESIGN | 82 .md files accumulated in Downloads | no filing habit | files belong in vault or project folders | file immediately on download, not later
 2026-08-10 | BRAIN_OS | CONCEPT | reading a diff — red minus is left file only, green plus is right file only | could not read the diff | now can identify what is unique to each file
-
+2026-08-10 | resolve-mcp-server | CONCEPT | regex .* pattern | thought it was copy protection | matches any characters — robustness across Resolve versions | study: regex fundamentals at regex101.com
+2026-08-10 | resolve-mcp-server | CONCEPT | JSON Schema inputSchema | saw type/properties/required | standard for describing JSON data shape — used in all APIs | study: JSON Schema spec
+2026-08-10 | resolve-mcp-server | CONCEPT | async/await pattern | saw async def but didn't fully understand | async functions yield control while waiting — non-blocking | study: Python asyncio, FreeCodeCamp has this
+2026-08-10 | resolve-mcp-server | CONCEPT | Singleton pattern | get_resolve() uses global variable | ensures only one controller instance exists | study: Singleton design pattern
+2026-08-12 | resolve-mcp-server | CONCEPT | CLIP_TYPE_REGISTRY — data-driven validation schema | thought validation always means if/else chains | rules stored as data, one generic validator reads them | study: data-driven design pattern
+2026-08-12 | resolve-mcp-server | CONCEPT | modulo arithmetic for unit conversion | did not recognize the pattern | % and // extract digits from numbers — used in clocks, coordinates, timecodes | study: modulo arithmetic
+2026-08-12 | resolve-mcp-server | CONCEPT | invertible transformation — _frame_to_tc and _tc_to_frame | thought they were unrelated | forward and inverse functions must be perfect mirrors | study: bijective functions
+2026-08-12 | resolve-mcp-server | CONCEPT | JSONL format — one JSON object per line | thought logs were plain text | structured append-only log, streamable, parseable line by line | study: JSONL vs JSON
+2026-08-12 | resolve-mcp-server | CONCEPT | defensive mkdir — exist_ok=True | thought you had to check if dir exists first | exist_ok silently succeeds if already present | apply this pattern everywhere dirs are created
+2026-08-12 | resolve-mcp-server | CONCEPT | ETL pattern in every handler — extract from Resolve, transform, return dict | thought handlers were just wrappers | every data pipeline follows Extract-Transform-Load | study: ETL pattern in data_science.md
+2026-08-12 | resolve-mcp-server | CONCEPT | defensive one-liner (GetFlagList() or ["None"])[0] | would have written a 3-line if block | or-fallback guarantees non-None before indexing | apply this pattern everywhere API calls might return None
+2026-08-12 | resolve-mcp-server | CONCEPT | recursion — clear_folder calls itself for subfolders | thought you needed nested loops | recursion handles unknown-depth trees naturally | study: recursive tree traversal
+2026-08-12 | resolve-mcp-server | CONCEPT | nonlocal keyword — inner function modifies outer variable | didn't know this existed | without nonlocal Python treats it as a new local variable | study: Python scope — LEGB rule
+2026-08-12 | resolve-mcp-server | CONCEPT | Resolve has three marker namespaces — timeline, clip, pool | assumed markers were all in one place | nuclear_clear_all exists because simpler approaches left markers behind | systems have hidden state
+2026-08-12 | resolve-mcp-server | CONCEPT | dictionary comprehension as lookup table | would have written a for loop | {k: v for k, v in items()} builds dict in one line | study: Python comprehensions
+2026-08-12 | resolve-mcp-server | CONCEPT | spatial join — filter markers by frame range | didn't recognize the pattern | same concept as SQL WHERE x BETWEEN a AND b | study: joins in data_science.md
+2026-08-12 | resolve-mcp-server | CONCEPT | any() with generator — count matches without building list | would have used len(list filter) | any() short-circuits on first match, sum(1 for...) counts without list | study: Python generators
+2026-08-12 | resolve-mcp-server | CONCEPT | dispatch table — HANDLERS dict replaces 50 lines of if/elif | thought you needed if/elif chains | store function references in dict, look up by name | study: open/closed principle in software_architecture.md
+2026-08-12 | resolve-mcp-server | CONCEPT | TCP chunk assembly — recv() may not return complete message | thought one send = one recv | accumulate chunks until JSON parses successfully | study: TCP streaming vs message boundaries
+2026-08-12 | resolve-mcp-server | CONCEPT | SO_REUSEADDR — rebind port immediately after crash | didn't know OS holds ports after process dies | setsockopt prevents 60-second wait on restart | study: socket options in systems_operations.md
+2026-08-12 | resolve-mcp-server | CONCEPT | daemon=True thread — dies with main process | thought threads outlived their parent | daemon threads are cleanup-free, no zombie threads | study: thread lifecycle
