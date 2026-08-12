@@ -1,19 +1,21 @@
 # Lesson Queue — Active Directions
-Location: C:\BRAIN_OS\09_TOOLS\ or C:\BRAIN_OS\02_PROJECTS\
+Location: C:\BRAIN_OS\02_PROJECTS\LESSON_QUEUE.md
 Updated: 2026-08-10
 
 ---
 
 ## Status
 
-    Lesson 01 — Repo Reconciliation          COMPLETE
-    Lesson 02 — .env + pathlib pattern       IN PROGRESS
-    
+    Lesson 01 — Repo Reconciliation          COMPLETE ✓ 2026-08-10
+    Lesson 02 — .env + pathlib pattern       COMPLETE ✓ 2026-08-10
+    Direction 3 — gig_tracker split          COMPLETE ✓ 2026-08-10
+    Direction 4 — Downloads folder triage    COMPLETE ✓ 2026-08-10
+    Direction 1 — resolve-mcp-server arch.   QUEUED — next session opener
 
 ---
 
 ## Direction 1 — Go Deeper into resolve-mcp-server
-Status: QUEUED
+Status: QUEUED — opens next session
 
 What it is:
   Phase 2 archaeology on the most complex repo in the stack.
@@ -31,13 +33,10 @@ What you will learn:
   - How to read a large unfamiliar file systematically
   - git log --follow -p for file archaeology
 
-Opens when:
-  Direction 2 is fully complete across all repos
-
 ---
 
 ## Direction 2 — Fix Hardcoded Path Problem Across All Repos
-Status: COMPLETE — 2026-08-10
+Status: COMPLETE ✓ 2026-08-10
 
 Pattern learned: .env + pathlib
   - BASE_DIR = Path(os.getenv("BASE_DIR", r"fallback\path"))
@@ -48,46 +47,42 @@ Pattern learned: .env + pathlib
 
 Done:
   [x] custom-agent — ca_audio.py refactored, .env.example added
-  [x] soccer-content-generator — PathConfig class added to config.py, 4 paths wired, .env.example added
+  [x] soccer-content-generator — PathConfig class added to config.py,
+      4 paths wired, .env.example added
 
-Remaining — run audit on each, apply same pattern:
-  [ ] soccer-content-generator
-  [ ] BRAIN_OS tools (compile_session.py, session_close.py)
-
-Audit command (run inside each repo):
+Audit command (run inside any repo):
   Select-String -Path .\**\*.py -Pattern "Path\(r" | Select-Object Path, LineNumber, Line
-
-What to look for:
-  Any Path(r"C:\...") that is not built from an env var
 
 ---
 
 ## Direction 3 — Reconcile the gig_tracker Split
-Status: QUEUED
+Status: COMPLETE ✓ 2026-08-10
 
-What it is:
-  Two copies of gig_tracker exist:
-    - C:\BRAIN_OS\02_PROJECTS\gig_tracker\  (untracked inside vault)
-    - C:\Users\titit\OneDrive\Desktop\gig_tracker_v3\gig_tracker  (separate repo)
+What was done:
+  - Identified OneDrive copy as authoritative (newest database Aug 8)
+  - CLAUDE_HANDOFF.md and _generated/ reports committed to real repo
+  - BRAIN_OS untracked copy deleted
+  - Real repo moved from OneDrive Desktop to C:\Dev\Projects\gig_tracker
+  - repo_inventory.txt updated with new path
+  - gig_tracker/ added to BRAIN_OS .gitignore
 
-  One is authoritative. The other is either a stale copy or
-  an accidental duplicate.
+---
 
-What you will do:
-  - Compare last commit dates on both
-  - Diff the two directories
-  - Decide which is the real repo
-  - Move the winner to C:\Dev\Projects\gig_tracker
-  - Delete the OneDrive Desktop copy
-  - Add the BRAIN_OS version to .gitignore or remove it
+## Direction 4 — Downloads Folder Triage
+Status: COMPLETE ✓ 2026-08-10
 
-What you will learn:
-  - How to compare two directories with git
-  - Why OneDrive + git is a bad combination
-  - How to move a repo without losing its history
-
-Opens when:
-  Direction 2 is complete
+What was done:
+  - 82 .md files found in Downloads
+  - 9 duplicate (1) files deleted
+  - 16 batch files moved to C:\Knowledge\CA\CA_Book\incoming\
+  - Lesson files → 05_LEARNING\
+  - Guide files → 03_KNOWLEDGE\
+  - Templates → 06_TEMPLATES\
+  - Tools → 09_TOOLS\
+  - Sessions → 08_SESSIONS\
+  - Nav files → 02_PROJECTS\
+  - BDF files → soccer-content-generator\
+  - Downloads .md count: 0
 
 ---
 
@@ -107,4 +102,5 @@ Opens when:
 
   2026-08-10  Lesson 01 — Full repo audit, 12 repos, 5 RISK flags fixed
   2026-08-10  Lesson 02 — .env + pathlib pattern, applied to custom-agent
-
+  2026-08-10  Directions 2-4 — paths refactored, gig_tracker reconciled,
+              82 Downloads files triaged and filed
