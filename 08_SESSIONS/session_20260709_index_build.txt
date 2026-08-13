@@ -1,0 +1,354 @@
+SESSION RESUME — 4-Bucket Routing Layer, Phase 1
+Date: 2026-07-08 / 2026-07-09
+Repo: C:\BRAIN_OS (main)
+Commits: a931fcf, 5825351, 011ef1d, 86ece29
+Tree state at close: clean
+
+
+================================================================
+0. HOW THIS SESSION STARTED (and why that matters)
+================================================================
+
+Opening request: "find the chat that is more relevant to organization
+lately."
+
+Four search angles returned nothing useful. The chat being sought —
+the Graphify adoption session (safishamsi/graphify, installed as
+`graphifyy` via uv) — was a CLAUDE CODE session, not a claude.ai chat.
+
+FINDING: conversation search only indexes standalone web chats. Claude
+Code sessions are invisible to it. The record of those sessions is the
+session resume text and 08_SESSIONS\*.md — nothing else.
+
+IMPLICATION: any session where real work happens locally must be written
+to 08_SESSIONS\ or it is effectively lost to future retrieval.
+
+
+================================================================
+1. THE INVENTORY TRACE (the accidental main event)
+================================================================
+
+Chasing the missing chat forced a filesystem trace. That trace overturned
+the assumption the entire 2026-06-20 bucket design rested on.
+
+FALSE ASSUMPTION:
+  C:\Users\titit\Projects\ is the authoritative project list.
+
+VERIFIED REALITY:
+  10 git repos across 4 roots.
+
+  C:\BRAIN_OS                                 (the graph)
+  C:\Knowledge                                (knowledge-base repo + canonical venv)
+  C:\Dev\cc-landing
+  C:\Dev\CristianConstruction
+  C:\Dev\Projects\soccer-content-generator    (BDF)
+  C:\Dev\shared\brain-audio
+  C:\Dev\shared\book-compiler
+  C:\Users\titit\Projects\obs-mcp-server
+  C:\Users\titit\Projects\read-along-app
+  C:\Users\titit\Projects\resolve-mcp-server
+
+Why earlier scans missed things:
+  - `-Depth 1` from C:\ reaches only two levels; soccer-content-generator
+    sits at level three (C:\Dev\Projects\...).
+  - The .claude\projects\ hits were Claude Code session metadata mirroring
+    real paths — noise, not projects.
+
+Non-repo node confirmed:
+  C:\BRAIN_OS\02_PROJECTS\brain-audio  -->  Test-Path .git = False
+
+  This is the vault's knowledge node ABOUT the package, not a duplicate of
+  the code. Architecture working as designed: code in C:\Dev\shared\, linked
+  context in the graph. Linked, not duplicated.
+
+
+================================================================
+2. THE CA_BOOK TRACE (PROJECT_CARD.md as ground truth)
+================================================================
+
+C:\Knowledge looked like a legacy vault (BDF, CA, MCP, session logs, _trash).
+It is not. It is a live git repo — github.com/TititoBuilder/knowledge-base —
+hosting the CANONICAL AI/TTS venv.
+
+PROJECT_CARD.md revealed:
+  - CA_Book compiles the CristianConstruction knowledge base (13 .md chapters)
+    into Kokoro TTS audio, uploads to Google Drive.
+  - Output feeds the Read-Along App LISTEN tab.
+  - Venv at C:\Knowledge\CA\venv is PyTorch nightly cu128, verified for
+    RTX 5070 Ti (sm_120 Blackwell). Shared across ALL AI inference work.
+  - The card itself flags the CA / CC prefix collision.
+
+TWO CORRECTIONS FORCED BY THE CARD:
+  (a) DO NOT relocate CA_Book. The venv is load-bearing shared infrastructure.
+      Moving the project means dragging it or breaking every dependent path.
+  (b) C:\Knowledge is not archival. It is OPERATIONS.
+
+DEPENDENCY CHAIN (crosses three buckets):
+  CristianConstruction knowledge base
+    -> CA_Book (Kokoro TTS + brain-audio)
+      -> Google Drive
+        -> Read-Along App LISTEN tab
+
+
+================================================================
+3. THE CC-LANDING TRACE (history beats listings)
+================================================================
+
+Directory listing showed two files: .gitignore, index.html. No build step,
+no deploy config, no README. Read as a stub.
+
+`git log --oneline -5` said otherwise:
+
+  209d251  deploy: 2026-04-10
+  0514a0c  rebrand: Custom Agent landing page update
+  5f05a45  rebrand: Custom Agent landing page update
+  e6c9051  rebrand: Skilltrade landing page
+  078294a  fix: remove vercel.json
+
+Real deploy. Two rebrands (Skilltrade -> Custom Agent). vercel.json was
+deliberately removed, not never-configured — meaning it moved to a host
+that auto-detects static sites.
+
+<title>Custom Agent — Free Estimate</title>
+
+"Free Estimate" is remodeling language. cc-landing is the public lead-capture
+front end for CristianConstruction. No unrecorded venture; a rebranded front
+door to the income base.
+
+LESSON: directory listings describe a moment. History describes intent.
+For "is this real," history wins.
+
+
+================================================================
+4. ARCHITECTURE DECIDED (three tiers, no duplication)
+================================================================
+
+00_INDEX\{Content,Business,Operations,Personal}.md   bucket -> projects
+00_NAV\<Project>_Nav.md                              project -> internals
+00_DASHBOARD\Navigation.md                           whole vault, auto-generated
+
+DRY check that justified the new layer:
+  00_NAV is one file per project (cardinality 1:1).
+  00_INDEX is one file per bucket   (cardinality 1:many).
+  Different cardinality = different job. Not a duplicate layer.
+
+FINAL BUCKET MAPPING:
+
+  CONTENT     soccer-content-generator (BDF)
+              CA_Book  [rename pending]
+
+  BUSINESS    CristianConstruction
+              cc-landing            (sibling, not sub-item — separate deployable)
+
+  OPERATIONS  BRAIN_OS
+              C:\Knowledge          (canonical AI/TTS venv)
+              obs-mcp-server
+              resolve-mcp-server
+              shared\brain-audio
+              shared\book-compiler
+
+  PERSONAL    read-along-app        (pre-revenue; graduation rule applies)
+              instructor / teaching, guitar, learning logs
+
+REASONING BEHIND THE NON-OBVIOUS PLACEMENTS:
+
+  - BDF monetization stays in CONTENT, not BUSINESS. Its content pipeline IS
+    its monetization engine. Splitting means every BDF session touches two
+    buckets, which defeats routing. Also preserves identity priority:
+    BUSINESS = income base (construction), CONTENT = passion (BDF).
+
+  - Shared packages go to OPERATIONS. Assigning a shared component to one
+    consumer's bucket misrepresents its blast radius.
+
+  - read-along-app stays PERSONAL until first dollar or first external user
+    commitment. Graduation is one line edited in two index files.
+
+  - No fifth bucket for instructor work. A bucket with no filesystem footprint
+    is maintenance cost, not structure.
+
+KNOWN LIMIT: buckets route WHERE YOU SIT DOWN. They do not partition the
+system. Session log 2026-06-17_2222_bdf_ca_brain_os_resolve.md is one session
+across four projects and three buckets. If you ever expect buckets to tell you
+what a change will break, they will lie. Nav files and the graph do that job.
+
+
+================================================================
+5. WHAT WAS BUILT AND COMMITTED
+================================================================
+
+a931fcf  feat(index): add 4-bucket routing layer
+         4 files, 133 insertions. 00_INDEX/{Content,Business,Operations,Personal}.md
+         Staged by explicit filename. Nothing rode along.
+
+5825351  docs(queue): capture Phase 1 completion and 6 open items
+
+011ef1d  fix(gitignore): ignore staged TTS narration text in audio_staging
+
+86ece29  docs(queue): record audio_staging gitignore resolution
+         (amended twice: 8624479 -> 75cd71f -> 86ece29)
+
+All writes used [System.IO.File]::WriteAllText() and were BOM-verified with
+[System.IO.File]::ReadAllBytes($path)[0..2] — expecting 35 32 <letter>,
+never 239 187 191.
+
+Dead wikilinks were deliberately NOT written. Five projects have no nav file,
+so 00_INDEX records them as "TODO: create X_Nav.md". A [[wikilink]] to a
+nonexistent note is a map claiming a road exists.
+
+
+================================================================
+6. THE audio_staging BUG (found, diagnosed, fixed)
+================================================================
+
+SYMPTOM: `git status` showed `?? audio_staging/` despite the operating
+contract stating audio_staging is gitignored.
+
+FIRST READ (wrong): the .gitignore is broken.
+
+ACTUAL CAUSE: .gitignore covered file PATTERNS inside the directory —
+*.mp3, *.wav, *.json, _trash/, _paths/ — but never the directory itself.
+Git tracks files, not directories. One file matched no pattern:
+
+  audio_staging/session_20260617_2222_TTS.txt   (6263 bytes)
+
+CLASSIFICATION (the part that mattered): artifact or record?
+Content read as a full session narrative — task_session.py, refresh_drive_token.py,
+borrowed_audio_worklist.py, graph_maintainer.py, the knowledge graph rollout
+across 04_WORKFLOWS / 05_MEMORY / 03_APIS. That reads like a record.
+
+But the timestamp key settled it:
+
+  audio_staging\session_20260617_2222_TTS.txt
+  08_SESSIONS\2026-06-17_2222_bdf_ca_brain_os_resolve.md
+                        ^^^^
+
+Same key. The .txt is narration DERIVED from the committed session log,
+staged for Kokoro. Artifact, not record. The record already exists.
+Moving it would have duplicated a note — violating linked-not-duplicated.
+
+FIX: two patterns appended to .gitignore, matching house style
+(rule + inline comment explaining why):
+
+  # Session narration staged for Kokoro TTS — derived from 08_SESSIONS/*.md (never commit)
+  audio_staging/*.txt
+  audio_staging/**/*.txt
+
+VERIFIED: audio_staging/ disappeared from `git status`.
+
+SIDE FINDING: that file records work my memory did not have —
+borrowed_audio_worklist was CLEARED, graph_maintainer.py was SYNCED.
+The vault is ahead of the assistant. Queue.md is the authority.
+
+
+================================================================
+7. FOUR WRONG CALLS BY CLAUDE (and what caught each)
+================================================================
+
+  1. "Relocate CA_Book to C:\Dev\Projects\"
+     CAUGHT BY: PROJECT_CARD.md — the venv is canonical shared infrastructure.
+
+  2. "cc-landing is an abandoned stub"
+     CAUGHT BY: git log — five commits, two rebrands, a real deploy.
+
+  3. "The trailing-newline fix took"
+     CAUGHT BY: git diff --stat showing -1, then the \ No newline marker.
+
+  4. "core.autocrlf=true is dropping the trailing newline"
+     CAUGHT BY: realizing `git cat-file | Format-Hex` is not a byte channel.
+     PowerShell pipes pass STRINGS. The conversion stripped the newline.
+     The blob was fine the whole time.
+
+PATTERN: every wrong call was delivered in the same confident tone as the
+correct ones. Each was caught by something that READS BYTES rather than
+reasons about them — git status, git log, git diff, PROJECT_CARD.md,
+ReadAllBytes().
+
+The operating contract's "trace before changing" rule is not only a defense
+against human error. Tonight it was load-bearing against the AI collaborator.
+
+TOOLING LESSON: for byte-exact inspection, never `git ... | Format-Hex`.
+Use [System.IO.File]::ReadAllBytes(), or git's own diff output.
+
+
+================================================================
+8. INCIDENTAL MECHANICS LEARNED
+================================================================
+
+BOM         PowerShell 5.1 Set-Content / Out-File prepend EF BB BF.
+            Editors hide it. Git sees it. Python json.load() chokes on it.
+            WriteAllText(path, string) writes UTF-8 without BOM.
+            Git normalizes line endings; it does NOT strip BOMs.
+
+autocrlf    core.autocrlf=true means the working copy (CRLF) and the blob (LF)
+            are not byte-identical. `git show HEAD:path` reads the blob;
+            reading the file reads your disk. Different questions.
+
+-replace    A REGEX operator, not literal. `ship\.` and `\[RESOLVED` had to be
+            escaped. Unescaped, `.` matches any char and `[RESOLVED` is a
+            character class. Use .Replace() for literal, surgical edits.
+
+@' ... '@   An unterminated here-string leaves PowerShell at the >> prompt.
+            Ctrl+C aborts. Paste multi-line blocks as ONE unit.
+
+append      $existing + $new concatenates raw. If $existing lacks a trailing
+            newline, entries fuse. Durable form:
+              WriteAllText($path, $content.TrimEnd() + "`n")
+
+Format-Hex  `-Count` does not exist in PowerShell 5.1 (added in 6+).
+
+elevation   None of this needed Administrator. Writing files you own does not
+            require elevation. Reflexive admin is a habit worth breaking.
+
+`cd`        `git status` in C:\Dev\cc-landing reports on the wrong repo.
+            Always cd C:\BRAIN_OS first.
+
+
+================================================================
+9. QUEUE — OPEN ITEMS AT SESSION CLOSE
+================================================================
+
+[TASK] Rename CA_Book -> cc-audiobook
+       ATOMIC — one commit touching all four:
+         1. Directory:  C:\Knowledge\CA\CA_Book -> cc-audiobook
+         2. 00_NAV\CA_Nav.md -> CCAudiobook_Nav.md
+         3. graphify config paths
+         4. 00_INDEX\Content.md entry
+       DO NOT relocate out of C:\Knowledge.
+
+[TASK] Five missing nav files
+       BRAINOS_Nav.md, Knowledge_Nav.md, BrainAudio_Nav.md,
+       BookCompiler_Nav.md, CCLanding_Nav.md
+       Currently referenced in 00_INDEX as TODO, not wikilinks.
+
+[FRAGILITY] Consolidate Google Drive credentials
+       gdrive_credentials.json / gdrive_token.json shared by 4-6 scripts,
+       with copies in C:\Knowledge\CA\CA_Book\. Same finding as the graphify
+       session. Flagged in 00_INDEX\Operations.md.
+
+[SMALL] 00_NAV\SYSTEM_Rules.md (4594b) is not a nav file.
+       Likely belongs in 07_SYSTEM\ alongside Cristian_Principles.md.
+       Flagged, not moved.
+
+[SMALL] cc-landing deploy target unrecorded.
+       Last deploy 2026-04-10 (209d251). vercel.json removed (078294a).
+       Verify before next ship.
+
+REMAINING PHASES (from the 2026-06-20 concept):
+  P2  Create 4 Claude.ai Projects, each with charter instructions.
+  P3  Add routing line to session SOP:
+        bucket -> Project -> index -> project CLAUDE.md
+  P4  Maintenance rule: every new repo lands in exactly one bucket index,
+      in the same commit that creates it.
+
+
+================================================================
+10. THE ONE-LINE VERSION
+================================================================
+
+A failed chat search became a filesystem trace; the trace killed the premise
+of the previous design; the corrected inventory produced a bucket layer built
+on verified reality instead of assumption — and the act of classifying dragged
+five real defects into the open that nobody was looking for.
+
+A taxonomy is a lie detector. Anything that resists placement is something
+you do not yet understand.
