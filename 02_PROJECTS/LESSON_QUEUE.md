@@ -13,7 +13,8 @@ Updated: 2026-08-12
     Direction 1 — resolve-mcp-server archaeology    COMPLETE ✓ 2026-08-12
     Direction 5 — resolve-mcp-server paths              QUEUED
     Direction 6 — gig_tracker imports and category coverage    COMPLETE ✓ 2026-08-12
-    Direction 7 — gig_tracker web.py dashboard + automation    QUEUED
+    Direction 7 — gig_tracker web.py dashboard + automation    IN PROGRESS
+    Direction 7b — gig_tracker dashboard debt + chart work     QUEUED
 
 ---
 
@@ -132,7 +133,7 @@ What you will learn:
 ---
 
 ## Direction 7 — gig_tracker: web.py Dashboard + Automation
-Status: QUEUED — next session opener
+Status: IN PROGRESS
 
 What it is:
   584 transactions live across 7 cards. web.py is a Flask dashboard
@@ -140,10 +141,11 @@ What it is:
   should show spending trends, Prop 22 status, and card balances in real time.
 
 What you will do:
-  - Read web.py architecture — Flask routes, template rendering
+  [x] Read web.py architecture — Flask routes, template rendering
+  [x] Fix hardcoded payment due dates (_DUE_DAYS → DB migration)
+  [x] Build balance.py quick balance updater
+  [x] Organize downloaded statements into data/statements/
   - Connect spending data to visual charts
-  - Fix hardcoded payment due dates in _show_alerts
-  - Build dynamic due date tracking from cards table
   - Explore automation: auto-import statements on schedule
 
 What you will learn:
@@ -151,6 +153,23 @@ What you will learn:
   - Jinja2 templates
   - How web.py shares db.py with gig.py (same data layer)
   - Scheduled tasks vs event-driven automation
+
+---
+
+## Direction 7b — gig_tracker: Dashboard debt + chart work
+Status: QUEUED — next session opener
+
+What you will do:
+  - Add Citi card 6936 to cards table (new card, replaces old)
+  - Import transaction CSVs from data/statements/ via import_statement_v2.py
+  - Module C: add Chart.js spending trend chart to dashboard
+  - Add DashboardData TypedDict schema to web.py
+  - Move van target dates out of hardcoded values into config
+
+What you will learn:
+  - TypedDict vs dataclass for type contracts
+  - Chart.js integration in Jinja2 templates
+  - Config-driven vs hardcoded values — when each is appropriate
 
 ---
 
