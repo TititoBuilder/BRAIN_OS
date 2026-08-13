@@ -12,6 +12,7 @@ Updated: 2026-08-12
     Direction 4 — Downloads folder triage    COMPLETE ✓ 2026-08-10
     Direction 1 — resolve-mcp-server archaeology    COMPLETE ✓ 2026-08-12
     Direction 5 — resolve-mcp-server paths              QUEUED
+    Direction 6 — gig_tracker imports and category coverage    QUEUED
 
 ---
 
@@ -108,6 +109,27 @@ What you will learn:
 
 ---
 
+## Direction 6 — gig_tracker: Complete Imports + Automation
+Status: QUEUED — next session opener
+
+What it is:
+  AMEX still at 0 transactions. Other category at 26% — target is under 15%.
+  Expired offer alerts cluttering day-start. Category rules need refinement.
+
+What you will do:
+  - Import AMEX statement
+  - Run merchants command to find remaining Other merchants
+  - Add targeted rules until Other under 15%
+  - Fix expired offer auto-cleanup in alerts command
+  - Explore web.py dashboard — connect spending data to visual output
+
+What you will learn:
+  - Flask routes and template rendering
+  - How web.py connects to the same db.py layer
+  - SQLite query optimization for dashboard queries
+
+---
+
 ## Backlog — Future Directions
 
   B1 — Write .env.example for every repo that has a .env
@@ -129,3 +151,6 @@ What you will learn:
   2026-08-10  Direction 1 — server.py read complete, full architecture mapped, Option B (live test) queued for next session
   2026-08-12  Direction 1 — resolve_bridge.py fully mapped, 23 CONCEPT flags,
               STUDY_SYSTEM.md created, FLAGS.txt sorted and deduplicated (41 entries)
+  2026-08-12  gig_tracker deep dive — 555 transactions imported across 5 cards,
+              category rules 51 to 84, Other category 90% to 26%,
+              financial CSVs removed from GitHub, prop22.py db.py importer.py fully mapped
