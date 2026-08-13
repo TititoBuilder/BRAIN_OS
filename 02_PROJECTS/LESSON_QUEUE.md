@@ -157,19 +157,37 @@ What you will learn:
 ---
 
 ## Direction 7b — gig_tracker: Dashboard debt + chart work
+Status: COMPLETE ✓ 2026-08-13
+
+What you will do:
+  [x] Add Citi card 6936 to cards table → confirmed closed, excluded
+  [x] Import transaction CSVs from data/statements/
+  [x] Module C: Chart.js spending bar chart
+  [x] Add DashboardData TypedDict schema
+
+Commits:
+  9199af9 - credit limits + citi 6936 closed
+  de51f38 - AMEX importer profile
+  9bf6074 - Capital One English profile
+  70ef60b - Chart.js spending chart
+  044bdc6 - DashboardData TypedDict
+
+---
+
+## Direction 7c — gig_tracker: Importer cleanup + category rules
 Status: QUEUED — next session opener
 
 What you will do:
-  - Add Citi card 6936 to cards table (new card, replaces old)
-  - Import transaction CSVs from data/statements/ via import_statement_v2.py
-  - Module C: add Chart.js spending trend chart to dashboard
-  - Add DashboardData TypedDict schema to web.py
-  - Move van target dates out of hardcoded values into config
+  - Add ANTHROPIC → subscriptions category rule to importer
+  - Recategorize Amazon charges on AMEX 01007 (44 rows in other)
+  - Add subscriptions category to web.py cost tracking
+  - Move van target dates from hardcoded to config file
+  - Run preflight.py — check all invariants pass after imports
 
 What you will learn:
-  - TypedDict vs dataclass for type contracts
-  - Chart.js integration in Jinja2 templates
-  - Config-driven vs hardcoded values — when each is appropriate
+  - Category rule systems — pattern matching vs manual classification
+  - Config-driven values vs hardcoded constants
+  - Invariant checking — what breaks when DB grows
 
 ---
 
