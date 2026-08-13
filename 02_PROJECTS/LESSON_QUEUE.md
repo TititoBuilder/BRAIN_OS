@@ -12,7 +12,8 @@ Updated: 2026-08-12
     Direction 4 — Downloads folder triage    COMPLETE ✓ 2026-08-10
     Direction 1 — resolve-mcp-server archaeology    COMPLETE ✓ 2026-08-12
     Direction 5 — resolve-mcp-server paths              QUEUED
-    Direction 6 — gig_tracker imports and category coverage    QUEUED
+    Direction 6 — gig_tracker imports and category coverage    COMPLETE ✓ 2026-08-12
+    Direction 7 — gig_tracker web.py dashboard + automation    QUEUED
 
 ---
 
@@ -110,7 +111,7 @@ What you will learn:
 ---
 
 ## Direction 6 — gig_tracker: Complete Imports + Automation
-Status: QUEUED — next session opener
+Status: COMPLETE ✓ 2026-08-12
 
 What it is:
   AMEX still at 0 transactions. Other category at 26% — target is under 15%.
@@ -127,6 +128,29 @@ What you will learn:
   - Flask routes and template rendering
   - How web.py connects to the same db.py layer
   - SQLite query optimization for dashboard queries
+
+---
+
+## Direction 7 — gig_tracker: web.py Dashboard + Automation
+Status: QUEUED — next session opener
+
+What it is:
+  584 transactions live across 7 cards. web.py is a Flask dashboard
+  that connects all imported data to a visual interface. The dashboard
+  should show spending trends, Prop 22 status, and card balances in real time.
+
+What you will do:
+  - Read web.py architecture — Flask routes, template rendering
+  - Connect spending data to visual charts
+  - Fix hardcoded payment due dates in _show_alerts
+  - Build dynamic due date tracking from cards table
+  - Explore automation: auto-import statements on schedule
+
+What you will learn:
+  - Flask request/response cycle
+  - Jinja2 templates
+  - How web.py shares db.py with gig.py (same data layer)
+  - Scheduled tasks vs event-driven automation
 
 ---
 
@@ -154,3 +178,6 @@ What you will learn:
   2026-08-12  gig_tracker deep dive — 555 transactions imported across 5 cards,
               category rules 51 to 84, Other category 90% to 26%,
               financial CSVs removed from GitHub, prop22.py db.py importer.py fully mapped
+  2026-08-12  Direction 6 complete — 584 transactions imported across 7 cards,
+              category rules 51→84, Other 90%→22%, format detectors fixed,
+              financial CSVs removed from GitHub
