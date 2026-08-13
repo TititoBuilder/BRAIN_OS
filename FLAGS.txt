@@ -1,4 +1,4 @@
-2026-08-10 | BRAIN_OS | RISK | ahead 7, never pushed | thought it was synced | it has 7 local commits GitHub doesn't have | why did I not push these? | FIXED
+﻿2026-08-10 | BRAIN_OS | RISK | ahead 7, never pushed | thought it was synced | it has 7 local commits GitHub doesn't have | why did I not push these? | FIXED
 2026-08-10 | soccer-content-generator | RISK | ahead 2, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
 2026-08-10 | book-compiler | RISK | ahead 2, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
 2026-08-10 | brain-audio | RISK | ahead 2, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
@@ -65,7 +65,6 @@
 2026-08-12 | gig_tracker | CONCEPT | adapter pattern — each bank parser normalizes to same internal format | thought you needed different handling downstream | adapters isolate format differences at the boundary | study: adapter pattern
 2026-08-12 | gig_tracker | CONCEPT | single source of truth — prop22.py exists because formula was wrong in multiple files | thought duplication was fine | one fix in one place vs hunting down every copy | DRY principle
 2026-08-12 | gig_tracker | CONCEPT | pure functions — floor() adjustment() gross() have no side effects | thought functions always did multiple things | pure functions take input return output change nothing | study: pure functions
-2026-08-12 | gig_tracker | CONCEPT | max(0.0, value) encodes a legal guarantee — adjustment never negative | thought it was just math | one function call encodes a real-world rule | business logic lives in code
 2026-08-12 | gig_tracker | CONCEPT | epsilon comparison for floats — abs(a-b) < 1e-9 not == | didn't know floats have rounding errors | floating point arithmetic is never exact | study: floating point precision
 2026-08-12 | gig_tracker | CONCEPT | idempotent initialization — seed guard checks COUNT before inserting | thought init always inserted | same init can run 100 times, data inserted once | study: idempotent operations
 2026-08-12 | gig_tracker | CONCEPT | WAL journal mode — reads don't block writes | thought SQLite locked everything | WAL allows concurrent reads while writing | study: database concurrency
@@ -75,4 +74,3 @@
 2026-08-12 | gig_tracker | CONCEPT | SHORTCUTS dict same pattern as HANDLERS in resolve_bridge | built it without knowing the name | string to value lookup appears in CLI shortcuts tool routing command dispatch | pattern recurs across all projects
 2026-08-12 | gig_tracker | CONCEPT | __file__ for relative paths — DB_PATH built from db.py location | thought you needed absolute paths | __file__ resolves relative to the module not working directory | already correct here unlike other repos
 2026-08-12 | gig_tracker | CONCEPT | key normalization — rn = {k.strip().lower(): v} before access | saw it in Citi parser | normalize at entry point use clean names everywhere else | apply to all external data intake
-2026-08-12 | POWERSHELL | CMD | complex Python one-liners break in PowerShell heredoc | tried inline python -c | always write to .py file for anything beyond one line | use Set-Content to create temp scripts
