@@ -148,3 +148,15 @@ staged narration file (session_20260617_2222_TTS.txt) left the directory
 untracked. Confirmed artifact, not record — timestamp key 2222 matches
 08_SESSIONS/2026-06-17_2222_bdf_ca_brain_os_resolve.md. Fixed by adding
 audio_staging/*.txt and audio_staging/**/*.txt.
+
+
+<!-- auto-ingested 2026-08-13 -->
+- Direction 1: server.py read complete, architecture mapped
+- Direction 2: COMPLETE
+- Direction 5: added
+- Direction 6: gig_tracker imports COMPLETE
+- Direction 7: web.py dashboard IN PROGRESS
+  - 7b: COMPLETE
+  - 7c: COMPLETE
+  - 7d: COMPLETE
+  - 7e: IN PROGRESS (van_build rename + is_onetime confirmed)

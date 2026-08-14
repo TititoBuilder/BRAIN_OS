@@ -57,3 +57,10 @@ Chronological record of architectural and operational decisions. Newest entries 
 **Decision:** Dropped the Chrome extension plan for automated statement scraping.
 
 **Reason:** Card issuers (Citi, AMEX, WF, Capital One) actively resist scraping — they detect and block browser automation. The extension would require constant maintenance against anti-bot updates. CSV download + `import_statement_v2.py` is slower but reliable and does not depend on any issuer's DOM staying stable.
+
+
+<!-- auto-ingested 2026-08-13 -->
+## 2026-08-13
+- van_build field renamed; is_onetime confirmed
+- 11 vault docs populated for gig_tracker project
+- gig_tracker imports completed (Direction 6)

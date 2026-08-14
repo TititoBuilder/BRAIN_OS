@@ -45,3 +45,13 @@ _nodes: 30_
 ## uncategorized
 - **03_APIS/claude_monitor.py** (16.6 KB) — external: `anthropic`, `dotenv`
 - **scripts/drive_sync.py** (1.2 KB)
+
+
+<!-- auto-ingested 2026-08-13 -->
+## 2026-08-13
+- Directions 1, 2, 6, 7b, 7c, 7d COMPLETE
+- Direction 7e IN PROGRESS
+- 43 files committed from Downloads triage (Direction 4)
+- 11 gig_tracker vault docs populated
+- STUDY_SYSTEM added: four layers, domain map, learning principle
+- Flag system: 19 new entries added, deduplicated, sorted; Other category reduced to 26%

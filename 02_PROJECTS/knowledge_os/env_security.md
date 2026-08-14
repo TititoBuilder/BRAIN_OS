@@ -41,3 +41,7 @@ Treat the environment as a protected boundary: keep its file out of version
 control, scope every credential to least privilege, and understand the runtime
 conditions that affect both function and safety. The code is only as secure as its
 environment.
+
+
+<!-- auto-ingested 2026-08-13 -->
+- 2026-08-13: soccer-content-generator added .env.example for path configuration alongside .env pattern rollout

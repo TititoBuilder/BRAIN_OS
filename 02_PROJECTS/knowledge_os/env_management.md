@@ -42,3 +42,10 @@ One dot-env per project, multi-path fallback for shared scripts, values are
 keys only — never print or log their contents. Profile files must stay identical
 between VSCode and standalone PowerShell or aliases become unreliable.
 
+
+
+<!-- auto-updated 2026-08-13 -->
+**Hardcoded paths → .env + pathlib pattern** (confirmed 2026-08-13)
+- Used in: custom-agent (refactor), soccer-content-generator (PathConfig centralization)
+- Pattern: centralize all path config into a PathConfig class reading from .env via pathlib
+- Add .env.example for documentation

@@ -35,3 +35,10 @@ QUEUE (priority, full list in 00_DASHBOARD/Queue.md):
 7. FEATURE: separate Books/Sessions access path.
 
 START HERE: likely #1 or #2. Show me the start/finish line and begin verify-first.
+
+
+<!-- auto-ingested 2026-08-13 -->
+## Carry-forward from 2026-08-13
+- Direction 7e IN PROGRESS: van_build rename + is_onetime field confirmed — resume web.py dashboard work
+- Verify gig_tracker 11 vault docs are correctly linked
+- FLAGS_MANUAL and LESSON_QUEUE newly added — confirm integration

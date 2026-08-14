@@ -266,3 +266,8 @@ Commits:
   2026-08-12  Direction 6 complete — 584 transactions imported across 7 cards,
               category rules 51→84, Other 90%→22%, format detectors fixed,
               financial CSVs removed from GitHub
+
+<!-- auto-ingested 2026-08-13 -->
+## Added 2026-08-13
+- FLAGS_MANUAL and LESSON_QUEUE files added to vault
+- Study system documented: four layers, domain map, learning principle

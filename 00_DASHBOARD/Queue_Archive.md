@@ -59,3 +59,18 @@ Completed items moved from Queue.md. Oldest first.
 - [x] id: root-cause fix in populate_staging.py + Railway DRIVE_INDEX_JSON shadow deleted
 - [x] session_close.py "make git add surgical" — determined STALE (no git add in file); closed
 - [x] "Convert path-format index entries to id:" — superseded; replaced by Borrowed-audio RE-VOICE worklist (blind conversion locks in wrong audio)
+
+
+<!-- auto-ingested 2026-08-13 -->
+## 2026-08-13
+- Direction 1 COMPLETE: server.py read, architecture mapped
+- Direction 2 COMPLETE
+- Direction 6 COMPLETE: gig_tracker imports
+- Direction 7b COMPLETE
+- Direction 7c COMPLETE
+- Direction 7d COMPLETE
+- Direction 7e IN PROGRESS: van_build rename + is_onetime confirmed
+- 43 files committed from Direction 4 Downloads triage
+- 11 Obsidian vault docs populated for gig_tracker project
+- FLAGS_MANUAL and LESSON_QUEUE added to vault
+- Flag deduplication and sort finalized
