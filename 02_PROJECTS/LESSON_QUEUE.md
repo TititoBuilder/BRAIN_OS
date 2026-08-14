@@ -216,14 +216,16 @@ Commits:
 ---
 
 ## Direction 7e — gig_tracker: Importer + mileage
-Status: IN PROGRESS
+Status: COMPLETE ✓ 2026-08-14
 
 What you will do:
-  [x] shopping → van_build category rename (16 rows + importer rule)
-  [x] Best Buy $1,578 is_onetime confirmed correct
-  [ ] Wait for second paid-in-full Spark period
-  [ ] Run calibrate_miles with 2+ periods → update baseline
-  [ ] Patch runs 56-59 engaged_miles after baseline confirmed
+  [x] shopping → van_build category rename complete
+  [x] Best Buy is_onetime confirmed
+  [x] runway.py fixed — Roadie income from platform_statements
+  [x] import_spark_xlsx.py built — 536 trips imported
+  [x] delivery_runs 67 → 603 rows
+  [x] VALID_SOURCES updated in invariants.py
+  [x] Real surplus confirmed: $2,821/month, debt free Mar 2028
 
   Note: van_build category to be revisited and split after van move-in.
   Post-move: personal shopping gets its own category again.
@@ -236,6 +238,37 @@ What you will learn:
 Commits:
   805438d - shopping → van_build importer rule
   DB only  - 16 rows recategorized shopping → van_build
+  08c4e09 - runway Roadie fix
+  a99f962 - import_spark_xlsx.py
+  6afaaf7 - xlsx_import added to VALID_SOURCES
+
+---
+
+## Direction 8 — gig_tracker: Calibrate miles + period analysis
+Status: QUEUED — open Monday after period closes Aug 16
+
+What you will do:
+  - Download new Spark XLSX after Aug 16 period closes
+  - Run import_spark_xlsx.py with new XLSX
+  - Run calibrate_miles.py — should now have 2+ paid periods
+  - Update mileage baseline if 2+ periods available
+  - Patch runs 56-59 engaged_miles
+  - Run income_recompute.py — refresh all period figures
+  - Run runway.py — verify surplus with updated baseline
+
+What you will learn:
+  - How mileage baseline affects Prop 22 floor calculation
+  - income_recompute.py — how it rebuilds period aggregates
+  - Why provisional baselines exist and when to promote them
+
+Commits this session:
+  08c4e09 - runway Roadie fix
+  a99f962 - import_spark_xlsx.py
+  6afaaf7 - xlsx_import added to VALID_SOURCES
+
+Do not touch FLAGS.txt.
+Do not modify gig_income.db directly.
+git add by explicit filename only, never -A.
 
 ---
 

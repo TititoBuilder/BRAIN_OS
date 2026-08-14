@@ -1,4 +1,4 @@
-2026-08-10 | BRAIN_OS | RISK | ahead 7, never pushed | thought it was synced | it has 7 local commits GitHub doesn't have | why did I not push these? | FIXED
+﻿2026-08-10 | BRAIN_OS | RISK | ahead 7, never pushed | thought it was synced | it has 7 local commits GitHub doesn't have | why did I not push these? | FIXED
 2026-08-10 | soccer-content-generator | RISK | ahead 2, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
 2026-08-10 | book-compiler | RISK | ahead 2, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
 2026-08-10 | brain-audio | RISK | ahead 2, unpushed | unknown | work exists only on laptop | pushed 2026-08-10 | FIXED
@@ -67,3 +67,44 @@
 2026-08-12 | gig_tracker | CONCEPT | preamble detection — skip bank account info before real headers | thought CSV always starts with headers | some banks prepend account info lines | handle real-world messiness at entry point
 2026-08-12 | gig_tracker | CONCEPT | format detector ordering matters — first match wins | thought order did not matter | Wells Fargo fired before Capital One because both match transaction date | fix by ordering specific before general
 2026-08-12 | gig_tracker | CONCEPT | recategorize pattern — UPDATE existing rows when rules improve | thought you had to reimport | update in place preserves batch provenance | apply this pattern whenever rules change
+2026-08-12 | gig_tracker | RISK | API key stored in filename on OneDrive Desktop | thought file was private | OneDrive syncs to cloud — filename visible without opening | store keys only in .env files never in filenames
+2026-08-12 | gig_tracker | DESIGN | temp debug scripts committed to repo — add_rules check_amex debug_costco etc | created scripts to solve problems | one-off scripts should be deleted after use never committed | delete before git add
+2026-08-12 | gig_tracker | DESIGN | hardcoded payment due dates in _show_alerts — August dates now past | thought hardcoded dates were fine | past dates show as urgent forever | build dynamic due date tracking from cards table
+2026-08-12 | gig_tracker | DESIGN | AMEX detector missing activity.csv format — no Reference column | thought one AMEX parser covered all formats | AMEX has multiple CSV formats depending on download type | add format variant to _sniff_format
+2026-08-12 | gig_tracker | CONCEPT | format detector ordering — first match wins so specific before general | added Capital One condition after Wells Fargo | both match transaction date so Wells Fargo fired first | always order specific conditions before general ones
+2026-08-12 | gig_tracker | CONCEPT | recategorize pattern — UPDATE existing rows when rules improve | thought you had to reimport everything | update in place preserves batch provenance | apply whenever category rules change
+2026-08-12 | TOOL | CMD | VS Code Source Control panel — M modified U untracked D deleted | thought letters were errors | color coded status matches git status output | use for visual diff review not for committing
+2026-08-12 | TOOL | CMD | GitLens Graph panel shows commit history visually | did not know this existed | same as git log --oneline but visual with branch lines | use for reading history terminal for committing
+2026-08-12 | PROCESS | DESIGN | FLAGS.txt had two writers — manual append and Claude Code both writing | thought both could write | duplicates every session | one writer only: manual append at session close
+2026-08-12 | PROCESS | DESIGN | temp scripts never cleaned up before commit | created scripts mid-session | 16 untracked files accumulated | write use delete — never commit one-off scripts
+2026-08-13 | gig_tracker | DESIGN | render_template_string | HTML in separate templates/ folder | HTML string embedded inside web.py | Extract to templates/dashboard.html next session
+2026-08-13 | gig_tracker | DESIGN | prop22 in web layer | Business logic in prop22.py only | get_dashboard_data() calls prop22 functions directly | Acceptable for now — document boundary
+2026-08-13 | gig_tracker | DESIGN | van dates hardcoded | Van target dates in config or DB | date(2026,9,23) hardcoded in web.py | Move to config or DB field next session
+2026-08-13 | gig_tracker | DESIGN | 35-key return dict | TypedDict or dataclass schema | Raw dict with no type contract | Add DashboardData TypedDict next session
+2026-08-13 | gig_tracker | DESIGN | mode_rule in data layer | Presentation copy in template | Strategy string built inside get_dashboard_data() | Move to template logic next session
+2026-08-13 | gig_tracker | DESIGN | two format styles in template | Consistent Jinja2 filter | %.2f|format and .format() mixed | Standardize to one style next session
+2026-08-13 | gig_tracker | BUG | d/d2 variable collision | Template loop var named independently | d=data dict, d2=debt loop alias forced | Rename render var to dash next session
+2026-08-13 | gig_tracker | WORKFLOW | file creation via Ctrl+N | File exists on disk before typing | Untitled buffer — balance.py never saved | Always use Explorer > New File or New-Item first
+2026-08-13 | gig_tracker | SECURITY | data/statements/ git-tracked | Statement CSVs excluded from repo | 13 real transaction CSVs committed | Add data/statements/ to .gitignore next session
+2026-08-13 | gig_tracker | DATA | Citi card 6936 unknown | All active cards in cards table | CSV found for 6936 not in DB | Identify card, add to cards table next session
+2026-08-13 | gig_tracker | BUG | import_statement_v2 AMEX profile | AMEX CSV should match amex profile | Matched wells_fargo — profile collision on DATE/DESCRIPTION/AMOUNT signature | Fixed: AMEX added first with STATUS/CHECK guard
+2026-08-13 | gig_tracker | BUG | import_statement_v2 Capital One English | English CapOne CSV should match capital_one | No profile matched — only Spanish profile existed | Fixed: capital_one_en profile added
+2026-08-13 | gig_tracker | DATA | Anthropic charges in other | ANTHROPIC $20 should be subscriptions | Falls to other — no category rule exists | Add ANTHROPIC → subscriptions rule to importer next session
+2026-08-13 | gig_tracker | DATA | 31 Amazon charges in other | AMEX 01007 Amazon charges need category | All 13 new + 31 backfill in other | Recategorize pass needed — cost.py or category rules
+2026-08-13 | gig_tracker | DATA | Citi 6936 confirmed closed | Card in cards table | Last transaction Jun 2026 — not in Citi dashboard | Correctly excluded — CSV archived as CLOSED
+2026-08-13 | gig_tracker | DESIGN | van dates hardcoded | Config or DB field | date(2026,9,23) hardcoded in web.py | Still queued — move to config next session
+2026-08-13 | gig_tracker | SECURITY | data/statements git-ignored | CSVs excluded from repo | Already handled last session | Confirmed clean
+2026-08-13 | gig_tracker | DATA | runs 56-59 missing miles | Spark runs need engaged_miles | 0.0 logged for Aug 5 runs | Patch after calibrate_miles has 2+ paid periods
+2026-08-13 | gig_tracker | DATA | runs 56-59 missing miles | Spark runs need engaged_miles | 0.0 logged for Aug 5 runs | Patch after calibrate_miles has 2+ paid-in-full periods
+2026-08-13 | gig_tracker | DATA | 119 rows recategorized | DB categories accurate | Rows sitting in other since import | Fixed: subscriptions + shopping + supplies + entertainment rules added
+2026-08-13 | gig_tracker | DATA | other at 23.2% | other should be <5% of real spending | Rent $5,490 + storage $755 inflating other | Acceptable — recurring bills tracked separately
+2026-08-13 | gig_tracker | DESIGN | van dates hardcoded | Config or DB field | date(2026,9,23) hardcoded in web.py | Still queued — move to config next session
+2026-08-13 | gig_tracker | DATA | vault md files missing | 11 Obsidian docs expected in BRAIN_OS | Vault folder created but docs not populated | Queue for dedicated BRAIN_OS session
+2026-08-13 | gig_tracker | TOOL | cash_balance.py missing | cash_accounts needed same quick-update tool as cards | balance.py only updates cards table | Fixed: cash_balance.py built, same pattern
+2026-08-13 | gig_tracker | DATA | cash total stale mid-session | dashboard cash $596 → $68 after payments cleared | AMEX Rewards -$177, CapOne360 -$350 posted | Updated via cash_balance.py
+2026-08-13 | gig_tracker | DATA | WF 6017 balance drift | balance updates during session as charges post | $652 → $665 same day | Expected — update balance.py after each bank check
+2026-08-13 | gig_tracker | DESIGN | shopping bar dominates chart | Best Buy $1,578 one-time charge skews period chart | Van build purchase in same period as chart render | Expected — note in Cost Findings.md
+2026-08-13 | gig_tracker | DATA | calibrate_miles deferred | baseline needs 2+ paid-in-full periods | Only 1 period available — PROVISIONAL flag in tool | Do not update baseline until 2nd period available
+2026-08-13 | gig_tracker | DATA | shopping renamed van_build | category name should reflect purpose | shopping too generic during van build phase | Fixed: 16 rows updated, importer rule renamed
+2026-08-13 | gig_tracker | DATA | Best Buy $1,578 is_onetime=1 | large one-time purchase flagged | laptop already flagged correctly from prior session | Confirmed correct
+2026-08-13 | gig_tracker | DATA | van_build $2,741 YTD | van build spending now visible as own category | was buried in shopping | Revisit category post-move
