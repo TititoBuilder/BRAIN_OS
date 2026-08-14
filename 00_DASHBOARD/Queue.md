@@ -151,12 +151,14 @@ audio_staging/*.txt and audio_staging/**/*.txt.
 
 
 <!-- auto-ingested 2026-08-13 -->
-- Direction 1: server.py read complete, architecture mapped
-- Direction 2: COMPLETE
 - Direction 5: added
-- Direction 6: gig_tracker imports COMPLETE
-- Direction 7: web.py dashboard IN PROGRESS
-  - 7b: COMPLETE
-  - 7c: COMPLETE
-  - 7d: COMPLETE
-  - 7e: IN PROGRESS (van_build rename + is_onetime confirmed)
+- Direction 7e: IN PROGRESS (van_build rename + is_onetime confirmed)
+
+## Archived
+
+- Direction 1 — complete: server.py read complete, architecture mapped
+- Direction 2 — complete
+- Direction 6 — complete: gig_tracker imports
+- Direction 7b — complete
+- Direction 7c — complete
+- Direction 7d — complete

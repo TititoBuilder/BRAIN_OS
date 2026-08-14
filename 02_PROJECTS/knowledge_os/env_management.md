@@ -44,8 +44,24 @@ between VSCode and standalone PowerShell or aliases become unreliable.
 
 
 
-<!-- auto-updated 2026-08-13 -->
-**Hardcoded paths → .env + pathlib pattern** (confirmed 2026-08-13)
-- Used in: custom-agent (refactor), soccer-content-generator (PathConfig centralization)
-- Pattern: centralize all path config into a PathConfig class reading from .env via pathlib
-- Add .env.example for documentation
+## PathConfig Pattern (canonical)
+
+What it is: centralizing hardcoded paths into a PathConfig class via .env + pathlib, so every path in a project derives from one config object rather than scattered string literals.
+
+When to use: any project with more than 2 hardcoded paths.
+
+Pattern example:
+
+```python
+from pathlib import Path
+from dotenv import load_dotenv
+import os
+load_dotenv()
+class PathConfig:
+    BASE = Path(os.getenv("PROJECT_ROOT", "."))
+    DATA = BASE / "data"
+    OUTPUT = BASE / "output"
+```
+
+Projects using it: custom-agent, soccer-content-generator
+Added: 2026-08-13
