@@ -175,19 +175,36 @@ Commits:
 ---
 
 ## Direction 7c — gig_tracker: Importer cleanup + category rules
+Status: COMPLETE ✓ 2026-08-13
+
+What you will do:
+  [x] Add ANTHROPIC → subscriptions category rule
+  [x] Add AMAZON → shopping category rule
+  [x] Recategorize existing rows — 119 rows moved out of other
+  [x] Add subscriptions and shopping categories
+  [x] Run preflight.py — no blocking issues
+
+Commits:
+  9d430b4 - subscriptions + shopping category rules
+  596c223 - expanded category rules (13 merchants)
+  DB only  - 119 rows recategorized
+
+---
+
+## Direction 7d — gig_tracker: Config + dashboard polish
 Status: QUEUED — next session opener
 
 What you will do:
-  - Add ANTHROPIC → subscriptions category rule to importer
-  - Recategorize Amazon charges on AMEX 01007 (44 rows in other)
-  - Add subscriptions category to web.py cost tracking
-  - Move van target dates from hardcoded to config file
-  - Run preflight.py — check all invariants pass after imports
+  - Move van target dates from hardcoded to config file (van_config.json or DB)
+  - Add calibrate_miles second period — patch runs 56-59 miles after
+  - Populate 11 Obsidian vault .md files in BRAIN_OS/02_PROJECTS/gig_tracker/
+  - Add spending category totals to dashboard (subscriptions, shopping visible)
+  - Run preflight clean — zero warnings target
 
 What you will learn:
-  - Category rule systems — pattern matching vs manual classification
-  - Config-driven values vs hardcoded constants
-  - Invariant checking — what breaks when DB grows
+  - Config-driven values vs hardcoded constants — when each is right
+  - Obsidian vault documentation standards
+  - Dashboard data completeness vs display completeness
 
 ---
 
