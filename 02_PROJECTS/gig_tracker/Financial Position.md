@@ -35,10 +35,7 @@ The BofA 0% balance should run to term. Paying it early wastes free financing. D
 
 ## Cash
 
-| Account | Balance |
-|---|---|
-| Cash on hand | $596 |
-
+| Account | Balance | |---|---| | WF Checking ...0669 | $12.79 | | WF Savings ...4700 | $28.03 | | AMEX Rewards ...5562 | $13.35 | | Capital One 360 ...0974 | $13.81 | | **Total** | **$67.98** | *Updated Aug 14, 2026 — payments cleared*
 ## Monthly Run Rate
 
 ~$2,615/month in expenses. This is the baseline that gig income must clear before any debt paydown is possible.
