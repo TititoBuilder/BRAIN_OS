@@ -10,6 +10,12 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[Queue]]
 - [[Queue_Archive]]
 
+## 00_INDEX
+- [[Business]]
+- [[Content]]
+- [[Operations]]
+- [[Personal]]
+
 ## 00_NAV
 - [[BDF_Nav]]
 - [[CA_Nav]]
@@ -47,16 +53,30 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[README]]
 - [[BDF_Agent_Pipeline]]
 - [[BDF_Book_System]]
+- [[BDF_Nav]]
 - [[BDF_Operations_Status]]
 - [[BDF_Twitter_Publisher]]
 - [[Book_Compiler_Shared]]
 - [[fingerprinting]]
 - [[brain-audio]]
 - [[CA_Book_System]]
+- [[CA_Nav]]
+- [[CC_Nav]]
 - [[CristianConstruction]]
 - [[CristianConstruction_Canvas]]
 - [[Custom_Agent_TTS]]
 - [[Custom_Agent_TTS_Audio]]
+- [[00 Gig Tracker MOC]]
+- [[Codebase Map]]
+- [[Cost Findings]]
+- [[Daily Operating Procedure]]
+- [[Decision Log]]
+- [[Financial Position]]
+- [[Offer Decision Rules]]
+- [[Prop 22 Mechanics]]
+- [[Unapplied - Backlog]]
+- [[Van Decision]]
+- [[Wage Claim - Spark Underpayment]]
 - [[brain-os.context]]
 - [[ca-book.context]]
 - [[read-along-app.context]]
@@ -156,12 +176,16 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[websockets]]
 - [[whisper_gpu_analysis]]
 - [[zettelkasten]]
+- [[LESSON_QUEUE]]
 - [[MCP_Book_System]]
 - [[OBS_MCP_Server]]
+- [[OBS_Nav]]
 - [[Project_Cheatsheet_System]]
 - [[Read_Along_App]]
 - [[Read_Along_Deploy]]
+- [[ReadAlong_Nav]]
 - [[Resolve_MCP_Server]]
+- [[ResolveMCP_Nav]]
 
 ## 03_APIS
 - [[Anthropic_Claude]]
@@ -177,6 +201,17 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 
 ## 03_KNOWLEDGE
 - [[Cristian_Principles]]
+- [[edge_tts]]
+- [[guide_brain_os]]
+- [[guide_lancedb]]
+- [[guide_mcp_ecosystem]]
+- [[guide_obsidian_claude]]
+- [[guide_venv]]
+- [[KNOWLEDGE_OS_MANUAL]]
+- [[kokoro_tts]]
+- [[message_queues]]
+- [[OBSIDIAN_QUICK_REFERENCE]]
+- [[programming_terminology_reference]]
 
 ## 04_DATA
 - [[BDF_LanceDB]]
@@ -197,6 +232,15 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[git-phase3-history]]
 - [[git-phase4-remote]]
 - [[mcp-auth]]
+- [[lesson_01_verify_against_reality]]
+- [[lesson_02_four_layer_architecture]]
+- [[lesson_03_the_id_crisis]]
+- [[lesson_04_single_source_of_truth]]
+- [[lesson_05_derive_dont_duplicate]]
+- [[lesson_06_filenames_are_keys]]
+- [[lesson_07_discipline_at_boundaries]]
+- [[lesson_08_session_loop_change_token]]
+- [[lesson_09_for_now_is_forbidden]]
 
 ## 05_MEMORY
 - [[CA_Knowledge_Book]]
@@ -214,8 +258,12 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 ## 06_TEMPLATES
 - [[AGENT_NODE]]
 - [[API_NODE]]
+- [[FLAGS_MANUAL]]
+- [[Naming_Contract]]
 - [[PROJECT_NODE]]
+- [[SESSION_COMPILE_TEMPLATE]]
 - [[SESSION_TEMPLATE]]
+- [[SYSTEM_Rules]]
 - [[WORKFLOW_NODE]]
 
 ## 07_SYSTEM
@@ -249,6 +297,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[Sessions_pipeline_TRACED]]
 - [[Sessions_Tab_Design_Notes]]
 - [[State_System]]
+- [[STUDY_SYSTEM]]
 - [[system_map.context]]
 - [[Taxonomy_Decision]]
 - [[PROJECT_CARD_TEMPLATE]]
@@ -298,8 +347,16 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[2026-06-17_2009_bdf_ca_brain_os_resolve]]
 - [[2026-06-17_2222_bdf_ca_brain_os_resolve]]
 - [[2026-07-08_0944_bdf_ca_brain_os]]
+- [[2026-08-13_2113_bdf_ca_brain_os]]
+- [[20260315_session_compile_story_kling]]
+- [[20260315_session_compile_style_transfer]]
+- [[20260315_session_compile_twitter]]
+- [[20260318_session_compile]]
+- [[20260401_session_compile]]
+- [[BRAIN_OS_Session_Handoff]]
 - [[session_20260617_2222]]
 - [[ingestion_flags]]
+- [[session_record]]
 
 ## 08_TEMPLATES
 - [[session-compile-template]]
@@ -322,7 +379,12 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 
 ## 09_TOOLS
 - [[09_TOOLS_INDEX]]
+- [[Claude_Code_Cost_Control]]
+- [[CLAUDE_CODE_EXECUTION_PLAN]]
+- [[Compile_Session_Workflow]]
+- [[INGESTION_COMMANDS]]
 - [[OBS_Node]]
+- [[Past_Chat_Compilation_Protocol]]
 - [[Predator_Node]]
 - [[session_2026-04-30]]
 - [[session_2026-05-01]]
@@ -334,6 +396,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[session_2026-05-30]]
 - [[session_2026-06-09]]
 - [[Tools_Book_Node]]
+- [[Tools_Registry]]
 - [[VSCode_Node]]
 - [[Windows_Tools_Node]]
 
@@ -370,6 +433,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[project_regrouping_narration_script]]
 
 ## _root
+- [[2026-08-09]]
 - [[CLAUDE]]
 - [[PROJECT_CARD]]
 - [[README]]
