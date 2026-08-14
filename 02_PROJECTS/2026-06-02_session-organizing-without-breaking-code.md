@@ -108,3 +108,7 @@ sets), the contract and taxonomy grounded in the vault, the TTS bug traced and
 documented, the generator hardened. Deferred by design: authoring the ~75 stub
 topics, a link-aware rename tool for wiki-linked vault files, and trashing
 mislabeled transcript duplicates once real audio exists.
+
+
+<!-- auto-ingested 2026-08-14 -->
+- 2026-08-14: Direction 4 Downloads triage committed 43 files; Direction 6 gig_tracker imports complete; Directions 7b–7e executed

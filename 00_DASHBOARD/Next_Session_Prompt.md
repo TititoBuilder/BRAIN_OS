@@ -42,3 +42,11 @@ START HERE: likely #1 or #2. Show me the start/finish line and begin verify-firs
 - Direction 7e IN PROGRESS: van_build rename + is_onetime field confirmed — resume web.py dashboard work
 - Verify gig_tracker 11 vault docs are correctly linked
 - FLAGS_MANUAL and LESSON_QUEUE newly added — confirm integration
+
+
+<!-- auto-ingested 2026-08-14 -->
+## Next Session (post 2026-08-14)
+- Direction 8: web.py dashboard build
+- Direction 7e follow-up: van_build + is_onetime integration
+- BDF avatar pipeline patch review (soccer-content-generator)
+- Verify PathConfig canonical pattern integration across agents

@@ -74,3 +74,13 @@ Completed items moved from Queue.md. Oldest first.
 - 11 Obsidian vault docs populated for gig_tracker project
 - FLAGS_MANUAL and LESSON_QUEUE added to vault
 - Flag deduplication and sort finalized
+
+
+<!-- auto-ingested 2026-08-14 -->
+## Directions 7b–7e (2026-08-14)
+- 7b: COMPLETE
+- 7c: COMPLETE
+- 7d: COMPLETE
+- 7e: IN PROGRESS → queued as Direction 8
+- van_build rename + is_onetime field confirmed
+- PathConfig canonical pattern documented

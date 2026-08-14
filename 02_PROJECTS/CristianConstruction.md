@@ -251,3 +251,7 @@ Each folder uses its own venv via .vscode\settings.json
 - [[Tools_Registry]]
 - [[Session_Protocol]]
 - [[SYSTEM_MASTER]]
+
+
+<!-- auto-updated 2026-08-14 -->
+Project doc added 2026-08-14. Initial documentation committed.

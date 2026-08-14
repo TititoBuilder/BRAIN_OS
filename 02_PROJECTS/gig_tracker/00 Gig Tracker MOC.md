@@ -46,3 +46,9 @@ Income sources: Spark (Walmart delivery) + Roadie runs, Southern California.
 | Cash on hand | $596 |
 | Monthly run rate | ~$2,615 |
 | FICO | 716 |
+
+
+<!-- auto-ingested 2026-08-14 -->
+## 2026-08-14 Population
+- 11 Obsidian vault docs populated for gig_tracker project during Direction 6
+- Includes: Financial Position, Decision Log, Offer Decision Rules, Prop 22 Mechanics, Van Decision, Wage Claim, Cost Findings, Daily Operating Procedure, Unapplied Backlog, Codebase Map, and this MOC

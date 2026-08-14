@@ -162,3 +162,8 @@ audio_staging/*.txt and audio_staging/**/*.txt.
 - Direction 7b — complete
 - Direction 7c — complete
 - Direction 7d — complete
+
+
+<!-- auto-updated 2026-08-14 -->
+- Direction 7e: IN PROGRESS (queued as Direction 8 for next session)
+- Direction 8: web.py dashboard (queued)

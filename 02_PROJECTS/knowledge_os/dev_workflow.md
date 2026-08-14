@@ -20,3 +20,9 @@ Deployment pushes those files to Vercel. A preview deploy gives you a staging UR
 The discipline is this: never deploy while you are still iterating. The dev server is for figuring things out. The build is for confirming something works. The deploy is for publishing something finished. Mixing those stages means users see in-progress work, and you spend time managing a deployed state instead of building.
 
 One more thing to hold: when you close the terminal, the dev server dies. It is a local process tied to that terminal session. It is not a service, it is not deployed, it is not running on any server. The moment that window closes, it is gone. Your production app keeps running because it lives on Vercel. Your local dev session runs only while your terminal is open.
+
+
+<!-- auto-ingested 2026-08-14 -->
+### PathConfig Canonical Pattern
+- Established 2026-08-14 as the canonical approach for path configuration across BDF/CA pipelines
+- Documented during Direction 7e; replaces ad-hoc path strings with a structured PathConfig object
