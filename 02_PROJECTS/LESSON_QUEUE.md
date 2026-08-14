@@ -216,19 +216,26 @@ Commits:
 ---
 
 ## Direction 7e — gig_tracker: Importer + mileage
-Status: QUEUED — next session opener
+Status: IN PROGRESS
 
 What you will do:
-  - Wait for second paid-in-full Spark period
-  - Run calibrate_miles with 2+ periods → update baseline
-  - Patch runs 56-59 engaged_miles after baseline confirmed
-  - Add WF Active Cash balance drift check to Daily Operating Procedure
-  - Review Best Buy $1,578 period charge — add is_onetime flag
+  [x] shopping → van_build category rename (16 rows + importer rule)
+  [x] Best Buy $1,578 is_onetime confirmed correct
+  [ ] Wait for second paid-in-full Spark period
+  [ ] Run calibrate_miles with 2+ periods → update baseline
+  [ ] Patch runs 56-59 engaged_miles after baseline confirmed
+
+  Note: van_build category to be revisited and split after van move-in.
+  Post-move: personal shopping gets its own category again.
 
 What you will learn:
   - is_onetime flag — how amortization works for large one-time purchases
   - Baseline calibration — why one data point is never enough
   - Period vs YTD analysis — when each view is misleading
+
+Commits:
+  805438d - shopping → van_build importer rule
+  DB only  - 16 rows recategorized shopping → van_build
 
 ---
 
