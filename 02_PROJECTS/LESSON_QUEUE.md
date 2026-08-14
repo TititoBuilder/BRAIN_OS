@@ -192,19 +192,43 @@ Commits:
 ---
 
 ## Direction 7d — gig_tracker: Config + dashboard polish
-Status: QUEUED — next session opener
+Status: COMPLETE ✓ 2026-08-13
 
 What you will do:
-  - Move van target dates from hardcoded to config file (van_config.json or DB)
-  - Add calibrate_miles second period — patch runs 56-59 miles after
-  - Populate 11 Obsidian vault .md files in BRAIN_OS/02_PROJECTS/gig_tracker/
-  - Add spending category totals to dashboard (subscriptions, shopping visible)
-  - Run preflight clean — zero warnings target
+  [x] Move van target dates from hardcoded to van_config.json
+  [x] calibrate_miles — deferred, needs 2+ paid-in-full periods
+  [x] Populate 11 Obsidian vault docs in BRAIN_OS/02_PROJECTS/gig_tracker/
+  [x] Dashboard polish — Chart.js live, balances correct, cash_balance.py built
+  [x] Run preflight clean — no blocking issues
 
 What you will learn:
   - Config-driven values vs hardcoded constants — when each is right
   - Obsidian vault documentation standards
   - Dashboard data completeness vs display completeness
+
+Commits:
+  2b4d7f1 - van dates → van_config.json
+  af46c61 - 11 Obsidian vault docs + gitignore fix
+  9d430b4 - subscriptions + shopping rules
+  596c223 - expanded category rules
+  686ddb5 - cash_balance.py + balance.py
+
+---
+
+## Direction 7e — gig_tracker: Importer + mileage
+Status: QUEUED — next session opener
+
+What you will do:
+  - Wait for second paid-in-full Spark period
+  - Run calibrate_miles with 2+ periods → update baseline
+  - Patch runs 56-59 engaged_miles after baseline confirmed
+  - Add WF Active Cash balance drift check to Daily Operating Procedure
+  - Review Best Buy $1,578 period charge — add is_onetime flag
+
+What you will learn:
+  - is_onetime flag — how amortization works for large one-time purchases
+  - Baseline calibration — why one data point is never enough
+  - Period vs YTD analysis — when each view is misleading
 
 ---
 
