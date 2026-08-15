@@ -5,7 +5,7 @@ knowledge_os_status: Mastered
 knowledge_os_score: 90
 knowledge_os_priority: High
 knowledge_os_evidence: CA, BDF, read-along venv separation complete
-knowledge_os_last_touched: '2026-05-03'
+knowledge_os_last_touched: '2026-08-14'
 ---
 # Python Venvs
 
@@ -45,3 +45,26 @@ Four venvs, one declared purpose each. The canonical AI venv is the source of
 truth for anything touching PyTorch. Verify with where dot exe python after
 every activation, not just by assuming activation worked.
 
+## Venv Map — August 2026 (8 environments)
+
+| Path | Project | Status |
+|---|---|---|
+| C:\Dev\CristianConstruction\venv | CristianConstruction | Active |
+| C:\Dev\Projects\custom-agent\venv | Custom Agent TTS | Active |
+| C:\Dev\Projects\soccer-content-generator\venv | BDF | Active GPU/Whisper |
+| C:\Knowledge\CA\CA_Book\venv | CA_Book | Stale parked |
+| C:\Knowledge\CA\venv | CA | Active pydub/TTS |
+| C:\Users\titit\Projects\obs-mcp-server\venv | OBS MCP | Active |
+| C:\Users\titit\Projects\read-along-app\backend\venv | Read-Along | Active |
+| C:\Users\titit\Projects\resolve-mcp-server\venv | Resolve MCP | Active |
+
+gig_tracker uses system Python — no venv needed.
+
+## System Python — Corrected Status Aug 2026
+Original entry said system Python must never be used for inference.
+That is outdated. System Python at C:\Python312 carries torch,
+transformers, flask, fastapi, openpyxl, pandas, playwright, lancedb,
+scikit-learn and 90+ packages.
+Current rule: system Python is fine for gig_tracker (SQLite, Flask,
+Click, Rich). Never install conflicting versions without checking
+pip list first.
