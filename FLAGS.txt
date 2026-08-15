@@ -108,3 +108,8 @@
 2026-08-13 | gig_tracker | DATA | shopping renamed van_build | category name should reflect purpose | shopping too generic during van build phase | Fixed: 16 rows updated, importer rule renamed
 2026-08-13 | gig_tracker | DATA | Best Buy $1,578 is_onetime=1 | large one-time purchase flagged | laptop already flagged correctly from prior session | Confirmed correct
 2026-08-13 | gig_tracker | DATA | van_build $2,741 YTD | van build spending now visible as own category | was buried in shopping | Revisit category post-move
+2026-08-14 | gig_tracker | BUG | runway missing Roadie income | runway surplus was -$864 | platform_statements not read by runway.py | Fixed: Roadie monthly added from platform_statements (commit 08c4e09)
+2026-08-14 | gig_tracker | TOOL | import_spark_xlsx.py built | manual trip entry replaced | 536 trips imported from XLSX Jan-Aug 2026 | Committed a99f962 — re-run monthly after new XLSX download
+2026-08-14 | gig_tracker | DATA | delivery_runs 67 → 603 rows | all Spark trips in DB | only 67 manually logged | XLSX import complete — calibrate_miles runs Monday after period closes
+2026-08-14 | gig_tracker | BUG | xlsx_import not in VALID_SOURCES | preflight blocked after import | invariants.py whitelist missing xlsx_import | Fixed: added to VALID_SOURCES (commit 6afaaf7)
+2026-08-14 | gig_tracker | DATA | real surplus $2,821/mo | debt free Mar 2028 | runway was showing -$864 before Roadie fix | Debt kill order: dealer loan Sep 2027 → personal loan Feb 2028 → BofA Mar 2028
