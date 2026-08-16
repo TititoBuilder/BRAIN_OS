@@ -132,6 +132,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[lesson_07_discipline_at_boundaries]]
 - [[lesson_08_session_loop_change_token]]
 - [[lesson_09_for_now_is_forbidden]]
+- [[lesson_10_os_fundamentals]]
 - [[llm_data_pipelines]]
 - [[llm_fundamentals]]
 - [[load_balancing]]
@@ -241,6 +242,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[lesson_07_discipline_at_boundaries]]
 - [[lesson_08_session_loop_change_token]]
 - [[lesson_09_for_now_is_forbidden]]
+- [[lesson_10_os_fundamentals]]
 
 ## 05_MEMORY
 - [[CA_Knowledge_Book]]
@@ -347,8 +349,10 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[2026-06-17_2009_bdf_ca_brain_os_resolve]]
 - [[2026-06-17_2222_bdf_ca_brain_os_resolve]]
 - [[2026-07-08_0944_bdf_ca_brain_os]]
+- [[2026-07-08_2113_brain_os_ca_cc]]
 - [[2026-08-13_2113_bdf_ca_brain_os]]
 - [[2026-08-14_1408_bdf_ca_brain_os]]
+- [[2026-08-15_1709_bdf_ca_brain_os]]
 - [[20260315_session_compile_story_kling]]
 - [[20260315_session_compile_style_transfer]]
 - [[20260315_session_compile_twitter]]
