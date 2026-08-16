@@ -1,6 +1,6 @@
 # System Map — BRAIN_OS-system-map
 
-Generated: 2026-06-22T19:00:13.577920+00:00
+Generated: 2026-08-16T19:04:25.019172+00:00
 Projects: 7
 
 | Project | Exists | Venv | Shared pkgs | Deploys | Drive |
