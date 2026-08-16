@@ -113,3 +113,9 @@
 2026-08-14 | gig_tracker | DATA | delivery_runs 67 → 603 rows | all Spark trips in DB | only 67 manually logged | XLSX import complete — calibrate_miles runs Monday after period closes
 2026-08-14 | gig_tracker | BUG | xlsx_import not in VALID_SOURCES | preflight blocked after import | invariants.py whitelist missing xlsx_import | Fixed: added to VALID_SOURCES (commit 6afaaf7)
 2026-08-14 | gig_tracker | DATA | real surplus $2,821/mo | debt free Mar 2028 | runway was showing -$864 before Roadie fix | Debt kill order: dealer loan Sep 2027 → personal loan Feb 2028 → BofA Mar 2028
+2026-08-14 | BRAIN_OS | BUG | repo discovery missing -Force | Get-ChildItem missed hidden .git folders | 4 repos invisible without -Force flag | Fixed: -Force added to discovery command, documented in Operations.md
+2026-08-14 | BRAIN_OS | DATA | CA_Book venv marked stale incorrectly | venv is real infrastructure | Memory note was wrong | Corrected: venv confirmed exists, C:\Knowledge is a git repo
+2026-08-14 | BRAIN_OS | DATA | cc-landing not in inventory | repo at C:\Dev\ root not C:\Dev\Projects\ | Scanning Projects\ only missed it | Fixed: added to Operations.md inventory
+2026-08-14 | read-along-app | RISK | Railway trial expired | backend down | Free trial ended — 0/1 service online | Decision needed: pay $5/mo Railway or migrate to Render
+2026-08-14 | gig_tracker | FEAT | incentives imported | $343 YTD in incentive rows | Not previously tracked | Fixed: import_spark_xlsx.py updated, 20 rows committed
+2026-08-14 | BRAIN_OS | CONCEPT | OS fundamentals learned | lesson_10_os_fundamentals.md | Hardware→Kernel→Process→Stack/Heap→Fork/Exec→Thread→Venv→Sandbox | Committed 738437f
