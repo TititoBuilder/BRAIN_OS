@@ -172,3 +172,17 @@ TELEGRAM_CHAT_ID
 ANTHROPIC_CSV
 LOG_DIR
 ```
+
+
+## Triggers
+
+This project's active triggers — full definitions in [[Trigger_Architecture]] (07_SYSTEM), never duplicated here.
+
+| Trigger | Type | Fires |
+|---|---|---|
+| [[Trigger_Session_Close]] | MANUAL | session_close.py manual run |
+| [[Trigger_Graph_TTL_Expired]] | STATE | SESSION_ANCHOR_TTL_HOURS exceeded |
+| [[Trigger_Drive_Change_Token]] | STATE | Drive token differs from manifest |
+| [[Trigger_BrainOS_Daily_Review]] | TIME | Daily 9:00am PST |
+| [[Trigger_Daily_Log_Update]] | TIME | Daily 6:00pm PST |
+| [[Trigger_New_Idea]] | MANUAL | User input — note, voice, or task |
