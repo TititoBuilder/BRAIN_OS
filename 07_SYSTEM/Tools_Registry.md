@@ -324,3 +324,16 @@ tags: [system, tools, infra, live]
 **Cost warning:** Report itself flags large corpora (167 files / ~839k words on read-along-app alone) as expensive for semantic extraction — watch this on soccer-content-generator before running, may want a subfolder-scoped first pass.
 
 **NOT yet done:** not synced to soccer-content-generator, CristianConstruction, or BRAIN_OS itself. Relationship to "the Wall" (parked feature): different lens — Wall = learning-progress/temporal view; this = code-structure/static view. Complementary, not overlapping. Does NOT replace graphify.py (different graphs, different purposes — homemade tracks audio/dependency health, this tracks code architecture).
+
+**AMENDED 2026-08-16 (recovered from Claude Code session 51d43329):**
+- Version in place: graphifyy v0.8.44 (`uv tool list`). The 2026-06-19 pilot
+  numbers (95% extracted / 0.91 confidence) were recorded WITHOUT a version —
+  treat them as version-unknown, not as a baseline for v0.8.44.
+- PATH verified holding: `graphify` resolves to
+  C:\Users\titit\.local\bin\graphify.exe. Manual profile edits survived.
+- SECOND BINARY: the package ships `graphify-mcp` alongside `graphify`.
+  An MCP server, not the Claude Code skill. NEVER WIRED UP — no reference in
+  C:\Users\titit\.claude.json, and C:\BRAIN_OS\.mcp.json does not exist.
+  Unevaluated. Different integration path from `/graphify .` (queryable
+  mid-session vs. run-to-produce-graph.html). Compare against the existing
+  obs-mcp-server / resolve-mcp-server pattern before adopting.

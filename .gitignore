@@ -62,8 +62,7 @@ __pycache__/
 Untitled*.canvas
 Untitled*.base
 *.base
-2026-*.md
-2027-*.md
+202[67]-??-??.md
 
 .claude/settings.local.json
 
