@@ -110,7 +110,7 @@ Remaining phases (from 2026-06-20 concept):
 - P3: Add routing line to session SOP (bucket -> Project -> index -> project CLAUDE.md).
 - P4: Maintenance rule — new repo added to exactly one bucket index in same commit.
 
-## [BUG] audio_staging/ is not gitignored
+## [RESOLVED 2026-07-08] audio_staging/ is not gitignored — see resolution below (line ~145)
 Operating contract states audio_staging is gitignored. `git status` shows it
 untracked at C:\BRAIN_OS. Either the .gitignore entry is missing or malformed.
 A gitignore believed to be protecting you is not. Investigate before next commit.
@@ -120,7 +120,7 @@ CA prefix collides with CC (CristianConstruction). Card flags this itself.
 ATOMIC — one commit touching all four:
   1. Directory: C:\Knowledge\CA\CA_Book -> cc-audiobook
   2. 00_NAV\CA_Nav.md -> CCAudiobook_Nav.md
-  3. graphify config paths
+  3. graphify.py config: 02_PROJECTS/graphs/projects.manifest.json ("root" line)
   4. 00_INDEX\Content.md entry
 DO NOT relocate out of C:\Knowledge — venv at C:\Knowledge\CA\venv is the
 canonical AI/TTS venv (PyTorch nightly cu128, RTX 5070 Ti sm_120).
@@ -132,7 +132,7 @@ Also: CCLanding_Nav.md (cc-landing has none).
 
 ## [FRAGILITY] Consolidate Google Drive credentials
 gdrive_credentials.json / gdrive_token.json shared by 4-6 scripts, with copies
-in C:\Knowledge\CA\CA_Book\. Same finding as the graphify session. Blast radius
+in C:\Knowledge\CA\CA_Book\. Same finding as the graphifyy (third-party CLI) adoption session 2026-06-19. Blast radius
 is real. Flagged in 00_INDEX\Operations.md.
 
 ## [SMALL] 00_NAV\SYSTEM_Rules.md (4594b) is not a nav file
