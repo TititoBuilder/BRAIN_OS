@@ -118,8 +118,10 @@ def send_telegram(msg: str):
             method="POST"
         )
         urllib.request.urlopen(req, timeout=10)
+        return True
     except Exception as e:
         print(f"[session_start] Telegram failed: {e}")
+        return False
 
 
 # ── Context loader ─────────────────────────────────────────────────────────────
@@ -359,8 +361,11 @@ def main():
         else:
             msg = f"{emoji} SESSION STARTED — {name}\n✅ System clean. Good to go."
 
-        send_telegram(msg)
-        print(f"[session_start] Telegram sent.")
+        sent = send_telegram(msg)
+        if sent:
+            print(f"[session_start] Telegram sent.")
+        else:
+            print(f"[session_start] Telegram NOT sent — see failure above.")
 
 
 if __name__ == "__main__":
