@@ -155,7 +155,8 @@ def load_context(project: dict) -> str:
         parts.append("=== LATEST SESSION: none found ===")
 
     # 3. The queue ? In Progress section content (not just a count)
-    parts.append("=== QUEUE (In Progress) ===\n" + "\n".join(_parse_queue_section()))
+    queue_path = BRAIN_OS_ROOT / "00_DASHBOARD" / "Queue.md"
+    parts.append(f"=== QUEUE: {check_queue()} open item(s) in 'In Progress' -> {queue_path} [read on demand] ===")
 
     return "\n\n".join(parts)
 
