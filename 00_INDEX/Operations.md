@@ -53,3 +53,35 @@ Source of truth is the filesystem. This file is a view, not a copy.
   component to one consumer would misrepresent its blast radius.
 - `00_NAV\SYSTEM_Rules.md` (4594 bytes) is not a nav file. Likely belongs in
   `07_SYSTEM\`. Flagged, not moved.
+
+---
+
+## Complete Repo Inventory — August 14 2026
+Discovered using Get-ChildItem with -Force flag (required — .git is hidden on Windows).
+Previous inventories missed repos because -Force was omitted.
+
+| Repo | Root | Notes |
+|---|---|---|
+| BRAIN_OS | C:\BRAIN_OS | Vault + tooling |
+| cc-landing | C:\Dev\cc-landing | CristianConstruction landing page — at Dev root, NOT Dev\Projects |
+| CristianConstruction | C:\Dev\CristianConstruction | Business OS — at Dev root |
+| custom-agent | C:\Dev\Projects\custom-agent | TTS agent |
+| gig_tracker | C:\Dev\Projects\gig_tracker\gig_tracker | NESTED — inner folder is the git root |
+| soccer-content-generator | C:\Dev\Projects\soccer-content-generator | BDF pipeline |
+| book-compiler | C:\Dev\shared\book-compiler | Shared — CA book audio compiler |
+| brain-audio | C:\Dev\shared\brain-audio | Shared package — installed editable in BDF/CA/read-along |
+| knowledge-base | C:\Knowledge | Entire Knowledge folder is a repo |
+| obs-mcp-server | C:\Users\titit\Projects\obs-mcp-server | OBS Studio bridge |
+| read-along-app | C:\Users\titit\Projects\read-along-app | Vercel + Railway |
+| resolve-mcp-server | C:\Users\titit\Projects\resolve-mcp-server | DaVinci bridge |
+
+**Discovery command (always use -Force):**
+```powershell
+Get-ChildItem C:\Dev, C:\Knowledge, C:\Users\titit\Projects, C:\BRAIN_OS -Recurse -Depth 3 -Force -Filter ".git" -Directory -ErrorAction SilentlyContinue | ForEach-Object { $_.Parent.FullName } | Sort-Object
+```
+
+**Key findings:**
+- C:\Dev\ root has repos NOT inside Projects\ — always scan Dev root, not just Dev\Projects
+- C:\Dev\shared\ contains two shared packages invisible to previous scans
+- C:\Knowledge is itself a git repo — not just a venv host
+- gig_tracker has a nested path — git root is the INNER gig_tracker folder
