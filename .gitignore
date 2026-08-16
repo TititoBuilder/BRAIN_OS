@@ -73,3 +73,6 @@ Untitled*.base
 # Session narration staged for Kokoro TTS — derived from 08_SESSIONS/*.md (never commit)
 audio_staging/*.txt
 audio_staging/**/*.txt
+
+# Obsidian MCP transaction/lock state (local bridge bookkeeping, not vault content)
+.obsidian-mcp/
