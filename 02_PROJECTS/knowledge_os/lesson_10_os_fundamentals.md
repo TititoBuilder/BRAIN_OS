@@ -78,3 +78,7 @@ Exit codes 0/1/2 — BRAIN_OS tool contract
 Process isolation — Railway sandbox for Read-Along
 Venv — 8 environments across all projects
 Time slicing — FastAPI concurrent requests
+
+
+<!-- auto-ingested 2026-08-15 -->
+Added 2026-08-15: lesson_10 OS fundamentals doc created, venv map updated, system Python status documented.

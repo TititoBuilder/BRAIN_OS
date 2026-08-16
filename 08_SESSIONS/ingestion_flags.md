@@ -1,36 +1,36 @@
-# Ingestion Flags — 2026-08-14_1408_bdf_ca_brain_os.md
-Generated: 2026-08-14 14:09
+# Ingestion Flags — 2026-08-15_1709_bdf_ca_brain_os.md
+Generated: 2026-08-15 17:09
 Items: 5
 
 ---
 
 ## Flag 1 of 5 — FINANCIAL [HIGH]
 
-**Description:** Session commit 'fix: expand cash breakdown in Financial Position.md' modified financial data. Cash breakdown expansion may include new figures, account splits, or corrected totals that require human verification.
+**Description:** Session includes 'fix: expand cash breakdown in Financial Position.md' — direct modification of financial data content.
 
 **Nodes:** 02_PROJECTS/gig_tracker/Financial Position.md
 
-**Old:** (unknown — pre-session state not provided in archive)
+**Old:** Cash breakdown (pre-session): unknown — requires manual diff review
 
-**New:** Cash breakdown expanded during 2026-08-14 session (exact content not provided in archive; verify in vault)
+**New:** Expanded cash breakdown added 2026-08-15 — exact figures require human verification from session diff.
 
-**Suggested resolution:** Human reviewer should open Financial Position.md, verify the expanded cash breakdown is accurate and matches source records, and confirm no figures were introduced by hallucination during session.
+**Suggested resolution:** Human review required. Verify the expanded cash breakdown figures are accurate before accepting. Compare old vs new cash breakdown sections manually.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 2 of 5 — FINANCIAL [HIGH]
+## Flag 2 of 5 — MULTI_NODE [HIGH]
 
-**Description:** 11 gig_tracker financial/operational docs were bulk-populated in a single session (Direction 6). Multiple nodes contain financial figures (Wage Claim underpayment amount, Van Decision cost analysis, Cost Findings, Financial Position). These were written by AI and require human verification before being treated as source-of-truth.
+**Description:** Session committed 'populate 11 Obsidian vault docs for gig_tracker project' — simultaneous creation/update of 11 nodes across the gig_tracker directory.
 
-**Nodes:** 02_PROJECTS/gig_tracker/Financial Position.md, 02_PROJECTS/gig_tracker/Van Decision.md, 02_PROJECTS/gig_tracker/Wage Claim - Spark Underpayment.md, 02_PROJECTS/gig_tracker/Cost Findings.md
+**Nodes:** 02_PROJECTS/gig_tracker/00 Gig Tracker MOC.md, 02_PROJECTS/gig_tracker/Codebase Map.md, 02_PROJECTS/gig_tracker/Cost Findings.md, 02_PROJECTS/gig_tracker/Daily Operating Procedure.md, 02_PROJECTS/gig_tracker/Decision Log.md, 02_PROJECTS/gig_tracker/Financial Position.md, 02_PROJECTS/gig_tracker/Offer Decision Rules.md, 02_PROJECTS/gig_tracker/Prop 22 Mechanics.md, 02_PROJECTS/gig_tracker/Unapplied - Backlog.md, 02_PROJECTS/gig_tracker/Van Decision.md, 02_PROJECTS/gig_tracker/Wage Claim - Spark Underpayment.md
 
-**Old:** (docs did not exist prior to Direction 6 population)
+**Old:** Pre-session state of gig_tracker docs unknown — some may have been stubs or empty.
 
-**New:** Bulk-populated 2026-08-14 via Direction 6 — requires financial accuracy audit
+**New:** 11 gig_tracker vault docs populated in single session commit 2026-08-15.
 
-**Suggested resolution:** Human reviewer should audit all 4 financial nodes against actual records. Flag any AI-generated figures that were not directly sourced from user-provided data. Mark each doc with a 'verified' status once confirmed.
+**Suggested resolution:** Review each of the 11 gig_tracker docs for completeness and consistency before marking ingestion complete. Confirm no data conflicts between Financial Position, Cost Findings, and Wage Claim nodes particularly.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
@@ -38,31 +38,31 @@ Items: 5
 
 ## Flag 3 of 5 — MULTI_NODE [MEDIUM]
 
-**Description:** PathConfig canonical pattern was established this session. If this pattern is intended as the canonical path configuration approach, it should be reflected in at least the agent files and context graph that manage file paths — this is a 4-node coordination concern.
+**Description:** Session includes 'docs: add complete 12-repo inventory with -Force discovery command' and two separate auto-ingest runs (8 nodes each on 2026-08-14 and 2026-08-13). These cross-cutting ingestion runs likely touched multiple index and operations nodes.
 
-**Nodes:** 02_PROJECTS/knowledge_os/dev_workflow.md, 02_AGENTS/BDF_Automation_Agent.md, 02_AGENTS/CA_Orchestrator.md, 02_PROJECTS/graphs/brain-os.context.md
+**Nodes:** 02_PROJECTS/graphs/brain-os.context.md, 00_DASHBOARD/Navigation.md, 00_DASHBOARD/Queue.md, 02_PROJECTS/BDF_Operations_Status.md
 
-**Old:** Ad-hoc path strings used in agent and pipeline files
+**Old:** Repo inventory and -Force command not previously recorded.
 
-**New:** PathConfig canonical pattern established 2026-08-14 — adoption scope TBD
+**New:** 12-repo inventory added with -Force discovery command 2026-08-15.
 
-**Suggested resolution:** Decide scope of PathConfig adoption: (1) document-only in dev_workflow.md for now, or (2) update agent docs and context graph to reference it. If option 2, coordinate updates across all 4 nodes in a dedicated session.
+**Suggested resolution:** Confirm the 12-repo inventory is recorded in brain-os.context.md and that the -Force discovery command pattern is documented in an appropriate operations or system node. Verify Queue.md reflects cleared items from both auto-ingest runs.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 4 of 5 — ARCHIVAL [LOW]
+## Flag 4 of 5 — ARCHIVAL [MEDIUM]
 
-**Description:** 43 files were committed from Direction 4 Downloads triage. Archive README should reflect that these files were triaged and committed, and the archive policy should be confirmed (were any files moved to _archive, or all promoted to active vault?).
+**Description:** Session includes 'docs: archive completed directions' — directions were moved to archive state. Need to confirm which direction items were archived and that the archive README and Queue_Archive reflect the new state.
 
-**Nodes:** 00_DASHBOARD/Queue_Archive.md, 02_PROJECTS/_archive/README.md
+**Nodes:** 02_PROJECTS/_archive/README.md, 02_PROJECTS/BDF_Operations_Status.md, 00_DASHBOARD/Queue_Archive.md
 
-**Old:** (archive state prior to Direction 4 not known from this session archive)
+**Old:** Directions 7b–7e in various states of completion/in-progress.
 
-**New:** 43 files triaged and committed from Direction 4 Downloads on 2026-08-14
+**New:** Directions 7b–7e all complete; Direction 8 queued; completed directions archived.
 
-**Suggested resolution:** Update _archive/README.md to reflect Direction 4 triage outcome. Confirm whether any of the 43 files landed in _archive vs. active vault paths, and document the decision.
+**Suggested resolution:** Verify archived directions (7b, 7c, 7d confirmed complete; 7e in-progress then complete) are logged in Queue_Archive.md and that BDF_Operations_Status.md reflects Direction 8 as the active queue item.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
@@ -70,15 +70,15 @@ Items: 5
 
 ## Flag 5 of 5 — CROSS_DOMAIN [MEDIUM]
 
-**Description:** Two related additions this session: (1) CristianConstruction project doc added, (2) BDF avatar pipeline patch + canvas + operator manual added under soccer-content-generator. These touch both Business (CristianConstruction is a client) and Content (soccer generator) domains, and the context graph for soccer-content-generator may need updating to reflect the avatar pipeline patch.
+**Description:** Soccer-content-generator received a BDF avatar pipeline patch, canvas, and operator manual in the same session as CristianConstruction docs — these touch both the BDF agent domain and the creative_systems domain simultaneously.
 
-**Nodes:** 02_PROJECTS/CristianConstruction.md, 02_PROJECTS/CristianConstruction_Canvas.md, 02_PROJECTS/graphs/soccer-content-generator.context.md, 00_INDEX/Business.md
+**Nodes:** 02_PROJECTS/CristianConstruction.md, 02_PROJECTS/CristianConstruction_Canvas.md, 02_PROJECTS/graphs/soccer-content-generator.context.md, 02_AGENTS/BDF_Creative_Agent.md, 01_DOMAINS/creative_systems.md
 
-**Old:** CristianConstruction existed only in _archive/CristianConstruction_OLD.md prior to this session
+**Old:** Soccer-content-generator context did not include avatar pipeline or operator manual.
 
-**New:** Active CristianConstruction.md + Canvas created 2026-08-14; soccer-content-generator avatar pipeline patch also added
+**New:** Avatar pipeline patch, canvas, and operator manual added to soccer-content-generator 2026-08-15.
 
-**Suggested resolution:** Verify Business index references CristianConstruction. Verify soccer-content-generator context graph reflects the avatar pipeline patch. Confirm whether CristianConstruction_Canvas.md is the canonical canvas or a draft.
+**Suggested resolution:** Confirm avatar pipeline patch details are reflected in BDF_Creative_Agent.md and/or creative_systems.md if the patch introduces new capabilities. Verify CristianConstruction_Canvas.md is distinct from the soccer-content-generator canvas and no content was misrouted.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 

@@ -255,3 +255,7 @@ Each folder uses its own venv via .vscode\settings.json
 
 <!-- auto-updated 2026-08-14 -->
 Project doc added 2026-08-14. Initial documentation committed.
+
+
+<!-- auto-updated 2026-08-15 -->
+Docs added 2026-08-15: CristianConstruction project doc committed to vault.

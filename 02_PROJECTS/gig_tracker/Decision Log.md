@@ -64,3 +64,7 @@ Chronological record of architectural and operational decisions. Newest entries 
 - van_build field renamed; is_onetime confirmed
 - 11 vault docs populated for gig_tracker project
 - gig_tracker imports completed (Direction 6)
+
+
+<!-- auto-ingested 2026-08-15 -->
+2026-08-15: Committed gig_tracker ingestion flags from 2026-08-14 session. Flags deduplicated and sorted.

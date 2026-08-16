@@ -50,3 +50,7 @@ START HERE: likely #1 or #2. Show me the start/finish line and begin verify-firs
 - Direction 7e follow-up: van_build + is_onetime integration
 - BDF avatar pipeline patch review (soccer-content-generator)
 - Verify PathConfig canonical pattern integration across agents
+
+
+<!-- auto-updated 2026-08-15 -->
+Direction 8 queued. Direction 7e complete. Gig_tracker flags committed. Lesson_10 added. CristianConstruction docs live. Soccer-content-generator avatar pipeline patched.

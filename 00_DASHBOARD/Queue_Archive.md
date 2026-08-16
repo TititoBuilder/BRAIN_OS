@@ -84,3 +84,7 @@ Completed items moved from Queue.md. Oldest first.
 - 7e: IN PROGRESS → queued as Direction 8
 - van_build rename + is_onetime field confirmed
 - PathConfig canonical pattern documented
+
+
+<!-- auto-ingested 2026-08-15 -->
+- 2026-08-15 17:09 | Projects: BDF, CA, BRAIN_OS | Directions 7b–7e complete, CristianConstruction docs added, soccer-content-generator avatar pipeline patched, gig_tracker flags committed, lesson_10 added.

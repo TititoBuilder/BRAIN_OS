@@ -224,3 +224,7 @@ _nodes: 99_
 - **test_football_data_org2.py** (3.2 KB) — external: `dotenv`, `requests`
 - **test_ucl.py** (0.5 KB) — external: `dotenv`, `requests`
 - **token_sync.py** (8.7 KB)
+
+
+<!-- auto-ingested 2026-08-15 -->
+2026-08-15: Added BDF avatar pipeline patch, canvas, and operator manual.

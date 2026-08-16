@@ -453,3 +453,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 
 <!-- auto-ingested 2026-08-14 -->
 | 2026-08-14 | 14:08 | BDF, CA, BRAIN_OS | Directions 7b–7e, 43-file vault triage, gig_tracker 11 docs populated, ingest auto-handled 8 nodes from 2026-08-13_2113 session |
+
+
+<!-- auto-updated 2026-08-15 -->
+Last updated: 2026-08-15 17:09 — session close auto-update.
