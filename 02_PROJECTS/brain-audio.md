@@ -114,3 +114,7 @@ immediately across all venvs without reinstalling.
 - Integrated into book-compiler TTS pipeline
 - audio_staging binaries excluded from git; vault audio nodes added to BRAIN_OS
 - test_audio.wav excluded from tracking
+
+
+<!-- auto-ingested 2026-08-16 -->
+2026-08-16: Confirmed shared by 3 projects in first cross-project map run. See graphs/brain-os.context.md for full map.

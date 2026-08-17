@@ -192,3 +192,13 @@ audio_staging/*.txt and audio_staging/**/*.txt.
 ## 2026-08-16 (cont. 4) - Wall backend shipped, frontend queued for its own session
 - [x] FEATURE: "the Wall" - BACKEND DATA LAYER SHIPPED 2026-08-16. Investigated the real data flow before building anything: source of truth is knowledge_os.html (Chrome app, localStorage) -> manual "Obsidian Sync" export -> obsidian_sync.py --input writes vault frontmatter -> same obsidian_sync.json already committed to 09_TOOLS and fetched by backend.py's /topics from GitHub raw. /topics was already pulling status+score+evidence per topic and discarding all but domain. Fix was additive only: /topics now also returns `status` and `path_id` per topic (read-along-app commit 24bc422, pushed to origin/main, Railway deploy). No new export pipeline needed - status freshness is bounded by the same manual-sync cadence learning_paths.json already has, not a new staleness source.
 - [ ] FEATURE: "the Wall" - FRONTEND NOT STARTED. Queued as its own dedicated session. Scope: new tab in read-along-app frontend/src/tabs/, fetches /topics, groups entries by `path_id` into columns (path = layout only, not a rollup value), renders one square per topic colored by `status` (4-tier: Not Started / Learning / Practiced / Mastered - mockup during design only used 3, needs a 4th color stop), tap-to-play wired into existing audio player same as Books tab. Design already resolved in a 2026-08-16 Claude.ai session, mockup approved - this entry is pure frontend build, no more open data-model questions.
+
+<!-- auto-ingested 2026-08-16 -->
+- [BRAIN_OS] 2026-08-16: Disambiguated graphify.py vs graphifyy; closed duplicate audio_staging item; session-start isolation fork B built; naming-filter bug logged; narrowed gitignore 2026-*.md to daily notes only; committed 10 orphaned session logs; added session opener prompt template.
+
+
+<!-- auto-ingested 2026-08-16 -->
+- [BRAIN_OS] LATEST SESSION naming-filter bug — investigate and fix
+- [BRAIN_OS] Wall backend closed; queue frontend work as its own session
+- [CristianConstruction] Session 5 Triggers — closed
+- [soccer-content-generator] BDF avatar pipeline patch, canvas, and operator manual — delivered

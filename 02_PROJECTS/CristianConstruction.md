@@ -259,3 +259,7 @@ Project doc added 2026-08-14. Initial documentation committed.
 
 <!-- auto-updated 2026-08-15 -->
 Docs added 2026-08-15: CristianConstruction project doc committed to vault.
+
+
+<!-- auto-ingested 2026-08-16 -->
+- 2026-08-16: Added Triggers section to CLAUDE.md linking Trigger_Architecture (Session 5, 3 of 3); added CristianConstruction project doc.

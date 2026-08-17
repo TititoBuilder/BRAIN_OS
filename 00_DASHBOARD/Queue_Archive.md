@@ -88,3 +88,7 @@ Completed items moved from Queue.md. Oldest first.
 
 <!-- auto-ingested 2026-08-15 -->
 - 2026-08-15 17:09 | Projects: BDF, CA, BRAIN_OS | Directions 7b–7e complete, CristianConstruction docs added, soccer-content-generator avatar pipeline patched, gig_tracker flags committed, lesson_10 added.
+
+
+<!-- auto-ingested 2026-08-16 -->
+- 2026-08-16 21:29: Session closed — BDF, CA, BRAIN_OS. Triggers section added to 3 projects. Cross-project map run (7 projects). lesson_11 ACID added. session_start.py fixes (queue output reference-only, Telegram outcome reporting). gitignore narrowed. 10 orphaned session logs committed.

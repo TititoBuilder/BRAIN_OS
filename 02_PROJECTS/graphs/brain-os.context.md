@@ -55,3 +55,7 @@ _nodes: 30_
 - 11 gig_tracker vault docs populated
 - STUDY_SYSTEM added: four layers, domain map, learning principle
 - Flag system: 19 new entries added, deduplicated, sorted; Other category reduced to 26%
+
+
+<!-- auto-ingested 2026-08-16 -->
+2026-08-16: First cross-project map run executed — 7 projects mapped. brain_audio node shared by 3 projects. Findings logged from graphify/callchain cross-check.

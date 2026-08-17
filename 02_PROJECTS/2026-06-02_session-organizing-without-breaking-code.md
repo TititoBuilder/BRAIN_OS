@@ -112,3 +112,7 @@ mislabeled transcript duplicates once real audio exists.
 
 <!-- auto-ingested 2026-08-14 -->
 - 2026-08-14: Direction 4 Downloads triage committed 43 files; Direction 6 gig_tracker imports complete; Directions 7b–7e executed
+
+
+<!-- auto-ingested 2026-08-16 -->
+- 2026-08-16: PathConfig canonical pattern documented; completed directions archived; directions 7e complete, 8 queued.

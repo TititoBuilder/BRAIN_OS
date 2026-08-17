@@ -463,3 +463,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 
 <!-- auto-updated 2026-08-15 -->
 Last updated: 2026-08-15 17:09 — session close auto-update.
+
+
+<!-- auto-updated 2026-08-16 -->
+Auto-updated: 2026-08-16 21:29 (session close)

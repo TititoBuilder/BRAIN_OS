@@ -57,3 +57,7 @@ Score is serviceable for the van financing already in place. Near-term credit mo
 Vehicle sell sequence: Tacoma first → Prius C → proceeds attack personal loan.
 
 See [[Van Decision]] for the full funding path and timeline.
+
+
+<!-- auto-ingested 2026-08-16 -->
+2026-08-16: Expanded cash breakdown detail (fix applied this session).

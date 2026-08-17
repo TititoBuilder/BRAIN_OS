@@ -123,3 +123,7 @@ if an exception is raised before commit(). You get Atomicity for free.
 
 Sits with: data_modeling.md (structure) → lesson_11 (guarantees) → database_sharding.md (scale)
 Reading order: model it → guarantee it → scale it.
+
+
+<!-- auto-ingested 2026-08-16 -->
+Built from gig_tracker SQLite work during 2026-08-16 session. Covers ACID transaction fundamentals derived from practical database operations in the gig_tracker project.
