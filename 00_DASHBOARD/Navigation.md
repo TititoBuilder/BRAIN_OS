@@ -133,6 +133,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[lesson_08_session_loop_change_token]]
 - [[lesson_09_for_now_is_forbidden]]
 - [[lesson_10_os_fundamentals]]
+- [[lesson_11_acid_transactions]]
 - [[llm_data_pipelines]]
 - [[llm_fundamentals]]
 - [[load_balancing]]
@@ -243,6 +244,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[lesson_08_session_loop_change_token]]
 - [[lesson_09_for_now_is_forbidden]]
 - [[lesson_10_os_fundamentals]]
+- [[lesson_11_acid_transactions]]
 
 ## 05_MEMORY
 - [[CA_Knowledge_Book]]
@@ -264,6 +266,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[Naming_Contract]]
 - [[PROJECT_NODE]]
 - [[SESSION_COMPILE_TEMPLATE]]
+- [[SESSION_OPENER_PROMPT]]
 - [[SESSION_TEMPLATE]]
 - [[SYSTEM_Rules]]
 - [[WORKFLOW_NODE]]
@@ -353,6 +356,9 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[2026-08-13_2113_bdf_ca_brain_os]]
 - [[2026-08-14_1408_bdf_ca_brain_os]]
 - [[2026-08-15_1709_bdf_ca_brain_os]]
+- [[2026-08-16_1127_brain_os_graphify]]
+- [[2026-08-16_1158_brain_os_callchain]]
+- [[2026-08-16_2129_bdf_ca_brain_os]]
 - [[20260315_session_compile_story_kling]]
 - [[20260315_session_compile_style_transfer]]
 - [[20260315_session_compile_twitter]]
