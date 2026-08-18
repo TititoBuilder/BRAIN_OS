@@ -1,6 +1,6 @@
 # Lesson Queue — Active Directions
 Location: C:\BRAIN_OS\02_PROJECTS\LESSON_QUEUE.md
-Updated: 2026-08-12
+Updated: 2026-08-18
 
 ---
 
@@ -15,6 +15,9 @@ Updated: 2026-08-12
     Direction 6 — gig_tracker imports and category coverage    COMPLETE ✓ 2026-08-12
     Direction 7 — gig_tracker web.py dashboard + automation    IN PROGRESS
     Direction 7b — gig_tracker dashboard debt + chart work     QUEUED
+    Direction 8 — gig_tracker calibrate_miles + XLSX      QUEUED
+    Direction 9 — read-along-app Wall→Listen + infra      COMPLETE ✓ 2026-08-18
+    Direction 10 — read-along-app architecture debt       QUEUED
 
 ---
 
@@ -272,6 +275,116 @@ git add by explicit filename only, never -A.
 
 ---
 
+## Direction 9 — read-along-app: Wall→Listen + credential archaeology
+Status: COMPLETE ✓ 2026-08-18
+
+What it was:
+  Clicking a Wall square never loaded audio. Diagnosing it uncovered
+  three further failures the broken handoff had been masking — nothing
+  downstream of the click had ever been exercised.
+
+What was done:
+  [x] Wall→Listen handoff — WallTab declared `key`, /topics returns
+      `machine_key`. t.key undefined on every square, so ListenTab's
+      effect early-returned on falsy pendingTopic. (21d8dad)
+  [x] /topics 404 — Authorization header on public raw.githubusercontent
+      URLs. Public raw + bad token = 404, not 401. (f1366b6)
+  [x] Two more authenticated raw call sites at backend.py:493 and
+      :727. (faab7fb)
+  [x] /vault/tree 502 — GitHub PAT expired. New fine-grained token,
+      BRAIN_OS only, Contents R/W, expires 2026-11-16.
+  [x] /audio-local invalid_scope — gdrive_token.json minted at
+      drive.readonly while backend.py:130 requests full drive. Google
+      refuses to widen scope on refresh. Re-minted via
+      populate_staging.py OAuth flow, GOOGLE_TOKEN_JSON updated.
+  [x] $PROFILE shortcuts: ra / bdf / gig / bos
+  [x] Vercel production deployed — read-along-app-psi.vercel.app
+
+  Supersedes 2026-08-17 flag "dataclasses not in Drive index" —
+  python_dataclasses was always indexed; the invalid_scope 500 was
+  misread as a 404.
+
+What was learned:
+  - raw.githubusercontent.com needs NO auth on a public repo and
+    returns 404 (not 401) when sent a bad token. api.github.com
+    requires auth and returns 401. One rule does not cover both.
+  - A refresh token cannot be widened to a larger scope. invalid_scope
+    means re-authorize; invalid_grant means expired. Different fixes.
+  - Render reads env vars once at process start. Saving a var does not
+    reliably redeploy — always Manual Deploy and confirm the timestamp.
+  - One dead credential produced three unrelated-looking symptoms and
+    no message named the cause.
+  - The hypothesis in the session opener was wrong. ListenTab is
+    CSS-hidden, never unmounted. Reading both files before touching
+    anything is what caught it.
+
+Commits:
+  21d8dad - fix(wall): read machine_key not key from /topics
+  f1366b6 - fix(backend): drop auth header on public raw fetches
+  faab7fb - fix(backend): drop auth header on remaining raw fetches
+  2cc6408 - feat: lesson_10 + lesson_11 audio nodes (drive_index 137)
+
+---
+
+## Direction 10 — read-along-app: architecture debt
+Status: QUEUED
+
+What it is:
+  Direction 9 fixed symptoms. These are the structural causes, plus
+  the observability gaps that made a two-line bug cost a full session.
+
+Priority — do these first:
+  - Extract shared Topic interface → frontend/src/types/topic.ts and
+    domain constants → frontend/src/constants/domains.ts.
+    Direct root cause of the Wall bug.
+  - Startup credential check: ping api.github.com/user, log pass/fail.
+    backend.py:681 raises 503 for a MISSING token but lets an INVALID
+    one fall through to 502.
+  - Log which Drive auth source won at startup (GOOGLE_TOKEN_JSON vs
+    GDRIVE_TOKEN_PATH) and its scope list.
+  - Connect Vercel to the GitHub repo. Render auto-deploys, Vercel
+    is manual — production frontend ran pre-fix code all session.
+
+Cleanup:
+  - Delete backend/download_legacy.py (dead — /audio-local is served
+    from backend.py:825). Its stale drive.readonly constant is what
+    made the scope bug hard to read.
+  - Consolidate three _GDRIVE_SCOPES declarations.
+  - /audio-local: return 502 + detail instead of bare 500.
+  - Fix "Railway" strings in populate_staging.py and backend.py:790.
+  - read-along-app.context.md is stale (87 days) — refresh.
+  - Rewrite .gitignore: `transcripts/` excludes the parent, so
+    `!backend/transcripts/` can never work. Also
+    `!.claude/settings.jsonbackend/get_ids.py` is two patterns
+    collided on a missing newline.
+
+Data and product:
+  - ~40 topics carry snake_case domains (creative_systems,
+    systems_operations, ai_engineering) absent from DOMAIN_ORDER in
+    both tabs — invisible on the Wall. Reconcile against
+    obsidian_sync.json.
+  - BooksTab "Sessions" header: no documented purpose anywhere in
+    read-along-app.context.md. Decide intent or remove.
+  - AskTab is stateless — each Ask replaces the last. "Explore next"
+    suggestions are generated text with nothing wired. Decide:
+    clickable chip (frontend only) or multi-turn (backend change).
+  - No gig_tracker audio node exists. Nothing generates one
+    automatically — needs a vault note before populate_staging.py
+    will see it.
+
+Coupling:
+  - populate_staging.py lives in read-along-app/backend but reads
+    C:\Dev\Projects\soccer-content-generator\gdrive_token.json.
+    Shared by BDF, populate_staging, and the read-along backend.
+    Widened readonly → full drive this session.
+    Backup: gdrive_token.json.bak-2026-08-17
+
+Calendar:
+  - GitHub PAT expires 2026-11-16.
+  - Drive token has no expiry but is shared across three consumers.
+
+---
+
 ## Backlog — Future Directions
 
   B1 — Write .env.example for every repo that has a .env
@@ -299,6 +412,10 @@ git add by explicit filename only, never -A.
   2026-08-12  Direction 6 complete — 584 transactions imported across 7 cards,
               category rules 51→84, Other 90%→22%, format detectors fixed,
               financial CSVs removed from GitHub
+  2026-08-18  Direction 9 — read-along-app Wall→Listen fixed plus three
+              masked failures: raw.githubusercontent auth 404s, expired
+              GitHub PAT, Drive scope mismatch. 4 commits, Vercel
+              deployed. Direction 10 opened for the structural causes.
 
 <!-- auto-ingested 2026-08-13 -->
 ## Added 2026-08-13
