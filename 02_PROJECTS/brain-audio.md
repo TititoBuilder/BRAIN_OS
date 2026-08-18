@@ -118,3 +118,7 @@ immediately across all venvs without reinstalling.
 
 <!-- auto-ingested 2026-08-16 -->
 2026-08-16: Confirmed shared by 3 projects in first cross-project map run. See graphs/brain-os.context.md for full map.
+
+
+<!-- auto-ingested 2026-08-18 -->
+- 2026-08-18: Cross-project map confirms brain_audio is shared by 3 projects.

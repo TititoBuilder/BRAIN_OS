@@ -26,3 +26,7 @@ One more thing to hold: when you close the terminal, the dev server dies. It is 
 ### PathConfig Canonical Pattern
 - Established 2026-08-14 as the canonical approach for path configuration across BDF/CA pipelines
 - Documented during Direction 7e; replaces ad-hoc path strings with a structured PathConfig object
+
+
+<!-- auto-ingested 2026-08-18 -->
+- 2026-08-18: session_start.py fixes — queue output is now reference-only (fork B), Telegram send reports actual outcome (not unconditional success). Gitignore narrowed: 2026-*.md limited to daily notes only; 10 orphaned session logs committed. .obsidian-mcp local transaction/lock state added to gitignore.

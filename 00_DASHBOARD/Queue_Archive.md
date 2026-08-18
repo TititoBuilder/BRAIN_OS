@@ -92,3 +92,10 @@ Completed items moved from Queue.md. Oldest first.
 
 <!-- auto-ingested 2026-08-16 -->
 - 2026-08-16 21:29: Session closed — BDF, CA, BRAIN_OS. Triggers section added to 3 projects. Cross-project map run (7 projects). lesson_11 ACID added. session_start.py fixes (queue output reference-only, Telegram outcome reporting). gitignore narrowed. 10 orphaned session logs committed.
+
+
+<!-- auto-ingested 2026-08-18 -->
+- 2026-08-18: Closed Wall backend work (frontend queued separately).
+- 2026-08-18: Closed Session 5 Triggers (CristianConstruction, soccer-content-generator, BRAIN_OS).
+- 2026-08-18: Closed session-start isolation fork B.
+- 2026-08-16: Duplicate audio_staging queue item closed.

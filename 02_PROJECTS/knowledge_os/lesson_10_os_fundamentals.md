@@ -82,3 +82,7 @@ Time slicing — FastAPI concurrent requests
 
 <!-- auto-ingested 2026-08-15 -->
 Added 2026-08-15: lesson_10 OS fundamentals doc created, venv map updated, system Python status documented.
+
+
+<!-- auto-ingested 2026-08-18 -->
+- Audio node added 2026-08-18: lesson_10_os_fundamentals audio node created and committed.

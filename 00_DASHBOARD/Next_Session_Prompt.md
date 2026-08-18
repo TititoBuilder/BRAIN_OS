@@ -54,3 +54,10 @@ START HERE: likely #1 or #2. Show me the start/finish line and begin verify-firs
 
 <!-- auto-updated 2026-08-15 -->
 Direction 8 queued. Direction 7e complete. Gig_tracker flags committed. Lesson_10 added. CristianConstruction docs live. Soccer-content-generator avatar pipeline patched.
+
+
+<!-- auto-ingested 2026-08-18 -->
+- Wall frontend work queued as its own session (backend closed 2026-08-18).
+- Direction 9/10 flagged and queued.
+- brain_audio shared by 3 projects — review dependency implications.
+- LATEST SESSION naming-filter bug logged; needs fix.

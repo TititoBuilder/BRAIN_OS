@@ -202,3 +202,8 @@ audio_staging/*.txt and audio_staging/**/*.txt.
 - [BRAIN_OS] Wall backend closed; queue frontend work as its own session
 - [CristianConstruction] Session 5 Triggers — closed
 - [soccer-content-generator] BDF avatar pipeline patch, canvas, and operator manual — delivered
+
+
+<!-- auto-ingested 2026-08-18 -->
+- Wall frontend queued as its own session (backend closed 2026-08-18).
+- Session 5 Triggers: closed across all three projects (2026-08-18).

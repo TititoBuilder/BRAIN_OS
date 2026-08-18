@@ -127,3 +127,7 @@ Reading order: model it → guarantee it → scale it.
 
 <!-- auto-ingested 2026-08-16 -->
 Built from gig_tracker SQLite work during 2026-08-16 session. Covers ACID transaction fundamentals derived from practical database operations in the gig_tracker project.
+
+
+<!-- auto-ingested 2026-08-18 -->
+- Audio node added 2026-08-18: lesson_11_acid_transactions audio node created and committed. Lesson built from gig_tracker SQLite work.
