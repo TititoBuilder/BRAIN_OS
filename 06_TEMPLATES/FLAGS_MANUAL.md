@@ -1,6 +1,6 @@
 # FLAGS.txt — Field Manual
 Location: C:\BRAIN_OS\FLAGS.txt
-Updated: 2026-08-10
+Updated: 2026-08-19
 
 ---
 
@@ -37,34 +37,62 @@ appearing every session, that's a signal you need terminal drills,
 not theory. If DESIGN flags cluster around one repo, that repo
 has structural debt.
 
-### REPO
-The repo or tool where the flag appeared.
-Examples: BRAIN_OS, custom-agent, resolve-mcp-server, POWERSHELL
+### SCOPE  (column header still reads REPO in older entries)
+Where the flag appeared. Two kinds of value, both valid:
+
+- A **repo name** when the flag belongs to one project:
+  gig_tracker (70), BRAIN_OS (27), read-along-app (27),
+  resolve-mcp-server (24), custom-agent, soccer-content-generator,
+  book-compiler, brain-audio, obs-mcp-server
+- A **cross-cutting label** when it does not belong to any one repo:
+  POWERSHELL (9), TOOL (4), PROCESS (4), GIT, DOWNLOADS
+
 If one repo generates most flags, that repo needs the most attention.
+Do NOT put a TYPE value here — one entry has CONCEPT in this column,
+which is a misfile.
 
 ### TYPE
 The category. This is the most important column — you sort by it
 at the end of every session to decide what to study next.
 
-    RISK    Work that could be lost or exposed. Fix immediately.
-            Examples: unpushed commits, secrets in history,
-            untracked work, OneDrive sync conflicts
+Counts below are live as of 2026-08-19 (175 flags). Ten types are in
+active use. `CODE` was documented from the start and never once used,
+so it has been removed.
 
-    DESIGN  Something structurally wrong that should be fixed.
-            Examples: hardcoded paths, backup files instead of
-            git tags, nested repos, duplicate copies of a project
+    CONCEPT (52) A git/python/system idea you only half understand.
+                 Examples: what a merge base is, how LF/CRLF conversion
+                 works, why a BOM makes a regex miss line 1
 
-    CMD     A command, flag, or tool behavior you could not explain.
-            Examples: git diff A..B vs A...B, Select-String syntax,
-            why -Force is needed to find .git folders
+    DESIGN  (48) Something structurally wrong that should be fixed.
+                 Examples: hardcoded paths, a hand-maintained keep-list,
+                 duplicate copies of a file, dead config after a migration
 
-    CONCEPT A git/python/system idea you only half understand.
-            Examples: what a merge base is, how LF/CRLF conversion
-            works, what HEAD actually points to
+    DATA    (27) A fact about content that is wrong, stale, or surprising.
+                 Not a code defect — the code works, the data lies.
+                 Examples: a doc claiming 4 tabs when there are 7, a flag
+                 that says files are missing when they are present
 
-    CODE    Code in your own repos you cannot explain.
-            Examples: a function you wrote 3 months ago and no
-            longer recognize, a pattern you copied without understanding
+    CMD     (14) A command, flag, or tool behavior you could not explain.
+                 Examples: Select-String has no -Recurse, git diff A..B
+                 vs A...B, why -Force is needed to find .git folders
+
+    BUG     (13) A specific defect with a reproducible symptom, in your
+                 own code. Distinct from DESIGN: BUG is broken, DESIGN
+                 is badly shaped but working.
+
+    RISK    (13) Work that could be lost or exposed. Fix immediately.
+                 Examples: unpushed commits, secrets in a filename,
+                 a tool one run away from deleting your shortcuts
+
+    TOOL     (4) External tool behavior — VS Code, Render, Vercel,
+                 GitLens. Not your code, but it shapes your workflow.
+
+    SECURITY (2) Credential or exposure risk specifically.
+                 Overlaps RISK; use SECURITY when the asset is a secret.
+
+    FEAT     (1) A capability added, logged for the record.
+
+    WORKFLOW (1) A habit or process change, not a code change.
 
 ### THING
 The specific subject. Short enough to search for later.
