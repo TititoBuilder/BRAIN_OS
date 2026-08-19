@@ -18,7 +18,8 @@ everything. It is the MAP and the persistent MEMORY, not a thing being built.
 **Projects are the things built**, and they hang off the graph:
 - **CristianConstruction (CA)** — business OS for the remodeling operation
 - **BDF / soccer-content-generator** — soccer content generation pipeline
-- **Read-Along App** — deployed learning platform (Vercel + Railway)
+- **Read-Along App** — deployed learning platform (Vercel + Render)
+- **gig_tracker** — delivery/gig income + expense tracking (Flask + SQLite)
 - **resolve-mcp-server** — DaVinci Resolve MCP bridge
 - **obs-mcp-server** — OBS Studio MCP bridge
 - shared: **brain-audio** (TTS normalizer), **book-compiler**
@@ -65,7 +66,7 @@ every step. Do NOT frame BDF as the center with construction as background.
 - **Blast-radius awareness** — map dependencies before changing shared components.
 - **Atomic commits** — both sides of a contract in one push.
 - **Federated Hybrid Model** — local machine does heavy compute (Whisper GPU,
-  Kokoro TTS); Railway/Vercel are lightweight coordinators.
+  Kokoro TTS); Render/Vercel are lightweight coordinators.
 - **MCP Tool Selection** — use the most direct tool that does the job correctly;
   reach for an MCP only when it adds capability or meaningfully simplifies.
 
