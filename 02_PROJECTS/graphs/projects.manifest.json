@@ -93,6 +93,47 @@
       "root": "C:/Dev/shared/brain-audio",
       "venv": null,
       "context_md": "C:/BRAIN_OS/02_PROJECTS/brain-audio.md"
+    },
+    {
+      "name": "gig_tracker",
+      "aliases": [
+        "gig-tracker",
+        "gig",
+        "tracker"
+      ],
+      "root": "C:/Dev/Projects/gig_tracker/gig_tracker",
+      "venv": null,
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/gig_tracker/00 Gig Tracker MOC.md"
+    },
+    {
+      "name": "book-compiler",
+      "aliases": [
+        "book_compiler",
+        "bookcompiler"
+      ],
+      "root": "C:/Dev/shared/book-compiler",
+      "venv": null,
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/Book_Compiler_Shared.md"
+    },
+    {
+      "name": "custom-agent",
+      "aliases": [
+        "custom_agent",
+        "agent"
+      ],
+      "root": "C:/Dev/Projects/custom-agent",
+      "venv": "C:/Dev/Projects/custom-agent/venv",
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/Custom_Agent_TTS.md"
+    },
+    {
+      "name": "obs-mcp-server",
+      "aliases": [
+        "obs_mcp_server",
+        "obs"
+      ],
+      "root": "C:/Users/titit/Projects/obs-mcp-server",
+      "venv": "C:/Users/titit/Projects/obs-mcp-server/venv",
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/OBS_MCP_Server.md"
     }
   ]
 }
