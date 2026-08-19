@@ -1,0 +1,210 @@
+{
+  "root": "C:/BRAIN_OS",
+  "artifacts": [
+    {
+      "name": "Queue",
+      "aliases": [
+        "master queue",
+        "task queue",
+        "todo",
+        "checkboxes"
+      ],
+      "path": "00_DASHBOARD/Queue.md",
+      "kind": "queue",
+      "writer": "manual",
+      "readers": [
+        "session_start.py",
+        "task_session.py",
+        "watchdog.py"
+      ],
+      "purpose": "Long-running task checkboxes. Counted at session start."
+    },
+    {
+      "name": "LESSON_QUEUE",
+      "aliases": [
+        "directions",
+        "lesson queue",
+        "study queue",
+        "curriculum"
+      ],
+      "path": "02_PROJECTS/LESSON_QUEUE.md",
+      "kind": "queue",
+      "writer": "manual",
+      "readers": [],
+      "purpose": "Scoped study sessions (Directions) with status. NO TOOL READS THIS."
+    },
+    {
+      "name": "Queue_Archive",
+      "aliases": [
+        "archive",
+        "done queue"
+      ],
+      "path": "00_DASHBOARD/Queue_Archive.md",
+      "kind": "queue",
+      "writer": "manual",
+      "readers": [],
+      "purpose": "Completed queue items. No reader, no writer."
+    },
+    {
+      "name": "FLAGS",
+      "aliases": [
+        "flags",
+        "study flags",
+        "flags.txt"
+      ],
+      "path": "FLAGS.txt",
+      "kind": "log",
+      "writer": "manual",
+      "readers": [],
+      "purpose": "Study flags, 7 pipe-separated columns. One writer: you, at session close."
+    },
+    {
+      "name": "ingestion_flags",
+      "aliases": [
+        "session flags",
+        "approval flags"
+      ],
+      "path": "08_SESSIONS/ingestion_flags.md",
+      "kind": "log",
+      "writer": "compile_session.py",
+      "readers": [],
+      "purpose": "MACHINE-WRITTEN per session. Never hand-edit."
+    },
+    {
+      "name": "Navigation",
+      "aliases": [
+        "nav",
+        "vault index",
+        "dashboard"
+      ],
+      "path": "00_DASHBOARD/Navigation.md",
+      "kind": "index",
+      "writer": "vault_index.py",
+      "readers": [
+        "session_close.py"
+      ],
+      "purpose": "Vault navigation. Derived, auto-committed."
+    },
+    {
+      "name": "TOOLS_INDEX",
+      "aliases": [
+        "tools index",
+        "script index",
+        "09_tools_index"
+      ],
+      "path": "09_TOOLS/09_TOOLS_INDEX.md",
+      "kind": "index",
+      "writer": "tools_index.py",
+      "readers": [
+        "task_session.py"
+      ],
+      "purpose": "Script index from docstrings. Derived, auto-committed."
+    },
+    {
+      "name": "Memory_Index",
+      "aliases": [
+        "memory index"
+      ],
+      "path": "05_MEMORY/Memory_Index.md",
+      "kind": "index",
+      "writer": "manual",
+      "readers": [
+        "vault_audio_generator.py",
+        "populate_staging.py"
+      ],
+      "purpose": "Read by two repos, written by none."
+    },
+    {
+      "name": "drive_index",
+      "aliases": [
+        "drive index",
+        "audio index"
+      ],
+      "path": "09_TOOLS/drive_index.json",
+      "kind": "index",
+      "writer": "session_compiler.py / populate_staging.py",
+      "readers": [
+        "task_session.py",
+        "backend.py",
+        "borrowed_audio_worklist.py"
+      ],
+      "purpose": "machine_key -> Drive file id. Nested under 'index' key."
+    },
+    {
+      "name": "Cristian_Principles",
+      "aliases": [
+        "principles",
+        "earned knowledge"
+      ],
+      "path": "07_SYSTEM/Cristian_Principles.md",
+      "kind": "doctrine",
+      "writer": "manual",
+      "readers": [
+        "learning_profile_extractor.py",
+        "vault_audio_generator.py"
+      ],
+      "purpose": "Canonical earned-knowledge principles."
+    },
+    {
+      "name": "SYSTEM_MASTER",
+      "aliases": [
+        "system master",
+        "canonical paths"
+      ],
+      "path": "SYSTEM_MASTER.md",
+      "kind": "doctrine",
+      "writer": "manual",
+      "readers": [
+        "generate_profile.py"
+      ],
+      "purpose": "Source of truth for $PROFILE aliases and paths."
+    },
+    {
+      "name": "Tools_Registry",
+      "aliases": [
+        "tools registry",
+        "tool list"
+      ],
+      "path": "07_SYSTEM/Tools_Registry.md",
+      "kind": "doctrine",
+      "writer": "sync_brain.py (caller deleted - verify)",
+      "readers": [
+        "vault_audio_generator.py",
+        "populate_staging.py"
+      ],
+      "purpose": "Check before adopting any new tool."
+    },
+    {
+      "name": "BRAIN_OS_CONFIG",
+      "aliases": [
+        "config",
+        "brain os config"
+      ],
+      "path": "BRAIN_OS_CONFIG.json",
+      "kind": "config",
+      "writer": "manual",
+      "readers": [
+        "graph_maintainer.py",
+        "refresh_drive_token.py",
+        "drive_sync.py",
+        "session_compiler.py"
+      ],
+      "purpose": "Drive folder IDs and TTL config."
+    },
+    {
+      "name": "projects_manifest",
+      "aliases": [
+        "projects manifest",
+        "project registry"
+      ],
+      "path": "02_PROJECTS/graphs/projects.manifest.json",
+      "kind": "config",
+      "writer": "manual",
+      "readers": [
+        "project_paths.py",
+        "graphify.py"
+      ],
+      "purpose": "Declared source of truth for project roots."
+    }
+  ]
+}
