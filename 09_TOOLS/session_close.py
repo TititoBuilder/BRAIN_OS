@@ -234,6 +234,37 @@ def main():
 
     print(f"\n✅ Archive saved: {archive_path}")
 
+    # Refresh the generated tools index and commit it (scoped to 09_TOOLS_INDEX.md only).
+    # tools_index.py exit codes: 0 = ok, 1 = real error, 2 = index file absent (skip).
+    print("\nRefreshing 09_TOOLS_INDEX.md...")
+    try:
+        rc = subprocess.run(
+            [sys.executable, str(BRAIN_OS_ROOT / "09_TOOLS" / "tools_index.py")],
+            timeout=60,
+        ).returncode
+        if rc == 2:
+            print("  [skip] 09_TOOLS_INDEX.md not found - nothing to refresh.")
+        elif rc != 0:
+            print(f"  [warn] tools_index.py exited {rc}.")
+        else:
+            idx_path = "09_TOOLS/09_TOOLS_INDEX.md"
+            subprocess.run(["git", "-C", str(BRAIN_OS_ROOT), "add", idx_path], check=True, timeout=10)
+            status = subprocess.run(
+                ["git", "-C", str(BRAIN_OS_ROOT), "diff", "--cached", "--quiet", "--", idx_path],
+            )
+            if status.returncode == 1:
+                subprocess.run(
+                    ["git", "-C", str(BRAIN_OS_ROOT), "commit", "-m", "Auto-update 09_TOOLS_INDEX.md (session close)", "--", idx_path],
+                    check=True, timeout=10,
+                )
+                print("  09_TOOLS_INDEX.md updated and committed.")
+            else:
+                print("  09_TOOLS_INDEX.md unchanged - nothing to commit.")
+    except subprocess.CalledProcessError as e:
+        print(f"  [warn] Tools index refresh/commit failed: {e}")
+    except subprocess.TimeoutExpired:
+        print("  [warn] Tools index refresh timed out.")
+
     # Refresh vault navigation index and commit it (scoped to Navigation.md only)
     print("\nRefreshing Navigation.md...")
     try:
