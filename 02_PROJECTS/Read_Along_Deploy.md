@@ -1,14 +1,15 @@
 # Read-Along App — Deploy Architecture (Ground Truth)
 
-Last verified: 2026-06-04. Written after a full deploy debug. Everything here
-is CONFIRMED by direct inspection, not assumed.
+Last verified: 2026-08-19. Written after a full deploy debug, updated after the
+2026-08-14 Railway->Render migration. Everything here is CONFIRMED by direct
+inspection, not assumed.
 
 ## The system: 3 pieces, 1 source of truth
 
 | Piece | Where | Deploys via |
 |---|---|---|
 | Frontend (React/Vite/TS) | `frontend/` subdir | Vercel (auto on push to main) |
-| Backend (FastAPI) | `backend/backend.py` | Railway (auto on push to main) |
+| Backend (FastAPI) | `backend/backend.py` | Render (auto on push to main) |
 | Index + path defs | BRAIN_OS repo `09_TOOLS/` | git push (read via GitHub raw) |
 
 Audio lives on **Google Drive**. Transcripts live in `backend/transcripts/`
@@ -25,19 +26,26 @@ SYMPTOM if wrong (set to ./): build fails "sh: vite: command not found"
 FIX: Root Directory = frontend. This is the durable fix, NOT npx-patching the
 build command.
 
-### 2. Two separate Google Drive tokens (local vs Railway)
+### 2. Two separate Google Drive tokens (local vs Render)
 There are TWO copies of the Drive OAuth token, and BOTH expire (~weekly):
 - LOCAL: C:\Dev\Projects\soccer-content-generator\gdrive_token.json
-  Used by drive_browser.py for uploads. Refresh: delete it, run
-  `drive_browser.py --audit`, authorize in the browser that opens.
-- RAILWAY: env var GOOGLE_TOKEN_JSON (base64 of the token JSON).
+  Refresh by running populate_staging.py — its OAuth flow mints a fresh
+  token at FULL drive scope. backend.py:1000 names this path in its
+  scope-mismatch error.
+- RENDER: env var GOOGLE_TOKEN_JSON (base64 of the token JSON).
   Used by the deployed backend's _get_drive_service(). Refreshing the LOCAL
-  token does NOT update Railway. Must separately:
-  base64-encode the fresh local token -> paste into Railway's GOOGLE_TOKEN_JSON.
+  token does NOT update Render. Must separately:
+  base64-encode the fresh local token -> paste into Render's GOOGLE_TOKEN_JSON.
   PowerShell to clipboard:
     $b=[Convert]::ToBase64String([IO.File]::ReadAllBytes($tok)); $b|Set-Clipboard
-SYMPTOM if expired: /audio-local/* returns 500
-"invalid_grant: Token has been expired or revoked."
+  THEN click Manual Deploy. Render reads env vars ONCE at process start —
+  saving a variable does NOT reliably trigger a redeploy. Confirm the new
+  timestamp in the Events tab before testing (2026-08-18: a stale token
+  survived three checks because of this).
+SCOPE: mint at ["https://www.googleapis.com/auth/drive"], not drive.readonly.
+Google refuses to widen scope on refresh — a narrow token must be re-minted.
+SYMPTOM if expired: /audio-local/* returns 500 "invalid_grant".
+SYMPTOM if narrow:  /audio-local/* returns 500 "invalid_scope" on every key.
 
 ### 3. drive_index.json = SINGLE SOURCE OF TRUTH (GitHub only)
 Backend reads it from GitHub raw:
@@ -65,14 +73,15 @@ path_id. Paths were uploaded to Knowledge_OS/ root, indexed as "id:..." entries.
 1. Frontend change -> commit + push read-along repo -> Vercel auto-builds
    (verify Root Directory = frontend). Hard-refresh browser (Ctrl+Shift+R) to
    clear cached old bundle.
-2. Backend change -> same push -> Railway auto-builds.
+2. Backend change -> same push -> Render auto-builds.
 3. New audio (topic or path):
    a. Generate mp3 (Kokoro af_heart) + transcribe (GPU Whisper).
    b. Upload mp3 to Drive via drive_browser.py --upload (capture Drive ID).
       (Refresh local token first if it's >~5 days old.)
    c. Add "key":"id:FILEID" to drive_index.json VIA PYTHON. git push BRAIN_OS.
    d. Copy transcript json to backend/transcripts/. Commit + push read-along.
-4. If Railway can't reach Drive (500 invalid_grant) -> refresh GOOGLE_TOKEN_JSON.
+4. If Render can't reach Drive (500 invalid_grant) -> refresh GOOGLE_TOKEN_JSON,
+   then Manual Deploy (see section 2).
 
 ## KNOWN, ACCEPTED ARTIFACTS (not bugs)
 - Karaoke text can differ slightly from narration: transcripts are
@@ -86,10 +95,10 @@ path_id. Paths were uploaded to Knowledge_OS/ root, indexed as "id:..." entries.
 - Venv map: GPU/Whisper + Google API = soccer-content-generator\venv (BDF).
   pydub/stitching = C:\Knowledge\CA\venv. Both have CUDA. Triton warning is
   a harmless fallback, not CUDA failure.
-- Telegram "invalid TELEGRAM_CHAT_ID" in Railway logs = harmless placeholder
+- Telegram "invalid TELEGRAM_CHAT_ID" in Render logs = harmless placeholder
   env var, unrelated to audio.
 
 ## KEY FILES / IDS
-- Frontend: read-along-app-psi.vercel.app | Backend: read-along-app-production.up.railway.app
+- Frontend: read-along-app-psi.vercel.app | Backend: read-along-app.onrender.com
 - Vercel project: read-along-app (prj_MOIIrsQ5upC1pvWclJJgM5OFBC6n)
 - Repos: github.com/TititoBuilder/read-along-app + /BRAIN_OS
