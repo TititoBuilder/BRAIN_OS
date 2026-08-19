@@ -27,7 +27,6 @@ _Generated 2026-08-19 from module docstrings by `tools_index.py`. Do not edit by
 
 - `brain_graph.py` — unified BRAIN_OS code graph
 - `graph_maintainer.py` — Lightweight BDF graph maintenance runner
-- `graph_maintainer_patch.py` — graph_maintainer.py — PATCH: Task 2 Audio Parity Check INTEGRATION INSTRUCTIONS Apply three changes to scripts/graph_maintainer.py: CHANGE 1 — Add imports at the top of the file (after existing imports): import re from datetime import datetime, timezone CHANGE 2 — Add the two functions below (paste anywhere before main())
 - `graphify.py` — BDF project graph builder
 
 ## Audio Generation
@@ -47,6 +46,7 @@ _Generated 2026-08-19 from module docstrings by `tools_index.py`. Do not edit by
 - `drive_download.py` — Download specific Drive files by folder_path, rename to machine_key
 - `drive_learning_path_organizer.py` — Organize Drive audio into Phase 1-6 folders Creates subfolders under each Drive folder and moves files according to learning path
 - `drive_setup_folders.py` — Creates the Knowledge_OS domain folder tree on Google Drive and moves session_01_knowledge_os.mp3 from root into Knowledge_OS/
+- `get_drive_ids.py` — list file names and Drive IDs for one hardcoded folder
 - `refresh_drive_token.py` — Drive Token Refresh + Railway Push Refreshes the local Google Drive OAuth token, then pushes the fresh base64-encoded token to Railway as GOOGLE_TOKEN_JSON
 
 ## Learning Path
@@ -62,6 +62,7 @@ _Generated 2026-08-19 from module docstrings by `tools_index.py`. Do not edit by
 
 ## System Utilities
 
+- `artifact_paths.py` — single source for resolving vault artifacts by name or alias
 - `audit_files.py` — Read-only file audit across the BRAIN_OS ecosystem
 - `cost_guard.py` — Claude Cost Guard Estimates token cost before running expensive Claude Code tasks
 - `generate_profile.py` — Generate PowerShell $PROFILE from SYSTEM_MASTER.md as single source of truth
@@ -69,12 +70,7 @@ _Generated 2026-08-19 from module docstrings by `tools_index.py`. Do not edit by
 - `tools_index.py` — regenerates 09_TOOLS_INDEX.md from module docstrings
 - `watchdog.py` — Unified BRAIN OS System Watchdog Three modes: --check morning : 7:15am daily health check (run via Task Scheduler) --check bdf : on-demand BDF pipeline check --check session : post-session close check (called by session_close.py) Telegram config: loaded from C:\Dev\Projects\soccer-content-generator\.env
 
-## Uncategorized
-
-- `get_drive_ids.py` — **[no docstring]**
-- `graphify_cross_project_extension.py` — **[no docstring]**
-
-_35 scripts indexed._
+_34 scripts indexed._
 
 <!-- TOOLS_INDEX:END -->
 
