@@ -1,47 +1,98 @@
 {
   "project": "BRAIN_OS-system-map",
   "output": "C:/BRAIN_OS/07_SYSTEM/system_map.json",
-  "shared_packages": ["brain_audio"],
+  "shared_packages": [
+    "brain_audio"
+  ],
   "detect": {
-    "railway": ["railway.json", "railway.toml", "Procfile"],
-    "vercel": ["vercel.json", ".vercel"],
-    "drive": ["drive_index.json", "token_sync.py", "gdrive_token.json", "gdrive_credentials.json"]
+    "railway": [
+      "railway.json",
+      "railway.toml",
+      "Procfile"
+    ],
+    "vercel": [
+      "vercel.json",
+      ".vercel"
+    ],
+    "drive": [
+      "drive_index.json",
+      "token_sync.py",
+      "gdrive_token.json",
+      "gdrive_credentials.json"
+    ]
   },
   "projects": [
     {
       "name": "BRAIN_OS",
+      "aliases": [
+        "brain-os",
+        "vault"
+      ],
       "root": "C:/BRAIN_OS",
-      "venv": null
+      "venv": null,
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/brain-os.context.md"
     },
     {
       "name": "BDF",
+      "aliases": [
+        "soccer-content-generator",
+        "soccer_content_generator"
+      ],
       "root": "C:/Dev/Projects/soccer-content-generator",
-      "venv": "C:/Dev/Projects/soccer-content-generator/venv"
+      "venv": "C:/Dev/Projects/soccer-content-generator/venv",
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/soccer-content-generator.context.md"
     },
     {
       "name": "Read-Along App",
+      "aliases": [
+        "read-along-app",
+        "read_along_app",
+        "readalong"
+      ],
       "root": "C:/Users/titit/Projects/read-along-app",
-      "venv": "C:/Users/titit/Projects/read-along-app/backend/venv"
+      "venv": "C:/Users/titit/Projects/read-along-app/backend/venv",
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/read-along-app.context.md"
     },
     {
       "name": "CristianConstruction",
+      "aliases": [
+        "cc",
+        "construction"
+      ],
       "root": "C:/Dev/CristianConstruction",
-      "venv": "C:/Dev/CristianConstruction/venv"
+      "venv": "C:/Dev/CristianConstruction/venv",
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/CristianConstruction.md"
     },
     {
       "name": "CA_Book",
+      "aliases": [
+        "ca-book",
+        "cabook"
+      ],
       "root": "C:/Knowledge/CA/CA_Book",
-      "venv": "C:/Knowledge/CA/venv"
+      "venv": "C:/Knowledge/CA/venv",
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/ca-book.context.md"
     },
     {
       "name": "Resolve MCP Server",
+      "aliases": [
+        "resolve-mcp-server",
+        "resolve_mcp_server",
+        "resolve"
+      ],
       "root": "C:/Users/titit/Projects/resolve-mcp-server",
-      "venv": "C:/Users/titit/Projects/resolve-mcp-server/venv"
+      "venv": "C:/Users/titit/Projects/resolve-mcp-server/venv",
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/Resolve_MCP_Server.md"
     },
     {
       "name": "brain-audio",
+      "aliases": [
+        "brain_audio",
+        "brainaudio"
+      ],
       "root": "C:/Dev/shared/brain-audio",
-      "venv": null
+      "venv": null,
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/brain-audio.md"
     }
   ]
 }

@@ -14,6 +14,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from project_paths import project_context, project_names
+
 BRAIN_OS = Path(r"C:\BRAIN_OS")
 
 
@@ -116,17 +118,20 @@ def build_fix_context():
     return "\n".join(parts)
 
 
-def build_build_context():
+def build_build_context(project: str):
     parts = ["=== TASK: BUILD ===\n"]
 
     parts.append("--- CLAUDE.md ---")
     claude_md = BRAIN_OS / "CLAUDE.md"
     parts.append(claude_md.read_text(encoding="utf-8") if claude_md.exists() else "(not found)")
 
-    ctx = BRAIN_OS / "00_DASHBOARD" / ".context.md"
-    if ctx.exists():
-        parts.append("\n--- .context.md ---")
-        parts.append(ctx.read_text(encoding="utf-8"))
+    parts.append(f"\n--- .context.md ({project}) ---")
+    try:
+        ctx = project_context(project)
+        parts.append(ctx.read_text(encoding="utf-8") if ctx.exists()
+                     else f"(not found: {ctx})")
+    except KeyError as exc:
+        parts.append(f"(unresolved: {exc})")
 
     parts.append("\n--- Queue.md: In Progress ---")
     parts.append(_queue_in_progress_section())
@@ -142,8 +147,15 @@ def copy_to_clipboard(text: str) -> None:
 
 
 def main():
+    # stdout falls back to the locale codepage (cp1252) when redirected,
+    # which cannot encode vault characters like U+2260. Force UTF-8.
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
     parser = argparse.ArgumentParser(description="Focused task context launcher")
     parser.add_argument("--task", required=True, choices=["git", "audio", "fix", "build"])
+    parser.add_argument("--project", default="BRAIN_OS",
+                        help="Project key or alias for --task build. "
+                             f"Known: {', '.join(project_names())}")
     args = parser.parse_args()
 
     builders = {
@@ -153,7 +165,10 @@ def main():
         "build": build_build_context,
     }
 
-    context = builders[args.task]()
+    if args.task == "build":
+        context = build_build_context(args.project)
+    else:
+        context = builders[args.task]()
     print(context)
     copy_to_clipboard(context)
 
