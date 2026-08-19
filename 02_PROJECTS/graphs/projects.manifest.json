@@ -134,6 +134,17 @@
       "root": "C:/Users/titit/Projects/obs-mcp-server",
       "venv": "C:/Users/titit/Projects/obs-mcp-server/venv",
       "context_md": "C:/BRAIN_OS/02_PROJECTS/OBS_MCP_Server.md"
+    },
+    {
+      "name": "cc-landing",
+      "aliases": [
+        "cc_landing",
+        "landing",
+        "custom-agent-landing"
+      ],
+      "root": "C:/Dev/cc-landing",
+      "venv": null,
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/CC_Landing.md"
     }
   ]
 }
