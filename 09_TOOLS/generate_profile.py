@@ -64,7 +64,7 @@ def extract_ps_functions(text: str) -> dict[str, str]:
     lines = text.splitlines(keepends=True)
     i = 0
     while i < len(lines):
-        m = re.match(r"\s*function\s+([\w-]+)\s*\{", lines[i])
+        m = re.match(r"[\ufeff\s]*function\s+([\w-]+)\s*\{", lines[i])
         if m:
             name = m.group(1)
             depth = lines[i].count("{") - lines[i].count("}")
@@ -216,11 +216,21 @@ def build_profile(preserved: dict[str, str], env: dict[str, str]) -> str:
     parts.append(MAP_BDF)
     parts.append(CC)
 
-    # --- Preserved complex functions (verbatim from current profile) ---
+    # --- Preserved functions (verbatim from current profile) ---------------
+    # Anything present in the live profile that this script does not itself
+    # generate is kept. Derived, not enumerated: a hardcoded keep-list silently
+    # deletes every hand-added shortcut on the next run. (2026-08-19: the list
+    # was ("dev", "ca-audio"), which would have dropped compile_session, ra,
+    # bdf, gig and bos.)
+    generated = {m.group(1) for m in re.finditer(r"^function\s+([\w-]+)\s*\{",
+                                                 "\n".join(parts), re.MULTILINE)}
+    extra = [n for n in preserved if n not in generated]
+    for name in sorted(extra):
+        parts.append(preserved[name])
+    if extra:
+        print(f"Preserved {len(extra)} hand-added function(s): {', '.join(sorted(extra))}")
     for name in ("dev", "ca-audio"):
-        if name in preserved:
-            parts.append(preserved[name])
-        else:
+        if name not in preserved and name not in generated:
             print(f"WARNING: '{name}' not found in current profile — omitted.", file=sys.stderr)
 
     # --- Env var lines from C:\BRAIN_OS\03_APIS\.env ---
@@ -254,9 +264,15 @@ def main() -> None:
             sys.exit(1)
 
     # --- Step 1: extract verbatim functions from current profile ---
-    current_text = PROFILE_MAIN.read_text(encoding="utf-8")
+    # utf-8-sig strips a leading BOM. Plain utf-8 keeps it as \ufeff, which
+    # \s* will not match - so the FIRST function in the profile becomes
+    # invisible to extract_ps_functions (2026-08-19: compile_session).
+    current_text = PROFILE_MAIN.read_text(encoding="utf-8-sig")
     all_funcs = extract_ps_functions(current_text)
-    preserved = {n: body for n, body in all_funcs.items() if n in PRESERVE_VERBATIM}
+    # Keep every function found in the live profile. build_profile() drops the
+    # ones it regenerates itself, so filtering here as well silently deleted
+    # every hand-added shortcut (2026-08-19: compile_session, ra, bdf, gig, bos).
+    preserved = all_funcs
     print(f"Current profile: {len(all_funcs)} functions parsed.")
     print(f"Preserving verbatim: {sorted(preserved)}")
 
