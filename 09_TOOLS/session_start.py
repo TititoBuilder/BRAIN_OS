@@ -22,6 +22,7 @@ import urllib.error
 import subprocess
 from pathlib import Path
 from project_paths import project_script, project_venv_python
+from artifact_paths import artifact_path
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -156,8 +157,13 @@ def load_context(project: dict) -> str:
         parts.append("=== LATEST SESSION: none found ===")
 
     # 3. The queue ? In Progress section content (not just a count)
-    queue_path = BRAIN_OS_ROOT / "00_DASHBOARD" / "Queue.md"
+    queue_path = artifact_path("Queue")
     parts.append(f"=== QUEUE: {check_queue()} open item(s) in 'In Progress' -> {queue_path} [read on demand] ===")
+
+    # 4. Directions - the study curriculum, tracked by status not checkbox
+    lq_path = artifact_path("LESSON_QUEUE")
+    active, queued = check_directions()
+    parts.append(f"=== DIRECTIONS: {active} in progress, {queued} queued -> {lq_path} [read on demand] ===")
 
     return "\n\n".join(parts)
 
@@ -223,7 +229,7 @@ def check_git_status(root: Path) -> int:
 # ── Queue check ───────────────────────────────────────────────────────────────
 def _parse_queue_section() -> list[str]:
     """Return lines of the '## In Progress' section from Queue.md (header line included)."""
-    queue_path = BRAIN_OS_ROOT / "00_DASHBOARD" / "Queue.md"
+    queue_path = artifact_path("Queue")
     if not queue_path.exists():
         return []
     content = queue_path.read_text(encoding="utf-8", errors="ignore")
@@ -243,6 +249,24 @@ def _parse_queue_section() -> list[str]:
 def check_queue() -> int:
     """Count unchecked items in Queue.md ## In Progress section."""
     return sum(1 for line in _parse_queue_section() if "- [ ]" in line)
+
+
+def check_directions() -> tuple:
+    """Count QUEUED and IN PROGRESS Directions in the LESSON_QUEUE Status block.
+
+    Directions track state as trailing text, not checkboxes, so this cannot
+    reuse the Queue parser. COMPLETE lines end with a date and never match.
+    """
+    path = artifact_path("LESSON_QUEUE")
+    if not path.exists():
+        return 0, 0
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    if "## Status" not in text:
+        return 0, 0
+    body = text.split("## Status", 1)[1].split("\n---", 1)[0]
+    rows = [l.rstrip() for l in body.splitlines()]
+    return (sum(1 for l in rows if l.endswith("IN PROGRESS")),
+            sum(1 for l in rows if l.endswith("QUEUED")))
 
 
 # ── Context printer ───────────────────────────────────────────────────────────
