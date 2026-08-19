@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """
+category: Audio Generation
 audio_stitcher.py — Knowledge OS Phase 2
 =========================================
 Reads audio_manifest.json exported from the Knowledge OS app.

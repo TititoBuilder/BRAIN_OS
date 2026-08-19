@@ -1,4 +1,5 @@
 """
+category: Graph & Code Analysis
 graph_maintainer.py — PATCH: Task 2 Audio Parity Check
 =======================================================
 

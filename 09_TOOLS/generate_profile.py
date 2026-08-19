@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """
+category: System Utilities
 Generate PowerShell $PROFILE from SYSTEM_MASTER.md as single source of truth.
 
 1. Reads the current profile and extracts verbatim the two complex functions

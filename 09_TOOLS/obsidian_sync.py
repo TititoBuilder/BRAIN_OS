@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """
+category: Vault & Sync
 obsidian_sync.py -- Knowledge OS Phase 3
 =========================================
 Reads obsidian_sync.json exported from the Knowledge OS app.

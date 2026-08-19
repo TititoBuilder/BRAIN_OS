@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """
+category: Google Drive
 drive_download.py — Download specific Drive files by folder_path, rename to machine_key.
 Usage: python drive_download.py
 """

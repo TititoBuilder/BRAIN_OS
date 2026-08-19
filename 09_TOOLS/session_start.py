@@ -1,4 +1,5 @@
 """
+category: Session Management
 session_start.py — BRAIN OS Session Orchestrator
 Runs automatically when a Claude Code session starts.
 Loads project context, runs health check, sends Telegram notification.

@@ -1,4 +1,5 @@
 """
+category: System Utilities
 watchdog.py — Unified BRAIN OS System Watchdog
 ===============================================
 Three modes:

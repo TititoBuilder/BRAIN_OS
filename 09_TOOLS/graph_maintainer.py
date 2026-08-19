@@ -1,4 +1,5 @@
 """
+category: Graph & Code Analysis
 graph_maintainer.py — Lightweight BDF graph maintenance runner.
 
 Tasks (in order):

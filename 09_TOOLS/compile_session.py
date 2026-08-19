@@ -1,4 +1,5 @@
 """
+category: Session Management
 compile_session.py  —  Option C Knowledge Ingestion Pipeline
 =============================================================
 Reads the latest session archive, runs it through the Knowledge

@@ -1,4 +1,5 @@
 """
+category: Graph & Code Analysis
 graphify.py — BDF project graph builder.
 
 Usage:

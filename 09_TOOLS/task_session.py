@@ -1,4 +1,5 @@
 """
+category: Session Management
 task_session.py — focused context launcher for task-specific Claude sessions.
 
 Usage:

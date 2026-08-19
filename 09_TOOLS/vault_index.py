@@ -1,4 +1,5 @@
 """
+category: Vault & Sync
 vault_index.py — generates the auto-section of the BRAIN_OS navigation page.
 Walks the vault, groups .md files by top-level folder, writes [[wikilinks]]
 between marker comments in 00_DASHBOARD/Navigation.md. Leaves manual content

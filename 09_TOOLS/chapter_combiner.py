@@ -1,4 +1,5 @@
 """
+category: Audio Generation
 chapter_combiner.py — Merge original chapter audio + learning anchor into one MP3
 Uses ffmpeg to concatenate: [original_audio] + [anchor_audio] = [combined_audio]
 

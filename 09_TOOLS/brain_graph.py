@@ -1,4 +1,5 @@
 """
+category: Graph & Code Analysis
 brain_graph.py - unified BRAIN_OS code graph.
 Captures BOTH edge types:
   - subprocess: "X launches Y.py" at runtime (direct + variable-tracked)

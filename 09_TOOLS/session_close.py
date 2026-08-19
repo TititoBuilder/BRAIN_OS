@@ -1,4 +1,5 @@
 """
+category: Session Management
 session_close.py — BRAIN OS Session Compiler
 Captures session work, writes a dated archive, and optionally notifies via Telegram.
 

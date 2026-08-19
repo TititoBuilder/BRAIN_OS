@@ -1,4 +1,5 @@
 """
+category: Learning Path
 learning_path_builder.py — BRAIN OS Learning Path Sequencer
 Organizes all audio files into a Phase 1-6 sequential learning path.
 Creates a manifest JSON + Drive folder structure plan.

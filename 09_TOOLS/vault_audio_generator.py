@@ -1,4 +1,5 @@
 """
+category: Audio Generation
 vault_audio_generator.py — Vault Node Audio Generator
 Converts HIGH priority BRAIN_OS vault .md files into spoken audio.
 

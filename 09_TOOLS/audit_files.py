@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """
+category: System Utilities
 audit_files.py  --  Read-only file audit across the BRAIN_OS ecosystem.
 
 Measures local disk reality against Naming_Contract.md. NEVER renames,

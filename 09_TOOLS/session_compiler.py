@@ -1,4 +1,5 @@
 r"""
+category: Session Management
 session_compiler.py — Session-to-Audio Chapter Compiler
 =========================================================
 Takes one session archive from 08_SESSIONS\, distills it into a clean
