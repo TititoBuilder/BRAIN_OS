@@ -47,7 +47,6 @@ _Generated 2026-08-19 from module docstrings by `tools_index.py`. Do not edit by
 - `drive_learning_path_organizer.py` — Organize Drive audio into Phase 1-6 folders Creates subfolders under each Drive folder and moves files according to learning path
 - `drive_setup_folders.py` — Creates the Knowledge_OS domain folder tree on Google Drive and moves session_01_knowledge_os.mp3 from root into Knowledge_OS/
 - `get_drive_ids.py` — list file names and Drive IDs for one hardcoded folder
-- `refresh_drive_token.py` — Drive Token Refresh + Railway Push Refreshes the local Google Drive OAuth token, then pushes the fresh base64-encoded token to Railway as GOOGLE_TOKEN_JSON
 
 ## Learning Path
 
@@ -70,7 +69,7 @@ _Generated 2026-08-19 from module docstrings by `tools_index.py`. Do not edit by
 - `tools_index.py` — regenerates 09_TOOLS_INDEX.md from module docstrings
 - `watchdog.py` — Unified BRAIN OS System Watchdog Three modes: --check morning : 7:15am daily health check (run via Task Scheduler) --check bdf : on-demand BDF pipeline check --check session : post-session close check (called by session_close.py) Telegram config: loaded from C:\Dev\Projects\soccer-content-generator\.env
 
-_34 scripts indexed._
+_33 scripts indexed._
 
 <!-- TOOLS_INDEX:END -->
 
