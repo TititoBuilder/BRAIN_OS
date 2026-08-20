@@ -99,3 +99,17 @@ Completed items moved from Queue.md. Oldest first.
 - 2026-08-18: Closed Session 5 Triggers (CristianConstruction, soccer-content-generator, BRAIN_OS).
 - 2026-08-18: Closed session-start isolation fork B.
 - 2026-08-16: Duplicate audio_staging queue item closed.
+
+
+<!-- auto-ingested 2026-08-19 -->
+## 2026-08-19 Session Archive
+- Closed flag log at 31 flags total
+- 14 flags, 9 queue items, 2 corrections logged (session two)
+- 10 flags, 2 queue items logged (index-mapping session)
+- 8 duplicate docs deleted; 00_NAV and 07_SYSTEM declared canonical
+- 5 CRLF duplicate compiles deleted; 08_TEMPLATES merged into 06_TEMPLATES
+- Manifest expanded to 12 repos (added: gig_tracker, book-compiler, custom-agent, obs-mcp-server, cc-landing)
+- Artifact registry added with name/aliases/path/writer/readers schema
+- Lesson 12 (index pattern) added
+- tools_index.py wired into session_close
+- Q&A entry logged 2026-08-19 03:07

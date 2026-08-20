@@ -7,3 +7,6 @@
 - Knowledge OS user manual documented
 - Dashboard: header visibility fixed, button hover states fixed, Focus Now cards clickable (edit modal)
 - Admin key file removed from tracking
+
+<!-- auto-ingested 2026-08-19 -->
+- 2026-08-19 03:07 — Q&A entry added (content from session; details in session archive).

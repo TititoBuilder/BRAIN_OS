@@ -21,3 +21,7 @@ Sit with that last one, because it is the whole lesson in a single fact. The map
 The fix was not to retype the list correctly. Retyping it correctly only resets the clock on the same failure. The fix was to make it derived — exactly the move you already know from the lesson on deriving rather than duplicating. A generator now walks the folder, reads the description that each script carries inside itself, groups them, and rewrites the index. Each tool declares what it is; the index only collects declarations. There is no second list to keep in agreement with the first. Add a tool and the map updates on the next session close, with no step to remember.
 
 So here is the test, and it travels anywhere. For any index you meet — in your system, in a project you join, in someone else's code — ask one question. What writes this? If there is a clear answer, the map can be trusted as far as its writer is trusted. If there is no answer, the map is already drifting, and how current it looks tells you nothing at all. That question costs you five seconds and it is the difference between reading a map and reading a fossil.
+
+
+<!-- auto-ingested 2026-08-19 -->
+Lesson 12 (The Index Pattern) added to knowledge_os on 2026-08-19. Covers tools_index.py wired into session_close, artifact registry with name/aliases/path/writer/readers fields, and .context.md resolution through the manifest.

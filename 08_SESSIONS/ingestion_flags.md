@@ -1,84 +1,68 @@
-# Ingestion Flags — 2026-08-18_1204_bdf_ca_brain_os.md
-Generated: 2026-08-18 12:05
-Items: 5
+# Ingestion Flags — 2026-08-19_1822_bdf_ca_brain_os.md
+Generated: 2026-08-19 18:23
+Items: 4
 
 ---
 
-## Flag 1 of 5 — MULTI_NODE [MEDIUM]
+## Flag 1 of 4 — FINANCIAL [HIGH]
 
-**Description:** Session 5 Triggers documentation added to CLAUDE.md across three separate projects (CristianConstruction, soccer-content-generator, BRAIN_OS) — this is a coordinated multi-node documentation change touching 3+ files.
+**Description:** Gig tracker Jul 20–Aug 2 base pay is double-counted by $635.53. This is a confirmed financial data error flagged during the session.
 
-**Nodes:** 02_PROJECTS/CristianConstruction.md, 02_PROJECTS/graphs/soccer-content-generator.context.md, 02_PROJECTS/graphs/brain-os.context.md
+**Nodes:** 02_PROJECTS/gig_tracker/Financial Position.md, 02_PROJECTS/gig_tracker/Daily Operating Procedure.md, 02_PROJECTS/gig_tracker/00 Gig Tracker MOC.md
 
-**Old:** No Triggers section in CLAUDE.md files for these projects.
+**Old:** Jul 20–Aug 2 base pay as currently recorded (includes erroneous $635.53 double-count)
 
-**New:** Triggers section added to each project's CLAUDE.md, linking to Trigger_Architecture document.
+**New:** Jul 20–Aug 2 base pay corrected by subtracting $635.53 from the double-counted line
 
-**Suggested resolution:** Confirm all three CLAUDE.md files have been updated with the Triggers section and Trigger_Architecture link. If CLAUDE.md files are outside the vault (in their own repos), no vault action needed — just verify project notes reflect the change.
+**Suggested resolution:** Audit Financial Position.md to locate the double-counted base pay entry for Jul 20–Aug 2, subtract $635.53 from the affected total, and verify the corrected figure against Daily Operating Procedure.md records. Confirm before writing.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 2 of 5 — ARCHITECTURE [MEDIUM]
+## Flag 2 of 4 — ARCHIVAL [MEDIUM]
 
-**Description:** session_start.py underwent an isolation fork (fork A vs fork B) — fork B was selected. Fork B changes queue output behavior to reference-only, matching CLAUDE.md/Context/LATEST SESSION pattern. This is a behavioral architecture change to the session tooling pipeline.
+**Description:** Session deleted: duplicate KNOWLEDGE_OS_MANUAL (07_SYSTEM canonical), 8 duplicate docs (00_NAV and 07_SYSTEM canonical), 5 CRLF duplicate compiles, and merged 08_TEMPLATES into 06_TEMPLATES. Archival README should reflect these deletions. Also, audio nodes were added for lesson_10 and lesson_11 but no archival record exists.
 
-**Nodes:** 02_PROJECTS/knowledge_os/dev_workflow.md, 00_DASHBOARD/Next_Session_Prompt.md
+**Nodes:** 02_PROJECTS/_archive/README.md, 02_PROJECTS/knowledge_os/lesson_10_os_fundamentals.md, 02_PROJECTS/knowledge_os/lesson_11_acid_transactions.md
 
-**Old:** session_start.py queue output was not reference-only; Telegram send reported unconditional success.
+**Old:** Archive README does not reflect 2026-08-19 bulk deletions
 
-**New:** Fork B selected: session_start.py queue output is reference-only (matches LATEST SESSION pattern); Telegram send reports actual outcome.
+**New:** Archive README updated with: KNOWLEDGE_OS_MANUAL (duplicate, 07_SYSTEM canonical), 8 duplicate nav/system docs, 5 CRLF duplicate compiles, 08_TEMPLATES merged into 06_TEMPLATES — all 2026-08-19
 
-**Suggested resolution:** Document the fork decision and rationale in dev_workflow.md. Confirm fork A is discarded or archived. Verify CLAUDE.md reflects the new queue output contract.
-
-**Decision:** [ ] Approve  [ ] Modify  [ ] Skip
-
----
-
-## Flag 3 of 5 — CROSS_DOMAIN [MEDIUM]
-
-**Description:** First cross-project map run (7 projects) revealed that brain_audio is a shared dependency across 3 projects. This is a new architectural finding with cross-domain implications — changes to brain_audio could affect multiple projects simultaneously.
-
-**Nodes:** 02_PROJECTS/brain-audio.md, 02_PROJECTS/graphs/brain-os.context.md, 02_PROJECTS/graphs/ca-book.context.md, 02_PROJECTS/graphs/read-along-app.context.md
-
-**Old:** brain_audio treated as a project-local dependency.
-
-**New:** brain_audio confirmed shared by 3 projects via cross-project map run (2026-08-18). Requires coordinated change management.
-
-**Suggested resolution:** Update brain-audio.md with the list of dependent projects. Add a dependency warning note to each affected project's context graph. Consider whether brain_audio needs its own stability/versioning policy given its shared status.
+**Suggested resolution:** Update 02_PROJECTS/_archive/README.md to log all deleted duplicates from this session with dates and canonical paths. Verify lesson_10 and lesson_11 audio node references are recorded in the appropriate audio pipeline docs.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 4 of 5 — ARCHIVAL [LOW]
+## Flag 3 of 4 — MULTI_NODE [MEDIUM]
 
-**Description:** 10 orphaned session logs were committed to the repo via gitignore fix (2026-*.md narrowed to daily notes only). These logs were previously untracked. Decision needed: should they be ingested individually, summarized, or simply acknowledged as now-tracked artifacts?
+**Description:** Manifest was expanded to cover all 12 repos (added gig_tracker, book-compiler, custom-agent, obs-mcp-server, cc-landing). The artifact registry was added with a new schema. .context.md resolution is now wired through the manifest. These changes touch the brain-os context graph, the operations status, the queue, and potentially MCP docs — 4+ nodes need coordinated updates.
 
-**Nodes:** 00_DASHBOARD/Queue_Archive.md, 02_PROJECTS/knowledge_os/dev_workflow.md
+**Nodes:** 02_PROJECTS/graphs/brain-os.context.md, 02_PROJECTS/BDF_Operations_Status.md, 00_DASHBOARD/Queue.md, 02_PROJECTS/knowledge_os/model_context_protocol.md
 
-**Old:** 10 session logs were orphaned (untracked due to broad gitignore pattern).
+**Old:** Manifest covered 8 repos (pre-session)
 
-**New:** 10 session logs now committed after gitignore narrowed. Ingestion status unknown.
+**New:** Manifest covers 12 repos: includes gig_tracker, book-compiler, custom-agent, obs-mcp-server, cc-landing added 2026-08-19
 
-**Suggested resolution:** Review the 10 orphaned session logs to determine if any contain actionable knowledge that should be ingested. If not, mark them as archived/acknowledged in Queue_Archive.md.
+**Suggested resolution:** Update brain-os.context.md to list all 12 manifest repos. Verify BDF_Operations_Status.md reflects the expanded manifest. Clear any queue items related to manifest expansion. Confirm MCP docs don't need manifest-path references updated.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 5 of 5 — CONFLICT [LOW]
+## Flag 4 of 4 — MULTI_NODE [LOW]
 
-**Description:** LATEST SESSION naming-filter bug was logged in session_start.py. The bug exists in production tooling but no fix was applied this session — only logged. This creates a known-but-unfixed state that could affect future session archives.
+**Description:** Session logged 5 flags related to compiler map and three copy-then-diverge folder pairs. These are structural issues across the book compiler ecosystem that require human review before any merging or deduplication.
 
-**Nodes:** 00_DASHBOARD/Queue.md, 02_PROJECTS/knowledge_os/dev_workflow.md
+**Nodes:** 02_PROJECTS/knowledge_os/compiler_map.md, 02_PROJECTS/Book_Compiler_Shared.md, 02_PROJECTS/BDF_Book_System.md, 02_PROJECTS/CA_Book_System.md, 02_PROJECTS/MCP_Book_System.md
 
-**Old:** LATEST SESSION naming-filter behavior undocumented.
+**Old:** Compiler map and folder pairs in undocumented diverged state
 
-**New:** Bug logged 2026-08-18: session_start.py LATEST SESSION naming-filter has a known bug. Fix not yet applied.
+**New:** Pending human review: 5 compiler-map flags logged 2026-08-19 covering three copy-then-diverge folder pairs
 
-**Suggested resolution:** Add to Queue.md as a HIGH priority fix item. Document the exact bug behavior in dev_workflow.md so the next session can reproduce and fix it immediately.
+**Suggested resolution:** Review the 5 flagged compiler-map issues. Identify which folder pairs have diverged and decide whether to merge, keep separate with explicit divergence documentation, or archive one branch. Coordinate changes across book system nodes.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 

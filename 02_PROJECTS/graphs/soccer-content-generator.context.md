@@ -232,3 +232,7 @@ _nodes: 99_
 
 <!-- auto-ingested 2026-08-18 -->
 - 2026-08-18 (Session 5, 2 of 3): Added Triggers section to CLAUDE.md, linking Trigger_Architecture.
+
+
+<!-- auto-ingested 2026-08-19 -->
+- `token_sync.py` — deleted 2026-08-19; Railway-only file with no callers.

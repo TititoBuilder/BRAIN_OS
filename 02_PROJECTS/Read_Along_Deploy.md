@@ -102,3 +102,7 @@ path_id. Paths were uploaded to Knowledge_OS/ root, indexed as "id:..." entries.
 - Frontend: read-along-app-psi.vercel.app | Backend: read-along-app.onrender.com
 - Vercel project: read-along-app (prj_MOIIrsQ5upC1pvWclJJgM5OFBC6n)
 - Repos: github.com/TititoBuilder/read-along-app + /BRAIN_OS
+
+
+<!-- auto-updated 2026-08-19 -->
+Deployment platform: Render (previously Railway). Section 2 rewritten to reflect Render-specific deploy steps, not a rename.
