@@ -53,15 +53,13 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[README]]
 - [[BDF_Agent_Pipeline]]
 - [[BDF_Book_System]]
-- [[BDF_Nav]]
 - [[BDF_Operations_Status]]
 - [[BDF_Twitter_Publisher]]
 - [[Book_Compiler_Shared]]
 - [[fingerprinting]]
 - [[brain-audio]]
 - [[CA_Book_System]]
-- [[CA_Nav]]
-- [[CC_Nav]]
+- [[CC_Landing]]
 - [[CristianConstruction]]
 - [[CristianConstruction_Canvas]]
 - [[Custom_Agent_TTS]]
@@ -134,6 +132,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[lesson_09_for_now_is_forbidden]]
 - [[lesson_10_os_fundamentals]]
 - [[lesson_11_acid_transactions]]
+- [[lesson_12_the_index_pattern]]
 - [[llm_data_pipelines]]
 - [[llm_fundamentals]]
 - [[load_balancing]]
@@ -181,13 +180,10 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[LESSON_QUEUE]]
 - [[MCP_Book_System]]
 - [[OBS_MCP_Server]]
-- [[OBS_Nav]]
 - [[Project_Cheatsheet_System]]
 - [[Read_Along_App]]
 - [[Read_Along_Deploy]]
-- [[ReadAlong_Nav]]
 - [[Resolve_MCP_Server]]
-- [[ResolveMCP_Nav]]
 
 ## 03_APIS
 - [[Anthropic_Claude]]
@@ -209,7 +205,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[guide_mcp_ecosystem]]
 - [[guide_obsidian_claude]]
 - [[guide_venv]]
-- [[KNOWLEDGE_OS_MANUAL]]
 - [[kokoro_tts]]
 - [[message_queues]]
 - [[OBSIDIAN_QUICK_REFERENCE]]
@@ -257,6 +252,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[Resolve_Export_Log]]
 
 ## 06_NOTES
+- [[ask_log]]
 - [[QA_Notes_2026-05-28]]
 
 ## 06_TEMPLATES
@@ -265,6 +261,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[FLAGS_MANUAL]]
 - [[Naming_Contract]]
 - [[PROJECT_NODE]]
+- [[session-compile-template]]
 - [[SESSION_COMPILE_TEMPLATE]]
 - [[SESSION_OPENER_PROMPT]]
 - [[SESSION_TEMPLATE]]
@@ -360,6 +357,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[2026-08-16_1158_brain_os_callchain]]
 - [[2026-08-16_2129_bdf_ca_brain_os]]
 - [[2026-08-18_1204_bdf_ca_brain_os]]
+- [[2026-08-19_1822_bdf_ca_brain_os]]
 - [[20260315_session_compile_story_kling]]
 - [[20260315_session_compile_style_transfer]]
 - [[20260315_session_compile_twitter]]
@@ -369,10 +367,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[session_20260617_2222]]
 - [[ingestion_flags]]
 - [[session_record]]
-
-## 08_TEMPLATES
-- [[session-compile-template]]
-- [[SESSION_COMPILE_TEMPLATE]]
 
 ## 08_TRIGGERS
 - [[Trigger_BDF_Queue_Check]]
@@ -393,7 +387,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[09_TOOLS_INDEX]]
 - [[Claude_Code_Cost_Control]]
 - [[CLAUDE_CODE_EXECUTION_PLAN]]
-- [[Compile_Session_Workflow]]
 - [[INGESTION_COMMANDS]]
 - [[OBS_Node]]
 - [[Past_Chat_Compilation_Protocol]]
@@ -408,7 +401,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[session_2026-05-30]]
 - [[session_2026-06-09]]
 - [[Tools_Book_Node]]
-- [[Tools_Registry]]
 - [[VSCode_Node]]
 - [[Windows_Tools_Node]]
 
@@ -419,11 +411,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[2026-05-03_Knowledge_Pipeline_Meta_Session]]
 - [[2026-05-03_Obsidian_MCP_Fix_Audio_Systems]]
 - [[2026-05-06_BRAIN_OS_Graph_Session]]
-- [[20260315_session_compile_story_kling]]
-- [[20260315_session_compile_style_transfer]]
-- [[20260315_session_compile_twitter]]
-- [[20260318_session_compile]]
-- [[20260401_session_compile]]
 - [[BDF_Avatar_Pipeline_PATCH]]
 - [[COMPILATION_PROGRESS]]
 - [[INGESTION_COMMANDS]]
