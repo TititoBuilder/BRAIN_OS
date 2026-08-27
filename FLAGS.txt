@@ -6,7 +6,7 @@
 2026-08-10 | resolve-mcp-server | RISK | ran python outside venv | mcp module not found | always check for (venv) prefix in prompt before running project scripts
 2026-08-12 | gig_tracker | RISK | five financial CSV files tracked in git — transaction data on GitHub | thought gitignore covered all CSVs | only activity*.csv and named files covered — year-named files missed | fixed 2026-08-12 — removed from tracking, updated gitignore
 2026-08-10 | BRAIN_OS | DESIGN | gig_tracker exists here AND on OneDrive | thought one repo = one location | two copies, unclear which is authoritative | reconcile which is the real repo | FIXED 2026-08-12
-2026-08-10 | custom-agent | DESIGN | venv path hardcoded as absolute C:\Knowledge\CA\venv\ | works on this machine | breaks on any other machine or if folder moves | study: .env files for paths 
+2026-08-10 | custom-agent | DESIGN | venv path hardcoded as absolute C:\Knowledge\CA\venv\ | works on this machine | breaks on any other machine or if folder moves | study: .env files for paths  — 2026-08-26: removed from code, still hardcoded in CLAUDE.md lines 10 and 18
 2026-08-10 | custom-agent | DESIGN | hardcoded absolute paths in ca_audio.py | works locally | breaks on any other machine or if Knowledge moves | study: pathlib + .env for configurable base paths | fixed 2026-08-10 — .env + pathlib pattern applied | FIXED
 2026-08-10 | resolve-mcp-server | DESIGN | 45 backup files used as manual version control | didn't trust git | git history preserved all versions | study: git log --follow, git show <sha>:path | FIXED
 2026-08-10 | DOWNLOADS | DESIGN | 82 .md files accumulated in Downloads | no filing habit | files belong in vault or project folders | file immediately on download, not later | FIXED 2026-08-12
