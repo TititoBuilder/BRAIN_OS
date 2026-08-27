@@ -455,6 +455,19 @@ NEXT — in order
 
 6. Promote settings.json template — blocked on Bash() pattern-match question
 
+UPDATE 2026-08-27 (same session, post-close)
+
+- session_close.py fix VERIFIED by live close (d29099c). Item 2 closed.
+- compile_session.py rebase still fails — separate root cause: any dirty
+  tree blocks git pull --rebase, and the four gig_tracker files leave one.
+- NEW PRIORITY CANDIDATE: map the navigation layer.
+  Eight overlapping layers, no recorded authority. Likely upstream of the
+  CA_Book pipeline gap, the lesson-folder duplication, and the
+  vault-note-in-repo misfiling. Consider ahead of compile_session.py.
+- BRAIN_OS runtime: declared "no venv - markdown only" and false.
+  09_TOOLS holds 33 Python scripts with third-party imports. A fresh
+  clone cannot run its own tooling.
+  
 OPEN DECISIONS
 - Global ~\.claude\CLAUDE.md is 0.2KB — what belongs in it?
 - Two CLAUDE.md in the vault — which wins?
