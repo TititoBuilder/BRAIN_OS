@@ -234,6 +234,20 @@ def main():
 
     print(f"\n✅ Archive saved: {archive_path}")
 
+    # Commit the session archive itself (the bug: this was never done before)
+    archive_rel = f"08_SESSIONS/{filename}"
+    try:
+        subprocess.run(["git", "-C", str(BRAIN_OS_ROOT), "add", archive_rel], check=True, timeout=10)
+        subprocess.run(
+            ["git", "-C", str(BRAIN_OS_ROOT), "commit", "-m",
+             f"chore(sessions): commit {now.strftime('%Y-%m-%d')} session archive",
+             "--", archive_rel],
+            check=True, timeout=10,
+        )
+        print("  Session archive committed to git.")
+    except subprocess.CalledProcessError as e:
+        print(f"  [warn] Session archive commit failed: {e}")
+
     # Refresh the generated tools index and commit it (scoped to 09_TOOLS_INDEX.md only).
     # tools_index.py exit codes: 0 = ok, 1 = real error, 2 = index file absent (skip).
     print("\nRefreshing 09_TOOLS_INDEX.md...")
