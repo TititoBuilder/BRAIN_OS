@@ -361,6 +361,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[2026-08-18_1204_bdf_ca_brain_os]]
 - [[2026-08-19_1822_bdf_ca_brain_os]]
 - [[2026-08-26_2047_ca_brain_os]]
+- [[2026-08-27_0702_ca_brain_os]]
 - [[20260315_session_compile_story_kling]]
 - [[20260315_session_compile_style_transfer]]
 - [[20260315_session_compile_twitter]]
