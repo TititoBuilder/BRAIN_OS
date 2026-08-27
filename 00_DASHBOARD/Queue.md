@@ -218,3 +218,10 @@ audio_staging/*.txt and audio_staging/**/*.txt.
 <!-- auto-ingested 2026-08-18 -->
 - Wall frontend queued as its own session (backend closed 2026-08-18).
 - Session 5 Triggers: closed across all three projects (2026-08-18).
+
+
+<!-- auto-ingested 2026-08-26 -->
+- [ ] [CA] Verify settings.json sandbox hardening is complete and harness draft is wired in
+- [ ] [BRAIN_OS] CA_Book ingestion: add 'processed' stage to pipeline
+- [ ] [BRAIN_OS] Resolve 25 harness-mapping findings; finalize BRAIN_OS harness draft
+- [ ] [BRAIN_OS] session_close.py: confirm git-add + commit of session archive is working end-to-end

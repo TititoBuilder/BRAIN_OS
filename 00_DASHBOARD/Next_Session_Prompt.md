@@ -61,3 +61,11 @@ Direction 8 queued. Direction 7e complete. Gig_tracker flags committed. Lesson_1
 - Direction 9/10 flagged and queued.
 - brain_audio shared by 3 projects — review dependency implications.
 - LATEST SESSION naming-filter bug logged; needs fix.
+
+
+<!-- auto-updated 2026-08-26 -->
+Priority items for next session:
+1. [CA] Wire harness draft into custom-agent; validate sandbox hardening
+2. [BRAIN_OS] CA_Book ingestion pipeline — add 'processed' stage
+3. [BRAIN_OS] Work through 25 harness-mapping findings
+4. [BRAIN_OS] Smoke-test session_close.py git-add + commit fix

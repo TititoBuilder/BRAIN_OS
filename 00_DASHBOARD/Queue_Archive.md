@@ -113,3 +113,10 @@ Completed items moved from Queue.md. Oldest first.
 - Lesson 12 (index pattern) added
 - tools_index.py wired into session_close
 - Q&A entry logged 2026-08-19 03:07
+
+
+<!-- auto-ingested 2026-08-26 -->
+## 2026-08-26
+- [x] [custom-agent] security: harden settings.json sandbox; add harness draft
+- [x] [BRAIN_OS] fix(session_close): git-add and commit the session archive after writing it
+- [x] [BRAIN_OS] flags: update line 9 - venv path removed from code, remains in CLAUDE.md
