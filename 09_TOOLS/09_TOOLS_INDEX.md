@@ -13,7 +13,7 @@ All Python scripts in `C:\BRAIN_OS\09_TOOLS\`.
 
 <!-- TOOLS_INDEX:START -->
 
-_Generated 2026-08-19 from module docstrings by `tools_index.py`. Do not edit by hand._
+_Generated 2026-08-26 from module docstrings by `tools_index.py`. Do not edit by hand._
 
 ## Session Management
 
