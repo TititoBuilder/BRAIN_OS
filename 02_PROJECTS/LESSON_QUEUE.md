@@ -421,3 +421,42 @@ Calendar:
 ## Added 2026-08-13
 - FLAGS_MANUAL and LESSON_QUEUE files added to vault
 - Study system documented: four layers, domain map, learning principle
+
+## Session 2026-08-26 — Harness Framework, Phase 2 + Phase 3 (partial)
+
+DONE
+- Phase 2 discovery complete across C:\Dev, C:\Users\titit\Projects, C:\BRAIN_OS, C:\Knowledge
+- HARNESS_DRAFT.md written for BRAIN_OS and custom-agent (1ac4ba3, 5c14112)
+- custom-agent .claude\settings.json hardened; 3 of 4 gaps verified in-session
+- FLAGS.txt +26 entries (212 total); line 9 updated; format errors corrected
+- session_close.py fix attempted (9891bc2) — UNVERIFIED
+
+NEXT — in order
+
+1. CA_Book ingestion pipeline — 34 files in incoming, no _processed\ stage
+   - BDF_Book has _processed\ and _rejected\; CA_Book has neither
+   - software_architecture.md confirmed processed 6/11 into 01_DOMAINS,
+     still sits in incoming indistinguishable from unprocessed drafts
+   - Audit all 34 against vault counterparts BEFORE moving anything —
+     a VERIFY-marked draft that was never processed is content, not debt
+   - Then mirror BDF_Book's structure
+
+2. Verify session_close.py fix (9891bc2) by running a real close
+   - Fifth attempt; the "ordering is already correct" claim was asserted,
+     not tested. Flag stays open until a close leaves a clean tree.
+
+3. BDF_Canvas.md — still divergent, 65 lines repo vs 152 vault, two repos
+   - Not the same case as software_architecture.md; no pipeline involved
+
+4. Canonical lesson folder — knowledge_os vs 05_LEARNING
+   - Then file LESSON_HARNESS_01.txt as lesson_13_the_harness.md
+
+5. Map soccer-content-generator, resolve-mcp-server, obs-mcp-server
+
+6. Promote settings.json template — blocked on Bash() pattern-match question
+
+OPEN DECISIONS
+- Global ~\.claude\CLAUDE.md is 0.2KB — what belongs in it?
+- Two CLAUDE.md in the vault — which wins?
+- C:\AI — delete or populate?
+- Vault-note-in-repo flow — 3 confirmed misfiles, no correct flow defined yet
