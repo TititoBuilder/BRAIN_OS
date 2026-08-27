@@ -468,3 +468,7 @@ Auto-updated: 2026-08-16 21:29 (session close)
 
 <!-- auto-updated 2026-08-19 -->
 Last auto-updated: 2026-08-19 18:22 by session_close.py
+
+
+<!-- auto-ingested 2026-08-27 -->
+- 2026-08-27 07:02 — CA security hardening, BRAIN_OS ingestion/navigation/queue updates

@@ -120,3 +120,7 @@ Completed items moved from Queue.md. Oldest first.
 - [x] [custom-agent] security: harden settings.json sandbox; add harness draft
 - [x] [BRAIN_OS] fix(session_close): git-add and commit the session archive after writing it
 - [x] [BRAIN_OS] flags: update line 9 - venv path removed from code, remains in CLAUDE.md
+
+
+<!-- auto-ingested 2026-08-27 -->
+- 2026-08-27: CA security hardening (settings.json sandbox, harness draft); BRAIN_OS auto-ingest 3 nodes from 2026-08-26_2047_ca_brain_os; navigation and queue updates; session archive committed.

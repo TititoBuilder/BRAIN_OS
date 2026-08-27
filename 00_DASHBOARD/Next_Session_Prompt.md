@@ -69,3 +69,9 @@ Priority items for next session:
 2. [BRAIN_OS] CA_Book ingestion pipeline — add 'processed' stage
 3. [BRAIN_OS] Work through 25 harness-mapping findings
 4. [BRAIN_OS] Smoke-test session_close.py git-add + commit fix
+
+
+<!-- auto-ingested 2026-08-27 -->
+- Follow up: CA_Book ingestion missing processed stage (flagged)
+- Follow up: 25 harness-mapping findings — BRAIN_OS harness draft added (flagged)
+- Follow up: venv path removed from code, still present in CLAUDE.md (flagged)

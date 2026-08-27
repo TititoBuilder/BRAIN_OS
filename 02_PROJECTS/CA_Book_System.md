@@ -108,3 +108,7 @@ Separate issue: `ca_audio.py` (custom-agent) still shares BDF dev venv — track
 
 - [[BDF_Book_System]] — sister book, identical architecture
 - [[Creative_Systems]] — parent domain
+
+
+<!-- auto-ingested 2026-08-27 -->
+- [2026-08-27] Ingestion pipeline has no processed stage — flagged for resolution.

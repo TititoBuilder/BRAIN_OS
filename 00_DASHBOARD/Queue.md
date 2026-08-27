@@ -1,4 +1,6 @@
 # BRAIN_OS — Master Queue
+<!-- updated 2026-08-27: Session log notes queue was updated post-close and reordered for next session -->
+Post-close queue update applied from 2026-08-27 session: reorder next session per CA_Book ingestion findings; no processed stage flag raised.
 
 ## In Progress
 - [ ] RENAME compile_session.py / session_compiler.py (scoped 2026-08-19, not executed). Confirmed two different tools: compile_session.py = archive -> knowledge ingestion -> vault + Telegram + git; session_compiler.py = archive -> Claude distill -> Kokoro TTS -> Drive -> drive_index. Zero shared functions. Proposed: ingest_session.py / voice_session.py. CODE CALLERS (3): session_close.py:302, $PROFILE function compile_session, $PROFILE line 22. DOC REFS: Navigation.md x2 ([[Compile_Session_Workflow]]), PowerShell_Aliases.md, software_architecture.md x2, systems_operations.md, Sessions_Tab_Design_Notes.md, Domain_Taxonomy.md x3, artifacts.manifest.json x3, lesson_10_os_fundamentals.md (VOICED - re-voice debt). Graphify JSON self-corrects. Do it as one atomic commit.
