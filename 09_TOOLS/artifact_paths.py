@@ -77,6 +77,21 @@ def artifact_names() -> list:
     return [a["name"] for a in arts]
 
 
+def protected_paths() -> set:
+    """Relative paths that auto-ingest tools must never write to."""
+    _, arts = _load()
+    return {a["path"] for a in arts if a.get("protected", False)}
+
+
+def protection_note(path: str) -> str:
+    """Why a path is protected. Empty string if it is not."""
+    _, arts = _load()
+    for a in arts:
+        if a["path"] == path and a.get("protected", False):
+            return f"{a['name']} (writer: {a['writer']}) - {a['purpose']}"
+    return ""
+
+
 def unwritten() -> list:
     """Artifacts with no writer - the drift risks."""
     _, arts = _load()
@@ -112,6 +127,20 @@ if __name__ == "__main__":
         bad += 1
     except AmbiguousArtifact:
         print("  'queue' correctly raised AmbiguousArtifact")
+
+    print("\nProtection check:")
+    prot = protected_paths()
+    print(f"  {len(prot)} protected, {len(arts) - len(prot)} open")
+    if "FLAGS.txt" not in prot:
+        print("  ERROR: FLAGS.txt must be protected - one writer, manual only")
+        bad += 1
+    else:
+        print("  FLAGS.txt correctly protected")
+    if "07_SYSTEM/Cristian_Principles.md" in prot:
+        print("  ERROR: Cristian_Principles must stay open - ingest targets it")
+        bad += 1
+    else:
+        print("  Cristian_Principles correctly open")
 
     orphans = unwritten()
     print(f"\nNo writer, no reader ({len(orphans)}):")

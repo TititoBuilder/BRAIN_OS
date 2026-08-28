@@ -22,6 +22,8 @@ import urllib.request
 from datetime import datetime
 from pathlib import Path
 
+from artifact_paths import protection_note
+
 from dotenv import load_dotenv
 
 # ── Config ────────────────────────────────────────────────────────────────────
@@ -86,6 +88,16 @@ Critical safeguards — ALWAYS FLAG (never auto-handle):
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
+def build_vault_files() -> list[str]:
+    """Every vault .md as a posix relative path. Single definition of a vault node."""
+    out = []
+    for p in BRAIN_OS.rglob("*.md"):
+        rel = p.relative_to(BRAIN_OS)
+        if rel.parts[0] not in ("venv", ".git", "_archive", "audio_staging"):
+            out.append(str(rel.as_posix()))
+    return out
+
+
 def find_latest_session(session_name: str | None) -> Path:
     if session_name:
         p = SESSIONS_DIR / session_name
@@ -107,13 +119,7 @@ def call_claude(session_content: str) -> dict:
     if len(session_content) > 12000:
         session_content = session_content[:12000] + "\n\n[...truncated...]"
 
-    vault_files = []
-    for ext in ["*.md"]:
-        for p in BRAIN_OS.rglob(ext):
-            rel = p.relative_to(BRAIN_OS)
-            parts = rel.parts
-            if parts[0] not in ("venv", ".git", "_archive", "audio_staging"):
-                vault_files.append(str(rel.as_posix()))
+    vault_files = build_vault_files()
     vault_index = "\n".join(sorted(vault_files)[:150])
 
     payload = {
@@ -158,9 +164,11 @@ def call_claude(session_content: str) -> dict:
         sys.exit(f"ERROR: Claude returned invalid JSON: {e}")
 
 
-def apply_auto_handle(items: list[dict], dry_run: bool) -> list[str]:
-    """Apply auto-handle queue to vault files. Returns list of changed files."""
+def apply_auto_handle(items: list[dict], dry_run: bool,
+                      vault_files: set) -> tuple[list, list]:
+    """Apply auto-handle queue. Returns (changed files, refused flags)."""
     changed = []
+    refused = []
 
     PATH_CORRECTIONS = {
         "03_KNOWLEDGE/Cristian_Principles.md": "07_SYSTEM/Cristian_Principles.md",
@@ -177,6 +185,27 @@ def apply_auto_handle(items: list[dict], dry_run: bool) -> list[str]:
 
         if action == "SKIP":
             print(f"  SKIP  {target} — {reason}")
+            continue
+
+        if target not in vault_files:
+            refused.append({
+                "type": "PROTECTED", "priority": "HIGH", "nodes": [target],
+                "description": f"Not a known vault file: {target}",
+                "suggested_resolution": "Verify the path, or create the file first.",
+                "old_content": "", "new_content": content,
+            })
+            print(f"  BLOCKED  {target} - not a vault node")
+            continue
+
+        note = protection_note(target)
+        if note:
+            refused.append({
+                "type": "PROTECTED", "priority": "HIGH", "nodes": [target],
+                "description": f"Protected: {note}",
+                "suggested_resolution": "Apply manually, or choose another target.",
+                "old_content": "", "new_content": content,
+            })
+            print(f"  BLOCKED  {target} - protected")
             continue
 
         vault_path = BRAIN_OS / target
@@ -223,7 +252,7 @@ def apply_auto_handle(items: list[dict], dry_run: bool) -> list[str]:
                 vault_path.write_text(file_text + entry, encoding="utf-8")
             changed.append(target)
 
-    return changed
+    return changed, refused
 
 
 def write_flags_file(flags: list[dict], session_name: str, dry_run: bool):
@@ -342,7 +371,9 @@ def main():
 
     # ── Auto-handle queue ─────────────────────────────────────────────────────
     print("── Auto-handle queue ───────────────────────────────────")
-    changed = apply_auto_handle(auto_handle, dry_run=args.dry_run)
+    changed, refused = apply_auto_handle(auto_handle, dry_run=args.dry_run,
+                                         vault_files=set(build_vault_files()))
+    flags = flags + refused
     print()
 
     # ── Flag queue ────────────────────────────────────────────────────────────

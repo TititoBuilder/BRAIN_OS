@@ -12,6 +12,7 @@
       "path": "00_DASHBOARD/Queue.md",
       "kind": "queue",
       "writer": "manual",
+      "protected": true,
       "readers": [
         "session_start.py",
         "task_session.py",
@@ -30,6 +31,7 @@
       "path": "02_PROJECTS/LESSON_QUEUE.md",
       "kind": "queue",
       "writer": "manual",
+      "protected": true,
       "readers": [],
       "purpose": "Scoped study sessions (Directions) with status. NO TOOL READS THIS."
     },
@@ -42,6 +44,7 @@
       "path": "00_DASHBOARD/Queue_Archive.md",
       "kind": "queue",
       "writer": "manual",
+      "protected": true,
       "readers": [],
       "purpose": "Completed queue items. No reader, no writer."
     },
@@ -55,6 +58,7 @@
       "path": "FLAGS.txt",
       "kind": "log",
       "writer": "manual",
+      "protected": true,
       "readers": [],
       "purpose": "Study flags, 7 pipe-separated columns. One writer: you, at session close."
     },
@@ -67,6 +71,7 @@
       "path": "08_SESSIONS/ingestion_flags.md",
       "kind": "log",
       "writer": "compile_session.py",
+      "protected": true,
       "readers": [],
       "purpose": "MACHINE-WRITTEN per session. Never hand-edit."
     },
@@ -80,6 +85,7 @@
       "path": "00_DASHBOARD/Navigation.md",
       "kind": "index",
       "writer": "vault_index.py",
+      "protected": true,
       "readers": [
         "session_close.py"
       ],
@@ -95,6 +101,7 @@
       "path": "09_TOOLS/09_TOOLS_INDEX.md",
       "kind": "index",
       "writer": "tools_index.py",
+      "protected": true,
       "readers": [
         "task_session.py"
       ],
@@ -108,6 +115,7 @@
       "path": "05_MEMORY/Memory_Index.md",
       "kind": "index",
       "writer": "manual",
+      "protected": true,
       "readers": [
         "vault_audio_generator.py",
         "populate_staging.py"
@@ -123,6 +131,7 @@
       "path": "09_TOOLS/drive_index.json",
       "kind": "index",
       "writer": "session_compiler.py / populate_staging.py",
+      "protected": true,
       "readers": [
         "task_session.py",
         "backend.py",
@@ -139,6 +148,7 @@
       "path": "07_SYSTEM/Cristian_Principles.md",
       "kind": "doctrine",
       "writer": "manual",
+      "protected": false,
       "readers": [
         "learning_profile_extractor.py",
         "vault_audio_generator.py"
@@ -154,6 +164,7 @@
       "path": "SYSTEM_MASTER.md",
       "kind": "doctrine",
       "writer": "manual",
+      "protected": true,
       "readers": [
         "generate_profile.py"
       ],
@@ -168,6 +179,7 @@
       "path": "07_SYSTEM/Tools_Registry.md",
       "kind": "doctrine",
       "writer": "sync_brain.py (caller deleted - verify)",
+      "protected": true,
       "readers": [
         "vault_audio_generator.py",
         "populate_staging.py"
@@ -183,6 +195,7 @@
       "path": "BRAIN_OS_CONFIG.json",
       "kind": "config",
       "writer": "manual",
+      "protected": true,
       "readers": [
         "graph_maintainer.py",
         "refresh_drive_token.py",
@@ -200,6 +213,7 @@
       "path": "02_PROJECTS/graphs/projects.manifest.json",
       "kind": "config",
       "writer": "manual",
+      "protected": true,
       "readers": [
         "project_paths.py",
         "graphify.py"
