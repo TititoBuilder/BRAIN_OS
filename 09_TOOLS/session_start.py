@@ -157,7 +157,7 @@ def load_context(project: dict) -> str:
         parts.append("=== LATEST SESSION: none found ===")
 
     # 3. The queue ? In Progress section content (not just a count)
-    queue_path = artifact_path("Queue")
+    queue_path = artifact_path("todo")
     parts.append(f"=== QUEUE: {check_queue()} open item(s) in 'In Progress' -> {queue_path} [read on demand] ===")
 
     # 4. Directions - the study curriculum, tracked by status not checkbox
@@ -229,7 +229,7 @@ def check_git_status(root: Path) -> int:
 # ── Queue check ───────────────────────────────────────────────────────────────
 def _parse_queue_section() -> list[str]:
     """Return lines of the '## In Progress' section from Queue.md (header line included)."""
-    queue_path = artifact_path("Queue")
+    queue_path = artifact_path("todo")
     if not queue_path.exists():
         return []
     content = queue_path.read_text(encoding="utf-8", errors="ignore")
