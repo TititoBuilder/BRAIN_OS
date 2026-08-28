@@ -88,12 +88,15 @@ Critical safeguards — ALWAYS FLAG (never auto-handle):
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
+EXCLUDED_DIRS = {"venv", ".git", "_archive", "audio_staging", "__pycache__", "node_modules"}
+
+
 def build_vault_files() -> list[str]:
     """Every vault .md as a posix relative path. Single definition of a vault node."""
     out = []
     for p in BRAIN_OS.rglob("*.md"):
         rel = p.relative_to(BRAIN_OS)
-        if rel.parts[0] not in ("venv", ".git", "_archive", "audio_staging"):
+        if not (set(rel.parts) & EXCLUDED_DIRS):
             out.append(str(rel.as_posix()))
     return out
 
