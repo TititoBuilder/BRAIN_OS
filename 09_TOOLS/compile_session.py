@@ -120,7 +120,7 @@ def call_claude(session_content: str) -> dict:
         session_content = session_content[:12000] + "\n\n[...truncated...]"
 
     vault_files = build_vault_files()
-    vault_index = "\n".join(sorted(vault_files)[:150])
+    vault_index = "\n".join(sorted(vault_files))
 
     payload = {
         "model": MODEL,

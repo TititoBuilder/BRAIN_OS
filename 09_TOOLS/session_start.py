@@ -147,7 +147,7 @@ def load_context(project: dict) -> str:
             for f in d.glob("*.md"):
                 n = f.name.lower()
                 # real session archives only: dated bdf_ca_brain_os or session_ prefix
-                if "_bdf_ca_brain_os" in n or n.startswith("session_"):
+                if n[:4].isdigit() and n[4:5] == "-":
                     candidates.append(f)
     if candidates:
         latest = max(candidates, key=lambda f: f.stat().st_mtime)
@@ -300,7 +300,7 @@ def print_context_header(project_key: str, project: dict, metrics: dict,
 
     # Queue
     if queue_blocked > 0:
-        print(f"\n  QUEUE: {queue_blocked} blocked item(s) in In Progress")
+        print(f"\n  QUEUE: {queue_blocked} open item(s) in 'In Progress'")
     else:
         print(f"\n  QUEUE: clear")
 
