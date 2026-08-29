@@ -317,8 +317,12 @@ def send_telegram(message: str):
 
 
 def git_commit(changed_files: list[str], session_name: str):
-    if not changed_files:
-        return
+    """Commit changed vault nodes and the flags file.
+
+    Flags are staged even when no vault node changed. A run where every
+    target was blocked writes flags to disk with nothing else to commit,
+    and the flags must not be stranded there.
+    """
     for f in changed_files:
         subprocess.run(["git", "-C", str(BRAIN_OS), "add", f], check=True)
     subprocess.run(["git", "-C", str(BRAIN_OS), "add", str(FLAGS_FILE)], check=False)
@@ -331,7 +335,15 @@ def git_commit(changed_files: list[str], session_name: str):
     )
     if pull.returncode != 0:
         print(f"WARNING: git pull --rebase failed:\n{pull.stderr}")
-        print("Proceeding anyway — resolve conflicts manually if push fails.")
+        print("Proceeding anyway. Rebase refuses on any dirty tree, and the")
+        print("four gig_tracker files leave one. Push has always succeeded.")
+
+    staged = subprocess.run(
+        ["git", "-C", str(BRAIN_OS), "diff", "--cached", "--quiet"]
+    )
+    if staged.returncode == 0:
+        print("  Nothing staged - no commit needed")
+        return
 
     msg = f"ingest: auto-handle {len(changed_files)} nodes — {Path(session_name).stem}"
     subprocess.run(["git", "-C", str(BRAIN_OS), "commit", "-m", msg], check=True)
