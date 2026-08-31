@@ -7,6 +7,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 ## 00_DASHBOARD
 - [[DASHBOARD_BUILD_SPEC]]
 - [[Next_Session_Prompt]]
+- [[Next_Session_Prompt_ARCHIVE_2026-08-27]]
 - [[Queue]]
 - [[Queue_Archive]]
 
@@ -49,8 +50,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 
 ## 02_PROJECTS
 - [[2026-06-02_session-organizing-without-breaking-code]]
-- [[CristianConstruction_OLD]]
-- [[README]]
 - [[BDF_Agent_Pipeline]]
 - [[BDF_Book_System]]
 - [[BDF_Operations_Status]]
@@ -135,6 +134,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[lesson_10_os_fundamentals]]
 - [[lesson_11_acid_transactions]]
 - [[lesson_12_the_index_pattern]]
+- [[lesson_14_boundaries]]
 - [[llm_data_pipelines]]
 - [[llm_fundamentals]]
 - [[load_balancing]]
@@ -362,6 +362,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[2026-08-19_1822_bdf_ca_brain_os]]
 - [[2026-08-26_2047_ca_brain_os]]
 - [[2026-08-27_0702_ca_brain_os]]
+- [[2026-08-30_2050_ca_brain_os]]
 - [[20260315_session_compile_story_kling]]
 - [[20260315_session_compile_style_transfer]]
 - [[20260315_session_compile_twitter]]
