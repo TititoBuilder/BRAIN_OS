@@ -1,6 +1,6 @@
 # soccer-content-generator — dependency context
-_updated: 2026-06-19T21:33:21.010207+00:00_
-_nodes: 99_
+_updated: 2026-08-31T22:12:44.666640+00:00_
+_nodes: 97_
 
 ## Clip_Pipeline
 - **clip_config.py** (4.5 KB)
@@ -115,10 +115,10 @@ _nodes: 99_
 ## Scripts
 - **scripts/cleanup_lancedb_duplicates.py** (1.0 KB) — external: `dotenv`, `lancedb`
 - **scripts/database_exporter.py** (10.5 KB) — external: `pandas`
-- **scripts/distill_session.py** (10.7 KB) — external: `anthropic`, `dotenv`
+- **scripts/distill_session.py** (10.8 KB) — internal: `src.config`; external: `anthropic`, `dotenv`
 - **scripts/drive_cleanup.py** (7.0 KB) — internal: `drive_sync`
 - **scripts/drive_sync.py** (20.0 KB)
-- **scripts/graph_maintainer.py** (19.0 KB)
+- **scripts/graph_maintainer.py** (19.1 KB) — internal: `src.config`
 - **scripts/ingest_international_break.py** (7.1 KB) — internal: `vector_store`; external: `dotenv`
 - **scripts/ingest_ucl_2026.py** (6.9 KB) — internal: `src.knowledge_manager`; external: `dotenv`
 - **scripts/ingest_ucl_r16_second_legs.py** (5.4 KB) — internal: `vector_store`; external: `dotenv`
@@ -178,7 +178,6 @@ _nodes: 99_
 - **ingest_ucl_knowledge.py** (4.8 KB) — internal: `knowledge_manager`
 - **obs_mcp.py** (7.4 KB) — external: `dotenv`, `fastapi`, `fastapi.middleware.cors`, `pydantic`, `simpleobsws`, `uvicorn`
 - **obs_relay.py** (11.4 KB)
-- **session_close.py** (4.5 KB)
 - **soccer_knowledge_ingester.py** (0.0 KB)
 - **src/__init__.py** (0.0 KB)
 - **src/agent/__init__.py** (0.1 KB)
@@ -187,7 +186,7 @@ _nodes: 99_
 - **src/agents/news_image_agent.py** (13.1 KB) — external: `bs4`, `requests`
 - **src/base_client.py** (4.8 KB) — external: `requests`
 - **src/competitions_api.py** (3.8 KB) — external: `requests`
-- **src/config.py** (2.9 KB) — external: `dotenv`
+- **src/config.py** (3.2 KB) — external: `dotenv`
 - **src/cost_tracker.py** (5.9 KB)
 - **src/data/__init__.py** (0.0 KB)
 - **src/data/ingestion/__init__.py** (0.0 KB)
@@ -223,16 +222,3 @@ _nodes: 99_
 - **test_football_data_org.py** (4.3 KB) — external: `dotenv`, `requests`
 - **test_football_data_org2.py** (3.2 KB) — external: `dotenv`, `requests`
 - **test_ucl.py** (0.5 KB) — external: `dotenv`, `requests`
-- **token_sync.py** (8.7 KB)
-
-
-<!-- auto-ingested 2026-08-15 -->
-2026-08-15: Added BDF avatar pipeline patch, canvas, and operator manual.
-
-
-<!-- auto-ingested 2026-08-18 -->
-- 2026-08-18 (Session 5, 2 of 3): Added Triggers section to CLAUDE.md, linking Trigger_Architecture.
-
-
-<!-- auto-ingested 2026-08-19 -->
-- `token_sync.py` — deleted 2026-08-19; Railway-only file with no callers.

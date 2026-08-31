@@ -1,8 +1,8 @@
 {
   "project": "soccer-content-generator",
   "root": "C:/Dev/Projects/soccer-content-generator",
-  "updated_at": "2026-06-19T21:33:21.010207+00:00",
-  "node_count": 99,
+  "updated_at": "2026-08-31T22:12:44.666640+00:00",
+  "node_count": 97,
   "nodes": {
     "avatar_character_profiles.py": {
       "hash": "b2a4579e31ae",
@@ -598,9 +598,9 @@
       }
     },
     "scripts/distill_session.py": {
-      "hash": "8fc83d21f7da",
+      "hash": "813e9c290fb8",
       "layer": "Scripts",
-      "size_kb": 10.7,
+      "size_kb": 10.8,
       "mode": "full",
       "imports": {
         "stdlib": [
@@ -611,7 +611,9 @@
           "sys",
           "time"
         ],
-        "internal": [],
+        "internal": [
+          "src.config"
+        ],
         "external": [
           "anthropic",
           "dotenv"
@@ -636,7 +638,7 @@
       }
     },
     "scripts/drive_sync.py": {
-      "hash": "376c9fc56cd0",
+      "hash": "083f3cee1276",
       "layer": "Scripts",
       "size_kb": 20.0,
       "mode": "full",
@@ -655,9 +657,9 @@
       }
     },
     "scripts/graph_maintainer.py": {
-      "hash": "53e3b94854e4",
+      "hash": "f287c9a548b3",
       "layer": "Scripts",
-      "size_kb": 19.0,
+      "size_kb": 19.1,
       "mode": "full",
       "imports": {
         "stdlib": [
@@ -672,7 +674,9 @@
           "subprocess",
           "sys"
         ],
-        "internal": [],
+        "internal": [
+          "src.config"
+        ],
         "external": []
       }
     },
@@ -771,23 +775,6 @@
         "external": [
           "dotenv"
         ]
-      }
-    },
-    "session_close.py": {
-      "hash": "4fc81ced36b3",
-      "layer": "uncategorized",
-      "size_kb": 4.5,
-      "mode": "full",
-      "imports": {
-        "stdlib": [
-          "datetime",
-          "pathlib",
-          "subprocess",
-          "sys",
-          "tempfile"
-        ],
-        "internal": [],
-        "external": []
       }
     },
     "soccer_knowledge_ingester.py": {
@@ -974,13 +961,14 @@
       }
     },
     "src/config.py": {
-      "hash": "0c65ee466d3c",
+      "hash": "8ab6d3eea759",
       "layer": "uncategorized",
-      "size_kb": 2.9,
+      "size_kb": 3.2,
       "mode": "full",
       "imports": {
         "stdlib": [
-          "os"
+          "os",
+          "pathlib"
         ],
         "internal": [],
         "external": [
@@ -1790,24 +1778,6 @@
           "dotenv",
           "requests"
         ]
-      }
-    },
-    "token_sync.py": {
-      "hash": "2bd35139c5e8",
-      "layer": "uncategorized",
-      "size_kb": 8.7,
-      "mode": "full",
-      "imports": {
-        "stdlib": [
-          "base64",
-          "json",
-          "os",
-          "pathlib",
-          "subprocess",
-          "sys"
-        ],
-        "internal": [],
-        "external": []
       }
     },
     "trigger_watcher.py": {

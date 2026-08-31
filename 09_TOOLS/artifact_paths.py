@@ -83,7 +83,8 @@ def artifact_names() -> list:
 # dry runs each surfaced a new unlisted target - so the rule is by
 # directory. A manifest entry with protected false still wins, which is
 # how Cristian_Principles stays writable inside 07_SYSTEM.
-PROTECTED_DIRS = ("00_DASHBOARD/", "07_SYSTEM/", "00_NAV/", "05_MEMORY/")
+PROTECTED_DIRS = ("00_DASHBOARD/", "07_SYSTEM/", "00_NAV/", "05_MEMORY/",
+                  "02_PROJECTS/graphs/")
 
 
 def directory_protection_note(path: str) -> str:
