@@ -310,7 +310,7 @@ def send_telegram(message: str):
         print("  [Telegram] Not configured — skipping notification")
         return
     url     = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    payload = json.dumps({"chat_id": TELEGRAM_CHAT, "text": message, "parse_mode": "Markdown"}).encode()
+    payload = json.dumps({"chat_id": TELEGRAM_CHAT, "text": message}).encode()
     req     = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
