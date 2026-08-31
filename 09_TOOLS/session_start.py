@@ -182,11 +182,25 @@ def run_health_check() -> dict:
         return {"error": "graph_maintainer.py not found"}
 
     try:
+        # graph_maintainer.py does "from src.config import PathConfig".
+        # Running a script puts the script's own directory on sys.path, not
+        # the working directory, so scripts\ lands there and src never
+        # does - cwd cannot fix it. PYTHONPATH adds the project root at
+        # interpreter startup, which can. Without this the subprocess died
+        # on ModuleNotFoundError, the parser below found no numbers in the
+        # traceback, and every metric silently stayed at zero.
+        proj_root = graph_script.parent.parent
+        env = dict(os.environ, PYTHONPATH=str(proj_root))
         result = subprocess.run(
             [str(venv_py), str(graph_script)],
+            cwd=str(proj_root), env=env,
             capture_output=True, text=True,
             encoding="utf-8", errors="replace", timeout=60
         )
+        if result.returncode != 0:
+            first = (result.stderr or result.stdout).strip().splitlines()
+            tail = first[-1] if first else "no output"
+            return {"error": f"graph_maintainer.py exited {result.returncode}: {tail}"}
         output = result.stdout + result.stderr
         metrics = {
             "alternates": 0,
