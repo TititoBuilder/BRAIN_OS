@@ -322,11 +322,11 @@ def check_session() -> None:
 
     if issues:
         lines = ["🟡 SESSION CLOSED"] + issues
-        lines.append("✅ Session archive: confirmed" if archive_ok else "⚠️ Session archive: NOT found")
+        lines.append("✅ Session archive: confirmed" if archive_ok else "⚠️ Session archive: none written in last 10 min")
         lines.append("→ Commit before ingestion")
     else:
         lines = ["✅ SESSION CLOSED — all projects committed."]
-        lines.append("✅ Session archive confirmed." if archive_ok else "⚠️ Session archive: NOT found")
+        lines.append("✅ Session archive confirmed." if archive_ok else "⚠️ Session archive: none written in last 10 min")
         lines.append("→ Run KNOWLEDGE_INGESTION_PROTOCOL_V2")
 
     msg = "\n".join(lines)
