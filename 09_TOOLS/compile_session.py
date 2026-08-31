@@ -32,7 +32,9 @@ BRAIN_OS      = Path(r"C:\BRAIN_OS")
 SESSIONS_DIR  = BRAIN_OS / "08_SESSIONS"
 FLAGS_FILE    = BRAIN_OS / "08_SESSIONS" / "ingestion_flags.md"
 PROTOCOL_FILE = BRAIN_OS / "07_SYSTEM" / "KNOWLEDGE_INGESTION_PROTOCOL_V2.md"
-ENV_FILE      = Path(r"C:\Dev\Projects\soccer-content-generator\.env")
+# BRAIN_OS credentials. ANTHROPIC_API_KEY is duplicated here from
+# soccer-content-generator/.env - rotating it means updating both.
+ENV_FILE      = Path(r"C:\BRAIN_OS\03_APIS\.env")
 
 load_dotenv(ENV_FILE)
 ANTHROPIC_KEY  = os.getenv("ANTHROPIC_API_KEY", "").strip()
