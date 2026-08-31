@@ -88,7 +88,11 @@ Critical safeguards — ALWAYS FLAG (never auto-handle):
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
-EXCLUDED_DIRS = {"venv", ".git", "_archive", "audio_staging", "__pycache__", "node_modules"}
+# Kept in sync with SKIP_DIRS in vault_index.py. Neither script imports the
+# other, so a change here needs the same change there. Verified
+# 2026-08-27: .obsidian, audio_staging, and root _archive hold zero
+# .md files today - only 02_PROJECTS/_archive does, with two.
+EXCLUDED_DIRS = {"venv", ".git", ".obsidian", "_archive", "audio_staging", "__pycache__", "node_modules"}
 
 
 def build_vault_files() -> list[str]:

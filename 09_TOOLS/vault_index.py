@@ -12,7 +12,11 @@ NAV_FILE = VAULT_ROOT / "00_DASHBOARD" / "Navigation.md"
 START_MARKER = "<!-- AUTO-GENERATED:START -->"
 END_MARKER = "<!-- AUTO-GENERATED:END -->"
 
-SKIP_DIRS = {".obsidian", ".git", "node_modules", "__pycache__", "venv"}
+# Kept in sync with EXCLUDED_DIRS in compile_session.py. Neither script imports the
+# other, so a change here needs the same change there. Verified
+# 2026-08-27: .obsidian, audio_staging, and root _archive hold zero
+# .md files today - only 02_PROJECTS/_archive does, with two.
+SKIP_DIRS = {"venv", ".git", ".obsidian", "_archive", "audio_staging", "__pycache__", "node_modules"}
 
 
 def build_auto_section() -> str:
