@@ -175,25 +175,19 @@ def load_context(project: dict) -> str:
 # ── Health check ───────────────────────────────────────────────────────────────
 def run_health_check() -> dict:
     """Run graph_maintainer.py and return key metrics."""
-    graph_script = project_script("BDF", "scripts", "graph_maintainer.py")
+    # The vault copy, not BDF's. It was ported on 2026-08-19 to drop the
+    # "from src.config import PathConfig" import, which is what forced the
+    # PYTHONPATH workaround. It still points at the BDF project root,
+    # because the graph it maintains is BDF's - that part is inherent.
+    graph_script = Path(r"C:\BRAIN_OS\09_TOOLS\graph_maintainer.py")
     venv_py      = project_venv_python("BDF")
 
     if not graph_script.exists():
         return {"error": "graph_maintainer.py not found"}
 
     try:
-        # graph_maintainer.py does "from src.config import PathConfig".
-        # Running a script puts the script's own directory on sys.path, not
-        # the working directory, so scripts\ lands there and src never
-        # does - cwd cannot fix it. PYTHONPATH adds the project root at
-        # interpreter startup, which can. Without this the subprocess died
-        # on ModuleNotFoundError, the parser below found no numbers in the
-        # traceback, and every metric silently stayed at zero.
-        proj_root = graph_script.parent.parent
-        env = dict(os.environ, PYTHONPATH=str(proj_root))
         result = subprocess.run(
             [str(venv_py), str(graph_script)],
-            cwd=str(proj_root), env=env,
             capture_output=True, text=True,
             encoding="utf-8", errors="replace", timeout=60
         )
