@@ -182,6 +182,10 @@ def apply_auto_handle(items: list[dict], dry_run: bool,
     changed = []
     refused = []
 
+    # Both keys are real files. 03_KNOWLEDGE/Cristian_Principles.md is a
+    # deliberate stub pointing at the 07_SYSTEM copy, so a write there
+    # lands in the wrong place rather than nowhere. BRAIN_OS/principles.md
+    # does not exist. Redirect both to the canonical file.
     PATH_CORRECTIONS = {
         "03_KNOWLEDGE/Cristian_Principles.md": "07_SYSTEM/Cristian_Principles.md",
         "BRAIN_OS/principles.md": "07_SYSTEM/Cristian_Principles.md",

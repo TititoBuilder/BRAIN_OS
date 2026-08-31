@@ -115,7 +115,13 @@ def protection_note(path: str) -> str:
 
 
 def unwritten() -> list:
-    """Artifacts with no writer - the drift risks."""
+    """Artifacts written by hand with no tool reader.
+
+    Not all of these are drift risks. LESSON_QUEUE, FLAGS, and
+    Next_Session_Prompt have no tool reader by design - their own
+    purpose fields say so. The list is worth scanning, not acting on
+    without reading each entry.
+    """
     _, arts = _load()
     return [a for a in arts if a["writer"] == "manual" and not a["readers"]]
 
