@@ -448,27 +448,3 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[CA_Canvas]]
 
 <!-- AUTO-GENERATED:END -->
-
-
-<!-- auto-ingested 2026-08-14 -->
-| 2026-08-14 | 14:08 | BDF, CA, BRAIN_OS | Directions 7b–7e, 43-file vault triage, gig_tracker 11 docs populated, ingest auto-handled 8 nodes from 2026-08-13_2113 session |
-
-
-<!-- auto-updated 2026-08-15 -->
-Last updated: 2026-08-15 17:09 — session close auto-update.
-
-
-<!-- auto-updated 2026-08-16 -->
-Auto-updated: 2026-08-16 21:29 (session close)
-
-
-<!-- auto-updated 2026-08-18 -->
-- Auto-updated by session_close.py on 2026-08-18 at 12:04.
-
-
-<!-- auto-updated 2026-08-19 -->
-Last auto-updated: 2026-08-19 18:22 by session_close.py
-
-
-<!-- auto-ingested 2026-08-27 -->
-- 2026-08-27 07:02 — CA security hardening, BRAIN_OS ingestion/navigation/queue updates
