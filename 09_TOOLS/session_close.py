@@ -339,8 +339,13 @@ def main():
 
     print("\nSession closed. Good work.\n")
 
-    subprocess.Popen(
-        [sys.executable, r"C:\BRAIN_OS\09_TOOLS\watchdog.py", "--check", "session"]
+    # run, not Popen. Popen returned immediately, so watchdog started its
+    # Telegram send while this script was still finishing its own. Three
+    # requests to one bot token from two concurrent processes; the second
+    # and third were dropped with WinError 10054 on 2026-08-30.
+    subprocess.run(
+        [sys.executable, r"C:\BRAIN_OS\09_TOOLS\watchdog.py", "--check", "session"],
+        check=False, timeout=60,
     )
 
 
