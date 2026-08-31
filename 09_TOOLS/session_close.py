@@ -125,7 +125,11 @@ def send_telegram(message: str) -> None:
     try:
         import urllib.request, urllib.parse, json
         url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-        payload = json.dumps({"chat_id": TELEGRAM_CHAT, "text": message, "parse_mode": "Markdown"}).encode()
+        # No parse_mode: session summaries carry git commit strings and
+        # archive filenames full of underscores, which Markdown reads as
+        # italic markers. Unbalanced ones make the request malformed - the
+        # HTTP 400 seen on 2026-08-26.
+        payload = json.dumps({"chat_id": TELEGRAM_CHAT, "text": message}).encode()
         req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
         urllib.request.urlopen(req, timeout=5)
         print("[Telegram] Session summary sent.")
