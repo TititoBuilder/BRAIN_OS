@@ -1,68 +1,64 @@
-# Ingestion Flags — 2026-08-27_0702_ca_brain_os.md
-Generated: 2026-08-27 07:02
+# Ingestion Flags — 2026-08-30_2050_ca_brain_os.md
+Generated: 2026-08-30 20:51
 Items: 4
 
 ---
 
 ## Flag 1 of 4 — ARCHITECTURE [HIGH]
 
-**Description:** Custom-agent settings.json sandbox was hardened and a harness draft was added this session. This is an architectural change to the CA security/execution model that may affect multiple nodes referencing CA configuration and orchestration.
+**Description:** Three architectural changes made to the BRAIN_OS scanner system in one session: (1) vault exclusion list unified across both scanners, (2) vault directories now excluded at any path depth (not just top-level), (3) flags staged unconditionally with empty-index guard added. These collectively change scanner behavior and could affect all future ingestion runs.
 
-**Nodes:** 02_PROJECTS/Custom_Agent_TTS.md, 02_AGENTS/CA_Orchestrator.md, 02_PROJECTS/graphs/ca-book.context.md
+**Nodes:** 07_SYSTEM/KNOWLEDGE_INGESTION_PROTOCOL_V2.md, 07_SYSTEM/Trigger_Architecture.md, 08_TRIGGERS/Trigger_Session_Close.md
 
-**Old:** settings.json sandbox — pre-hardening state (unrecorded)
+**Old:** Vault exclusion applied at top-level paths only; parse_mode included in Telegram session_close payload; flags staged conditionally.
 
-**New:** settings.json sandbox hardened; harness draft added as of 2026-08-27
+**New:** Vault exclusion applied at any path depth; parse_mode dropped from Telegram session_close.py payload; flags staged unconditionally with empty-index guard.
 
-**Suggested resolution:** Review CA_Orchestrator.md and Custom_Agent_TTS.md to confirm settings.json sandbox changes are reflected; update ca-book.context.md if graph context is stale. Confirm harness draft location and link from relevant project file.
-
-**Decision:** [ ] Approve  [ ] Modify  [ ] Skip
-
----
-
-## Flag 2 of 4 — ARCHITECTURE [HIGH]
-
-**Description:** 25 harness-mapping findings were identified and a BRAIN_OS harness draft was added. This represents a potential runtime/navigation-layer architecture pivot for BRAIN_OS itself.
-
-**Nodes:** 02_PROJECTS/graphs/brain-os.context.md, 00_NAV/SYSTEM_Rules.md, 00_DASHBOARD/Navigation.md
-
-**Old:** No harness draft existed prior to this session
-
-**New:** BRAIN_OS harness draft created; 25 mapping findings documented as of 2026-08-27
-
-**Suggested resolution:** Review the 25 harness-mapping findings document (locate or create canonical path), update brain-os.context.md graph, and assess whether SYSTEM_Rules.md or Navigation.md need structural changes to accommodate the harness layer.
+**Suggested resolution:** Update KNOWLEDGE_INGESTION_PROTOCOL_V2.md to document the new exclusion behavior and unconditional flag staging. Update Trigger_Session_Close.md to reflect the drop of parse_mode from the Telegram payload. Review Trigger_Architecture.md for any exclusion-path references that need updating.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 3 of 4 — CONFLICT [MEDIUM]
+## Flag 2 of 4 — MULTI_NODE [MEDIUM]
 
-**Description:** The venv path was removed from code this session, but it remains present in CLAUDE.md (referenced in session log as a flag). This creates a discrepancy between runtime code and documentation.
+**Description:** The git_commit early return was flagged during this session but not resolved. This issue may affect Navigation.md accumulation behavior and should be tracked in the ingestion flags log. Needs decision on whether to fix, defer, or document as known behavior.
 
-**Nodes:** 02_PROJECTS/Custom_Agent_TTS.md
+**Nodes:** 00_DASHBOARD/Navigation.md, 07_SYSTEM/KNOWLEDGE_INGESTION_PROTOCOL_V2.md, 08_SESSIONS/ingestion_flags.md
 
-**Old:** venv path present in both code and CLAUDE.md
+**Old:** git_commit early return behavior undocumented.
 
-**New:** venv path removed from code; CLAUDE.md still references it — needs reconciliation
+**New:** git_commit early return identified as causing Navigation.md accumulation; fix deferred or pending dedicated session.
 
-**Suggested resolution:** Locate CLAUDE.md (not in vault file list — may be external), remove or update the venv path reference there. Update Custom_Agent_TTS.md or relevant agent file to note the venv path is now code-free.
+**Suggested resolution:** Add an open item to 08_SESSIONS/ingestion_flags.md for the git_commit early return issue. Determine if it belongs in KNOWLEDGE_INGESTION_PROTOCOL_V2.md as a known limitation or if a fix session should be queued.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 4 of 4 — MULTI_NODE [MEDIUM]
+## Flag 3 of 4 — PROTECTED [HIGH]
 
-**Description:** CA_Book ingestion pipeline has no processed stage, flagged this session. This gap affects the CA_Book_System project, the CA_Orchestrator agent, and the ca-book context graph — all three need to be updated once a resolution is decided.
+**Description:** Protected: Navigation (writer: vault_index.py) - Vault navigation. Derived, auto-committed.
 
-**Nodes:** 02_PROJECTS/CA_Book_System.md, 02_AGENTS/CA_Orchestrator.md, 02_PROJECTS/graphs/ca-book.context.md
+**Nodes:** 00_DASHBOARD/Navigation.md
 
-**Old:** CA_Book ingestion pipeline: stages unknown/undocumented processed stage
+**New:** Remove any machine-written tail appended by automated processes; retain only human-curated navigation content.
 
-**New:** CA_Book ingestion pipeline confirmed missing a processed stage as of 2026-08-27 — needs design and implementation
+**Suggested resolution:** Apply manually, or choose another target.
 
-**Suggested resolution:** Design and add a 'processed' stage to the CA_Book ingestion pipeline. Update CA_Book_System.md with the new stage spec, CA_Orchestrator.md with routing logic, and ca-book.context.md with the updated graph.
+**Decision:** [ ] Approve  [ ] Modify  [ ] Skip
+
+---
+
+## Flag 4 of 4 — PROTECTED [HIGH]
+
+**Description:** Protected: ingestion_flags (writer: compile_session.py) - MACHINE-WRITTEN per session. Never hand-edit.
+
+**Nodes:** 08_SESSIONS/ingestion_flags.md
+
+**New:** 2026-08-30: Navigation.md accumulation issue identified and machine-written tail removed. git_commit early return flagged for review.
+
+**Suggested resolution:** Apply manually, or choose another target.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
