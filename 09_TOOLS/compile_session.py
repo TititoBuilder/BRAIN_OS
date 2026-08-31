@@ -85,7 +85,10 @@ Output ONLY valid JSON with this exact structure:
 Critical safeguards — ALWAYS FLAG (never auto-handle):
 - Financial/cost/pricing information
 - Architecture pivots or tool replacements
-- Anything affecting 3+ nodes simultaneously"""
+- Any single change that spans 3 or more vault files. This counts one
+  conceptual change across several files, not the size of the whole
+  plan. Several independent single-file updates in one session are
+  fine."""
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
