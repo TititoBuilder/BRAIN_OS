@@ -29,7 +29,11 @@ if hasattr(sys.stdout, "reconfigure"):
 # ── Paths ─────────────────────────────────────────────────────────────────────
 BDF_ROOT      = Path(r"C:\Dev\Projects\soccer-content-generator")
 BRAIN_OS_ROOT = Path(r"C:\BRAIN_OS")
-ENV_PATH      = BDF_ROOT / ".env"
+# BRAIN_OS credentials, not BDF's. This script needs only
+# TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID, both of which live in the
+# vault's own .env. compile_session.py still points at BDF because
+# ANTHROPIC_API_KEY exists only there.
+ENV_PATH      = BRAIN_OS_ROOT / "03_APIS" / ".env"
 QUEUE_JSON    = BDF_ROOT / "src" / "queue" / "content_queue.json"
 # Hardcoded on purpose, not an oversight. Routing this through
 # artifact_paths would read the manifest at import time, so a missing
