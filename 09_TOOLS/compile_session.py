@@ -22,7 +22,7 @@ import urllib.request
 from datetime import datetime
 from pathlib import Path
 
-from artifact_paths import protection_note
+from artifact_paths import protection_note, directory_protection_note
 
 from dotenv import load_dotenv
 
@@ -206,7 +206,7 @@ def apply_auto_handle(items: list[dict], dry_run: bool,
             print(f"  BLOCKED  {target} - not a vault node")
             continue
 
-        note = protection_note(target)
+        note = protection_note(target) or directory_protection_note(target)
         if note:
             refused.append({
                 "type": "PROTECTED", "priority": "HIGH", "nodes": [target],

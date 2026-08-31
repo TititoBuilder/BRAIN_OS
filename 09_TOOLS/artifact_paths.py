@@ -77,6 +77,27 @@ def artifact_names() -> list:
     return [a["name"] for a in arts]
 
 
+# Dashboard and doctrine directories. Auto-ingest writes knowledge nodes,
+# which live in 01_DOMAINS and 02_PROJECTS. It has no business in these
+# four. Enumerating protected files never converged - three consecutive
+# dry runs each surfaced a new unlisted target - so the rule is by
+# directory. A manifest entry with protected false still wins, which is
+# how Cristian_Principles stays writable inside 07_SYSTEM.
+PROTECTED_DIRS = ("00_DASHBOARD/", "07_SYSTEM/", "00_NAV/", "05_MEMORY/")
+
+
+def directory_protection_note(path: str) -> str:
+    """Why a path is protected by directory. Empty string if it is not."""
+    _, arts = _load()
+    for a in arts:
+        if a["path"] == path and a.get("protected") is False:
+            return ""
+    for d in PROTECTED_DIRS:
+        if path.startswith(d):
+            return f"{d.rstrip('/')} is a dashboard or doctrine directory"
+    return ""
+
+
 def protected_paths() -> set:
     """Relative paths that auto-ingest tools must never write to."""
     _, arts = _load()

@@ -264,6 +264,51 @@
       "external_readers": [],
       "external_writers": [],
       "purpose": "Declared source of truth for project roots."
+    },
+    {
+      "name": "Next_Session_Prompt",
+      "aliases": [
+        "opener",
+        "session opener",
+        "next session"
+      ],
+      "path": "00_DASHBOARD/Next_Session_Prompt.md",
+      "kind": "doctrine",
+      "writer": "manual",
+      "protected": true,
+      "readers": [],
+      "external_readers": [],
+      "external_writers": [],
+      "purpose": "Session opener, pasted as the first message. Hand written."
+    },
+    {
+      "name": "MCP_Registry",
+      "aliases": [
+        "mcp registry",
+        "mcp servers"
+      ],
+      "path": "07_SYSTEM/MCP_Registry.md",
+      "kind": "doctrine",
+      "writer": "manual",
+      "protected": true,
+      "readers": [],
+      "external_readers": [],
+      "external_writers": [],
+      "purpose": "Connected MCP servers. Hand maintained, stale since 2026-04-27."
+    },
+    {
+      "name": "session_record",
+      "aliases": [
+        "session record"
+      ],
+      "path": "08_SESSIONS/session_record.md",
+      "kind": "log",
+      "writer": "manual",
+      "protected": true,
+      "readers": [],
+      "external_readers": [],
+      "external_writers": [],
+      "purpose": "Single session record, stale since 2026-06-02. Superseded by dated archives."
     }
   ]
 }
