@@ -131,8 +131,7 @@
       "writer": "manual",
       "protected": true,
       "readers": [
-        "vault_audio_generator.py",
-        "populate_staging.py"
+        "vault_audio_generator.py"
       ],
       "external_readers": [
         "read-along-app/populate_staging.py"
@@ -148,12 +147,12 @@
       ],
       "path": "09_TOOLS/drive_index.json",
       "kind": "index",
-      "writer": "session_compiler.py / populate_staging.py",
+      "writer": "session_compiler.py",
       "protected": true,
       "readers": [
         "task_session.py",
-        "backend.py",
-        "borrowed_audio_worklist.py"
+        "borrowed_audio_worklist.py",
+        "get_drive_ids.py"
       ],
       "external_readers": [
         "read-along-app/backend.py",
@@ -213,8 +212,7 @@
       "writer": "soccer-content-generator/sync_brain.py",
       "protected": true,
       "readers": [
-        "vault_audio_generator.py",
-        "populate_staging.py"
+        "vault_audio_generator.py"
       ],
       "external_readers": [
         "read-along-app/populate_staging.py"
@@ -236,8 +234,6 @@
       "protected": true,
       "readers": [
         "graph_maintainer.py",
-        "refresh_drive_token.py",
-        "drive_sync.py",
         "session_compiler.py"
       ],
       "external_readers": [
