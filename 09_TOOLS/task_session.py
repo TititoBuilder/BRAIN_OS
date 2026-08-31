@@ -16,13 +16,14 @@ import sys
 from pathlib import Path
 
 from project_paths import project_context, project_names
+from artifact_paths import artifact_path
 
 BRAIN_OS = Path(r"C:\BRAIN_OS")
 
 
 def _queue_open_items():
     """Return open [ ] lines from the ## In Progress section only."""
-    lines = (BRAIN_OS / "00_DASHBOARD" / "Queue.md").read_text(encoding="utf-8").splitlines()
+    lines = artifact_path("todo").read_text(encoding="utf-8").splitlines()
     in_section, items = False, []
     for line in lines:
         if line.startswith("## In Progress"):
@@ -37,7 +38,7 @@ def _queue_open_items():
 
 def _queue_in_progress_section():
     """Return the full ## In Progress section text."""
-    lines = (BRAIN_OS / "00_DASHBOARD" / "Queue.md").read_text(encoding="utf-8").splitlines()
+    lines = artifact_path("todo").read_text(encoding="utf-8").splitlines()
     in_section, out = False, []
     for line in lines:
         if line.startswith("## In Progress"):
