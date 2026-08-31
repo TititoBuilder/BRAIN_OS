@@ -18,6 +18,8 @@
         "task_session.py",
         "watchdog.py"
       ],
+      "external_readers": [],
+      "external_writers": [],
       "purpose": "Long-running task checkboxes. Counted at session start."
     },
     {
@@ -33,6 +35,8 @@
       "writer": "manual",
       "protected": true,
       "readers": [],
+      "external_readers": [],
+      "external_writers": [],
       "purpose": "Scoped study sessions (Directions) with status. NO TOOL READS THIS."
     },
     {
@@ -46,6 +50,8 @@
       "writer": "manual",
       "protected": true,
       "readers": [],
+      "external_readers": [],
+      "external_writers": [],
       "purpose": "Completed queue items. No reader, no writer."
     },
     {
@@ -60,6 +66,8 @@
       "writer": "manual",
       "protected": true,
       "readers": [],
+      "external_readers": [],
+      "external_writers": [],
       "purpose": "Study flags, 7 pipe-separated columns. One writer: you, at session close."
     },
     {
@@ -73,6 +81,8 @@
       "writer": "compile_session.py",
       "protected": true,
       "readers": [],
+      "external_readers": [],
+      "external_writers": [],
       "purpose": "MACHINE-WRITTEN per session. Never hand-edit."
     },
     {
@@ -89,6 +99,8 @@
       "readers": [
         "session_close.py"
       ],
+      "external_readers": [],
+      "external_writers": [],
       "purpose": "Vault navigation. Derived, auto-committed."
     },
     {
@@ -105,6 +117,8 @@
       "readers": [
         "task_session.py"
       ],
+      "external_readers": [],
+      "external_writers": [],
       "purpose": "Script index from docstrings. Derived, auto-committed."
     },
     {
@@ -120,6 +134,10 @@
         "vault_audio_generator.py",
         "populate_staging.py"
       ],
+      "external_readers": [
+        "read-along-app/populate_staging.py"
+      ],
+      "external_writers": [],
       "purpose": "Read by two repos, written by none."
     },
     {
@@ -137,6 +155,14 @@
         "backend.py",
         "borrowed_audio_worklist.py"
       ],
+      "external_readers": [
+        "read-along-app/backend.py",
+        "read-along-app/populate_staging.py"
+      ],
+      "external_writers": [
+        "read-along-app/populate_staging.py",
+        "read-along-app/update_index.py"
+      ],
       "purpose": "machine_key -> Drive file id. Nested under 'index' key."
     },
     {
@@ -153,6 +179,10 @@
         "learning_profile_extractor.py",
         "vault_audio_generator.py"
       ],
+      "external_readers": [
+        "read-along-app/populate_staging.py"
+      ],
+      "external_writers": [],
       "purpose": "Canonical earned-knowledge principles."
     },
     {
@@ -168,6 +198,8 @@
       "readers": [
         "generate_profile.py"
       ],
+      "external_readers": [],
+      "external_writers": [],
       "purpose": "Source of truth for $PROFILE aliases and paths."
     },
     {
@@ -178,11 +210,17 @@
       ],
       "path": "07_SYSTEM/Tools_Registry.md",
       "kind": "doctrine",
-      "writer": "sync_brain.py (caller deleted - verify)",
+      "writer": "soccer-content-generator/sync_brain.py",
       "protected": true,
       "readers": [
         "vault_audio_generator.py",
         "populate_staging.py"
+      ],
+      "external_readers": [
+        "read-along-app/populate_staging.py"
+      ],
+      "external_writers": [
+        "soccer-content-generator/sync_brain.py"
       ],
       "purpose": "Check before adopting any new tool."
     },
@@ -202,6 +240,11 @@
         "drive_sync.py",
         "session_compiler.py"
       ],
+      "external_readers": [
+        "soccer-content-generator/drive_sync.py",
+        "soccer-content-generator/graph_maintainer.py"
+      ],
+      "external_writers": [],
       "purpose": "Drive folder IDs and TTL config."
     },
     {
@@ -218,6 +261,8 @@
         "project_paths.py",
         "graphify.py"
       ],
+      "external_readers": [],
+      "external_writers": [],
       "purpose": "Declared source of truth for project roots."
     }
   ]
