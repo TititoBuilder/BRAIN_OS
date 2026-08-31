@@ -164,6 +164,23 @@ if __name__ == "__main__":
     else:
         print("  Cristian_Principles correctly open")
 
+    print("\nReference check:")
+    tools = MANIFEST.parent.parent.parent / "09_TOOLS"
+    stale = []
+    for a in arts:
+        for r in a["readers"]:
+            if not (tools / r).exists():
+                stale.append(f"{a['name']} reader {r}")
+        w = a["writer"]
+        if w != "manual" and "/" not in w and not (tools / w).exists():
+            stale.append(f"{a['name']} writer {w}")
+    if stale:
+        for line in stale:
+            print(f"  ERROR: {line} is not a file in 09_TOOLS")
+            bad += 1
+    else:
+        print(f"  all bare readers and writers resolve in 09_TOOLS")
+
     orphans = unwritten()
     print(f"\nNo writer, no reader ({len(orphans)}):")
     for a in orphans:
