@@ -31,6 +31,10 @@ BDF_ROOT      = Path(r"C:\Dev\Projects\soccer-content-generator")
 BRAIN_OS_ROOT = Path(r"C:\BRAIN_OS")
 ENV_PATH      = BDF_ROOT / ".env"
 QUEUE_JSON    = BDF_ROOT / "src" / "queue" / "content_queue.json"
+# Hardcoded on purpose, not an oversight. Routing this through
+# artifact_paths would read the manifest at import time, so a missing
+# or malformed manifest would crash the watchdog instead of letting it
+# report. The monitor stays independent of what it monitors.
 QUEUE_MD      = BRAIN_OS_ROOT / "00_DASHBOARD" / "Queue.md"
 SESSIONS_DIR  = BRAIN_OS_ROOT / "08_SESSIONS"
 PATCH_PATH    = BRAIN_OS_ROOT / "09_TOOLS" / "graph_maintainer_patch.py"
