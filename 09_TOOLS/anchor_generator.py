@@ -11,18 +11,13 @@ Usage:
 import argparse
 import os
 import sys
-import json
-import urllib.request
-import urllib.error
 from pathlib import Path
 from project_paths import project_script, project_venv_python
-from dotenv import load_dotenv
+from claude_client import load_api_key, call_claude
 
 # ── Config ─────────────────────────────────────────────────────────────────────
-BRAIN_OS_ROOT   = Path(r"C:\BRAIN_OS")
 PROJECT_ROOT    = Path(r"C:\Dev\Projects\soccer-content-generator")
 BRAIN_AUDIO_PKG = Path(r"C:\Dev\shared\brain-audio")
-ENV_FILE        = PROJECT_ROOT / ".env"
 OUTPUT_SUFFIX   = "_anchor"
 TTS_VOICE       = "am_michael"
 TTS_PROFILE     = "default"
@@ -46,45 +41,11 @@ Rules:
 # ── Claude API call ─────────────────────────────────────────────────────────────
 def generate_anchor_script(source_text: str, api_key: str) -> str:
     """Call Claude API to generate the learning anchor script."""
-    
-    # Truncate source if very long (keep first 8000 chars for context)
     if len(source_text) > 8000:
         source_text = source_text[:8000] + "\n\n[...content truncated for anchor generation...]"
-    
-    payload = {
-        "model": "claude-sonnet-4-6",
-        "max_tokens": 1000,
-        "system": ANCHOR_SYSTEM_PROMPT,
-        "messages": [
-            {
-                "role": "user",
-                "content": f"Here is the chapter content:\n\n{source_text}\n\nGenerate the learning anchor closing segment now."
-            }
-        ]
-    }
 
-    req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Content-Type": "application/json",
-            "x-api-key": api_key,
-            "anthropic-version": "2023-06-01"
-        },
-        method="POST"
-    )
-
-    try:
-        with urllib.request.urlopen(req) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-            return data["content"][0]["text"].strip()
-    except urllib.error.HTTPError as e:
-        body = e.read().decode("utf-8")
-        print(f"[anchor] Claude API error {e.code}: {body}")
-        sys.exit(1)
-    except Exception as e:
-        print(f"[anchor] Unexpected API error: {e}")
-        sys.exit(1)
+    prompt = f"Here is the chapter content:\n\n{source_text}\n\nGenerate the learning anchor closing segment now."
+    return call_claude(api_key, ANCHOR_SYSTEM_PROMPT, prompt, 1000)
 
 
 # ── TTS synthesis ───────────────────────────────────────────────────────────────
@@ -186,16 +147,7 @@ def main():
     if not args.batch and not args.source:
         parser.error("--source is required unless --batch is specified")
 
-    # ── Load env ────────────────────────────────────────────────────────────────
-    load_dotenv(ENV_FILE)
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        load_dotenv(BRAIN_OS_ROOT / "03_APIS" / ".env")
-        api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("[anchor] ERROR: ANTHROPIC_API_KEY not found in .env")
-        print(f"  Add it to: {ENV_FILE}")
-        sys.exit(1)
+    api_key = load_api_key()
 
     # ── Batch mode ──────────────────────────────────────────────────────────────
     if args.batch:
