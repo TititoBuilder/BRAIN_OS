@@ -1,15 +1,15 @@
 """
 category: Session Management
-compile_session.py  —  Option C Knowledge Ingestion Pipeline.
+ingest_session.py  —  Option C Knowledge Ingestion Pipeline.
 =============================================================
 Reads the latest session archive, runs it through the Knowledge
 Ingestion Protocol V2, auto-handles routine updates, flags complex
 cases to Telegram + ingestion_flags.md, then git commits.
 
 Usage:
-    python C:\\BRAIN_OS\\09_TOOLS\\compile_session.py
-    python C:\\BRAIN_OS\\09_TOOLS\\compile_session.py --session 2026-05-28_0607_bdf_ca_brain_os.md
-    python C:\\BRAIN_OS\\09_TOOLS\\compile_session.py --dry-run
+    python C:\\BRAIN_OS\\09_TOOLS\\ingest_session.py
+    python C:\\BRAIN_OS\\09_TOOLS\\ingest_session.py --session 2026-05-28_0607_bdf_ca_brain_os.md
+    python C:\\BRAIN_OS\\09_TOOLS\\ingest_session.py --dry-run
 """
 
 import argparse

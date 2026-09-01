@@ -2,7 +2,7 @@
 category: Vault & Sync
 vault_paths.py — The one definition of which directories are not vault content.
 
-vault_index.py and compile_session.py must agree on this set or their file
+vault_index.py and ingest_session.py must agree on this set or their file
 lists diverge: one scanner sees a file the other does not. They previously
 held separate copies with a comment asking a human to keep them in sync.
 

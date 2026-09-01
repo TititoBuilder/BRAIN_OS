@@ -17,7 +17,7 @@ _Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by
 
 ## Session Management
 
-- `compile_session.py` — Option C Knowledge Ingestion Pipeline
+- `ingest_session.py` — Option C Knowledge Ingestion Pipeline
 - `session_close.py` — BRAIN OS Session Closer
 - `session_compiler.py` — Session-to-Audio Chapter Compiler
 - `session_start.py` — BRAIN OS Session Orchestrator

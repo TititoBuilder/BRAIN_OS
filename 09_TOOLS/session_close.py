@@ -22,7 +22,7 @@ BRAIN_OS_ROOT   = Path(r"C:\BRAIN_OS")
 SESSIONS_DIR    = BRAIN_OS_ROOT / "08_SESSIONS"
 # BRAIN_OS credentials, not BDF's. This script needs only
 # TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID, both of which live in the
-# vault's own .env. compile_session.py still points at BDF because
+# vault's own .env. ingest_session.py still points at BDF because
 # ANTHROPIC_API_KEY exists only there.
 ENV_FILE        = Path(r"C:\BRAIN_OS\03_APIS\.env")
 
@@ -321,7 +321,7 @@ def main():
     print("\nRunning Option C knowledge ingestion...")
     try:
         result = subprocess.run(
-            [sys.executable, str(BRAIN_OS_ROOT / "09_TOOLS" / "compile_session.py")],
+            [sys.executable, str(BRAIN_OS_ROOT / "09_TOOLS" / "ingest_session.py")],
             check=False, timeout=180,
         )
         code = result.returncode
