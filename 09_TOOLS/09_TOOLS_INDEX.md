@@ -45,6 +45,7 @@ _Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by
 - `drive_cleanup_phases.py` — Clean up empty phase folders on Drive
 - `drive_download.py` — Download specific Drive files by folder_path, rename to machine_key
 - `drive_learning_path_organizer.py` — Organize Drive audio into Phase 1-6 folders
+- `drive_service.py` — Shared Google Drive authentication and upload for 09_TOOLS
 - `drive_setup_folders.py` — Reconciles the Knowledge_OS folder tree on Google Drive, creating only what is missing
 - `get_drive_ids.py` — list file names and Drive IDs for one hardcoded folder
 
@@ -69,7 +70,7 @@ _Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by
 - `tools_index.py` — regenerates 09_TOOLS_INDEX.md from module docstrings
 - `watchdog.py` — Unified BRAIN OS System Watchdog
 
-_33 scripts indexed._
+_34 scripts indexed._
 
 <!-- TOOLS_INDEX:END -->
 
