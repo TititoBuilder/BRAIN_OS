@@ -59,6 +59,7 @@ _Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by
 - `brain_notes_sync.py` — Pulls Q&A entries from the BRAIN_OS repo into dated vault notes and commits back
 - `obsidian_sync.py` — Writes Knowledge OS topic status into vault frontmatter by machine_key
 - `vault_index.py` — generates the auto-section of the BRAIN_OS navigation page
+- `vault_paths.py` — The one definition of which directories are not vault content
 
 ## System Utilities
 
@@ -71,7 +72,7 @@ _Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by
 - `tools_index.py` — regenerates 09_TOOLS_INDEX.md from module docstrings
 - `watchdog.py` — Unified BRAIN OS System Watchdog
 
-_35 scripts indexed._
+_36 scripts indexed._
 
 <!-- TOOLS_INDEX:END -->
 

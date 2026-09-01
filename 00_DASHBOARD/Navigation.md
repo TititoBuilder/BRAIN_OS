@@ -7,7 +7,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 ## 00_DASHBOARD
 - [[DASHBOARD_BUILD_SPEC]]
 - [[Next_Session_Prompt]]
-- [[Next_Session_Prompt_ARCHIVE_2026-08-27]]
 - [[Queue]]
 - [[Queue_Archive]]
 
