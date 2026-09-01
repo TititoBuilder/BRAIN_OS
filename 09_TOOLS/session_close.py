@@ -1,6 +1,6 @@
 """
 category: Session Management
-session_close.py — BRAIN OS Session Compiler
+session_close.py — BRAIN OS Session Closer.
 Captures session work, writes a dated archive, and optionally notifies via Telegram.
 
 Usage:
@@ -193,13 +193,13 @@ def build_telegram_message(
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="BRAIN OS session compiler")
+    parser = argparse.ArgumentParser(description="BRAIN OS session closer")
     parser.add_argument("--silent", action="store_true", help="Skip Telegram notification")
     args = parser.parse_args()
 
     now = datetime.now()
     print("\n╔══════════════════════════════════╗")
-    print("║   BRAIN OS — Session Compiler    ║")
+    print("║   BRAIN OS — Session Closer      ║")
     print(f"║   {now.strftime('%Y-%m-%d  %H:%M')}               ║")
     print("╚══════════════════════════════════╝")
 

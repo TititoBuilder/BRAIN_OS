@@ -373,7 +373,7 @@ def main():
     args = parser.parse_args()
 
     print(f"\n{'='*58}")
-    print(f"  COMPILE SESSION — Option C Ingestion")
+    print(f"  SESSION INGESTION — Option C")
     print(f"{'='*58}\n")
 
     # ── Find session ──────────────────────────────────────────────────────────

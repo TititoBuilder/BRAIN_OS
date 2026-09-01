@@ -13,12 +13,12 @@ All Python scripts in `C:\BRAIN_OS\09_TOOLS\`.
 
 <!-- TOOLS_INDEX:START -->
 
-_Generated 2026-08-30 from module docstrings by `tools_index.py`. Do not edit by hand._
+_Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by hand._
 
 ## Session Management
 
 - `compile_session.py` — Option C Knowledge Ingestion Pipeline Reads the latest session archive, runs it through the Knowledge Ingestion Protocol V2, auto-handles routine updates, flags complex cases to Telegram + ingestion_flags.md, then git commits
-- `session_close.py` — BRAIN OS Session Compiler Captures session work, writes a dated archive, and optionally notifies via Telegram
+- `session_close.py` — BRAIN OS Session Closer
 - `session_compiler.py` — Session-to-Audio Chapter Compiler Takes one session archive from 08_SESSIONS\, distills it into a clean reviewable chapter via the Claude API, converts that chapter into a spoken narration script, synthesizes audio via the existing Kokoro TTS chain, uploads the result to Google Drive, and adds an entry to drive_index.json so the Read-Along app can serve it
 - `session_start.py` — BRAIN OS Session Orchestrator Runs automatically when a Claude Code session starts
 - `task_session.py` — focused context launcher for task-specific Claude sessions
