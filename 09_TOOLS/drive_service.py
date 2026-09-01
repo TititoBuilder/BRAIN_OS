@@ -40,6 +40,7 @@ def get_service(creds_path: Path = DEFAULT_CREDS,
     """
     from google.oauth2.credentials import Credentials
     from google.auth.transport.requests import Request
+    from google.auth.exceptions import RefreshError
     from googleapiclient.discovery import build
 
     creds = None
@@ -48,7 +49,18 @@ def get_service(creds_path: Path = DEFAULT_CREDS,
 
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
+            try:
+                creds.refresh(Request())
+            except RefreshError as e:
+                raise DriveAuthError(
+                    f"Drive refresh token is expired or revoked: {e}\n"
+                    f"  This is a credential problem, not a script bug. Work already\n"
+                    f"  written to disk is safe.\n"
+                    f"  Reauthorize by running this module directly:\n"
+                    f"    python C:/BRAIN_OS/09_TOOLS/drive_service.py\n"
+                    f"  which opens the browser flow and writes a fresh token to:\n"
+                    f"    {token_path}"
+                ) from e
             token_path.write_text(creds.to_json(), encoding="utf-8")
         elif allow_browser:
             from google_auth_oauthlib.flow import InstalledAppFlow
