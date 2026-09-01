@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 category: Vault & Sync
-obsidian_sync.py -- Knowledge OS Phase 3.
+obsidian_sync.py -- Writes Knowledge OS topic status into vault frontmatter by machine_key.
 =========================================
 Reads obsidian_sync.json exported from the Knowledge OS app.
 Finds matching .md files in your Obsidian vault by machine_key.

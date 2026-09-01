@@ -1,6 +1,6 @@
 """
 category: System Utilities
-cost_guard.py — Claude Cost Guard.
+cost_guard.py — Estimates Claude token cost before a run and warns via Telegram above a threshold.
 Estimates token cost before running expensive Claude Code tasks.
 Sends Telegram warning if estimated cost exceeds threshold.
 

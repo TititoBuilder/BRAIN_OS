@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 category: Audio Generation
-audio_stitcher.py — Knowledge OS Phase 2.
+audio_stitcher.py — Stitches Knowledge OS audio into one MP3 session with TTS transitions.
 =========================================
 Reads audio_manifest.json exported from the Knowledge OS app.
 Generates TTS transition narrations (Edge TTS, en-US-GuyNeural).

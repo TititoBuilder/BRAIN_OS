@@ -33,7 +33,7 @@ _Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by
 
 - `anchor_batch.py` — Batch Learning Anchor Generator
 - `anchor_generator.py` — AI Learning Anchor Generator
-- `audio_stitcher.py` — Knowledge OS Phase 2
+- `audio_stitcher.py` — Stitches Knowledge OS audio into one MP3 session with TTS transitions
 - `borrowed_audio_worklist.py` — Borrowed Audio Re-voice Worklist Generator
 - `chapter_combiner.py` — Merge original chapter audio + learning anchor into one MP3
 - `vault_audio_generator.py` — Vault Node Audio Generator
@@ -55,15 +55,15 @@ _Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by
 
 ## Vault & Sync
 
-- `brain_notes_sync.py` — Sync Railway Q&As → BRAIN_OS vault
-- `obsidian_sync.py` — Knowledge OS Phase 3
+- `brain_notes_sync.py` — Pulls Q&A entries from the BRAIN_OS repo into dated vault notes and commits back
+- `obsidian_sync.py` — Writes Knowledge OS topic status into vault frontmatter by machine_key
 - `vault_index.py` — generates the auto-section of the BRAIN_OS navigation page
 
 ## System Utilities
 
 - `artifact_paths.py` — single source for resolving vault artifacts by name or alias
 - `audit_files.py` — Read-only file audit across the BRAIN_OS ecosystem
-- `cost_guard.py` — Claude Cost Guard
+- `cost_guard.py` — Estimates Claude token cost before a run and warns via Telegram above a threshold
 - `generate_profile.py` — Generate PowerShell $PROFILE from SYSTEM_MASTER.md as single source of truth
 - `project_paths.py` — single source for resolving project attributes from the manifest
 - `tools_index.py` — regenerates 09_TOOLS_INDEX.md from module docstrings
