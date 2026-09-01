@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 category: Google Drive
-drive_setup_folders.py
+drive_setup_folders.py — Reconciles the Knowledge_OS folder tree on Google Drive, creating only what is missing.
 Creates the Knowledge_OS domain folder tree on Google Drive
 and moves session_01_knowledge_os.mp3 from root into Knowledge_OS/.
 """
