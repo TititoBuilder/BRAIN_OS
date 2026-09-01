@@ -18,13 +18,11 @@ Output:
 """
 
 import argparse
-import json
 import sys
-from claude_client import load_api_key, call_claude as claude_call
+from claude_client import MODEL, load_api_key, call_claude as claude_call
 from datetime import date
 from pathlib import Path
 
-import os
 
 # ── Config ──────────────────────────────────────────────────────────────────
 BRAIN_OS       = Path(r"C:\BRAIN_OS")
@@ -33,7 +31,6 @@ SESSIONS_DIR   = BRAIN_OS / "08_SESSIONS"
 OUTPUT_FILE    = BRAIN_OS / "07_SYSTEM" / "Learning_Profile.md"
 # ANTHROPIC_API_KEY lives in the BDF project's .env, not BRAIN_OS's
 # (BRAIN_OS's 03_APIS/.env holds ANTHROPIC_ADMIN_KEY for cost monitoring only).
-MODEL          = "claude-sonnet-4-6"
 MAX_OUTPUT_TOKENS = 6000
 
 SYSTEM_PROMPT = """You are analyzing two sources about a developer named Cristian:
