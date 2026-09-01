@@ -5,7 +5,6 @@ drive_download.py — Download specific Drive files by folder_path, rename to ma
 Usage: python drive_download.py
 """
 
-import sys
 from pathlib import Path
 
 from drive_service import get_service as get_drive_service

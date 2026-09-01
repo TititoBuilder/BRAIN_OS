@@ -6,7 +6,6 @@ Creates the Knowledge_OS domain folder tree on Google Drive
 and moves session_01_knowledge_os.mp3 from root into Knowledge_OS/.
 """
 
-import sys
 from pathlib import Path
 
 from drive_service import get_service
