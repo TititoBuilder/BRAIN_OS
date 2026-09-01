@@ -38,6 +38,8 @@ import urllib.request
 from datetime import date
 from pathlib import Path
 
+from drive_service import get_service
+
 from dotenv import load_dotenv
 
 from project_paths import project_script, project_venv_python
@@ -260,35 +262,9 @@ def load_drive_config() -> tuple[Path, Path, str]:
 
 
 def get_drive_service(creds_path: Path, token_path: Path):
-    try:
-        from google.oauth2.credentials import Credentials
-        from google.auth.transport.requests import Request
-        from google.auth.exceptions import RefreshError
-        from googleapiclient.discovery import build
-    except ImportError:
-        sys.exit("ERROR: Google libraries not installed. "
-                  "Run: pip install google-api-python-client google-auth-oauthlib")
-
-    scopes = ["https://www.googleapis.com/auth/drive"]
-    if not token_path.exists():
-        sys.exit(f"ERROR: Drive token not found: {token_path}")
-
-    creds = Credentials.from_authorized_user_file(str(token_path), scopes)
-    if creds.expired and creds.refresh_token:
-        try:
-            creds.refresh(Request())
-        except RefreshError as e:
-            sys.exit(
-                f"ERROR: Drive refresh token is expired/revoked: {e}\n"
-                f"  This is a credential problem, not a script bug -- the chapter and audio\n"
-                f"  files below were already produced successfully and are safe on disk.\n"
-                f"  Re-authenticate interactively (e.g. via drive_browser.py's OAuth flow,\n"
-                f"  which calls flow.run_local_server) to get a fresh token at:\n"
-                f"    {token_path}"
-            )
-        token_path.write_text(creds.to_json(), encoding="utf-8", newline="\n")
-
-    return build("drive", "v3", credentials=creds)
+    """Authenticate without a browser fallback: a TTS run must not block
+    on a consent screen. See drive_service.DriveAuthError for recovery."""
+    return get_service(creds_path, token_path, allow_browser=False)
 
 
 def upload_to_drive(service, local_path: Path, folder_id: str) -> str:
