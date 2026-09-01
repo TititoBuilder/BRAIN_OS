@@ -12,15 +12,11 @@ Usage:
 import argparse
 import sys
 from pathlib import Path
-from google.oauth2.credentials import Credentials
-from googleapiclient.discovery import build
+from drive_service import get_service
 
 TOKEN_FILE = Path(r"C:\Dev\Projects\soccer-content-generator\gdrive_token.json")
 
 
-def get_service():
-    creds = Credentials.from_authorized_user_file(str(TOKEN_FILE))
-    return build("drive", "v3", credentials=creds)
 
 
 def list_children(service, folder_id: str) -> list:

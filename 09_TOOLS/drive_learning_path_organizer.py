@@ -12,6 +12,7 @@ import argparse
 import sys
 import json
 from pathlib import Path
+from drive_service import get_service
 from dotenv import load_dotenv
 
 ENV_FILE     = Path(r"C:\Dev\Projects\soccer-content-generator\.env")
@@ -149,11 +150,6 @@ FILE_PHASE_MAP = {
 }
 
 
-def get_service():
-    from google.oauth2.credentials import Credentials
-    from googleapiclient.discovery import build
-    creds = Credentials.from_authorized_user_file(str(TOKEN_FILE))
-    return build("drive", "v3", credentials=creds)
 
 
 def get_or_create_folder(service, name: str, parent_id: str) -> str:
