@@ -6,7 +6,9 @@ Extracted from session_compiler.py so the distill and narrate halves can be
 split without copying the API plumbing into both.
 
 Credential order: BDF's .env first, then the vault's 03_APIS/.env. The key
-lives in both and rotation means updating both files.
+lives in both and rotation means updating both files. The order matters:
+the vault's .env also holds ANTHROPIC_ADMIN_KEY for cost monitoring, which
+is a different credential and not interchangeable with this one.
 
 Import as a sibling:
     from claude_client import load_api_key, call_claude

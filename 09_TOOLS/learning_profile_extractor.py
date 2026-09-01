@@ -20,12 +20,10 @@ Output:
 import argparse
 import json
 import sys
-import urllib.error
-import urllib.request
+from claude_client import load_api_key, call_claude as claude_call
 from datetime import date
 from pathlib import Path
 
-from dotenv import load_dotenv
 import os
 
 # ── Config ──────────────────────────────────────────────────────────────────
@@ -35,8 +33,6 @@ SESSIONS_DIR   = BRAIN_OS / "08_SESSIONS"
 OUTPUT_FILE    = BRAIN_OS / "07_SYSTEM" / "Learning_Profile.md"
 # ANTHROPIC_API_KEY lives in the BDF project's .env, not BRAIN_OS's
 # (BRAIN_OS's 03_APIS/.env holds ANTHROPIC_ADMIN_KEY for cost monitoring only).
-BDF_ENV_FILE   = Path(r"C:\Dev\Projects\soccer-content-generator\.env")
-BRAIN_ENV_FILE = BRAIN_OS / "03_APIS" / ".env"
 MODEL          = "claude-sonnet-4-6"
 MAX_OUTPUT_TOKENS = 6000
 
@@ -116,35 +112,10 @@ def load_sessions() -> tuple[str, int]:
 
 
 def call_claude(api_key: str, principles: str, sessions: str, count: int) -> str:
-    payload = {
-        "model": MODEL,
-        "max_tokens": MAX_OUTPUT_TOKENS,
-        "system": SYSTEM_PROMPT,
-        "messages": [{
-            "role": "user",
-            "content": EXTRACTION_PROMPT.format(
-                principles=principles, sessions=sessions, count=count
-            ),
-        }],
-    }
-    req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Content-Type": "application/json",
-            "x-api-key": api_key,
-            "anthropic-version": "2023-06-01",
-        },
-        method="POST",
+    prompt = EXTRACTION_PROMPT.format(
+        principles=principles, sessions=sessions, count=count
     )
-    try:
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-            return data["content"][0]["text"].strip()
-    except urllib.error.HTTPError as e:
-        sys.exit(f"ERROR: Claude API {e.code}: {e.read().decode()[:500]}")
-    except Exception as e:
-        sys.exit(f"ERROR: unexpected API error: {e}")
+    return claude_call(api_key, SYSTEM_PROMPT, prompt, MAX_OUTPUT_TOKENS)
 
 
 def build_document(body: str) -> str:
@@ -187,13 +158,7 @@ def main() -> None:
             print("  Aborted — nothing written.")
             return
 
-    load_dotenv(BDF_ENV_FILE)
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        load_dotenv(BRAIN_ENV_FILE)
-        api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        sys.exit(f"ERROR: ANTHROPIC_API_KEY not found in {BDF_ENV_FILE} or {BRAIN_ENV_FILE}")
+    api_key = load_api_key()
 
     print(f"── Calling Claude ({MODEL})... ──────────────────────────")
     body = call_claude(api_key, principles, sessions, count)
