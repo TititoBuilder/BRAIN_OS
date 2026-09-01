@@ -8,8 +8,8 @@ to match Knowledge OS machine_key naming convention.
 
 Location : C:\\BRAIN_OS\\09_TOOLS\\drive_browser.py
 Venv     : C:\\Knowledge\\CA\\venv\\Scripts\\python.exe
-Creds    : C:\\Dev\\Projects\\soccer-content-generator\\gdrive_credentials.json
-Token    : C:\\Dev\\Projects\\soccer-content-generator\\gdrive_token.json
+Auth     : shared drive_service.py
+Token    : see drive_service.py and CLAUDE.md
 
 Usage:
     # Audit only — see all files
@@ -27,12 +27,9 @@ Usage:
 
 import argparse
 import json
-import sys
 from pathlib import Path
 
-CREDS_FILE = Path(r"C:\Dev\Projects\soccer-content-generator\gdrive_credentials.json")
-TOKEN_FILE  = Path(r"C:\Dev\Projects\soccer-content-generator\gdrive_token.json")
-SCOPES      = ["https://www.googleapis.com/auth/drive"]
+from drive_service import get_service as get_drive_service
 
 AUDIO_FOLDERS = ["BRAIN_OS_Handbook", "CA_Book_Audio", "BDF KNOWLEDGE BOOK", "Tools"]
 
@@ -88,37 +85,6 @@ FILE_MAP = {
     "programming_terminology_reference":"llm_fundamentals",
     "resolve_mcp_guide":                "model_context_protocol",
 }
-
-
-# ─── Auth ─────────────────────────────────────────────────────────────────
-
-def get_drive_service():
-    try:
-        from google.oauth2.credentials import Credentials
-        from google.auth.transport.requests import Request
-        from google_auth_oauthlib.flow import InstalledAppFlow
-        from googleapiclient.discovery import build
-    except ImportError:
-        print("ERROR: Google libraries not installed.")
-        print("  Run: C:\\Knowledge\\CA\\venv\\Scripts\\pip install google-api-python-client google-auth-oauthlib")
-        sys.exit(1)
-
-    creds = None
-    if TOKEN_FILE.exists():
-        creds = Credentials.from_authorized_user_file(str(TOKEN_FILE), SCOPES)
-
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
-            if not CREDS_FILE.exists():
-                print(f"ERROR: Credentials not found at {CREDS_FILE}")
-                sys.exit(1)
-            flow = InstalledAppFlow.from_client_secrets_file(str(CREDS_FILE), SCOPES)
-            creds = flow.run_local_server(port=0)
-        TOKEN_FILE.write_text(creds.to_json())
-
-    return build("drive", "v3", credentials=creds)
 
 
 # ─── Drive helpers ────────────────────────────────────────────────────────
