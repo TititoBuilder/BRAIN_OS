@@ -20,19 +20,15 @@ Usage:
 import argparse
 import os
 import sys
-import json
 import time
-import urllib.request
-import urllib.error
 import subprocess
 from pathlib import Path
-from dotenv import load_dotenv
+from claude_client import load_api_key, call_claude
 
 # ── Config ─────────────────────────────────────────────────────────────────────
 BRAIN_OS_ROOT = Path(r"C:\BRAIN_OS")
 PROJECT_ROOT  = Path(r"C:\Dev\Projects\soccer-content-generator")
 OUTPUT_DIR    = PROJECT_ROOT / "converted" / "vault_audio"
-ENV_FILE      = PROJECT_ROOT / ".env"
 TTS_SCRIPT    = PROJECT_ROOT / "tts_local.py"
 PYTHON_EXE    = Path(r"C:\Knowledge\CA\venv\Scripts\python.exe")
 TTS_VOICE     = "af_heart"
@@ -113,13 +109,6 @@ Rules:
 Output only the spoken script — no headers, no markdown, no preamble."""
 
 
-def load_api_key() -> str:
-    load_dotenv(ENV_FILE)
-    key = os.getenv("ANTHROPIC_API_KEY")
-    if not key:
-        print("[vault_audio] ERROR: ANTHROPIC_API_KEY not found")
-        sys.exit(1)
-    return key
 
 
 def md_to_script(md_content: str, filename: str, api_key: str) -> str:
@@ -127,34 +116,8 @@ def md_to_script(md_content: str, filename: str, api_key: str) -> str:
     if len(md_content) > 8000:
         md_content = md_content[:8000] + "\n\n[...content truncated...]"
 
-    payload = {
-        "model": "claude-sonnet-4-6",
-        "max_tokens": 1000,
-        "system": NARRATION_PROMPT,
-        "messages": [{
-            "role": "user",
-            "content": f"Document: {filename}\n\n{md_content}\n\nGenerate the spoken audio script now."
-        }]
-    }
-
-    req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Content-Type": "application/json",
-            "x-api-key": api_key,
-            "anthropic-version": "2023-06-01"
-        },
-        method="POST"
-    )
-
-    try:
-        with urllib.request.urlopen(req) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-            return data["content"][0]["text"].strip()
-    except urllib.error.HTTPError as e:
-        print(f"[vault_audio] API error {e.code}: {e.read().decode()}")
-        sys.exit(1)
+    prompt = f"Document: {filename}\n\n{md_content}\n\nGenerate the spoken audio script now."
+    return call_claude(api_key, NARRATION_PROMPT, prompt, 1000)
 
 
 def run_tts(script: str, output_mp3: Path) -> bool:
