@@ -9,9 +9,7 @@ and moves session_01_knowledge_os.mp3 from root into Knowledge_OS/.
 import sys
 from pathlib import Path
 
-CREDS_FILE = Path(r"C:\Dev\Projects\soccer-content-generator\gdrive_credentials.json")
-TOKEN_FILE  = Path(r"C:\Dev\Projects\soccer-content-generator\gdrive_token.json")
-SCOPES      = ["https://www.googleapis.com/auth/drive"]
+from drive_service import get_service
 
 DOMAIN_FOLDERS = [
     "AI_ML",
@@ -26,30 +24,6 @@ DOMAIN_FOLDERS = [
 ]
 
 SESSION_FILE = "session_01_knowledge_os.mp3"
-
-
-# ── Auth ──────────────────────────────────────────────────────────────────
-
-def get_service():
-    from google.oauth2.credentials import Credentials
-    from google.auth.transport.requests import Request
-    from google_auth_oauthlib.flow import InstalledAppFlow
-    from googleapiclient.discovery import build
-
-    creds = None
-    if TOKEN_FILE.exists():
-        creds = Credentials.from_authorized_user_file(str(TOKEN_FILE), SCOPES)
-
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-            TOKEN_FILE.write_text(creds.to_json())
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file(str(CREDS_FILE), SCOPES)
-            creds = flow.run_local_server(port=0)
-            TOKEN_FILE.write_text(creds.to_json())
-
-    return build("drive", "v3", credentials=creds)
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────
