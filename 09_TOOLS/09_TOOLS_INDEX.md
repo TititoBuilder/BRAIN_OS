@@ -47,7 +47,7 @@ _Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by
 - `drive_learning_path_organizer.py` — Organize Drive audio into Phase 1-6 folders
 - `drive_service.py` — Shared Google Drive authentication and upload for 09_TOOLS
 - `drive_setup_folders.py` — Reconciles the Knowledge_OS folder tree on Google Drive, creating only what is missing
-- `get_drive_ids.py` — list file names and Drive IDs for one hardcoded folder
+- `get_drive_ids.py` — Print name and Drive ID for every file in a folder
 
 ## Learning Path
 
@@ -64,13 +64,14 @@ _Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by
 
 - `artifact_paths.py` — single source for resolving vault artifacts by name or alias
 - `audit_files.py` — Read-only file audit across the BRAIN_OS ecosystem
+- `claude_client.py` — Shared Anthropic API access for 09_TOOLS
 - `cost_guard.py` — Estimates Claude token cost before a run and warns via Telegram above a threshold
 - `generate_profile.py` — Generate PowerShell $PROFILE from SYSTEM_MASTER.md as single source of truth
 - `project_paths.py` — single source for resolving project attributes from the manifest
 - `tools_index.py` — regenerates 09_TOOLS_INDEX.md from module docstrings
 - `watchdog.py` — Unified BRAIN OS System Watchdog
 
-_34 scripts indexed._
+_35 scripts indexed._
 
 <!-- TOOLS_INDEX:END -->
 
