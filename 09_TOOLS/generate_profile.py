@@ -237,7 +237,7 @@ def build_profile(preserved: dict[str, str], env: dict[str, str]) -> str:
     env_lines: list[str] = []
     for key in ("HF_TOKEN", "GITHUB_TOKEN"):
         if key in env:
-            env_lines.append(f'$env:{key} = "{env[key]}"')
+            env_lines.append("$env:" + key + " = (((Get-Content " + str(ENV_FILE) + " | Where-Object { $_ -like '" + key + "=*' }) -split '=',2)[1]).Trim()")
         else:
             print(
                 f"WARNING: {key} not in {ENV_FILE} — omitted from profile.\n"
