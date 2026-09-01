@@ -1,6 +1,6 @@
 """
 category: System Utilities
-watchdog.py — Unified BRAIN OS System Watchdog
+watchdog.py — Unified BRAIN OS System Watchdog.
 ===============================================
 Three modes:
     --check morning  : 7:15am daily health check (run via Task Scheduler)

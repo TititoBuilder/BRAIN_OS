@@ -1,6 +1,6 @@
 """
 category: Session Management
-compile_session.py  —  Option C Knowledge Ingestion Pipeline
+compile_session.py  —  Option C Knowledge Ingestion Pipeline.
 =============================================================
 Reads the latest session archive, runs it through the Knowledge
 Ingestion Protocol V2, auto-handles routine updates, flags complex

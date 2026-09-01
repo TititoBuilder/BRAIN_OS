@@ -1,6 +1,6 @@
 r"""
 category: Session Management
-session_compiler.py — Session-to-Audio Chapter Compiler
+session_compiler.py — Session-to-Audio Chapter Compiler.
 =========================================================
 Takes one session archive from 08_SESSIONS\, distills it into a clean
 reviewable chapter via the Claude API, converts that chapter into a spoken

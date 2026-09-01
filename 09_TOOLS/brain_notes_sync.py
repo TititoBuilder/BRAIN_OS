@@ -1,6 +1,6 @@
 """
 category: Vault & Sync
-brain_notes_sync.py  —  Sync Railway Q&As → BRAIN_OS vault
+brain_notes_sync.py  —  Sync Railway Q&As → BRAIN_OS vault.
 ===========================================================
 Pulls brain_notes.md from BRAIN_OS GitHub repo, parses new Q&A
 entries, appends them to dated vault notes, marks as processed,

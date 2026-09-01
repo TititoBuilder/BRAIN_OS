@@ -1,6 +1,6 @@
 """
 category: Google Drive
-drive_cleanup_phases.py — Clean up empty phase folders on Drive
+drive_cleanup_phases.py — Clean up empty phase folders on Drive.
 Deletes empty Phase_0X folders, keeps only folders with files.
 Creates a top-level "BRAIN_OS Learning Path" shortcut folder.
 

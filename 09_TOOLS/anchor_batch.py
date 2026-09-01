@@ -1,6 +1,6 @@
 """
 category: Audio Generation
-anchor_batch.py — Batch Learning Anchor Generator
+anchor_batch.py — Batch Learning Anchor Generator.
 Runs anchor_generator.py on every _TTS.txt file in converted/ folder.
 
 Usage:

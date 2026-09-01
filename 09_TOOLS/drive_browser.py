@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 category: Google Drive
-drive_browser.py -- Knowledge OS Drive Organizer
+drive_browser.py -- Knowledge OS Drive Organizer.
 =================================================
 Audits Google Drive audio folders and reorganizes them
 to match Knowledge OS machine_key naming convention.

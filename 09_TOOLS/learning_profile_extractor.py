@@ -1,6 +1,6 @@
 r"""
 category: Learning Path
-learning_profile_extractor.py — Learning Profile Distiller
+learning_profile_extractor.py — Learning Profile Distiller.
 =============================================================
 Reads Cristian_Principles.md (earned-knowledge source) plus every session
 archive in 08_SESSIONS\, and calls the Claude API to distill a meta-level

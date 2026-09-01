@@ -1,6 +1,6 @@
 """
 category: Audio Generation
-borrowed_audio_worklist.py — Borrowed Audio Re-voice Worklist Generator
+borrowed_audio_worklist.py — Borrowed Audio Re-voice Worklist Generator.
 ========================================================================
 Identifies drive_index.json entries with path-format values (not id:)
 and looks them up in the Drive manifest to find their drive_id.

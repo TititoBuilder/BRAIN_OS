@@ -1,6 +1,6 @@
 """
 category: Google Drive
-download_brainos_chapters.py — Download BRAIN OS guide WAVs from Drive
+download_brainos_chapters.py — Download BRAIN OS guide WAVs from Drive.
 """
 import os, sys, json
 from pathlib import Path

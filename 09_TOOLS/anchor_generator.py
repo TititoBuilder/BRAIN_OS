@@ -1,6 +1,6 @@
 """
 category: Audio Generation
-anchor_generator.py — AI Learning Anchor Generator
+anchor_generator.py — AI Learning Anchor Generator.
 Generates a closing "Learning Anchor" segment for any audio chapter.
 Voice: am_michael (Kokoro TTS)
 Usage:
