@@ -1,5 +1,5 @@
 # soccer-content-generator — dependency context
-_updated: 2026-08-31T22:12:44.666640+00:00_
+_updated: 2026-09-01T01:44:27.242419+00:00_
 _nodes: 97_
 
 ## Clip_Pipeline
@@ -117,7 +117,7 @@ _nodes: 97_
 - **scripts/database_exporter.py** (10.5 KB) — external: `pandas`
 - **scripts/distill_session.py** (10.8 KB) — internal: `src.config`; external: `anthropic`, `dotenv`
 - **scripts/drive_cleanup.py** (7.0 KB) — internal: `drive_sync`
-- **scripts/drive_sync.py** (20.0 KB)
+- **scripts/drive_sync.py** (20.6 KB)
 - **scripts/graph_maintainer.py** (19.1 KB) — internal: `src.config`
 - **scripts/ingest_international_break.py** (7.1 KB) — internal: `vector_store`; external: `dotenv`
 - **scripts/ingest_ucl_2026.py** (6.9 KB) — internal: `src.knowledge_manager`; external: `dotenv`
