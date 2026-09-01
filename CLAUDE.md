@@ -174,6 +174,17 @@ ANTHROPIC_CSV
 LOG_DIR
 ```
 
+## Google Drive Credentials
+
+All seven Drive tools in `09_TOOLS` read BDF's OAuth token at
+`C:\Dev\Projects\soccer-content-generator\gdrive_token.json`, with
+`gdrive_credentials.json` beside it. This is deliberate, not leftover
+coupling. A Drive OAuth token is issued per Google Cloud project and
+scope set, so a second copy would mean a second authorization and a
+second re-consent whenever a refresh token is revoked. Credentials that
+CAN be duplicated (ANTHROPIC_API_KEY, Telegram) live in `03_APIS/.env`;
+the Drive token cannot and stays where it was issued.
+
 
 ## Triggers
 
