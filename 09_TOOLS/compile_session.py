@@ -40,7 +40,6 @@ load_dotenv(ENV_FILE)
 ANTHROPIC_KEY  = os.getenv("ANTHROPIC_API_KEY", "").strip()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT  = os.getenv("TELEGRAM_CHAT_ID", "").strip()
-MODEL          = "claude-sonnet-4-6"
 
 # ── Structured output prompt ──────────────────────────────────────────────────
 
@@ -93,6 +92,7 @@ Critical safeguards — ALWAYS FLAG (never auto-handle):
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
+from claude_client import MODEL
 from vault_paths import SKIP_DIRS as EXCLUDED_DIRS
 
 
