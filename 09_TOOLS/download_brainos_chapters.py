@@ -2,7 +2,7 @@
 category: Google Drive
 download_brainos_chapters.py — Download BRAIN OS guide WAVs from Drive.
 """
-import os, sys, json
+from drive_service import get_service
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -25,13 +25,6 @@ FILES = {
     "guide_brain_os":                    "1i9TS3rx15rC5XUe3Eus9ctt1R_VU0MdR",
 }
 
-def get_service():
-    sys.path.insert(0, str(Path(r"C:\Dev\Projects\soccer-content-generator")))
-    from google.oauth2.credentials import Credentials
-    from googleapiclient.discovery import build
-    TOKEN = Path(r"C:\Dev\Projects\soccer-content-generator\gdrive_token.json")
-    creds = Credentials.from_authorized_user_file(str(TOKEN))
-    return build("drive", "v3", credentials=creds)
 
 def download_file(service, file_id: str, dest: Path):
     from googleapiclient.http import MediaIoBaseDownload
