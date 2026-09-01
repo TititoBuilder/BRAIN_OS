@@ -418,3 +418,38 @@ without a meaningful exit code. The number is the only diagnosis the caller gets
 **Exit code contract:** `0` success, `1` real error, `2` unavailable/skipped.
 
 **Criterion for belonging in `09_TOOLS`:** does it operate on the vault?
+
+---
+
+## No Callers Is a Wiring Gap, Not Evidence of Death
+
+**Learned from:** Tracing a 73-day-stale Drive manifest back to
+`refresh_drive_token.py`, deleted 2026-08-19 in commit a5b09f5 with the
+note "Railway-only, no callers" (BRAIN_OS, 2026-08-31)
+
+**The Core Principle:** "Nothing calls this" answers whether a tool is
+wired up. It does not answer whether it should be. Those are different
+questions, and only the second one justifies deleting.
+
+`refresh_drive_token.py` had no callers because nobody had wired it in
+yet. Its own docstring said it existed to solve "the token-fragility
+problem: local token and Railway env var are refreshed in one operation
+instead of two separate manual steps."
+
+That problem was real, it was current, and it recurred three times after
+the deletion - three token backups on disk, three manual
+re-authorizations. Reading four lines of the docstring would have
+stopped it.
+
+**The check before deleting:**
+
+1. Read the docstring. What problem was this built to solve?
+2. Does that problem still exist?
+3. If yes, the absence of callers is the defect. Wire it in.
+4. If no, say so in the commit message - the reason, not just the fact.
+
+**The corollary:** a commit message that records only what was removed is
+worth less than one that records why the problem it solved no longer
+exists. `a5b09f5` said "Railway-only, no callers." Had it said "the
+Railway env var it pushes to is gone, we use Render now", the local
+refresh half would have been recognized as still needed.
