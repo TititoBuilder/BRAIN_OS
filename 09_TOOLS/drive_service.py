@@ -11,7 +11,7 @@ The OAuth token lives with the BDF project because a Drive token is issued per
 Google Cloud project and cannot be duplicated. See CLAUDE.md.
 
 Import as a sibling:
-    from drive_service import get_service, upload_file
+    from drive_service import get_service
 
 Self-test:
     python C:/BRAIN_OS/09_TOOLS/drive_service.py
@@ -74,16 +74,6 @@ def get_service(creds_path: Path = DEFAULT_CREDS,
             )
 
     return build("drive", "v3", credentials=creds)
-
-
-def upload_file(service, local_path: Path, folder_id: str) -> str:
-    """Upload one file into folder_id. Returns the new Drive file id."""
-    from googleapiclient.http import MediaFileUpload
-
-    meta = {"name": local_path.name, "parents": [folder_id]}
-    media = MediaFileUpload(str(local_path), resumable=True)
-    created = service.files().create(body=meta, media_body=media, fields="id").execute()
-    return created["id"]
 
 
 if __name__ == "__main__":
