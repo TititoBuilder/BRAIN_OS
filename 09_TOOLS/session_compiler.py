@@ -33,14 +33,11 @@ import os
 import re
 import subprocess
 import sys
-import urllib.error
-import urllib.request
-from datetime import date
 from pathlib import Path
 
 from drive_service import get_service
+from claude_client import load_api_key, call_claude
 
-from dotenv import load_dotenv
 
 from project_paths import project_script, project_venv_python
 
@@ -52,10 +49,8 @@ AUDIO_STAGING  = BRAIN_OS / "audio_staging"
 DRIVE_INDEX    = BRAIN_OS / "09_TOOLS" / "drive_index.json"
 CONFIG_FILE    = BRAIN_OS / "BRAIN_OS_CONFIG.json"
 
-BDF_ENV_FILE   = Path(r"C:\Dev\Projects\soccer-content-generator\.env")
 BRAIN_ENV_FILE = BRAIN_OS / "03_APIS" / ".env"
 
-MODEL             = "claude-sonnet-4-6"
 CHAPTER_MAX_TOKENS   = 4096
 NARRATION_MAX_TOKENS = 2200
 DEFAULT_VOICE     = "af_heart"
@@ -161,44 +156,6 @@ def chapter_output_path(machine_key: str) -> Path:
 
 
 # ── Claude API ──────────────────────────────────────────────────────────────────
-def load_api_key() -> str:
-    load_dotenv(BDF_ENV_FILE)
-    key = os.getenv("ANTHROPIC_API_KEY")
-    if not key:
-        load_dotenv(BRAIN_ENV_FILE)
-        key = os.getenv("ANTHROPIC_API_KEY")
-    if not key:
-        sys.exit(f"ERROR: ANTHROPIC_API_KEY not found in {BDF_ENV_FILE} or {BRAIN_ENV_FILE}")
-    return key
-
-
-def call_claude(api_key: str, system: str, prompt: str, max_tokens: int) -> str:
-    payload = {
-        "model": MODEL,
-        "max_tokens": max_tokens,
-        "system": system,
-        "messages": [{"role": "user", "content": prompt}],
-    }
-    req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Content-Type": "application/json",
-            "x-api-key": api_key,
-            "anthropic-version": "2023-06-01",
-        },
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-            return data["content"][0]["text"].strip()
-    except urllib.error.HTTPError as e:
-        sys.exit(f"ERROR: Claude API {e.code}: {e.read().decode()[:500]}")
-    except Exception as e:
-        sys.exit(f"ERROR: unexpected API error: {e}")
-
-
 def distill_chapter(api_key: str, session_path: Path) -> str:
     content = session_path.read_text(encoding="utf-8", errors="replace")
     prompt = CHAPTER_PROMPT.format(filename=session_path.name, content=content)
