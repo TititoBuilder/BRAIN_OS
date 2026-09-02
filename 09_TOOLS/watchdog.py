@@ -42,7 +42,6 @@ QUEUE_JSON    = BDF_ROOT / "src" / "queue" / "content_queue.json"
 # report. The monitor stays independent of what it monitors.
 QUEUE_MD      = BRAIN_OS_ROOT / "00_DASHBOARD" / "Queue.md"
 SESSIONS_DIR  = BRAIN_OS_ROOT / "08_SESSIONS"
-PATCH_PATH    = BRAIN_OS_ROOT / "09_TOOLS" / "graph_maintainer_patch.py"
 
 # ── Vault orphan exclusions ───────────────────────────────────────────────────
 # These top-level dir names are skipped regardless of depth
@@ -106,16 +105,20 @@ def _send_telegram(msg: str) -> None:
         print(f"[watchdog] Telegram send failed: {e}")
 
 
-# ── Graph parity (via graph_maintainer_patch) ─────────────────────────────────
+# ── Graph parity (via graph_maintainer) ─────────────────────────────────
 
 def _run_parity_check() -> dict | None:
-    """Dynamically import audio_parity_check from graph_maintainer_patch.py."""
-    if not PATCH_PATH.exists():
+    """Call audio_parity_check from graph_maintainer.
+
+    Imported inside the function on purpose: graph_maintainer hardcodes a
+    BDF path at module level, and the watchdog runs unattended under the
+    scheduler. Returns None if the import fails, matching the old contract.
+    """
+    try:
+        from graph_maintainer import audio_parity_check
+    except Exception:
         return None
-    spec = importlib.util.spec_from_file_location("graph_maintainer_patch", PATCH_PATH)
-    mod  = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod.audio_parity_check()
+    return audio_parity_check()
 
 
 # ── Git helpers ───────────────────────────────────────────────────────────────
@@ -237,7 +240,7 @@ def check_morning() -> None:
     # 1. Audio parity (graph_maintainer)
     parity = _run_parity_check()
     if parity is None:
-        issues.append("⚠️ Graph: graph_maintainer_patch.py not found")
+        issues.append("⚠️ Graph: audio_parity_check unavailable")
     elif "error" in parity:
         issues.append(f"⚠️ Graph: {parity['error']}")
     else:
@@ -294,7 +297,7 @@ def check_bdf() -> None:
     # 3. Audio parity Task 2 — per-category ALTERNATES
     parity = _run_parity_check()
     if parity is None:
-        issues.append("⚠️ Audio: graph_maintainer_patch.py not found")
+        issues.append("⚠️ Audio: audio_parity_check unavailable")
     elif "error" in parity:
         issues.append(f"⚠️ Audio: {parity['error']}")
     else:

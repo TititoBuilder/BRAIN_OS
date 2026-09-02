@@ -25,14 +25,12 @@ from pathlib import Path
 import re
 from datetime import datetime, timezone
 
-parser = argparse.ArgumentParser()
-parser.add_argument(
-    "--config",
-    default="C:/BRAIN_OS/02_PROJECTS/graphs/soccer-content-generator.graphify.json"
-)
-args = parser.parse_args()
+# Parsed in main(), not at module level: this file is imported by
+# watchdog.py, and a module-level parse_args() consumes the importing
+# process's argv and exits.
+DEFAULT_CONFIG = "C:/BRAIN_OS/02_PROJECTS/graphs/soccer-content-generator.graphify.json"
 
-CONFIG_PATH = Path(args.config)
+CONFIG_PATH = Path(DEFAULT_CONFIG)
 GRAPHIFY_PATH = Path(r"C:\BRAIN_OS\09_TOOLS\graphify.py")
 
 
@@ -489,6 +487,11 @@ def _print_parity_report(results: dict, stale_flag: bool = False) -> None:
 # ---------------------------------------------------------------------------
 
 def main() -> None:
+    global CONFIG_PATH
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", default=DEFAULT_CONFIG)
+    CONFIG_PATH = Path(parser.parse_args().config)
+
     if not CONFIG_PATH.exists():
         sys.exit(f"[graph] Config not found: {CONFIG_PATH}")
 
