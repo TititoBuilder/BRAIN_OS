@@ -72,7 +72,11 @@ _Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by
 - `tools_index.py` — regenerates 09_TOOLS_INDEX.md from module docstrings
 - `watchdog.py` — Unified BRAIN OS System Watchdog
 
-_36 scripts indexed._
+## library
+
+- `net_prefer_ipv4.py` — Force IPv4 for outbound requests in this process
+
+_37 scripts indexed._
 
 <!-- TOOLS_INDEX:END -->
 
