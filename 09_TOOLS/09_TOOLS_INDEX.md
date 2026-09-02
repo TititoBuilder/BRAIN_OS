@@ -13,7 +13,7 @@ All Python scripts in `C:\BRAIN_OS\09_TOOLS\`.
 
 <!-- TOOLS_INDEX:START -->
 
-_Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by hand._
+_Generated 2026-09-02 from module docstrings by `tools_index.py`. Do not edit by hand._
 
 ## Session Management
 
@@ -72,11 +72,15 @@ _Generated 2026-09-01 from module docstrings by `tools_index.py`. Do not edit by
 - `tools_index.py` — regenerates 09_TOOLS_INDEX.md from module docstrings
 - `watchdog.py` — Unified BRAIN OS System Watchdog
 
+## Uncategorized
+
+- `drive_sync.py` — BDF Drive Manifest Sync Walks BDF/chapters/ and BDF/sessions/ on Google Drive, writes bdf_drive_manifest.json to BRAIN_OS graphs directory
+
 ## library
 
 - `net_prefer_ipv4.py` — Force IPv4 for outbound requests in this process
 
-_37 scripts indexed._
+_38 scripts indexed._
 
 <!-- TOOLS_INDEX:END -->
 
