@@ -211,7 +211,13 @@ def _count_vault_orphans() -> int:
     all_files = [f for f in BRAIN_OS_ROOT.rglob("*.md") if not _excluded(f)]
 
     # stem → path (last-writer wins for duplicate stems, good enough for heuristic)
-    stem_map: dict[str, Path] = {f.stem: f for f in all_files}
+    # Keyed by both stem and full name: Path("system_map.context").stem returns
+    # "system_map", so a link to a *.context.md file never resolved and the file
+    # counted as an orphan despite being linked from Navigation.md.
+    stem_map: dict[str, Path] = {}
+    for f in all_files:
+        stem_map.setdefault(f.stem, f)
+        stem_map.setdefault(f.name[:-3], f)
 
     outgoing: dict[Path, set[str]] = {}
     incoming: set[Path] = set()
@@ -225,9 +231,11 @@ def _count_vault_orphans() -> int:
         links = _WIKI_LINK_RE.findall(text)
         outgoing[md_file] = set(links)
         for raw in links:
-            target_stem = Path(raw.strip()).stem
-            if target_stem in stem_map:
-                incoming.add(stem_map[target_stem])
+            raw_name = raw.strip().replace("\\", "/").split("/")[-1]
+            for key in (raw_name, Path(raw_name).stem):
+                if key in stem_map:
+                    incoming.add(stem_map[key])
+                    break
 
     return sum(1 for f in all_files if not outgoing.get(f) and f not in incoming)
 
