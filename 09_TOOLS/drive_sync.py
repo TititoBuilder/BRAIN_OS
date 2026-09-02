@@ -5,13 +5,13 @@ Walks BDF/chapters/ and BDF/sessions/ on Google Drive,
 writes bdf_drive_manifest.json to BRAIN_OS graphs directory.
 
 Usage:
-    python scripts/drive_sync.py
-    python scripts/drive_sync.py --upload converted\ch17_clip_name_parser_af_heart_audio.mp3
-    python scripts/drive_sync.py --upload SESSION_20260407_0827_audio.mp3
-    python scripts/drive_sync.py --upload myfile.mp3 --folder sessions
-    python scripts/drive_sync.py --get-token
-    python scripts/drive_sync.py --normalize
-    python scripts/drive_sync.py --normalize --dry-run
+    python C:/BRAIN_OS/09_TOOLS/drive_sync.py
+    python C:/BRAIN_OS/09_TOOLS/drive_sync.py --upload converted\ch17_clip_name_parser_af_heart_audio.mp3
+    python C:/BRAIN_OS/09_TOOLS/drive_sync.py --upload SESSION_20260407_0827_audio.mp3
+    python C:/BRAIN_OS/09_TOOLS/drive_sync.py --upload myfile.mp3 --folder sessions
+    python C:/BRAIN_OS/09_TOOLS/drive_sync.py --get-token
+    python C:/BRAIN_OS/09_TOOLS/drive_sync.py --normalize
+    python C:/BRAIN_OS/09_TOOLS/drive_sync.py --normalize --dry-run
 
 When to run:
     - After uploading new audio files to Drive
@@ -344,7 +344,7 @@ def normalize_manifest(service, drive_folders: dict, dry_run: bool = False) -> N
     plan without touching Drive or the manifest file.
     """
     if not MANIFEST_PATH.exists():
-        print("[!] Manifest not found — run: python scripts/drive_sync.py")
+        print("[!] Manifest not found — run: python C:/BRAIN_OS/09_TOOLS/drive_sync.py")
         return
 
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))

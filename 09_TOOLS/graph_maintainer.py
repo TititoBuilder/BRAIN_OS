@@ -210,7 +210,7 @@ def task_preflight_check() -> bool:
     print("=" * 60)
 
     if not _MANIFEST_PATH.exists():
-        print("  [manifest] not found — run: python scripts/drive_sync.py")
+        print("  [manifest] not found — run: python C:/BRAIN_OS/09_TOOLS/drive_sync.py")
         return False
 
     ttl_hours = 4  # safe default
@@ -339,7 +339,7 @@ def audio_parity_check() -> dict:
         return {
             "error": (
                 "manifest not found — run: "
-                "python scripts/drive_sync.py"
+                "python C:/BRAIN_OS/09_TOOLS/drive_sync.py"
             )
         }
 
