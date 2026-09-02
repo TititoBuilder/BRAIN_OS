@@ -3,7 +3,7 @@ category: System Utilities
 watchdog.py — Unified BRAIN OS System Watchdog.
 ===============================================
 Three modes:
-    --check morning  : 7:15am daily health check (run via Task Scheduler)
+    --check morning  : daily health check (run via Task Scheduler)
     --check bdf      : on-demand BDF pipeline check
     --check session  : post-session close check (called by session_close.py)
 
@@ -263,7 +263,7 @@ def check_morning() -> None:
     # 3. Queue.md unchecked items
     unchecked = _count_queue_md_unchecked()
     if unchecked:
-        issues.append(f"⚠️ Queue: {unchecked} blocked items")
+        issues.append(f"⚠️ Queue: {unchecked} open items in Queue.md In Progress")
 
     # 4. BRAIN_OS git status
     brain_dirty = _git_uncommitted(BRAIN_OS_ROOT)
@@ -271,9 +271,9 @@ def check_morning() -> None:
         issues.append(f"⚠️ Git: {brain_dirty} uncommitted files in BRAIN_OS")
 
     if issues:
-        lines = ["🟡 BRAIN OS — 7:15am Health Check"] + issues + ["→ Run: cc (Claude Code)"]
+        lines = ["🟡 BRAIN OS — Morning Health Check"] + issues + ["→ Run: cc (Claude Code)"]
     else:
-        lines = ["✅ BRAIN OS — 7:15am clean. Good morning."]
+        lines = ["✅ BRAIN OS — Morning check clean. Good morning."]
 
     msg = "\n".join(lines)
     print(msg)
