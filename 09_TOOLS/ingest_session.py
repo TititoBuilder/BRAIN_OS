@@ -94,6 +94,7 @@ Critical safeguards — ALWAYS FLAG (never auto-handle):
 
 from claude_client import MODEL
 from vault_paths import SKIP_DIRS as EXCLUDED_DIRS
+import net_prefer_ipv4  # noqa: F401  -- forces IPv4, see its docstring
 
 
 def build_vault_files() -> list[str]:

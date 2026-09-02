@@ -26,6 +26,7 @@ import urllib.request
 from pathlib import Path
 
 from dotenv import load_dotenv
+import net_prefer_ipv4  # noqa: F401  -- forces IPv4, see its docstring
 
 BDF_ENV_FILE = Path(r"C:\Dev\Projects\soccer-content-generator\.env")
 BRAIN_ENV_FILE = Path(r"C:\BRAIN_OS") / "03_APIS" / ".env"

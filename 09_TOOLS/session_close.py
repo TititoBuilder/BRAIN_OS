@@ -15,6 +15,7 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
+import net_prefer_ipv4  # noqa: F401  -- forces IPv4, see its docstring
 
 # ── Config ────────────────────────────────────────────────────────────────────
 

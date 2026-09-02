@@ -25,6 +25,7 @@ from project_paths import project_script, project_venv_python
 from artifact_paths import artifact_path
 from datetime import datetime
 from dotenv import load_dotenv
+import net_prefer_ipv4  # noqa: F401  -- forces IPv4, see its docstring
 
 # Force UTF-8 stdout ? content (CLAUDE.md, archives) contains Unicode that crashes cp1252.
 try:

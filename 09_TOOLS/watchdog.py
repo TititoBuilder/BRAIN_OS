@@ -21,6 +21,7 @@ import sys
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+import net_prefer_ipv4  # noqa: F401  -- forces IPv4, see its docstring
 
 # Ensure emoji survive the Windows cp1252 console
 if hasattr(sys.stdout, "reconfigure"):
