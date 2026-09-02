@@ -15,25 +15,40 @@ This contract is prescriptive. It says what SHOULD exist.
 
 ---
 
-## Rule 0 - Every file is one of two classes
+## Rule 0 — Every file is one of two classes
 
-Classify the file before any other rule.
+Before any other rule, classify the file.
 
 ### Machine-key files
-A filename code looks up by exact string. Renaming breaks something.
-Examples: Drive audio the Read-Along app streams, GitHub transcripts
-the app fetches, Python modules imported by name, config keys.
-RULE: STABILITY OVER CLARITY. The name is a contract with code. A
-rename is a coordinated migration across every consumer plus redeploy,
-never a casual cleanup.
+A filename that code looks up by exact string match. Renaming it
+breaks something downstream.
+
+Examples in this system:
+- Drive audio the Read-Along app streams (looked up by `machine_key`)
+- GitHub transcripts the app fetches by exact name
+- Python modules imported with `from x import y`
+- JSON/config keys referenced by other tools
+
+**Rule for machine-key files: STABILITY OVER CLARITY.**
+The name is a contract with code. You do not improve it casually.
+A rename is a coordinated change across every consumer + a redeploy.
+Treated as a migration, never a cleanup.
 
 ### Human-readable files
 A filename only humans read. Nothing looks it up by exact string.
-Examples: vault notes, drafts, documentation, session archives.
-RULE: CLARITY OVER STABILITY. Optimize for description. Rename freely.
 
-The audit decides class by scanning for references: any code/config
-reference = machine-key; only wiki-links or none = human-readable.
+Examples:
+- Vault markdown notes
+- Draft scripts and chapter sources not yet imported anywhere
+- Documentation, session archives, reference material
+
+**Rule for human-readable files: CLARITY OVER STABILITY.**
+Optimize the name for description. Rename freely. Worst case is a
+broken wiki-link, which the audit catches.
+
+The audit's first job per file: decide which class it is by scanning
+for references to it. No references found anywhere = human-readable.
+Any reference found = machine-key, handle with care.
 
 ---
 
