@@ -28,6 +28,16 @@ class DriveAuthError(RuntimeError):
     """Token cannot be refreshed and the browser flow is not permitted."""
 
 
+def _browser_flow(creds_path: Path, token_path: Path):
+    """Run the OAuth consent flow and persist the new token."""
+    from google_auth_oauthlib.flow import InstalledAppFlow
+
+    flow = InstalledAppFlow.from_client_secrets_file(str(creds_path), SCOPES)
+    creds = flow.run_local_server(port=0)
+    token_path.write_text(creds.to_json(), encoding="utf-8")
+    return creds
+
+
 def get_service(creds_path: Path = DEFAULT_CREDS,
                 token_path: Path = DEFAULT_TOKEN,
                 allow_browser: bool = True):
@@ -48,30 +58,29 @@ def get_service(creds_path: Path = DEFAULT_CREDS,
         creds = Credentials.from_authorized_user_file(str(token_path), SCOPES)
 
     if not creds or not creds.valid:
+        stale = None
         if creds and creds.expired and creds.refresh_token:
             try:
                 creds.refresh(Request())
+                token_path.write_text(creds.to_json(), encoding="utf-8")
             except RefreshError as e:
+                # A revoked refresh token cannot be renewed, but it can be
+                # replaced. Raising here would strand every caller when the
+                # recovery path is one consent screen away.
+                stale = e
+                creds = None
+        if creds is None or not creds.valid:
+            if not allow_browser:
                 raise DriveAuthError(
-                    f"Drive refresh token is expired or revoked: {e}\n"
-                    f"  This is a credential problem, not a script bug. Work already\n"
-                    f"  written to disk is safe.\n"
-                    f"  Reauthorize by running this module directly:\n"
-                    f"    python C:/BRAIN_OS/09_TOOLS/drive_service.py\n"
-                    f"  which opens the browser flow and writes a fresh token to:\n"
-                    f"    {token_path}"
-                ) from e
-            token_path.write_text(creds.to_json(), encoding="utf-8")
-        elif allow_browser:
-            from google_auth_oauthlib.flow import InstalledAppFlow
-            flow = InstalledAppFlow.from_client_secrets_file(str(creds_path), SCOPES)
-            creds = flow.run_local_server(port=0)
-            token_path.write_text(creds.to_json(), encoding="utf-8")
-        else:
-            raise DriveAuthError(
-                f"Drive token at {token_path} cannot be refreshed and the browser "
-                f"flow is disabled. Reauthorize by running a tool that permits it."
-            )
+                    f"Drive token at {token_path} cannot be refreshed and the "
+                    f"browser flow is disabled"
+                    + (f": {stale}" if stale else "")
+                    + f".\n  Work already written to disk is safe. Reauthorize with:"
+                    f"\n    python C:/BRAIN_OS/09_TOOLS/drive_service.py"
+                ) from stale
+            if stale:
+                print(f"  Drive refresh failed ({stale}); re-authorizing.")
+            creds = _browser_flow(creds_path, token_path)
 
     return build("drive", "v3", credentials=creds)
 
