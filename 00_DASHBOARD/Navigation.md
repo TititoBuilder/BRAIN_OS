@@ -9,6 +9,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[Next_Session_Prompt]]
 - [[Queue]]
 - [[Queue_Archive]]
+- [[SESSION_SUMMARY_2026-09-01]]
 
 ## 00_INDEX
 - [[Business]]
@@ -207,7 +208,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[guide_obsidian_claude]]
 - [[guide_venv]]
 - [[kokoro_tts]]
-- [[message_queues]]
 - [[OBSIDIAN_QUICK_REFERENCE]]
 - [[programming_terminology_reference]]
 
@@ -230,17 +230,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[git-phase3-history]]
 - [[git-phase4-remote]]
 - [[mcp-auth]]
-- [[lesson_01_verify_against_reality]]
-- [[lesson_02_four_layer_architecture]]
-- [[lesson_03_the_id_crisis]]
-- [[lesson_04_single_source_of_truth]]
-- [[lesson_05_derive_dont_duplicate]]
-- [[lesson_06_filenames_are_keys]]
-- [[lesson_07_discipline_at_boundaries]]
-- [[lesson_08_session_loop_change_token]]
-- [[lesson_09_for_now_is_forbidden]]
-- [[lesson_10_os_fundamentals]]
-- [[lesson_11_acid_transactions]]
 
 ## 05_MEMORY
 - [[CA_Knowledge_Book]]
@@ -260,7 +249,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[AGENT_NODE]]
 - [[API_NODE]]
 - [[FLAGS_MANUAL]]
-- [[Naming_Contract]]
 - [[PROJECT_NODE]]
 - [[session-compile-template]]
 - [[SESSION_COMPILE_TEMPLATE]]
