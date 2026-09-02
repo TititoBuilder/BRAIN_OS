@@ -254,7 +254,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[SESSION_COMPILE_TEMPLATE]]
 - [[SESSION_OPENER_PROMPT]]
 - [[SESSION_TEMPLATE]]
-- [[SYSTEM_Rules]]
 - [[WORKFLOW_NODE]]
 
 ## 07_SYSTEM
