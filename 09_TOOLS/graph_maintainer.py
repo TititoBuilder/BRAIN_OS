@@ -246,11 +246,14 @@ def task_preflight_check() -> bool:
                 capture_output=True, text=True, check=False,
             )
             if sync_result.returncode != 0:
-                print("  [Offline] Token changed but sync failed. Proceeding with STALE manifest.")
+                print(f"  [Sync Failed] Token changed but sync failed — {_why(sync_result)}")
+                print("  Proceeding with STALE manifest.")
                 return True
             print("  [Sync OK] Manifest refreshed.")
             return False
-        # subprocess failed (offline) — fall through to TTL logic
+        else:
+            print(f"  [Token Check Failed] {_why(token_result)}")
+        # fall through to TTL logic
 
     synced_dt = datetime.fromisoformat(last_synced.replace("Z", "+00:00"))
     age_secs  = (datetime.now(timezone.utc) - synced_dt).total_seconds()
@@ -267,11 +270,19 @@ def task_preflight_check() -> bool:
         capture_output=True, text=True, check=False,
     )
     if result.returncode != 0:
-        print("  [Offline] TTL expired but sync failed. Proceeding with STALE manifest.")
+        print(f"  [Sync Failed] TTL expired but sync failed — {_why(result)}")
+        print("  Proceeding with STALE manifest.")
         return True
 
     print("  [Sync OK] Manifest refreshed.")
     return False
+
+
+def _why(result) -> str:
+    """Last line of stderr, or the exit code. Absence must print."""
+    msg = (result.stderr or "").strip().splitlines()
+    tail = msg[-1][:200] if msg else f"exit {result.returncode}"
+    return f"exit {result.returncode}: {tail}"
 
 
 # ---------------------------------------------------------------------------
