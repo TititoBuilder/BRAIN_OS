@@ -17,12 +17,13 @@ Single source of truth for all 13 system triggers across BDF, BRAIN_OS, and CA. 
 
 <!-- TRIGGER_INDEX:START -->
 
-## TIME — 3 triggers
+## TIME — 4 triggers
 | Trigger | Project | Schedule | Implemented by |
 |---|---|---|---|
 | [[Trigger_BDF_Queue_Check]] | soccer-content-generator | Daily 12:00pm PST | parked - watchdog.py --check bdf exists but BDF is not active |
 | [[Trigger_BrainOS_Daily_Review]] | BRAIN_OS | Daily 9:00am PST | Google Calendar 9:00am - manual, no code |
 | [[Trigger_Daily_Log_Update]] | BRAIN_OS | Daily 6:00pm PST | Google Calendar 6:00pm - manual, no code |
+| [[Trigger_Morning_Watchdog]] | BRAIN_OS | Daily 7:30am PST | Task Scheduler BRAINOS_Morning_Watchdog -> watchdog.py --check morning |
 
 ## EVENT — 5 triggers
 | Trigger | Project | Source | Implemented by |
@@ -49,7 +50,7 @@ Single source of truth for all 13 system triggers across BDF, BRAIN_OS, and CA. 
 ## Coverage by Project
 | Project | Triggers |
 |---|---|
-| BRAIN_OS | [[Trigger_BrainOS_Daily_Review]] [[Trigger_Daily_Log_Update]] [[Trigger_Drive_Change_Token]] [[Trigger_Graph_TTL_Expired]] [[Trigger_New_Idea]] [[Trigger_Session_Close]] |
+| BRAIN_OS | [[Trigger_BrainOS_Daily_Review]] [[Trigger_Daily_Log_Update]] [[Trigger_Drive_Change_Token]] [[Trigger_Graph_TTL_Expired]] [[Trigger_Morning_Watchdog]] [[Trigger_New_Idea]] [[Trigger_Session_Close]] |
 | CristianConstruction | [[Trigger_Book_Compile]] [[Trigger_New_Idea]] |
 | soccer-content-generator | [[Trigger_BDF_Queue_Check]] [[Trigger_Clip_Detected]] [[Trigger_Drive_Change_Token]] [[Trigger_Match_Scheduled]] [[Trigger_Render_Complete]] [[Trigger_Script_Ready]] [[Trigger_Telegram_Message]] |
 
