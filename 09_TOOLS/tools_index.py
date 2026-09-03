@@ -12,7 +12,6 @@ Exit codes: 0 = written or unchanged, 1 = error, 2 = unavailable (index missing)
 import ast
 import re
 import sys
-from datetime import date
 from pathlib import Path
 
 TOOLS = Path(r"C:\BRAIN_OS\09_TOOLS")
@@ -72,8 +71,8 @@ def main() -> int:
         groups.setdefault(cat, []).append(f"- `{p.name}` \u2014 {desc}")
 
     lines = [START, "",
-             f"_Generated {date.today().isoformat()} from module docstrings by "
-             f"`tools_index.py`. Do not edit by hand._", ""]
+             "_Generated from module docstrings by `tools_index.py`. "
+             "Do not edit by hand._", ""]
     for cat in ORDER + sorted(k for k in groups if k not in ORDER):
         if cat in groups:
             lines += [f"## {cat}", ""] + groups[cat] + [""]
