@@ -147,7 +147,7 @@
       ],
       "path": "09_TOOLS/drive_index.json",
       "kind": "index",
-      "writer": "session_compiler.py",
+      "writer": "voice_chapter.py",
       "protected": true,
       "readers": [
         "task_session.py",
@@ -234,7 +234,7 @@
       "protected": true,
       "readers": [
         "graph_maintainer.py",
-        "session_compiler.py"
+        "voice_chapter.py"
       ],
       "external_readers": [
         "soccer-content-generator/drive_sync.py",
