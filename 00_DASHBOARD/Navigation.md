@@ -24,7 +24,6 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[OBS_Nav]]
 - [[ReadAlong_Nav]]
 - [[ResolveMCP_Nav]]
-- [[SYSTEM_Rules]]
 
 ## 01_DOMAINS
 - [[ai_engineering]]
@@ -289,6 +288,7 @@ _Manually curated overview. Auto-generated file index below - do not edit betwee
 - [[State_System]]
 - [[STUDY_SYSTEM]]
 - [[system_map.context]]
+- [[SYSTEM_Rules]]
 - [[Taxonomy_Decision]]
 - [[PROJECT_CARD_TEMPLATE]]
 - [[Tools_Registry]]

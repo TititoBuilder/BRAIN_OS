@@ -51,8 +51,10 @@ Source of truth is the filesystem. This file is a view, not a copy.
 ## Notes
 - Shared packages live here, not in a consumer's bucket. Assigning a shared
   component to one consumer would misrepresent its blast radius.
-- `00_NAV\SYSTEM_Rules.md` (4594 bytes) is not a nav file. Likely belongs in
-  `07_SYSTEM\`. Flagged, not moved.
+- `07_SYSTEM\SYSTEM_Rules.md` moved from 00_NAV 2026-09-01. Overlaps
+  Navigation_Shortcuts.md on aliases, VS Code workspaces, and the session
+  workflow, but adds Machine, Storage, Obsidian MCP, and the Knowledge
+  Registration Map. Not a duplicate.
 
 ---
 
