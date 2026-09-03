@@ -1,5 +1,5 @@
 """
-category: library
+category: Shared Libraries
 net_prefer_ipv4.py — Force IPv4 for outbound requests in this process.
 
 Verified 2026-09-01: 20 one-shot processes against huggingface.co, default

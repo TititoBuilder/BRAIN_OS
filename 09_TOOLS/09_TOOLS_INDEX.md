@@ -17,9 +17,9 @@ _Generated 2026-09-02 from module docstrings by `tools_index.py`. Do not edit by
 
 ## Session Management
 
+- `distill_session.py` — Turn a session archive into a reviewable chapter
 - `ingest_session.py` — Option C Knowledge Ingestion Pipeline
 - `session_close.py` — BRAIN OS Session Closer
-- `session_compiler.py` — Session-to-Audio Chapter Compiler
 - `session_start.py` — BRAIN OS Session Orchestrator
 - `task_session.py` — focused context launcher for task-specific Claude sessions
 
@@ -37,6 +37,7 @@ _Generated 2026-09-02 from module docstrings by `tools_index.py`. Do not edit by
 - `borrowed_audio_worklist.py` — Borrowed Audio Re-voice Worklist Generator
 - `chapter_combiner.py` — Merge original chapter audio + learning anchor into one MP3
 - `vault_audio_generator.py` — Vault Node Audio Generator
+- `voice_chapter.py` — Narrate a distilled chapter, synthesize it, upload it
 
 ## Google Drive
 
@@ -47,6 +48,7 @@ _Generated 2026-09-02 from module docstrings by `tools_index.py`. Do not edit by
 - `drive_learning_path_organizer.py` — Organize Drive audio into Phase 1-6 folders
 - `drive_service.py` — Shared Google Drive authentication and upload for 09_TOOLS
 - `drive_setup_folders.py` — Reconciles the Knowledge_OS folder tree on Google Drive, creating only what is missing
+- `drive_sync.py` — BDF Drive Manifest Sync Walks BDF/chapters/ and BDF/sessions/ on Google Drive, writes bdf_drive_manifest.json to BRAIN_OS graphs directory
 - `get_drive_ids.py` — Print name and Drive ID for every file in a folder
 
 ## Learning Path
@@ -72,15 +74,11 @@ _Generated 2026-09-02 from module docstrings by `tools_index.py`. Do not edit by
 - `tools_index.py` — regenerates 09_TOOLS_INDEX.md from module docstrings
 - `watchdog.py` — Unified BRAIN OS System Watchdog
 
-## Uncategorized
-
-- `drive_sync.py` — BDF Drive Manifest Sync Walks BDF/chapters/ and BDF/sessions/ on Google Drive, writes bdf_drive_manifest.json to BRAIN_OS graphs directory
-
-## library
+## Shared Libraries
 
 - `net_prefer_ipv4.py` — Force IPv4 for outbound requests in this process
 
-_38 scripts indexed._
+_39 scripts indexed._
 
 <!-- TOOLS_INDEX:END -->
 

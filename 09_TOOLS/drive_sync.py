@@ -1,4 +1,5 @@
 r"""
+category: Google Drive
 drive_sync.py — BDF Drive Manifest Sync
 ========================================
 Walks BDF/chapters/ and BDF/sessions/ on Google Drive,
