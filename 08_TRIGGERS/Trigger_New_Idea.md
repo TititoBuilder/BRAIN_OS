@@ -2,6 +2,7 @@
 tags: [trigger, manual, ca, brain_os]
 type: MANUAL
 project: BRAIN_OS / CA
+implemented_by: none - describes a habit, not a mechanism
 ---
 # TRIGGER: New idea
 ## What fires it

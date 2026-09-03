@@ -2,6 +2,7 @@
 tags: [trigger, manual, brain_os]
 type: MANUAL
 project: BRAIN_OS
+implemented_by: 09_TOOLS/session_close.py
 ---
 # TRIGGER: Session close
 ## What fires it

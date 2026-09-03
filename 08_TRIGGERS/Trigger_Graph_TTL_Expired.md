@@ -2,11 +2,12 @@
 tags: [trigger, state, brain_os]
 type: STATE
 project: BRAIN_OS
+implemented_by: 09_TOOLS/graph_maintainer.py:222
 ---
 # TRIGGER: Graph TTL expired
 ## What fires it
 `graph_maintainer.py` reads `SESSION_ANCHOR_TTL_HOURS` from `BRAIN_OS_CONFIG.json` — triggers when TTL exceeded
-File: `C:\Dev\Projects\soccer-content-generator\scripts\graph_maintainer.py`
+File: `C:\BRAIN_OS\09_TOOLS\graph_maintainer.py`
 Config: `C:\BRAIN_OS\BRAIN_OS_CONFIG.json`
 ## Activates
 [[BDF_Agent_Pipeline]]

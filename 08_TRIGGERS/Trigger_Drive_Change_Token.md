@@ -2,11 +2,12 @@
 tags: [trigger, state, bdf, brain_os]
 type: STATE
 project: soccer-content-generator / BRAIN_OS
+implemented_by: 09_TOOLS/drive_sync.py --get-token, called by graph_maintainer.py
 ---
 # TRIGGER: Drive change token
 ## What fires it
 `drive_sync.py --get-token` detects token differs from manifest
-File: `C:\Dev\Projects\soccer-content-generator\scripts\drive_sync.py`
+File: `C:\BRAIN_OS\09_TOOLS\drive_sync.py`
 ## Activates
 [[BDF_Agent_Pipeline]]
 ## Project

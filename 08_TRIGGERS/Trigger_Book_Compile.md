@@ -2,6 +2,7 @@
 tags: [trigger, manual, ca]
 type: MANUAL
 project: CristianConstruction
+implemented_by: brainos-book PowerShell function
 ---
 # TRIGGER: Book compile
 ## What fires it

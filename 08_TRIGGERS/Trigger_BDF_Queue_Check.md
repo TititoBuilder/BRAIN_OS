@@ -2,6 +2,7 @@
 tags: [trigger, time, bdf]
 type: TIME
 project: soccer-content-generator
+implemented_by: parked - watchdog.py --check bdf exists but BDF is not active
 ---
 # TRIGGER: BDF queue check
 ## What fires it

@@ -2,6 +2,7 @@
 tags: [trigger, event, bdf]
 type: EVENT
 project: soccer-content-generator
+implemented_by: parked - BDF not active
 ---
 # TRIGGER: Telegram message
 ## What fires it
