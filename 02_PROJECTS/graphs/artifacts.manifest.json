@@ -78,7 +78,7 @@
       ],
       "path": "08_SESSIONS/ingestion_flags.md",
       "kind": "log",
-      "writer": "compile_session.py",
+      "writer": "ingest_session.py",
       "protected": true,
       "readers": [],
       "external_readers": [],
