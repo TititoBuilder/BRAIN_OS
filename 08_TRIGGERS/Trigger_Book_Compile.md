@@ -2,6 +2,7 @@
 tags: [trigger, manual, ca]
 type: MANUAL
 project: CristianConstruction
+fires_when: book_compiler.py via the brainos-book function
 implemented_by: brainos-book PowerShell function
 ---
 # TRIGGER: Book compile

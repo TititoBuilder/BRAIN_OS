@@ -2,6 +2,7 @@
 tags: [trigger, state, brain_os]
 type: STATE
 project: BRAIN_OS
+fires_when: SESSION_ANCHOR_TTL_HOURS exceeded
 implemented_by: 09_TOOLS/graph_maintainer.py:222
 ---
 # TRIGGER: Graph TTL expired

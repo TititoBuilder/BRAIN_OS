@@ -2,6 +2,7 @@
 tags: [trigger, event, bdf]
 type: EVENT
 project: soccer-content-generator
+fires_when: New file in BDF_Share or master_edit/ready
 implemented_by: parked - BDF not active
 ---
 # TRIGGER: Clip detected

@@ -2,6 +2,7 @@
 tags: [trigger, time, brain_os]
 type: TIME
 project: BRAIN_OS
+fires_when: "Daily 9:00am PST"
 implemented_by: Google Calendar 9:00am - manual, no code
 ---
 # TRIGGER: BrainOS daily review

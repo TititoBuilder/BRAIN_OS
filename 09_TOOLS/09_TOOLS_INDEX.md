@@ -13,7 +13,7 @@ All Python scripts in `C:\BRAIN_OS\09_TOOLS\`.
 
 <!-- TOOLS_INDEX:START -->
 
-_Generated 2026-09-02 from module docstrings by `tools_index.py`. Do not edit by hand._
+_Generated 2026-09-03 from module docstrings by `tools_index.py`. Do not edit by hand._
 
 ## Session Management
 
@@ -60,6 +60,7 @@ _Generated 2026-09-02 from module docstrings by `tools_index.py`. Do not edit by
 
 - `brain_notes_sync.py` — Pulls Q&A entries from the BRAIN_OS repo into dated vault notes and commits back
 - `obsidian_sync.py` — Writes Knowledge OS topic status into vault frontmatter by machine_key
+- `trigger_index.py` — Regenerate the tables in Trigger_Architecture.md from node frontmatter
 - `vault_index.py` — generates the auto-section of the BRAIN_OS navigation page
 - `vault_paths.py` — The one definition of which directories are not vault content
 
@@ -78,7 +79,7 @@ _Generated 2026-09-02 from module docstrings by `tools_index.py`. Do not edit by
 
 - `net_prefer_ipv4.py` — Force IPv4 for outbound requests in this process
 
-_39 scripts indexed._
+_40 scripts indexed._
 
 <!-- TOOLS_INDEX:END -->
 

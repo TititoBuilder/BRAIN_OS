@@ -1,7 +1,8 @@
 ---
 tags: [trigger, manual, ca, brain_os]
 type: MANUAL
-project: BRAIN_OS / CA
+project: BRAIN_OS / CristianConstruction
+fires_when: User input, note or voice or task
 implemented_by: none - describes a habit, not a mechanism
 ---
 # TRIGGER: New idea

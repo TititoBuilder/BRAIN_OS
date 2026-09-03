@@ -2,6 +2,7 @@
 tags: [trigger, event, bdf]
 type: EVENT
 project: soccer-content-generator
+fires_when: Incoming Telegram message to bot_service.py
 implemented_by: parked - BDF not active
 ---
 # TRIGGER: Telegram message

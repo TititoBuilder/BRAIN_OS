@@ -2,6 +2,7 @@
 tags: [trigger, state, bdf, brain_os]
 type: STATE
 project: soccer-content-generator / BRAIN_OS
+fires_when: Drive token differs from manifest
 implemented_by: 09_TOOLS/drive_sync.py --get-token, called by graph_maintainer.py
 ---
 # TRIGGER: Drive change token

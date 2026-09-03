@@ -2,6 +2,7 @@
 tags: [trigger, event, bdf]
 type: EVENT
 project: soccer-content-generator
+fires_when: New entry in export_log.jsonl
 implemented_by: parked - BDF not active
 ---
 # TRIGGER: Render complete

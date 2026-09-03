@@ -2,6 +2,7 @@
 tags: [trigger, event, bdf]
 type: EVENT
 project: soccer-content-generator
+fires_when: ContentWindow enum in schedule_manager.py
 implemented_by: parked - BDF not active
 ---
 # TRIGGER: Match scheduled
