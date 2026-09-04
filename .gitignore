@@ -76,3 +76,6 @@ audio_staging/**/*.txt
 
 # Obsidian MCP transaction/lock state (local bridge bookkeeping, not vault content)
 .obsidian-mcp/
+# Per-call Claude API usage, written by claude_client._log_usage.
+# Append-only local spend record, grows forever, no value in history.
+05_MEMORY/claude_usage.jsonl
