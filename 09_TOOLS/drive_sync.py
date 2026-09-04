@@ -435,6 +435,13 @@ def normalize_manifest(service, drive_folders: dict, dry_run: bool = False) -> N
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main():
+    # Ported from BDF 2026-09-01. It prints non-ASCII (arrows, box drawing)
+    # and Windows' default console codepage cannot encode them, so a print
+    # raised UnicodeEncodeError under system Python while working under
+    # BDF's venv. The interpreter was masking a defect in this file.
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+
     drive_folders = _load_drive_folders()
 
     parser = argparse.ArgumentParser(description="BDF Drive Manifest Sync")
