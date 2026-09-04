@@ -133,7 +133,11 @@ def call_claude(session_content: str) -> dict:
 
     payload = {
         "model": MODEL,
-        "max_tokens": 4096,
+        # 8192, not 4096: the response is JSON whose size scales with the
+        # session archive. At 4096 a large archive truncated the answer
+        # mid-string three times, and the failure surfaced as invalid JSON
+        # rather than as a token limit.
+        "max_tokens": 8192,
         "system": ANALYSIS_SYSTEM,
         "messages": [{
             "role": "user",
