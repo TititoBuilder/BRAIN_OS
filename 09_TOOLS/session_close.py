@@ -67,25 +67,43 @@ def _discover_repos(max_depth: int = 2) -> list[Path]:
     return found
 
 
-def _git_accomplishments(hours: int = 72) -> list[str]:
-    """Return prefixed commit subjects from all repos touched in the last N hours, deduplicated."""
+def _git_accomplishments(hours: int = 72, limit: int = 25) -> list[str]:
+    """Return prefixed commit subjects from all repos touched in the last N hours.
+
+    Deduplicated, newest first across repos, and capped at `limit`. The cap
+    exists because the list feeds three consumers: the archive, the Claude
+    ingestion prompt, and the Telegram message. A 79-commit day produced an
+    archive that truncated the API response mid-string and pushed Telegram
+    past its size limit. Git holds the full list; this is a summary.
+    """
     seen: set[str] = set()
-    items: list[str] = []
+    dated: list[tuple[str, str]] = []
     for repo in _discover_repos():
         label = repo.name
         try:
             result = subprocess.run(
-                ["git", "-C", str(repo), "log", "--oneline", f"--since={hours} hours ago"],
+                ["git", "-C", str(repo), "log", "--pretty=%cI\t%s",
+                 f"--since={hours} hours ago"],
                 capture_output=True, text=True, encoding="utf-8", timeout=10,
             )
             for line in result.stdout.strip().splitlines():
-                parts = line.split(" ", 1)
-                msg = parts[1] if len(parts) == 2 else line
-                if msg not in seen:
-                    seen.add(msg)
-                    items.append(f"[{label}] {msg}")
+                when, _, msg = line.partition("\t")
+                if not msg or msg in seen:
+                    continue
+                seen.add(msg)
+                dated.append((when, f"[{label}] {msg}"))
         except Exception:
             pass
+
+    dated.sort(key=lambda x: x[0], reverse=True)
+    items = [text for _, text in dated]
+    if len(items) > limit:
+        dropped = len(items) - limit
+        items = items[:limit]
+        items.append(
+            f"_...and {dropped} more commits in the last {hours} hours "
+            f"(git log --since='{hours} hours ago')._"
+        )
     return items
 
 
