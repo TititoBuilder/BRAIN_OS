@@ -1,0 +1,88 @@
+# Session Archive — 2026-09-03 17:31
+**Projects:** BDF, CA, BRAIN_OS, Resolve
+
+## Accomplished
+- [custom-agent] security: deny force push with trailing flag position
+- [soccer-content-generator] Fall through to re-authorization when the Drive refresh token is dead
+- [BRAIN_OS] flags: PAT rotation, and why a probe during rotation proves nothing
+- [BRAIN_OS] triggers: add the morning watchdog node, distinct from the 9am review
+- [BRAIN_OS] flags: close three rows this session verified — manifest refresh, hardcoded default, tool names
+- [BRAIN_OS] tools_index: drop the generated date, it made every run dirty the tree
+- [BRAIN_OS] triggers: derive Trigger_Architecture tables from node frontmatter
+- [BRAIN_OS] flags: the split, the trigger annotations, and two manifest lessons
+- [BRAIN_OS] triggers: annotate all 13 nodes with implemented_by
+- [BRAIN_OS] manifest: drive_index writer and BRAIN_OS_CONFIG reader are voice_chapter.py
+- [BRAIN_OS] tools: split session_compiler.py into distill_session and voice_chapter
+- [BRAIN_OS] vault: move SYSTEM_Rules.md from 00_NAV to 07_SYSTEM, closes queue item 153
+- [BRAIN_OS] manifest: ingestion_flags writer is ingest_session.py after the rename
+- [BRAIN_OS] gig_tracker notes: commit three files left uncommitted since 2026-08-20
+- [BRAIN_OS] flags: orphan cleanup, the counter defect, and the superset lesson
+- [BRAIN_OS] nav: regenerate
+- [BRAIN_OS] vault: delete the 06_TEMPLATES SYSTEM_Rules copy, a subset of the 00_NAV file
+- [BRAIN_OS] nav: regenerate after the duplicate deletions
+- [BRAIN_OS] vault: merge the better Rule 0 into Naming_Contract, delete the import
+- [BRAIN_OS] queue: link the session summary from the top
+- [BRAIN_OS] watchdog: resolve dotted filenames in the orphan counter
+- [BRAIN_OS] watchdog: queue line says open items, not blocked; drop the hardcoded time
+- [BRAIN_OS] vault: delete 12 duplicate .md files superseded by their canonical copies
+- [BRAIN_OS] docs: session summary and orientation, 2026-09-01
+- [BRAIN_OS] flags: nine findings from the watchdog chain, root causes and concepts
+- [BRAIN_OS] tools: correct drive_sync usage strings, delete the scripts/ stub
+- [BRAIN_OS] tools: port drive_sync.py from BDF into 09_TOOLS
+- [BRAIN_OS] drive_service: a revoked token re-authorizes instead of stranding the caller
+- [BRAIN_OS] graph_maintainer: print why a sync failed, not just that it did
+- [BRAIN_OS] tools: watchdog imports audio_parity_check from graph_maintainer
+- [BRAIN_OS] flags: 10054 root cause was IPv6, three entries closed
+- [BRAIN_OS] tools: import net_prefer_ipv4 in the six outbound callers
+- [BRAIN_OS] tools: add net_prefer_ipv4, the root cause of WinError 10054
+- [BRAIN_OS] flags: apply FIXED/LOG/DECIDED/DUP markers, strip BOM
+- [BRAIN_OS] flags: no ADMIN_KEY exists, Railway credentials are live for a dead service
+- [BRAIN_OS] flags: generate_profile wrote tokens into both profiles, now reads from .env
+- [BRAIN_OS] generate_profile: emit a read from .env instead of the token value
+- [BRAIN_OS] tools: rename compile_session.py to ingest_session.py
+- [BRAIN_OS] flags: record why compile_session keeps its own HTTP block
+- [BRAIN_OS] tools: compile_session imports MODEL, keeps its own exit-code contract
+- [BRAIN_OS] tools: anchor_generator uses shared claude_client, gains a timeout
+- [BRAIN_OS] tools: vault_audio_generator uses shared claude_client, gains a timeout
+- [BRAIN_OS] tools: extractor imports MODEL rather than restating it
+- [BRAIN_OS] tools: learning_profile_extractor uses shared claude_client
+- [BRAIN_OS] flags: close exclusion entries, record the library-vs-program split in 09_TOOLS
+- [BRAIN_OS] flags: close both vault exclusion entries, extracted to vault_paths
+- [BRAIN_OS] tools: one definition of the vault exclusion set
+- [BRAIN_OS] flags: exclusion lists still duplicated, chapter overstated the fix
+- [BRAIN_OS] flags: joined words in generated output, exclusion list may be fixed
+- [BRAIN_OS] tools: session_compiler uses shared claude_client, drops six orphaned imports
+- [BRAIN_OS] tools: add claude_client, shared Anthropic API access
+- [BRAIN_OS] flags: three Drive upload functions, and the shadowing hazard
+- [BRAIN_OS] drive_service: drop unused upload_file, it never gained a caller
+- [BRAIN_OS] flags: empty brainos_sessions folder, Drive ID length heuristic
+- [BRAIN_OS] tools: get_drive_ids takes --folder and pages, no hardcoded ID
+- [BRAIN_OS] flags: get_drive_ids folder ID, the miscounted eighth tool, unversioned global memory
+- [BRAIN_OS] tools: get_drive_ids uses shared drive_service
+- [BRAIN_OS] tools: session_compiler uses shared drive_service with allow_browser=False
+- [BRAIN_OS] drive_service: catch RefreshError with actionable guidance
+- [BRAIN_OS] tools: download_brainos_chapters uses shared drive_service, drops dead imports
+- [BRAIN_OS] tools: fix two Drive tools that never refreshed an expired token
+- [BRAIN_OS] tools: drive_browser uses shared drive_service
+- [BRAIN_OS] tools: drop dead import sys after auth extraction
+- [BRAIN_OS] tools: drive_download uses shared drive_service
+- [BRAIN_OS] tools: drive_setup_folders uses shared drive_service
+- [BRAIN_OS] tools: add drive_service, shared Drive auth with a refresh branch
+- [BRAIN_OS] flags: Drive auth is three shapes, and three tools never refresh
+- [BRAIN_OS] flags: session_compiler structure map and the shared Drive module proposal
+- [BRAIN_OS] docs: state why Drive tools use BDF's OAuth token
+- [BRAIN_OS] flags: correct the Drive credential finding, it is by design
+- [BRAIN_OS] flags: Drive taxonomy split and BDF credential coupling in drive tools
+- [BRAIN_OS] tools: title drive_setup_folders as a reconciler, not a one-shot
+- [BRAIN_OS] tools: titles that describe behaviour, not build phase
+- [BRAIN_OS] flags: mark 8 entries fixed, verified on disk
+- [BRAIN_OS] tools: terminate docstring titles so the index splits correctly
+- [BRAIN_OS] tools: honest names for session_close and compile_session
+- [BRAIN_OS] Rewrite the session opener for 2026-08-31
+- [BRAIN_OS] Refresh the Drive manifest and flag the remaining token work
+- [BRAIN_OS] Add principle: no callers is a wiring gap, not evidence of death
+
+## Pending / Next Session
+
+---
+*Compiled by session_close.py at 17:31*
