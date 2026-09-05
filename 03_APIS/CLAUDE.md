@@ -1,12 +1,3 @@
-## Session close checklist
-
-- [ ] Merge any open worktrees to main
-- [ ] Run session_close.py from the touched project
-- [ ] Confirm Telegram confirmation received
-- [ ] Confirm BRAIN_OS commit appears in git log
-
----
-
 # BRAIN_OS / 03_APIS — Claude Code Workspace
 
 ## Project Overview
@@ -81,15 +72,13 @@ All alerts from `claude_monitor.py` route through the existing [[Telegram_Bot]].
 
 ## Session Close Procedure
 
-At the end of every working session, run from the soccer-content-generator root:
+At the end of every working session, run the `session_close` shell function (defined in `$PROFILE`). It runs `session_close.py` directly from `C:\BRAIN_OS` -- no BDF venv, no directory change required, as of 2026-09-04.
 
 ```
-cd C:\Dev\Projects\soccer-content-generator
-venv\Scripts\python session_close.py
+session_close
 ```
 
-This archives the session summary to `C:\BRAIN_OS\09_TOOLS\session_{date}.md`,
-commits BRAIN_OS, and sends a [[Telegram_Bot]] confirmation.
+This archives the session to `08_SESSIONS/`, commits BRAIN_OS, regenerates `09_TOOLS_INDEX.md` and `Navigation.md`, runs `ingest_session.py`, and sends a [[Telegram_Bot]] confirmation.
 
 ---
 
