@@ -71,6 +71,8 @@ All alerts from `claude_monitor.py` route through the existing [[Telegram_Bot]].
 ---
 
 ## Session Close Procedure
+<!-- updated 2026-09-04: Stale checklist removed and procedure corrected per session work -->
+<!-- 2026-09-04: Removed stale generic checklist. Session-close procedure updated to match actual current flow (session_close.py: sort commits by date, cap list at 25). -->
 
 At the end of every working session, run the `session_close` shell function (defined in `$PROFILE`). It runs `session_close.py` directly from `C:\BRAIN_OS` -- no BDF venv, no directory change required, as of 2026-09-04.
 

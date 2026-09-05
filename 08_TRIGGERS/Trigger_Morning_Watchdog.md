@@ -26,3 +26,7 @@ under an interpreter without psutil. All three have happened.
 [[Trigger_Architecture]]
 [[Trigger_BrainOS_Daily_Review]]
 [[Trigger_Graph_TTL_Expired]]
+
+
+<!-- auto-updated 2026-09-04 -->
+<!-- Node added 2026-09-04: morning watchdog trigger, distinct from the 9am review. Annotated with implemented_by per trigger annotation pass. -->

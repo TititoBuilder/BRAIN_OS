@@ -112,3 +112,7 @@ Separate issue: `ca_audio.py` (custom-agent) still shares BDF dev venv — track
 
 <!-- auto-ingested 2026-08-27 -->
 - [2026-08-27] Ingestion pipeline has no processed stage — flagged for resolution.
+
+
+<!-- auto-updated 2026-09-04 -->
+<!-- 2026-09-04: CLAUDE.md added as harness requirement (was second gap). CA registry entry corrected to point at CA_Book, not CristianConstruction. -->
