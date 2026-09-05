@@ -61,8 +61,11 @@ PROJECTS = {
     },
     "ca": {
         "name": "CA Book System",
-        "root": Path(r"C:\Dev\CristianConstruction"),
-        "claude_md": Path(r"C:\Dev\CristianConstruction\CLAUDE.md"),
+        # Root corrected 2026-09-04: pointed at the construction business
+        # OS by mistake. CA_Book lives under Knowledge, confirmed against
+        # projects.manifest.json.
+        "root": Path(r"C:\Knowledge\CA\CA_Book"),
+        "claude_md": Path(r"C:\Knowledge\CA\CA_Book\CLAUDE.md"),
         "context_md": BRAIN_OS_ROOT / "02_PROJECTS" / "graphs" / "ca-book.context.md",
         "venv": Path(r"C:\Knowledge\CA\venv\Scripts\python.exe"),
         "emoji": "📚",
