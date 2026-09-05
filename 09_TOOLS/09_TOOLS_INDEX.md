@@ -71,6 +71,7 @@ _Generated from module docstrings by `tools_index.py`. Do not edit by hand._
 - `claude_client.py` — Shared Anthropic API access for 09_TOOLS
 - `cost_guard.py` — Estimates Claude token cost before a run and warns via Telegram above a threshold
 - `generate_profile.py` — Generate PowerShell $PROFILE from SYSTEM_MASTER.md as single source of truth
+- `manifest_check.py` — Validate projects.manifest.json against disk
 - `project_paths.py` — single source for resolving project attributes from the manifest
 - `tools_index.py` — regenerates 09_TOOLS_INDEX.md from module docstrings
 - `watchdog.py` — Unified BRAIN OS System Watchdog
@@ -79,7 +80,7 @@ _Generated from module docstrings by `tools_index.py`. Do not edit by hand._
 
 - `net_prefer_ipv4.py` — Force IPv4 for outbound requests in this process
 
-_40 scripts indexed._
+_41 scripts indexed._
 
 <!-- TOOLS_INDEX:END -->
 
