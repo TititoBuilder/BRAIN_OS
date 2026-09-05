@@ -30,3 +30,8 @@ under an interpreter without psutil. All three have happened.
 
 <!-- auto-updated 2026-09-04 -->
 <!-- Node added 2026-09-04: morning watchdog trigger, distinct from the 9am review. Annotated with implemented_by per trigger annotation pass. -->
+
+
+<!-- auto-updated 2026-09-04 -->
+# Trigger_Morning_Watchdog
+Added this session. Distinct from the 9am review trigger. Annotated with `implemented_by` per trigger annotation pass.

@@ -116,3 +116,7 @@ Separate issue: `ca_audio.py` (custom-agent) still shares BDF dev venv — track
 
 <!-- auto-updated 2026-09-04 -->
 <!-- 2026-09-04: CLAUDE.md added as harness requirement (was second gap). CA registry entry corrected to point at CA_Book, not CristianConstruction. -->
+
+
+<!-- auto-updated 2026-09-04 -->
+CLAUDE.md added to CA_Book context — was the harness's second gap. CA registry entry now correctly points at CA_Book, not CristianConstruction.

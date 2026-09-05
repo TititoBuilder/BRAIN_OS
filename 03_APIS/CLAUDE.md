@@ -71,6 +71,8 @@ All alerts from `claude_monitor.py` route through the existing [[Telegram_Bot]].
 ---
 
 ## Session Close Procedure
+<!-- updated 2026-09-04: Session explicitly fixed the session-close procedure and removed stale content in this file -->
+Session-close procedure updated this session to match actual current flow; stale generic checklist removed.
 <!-- updated 2026-09-04: Stale checklist removed and procedure corrected per session work -->
 <!-- 2026-09-04: Removed stale generic checklist. Session-close procedure updated to match actual current flow (session_close.py: sort commits by date, cap list at 25). -->
 
