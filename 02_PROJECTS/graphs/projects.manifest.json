@@ -30,7 +30,11 @@
       ],
       "root": "C:/BRAIN_OS",
       "venv": null,
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/brain-os.context.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/brain-os.context.md",
+      "bucket": "Operations",
+      "status": "active",
+      "context_kind": "generated",
+      "claude_md": "C:/BRAIN_OS/CLAUDE.md"
     },
     {
       "name": "BDF",
@@ -40,7 +44,11 @@
       ],
       "root": "C:/Dev/Projects/soccer-content-generator",
       "venv": "C:/Dev/Projects/soccer-content-generator/venv",
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/soccer-content-generator.context.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/soccer-content-generator.context.md",
+      "bucket": "Content",
+      "status": "parked",
+      "context_kind": "generated",
+      "claude_md": "C:/Dev/Projects/soccer-content-generator/CLAUDE.md"
     },
     {
       "name": "Read-Along App",
@@ -51,7 +59,11 @@
       ],
       "root": "C:/Users/titit/Projects/read-along-app",
       "venv": "C:/Users/titit/Projects/read-along-app/backend/venv",
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/read-along-app.context.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/read-along-app.context.md",
+      "bucket": "Personal",
+      "status": "parked",
+      "context_kind": "generated",
+      "claude_md": "C:/Users/titit/Projects/read-along-app/CLAUDE.md"
     },
     {
       "name": "CristianConstruction",
@@ -61,7 +73,11 @@
       ],
       "root": "C:/Dev/CristianConstruction",
       "venv": "C:/Dev/CristianConstruction/venv",
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/CristianConstruction.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/CristianConstruction.md",
+      "bucket": "Business",
+      "status": "active",
+      "context_kind": "note",
+      "claude_md": "C:/Dev/CristianConstruction/CLAUDE.md"
     },
     {
       "name": "CA_Book",
@@ -71,7 +87,11 @@
       ],
       "root": "C:/Knowledge/CA/CA_Book",
       "venv": "C:/Knowledge/CA/venv",
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/ca-book.context.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/graphs/ca-book.context.md",
+      "bucket": "Content",
+      "status": "active",
+      "context_kind": "generated",
+      "claude_md": null
     },
     {
       "name": "Resolve MCP Server",
@@ -82,7 +102,11 @@
       ],
       "root": "C:/Users/titit/Projects/resolve-mcp-server",
       "venv": "C:/Users/titit/Projects/resolve-mcp-server/venv",
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/Resolve_MCP_Server.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/Resolve_MCP_Server.md",
+      "bucket": "Operations",
+      "status": "active",
+      "context_kind": "note",
+      "claude_md": "C:/Users/titit/Projects/resolve-mcp-server/CLAUDE.md"
     },
     {
       "name": "brain-audio",
@@ -92,7 +116,11 @@
       ],
       "root": "C:/Dev/shared/brain-audio",
       "venv": null,
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/brain-audio.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/brain-audio.md",
+      "bucket": "Operations",
+      "status": "active",
+      "context_kind": "note",
+      "claude_md": "C:/Dev/shared/brain-audio/CLAUDE.md"
     },
     {
       "name": "gig_tracker",
@@ -103,7 +131,11 @@
       ],
       "root": "C:/Dev/Projects/gig_tracker/gig_tracker",
       "venv": null,
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/gig_tracker/00 Gig Tracker MOC.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/gig_tracker/00 Gig Tracker MOC.md",
+      "bucket": "Business",
+      "status": "active",
+      "context_kind": "note",
+      "claude_md": "C:/Dev/Projects/gig_tracker/gig_tracker/CLAUDE.md"
     },
     {
       "name": "book-compiler",
@@ -113,7 +145,11 @@
       ],
       "root": "C:/Dev/shared/book-compiler",
       "venv": null,
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/Book_Compiler_Shared.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/Book_Compiler_Shared.md",
+      "bucket": "Operations",
+      "status": "active",
+      "context_kind": "note",
+      "claude_md": "C:/Dev/shared/book-compiler/CLAUDE.md"
     },
     {
       "name": "custom-agent",
@@ -123,7 +159,11 @@
       ],
       "root": "C:/Dev/Projects/custom-agent",
       "venv": "C:/Dev/Projects/custom-agent/venv",
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/Custom_Agent_TTS.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/Custom_Agent_TTS.md",
+      "bucket": "Business",
+      "status": "active",
+      "context_kind": "note",
+      "claude_md": "C:/Dev/Projects/custom-agent/CLAUDE.md"
     },
     {
       "name": "obs-mcp-server",
@@ -133,7 +173,11 @@
       ],
       "root": "C:/Users/titit/Projects/obs-mcp-server",
       "venv": "C:/Users/titit/Projects/obs-mcp-server/venv",
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/OBS_MCP_Server.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/OBS_MCP_Server.md",
+      "bucket": "Operations",
+      "status": "active",
+      "context_kind": "note",
+      "claude_md": "C:/Users/titit/Projects/obs-mcp-server/CLAUDE.md"
     },
     {
       "name": "cc-landing",
@@ -144,7 +188,11 @@
       ],
       "root": "C:/Dev/cc-landing",
       "venv": null,
-      "context_md": "C:/BRAIN_OS/02_PROJECTS/CC_Landing.md"
+      "context_md": "C:/BRAIN_OS/02_PROJECTS/CC_Landing.md",
+      "bucket": "Business",
+      "status": "active",
+      "context_kind": "note",
+      "claude_md": null
     }
   ]
 }
