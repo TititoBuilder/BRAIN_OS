@@ -1,122 +1,66 @@
-# Ingestion Flags — 2026-09-04_2157_bdf_ca_brain_os.md
-Generated: 2026-09-04 21:59
-Items: 9
+# Ingestion Flags — 2026-09-07_1736_bdf_ca_brain_os.md
+Generated: 2026-09-07 17:36
+Items: 5
 
 ---
 
-## Flag 1 of 9 — CONFLICT [MEDIUM]
+## Flag 1 of 5 — CONFLICT [HIGH]
 
-**Description:** Session log notes 08_SESSIONS has two coexisting naming conventions (YYYYMMDD vs YYYY-MM-DD_HHMM). This is an unresolved conflict in vault naming standards.
+**Description:** Session removed stale generic checklist and rewrote session-close procedure in 03_APIS/CLAUDE.md to match actual current flow. Need human review to confirm the removal of the checklist was intentional and the new procedure is correct before auto-applying.
 
-**Nodes:** 08_SESSIONS/ingestion_flags.md, 07_SYSTEM/Naming_Contract.md
+**Nodes:** 03_APIS/CLAUDE.md
 
-**Old:** Mixed: 20260315_session_compile_story_kling.md and 2026-09-04_2157_bdf_ca_brain_os.md both exist in 08_SESSIONS
+**Old:** Generic checklist + outdated session-close procedure (stale content per session notes)
 
-**New:** Standardize on YYYY-MM-DD_HHMM_tags.md for all session files; archive or rename legacy YYYYMMDD files
+**New:** Corrected session-close procedure matching actual current flow; stale generic checklist removed
 
-**Suggested resolution:** Decide on one canonical naming convention for 08_SESSIONS, document it in Naming_Contract.md, and schedule a rename pass for non-conforming files. Recommend YYYY-MM-DD_HHMM_tags.md as it matches the majority of recent session files.
+**Suggested resolution:** Review the updated 03_APIS/CLAUDE.md to confirm stale checklist removal and corrected session-close procedure are accurate, then mark resolved.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 2 of 9 — MULTI_NODE [MEDIUM]
+## Flag 2 of 5 — CONFLICT [HIGH]
 
-**Description:** session_compiler.py was split into distill_session and voice_chapter this session. References to session_compiler.py likely exist in multiple vault nodes (tools index, BDF ops status, possibly workflow docs) and all need updating to reflect the new split.
+**Description:** Two flags need to be recorded: (1) ingest_session double-run produces non-idempotent results — a systemic BRAIN_OS bug; (2) CA_Book incoming triage finding. These may conflict with or duplicate existing flag entries.
 
-**Nodes:** 07_SYSTEM/Tools_Registry.md, 09_TOOLS/09_TOOLS_INDEX.md, 02_PROJECTS/BDF_Operations_Status.md
+**Nodes:** 08_SESSIONS/ingestion_flags.md
 
-**Old:** session_compiler.py — monolithic tool handling session compilation and voice chapter generation
+**Old:** Existing flags from prior sessions
 
-**New:** distill_session — handles session distillation; voice_chapter — handles voice chapter generation and owns drive_index writer + BRAIN_OS_CONFIG reader
+**New:** ## 2026-09-07
+- [BUG] ingest_session double-run produces non-idempotent results — investigate deduplication logic
+- [TRIAGE] CA_Book incoming: CLAUDE.md was missing from harness (second gap); now added
 
-**Suggested resolution:** Search vault for 'session_compiler' references and update each to point to the correct successor tool (distill_session or voice_chapter depending on context). Flag here because this touches 3+ files.
-
-**Decision:** [ ] Approve  [ ] Modify  [ ] Skip
-
----
-
-## Flag 3 of 9 — ARCHITECTURE [LOW]
-
-**Description:** Trigger_Architecture tables are now derived from node frontmatter rather than maintained manually. This is a pipeline/generation architecture change that affects how the Trigger_Architecture doc is maintained going forward.
-
-**Nodes:** 07_SYSTEM/Trigger_Architecture.md, 08_TRIGGERS/Trigger_Morning_Watchdog.md
-
-**Old:** Trigger_Architecture tables maintained manually
-
-**New:** Trigger_Architecture tables derived from node frontmatter `implemented_by` field — do not hand-edit
-
-**Suggested resolution:** Document the new generation approach in Trigger_Architecture.md — note that the table is auto-derived from frontmatter `implemented_by` fields and should not be hand-edited. Add a warning comment at the top of the file.
+**Suggested resolution:** Append both flags to ingestion_flags.md under a 2026-09-07 section. Flag 1: idempotency bug in ingest_session double-run. Flag 2: CA_Book incoming triage — CLAUDE.md was missing from harness.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 4 of 9 — PROTECTED [HIGH]
+## Flag 3 of 5 — ARCHITECTURE [MEDIUM]
 
-**Description:** Protected: Tools_Registry (writer: soccer-content-generator/sync_brain.py) - Check before adopting any new tool.
+**Description:** CA registry entry was corrected to point at CA_Book instead of CristianConstruction. This is a registry pointer fix that touches the MCP/system registry and the CA_Book project node — needs human confirmation that all downstream references are also updated.
 
-**Nodes:** 07_SYSTEM/Tools_Registry.md
+**Nodes:** 07_SYSTEM/MCP_Registry.md, 02_PROJECTS/CA_Book_System.md
 
-**New:** - `manifest_check` — validates manifest before it becomes load-bearing (added this session)
-- `distill_session` — extracted from session_compiler.py split
-- `voice_chapter` — extracted from session_compiler.py split; also owns drive_index writer and BRAIN_OS_CONFIG reader
+**Old:** CA registry entry → CristianConstruction
 
-**Suggested resolution:** Apply manually, or choose another target.
+**New:** CA registry entry → CA_Book
 
-**Decision:** [ ] Approve  [ ] Modify  [ ] Skip
-
----
-
-## Flag 5 of 9 — PROTECTED [HIGH]
-
-**Description:** Protected: TOOLS_INDEX (writer: tools_index.py) - Script index from docstrings. Derived, auto-committed.
-
-**Nodes:** 09_TOOLS/09_TOOLS_INDEX.md
-
-**New:** Generated date field removed — it caused every run to dirty the tree.
-
-**Suggested resolution:** Apply manually, or choose another target.
+**Suggested resolution:** Confirm MCP_Registry.md or equivalent registry file now points CA entry to CA_Book_System.md, and audit any other files that reference CristianConstruction as the CA entry point.
 
 **Decision:** [ ] Approve  [ ] Modify  [ ] Skip
 
 ---
 
-## Flag 6 of 9 — PROTECTED [HIGH]
-
-**Description:** Protected: 07_SYSTEM is a dashboard or doctrine directory
-
-**Nodes:** 07_SYSTEM/SYSTEM_Rules.md
-
-**New:** Moved from 00_NAV to 07_SYSTEM this session. Closes queue item 153.
-
-**Suggested resolution:** Apply manually, or choose another target.
-
-**Decision:** [ ] Approve  [ ] Modify  [ ] Skip
-
----
-
-## Flag 7 of 9 — PROTECTED [HIGH]
-
-**Description:** Protected: 07_SYSTEM is a dashboard or doctrine directory
-
-**Nodes:** 07_SYSTEM/Trigger_Architecture.md
-
-**New:** All 13 trigger nodes annotated with `implemented_by` frontmatter field. Trigger_Architecture tables now derived from node frontmatter rather than maintained manually.
-
-**Suggested resolution:** Apply manually, or choose another target.
-
-**Decision:** [ ] Approve  [ ] Modify  [ ] Skip
-
----
-
-## Flag 8 of 9 — PROTECTED [HIGH]
+## Flag 4 of 5 — PROTECTED [HIGH]
 
 **Description:** Protected: Navigation (writer: vault_index.py) - Vault navigation. Derived, auto-committed.
 
 **Nodes:** 00_DASHBOARD/Navigation.md
 
-**New:** - 2026-09-04 21:57 — BDF, CA, BRAIN_OS — manifest fields, trigger annotations, tool split, vault housekeeping
+**New:** Last Session: 2026-09-07_1736_bdf_ca_brain_os
 
 **Suggested resolution:** Apply manually, or choose another target.
 
@@ -124,21 +68,15 @@ Items: 9
 
 ---
 
-## Flag 9 of 9 — PROTECTED [HIGH]
+## Flag 5 of 5 — PROTECTED [HIGH]
 
-**Description:** Protected: ingestion_flags (writer: ingest_session.py) - MACHINE-WRITTEN per session. Never hand-edit.
+**Description:** Protected: Next_Session_Prompt (writer: manual) - Session opener, pasted as the first message. Hand written.
 
-**Nodes:** 08_SESSIONS/ingestion_flags.md
+**Nodes:** 00_DASHBOARD/Next_Session_Prompt.md
 
-**New:** Closed this session:
-- Manifest refresh — verified
-- Hardcoded default — verified
-- Tool names — verified
-- MSIX flag — closed as misdiagnosis
-
-Added this session:
-- C:/AI purpose unrecoverable; 08_SESSIONS has two naming conventions (needs resolution)
-- PAT rotation: a probe during rotation proves nothing
+**New:** - Review and resolve ingestion idempotency issue (double-run produces non-idempotent results)
+- Follow up on CA_Book incoming triage findings
+- Verify CA registry entry now correctly points to CA_Book
 
 **Suggested resolution:** Apply manually, or choose another target.
 
