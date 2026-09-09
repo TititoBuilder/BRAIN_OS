@@ -1,6 +1,6 @@
 ---
 tags: [personal, learning, principles, mental-models]
-updated: 2026-05-04
+updated: 2026-09-09
 ---
 
 # Cristian's Principles
@@ -453,3 +453,47 @@ worth less than one that records why the problem it solved no longer
 exists. `a5b09f5` said "Railway-only, no callers." Had it said "the
 Railway env var it pushes to is gone, we use Render now", the local
 refresh half would have been recognized as still needed.
+
+---
+
+## An Assumption Never Silently Becomes a Confirmed Fact
+
+**Learned from:** Naming the evidence axis while tracing gig_tracker's
+`delivery_runs` provenance -- September 9 2026
+
+**The Core Principle:** Evidence status is a property of the fact itself, and it
+upgrades only when new evidence actually arrives. Never by default, never by
+timeout, never by overwrite. A fact that loses its label does not become
+unlabeled -- it becomes indistinguishable from evidence, and every calculation
+downstream inherits confidence it never earned.
+
+**Today's proof:**
+- `engaged_miles` in gig_tracker is synthetic. Spark never reports engaged
+  mileage, so rows were filled by multiplying hours by an assumed constant.
+- Calibrating the Prop 22 floor against that column re-reads the assumption and
+  reports it back as agreement. Ten rows currently sit on the constant.
+- The only valid method is payment inversion -- solve the floor from
+  app-confirmed hours, base pay, and the actual payment. It never reads the
+  miles column at all.
+- `invariants.py` already enforces the honest half: `source` must be a known
+  provenance value, so the database refuses a row that cannot say where it came
+  from. The gap was that nothing stopped an Assumption from being *read* as
+  Confirmed once written.
+- **The fix that motivated this principle did not itself satisfy it.** The
+  2026-09-09 U.S. Bank payoff downgraded a $796.47 statement figure to a
+  self-reported $0.00 and preserved the old number by writing it into the row's
+  `note` prose. Correct in spirit, and it survived only because a human
+  remembered to type it. Nothing required it, nothing would have noticed its
+  absence, and no query could find it. Checking the principle against its own
+  first application is what exposed that -- the preserved value now lives in an
+  `evidence_ledger` row a query can actually reach.
+
+**The generalization:** SAME failure class as "Documentation Must Reflect
+Reality." A stale doc and an unlabeled assumption are both a map claiming more
+certainty than the territory supports. The fix in both cases is to make the
+claim carry its own evidence.
+
+**What this prevents:**
+Decisions resting on numbers that were guessed. Self-confirming calibration,
+where a system checks an assumption against itself and calls the match proof.
+See [[Ontology]] for the Confirmed | Assumption axis this belongs to.

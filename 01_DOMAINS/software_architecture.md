@@ -7,7 +7,7 @@ tags:
   - modularity
   - principles
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-09-09
 domain: Systems Design Layer
 topics:
   - four_pillars_separation
@@ -36,6 +36,7 @@ topics:
 - **DRY + Decoupling** - One source of truth per fact; components that can change independently
 - **The Graph Layer** - BRAIN_OS as the vault that encodes architecture and principles AI reads to operate across all projects
 - **Atomic Commits** - Both sides of a contract ship in one push, never half a change
+- **Ontology** - A taxonomy plus the relationships between types plus the rules governing them; see [[Ontology]] for the working class/relationship set and the Confirmed | Assumption evidence axis
 
 ---
 
