@@ -1,6 +1,6 @@
 ---
 tags: [personal, learning, principles, mental-models]
-updated: 2026-09-09
+updated: 2026-09-10
 ---
 
 # Cristian's Principles
@@ -497,3 +497,55 @@ claim carry its own evidence.
 Decisions resting on numbers that were guessed. Self-confirming calibration,
 where a system checks an assumption against itself and calls the match proof.
 See [[Ontology]] for the Confirmed | Assumption axis this belongs to.
+
+---
+
+## The Instrument Is Not the Goal
+
+**Learned from:** gig_tracker van-purchase planning — September 10 2026
+
+**The Core Principle:** A plan optimizes for whatever it names as the goal.
+Naming the thing being ACQUIRED as the goal, instead of what acquiring it is
+FOR, produces systematically worse decisions on identical facts — because
+every downstream tradeoff gets judged against the wrong objective function.
+This is a category error, not a math error, and no amount of more careful
+arithmetic inside the wrong objective function fixes it.
+
+**Today's proof:**
+- Every gig_tracker planning doc (`NAVIGATION.md`, `CLAUDE.md`,
+  `GIG_TRACKER_TIMELINE.md`, `GIG_TRACKER_SCHEDULE.md`) stated the goal as
+  "buy the van." Under that framing, loan term reads as a tradeoff to
+  minimize — a 72-month loan looks like a worse, more-indebted outcome
+  than a 36-month one, because "own it outright, soonest" is what the plan
+  judges against.
+- The van was never the goal. The real goal is financial freedom — debt
+  eliminated, income no longer consumed by rent ($915/mo) and a no-kitchen
+  fast-food bill (~$560/mo) before it can be redirected anywhere else. The
+  van is the INSTRUMENT that unlocks those two eliminations, not the
+  endpoint.
+- Reframed around the real goal, the SAME facts flip the conclusion: the
+  longest available loan term becomes correct, because it minimizes the
+  REQUIRED monthly payment and maximizes surplus deployable against the
+  highest-interest real debt on file (an AmEx personal loan at 16.99%, vs.
+  the van loan's real quoted rate of ~10.5%). Every offer in hand carries no
+  prepayment penalty, so nothing is lost by taking the long term and killing
+  it early once the higher-rate debt is dead — verified directly against
+  `project_scenarios.py`'s payoff-order projection: attacking the
+  higher-rate debt first saves $382.90 in real interest over attacking the
+  van loan first, on the actual numbers.
+- Same lender quotes, same balances, same rates — opposite conclusion,
+  purely from what the plan was optimizing for.
+
+**The generalization:** before optimizing any plan, name what is actually
+being maximized, and ask whether the thing being acquired IS that maximand
+or is merely a means to it. An instrument evaluated as if it were the goal
+will be over-optimized on the wrong dimension every time — paid off fastest,
+built nicest, acquired soonest — regardless of whether that dimension serves
+the actual objective.
+
+**What this prevents:** plans that get every calculation right and still
+reach the wrong decision, because the objective function itself was never
+checked. A loan "paid off faster" that leaves higher-interest debt alive
+longer. A nicer, costlier acquisition chosen over a cheaper one that meets
+the same need. Living in the instrument to save money, then spending the
+savings — which defeats the premise the instrument existed to serve.
