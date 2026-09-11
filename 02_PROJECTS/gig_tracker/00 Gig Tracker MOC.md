@@ -24,12 +24,12 @@ Central index for the gig_tracker knowledge cluster. All files below live in `02
 
 ## Codebase Entry Points
 
-- [[gig.py]] — 24-command CLI (primary interface)
+- [[gig.py]] — ~~24-command CLI~~ **42-command CLI (verified 2026-09-11, `grep -c "^@cli.command" gig.py`)** (primary interface)
 - [[web.py]] — Flask dashboard
 - [[prop22.py]] — Prop 22 floor calculations
 - [[import_statement_v2.py]] — 5-profile statement importer
 - [[preflight.py]] — morning health check
-- [[balance.py]] — quick balance updates (added Aug 13, 2026)
+- ~~[[balance.py]] — quick balance updates (added Aug 13, 2026)~~ **DEAD 2026-09-11 — file does not exist in the repo.** Verified: not present at `C:\Dev\Projects\gig_tracker\gig_tracker\balance.py`. Not deleted here, only marked — see [[Daily Operating Procedure]]'s Corrections for the same finding.
 
 ## Project Goal
 
@@ -38,14 +38,29 @@ Income sources: Spark (Walmart delivery) + Roadie runs, Southern California.
 
 ## Key Numbers
 
-| Item | Value |
-|---|---|
-| CC debt | $4,009 (7 cards) |
-| Dealer loan | $21,700 @ 27% APR |
-| Personal loan | $16,000 @ 9.55% |
-| Cash on hand | $596 |
-| Monthly run rate | ~$2,615 |
-| FICO | 716 |
+~~| Item | Value |~~
+~~|---|---|~~
+~~| CC debt | $4,009 (7 cards) |~~
+~~| Dealer loan | $21,700 @ 27% APR |~~
+~~| Personal loan | $16,000 @ 9.55% |~~
+~~| Cash on hand | $596 |~~
+~~| Monthly run rate | ~$2,615 |~~
+~~| FICO | 716 |~~
+
+**CORRECTED 2026-09-11 — this table independently restated the same
+false debt narrative already fixed in [[Financial Position]] and
+[[Van Decision]] the day before; missed here because this table
+duplicates their numbers instead of pointing to them.** "Dealer loan"
+and "Personal loan" were seeded placeholders (`is_hypothetical=1` in the
+repo's `debts` table), never real money owed. FICO 716 was a different
+bureau/model (Equifax VantageScore) than the current confirmed 732
+(Experian FICO 9) — not a decline, not comparable. CC debt and cash on
+hand are Aug 13/14 snapshots, superseded many times since.
+
+**Not re-copied as a new table — this is exactly the failure mode
+above.** Current numbers: [[Financial Position]] (corrected 2026-09-10,
+points onward to `NAVIGATION.md` and `_generated/Financial Position.md`
+for live figures) and repo `NAVIGATION.md` directly.
 
 
 <!-- auto-ingested 2026-08-14 -->

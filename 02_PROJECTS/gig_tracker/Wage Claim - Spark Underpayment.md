@@ -26,7 +26,7 @@ Current mileage baseline (15.1 mi/hr) is derived from 1 paid period only and is 
 
 1. Floor formula reproduced reference period to < $1 error
 2. Formula applied to Jul 6–19 → result: floor exceeds paid amount by ~$247
-3. Run data stored in `delivery_runs` table (67 rows total)
+3. Run data stored in `delivery_runs` table (~~67 rows total~~ **688 rows, verified 2026-09-11 — the 67 figure was off by 10x, not just stale; this table has grown continuously since Aug 13**)
 4. Period data isolated and flagged in database
 
 ## Filing Status
@@ -43,4 +43,19 @@ Current mileage baseline (15.1 mi/hr) is derived from 1 paid period only and is 
 
 ## Amount in Context
 
-$247 at the dealer loan rate (27% APR) represents real money. It is worth pursuing through the support channel at minimum cost before deciding whether to escalate.
+~~$247 at the dealer loan rate (27% APR) represents real money.~~ **CORRECTED
+2026-09-11 — the 27% "dealer loan" this compared against never existed
+(seeded placeholder, `is_hypothetical=1`); found while fixing this file's
+row count, not part of the original task scope, but the same false
+narrative already fixed in [[Financial Position]] and [[Van Decision]].**
+$247 is real money on its own terms, no comparison needed to make that
+true — it is worth pursuing through the support channel at minimum cost
+before deciding whether to escalate.
+
+## Corrections — append-only, don't rewrite this section
+
+**2026-09-11.** `delivery_runs` row count corrected (67 -> 688, a 10x
+gap). "Amount in Context" section's 27% dealer-loan comparison removed
+— that loan was a seeded placeholder, never real; found incidentally
+while fixing the row count above. Evidence: direct verification against
+`C:\Dev\Projects\gig_tracker\gig_tracker` on 2026-09-11.

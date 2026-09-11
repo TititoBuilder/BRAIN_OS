@@ -104,21 +104,27 @@ consolidated without checking this first.
 
 ---
 
-## Trip ID recycling breaks the UNIQUE constraint
+## Trip ID recycling breaks the UNIQUE constraint — RESOLVED 2026-09-11
 
 **What:** `delivery_runs` has `UNIQUE(platform, trip_id)` on the assumption
 that Spark trip IDs never repeat. **They do.** Trip #2386 appeared on
 2026-04-13 (id=88) and again in a later export; the second had to be inserted
 with `trip_id` NULL.
 
-**Why deferred:** Needs a schema decision, and schema changes here are
-in-place `ALTER` + backfill only. Not a quick fix.
+~~**Why deferred:** Needs a schema decision, and schema changes here are
+in-place `ALTER` + backfill only. Not a quick fix.~~
 
-**When to act:** Before the next full-history re-import. The constraint will
+~~**When to act:** Before the next full-history re-import. The constraint will
 silently reject legitimate new trips whose 4-digit ID collides with an old
-one — data loss with no error surfaced to the user.
+one — data loss with no error surfaced to the user.~~
 
-**Candidate fix:** make the uniqueness `(platform, trip_id, run_date)`.
+~~**Candidate fix:** make the uniqueness `(platform, trip_id, run_date)`.~~
+
+**RESOLVED — verified against the live repo 2026-09-11.** `fix_tripid_index.py`
+exists in the repo and applies exactly this candidate fix. The live index is
+confirmed as `CREATE UNIQUE INDEX idx_delivery_runs_platform_trip_id ON
+delivery_runs(platform, trip_id, run_date) WHERE trip_id IS NOT NULL` — the
+widened form, matching the fix proposed above. Nothing further to act on.
 
 ---
 
@@ -136,20 +142,27 @@ format (sign-flip, payment/reversal exclusion), then archive.
 
 ---
 
-## Aug 3–16 Prop 22 adjustment still estimated
+## Aug 3–16 Prop 22 adjustment still estimated — RESOLVED 2026-09-11
 
 **What:** `SPARK_PAID` in `tracker/prop22.py` stops at `2026-07-20`. The
 2026-08-03..08-16 period shows **$832.50 estimated**.
 
-**Why deferred:** Spark posts a period's adjustment the Wednesday three days
+~~**Why deferred:** Spark posts a period's adjustment the Wednesday three days
 after it closes — around Aug 19. The Aug 19 export showed everything still
-Processing through Aug 18.
+Processing through Aug 18.~~
 
-**When to act:** Next export with the adjustment Posted. Add the confirmed
-figure to `SPARK_PAID`.
+~~**When to act:** Next export with the adjustment Posted. Add the confirmed
+figure to `SPARK_PAID`.~~
+
+**RESOLVED — verified against the live DB 2026-09-11.** The real XLSX export
+posted, and `delivery_runs` carries the confirmed figure:
+`source='xlsx_adjustment'`, `run_date='2026-08-19'`, `earnings=$788.46`
+(**not** $832.50 — the estimate overstated the real adjustment by $44.04).
+Confirmed money, not an estimate, since 2026-08-19.
 
 **Note:** The full-history export Summary reports **$4,407.78** of earnings
 adjustments Jan 1 – Aug 11 across 16 payments. `SPARK_PAID` holds five
 totalling $1,555.20. The other **$2,852.58** is confirmed paid money the
 tracker does not know about. Reference only — not operationally needed
-unless doing taxes.
+unless doing taxes. *(Not re-verified 2026-09-11 — only the $832.50 line
+above was checked.)*
