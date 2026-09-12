@@ -168,11 +168,11 @@ One implementation, many consumers.
 ---
 
 ## Tools That Connect Here
-- [[session_start.py]] - loads the full live architectural context bundle
-- [[session_close.py]] - session lifecycle close + ingestion
-- [[graph_maintainer.py]] - keeps the graph layer consistent
-- [[compile_session.py]] - Option C knowledge ingestion
-- [[cost_guard.py]] - cost-discipline enforcement (model standard)
-- [[audit_files.py]] - audit-before-change tooling
+- [[Tools_Registry#session_start.py]] - loads the full live architectural context bundle
+- `session_close.py` (09_TOOLS) - session lifecycle close + ingestion
+- `graph_maintainer.py` (09_TOOLS) - keeps the graph layer consistent
+- [[Compile_Session_Workflow]] - Option C knowledge ingestion
+- `cost_guard.py` (09_TOOLS) - cost-discipline enforcement (model standard)
+- [[Tools_Registry#audit_files]] - audit-before-change tooling
 - [[brain-audio]] - the shared-core package this domain's patterns produced
-- [[BRAIN_OS_CONFIG.json]] - the config-driven source of truth
+- `BRAIN_OS_CONFIG.json` (vault root) - the config-driven source of truth

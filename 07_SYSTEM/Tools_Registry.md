@@ -307,6 +307,32 @@ tags: [system, tools, infra, live]
 - **run:** `python rename_linked.py --vault C:\BRAIN_OS --old <stem> --new <stem> --apply`
 - 2026-06-09 — Session: BRAIN_OS + Read-Along App — major consolidation + system-truth
 
+## vault_integrity
+- **path:** `C:\BRAIN_OS\09_TOOLS\vault_integrity.py`
+- **purpose:** Read-only vault-side integrity scan, four independent checks:
+  duplicate basenames (splits byte-identical forks from mere name collisions,
+  excludes known-legitimate patterns like nested CLAUDE.md and pointer-stub
+  notes), broken [[wikilinks]] (flags targets that look like tool filenames —
+  a note wikilinking a script as if a note about it exists), secrets outside
+  `03_APIS/.env` (that file is the designated key store and is hard-excluded),
+  and cross-note numeric contradictions (same entity + unit, different value
+  across two notes — detects disagreement only, cannot say which side is
+  correct, and does not attempt to verify against gig_tracker's own DB — that
+  would couple two repos that deliberately don't share code across their
+  boundary; see [[doc_integrity]] in the gig_tracker repo). Never modifies
+  anything, never blocks — informational output only, read the report and
+  decide by hand.
+- **enforces:** vault-side counterpart to gig_tracker's `preflight.py` checks
+  (`scan_secrets.py` / `tracker/doc_integrity.py` / `tracker/session_guard.py`),
+  which explicitly stop at the repo boundary and hand off vault-only concerns
+  here.
+- **run:** `python vault_integrity.py` (defaults to its own vault root; `--json
+  report.json` for a machine-readable copy, `--vault <path>` to point elsewhere)
+- 2026-09-11 — Session: BRAIN_OS integrity design — Financial Position.md
+  collision reviewed (banner already sufficient, no rename), 7 confirmed dead
+  [[wikilinks]] in software_architecture.md repointed, 5 true-fork duplicates
+  reported (not resolved — canonical pick left to a human decision).
+
 ## graphifyy (CLI: graphify) — Codebase Knowledge Graph
 **Added:** 2026-06-19
 **What it is:** Third-party OSS tool (safishamsi/graphify, MIT, PyPI package graphifyy). Claude Code skill — /graphify . builds an interactive knowledge graph of a project: AST-level code structure (local, free, tree-sitter) + semantic layer from docs/README/CLAUDE.md (via Claude Code subagent, rides existing subscription,  marginal cost — confirmed via GRAPH_REPORT.md token cost: 0 input/0 output on first run).
