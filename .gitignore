@@ -79,3 +79,11 @@ audio_staging/**/*.txt
 # Per-call Claude API usage, written by claude_client._log_usage.
 # Append-only local spend record, grows forever, no value in history.
 05_MEMORY/claude_usage.jsonl
+
+# gig_tracker's authoritative auto-generated snapshot -- regenerable via
+# gig_tracker's export_vault.py (writes here from the OTHER repo; the local
+# copy that used to live inside gig_tracker itself was found a month stale
+# and deleted). Same call as the graph artifacts and audio_staging above:
+# regenerable output churns on every export and isn't worth versioning.
+# If this disk is lost, rerun export_vault.py from the gig_tracker repo.
+02_PROJECTS/gig_tracker/_generated/
